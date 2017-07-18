@@ -10,6 +10,8 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "string.h"
+#include <iostream>
+using namespace std;
 
 
 // MuJoCo data structures
@@ -24,30 +26,28 @@ mjrContext con;                     // custom GPU context
 bool button_left = false;
 bool button_middle = false;
 bool button_right =  false;
-bool showsensor = false;
 double lastx = 0;
 double lasty = 0;
 
 // Image output related parameters
-bool showdepth = false;
-float depth_buffer[5120*2880];        // big enough for 5K screen
+float depth_buffer[1280*720*3];        // big enough for 5K screen
 unsigned char depth_rgb[1280*720*3];  // 1/4th of screen
 
+// Grasp state
+int graspState = 1;
+double hvel = 0;
+double vvel = 0;
+mjtNum forwardLimit = -0.058;
+int ctr = 0;
+mjtNum downLimit = 0.11214;
 
 // keyboard callback
 void keyboard(GLFWwindow* window, int key, int scancode, int act, int mods)
 {
-
-	switch (key)
-	{
-    case 68:                   // depth 'd'
-        showdepth = !showdepth;
-        break;
-	}
-
     // backspace: reset simulation
     if( act==GLFW_PRESS && key==GLFW_KEY_BACKSPACE )
     {
+    	graspState = 1;
         mj_resetData(m, d);
         mj_forward(m, d);
     }
@@ -64,61 +64,6 @@ void mouse_button(GLFWwindow* window, int button, int act, int mods)
 
     // update mouse position
     glfwGetCursorPos(window, &lastx, &lasty);
-}
-
-
-// render
-void render(GLFWwindow* window)
-{
-    // past data for FPS calculation
-    static double lastrendertm = 0;
-
-    // get current framebuffer rectangle
-    mjrRect rect = {0, 0, 0, 0};
-    glfwGetFramebufferSize(window, &rect.width, &rect.height);
-    mjrRect smallrect = rect;
-
-    // no model: empty screen
-    if( !m )
-    {
-        mjr_rectangle(rect, 0.2f, 0.3f, 0.4f, 1);
-        mjr_overlay(mjFONT_NORMAL, mjGRID_TOPLEFT, rect, "Drag-and-drop model file here", 0, &con);
-
-        // swap buffers
-        glfwSwapBuffers(window);
-        return;
-    }
-
-    // show depth map
-    if( showdepth )
-    {
-        // get the depth buffer
-        mjr_readPixels(NULL, depth_buffer, rect, &con );
-
-        // convert to RGB, subsample by 4
-        for( int r=0; r<rect.height; r+=4 )
-            for( int c=0; c<rect.width; c+=4 )
-            {
-                // get subsampled address
-                int adr = (r/4)*(rect.width/4) + c/4;
-
-                // assign rgb
-                depth_rgb[3*adr] = depth_rgb[3*adr+1] = depth_rgb[3*adr+2] =
-                    (unsigned char)((1.0f-depth_buffer[r*rect.width+c])*255.0f);
-            }
-
-        // show in bottom-right corner, offset for profiler and sensor
-        mjrRect bottomright = {
-            smallrect.left+(3*smallrect.width)/4,
-            smallrect.bottom,
-            smallrect.width/4,
-            smallrect.height/4
-        };
-        mjr_drawPixels(depth_rgb, NULL, bottomright, &con);
-    }
-
-    // swap buffers
-    glfwSwapBuffers(window);
 }
 
 
@@ -157,6 +102,85 @@ void mouse_move(GLFWwindow* window, double xpos, double ypos)
 }
 
 
+void closeHand(const mjModel* m, mjData* d)
+{
+	mju_zero(d->qfrc_applied, m->nv);
+	mju_zero(d->xfrc_applied, 6*m->nbody);
+	for (int itr = 3; itr < 13; itr++){
+		d->ctrl[itr] += 0.001;
+	}
+}
+
+void graspObject(const mjModel* m, mjData* d){
+
+	switch(graspState){
+	case 1:
+		if (d->qpos[1] > forwardLimit)
+			graspState = 2;
+		else
+			hvel = 5;
+		break;
+	case 2:
+		cout<<d->qvel[2]<<endl;
+		if (d->qvel[2] > -1e5 && ctr > 5 && vvel < 0)
+			graspState = 3;
+		else if (!vvel)
+		{
+			vvel = -1.6;
+		}
+		ctr = ctr + 1;
+		break;
+	case 3:
+		if (d->qfrc_applied[10] > 10)
+			graspState = 4;
+		else
+			closeHand(m,d);
+		break;
+	case 4:
+		vvel = 1.6;
+		break;
+	}
+	d->qvel[1] = hvel;
+	d->qvel[2] = vvel;
+}
+
+
+// render
+void render(GLFWwindow* window)
+{
+    // past data for FPS calculation
+    static double lastrendertm = 0;
+
+    // get current framebuffer rectangle
+    mjrRect rect = {0, 0, 0, 0};
+    glfwGetFramebufferSize(window, &rect.width, &rect.height);
+    mjrRect smallrect = rect;
+
+	// get the depth buffer
+	mjr_readPixels(NULL, depth_buffer, rect, &con );
+
+	// convert to RGB, subsample by 4
+	for( int r=0; r<rect.height; r+=4 )
+		for( int c=0; c<rect.width; c+=4 )
+		{
+			// get subsampled address
+			int adr = (r/4)*(rect.width/4) + c/4;
+
+			// assign rgb
+			depth_rgb[3*adr] = depth_rgb[3*adr+1] = depth_rgb[3*adr+2] =
+				(unsigned char)((1.0f-depth_buffer[r*rect.width+c])*255.0f);
+		}
+
+	// show in bottom-right corner, offset for profiler and sensor
+	mjrRect bottomright = {
+		smallrect.left+(3*smallrect.width)/4,
+		smallrect.bottom,
+		smallrect.width/4,
+		smallrect.height/4
+	};
+	mjr_drawPixels(depth_rgb, NULL, bottomright, &con);
+}
+
 // scroll callback
 void scroll(GLFWwindow* window, double xoffset, double yoffset)
 {
@@ -177,6 +201,9 @@ int main(int argc, const char** argv)
 
     // activate software
     mj_activate("mjkey.txt");
+
+    // install control callback
+    mjcb_control = graspObject;
 
     // load and compile model
     char error[1000] = "Could not load binary model";
@@ -223,6 +250,7 @@ int main(int argc, const char** argv)
         while( d->time - simstart < 1.0/60.0 )
         {
             mj_step(m, d);
+            cout<<d->contact->dist<<endl;
         }
 
         // get framebuffer viewport
@@ -231,10 +259,8 @@ int main(int argc, const char** argv)
 
         // update scene and render
         mjv_updateScene(m, d, &opt, NULL, &cam, mjCAT_ALL, &scn);
-
-        // render
         mjr_render(viewport, &scn, &con);
-        render(window);
+//        render(window);
 
         // swap OpenGL buffers (blocking call due to v-sync)
         glfwSwapBuffers(window);

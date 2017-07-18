@@ -1,10 +1,11 @@
-COMMON=-O2 -I../include -L../bin -std=c++11 -lstdc++ -mavx
+COMMON=-o -O0 -g3 -I./include -I./include/controller -L./bin -std=c++11 -lstdc++ -mavx
 
 all:
-	clang $(COMMON) basic.cpp      -lmujoco150 -lglfw.3 -o ../bin/basic
-	clang $(COMMON) simulate.cpp   -lmujoco150 -lglfw.3 -o ../bin/simulate
-	clang $(COMMON) test.cpp       -lmujoco150          -o ../bin/test
-	clang $(COMMON) compile.cpp    -lmujoco150          -o ../bin/compile
-	clang $(COMMON) derivative.cpp -lmujoco150          -o ../bin/derivative
-	clang $(COMMON) record.cpp     -lmujoco150 -lglfw.3 -o ../bin/record
-	
+	g++ $(COMMON) ./sample/basicGrasp.cpp ./sample/controller/src/*.cpp     -lmujoco150 -lglfw.3 -o ./bin/basicGrasp
+#	g++ $(COMMON) ./sample/simulate.cpp   -lmujoco150 -lglfw.3 -o ./bin/simulate
+#	g++ $(COMMON) ./sample/graspSimulate.cpp   -lmujoco150 -lglfw.3 -o ./bin/graspSimulate
+#	g++ $(COMMON) ./sample/grasp.cpp      -lmujoco150 -lglfw.3 -o ./bin/grasp
+#	g++ $(COMMON) ./sample/test.cpp       -lmujoco150          -o ./bin/test
+#	g++ $(COMMON) ./sample/compile.cpp    -lmujoco150          -o ./bin/compile
+#	g++ $(COMMON) ./sample/derivative.cpp -lmujoco150          -o ./bin/derivative
+#	g++ $(COMMON) ./sample/record.cpp     -lmujoco150 -lglfw.3 -o ./bin/record

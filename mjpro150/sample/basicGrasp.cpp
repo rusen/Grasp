@@ -10,7 +10,13 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "string.h"
-
+#include <iostream>
+#include "MPLHandController.h"
+#include <glm/glm.hpp>
+#include <glm/gtc/quaternion.hpp>
+#include <glm/gtx/quaternion.hpp>
+#include <Eigen/Geometry>
+#include <Eigen/Core>
 
 // MuJoCo data structures
 mjModel* m = NULL;                  // MuJoCo model
@@ -27,6 +33,24 @@ bool button_right =  false;
 double lastx = 0;
 double lasty = 0;
 
+// Grasp params
+int graspState = 1;
+double hvel = 0;
+double vvel = 0;
+mjtNum forwardLimit = -0.058;
+int ctr = 0;
+//mjtNum downLimit = 0.11214;
+
+
+glm::quat qa, qb, qres;
+float moveCtr = 0;
+
+// Hand controller
+Grasp::MPLHandController handController;
+
+// Rendering params
+float depth_buffer[5120*2880];        // big enough for 5K screen
+unsigned char depth_rgb[1280*720*3];  // 1/4th of screen
 
 // keyboard callback
 void keyboard(GLFWwindow* window, int key, int scancode, int act, int mods)
@@ -34,6 +58,7 @@ void keyboard(GLFWwindow* window, int key, int scancode, int act, int mods)
     // backspace: reset simulation
     if( act==GLFW_PRESS && key==GLFW_KEY_BACKSPACE )
     {
+    	graspState = 1;
         mj_resetData(m, d);
         mj_forward(m, d);
     }
@@ -96,6 +121,107 @@ void scroll(GLFWwindow* window, double xoffset, double yoffset)
 }
 
 
+void closeHand(const mjModel* m, mjData* d)
+{
+//	mju_zero(d->qfrc_applied, m->nv);
+//	mju_zero(d->xfrc_applied, 6*m->nbody);
+	for (int itr = 3; itr < 13; itr++){
+		d->ctrl[itr] += 0.001;
+	}
+}
+
+void graspObject(const mjModel* m, mjData* d){
+	for (int i=0;i<4;i++)
+		std::cout<<d->mocap_quat[i]<<" ";
+	std::cout<<std::endl;
+	switch(handController.getState()){
+	case 1:
+
+		if (moveCtr >= 1)
+			break;
+		qres = glm::mix(qa, qb, moveCtr);
+		moveCtr += 0.001;
+
+		d->mocap_quat[0] = qres[0];
+		d->mocap_quat[1] = qres[1];
+		d->mocap_quat[2] = qres[2];
+		d->mocap_quat[3] = qres[3];
+
+//		d->mocap_quat[3] += 0.01;
+
+		/*
+		if (d->mocap_pos[1] > -0.02)
+		{
+			d->mocap_quat
+		}
+//			handController.setState(2);
+		else
+			d->mocap_pos[1] += 0.001;
+*/
+
+		break;
+	case 2:
+		if (d->mocap_pos[2] > 0.13)
+		{
+			d->mocap_pos[2] -= 0.001;
+			d->ctrl[1] += 0.001;
+			d->ctrl[2] += 0.01;
+			d->ctrl[3] += 0.02;
+			d->ctrl[11] += 0.02;
+		}
+		else{
+			handController.setState(3);
+		}
+		break;
+	case 3:
+		handController.GraspFirm(m, d);
+		break;
+	case 4:
+		if (d->mocap_pos[2]<0.3)
+			d->mocap_pos[2] += 0.002;
+	}
+
+}
+
+// render
+
+void render(GLFWwindow* window)
+{
+    // past data for FPS calculation
+    static double lastrendertm = 0;
+
+    // get current framebuffer rectangle
+    mjrRect rect = {0, 0, 0, 0};
+    glfwGetFramebufferSize(window, &rect.width, &rect.height);
+    mjrRect smallrect = rect;
+
+	// get the depth buffer
+	mjr_readPixels(NULL, depth_buffer, rect, &con );
+
+	// convert to RGB, subsample by 4
+	for( int r=0; r<rect.height; r+=4 )
+		for( int c=0; c<rect.width; c+=4 )
+		{
+			// get subsampled address
+			int adr = (r/4)*(rect.width/4) + c/4;
+
+			// assign rgb
+			depth_rgb[3*adr] = depth_rgb[3*adr+1] = depth_rgb[3*adr+2] =
+				(unsigned char)((1.0f-depth_buffer[r*rect.width+c])*255.0f);
+		}
+
+	// show in bottom-right corner, offset for profiler and sensor
+	mjrRect bottomright = {
+		smallrect.left+(3*smallrect.width)/4,
+		smallrect.bottom,
+		smallrect.width/4,
+		smallrect.height/4
+	};
+	mjr_drawPixels(depth_rgb, NULL, bottomright, &con);
+
+}
+
+
 // main function
 int main(int argc, const char** argv)
 {
@@ -108,6 +234,9 @@ int main(int argc, const char** argv)
 
     // activate software
     mj_activate("mjkey.txt");
+
+    // install control callback
+    mjcb_control = graspObject;
 
     // load and compile model
     char error[1000] = "Could not load binary model";
@@ -124,6 +253,12 @@ int main(int argc, const char** argv)
     // init GLFW
     if( !glfwInit() )
         mju_error("Could not initialize GLFW");
+
+    // Initial pose
+    glm::vec3 initPose(0, 0, 0);
+    glm::vec3 finalPose(0, 0, 1.5*3.1415);
+    qa = glm::quat(initPose);
+    qb = glm::quat(finalPose);
 
     // create window, make OpenGL context current, request v-sync
     GLFWwindow* window = glfwCreateWindow(1200, 900, "Demo", NULL, NULL);
@@ -151,8 +286,9 @@ int main(int argc, const char** argv)
         //  this loop will finish on time for the next frame to be rendered at 60 fps.
         //  Otherwise add a cpu timer and exit this loop when it is time to render.
         mjtNum simstart = d->time;
-        while( d->time - simstart < 1.0/60.0 )
+        while( d->time - simstart < 1.0/60.0 ){
             mj_step(m, d);
+    }
 
         // get framebuffer viewport
         mjrRect viewport = {0, 0, 0, 0};
@@ -161,6 +297,7 @@ int main(int argc, const char** argv)
         // update scene and render
         mjv_updateScene(m, d, &opt, NULL, &cam, mjCAT_ALL, &scn);
         mjr_render(viewport, &scn, &con);
+    	render(window);
 
         // swap OpenGL buffers (blocking call due to v-sync)
         glfwSwapBuffers(window);

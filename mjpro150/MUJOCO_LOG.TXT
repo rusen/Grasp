@@ -1,0 +1,60 @@
+Thu Jul  6 23:45:05 2017
+ERROR: Could not open activation key file mjkey.txt
+
+Mon Jul 10 15:23:00 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 31. The simulation is unstable. Time = 3.4820.
+
+Mon Jul 10 15:23:38 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 31. The simulation is unstable. Time = 3.4820.
+
+Mon Jul 10 15:31:16 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 31. The simulation is unstable. Time = 1.7880.
+
+Tue Jul 11 15:37:08 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 31. The simulation is unstable. Time = 2.4060.
+
+Tue Jul 11 15:37:40 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 31. The simulation is unstable. Time = 2.4060.
+
+Tue Jul 11 15:39:48 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 31. The simulation is unstable. Time = 2.9920.
+
+Tue Jul 11 17:34:19 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 32. The simulation is unstable. Time = 2.1840.
+
+Wed Jul 12 12:34:16 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 31. The simulation is unstable. Time = 3.5640.
+
+Wed Jul 12 13:49:26 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 31. The simulation is unstable. Time = 0.5900.
+
+Wed Jul 12 13:49:30 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 31. The simulation is unstable. Time = 0.5900.
+
+Wed Jul 12 14:40:16 2017
+ERROR: Load model error: Error: unknown element 'mocap' in equality constraint 0
+Object name = , id = 0, line = 454, column = 9
+
+Wed Jul 12 14:54:09 2017
+ERROR: Load model error: XML Error: attribute 'pos' does not have enough data
+Element 'body', line 117, column 9
+
+
+Wed Jul 12 14:59:43 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 31. The simulation is unstable. Time = 0.2560.
+
+Wed Jul 12 15:01:14 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 31. The simulation is unstable. Time = 0.0600.
+
+Wed Jul 12 15:25:11 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 32. The simulation is unstable. Time = 0.0200.
+
+Wed Jul 12 15:25:33 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 31. The simulation is unstable. Time = 0.0680.
+
+Wed Jul 12 16:04:52 2017
+ERROR: Load model error: XML Error: Schema violation: unrecognized attribute: 'gravity'
+
+Element 'geom', line 28, column 13
+
+
