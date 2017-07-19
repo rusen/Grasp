@@ -12,6 +12,7 @@
 #include "string.h"
 #include <iostream>
 #include "MPLHandController.h"
+#include "GraspPlanner.h"
 #include <glm/glm.hpp>
 #include <glm/gtc/quaternion.hpp>
 #include <glm/gtx/quaternion.hpp>
@@ -40,13 +41,13 @@ double vvel = 0;
 mjtNum forwardLimit = -0.058;
 int ctr = 0;
 //mjtNum downLimit = 0.11214;
-
+Grasp::GraspPlanner planner;
 
 glm::quat qa, qb, qres;
 float moveCtr = 0;
 
 // Hand controller
-Grasp::MPLHandController handController;
+Grasp::HandControllerInterface * handController = new Grasp::MPLHandController();
 
 // Rendering params
 float depth_buffer[5120*2880];        // big enough for 5K screen
@@ -120,67 +121,8 @@ void scroll(GLFWwindow* window, double xoffset, double yoffset)
     mjv_moveCamera(m, mjMOUSE_ZOOM, 0, -0.05*yoffset, &scn, &cam);
 }
 
-
-void closeHand(const mjModel* m, mjData* d)
-{
-//	mju_zero(d->qfrc_applied, m->nv);
-//	mju_zero(d->xfrc_applied, 6*m->nbody);
-	for (int itr = 3; itr < 13; itr++){
-		d->ctrl[itr] += 0.001;
-	}
-}
-
 void graspObject(const mjModel* m, mjData* d){
-	for (int i=0;i<4;i++)
-		std::cout<<d->mocap_quat[i]<<" ";
-	std::cout<<std::endl;
-	switch(handController.getState()){
-	case 1:
-
-		if (moveCtr >= 1)
-			break;
-		qres = glm::mix(qa, qb, moveCtr);
-		moveCtr += 0.001;
-
-		d->mocap_quat[0] = qres[0];
-		d->mocap_quat[1] = qres[1];
-		d->mocap_quat[2] = qres[2];
-		d->mocap_quat[3] = qres[3];
-
-//		d->mocap_quat[3] += 0.01;
-
-		/*
-		if (d->mocap_pos[1] > -0.02)
-		{
-			d->mocap_quat
-		}
-//			handController.setState(2);
-		else
-			d->mocap_pos[1] += 0.001;
-*/
-
-		break;
-	case 2:
-		if (d->mocap_pos[2] > 0.13)
-		{
-			d->mocap_pos[2] -= 0.001;
-			d->ctrl[1] += 0.001;
-			d->ctrl[2] += 0.01;
-			d->ctrl[3] += 0.02;
-			d->ctrl[11] += 0.02;
-		}
-		else{
-			handController.setState(3);
-		}
-		break;
-	case 3:
-		handController.GraspFirm(m, d);
-		break;
-	case 4:
-		if (d->mocap_pos[2]<0.3)
-			d->mocap_pos[2] += 0.002;
-	}
-
+	planner.PerformGrasp(m, d, handController);
 }
 
 // render
@@ -254,12 +196,6 @@ int main(int argc, const char** argv)
     if( !glfwInit() )
         mju_error("Could not initialize GLFW");
 
-    // Initial pose
-    glm::vec3 initPose(0, 0, 0);
-    glm::vec3 finalPose(0, 0, 1.5*3.1415);
-    qa = glm::quat(initPose);
-    qb = glm::quat(finalPose);
-
     // create window, make OpenGL context current, request v-sync
     GLFWwindow* window = glfwCreateWindow(1200, 900, "Demo", NULL, NULL);
     glfwMakeContextCurrent(window);
@@ -318,3 +254,4 @@ int main(int argc, const char** argv)
 
     return 1;
 }
+

@@ -58,3 +58,8 @@ ERROR: Load model error: XML Error: Schema violation: unrecognized attribute: 'g
 Element 'geom', line 28, column 13
 
 
+Wed Jul 19 13:50:09 2017
+ERROR: Load model error: XML parse error at line 29, column 30:
+Error reading Attributes.
+
+

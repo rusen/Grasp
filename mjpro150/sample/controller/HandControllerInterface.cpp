@@ -16,17 +16,4 @@ HandControllerInterface::~HandControllerInterface() {
 	// TODO Auto-generated destructor stub
 }
 
-void HandControllerInterface::GraspFirm(const mjModel* m, mjData* d){
-
-
-}
-
-int HandControllerInterface::getState() const {
-	return this->state;
-}
-
-void HandControllerInterface::setState(int state) {
-	this->state = state;
-}
-
 }

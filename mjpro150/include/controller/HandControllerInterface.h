@@ -9,8 +9,13 @@
 #define GRASP_CONTROLLER_HANDCONTROLLERNTERFACE_H_
 
 #include "mujoco.h"
+#include <glm/glm.hpp>
+#include <glm/gtc/quaternion.hpp>
+#include <glm/gtx/quaternion.hpp>
 
 namespace Grasp{
+
+enum graspType {initialGrasp, finalGrasp};
 
 class HandControllerInterface {
 
@@ -18,19 +23,19 @@ public:
 	HandControllerInterface();
 	virtual ~HandControllerInterface();
 
-	// Trajectory
-	mjtNum** ComputeTrajectory(const mjModel* m, const mjData* d);
+	// Set pose of the hand
+	virtual void SetPose(const mjModel* m, mjData* d, glm::vec3 pos, glm::quat q)=0;
 
-	// Grip functions
-	virtual void GraspFirm(const mjModel* m, mjData* d);
+	// Grip function
+	virtual bool Grasp(const mjModel* m, mjData* d, graspType type)=0;
 
 	// Getters/setters
 	int getState() const;
 	void setState(int state = 1);
 
 protected:
-	int state = 1;
-
+	int counter = 0;
+	int counterLimit = 300;
 };
 
 

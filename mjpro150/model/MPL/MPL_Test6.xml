@@ -26,7 +26,7 @@
 		<geom type="plane" material="MatPlane" pos="0 -.6 0.1" zaxis="0 1 1" size=".5 .1 .025"/>
 
         <body name="obj3" pos="0 0 0">
-            <geom size="0.05 0.04 0.02" density="1000" type="ellipsoid" material="MatSquare" condim="6" friction="0.6 0.005 0.001" solimp="0.99 0.999 0.01" solref="0.04 1.0"/>
+            <geom type="box" size="0.02 0.04 0.02" density="1000" material="MatWoodB" condim="6" friction="0.6 0.005 0.001" solimp="0.99 0.999 0.01" solref="0.04 1.0"/>
      <!-- 		<pair condim="6" friction="0.6 0.6 0.005 0.001 0.001" solimp="0.99 0.999 0.001" solref="0.004 1.0"/> -->
             <joint class="free"/>
         </body>

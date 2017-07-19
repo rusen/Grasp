@@ -1,7 +1,7 @@
-COMMON=-o -O0 -g3 -I./include -I./include/controller -L./bin -std=c++11 -lstdc++ -mavx
+COMMON=-o -O0 -g3 -I./include -I./include/controller -I./include/planner -L./bin -std=c++11 -lstdc++ -mavx
 
 all:
-	g++ $(COMMON) ./sample/basicGrasp.cpp ./sample/controller/src/*.cpp     -lmujoco150 -lglfw.3 -o ./bin/basicGrasp
+	g++ $(COMMON) ./sample/basicGrasp.cpp ./sample/controller/*.cpp ./sample/planner/*.cpp    -lmujoco150 -lglfw.3 -o ./bin/basicGrasp
 #	g++ $(COMMON) ./sample/simulate.cpp   -lmujoco150 -lglfw.3 -o ./bin/simulate
 #	g++ $(COMMON) ./sample/graspSimulate.cpp   -lmujoco150 -lglfw.3 -o ./bin/graspSimulate
 #	g++ $(COMMON) ./sample/grasp.cpp      -lmujoco150 -lglfw.3 -o ./bin/grasp
