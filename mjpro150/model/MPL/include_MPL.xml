@@ -19,13 +19,13 @@
     The modifications made by Roboti LLC are also licensed under the Apache License version 2.0.
     -->
     
-    <compiler angle="radian" meshdir="mesh/" texturedir="texture/"/>
+    <compiler angle="radian" meshdir="mesh/" texturedir="texture/" convexhull="true"/>
     <option timestep="0.002" iterations="50" apirate="50" noslip_iterations="10"/>
     <size njmax="600" nconmax="150" nstack="300000"/>
 
     <default>
 		<default class="MPL"> 
-			<geom material="MatMesh" contype="1" conaffinity="1" condim="4" solimp="0.99 0.999 0.1" solref="0.04 1.0"/>
+			<geom material="MatMesh" contype="1" conaffinity="1" condim="6" solimp="0.99 0.999 0.1" solref="0.04 1.0"/>
         	<joint limited="true" damping="0.2" armature=".01"/>
         	<site material="MatTouch" type="ellipsoid" group="3"/>
             <position kp="10" ctrllimited="true" forcelimited="true" forcerange="-20 20"/>

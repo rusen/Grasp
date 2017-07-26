@@ -58,7 +58,6 @@ glm::vec3 getPt( glm::vec3 n1 , glm::vec3 n2 , float perc )
 }
 
 void GraspPlanner::ComputeTrajectory(){
-
 	// First, we need to interpolate positions.
 	// For now, we do not use any kinematics, so we will work with Bezier curves for a realistic path.
 	// Middle points in the bezier curve are assigned randomly.
@@ -139,7 +138,16 @@ bool GraspPlanner::FollowTrajectory(const mjModel* m, mjData* d, approachType ty
 
 }
 
+// Main function that plans a grasp from initial position to the final trajectory.
+// It's a state driven function since it is called in every simulation step.
 void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, HandControllerInterface* handController){
+
+	// Print positions of the bodies.
+	for (int j=0;j<3;j++){
+		std::cout<<d->xpos[(m->nbody-1) * 3 + j]<<" ";
+	}
+	std::cout<<std::endl;
+
 	bool success = false;
 	switch (graspState)
 	{

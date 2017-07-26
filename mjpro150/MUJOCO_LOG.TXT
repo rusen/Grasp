@@ -63,3 +63,7 @@ ERROR: Load model error: XML parse error at line 29, column 30:
 Error reading Attributes.
 
 
+Sat Jul 22 22:25:19 2017
+ERROR: Load model error: Error: number of faces should be between 1 and 200000 in STL file './model/MPL/mesh/coffee_mug.stl'; perhaps this is an ASCII file?
+Object name = mug, id = 24, line = 40, column = 9
+
