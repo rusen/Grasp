@@ -55,7 +55,6 @@
 #include <Eigen/Dense>
 #include <Eigen/Core>
 
-#define CGAL_CFG_NO_CPP0X_VARIADIC_TEMPLATES 1
 #include <CGAL/AABB_tree.h>
 #include <CGAL/AABB_traits.h>
 #include <CGAL/AABB_triangle_primitive.h>
@@ -178,6 +177,8 @@ namespace render_kinect
       for (unsigned t = 0; t < numFaces_; ++t)
 	search->part_ids[t] = id;
     }
+
+  EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 
   private:
     const struct aiScene* scene_;

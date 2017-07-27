@@ -10,6 +10,8 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "string.h"
+#include <simulate.h>
+#include <camera.h>
 #include <iostream>
 #include "MPLHandController.h"
 #include "GraspPlanner.h"
@@ -34,17 +36,17 @@ bool button_right =  false;
 double lastx = 0;
 double lasty = 0;
 
-// Grasp params
-int graspState = 1;
-double hvel = 0;
-double vvel = 0;
-mjtNum forwardLimit = -0.058;
-int ctr = 0;
-//mjtNum downLimit = 0.11214;
-Grasp::GraspPlanner planner;
+// Camera Parameters for Carmine 1.09
+render_kinect::CameraInfo cam_info;
 
-glm::quat qa, qb, qres;
-float moveCtr = 0;
+// Get the path to the dot pattern
+std::string dotPath = "./resources/kinect-pattern_3x3.png";
+
+// allocate simulator
+render_kinect::Simulate* Simulator = NULL;
+
+// Grasp planner.
+Grasp::GraspPlanner planner;
 
 // Hand controller
 Grasp::HandControllerInterface * handController = new Grasp::MPLHandController();
@@ -59,7 +61,6 @@ void keyboard(GLFWwindow* window, int key, int scancode, int act, int mods)
     // backspace: reset simulation
     if( act==GLFW_PRESS && key==GLFW_KEY_BACKSPACE )
     {
-    	graspState = 1;
         mj_resetData(m, d);
         mj_forward(m, d);
     }
@@ -168,9 +169,9 @@ void render(GLFWwindow* window)
 int main(int argc, const char** argv)
 {
     // check command-line arguments
-    if( argc!=2 )
+    if( argc!=3 )
     {
-        printf(" USAGE:  basic modelfile\n");
+        printf(" USAGE:  basic mujocoModel.xml model.obj \n");
         return 0;
     }
 
@@ -191,6 +192,25 @@ int main(int argc, const char** argv)
 
     // make data
     d = mj_makeData(m);
+
+    // Get the path to the object mesh model.
+    std::string objectModelsDir = "./model/objects/";
+    std::stringstream fullPath;
+    fullPath << objectModelsDir << argv[2];
+
+    // Create the simulator.
+    Simulator = new render_kinect::Simulate(cam_info, fullPath.str(), dotPath);
+
+    std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
+    // TODO: Change with actual transformation.
+    Eigen::Affine3d transform(Eigen::Affine3d::Identity());
+
+    // Get image from kinect camera.
+    Simulator->simulateMeasurement(transform, true, true, true);
+
+    std::chrono::steady_clock::time_point end= std::chrono::steady_clock::now();
+
+    std::cout << "Time difference = " << std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count() <<std::endl;
 
     // init GLFW
     if( !glfwInit() )
@@ -251,6 +271,7 @@ int main(int argc, const char** argv)
     mj_deleteData(d);
     mj_deleteModel(m);
     mj_deactivate();
+    delete Simulator;
 
     return 1;
 }

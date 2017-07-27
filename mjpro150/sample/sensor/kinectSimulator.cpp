@@ -211,6 +211,8 @@ namespace render_kinect {
       for(int r=0; r<camera_.getHeight(); ++r) {
 	// compute ray from pixel and camera configuration
 	cv::Point3f ray = camera_.projectPixelTo3dRay(cv::Point2f(c,r));
+
+	/*
 	// check if there is any intersection of the ray with an object by do_intersect
 	uint32_t reach_mesh = search_->tree.do_intersect(Ray(Point(0,0,0), Vector(ray.x, ray.y, ray.z)));
 	if (reach_mesh){
@@ -296,6 +298,8 @@ namespace render_kinect {
 	    } // if mesh reached from right camera
 	  } // if non-zero intersections
 	} // if mesh reached 
+
+	*/
       } // camera_.getHeight()
     } // camera_.getWidth()
 

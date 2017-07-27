@@ -48,7 +48,7 @@
 
 #include <string.h>
 
-#include <render_kinect/kinectSimulator.h>
+#include <kinectSimulator.h>
 
 static unsigned countf = 0;
 
@@ -148,6 +148,8 @@ namespace render_kinect {
     cv::Mat depth_im_, scaled_im_, point_cloud_, labels_;
     std::string out_path_;
     Eigen::Affine3d transform_; 
+
+    EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 
   };
 

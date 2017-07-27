@@ -111,6 +111,7 @@ int main(int argc, char **argv)
 
   // Number of samples
   int frames = 10;
+
   // Flags for what output data should be generated
   bool store_depth = 1;
   bool store_label = 1;
