@@ -40,7 +40,7 @@ double lasty = 0;
 render_kinect::CameraInfo cam_info;
 
 // Get the path to the dot pattern
-std::string dotPath = "./resources/kinect-pattern_3x3.png";
+std::string dotPath = "./kinect-pattern_3x3.png";
 
 // allocate simulator
 render_kinect::Simulate* Simulator = NULL;
@@ -197,13 +197,8 @@ int main(int argc, const char** argv)
     // make data
     d = mj_makeData(m);
 
-    // Get the path to the object mesh model.
-    std::string objectModelsDir = "./model/objects/";
-    std::stringstream fullPath;
-    fullPath << objectModelsDir << argv[2];
-
     // Create the simulator.
-    Simulator = new render_kinect::Simulate(cam_info, fullPath.str(), dotPath);
+    Simulator = new render_kinect::Simulate(cam_info, argv[2], dotPath);
 
     // TODO: Change with actual transformation.
     Eigen::Affine3d transform(Eigen::Affine3d::Identity());
