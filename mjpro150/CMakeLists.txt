@@ -19,7 +19,14 @@ set(OpenCV_DIR "/home/xxa344/Desktop/opencv-3.2.0/release")
 set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
-add_subdirectory(/home/xxa344/git/Grasp/render_kinect/lib/unix)
+
+if (UNIX)
+	add_subdirectory(./lib/unix)
+endif (UNIX)
+
+if (MSVC)
+	add_subdirectory(./lib/macos)
+endif (MSVC)
 
 #set the default path for built executables to the "bin" directory
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
