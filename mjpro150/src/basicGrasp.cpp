@@ -175,8 +175,12 @@ int main(int argc, const char** argv)
         return 0;
     }
 
+	#ifdef __unix__
     // activate software
-    mj_activate("mjkey.txt");
+    mj_activate("mjkey_unix.txt");
+	#elif __APPLE__
+    mj_activate("mjkey_macos.txt");
+	#endif
 
     // install control callback
     mjcb_control = graspObject;
