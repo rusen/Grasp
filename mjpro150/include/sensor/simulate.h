@@ -48,7 +48,7 @@
 
 #include <string.h>
 
-#include <kinectSimulator.h>
+#include <sensor/kinectSimulator.h>
 
 static unsigned countf = 0;
 

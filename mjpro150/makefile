@@ -1,5 +1,0 @@
-COMMON=-o -O0 -g3 -L./bin -I/usr/local/include -I/usr/local/Cellar/boost/1.64.0_1/include -I/usr/local/include/opencv -I./include/controller -I./include -I./include/controller -I./include/sensor -I./include/planner -std=c++11 -lstdc++ -mavx
-LD_FLAGS=-lCGAL -lnoise -L/usr/local/Cellar/cgal/4.9.1/lib -L/usr/local/Cellar/opencv/2.4.13.2/lib -L/usr/local/Cellar/assimp/4.0.0/lib -lopencv_calib3d -lopencv_contrib -lopencv_core -lopencv_features2d -lopencv_flann -lopencv_gpu -lopencv_highgui -lopencv_imgproc -lopencv_legacy -lopencv_ml -lopencv_nonfree -lopencv_objdetect -lopencv_ocl -lopencv_photo -lopencv_stitching -lopencv_superres -lopencv_ts -lopencv_video -lopencv_videostab -lassimp
-
-all:
-	g++ $(COMMON) $(LD_FLAGS) ./sample/basicGrasp.cpp ./sample/*/*.cpp -lmujoco150 -lglfw.3 -o ./bin/basicGrasp

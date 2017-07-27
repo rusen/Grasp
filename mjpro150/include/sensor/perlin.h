@@ -8,7 +8,7 @@
 #include <sensor/noiseutils.h>
 
 #include <time.h>
-#include <noise/noise.h>
+#include <libnoise/noise.h>
 using namespace noise;
 
 namespace render_kinect

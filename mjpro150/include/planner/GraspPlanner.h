@@ -9,8 +9,8 @@
 #define INCLUDE_CONTROLLER_GRASPPLANNER_H_
 
 #include "mujoco.h"
-#include "HandControllerInterface.h"
-#include "MPLHandController.h"
+#include <controller/HandControllerInterface.h>
+#include <controller/MPLHandController.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/quaternion.hpp>
 #include <glm/gtx/quaternion.hpp>

@@ -1,0 +1,2 @@
+/usr/bin/ar qc lib/libProject.a  CMakeFiles/Project.dir/src/sensor/kinectSimulator.o CMakeFiles/Project.dir/src/sensor/noiseutils.o
+/usr/bin/ranlib lib/libProject.a
