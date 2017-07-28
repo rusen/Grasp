@@ -7,12 +7,11 @@ message("Starteda")
 
 # Add compile options here.
 if (APPLE)
-	add_compile_options(-O0 -g3 -I/.include)
+	add_compile_options(-O0 -g3 -I${PROJECT_SOURCE_DIR}/include)
 elseif (UNIX)
-	add_compile_options(-O0 -g3 -I/.include -mavx)
+	add_compile_options(-O0 -g3 -I${PROJECT_SOURCE_DIR}/include -mavx)
+	set(OpenCV_DIR "${PROJECT_SOURCE_DIR}/lib/unix/opencv-3.2.0/release")
 endif ()
-
-#set(OpenCV_DIR "/home/xxa344/Desktop/opencv-3.2.0/release")
 
 set(CMAKE_BUILD_TYPE Release)
 set (CMAKE_CXX_STANDARD 11)
@@ -22,9 +21,9 @@ set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 
 if (APPLE)
-	add_subdirectory(./lib/macos)
+	add_subdirectory(${PROJECT_SOURCE_DIR}/lib/macos)
 elseif (UNIX)
-	add_subdirectory(./lib/unix)
+	add_subdirectory(${PROJECT_SOURCE_DIR}/lib/unix)
 endif ()
 
 #set the default path for built executables to the "bin" directory
@@ -74,9 +73,9 @@ set(LIBS ${LIBS} ${OpenCV_LIBS})
 add_library(${PROJECT_NAME} src/sensor/kinectSimulator.cpp src/sensor/noiseutils.cpp)
 
 if (APPLE)
-	target_link_libraries(${PROJECT_NAME} -lmujoco150 -L./lib/macos -lglfw.3 assimp CGAL noise ${OpenCV_LIBS} ${LIBS} ${OPENGL_gl_LIBRARY})
+	target_link_libraries(${PROJECT_NAME} -lmujoco150 -L${PROJECT_SOURCE_DIR}/lib/macos -lglfw.3 assimp CGAL noise ${OpenCV_LIBS} ${LIBS} ${OPENGL_gl_LIBRARY})
 elseif (UNIX)
-    target_link_libraries(${PROJECT_NAME} -lmujoco150 -L./lib/unix -lGL -lglew -lglfw assimp CGAL noise ${OpenCV_LIBS} ${LIBS} ${OPENGL_gl_LIBRARY})
+    target_link_libraries(${PROJECT_NAME} -lmujoco150 -L${PROJECT_SOURCE_DIR}/lib/unix -lGL -lglew -lglfw assimp CGAL noise ${OpenCV_LIBS} ${LIBS} ${OPENGL_gl_LIBRARY})
 endif ()
 
 file(GLOB_RECURSE CTRL_SOURCES "src/controller/*.cpp")

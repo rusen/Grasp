@@ -128,8 +128,18 @@ void graspObject(const mjModel* m, mjData* d){
 
 // render
 
-void render(GLFWwindow* window)
+void render(GLFWwindow* window, const mjModel* m, mjData* d)
 {
+	/*
+    // Change the kinect with the actual hand's view.
+    Eigen::Affine3d transform(Eigen::Affine3d::Identity());
+    transform.translate(Eigen::Vector3d(d->mocap_pos[0], d->mocap_pos[1], d->mocap_pos[2]));
+    transform.rotate(Eigen::Quaterniond(d->mocap_quat[0],d->mocap_quat[1],d->mocap_quat[2],d->mocap_quat[3]));
+
+    // Get image from kinect camera.
+    Simulator->simulateMeasurement(transform, true, true, true);
+    */
+
     // past data for FPS calculation
     static double lastrendertm = 0;
 
@@ -161,7 +171,6 @@ void render(GLFWwindow* window)
 		smallrect.height/4
 	};
 	mjr_drawPixels(depth_rgb, NULL, bottomright, &con);
-
 }
 
 
@@ -200,8 +209,9 @@ int main(int argc, const char** argv)
     // Create the simulator.
     Simulator = new render_kinect::Simulate(cam_info, argv[2], dotPath);
 
-    // TODO: Change with actual transformation.
     Eigen::Affine3d transform(Eigen::Affine3d::Identity());
+    transform.translate(Eigen::Vector3d(0.089837, -0.137769, 0.949210));
+    transform.rotate(Eigen::Quaterniond(0.906614,-0.282680,-0.074009,-0.304411));
 
     // Get image from kinect camera.
     Simulator->simulateMeasurement(transform, true, true, true);
@@ -247,7 +257,7 @@ int main(int argc, const char** argv)
         // update scene and render
         mjv_updateScene(m, d, &opt, NULL, &cam, mjCAT_ALL, &scn);
         mjr_render(viewport, &scn, &con);
-    	render(window);
+    	render(window, m, d);
 
         // swap OpenGL buffers (blocking call due to v-sync)
         glfwSwapBuffers(window);

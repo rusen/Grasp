@@ -1,0 +1,17 @@
+# Target labels
+ Main
+ opencv_imgcodecs
+ AccuracyTest
+# Source files and their labels
+/home/xxa344/Desktop/opencv-3.2.0/modules/imgcodecs/test/test_grfmt.cpp
+ Main
+ opencv_imgcodecs
+ AccuracyTest
+/home/xxa344/Desktop/opencv-3.2.0/modules/imgcodecs/test/test_main.cpp
+ Main
+ opencv_imgcodecs
+ AccuracyTest
+/home/xxa344/Desktop/opencv-3.2.0/modules/imgcodecs/test/test_precomp.hpp
+ Main
+ opencv_imgcodecs
+ AccuracyTest

@@ -1,0 +1,1072 @@
+ok: class CLASS ::.Photo : , name: Photo, base: 
+
+
+===== Header: /home/xxa344/Desktop/opencv-3.2.0/modules/photo/include/opencv2/photo/photo_c.h =====
+Namespaces: set([''])
+
+--- Incoming ---
+[u'const CV_INPAINT_NS', u'0', [], []]
+ok: CONST CV_INPAINT_NS=0
+
+--- Incoming ---
+[u'const CV_INPAINT_TELEA', u'1', [], []]
+ok: CONST CV_INPAINT_TELEA=1
+
+
+===== Header: /home/xxa344/Desktop/opencv-3.2.0/modules/photo/include/opencv2/photo.hpp =====
+Namespaces: set(['', u'cv'])
+
+--- Incoming ---
+[u'const cv.INPAINT_NS', u'0', [], []]
+ok: CONST INPAINT_NS=0
+
+--- Incoming ---
+[u'const cv.INPAINT_TELEA', u'1', [], []]
+ok: CONST INPAINT_TELEA=1
+
+--- Incoming ---
+[u'const cv.NORMAL_CLONE', u'1', [], []]
+ok: CONST NORMAL_CLONE=1
+
+--- Incoming ---
+[u'const cv.MIXED_CLONE', u'2', [], []]
+ok: CONST MIXED_CLONE=2
+
+--- Incoming ---
+[u'const cv.MONOCHROME_TRANSFER', u'3', [], []]
+ok: CONST MONOCHROME_TRANSFER=3
+
+--- Incoming ---
+[u'const cv.RECURS_FILTER', u'1', [], []]
+ok: CONST RECURS_FILTER=1
+
+--- Incoming ---
+[u'const cv.NORMCONV_FILTER', u'2', [], []]
+ok: CONST NORMCONV_FILTER=2
+
+--- Incoming ---
+[   u'cv.inpaint',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'inpaintMask', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'double', u'inpaintRadius', u'', []],
+        [u'int', u'flags', u'', []]],
+    u'void']
+ok: FUNC <void cv..inpaint [ARG Mat src=, ARG Mat inpaintMask=, ARG Mat dst=, ARG double inpaintRadius=, ARG int flags=]>
+
+--- Incoming ---
+[   u'cv.fastNlMeansDenoising',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'float', u'h', u'3', []],
+        [u'int', u'templateWindowSize', u'7', []],
+        [u'int', u'searchWindowSize', u'21', []]],
+    u'void']
+ok: FUNC <void cv..fastNlMeansDenoising [ARG Mat src=, ARG Mat dst=, ARG float h=3, ARG int templateWindowSize=7, ARG int searchWindowSize=21]>
+
+--- Incoming ---
+[   u'cv.fastNlMeansDenoising',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'vector_float', u'h', u'', []],
+        [u'int', u'templateWindowSize', u'7', []],
+        [u'int', u'searchWindowSize', u'21', []],
+        [u'int', u'normType', u'NORM_L2', []]],
+    u'void']
+ok: FUNC <void cv..fastNlMeansDenoising [ARG Mat src=, ARG Mat dst=, ARG vector_float h=, ARG int templateWindowSize=7, ARG int searchWindowSize=21, ARG int normType=NORM_L2]>
+
+--- Incoming ---
+[   u'cv.fastNlMeansDenoisingColored',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'float', u'h', u'3', []],
+        [u'float', u'hColor', u'3', []],
+        [u'int', u'templateWindowSize', u'7', []],
+        [u'int', u'searchWindowSize', u'21', []]],
+    u'void']
+ok: FUNC <void cv..fastNlMeansDenoisingColored [ARG Mat src=, ARG Mat dst=, ARG float h=3, ARG float hColor=3, ARG int templateWindowSize=7, ARG int searchWindowSize=21]>
+
+--- Incoming ---
+[   u'cv.fastNlMeansDenoisingMulti',
+    u'void',
+    [],
+    [   ['vector_Mat', u'srcImgs', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'int', u'imgToDenoiseIndex', u'', []],
+        [u'int', u'temporalWindowSize', u'', []],
+        [u'float', u'h', u'3', []],
+        [u'int', u'templateWindowSize', u'7', []],
+        [u'int', u'searchWindowSize', u'21', []]],
+    u'void']
+ok: FUNC <void cv..fastNlMeansDenoisingMulti [ARG vector_Mat srcImgs=, ARG Mat dst=, ARG int imgToDenoiseIndex=, ARG int temporalWindowSize=, ARG float h=3, ARG int templateWindowSize=7, ARG int searchWindowSize=21]>
+
+--- Incoming ---
+[   u'cv.fastNlMeansDenoisingMulti',
+    u'void',
+    [],
+    [   ['vector_Mat', u'srcImgs', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'int', u'imgToDenoiseIndex', u'', []],
+        [u'int', u'temporalWindowSize', u'', []],
+        [u'vector_float', u'h', u'', []],
+        [u'int', u'templateWindowSize', u'7', []],
+        [u'int', u'searchWindowSize', u'21', []],
+        [u'int', u'normType', u'NORM_L2', []]],
+    u'void']
+ok: FUNC <void cv..fastNlMeansDenoisingMulti [ARG vector_Mat srcImgs=, ARG Mat dst=, ARG int imgToDenoiseIndex=, ARG int temporalWindowSize=, ARG vector_float h=, ARG int templateWindowSize=7, ARG int searchWindowSize=21, ARG int normType=NORM_L2]>
+
+--- Incoming ---
+[   u'cv.fastNlMeansDenoisingColoredMulti',
+    u'void',
+    [],
+    [   ['vector_Mat', u'srcImgs', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'int', u'imgToDenoiseIndex', u'', []],
+        [u'int', u'temporalWindowSize', u'', []],
+        [u'float', u'h', u'3', []],
+        [u'float', u'hColor', u'3', []],
+        [u'int', u'templateWindowSize', u'7', []],
+        [u'int', u'searchWindowSize', u'21', []]],
+    u'void']
+ok: FUNC <void cv..fastNlMeansDenoisingColoredMulti [ARG vector_Mat srcImgs=, ARG Mat dst=, ARG int imgToDenoiseIndex=, ARG int temporalWindowSize=, ARG float h=3, ARG float hColor=3, ARG int templateWindowSize=7, ARG int searchWindowSize=21]>
+
+--- Incoming ---
+[   u'cv.denoise_TVL1',
+    u'void',
+    [],
+    [   [u'vector_Mat', u'observations', u'', []],
+        [u'Mat', u'result', u'', []],
+        [u'double', u'lambda', u'1.0', []],
+        [u'int', u'niters', u'30', []]],
+    u'void']
+ok: FUNC <void cv..denoise_TVL1 [ARG vector_Mat observations=, ARG Mat result=, ARG double lambda=1.0, ARG int niters=30]>
+
+--- Incoming ---
+[u'const cv.LDR_SIZE', u'256', [], []]
+ok: CONST LDR_SIZE=256
+
+--- Incoming ---
+[u'class cv.Tonemap', ': cv::Algorithm', [], []]
+ok: class CLASS cv::.Tonemap : Algorithm, name: Tonemap, base: Algorithm
+
+--- Incoming ---
+[   u'cv.Tonemap.process',
+    u'void',
+    [],
+    [['Mat', u'src', '', []], ['Mat', u'dst', '', ['/O']]],
+    u'void']
+ok: FUNC <void cv.Tonemap.process [ARG Mat src=, ARG Mat dst=]>
+
+--- Incoming ---
+[u'cv.Tonemap.getGamma', u'float', [], [], u'float']
+ok: FUNC <float cv.Tonemap.getGamma []>
+
+--- Incoming ---
+[u'cv.Tonemap.setGamma', u'void', [], [[u'float', u'gamma', u'', []]], u'void']
+ok: FUNC <void cv.Tonemap.setGamma [ARG float gamma=]>
+
+--- Incoming ---
+[   u'cv.createTonemap',
+    u'Ptr_Tonemap',
+    [],
+    [[u'float', u'gamma', u'1.0f', []]],
+    u'Ptr<Tonemap>']
+ok: FUNC <Ptr_Tonemap cv..createTonemap [ARG float gamma=1.0f]>
+
+--- Incoming ---
+[u'class cv.TonemapDrago', u': cv::Tonemap', [], []]
+ok: class CLASS cv::.TonemapDrago : Tonemap, name: TonemapDrago, base: Tonemap
+
+--- Incoming ---
+[u'cv.TonemapDrago.getSaturation', u'float', [], [], u'float']
+ok: FUNC <float cv.TonemapDrago.getSaturation []>
+
+--- Incoming ---
+[   u'cv.TonemapDrago.setSaturation',
+    u'void',
+    [],
+    [[u'float', u'saturation', u'', []]],
+    u'void']
+ok: FUNC <void cv.TonemapDrago.setSaturation [ARG float saturation=]>
+
+--- Incoming ---
+[u'cv.TonemapDrago.getBias', u'float', [], [], u'float']
+ok: FUNC <float cv.TonemapDrago.getBias []>
+
+--- Incoming ---
+[   u'cv.TonemapDrago.setBias',
+    u'void',
+    [],
+    [[u'float', u'bias', u'', []]],
+    u'void']
+ok: FUNC <void cv.TonemapDrago.setBias [ARG float bias=]>
+
+--- Incoming ---
+[   u'cv.createTonemapDrago',
+    u'Ptr_TonemapDrago',
+    [],
+    [   [u'float', u'gamma', u'1.0f', []],
+        [u'float', u'saturation', u'1.0f', []],
+        [u'float', u'bias', u'0.85f', []]],
+    u'Ptr<TonemapDrago>']
+ok: FUNC <Ptr_TonemapDrago cv..createTonemapDrago [ARG float gamma=1.0f, ARG float saturation=1.0f, ARG float bias=0.85f]>
+
+--- Incoming ---
+[u'class cv.TonemapDurand', u': cv::Tonemap', [], []]
+ok: class CLASS cv::.TonemapDurand : Tonemap, name: TonemapDurand, base: Tonemap
+
+--- Incoming ---
+[u'cv.TonemapDurand.getSaturation', u'float', [], [], u'float']
+ok: FUNC <float cv.TonemapDurand.getSaturation []>
+
+--- Incoming ---
+[   u'cv.TonemapDurand.setSaturation',
+    u'void',
+    [],
+    [[u'float', u'saturation', u'', []]],
+    u'void']
+ok: FUNC <void cv.TonemapDurand.setSaturation [ARG float saturation=]>
+
+--- Incoming ---
+[u'cv.TonemapDurand.getContrast', u'float', [], [], u'float']
+ok: FUNC <float cv.TonemapDurand.getContrast []>
+
+--- Incoming ---
+[   u'cv.TonemapDurand.setContrast',
+    u'void',
+    [],
+    [[u'float', u'contrast', u'', []]],
+    u'void']
+ok: FUNC <void cv.TonemapDurand.setContrast [ARG float contrast=]>
+
+--- Incoming ---
+[u'cv.TonemapDurand.getSigmaSpace', u'float', [], [], u'float']
+ok: FUNC <float cv.TonemapDurand.getSigmaSpace []>
+
+--- Incoming ---
+[   u'cv.TonemapDurand.setSigmaSpace',
+    u'void',
+    [],
+    [[u'float', u'sigma_space', u'', []]],
+    u'void']
+ok: FUNC <void cv.TonemapDurand.setSigmaSpace [ARG float sigma_space=]>
+
+--- Incoming ---
+[u'cv.TonemapDurand.getSigmaColor', u'float', [], [], u'float']
+ok: FUNC <float cv.TonemapDurand.getSigmaColor []>
+
+--- Incoming ---
+[   u'cv.TonemapDurand.setSigmaColor',
+    u'void',
+    [],
+    [[u'float', u'sigma_color', u'', []]],
+    u'void']
+ok: FUNC <void cv.TonemapDurand.setSigmaColor [ARG float sigma_color=]>
+
+--- Incoming ---
+[   u'cv.createTonemapDurand',
+    u'Ptr_TonemapDurand',
+    [],
+    [   [u'float', u'gamma', u'1.0f', []],
+        [u'float', u'contrast', u'4.0f', []],
+        [u'float', u'saturation', u'1.0f', []],
+        [u'float', u'sigma_space', u'2.0f', []],
+        [u'float', u'sigma_color', u'2.0f', []]],
+    u'Ptr<TonemapDurand>']
+ok: FUNC <Ptr_TonemapDurand cv..createTonemapDurand [ARG float gamma=1.0f, ARG float contrast=4.0f, ARG float saturation=1.0f, ARG float sigma_space=2.0f, ARG float sigma_color=2.0f]>
+
+--- Incoming ---
+[u'class cv.TonemapReinhard', u': cv::Tonemap', [], []]
+ok: class CLASS cv::.TonemapReinhard : Tonemap, name: TonemapReinhard, base: Tonemap
+
+--- Incoming ---
+[u'cv.TonemapReinhard.getIntensity', u'float', [], [], u'float']
+ok: FUNC <float cv.TonemapReinhard.getIntensity []>
+
+--- Incoming ---
+[   u'cv.TonemapReinhard.setIntensity',
+    u'void',
+    [],
+    [[u'float', u'intensity', u'', []]],
+    u'void']
+ok: FUNC <void cv.TonemapReinhard.setIntensity [ARG float intensity=]>
+
+--- Incoming ---
+[u'cv.TonemapReinhard.getLightAdaptation', u'float', [], [], u'float']
+ok: FUNC <float cv.TonemapReinhard.getLightAdaptation []>
+
+--- Incoming ---
+[   u'cv.TonemapReinhard.setLightAdaptation',
+    u'void',
+    [],
+    [[u'float', u'light_adapt', u'', []]],
+    u'void']
+ok: FUNC <void cv.TonemapReinhard.setLightAdaptation [ARG float light_adapt=]>
+
+--- Incoming ---
+[u'cv.TonemapReinhard.getColorAdaptation', u'float', [], [], u'float']
+ok: FUNC <float cv.TonemapReinhard.getColorAdaptation []>
+
+--- Incoming ---
+[   u'cv.TonemapReinhard.setColorAdaptation',
+    u'void',
+    [],
+    [[u'float', u'color_adapt', u'', []]],
+    u'void']
+ok: FUNC <void cv.TonemapReinhard.setColorAdaptation [ARG float color_adapt=]>
+
+--- Incoming ---
+[   u'cv.createTonemapReinhard',
+    u'Ptr_TonemapReinhard',
+    [],
+    [   [u'float', u'gamma', u'1.0f', []],
+        [u'float', u'intensity', u'0.0f', []],
+        [u'float', u'light_adapt', u'1.0f', []],
+        [u'float', u'color_adapt', u'0.0f', []]],
+    u'Ptr<TonemapReinhard>']
+ok: FUNC <Ptr_TonemapReinhard cv..createTonemapReinhard [ARG float gamma=1.0f, ARG float intensity=0.0f, ARG float light_adapt=1.0f, ARG float color_adapt=0.0f]>
+
+--- Incoming ---
+[u'class cv.TonemapMantiuk', u': cv::Tonemap', [], []]
+ok: class CLASS cv::.TonemapMantiuk : Tonemap, name: TonemapMantiuk, base: Tonemap
+
+--- Incoming ---
+[u'cv.TonemapMantiuk.getScale', u'float', [], [], u'float']
+ok: FUNC <float cv.TonemapMantiuk.getScale []>
+
+--- Incoming ---
+[   u'cv.TonemapMantiuk.setScale',
+    u'void',
+    [],
+    [[u'float', u'scale', u'', []]],
+    u'void']
+ok: FUNC <void cv.TonemapMantiuk.setScale [ARG float scale=]>
+
+--- Incoming ---
+[u'cv.TonemapMantiuk.getSaturation', u'float', [], [], u'float']
+ok: FUNC <float cv.TonemapMantiuk.getSaturation []>
+
+--- Incoming ---
+[   u'cv.TonemapMantiuk.setSaturation',
+    u'void',
+    [],
+    [[u'float', u'saturation', u'', []]],
+    u'void']
+ok: FUNC <void cv.TonemapMantiuk.setSaturation [ARG float saturation=]>
+
+--- Incoming ---
+[   u'cv.createTonemapMantiuk',
+    u'Ptr_TonemapMantiuk',
+    [],
+    [   [u'float', u'gamma', u'1.0f', []],
+        [u'float', u'scale', u'0.7f', []],
+        [u'float', u'saturation', u'1.0f', []]],
+    u'Ptr<TonemapMantiuk>']
+ok: FUNC <Ptr_TonemapMantiuk cv..createTonemapMantiuk [ARG float gamma=1.0f, ARG float scale=0.7f, ARG float saturation=1.0f]>
+
+--- Incoming ---
+[u'class cv.AlignExposures', ': cv::Algorithm', [], []]
+ok: class CLASS cv::.AlignExposures : Algorithm, name: AlignExposures, base: Algorithm
+
+--- Incoming ---
+[   u'cv.AlignExposures.process',
+    u'void',
+    [],
+    [   ['vector_Mat', u'src', '', []],
+        [u'vector_Mat', u'dst', u'', []],
+        ['Mat', u'times', '', []],
+        ['Mat', u'response', '', []]],
+    u'void']
+ok: FUNC <void cv.AlignExposures.process [ARG vector_Mat src=, ARG vector_Mat dst=, ARG Mat times=, ARG Mat response=]>
+
+--- Incoming ---
+[u'class cv.AlignMTB', u': cv::AlignExposures', [], []]
+ok: class CLASS cv::.AlignMTB : AlignExposures, name: AlignMTB, base: AlignExposures
+
+--- Incoming ---
+[   u'cv.AlignMTB.process',
+    u'void',
+    [],
+    [   ['vector_Mat', u'src', '', []],
+        [u'vector_Mat', u'dst', u'', []],
+        ['Mat', u'times', '', []],
+        ['Mat', u'response', '', []]],
+    u'void']
+ok: FUNC <void cv.AlignMTB.process [ARG vector_Mat src=, ARG vector_Mat dst=, ARG Mat times=, ARG Mat response=]>
+
+--- Incoming ---
+[   u'cv.AlignMTB.process',
+    u'void',
+    [],
+    [['vector_Mat', u'src', '', []], [u'vector_Mat', u'dst', u'', []]],
+    u'void']
+ok: FUNC <void cv.AlignMTB.process [ARG vector_Mat src=, ARG vector_Mat dst=]>
+
+--- Incoming ---
+[   u'cv.AlignMTB.calculateShift',
+    u'Point',
+    [],
+    [['Mat', u'img0', '', []], ['Mat', u'img1', '', []]],
+    u'Point']
+ok: FUNC <Point cv.AlignMTB.calculateShift [ARG Mat img0=, ARG Mat img1=]>
+
+--- Incoming ---
+[   u'cv.AlignMTB.shiftMat',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'Point', u'shift', u'', []]],
+    u'void']
+ok: FUNC <void cv.AlignMTB.shiftMat [ARG Mat src=, ARG Mat dst=, ARG Point shift=]>
+
+--- Incoming ---
+[   u'cv.AlignMTB.computeBitmaps',
+    u'void',
+    [],
+    [   ['Mat', u'img', '', []],
+        ['Mat', u'tb', '', ['/O']],
+        ['Mat', u'eb', '', ['/O']]],
+    u'void']
+ok: FUNC <void cv.AlignMTB.computeBitmaps [ARG Mat img=, ARG Mat tb=, ARG Mat eb=]>
+
+--- Incoming ---
+[u'cv.AlignMTB.getMaxBits', u'int', [], [], u'int']
+ok: FUNC <int cv.AlignMTB.getMaxBits []>
+
+--- Incoming ---
+[   u'cv.AlignMTB.setMaxBits',
+    u'void',
+    [],
+    [[u'int', u'max_bits', u'', []]],
+    u'void']
+ok: FUNC <void cv.AlignMTB.setMaxBits [ARG int max_bits=]>
+
+--- Incoming ---
+[u'cv.AlignMTB.getExcludeRange', u'int', [], [], u'int']
+ok: FUNC <int cv.AlignMTB.getExcludeRange []>
+
+--- Incoming ---
+[   u'cv.AlignMTB.setExcludeRange',
+    u'void',
+    [],
+    [[u'int', u'exclude_range', u'', []]],
+    u'void']
+ok: FUNC <void cv.AlignMTB.setExcludeRange [ARG int exclude_range=]>
+
+--- Incoming ---
+[u'cv.AlignMTB.getCut', u'bool', [], [], u'bool']
+ok: FUNC <bool cv.AlignMTB.getCut []>
+
+--- Incoming ---
+[u'cv.AlignMTB.setCut', u'void', [], [[u'bool', u'value', u'', []]], u'void']
+ok: FUNC <void cv.AlignMTB.setCut [ARG bool value=]>
+
+--- Incoming ---
+[   u'cv.createAlignMTB',
+    u'Ptr_AlignMTB',
+    [],
+    [   [u'int', u'max_bits', u'6', []],
+        [u'int', u'exclude_range', u'4', []],
+        [u'bool', u'cut', u'true', []]],
+    u'Ptr<AlignMTB>']
+ok: FUNC <Ptr_AlignMTB cv..createAlignMTB [ARG int max_bits=6, ARG int exclude_range=4, ARG bool cut=true]>
+
+--- Incoming ---
+[u'class cv.CalibrateCRF', ': cv::Algorithm', [], []]
+ok: class CLASS cv::.CalibrateCRF : Algorithm, name: CalibrateCRF, base: Algorithm
+
+--- Incoming ---
+[   u'cv.CalibrateCRF.process',
+    u'void',
+    [],
+    [   ['vector_Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        ['Mat', u'times', '', []]],
+    u'void']
+ok: FUNC <void cv.CalibrateCRF.process [ARG vector_Mat src=, ARG Mat dst=, ARG Mat times=]>
+
+--- Incoming ---
+[u'class cv.CalibrateDebevec', u': cv::CalibrateCRF', [], []]
+ok: class CLASS cv::.CalibrateDebevec : CalibrateCRF, name: CalibrateDebevec, base: CalibrateCRF
+
+--- Incoming ---
+[u'cv.CalibrateDebevec.getLambda', u'float', [], [], u'float']
+ok: FUNC <float cv.CalibrateDebevec.getLambda []>
+
+--- Incoming ---
+[   u'cv.CalibrateDebevec.setLambda',
+    u'void',
+    [],
+    [[u'float', u'lambda', u'', []]],
+    u'void']
+ok: FUNC <void cv.CalibrateDebevec.setLambda [ARG float lambda=]>
+
+--- Incoming ---
+[u'cv.CalibrateDebevec.getSamples', u'int', [], [], u'int']
+ok: FUNC <int cv.CalibrateDebevec.getSamples []>
+
+--- Incoming ---
+[   u'cv.CalibrateDebevec.setSamples',
+    u'void',
+    [],
+    [[u'int', u'samples', u'', []]],
+    u'void']
+ok: FUNC <void cv.CalibrateDebevec.setSamples [ARG int samples=]>
+
+--- Incoming ---
+[u'cv.CalibrateDebevec.getRandom', u'bool', [], [], u'bool']
+ok: FUNC <bool cv.CalibrateDebevec.getRandom []>
+
+--- Incoming ---
+[   u'cv.CalibrateDebevec.setRandom',
+    u'void',
+    [],
+    [[u'bool', u'random', u'', []]],
+    u'void']
+ok: FUNC <void cv.CalibrateDebevec.setRandom [ARG bool random=]>
+
+--- Incoming ---
+[   u'cv.createCalibrateDebevec',
+    u'Ptr_CalibrateDebevec',
+    [],
+    [   [u'int', u'samples', u'70', []],
+        [u'float', u'lambda', u'10.0f', []],
+        [u'bool', u'random', u'false', []]],
+    u'Ptr<CalibrateDebevec>']
+ok: FUNC <Ptr_CalibrateDebevec cv..createCalibrateDebevec [ARG int samples=70, ARG float lambda=10.0f, ARG bool random=false]>
+
+--- Incoming ---
+[u'class cv.CalibrateRobertson', u': cv::CalibrateCRF', [], []]
+ok: class CLASS cv::.CalibrateRobertson : CalibrateCRF, name: CalibrateRobertson, base: CalibrateCRF
+
+--- Incoming ---
+[u'cv.CalibrateRobertson.getMaxIter', u'int', [], [], u'int']
+ok: FUNC <int cv.CalibrateRobertson.getMaxIter []>
+
+--- Incoming ---
+[   u'cv.CalibrateRobertson.setMaxIter',
+    u'void',
+    [],
+    [[u'int', u'max_iter', u'', []]],
+    u'void']
+ok: FUNC <void cv.CalibrateRobertson.setMaxIter [ARG int max_iter=]>
+
+--- Incoming ---
+[u'cv.CalibrateRobertson.getThreshold', u'float', [], [], u'float']
+ok: FUNC <float cv.CalibrateRobertson.getThreshold []>
+
+--- Incoming ---
+[   u'cv.CalibrateRobertson.setThreshold',
+    u'void',
+    [],
+    [[u'float', u'threshold', u'', []]],
+    u'void']
+ok: FUNC <void cv.CalibrateRobertson.setThreshold [ARG float threshold=]>
+
+--- Incoming ---
+[u'cv.CalibrateRobertson.getRadiance', u'Mat', [], [], u'Mat']
+ok: FUNC <Mat cv.CalibrateRobertson.getRadiance []>
+
+--- Incoming ---
+[   u'cv.createCalibrateRobertson',
+    u'Ptr_CalibrateRobertson',
+    [],
+    [[u'int', u'max_iter', u'30', []], [u'float', u'threshold', u'0.01f', []]],
+    u'Ptr<CalibrateRobertson>']
+ok: FUNC <Ptr_CalibrateRobertson cv..createCalibrateRobertson [ARG int max_iter=30, ARG float threshold=0.01f]>
+
+--- Incoming ---
+[u'class cv.MergeExposures', ': cv::Algorithm', [], []]
+ok: class CLASS cv::.MergeExposures : Algorithm, name: MergeExposures, base: Algorithm
+
+--- Incoming ---
+[   u'cv.MergeExposures.process',
+    u'void',
+    [],
+    [   ['vector_Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        ['Mat', u'times', '', []],
+        ['Mat', u'response', '', []]],
+    u'void']
+ok: FUNC <void cv.MergeExposures.process [ARG vector_Mat src=, ARG Mat dst=, ARG Mat times=, ARG Mat response=]>
+
+--- Incoming ---
+[u'class cv.MergeDebevec', u': cv::MergeExposures', [], []]
+ok: class CLASS cv::.MergeDebevec : MergeExposures, name: MergeDebevec, base: MergeExposures
+
+--- Incoming ---
+[   u'cv.MergeDebevec.process',
+    u'void',
+    [],
+    [   ['vector_Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        ['Mat', u'times', '', []],
+        ['Mat', u'response', '', []]],
+    u'void']
+ok: FUNC <void cv.MergeDebevec.process [ARG vector_Mat src=, ARG Mat dst=, ARG Mat times=, ARG Mat response=]>
+
+--- Incoming ---
+[   u'cv.MergeDebevec.process',
+    u'void',
+    [],
+    [   ['vector_Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        ['Mat', u'times', '', []]],
+    u'void']
+ok: FUNC <void cv.MergeDebevec.process [ARG vector_Mat src=, ARG Mat dst=, ARG Mat times=]>
+
+--- Incoming ---
+[u'cv.createMergeDebevec', u'Ptr_MergeDebevec', [], [], u'Ptr<MergeDebevec>']
+ok: FUNC <Ptr_MergeDebevec cv..createMergeDebevec []>
+
+--- Incoming ---
+[u'class cv.MergeMertens', u': cv::MergeExposures', [], []]
+ok: class CLASS cv::.MergeMertens : MergeExposures, name: MergeMertens, base: MergeExposures
+
+--- Incoming ---
+[   u'cv.MergeMertens.process',
+    u'void',
+    [],
+    [   ['vector_Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        ['Mat', u'times', '', []],
+        ['Mat', u'response', '', []]],
+    u'void']
+ok: FUNC <void cv.MergeMertens.process [ARG vector_Mat src=, ARG Mat dst=, ARG Mat times=, ARG Mat response=]>
+
+--- Incoming ---
+[   u'cv.MergeMertens.process',
+    u'void',
+    [],
+    [['vector_Mat', u'src', '', []], ['Mat', u'dst', '', ['/O']]],
+    u'void']
+ok: FUNC <void cv.MergeMertens.process [ARG vector_Mat src=, ARG Mat dst=]>
+
+--- Incoming ---
+[u'cv.MergeMertens.getContrastWeight', u'float', [], [], u'float']
+ok: FUNC <float cv.MergeMertens.getContrastWeight []>
+
+--- Incoming ---
+[   u'cv.MergeMertens.setContrastWeight',
+    u'void',
+    [],
+    [[u'float', u'contrast_weiht', u'', []]],
+    u'void']
+ok: FUNC <void cv.MergeMertens.setContrastWeight [ARG float contrast_weiht=]>
+
+--- Incoming ---
+[u'cv.MergeMertens.getSaturationWeight', u'float', [], [], u'float']
+ok: FUNC <float cv.MergeMertens.getSaturationWeight []>
+
+--- Incoming ---
+[   u'cv.MergeMertens.setSaturationWeight',
+    u'void',
+    [],
+    [[u'float', u'saturation_weight', u'', []]],
+    u'void']
+ok: FUNC <void cv.MergeMertens.setSaturationWeight [ARG float saturation_weight=]>
+
+--- Incoming ---
+[u'cv.MergeMertens.getExposureWeight', u'float', [], [], u'float']
+ok: FUNC <float cv.MergeMertens.getExposureWeight []>
+
+--- Incoming ---
+[   u'cv.MergeMertens.setExposureWeight',
+    u'void',
+    [],
+    [[u'float', u'exposure_weight', u'', []]],
+    u'void']
+ok: FUNC <void cv.MergeMertens.setExposureWeight [ARG float exposure_weight=]>
+
+--- Incoming ---
+[   u'cv.createMergeMertens',
+    u'Ptr_MergeMertens',
+    [],
+    [   [u'float', u'contrast_weight', u'1.0f', []],
+        [u'float', u'saturation_weight', u'1.0f', []],
+        [u'float', u'exposure_weight', u'0.0f', []]],
+    u'Ptr<MergeMertens>']
+ok: FUNC <Ptr_MergeMertens cv..createMergeMertens [ARG float contrast_weight=1.0f, ARG float saturation_weight=1.0f, ARG float exposure_weight=0.0f]>
+
+--- Incoming ---
+[u'class cv.MergeRobertson', u': cv::MergeExposures', [], []]
+ok: class CLASS cv::.MergeRobertson : MergeExposures, name: MergeRobertson, base: MergeExposures
+
+--- Incoming ---
+[   u'cv.MergeRobertson.process',
+    u'void',
+    [],
+    [   ['vector_Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        ['Mat', u'times', '', []],
+        ['Mat', u'response', '', []]],
+    u'void']
+ok: FUNC <void cv.MergeRobertson.process [ARG vector_Mat src=, ARG Mat dst=, ARG Mat times=, ARG Mat response=]>
+
+--- Incoming ---
+[   u'cv.MergeRobertson.process',
+    u'void',
+    [],
+    [   ['vector_Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        ['Mat', u'times', '', []]],
+    u'void']
+ok: FUNC <void cv.MergeRobertson.process [ARG vector_Mat src=, ARG Mat dst=, ARG Mat times=]>
+
+--- Incoming ---
+[   u'cv.createMergeRobertson',
+    u'Ptr_MergeRobertson',
+    [],
+    [],
+    u'Ptr<MergeRobertson>']
+ok: FUNC <Ptr_MergeRobertson cv..createMergeRobertson []>
+
+--- Incoming ---
+[   u'cv.decolor',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'grayscale', '', ['/O']],
+        ['Mat', u'color_boost', '', ['/O']]],
+    u'void']
+ok: FUNC <void cv..decolor [ARG Mat src=, ARG Mat grayscale=, ARG Mat color_boost=]>
+
+--- Incoming ---
+[   u'cv.seamlessClone',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', []],
+        ['Mat', u'mask', '', []],
+        [u'Point', u'p', u'', []],
+        ['Mat', u'blend', '', ['/O']],
+        [u'int', u'flags', u'', []]],
+    u'void']
+ok: FUNC <void cv..seamlessClone [ARG Mat src=, ARG Mat dst=, ARG Mat mask=, ARG Point p=, ARG Mat blend=, ARG int flags=]>
+
+--- Incoming ---
+[   u'cv.colorChange',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'mask', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'float', u'red_mul', u'1.0f', []],
+        [u'float', u'green_mul', u'1.0f', []],
+        [u'float', u'blue_mul', u'1.0f', []]],
+    u'void']
+ok: FUNC <void cv..colorChange [ARG Mat src=, ARG Mat mask=, ARG Mat dst=, ARG float red_mul=1.0f, ARG float green_mul=1.0f, ARG float blue_mul=1.0f]>
+
+--- Incoming ---
+[   u'cv.illuminationChange',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'mask', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'float', u'alpha', u'0.2f', []],
+        [u'float', u'beta', u'0.4f', []]],
+    u'void']
+ok: FUNC <void cv..illuminationChange [ARG Mat src=, ARG Mat mask=, ARG Mat dst=, ARG float alpha=0.2f, ARG float beta=0.4f]>
+
+--- Incoming ---
+[   u'cv.textureFlattening',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'mask', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'float', u'low_threshold', u'30', []],
+        [u'float', u'high_threshold', u'45', []],
+        [u'int', u'kernel_size', u'3', []]],
+    u'void']
+ok: FUNC <void cv..textureFlattening [ARG Mat src=, ARG Mat mask=, ARG Mat dst=, ARG float low_threshold=30, ARG float high_threshold=45, ARG int kernel_size=3]>
+
+--- Incoming ---
+[   u'cv.edgePreservingFilter',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'int', u'flags', u'1', []],
+        [u'float', u'sigma_s', u'60', []],
+        [u'float', u'sigma_r', u'0.4f', []]],
+    u'void']
+ok: FUNC <void cv..edgePreservingFilter [ARG Mat src=, ARG Mat dst=, ARG int flags=1, ARG float sigma_s=60, ARG float sigma_r=0.4f]>
+
+--- Incoming ---
+[   u'cv.detailEnhance',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'float', u'sigma_s', u'10', []],
+        [u'float', u'sigma_r', u'0.15f', []]],
+    u'void']
+ok: FUNC <void cv..detailEnhance [ARG Mat src=, ARG Mat dst=, ARG float sigma_s=10, ARG float sigma_r=0.15f]>
+
+--- Incoming ---
+[   u'cv.pencilSketch',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst1', '', ['/O']],
+        ['Mat', u'dst2', '', ['/O']],
+        [u'float', u'sigma_s', u'60', []],
+        [u'float', u'sigma_r', u'0.07f', []],
+        [u'float', u'shade_factor', u'0.02f', []]],
+    u'void']
+ok: FUNC <void cv..pencilSketch [ARG Mat src=, ARG Mat dst1=, ARG Mat dst2=, ARG float sigma_s=60, ARG float sigma_r=0.07f, ARG float shade_factor=0.02f]>
+
+--- Incoming ---
+[   u'cv.stylization',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'float', u'sigma_s', u'60', []],
+        [u'float', u'sigma_r', u'0.45f', []]],
+    u'void']
+ok: FUNC <void cv..stylization [ARG Mat src=, ARG Mat dst=, ARG float sigma_s=60, ARG float sigma_r=0.45f]>
+
+
+===== Header: /home/xxa344/Desktop/opencv-3.2.0/modules/photo/include/opencv2/photo/cuda.hpp =====
+Namespaces: set(['', u'cv.cuda', u'cv'])
+Ignore header: /home/xxa344/Desktop/opencv-3.2.0/modules/photo/include/opencv2/photo/cuda.hpp
+
+
+===== Header: /home/xxa344/Desktop/opencv-3.2.0/modules/photo/include/opencv2/photo/photo.hpp =====
+Namespaces: set(['', u'cv.cuda', u'cv'])
+Ignore header: /home/xxa344/Desktop/opencv-3.2.0/modules/photo/include/opencv2/photo/photo.hpp
+
+
+===== Generating... =====
+CLASS cv::.CalibrateRobertson : CalibrateCRF
+FUNC <Mat cv.CalibrateRobertson.getRadiance []>
+java: Mat getRadiance()
+FUNC <float cv.CalibrateRobertson.getThreshold []>
+java: float getThreshold()
+FUNC <int cv.CalibrateRobertson.getMaxIter []>
+java: int getMaxIter()
+FUNC <void cv.CalibrateRobertson.setMaxIter [ARG int max_iter=]>
+java: void setMaxIter(int max_iter)
+FUNC <void cv.CalibrateRobertson.setThreshold [ARG float threshold=]>
+java: void setThreshold(float threshold)
+CLASS cv::.TonemapMantiuk : Tonemap
+FUNC <float cv.TonemapMantiuk.getSaturation []>
+java: float getSaturation()
+FUNC <float cv.TonemapMantiuk.getScale []>
+java: float getScale()
+FUNC <void cv.TonemapMantiuk.setSaturation [ARG float saturation=]>
+java: void setSaturation(float saturation)
+FUNC <void cv.TonemapMantiuk.setScale [ARG float scale=]>
+java: void setScale(float scale)
+CLASS cv::.TonemapDurand : Tonemap
+FUNC <float cv.TonemapDurand.getContrast []>
+java: float getContrast()
+FUNC <float cv.TonemapDurand.getSaturation []>
+java: float getSaturation()
+FUNC <float cv.TonemapDurand.getSigmaColor []>
+java: float getSigmaColor()
+FUNC <float cv.TonemapDurand.getSigmaSpace []>
+java: float getSigmaSpace()
+FUNC <void cv.TonemapDurand.setContrast [ARG float contrast=]>
+java: void setContrast(float contrast)
+FUNC <void cv.TonemapDurand.setSaturation [ARG float saturation=]>
+java: void setSaturation(float saturation)
+FUNC <void cv.TonemapDurand.setSigmaColor [ARG float sigma_color=]>
+java: void setSigmaColor(float sigma_color)
+FUNC <void cv.TonemapDurand.setSigmaSpace [ARG float sigma_space=]>
+java: void setSigmaSpace(float sigma_space)
+CLASS cv::.CalibrateDebevec : CalibrateCRF
+FUNC <bool cv.CalibrateDebevec.getRandom []>
+java: boolean getRandom()
+FUNC <float cv.CalibrateDebevec.getLambda []>
+java: float getLambda()
+FUNC <int cv.CalibrateDebevec.getSamples []>
+java: int getSamples()
+FUNC <void cv.CalibrateDebevec.setLambda [ARG float lambda=]>
+java: void setLambda(float lambda)
+FUNC <void cv.CalibrateDebevec.setRandom [ARG bool random=]>
+java: void setRandom(boolean random)
+FUNC <void cv.CalibrateDebevec.setSamples [ARG int samples=]>
+java: void setSamples(int samples)
+CLASS cv::.TonemapReinhard : Tonemap
+FUNC <float cv.TonemapReinhard.getColorAdaptation []>
+java: float getColorAdaptation()
+FUNC <float cv.TonemapReinhard.getIntensity []>
+java: float getIntensity()
+FUNC <float cv.TonemapReinhard.getLightAdaptation []>
+java: float getLightAdaptation()
+FUNC <void cv.TonemapReinhard.setColorAdaptation [ARG float color_adapt=]>
+java: void setColorAdaptation(float color_adapt)
+FUNC <void cv.TonemapReinhard.setIntensity [ARG float intensity=]>
+java: void setIntensity(float intensity)
+FUNC <void cv.TonemapReinhard.setLightAdaptation [ARG float light_adapt=]>
+java: void setLightAdaptation(float light_adapt)
+CLASS ::.Photo : 
+[CONST CV_INPAINT_NS=0, CONST CV_INPAINT_TELEA=1]
+[CONST INPAINT_NS=0, CONST INPAINT_TELEA=1, CONST NORMAL_CLONE=1, CONST MIXED_CLONE=2, CONST MONOCHROME_TRANSFER=3, CONST RECURS_FILTER=1, CONST NORMCONV_FILTER=2, CONST LDR_SIZE=256]
+FUNC <Ptr_AlignMTB cv..createAlignMTB [ARG int max_bits=6, ARG int exclude_range=4, ARG bool cut=true]>
+java: AlignMTB createAlignMTB(int max_bits, int exclude_range, boolean cut)
+java: AlignMTB createAlignMTB()
+FUNC <Ptr_CalibrateDebevec cv..createCalibrateDebevec [ARG int samples=70, ARG float lambda=10.0f, ARG bool random=false]>
+java: CalibrateDebevec createCalibrateDebevec(int samples, float lambda, boolean random)
+java: CalibrateDebevec createCalibrateDebevec()
+FUNC <Ptr_CalibrateRobertson cv..createCalibrateRobertson [ARG int max_iter=30, ARG float threshold=0.01f]>
+java: CalibrateRobertson createCalibrateRobertson(int max_iter, float threshold)
+java: CalibrateRobertson createCalibrateRobertson()
+FUNC <Ptr_MergeDebevec cv..createMergeDebevec []>
+java: MergeDebevec createMergeDebevec()
+FUNC <Ptr_MergeMertens cv..createMergeMertens [ARG float contrast_weight=1.0f, ARG float saturation_weight=1.0f, ARG float exposure_weight=0.0f]>
+java: MergeMertens createMergeMertens(float contrast_weight, float saturation_weight, float exposure_weight)
+java: MergeMertens createMergeMertens()
+FUNC <Ptr_MergeRobertson cv..createMergeRobertson []>
+java: MergeRobertson createMergeRobertson()
+FUNC <Ptr_Tonemap cv..createTonemap [ARG float gamma=1.0f]>
+java: Tonemap createTonemap(float gamma)
+java: Tonemap createTonemap()
+FUNC <Ptr_TonemapDrago cv..createTonemapDrago [ARG float gamma=1.0f, ARG float saturation=1.0f, ARG float bias=0.85f]>
+java: TonemapDrago createTonemapDrago(float gamma, float saturation, float bias)
+java: TonemapDrago createTonemapDrago()
+FUNC <Ptr_TonemapDurand cv..createTonemapDurand [ARG float gamma=1.0f, ARG float contrast=4.0f, ARG float saturation=1.0f, ARG float sigma_space=2.0f, ARG float sigma_color=2.0f]>
+java: TonemapDurand createTonemapDurand(float gamma, float contrast, float saturation, float sigma_space, float sigma_color)
+java: TonemapDurand createTonemapDurand()
+FUNC <Ptr_TonemapMantiuk cv..createTonemapMantiuk [ARG float gamma=1.0f, ARG float scale=0.7f, ARG float saturation=1.0f]>
+java: TonemapMantiuk createTonemapMantiuk(float gamma, float scale, float saturation)
+java: TonemapMantiuk createTonemapMantiuk()
+FUNC <Ptr_TonemapReinhard cv..createTonemapReinhard [ARG float gamma=1.0f, ARG float intensity=0.0f, ARG float light_adapt=1.0f, ARG float color_adapt=0.0f]>
+java: TonemapReinhard createTonemapReinhard(float gamma, float intensity, float light_adapt, float color_adapt)
+java: TonemapReinhard createTonemapReinhard()
+FUNC <void cv..colorChange [ARG Mat src=, ARG Mat mask=, ARG Mat dst=, ARG float red_mul=1.0f, ARG float green_mul=1.0f, ARG float blue_mul=1.0f]>
+java: void colorChange(Mat src, Mat mask, Mat dst, float red_mul, float green_mul, float blue_mul)
+java: void colorChange(Mat src, Mat mask, Mat dst)
+FUNC <void cv..decolor [ARG Mat src=, ARG Mat grayscale=, ARG Mat color_boost=]>
+java: void decolor(Mat src, Mat grayscale, Mat color_boost)
+FUNC <void cv..denoise_TVL1 [ARG vector_Mat observations=, ARG Mat result=, ARG double lambda=1.0, ARG int niters=30]>
+java: void denoise_TVL1(List<Mat> observations, Mat result, double lambda, int niters)
+java: void denoise_TVL1(List<Mat> observations, Mat result)
+FUNC <void cv..detailEnhance [ARG Mat src=, ARG Mat dst=, ARG float sigma_s=10, ARG float sigma_r=0.15f]>
+java: void detailEnhance(Mat src, Mat dst, float sigma_s, float sigma_r)
+java: void detailEnhance(Mat src, Mat dst)
+FUNC <void cv..edgePreservingFilter [ARG Mat src=, ARG Mat dst=, ARG int flags=1, ARG float sigma_s=60, ARG float sigma_r=0.4f]>
+java: void edgePreservingFilter(Mat src, Mat dst, int flags, float sigma_s, float sigma_r)
+java: void edgePreservingFilter(Mat src, Mat dst)
+FUNC <void cv..fastNlMeansDenoising [ARG Mat src=, ARG Mat dst=, ARG float h=3, ARG int templateWindowSize=7, ARG int searchWindowSize=21]>
+java: void fastNlMeansDenoising(Mat src, Mat dst, float h, int templateWindowSize, int searchWindowSize)
+java: void fastNlMeansDenoising(Mat src, Mat dst)
+FUNC <void cv..fastNlMeansDenoising [ARG Mat src=, ARG Mat dst=, ARG vector_float h=, ARG int templateWindowSize=7, ARG int searchWindowSize=21, ARG int normType=NORM_L2]>
+java: void fastNlMeansDenoising(Mat src, Mat dst, MatOfFloat h, int templateWindowSize, int searchWindowSize, int normType)
+java: void fastNlMeansDenoising(Mat src, Mat dst, MatOfFloat h)
+FUNC <void cv..fastNlMeansDenoisingColored [ARG Mat src=, ARG Mat dst=, ARG float h=3, ARG float hColor=3, ARG int templateWindowSize=7, ARG int searchWindowSize=21]>
+java: void fastNlMeansDenoisingColored(Mat src, Mat dst, float h, float hColor, int templateWindowSize, int searchWindowSize)
+java: void fastNlMeansDenoisingColored(Mat src, Mat dst)
+FUNC <void cv..fastNlMeansDenoisingColoredMulti [ARG vector_Mat srcImgs=, ARG Mat dst=, ARG int imgToDenoiseIndex=, ARG int temporalWindowSize=, ARG float h=3, ARG float hColor=3, ARG int templateWindowSize=7, ARG int searchWindowSize=21]>
+java: void fastNlMeansDenoisingColoredMulti(List<Mat> srcImgs, Mat dst, int imgToDenoiseIndex, int temporalWindowSize, float h, float hColor, int templateWindowSize, int searchWindowSize)
+java: void fastNlMeansDenoisingColoredMulti(List<Mat> srcImgs, Mat dst, int imgToDenoiseIndex, int temporalWindowSize)
+FUNC <void cv..fastNlMeansDenoisingMulti [ARG vector_Mat srcImgs=, ARG Mat dst=, ARG int imgToDenoiseIndex=, ARG int temporalWindowSize=, ARG float h=3, ARG int templateWindowSize=7, ARG int searchWindowSize=21]>
+java: void fastNlMeansDenoisingMulti(List<Mat> srcImgs, Mat dst, int imgToDenoiseIndex, int temporalWindowSize, float h, int templateWindowSize, int searchWindowSize)
+java: void fastNlMeansDenoisingMulti(List<Mat> srcImgs, Mat dst, int imgToDenoiseIndex, int temporalWindowSize)
+FUNC <void cv..fastNlMeansDenoisingMulti [ARG vector_Mat srcImgs=, ARG Mat dst=, ARG int imgToDenoiseIndex=, ARG int temporalWindowSize=, ARG vector_float h=, ARG int templateWindowSize=7, ARG int searchWindowSize=21, ARG int normType=NORM_L2]>
+java: void fastNlMeansDenoisingMulti(List<Mat> srcImgs, Mat dst, int imgToDenoiseIndex, int temporalWindowSize, MatOfFloat h, int templateWindowSize, int searchWindowSize, int normType)
+java: void fastNlMeansDenoisingMulti(List<Mat> srcImgs, Mat dst, int imgToDenoiseIndex, int temporalWindowSize, MatOfFloat h)
+FUNC <void cv..illuminationChange [ARG Mat src=, ARG Mat mask=, ARG Mat dst=, ARG float alpha=0.2f, ARG float beta=0.4f]>
+java: void illuminationChange(Mat src, Mat mask, Mat dst, float alpha, float beta)
+java: void illuminationChange(Mat src, Mat mask, Mat dst)
+FUNC <void cv..inpaint [ARG Mat src=, ARG Mat inpaintMask=, ARG Mat dst=, ARG double inpaintRadius=, ARG int flags=]>
+java: void inpaint(Mat src, Mat inpaintMask, Mat dst, double inpaintRadius, int flags)
+FUNC <void cv..pencilSketch [ARG Mat src=, ARG Mat dst1=, ARG Mat dst2=, ARG float sigma_s=60, ARG float sigma_r=0.07f, ARG float shade_factor=0.02f]>
+java: void pencilSketch(Mat src, Mat dst1, Mat dst2, float sigma_s, float sigma_r, float shade_factor)
+java: void pencilSketch(Mat src, Mat dst1, Mat dst2)
+FUNC <void cv..seamlessClone [ARG Mat src=, ARG Mat dst=, ARG Mat mask=, ARG Point p=, ARG Mat blend=, ARG int flags=]>
+java: void seamlessClone(Mat src, Mat dst, Mat mask, Point p, Mat blend, int flags)
+FUNC <void cv..stylization [ARG Mat src=, ARG Mat dst=, ARG float sigma_s=60, ARG float sigma_r=0.45f]>
+java: void stylization(Mat src, Mat dst, float sigma_s, float sigma_r)
+java: void stylization(Mat src, Mat dst)
+FUNC <void cv..textureFlattening [ARG Mat src=, ARG Mat mask=, ARG Mat dst=, ARG float low_threshold=30, ARG float high_threshold=45, ARG int kernel_size=3]>
+java: void textureFlattening(Mat src, Mat mask, Mat dst, float low_threshold, float high_threshold, int kernel_size)
+java: void textureFlattening(Mat src, Mat mask, Mat dst)
+CLASS cv::.AlignExposures : Algorithm
+FUNC <void cv.AlignExposures.process [ARG vector_Mat src=, ARG vector_Mat dst=, ARG Mat times=, ARG Mat response=]>
+java: void process(List<Mat> src, List<Mat> dst, Mat times, Mat response)
+CLASS cv::.CalibrateCRF : Algorithm
+FUNC <void cv.CalibrateCRF.process [ARG vector_Mat src=, ARG Mat dst=, ARG Mat times=]>
+java: void process(List<Mat> src, Mat dst, Mat times)
+CLASS cv::.TonemapDrago : Tonemap
+FUNC <float cv.TonemapDrago.getBias []>
+java: float getBias()
+FUNC <float cv.TonemapDrago.getSaturation []>
+java: float getSaturation()
+FUNC <void cv.TonemapDrago.setBias [ARG float bias=]>
+java: void setBias(float bias)
+FUNC <void cv.TonemapDrago.setSaturation [ARG float saturation=]>
+java: void setSaturation(float saturation)
+CLASS cv::.AlignMTB : AlignExposures
+FUNC <Point cv.AlignMTB.calculateShift [ARG Mat img0=, ARG Mat img1=]>
+java: Point calculateShift(Mat img0, Mat img1)
+FUNC <bool cv.AlignMTB.getCut []>
+java: boolean getCut()
+FUNC <int cv.AlignMTB.getExcludeRange []>
+java: int getExcludeRange()
+FUNC <int cv.AlignMTB.getMaxBits []>
+java: int getMaxBits()
+FUNC <void cv.AlignMTB.computeBitmaps [ARG Mat img=, ARG Mat tb=, ARG Mat eb=]>
+java: void computeBitmaps(Mat img, Mat tb, Mat eb)
+FUNC <void cv.AlignMTB.process [ARG vector_Mat src=, ARG vector_Mat dst=, ARG Mat times=, ARG Mat response=]>
+java: void process(List<Mat> src, List<Mat> dst, Mat times, Mat response)
+FUNC <void cv.AlignMTB.process [ARG vector_Mat src=, ARG vector_Mat dst=]>
+java: void process(List<Mat> src, List<Mat> dst)
+FUNC <void cv.AlignMTB.setCut [ARG bool value=]>
+java: void setCut(boolean value)
+FUNC <void cv.AlignMTB.setExcludeRange [ARG int exclude_range=]>
+java: void setExcludeRange(int exclude_range)
+FUNC <void cv.AlignMTB.setMaxBits [ARG int max_bits=]>
+java: void setMaxBits(int max_bits)
+FUNC <void cv.AlignMTB.shiftMat [ARG Mat src=, ARG Mat dst=, ARG Point shift=]>
+java: void shiftMat(Mat src, Mat dst, Point shift)
+CLASS cv::.MergeDebevec : MergeExposures
+FUNC <void cv.MergeDebevec.process [ARG vector_Mat src=, ARG Mat dst=, ARG Mat times=, ARG Mat response=]>
+java: void process(List<Mat> src, Mat dst, Mat times, Mat response)
+FUNC <void cv.MergeDebevec.process [ARG vector_Mat src=, ARG Mat dst=, ARG Mat times=]>
+java: void process(List<Mat> src, Mat dst, Mat times)
+CLASS cv::.MergeMertens : MergeExposures
+FUNC <float cv.MergeMertens.getContrastWeight []>
+java: float getContrastWeight()
+FUNC <float cv.MergeMertens.getExposureWeight []>
+java: float getExposureWeight()
+FUNC <float cv.MergeMertens.getSaturationWeight []>
+java: float getSaturationWeight()
+FUNC <void cv.MergeMertens.process [ARG vector_Mat src=, ARG Mat dst=, ARG Mat times=, ARG Mat response=]>
+java: void process(List<Mat> src, Mat dst, Mat times, Mat response)
+FUNC <void cv.MergeMertens.process [ARG vector_Mat src=, ARG Mat dst=]>
+java: void process(List<Mat> src, Mat dst)
+FUNC <void cv.MergeMertens.setContrastWeight [ARG float contrast_weiht=]>
+java: void setContrastWeight(float contrast_weiht)
+FUNC <void cv.MergeMertens.setExposureWeight [ARG float exposure_weight=]>
+java: void setExposureWeight(float exposure_weight)
+FUNC <void cv.MergeMertens.setSaturationWeight [ARG float saturation_weight=]>
+java: void setSaturationWeight(float saturation_weight)
+CLASS cv::.MergeExposures : Algorithm
+FUNC <void cv.MergeExposures.process [ARG vector_Mat src=, ARG Mat dst=, ARG Mat times=, ARG Mat response=]>
+java: void process(List<Mat> src, Mat dst, Mat times, Mat response)
+CLASS cv::.MergeRobertson : MergeExposures
+FUNC <void cv.MergeRobertson.process [ARG vector_Mat src=, ARG Mat dst=, ARG Mat times=, ARG Mat response=]>
+java: void process(List<Mat> src, Mat dst, Mat times, Mat response)
+FUNC <void cv.MergeRobertson.process [ARG vector_Mat src=, ARG Mat dst=, ARG Mat times=]>
+java: void process(List<Mat> src, Mat dst, Mat times)
+CLASS cv::.Tonemap : Algorithm
+FUNC <float cv.Tonemap.getGamma []>
+java: float getGamma()
+FUNC <void cv.Tonemap.process [ARG Mat src=, ARG Mat dst=]>
+java: void process(Mat src, Mat dst)
+FUNC <void cv.Tonemap.setGamma [ARG float gamma=]>
+java: void setGamma(float gamma)
