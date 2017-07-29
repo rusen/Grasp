@@ -7,13 +7,13 @@ message("Starteda")
 
 # Add compile options here.
 if (APPLE)
-	add_compile_options(-O0 -g3 -I${PROJECT_SOURCE_DIR}/include)
+	add_compile_options(-O0 -g3 -fopenmp -I${PROJECT_SOURCE_DIR}/include -frounding-math)
 elseif (UNIX)
-	add_compile_options(-O0 -g3 -I${PROJECT_SOURCE_DIR}/include -mavx)
+	add_compile_options(-O0 -g3 -fopenmp -I${PROJECT_SOURCE_DIR}/include -mavx -frounding-math)
 	set(OpenCV_DIR "${PROJECT_SOURCE_DIR}/lib/unix/opencv-3.2.0/release")
 endif ()
 
-set(CMAKE_BUILD_TYPE Release)
+set(CMAKE_BUILD_TYPE Debug)
 set (CMAKE_CXX_STANDARD 11)
 set(OpenCV_LIBS opencv_core opencv_imgproc opencv_calib3d opencv_video opencv_features2d opencv_ml opencv_highgui opencv_objdetect opencv_contrib opencv_legacy opencv_gpu)
 set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
@@ -73,9 +73,9 @@ set(LIBS ${LIBS} ${OpenCV_LIBS})
 add_library(${PROJECT_NAME} src/sensor/kinectSimulator.cpp src/sensor/noiseutils.cpp)
 
 if (APPLE)
-	target_link_libraries(${PROJECT_NAME} -lmujoco150 -L${PROJECT_SOURCE_DIR}/lib/macos -lglfw.3 assimp CGAL noise ${OpenCV_LIBS} ${LIBS} ${OPENGL_gl_LIBRARY})
+    target_link_libraries(${PROJECT_NAME}  -fopenmp -lmujoco150 -L${PROJECT_SOURCE_DIR}/lib/macos -lglfw.3 assimp CGAL noise ${OpenCV_LIBS} ${LIBS} ${OPENGL_gl_LIBRARY})
 elseif (UNIX)
-    target_link_libraries(${PROJECT_NAME} -lmujoco150 -L${PROJECT_SOURCE_DIR}/lib/unix -lGL -lglew -lglfw assimp CGAL noise ${OpenCV_LIBS} ${LIBS} ${OPENGL_gl_LIBRARY})
+    target_link_libraries(${PROJECT_NAME}  -fopenmp -lmujoco150 -L${PROJECT_SOURCE_DIR}/lib/unix -lGL -lglew -lglfw assimp CGAL noise ${OpenCV_LIBS} ${LIBS} ${OPENGL_gl_LIBRARY})
 endif ()
 
 file(GLOB_RECURSE CTRL_SOURCES "src/controller/*.cpp")
