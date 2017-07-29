@@ -24,12 +24,15 @@ GraspPlanner::GraspPlanner() {
 
 	// TODO:: Start from random initial position. This'll change!
     srand (time(NULL));
-    glm::vec3 initPosition = glm::vec3(((double)(rand()%100) - 50)/200, 0, 0.5 + ((double)(rand()%100) - 50)/200);
+ //   glm::vec3 initPosition = glm::vec3(((double)(rand()%100) - 50)/200, 0, 0.5 + ((double)(rand()%100) - 50)/200);
+    glm::vec3 initPosition = glm::vec3(0, -1, 1);
+
     initialApproachPos[0] = initPosition;
     float num1 = ((float) (rand()%360))/(2*3.1416);
     float num2 = ((float) (rand()%360))/(2*3.1416);
     float num3 = ((float) (rand()%360))/(2*3.1416);
-    initDir = glm::vec3(num1, num2, num3);
+//    initDir = glm::vec3(num1, num2, num3);
+    initDir = glm::vec3(0, 0, 1);
     initialApproachQuat[0] = glm::quat(initDir);
 
 	// TODO: For now, we specify the pre-grasp location. This will be obviously changed.

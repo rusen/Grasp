@@ -13,6 +13,7 @@
 #include <sensor/simulate.h>
 #include <sensor/camera.h>
 #include <iostream>
+#include <thread>         // std::thread
 #include <controller/MPLHandController.h>
 #include <planner/GraspPlanner.h>
 #include <glm/glm.hpp>
@@ -35,6 +36,7 @@ bool button_middle = false;
 bool button_right =  false;
 double lastx = 0;
 double lasty = 0;
+bool pauseFlag = true;
 
 // Camera Parameters for Carmine 1.09
 render_kinect::CameraInfo cam_info;
@@ -52,8 +54,9 @@ Grasp::GraspPlanner planner;
 Grasp::HandControllerInterface * handController = new Grasp::MPLHandController();
 
 // Rendering params
-float depth_buffer[5120*2880];        // big enough for 5K screen
-unsigned char depth_rgb[1280*720*3];  // 1/4th of screen
+int camSize[] = {640, 480};
+unsigned char depthBuffer[640*480*3];
+unsigned char pointCloudBuffer[640*480*3];  // 1/4th of screen
 
 // keyboard callback
 void keyboard(GLFWwindow* window, int key, int scancode, int act, int mods)
@@ -64,6 +67,14 @@ void keyboard(GLFWwindow* window, int key, int scancode, int act, int mods)
         mj_resetData(m, d);
         mj_forward(m, d);
     }
+
+    // backspace: reset simulation
+	if( act==GLFW_PRESS && key==GLFW_KEY_ENTER )
+	{
+		if (pauseFlag)
+			pauseFlag = false;
+		else pauseFlag = true;
+	}
 }
 
 
@@ -123,45 +134,73 @@ void scroll(GLFWwindow* window, double xoffset, double yoffset)
 }
 
 void graspObject(const mjModel* m, mjData* d){
-	planner.PerformGrasp(m, d, handController);
+	if (!pauseFlag)
+		planner.PerformGrasp(m, d, handController);
 }
 
 // render
+// Depth camera processing.
+void getDepthData(GLFWwindow* window, const mjModel* m, mjData* d, render_kinect::Simulate* Simulator)
+{
+	while (true)
+	{
+		// Modify the object's position and orientation.
+		int startIdx = (m->nbody-1);
+		Eigen::Affine3d transformObject(Eigen::Affine3d::Identity());
+		transformObject.translate(Eigen::Vector3d(d->xpos[startIdx * 3], d->xpos[startIdx * 3 + 1], d->xpos[startIdx * 3 + 2]));
+		transformObject.rotate(Eigen::Quaterniond(d->xquat[startIdx * 4],d->xquat[startIdx * 4 + 1],d->xquat[startIdx * 4 + 2],d->xquat[startIdx * 4 + 3]));
 
-void render(GLFWwindow* window)
+		// Change the kinect with the actual hand's view.
+		Eigen::Affine3d transform(Eigen::Affine3d::Identity());
+		transform.translate(Eigen::Vector3d(d->mocap_pos[0], d->mocap_pos[1], d->mocap_pos[2]));
+		transform.rotate(Eigen::Quaterniond(d->mocap_quat[0],d->mocap_quat[1],d->mocap_quat[2],d->mocap_quat[3]));
+
+		// Get image from kinect camera.
+		Simulator->simulateMeasurement(transform, true, true, true);
+
+		// Tell the world you've captured an image.
+		std::cout<<"Depth image captured!"<<std::endl;
+	}
+}
+
+
+void render(GLFWwindow* window, const mjModel* m, mjData* d, render_kinect::Simulate* Simulator)
 {
     // past data for FPS calculation
     static double lastrendertm = 0;
 
     // get current framebuffer rectangle
-    mjrRect rect = {0, 0, 0, 0};
+	mjrRect rect = {0, 0, 0, 0};
     glfwGetFramebufferSize(window, &rect.width, &rect.height);
-    mjrRect smallrect = rect;
 
-	// get the depth buffer
-	mjr_readPixels(NULL, depth_buffer, rect, &con );
+	int rows = (rect.width/4);
+	int cols = (rect.height/4);
 
 	// convert to RGB, subsample by 4
 	for( int r=0; r<rect.height; r+=4 )
 		for( int c=0; c<rect.width; c+=4 )
 		{
-			// get subsampled address
-			int adr = (r/4)*(rect.width/4) + c/4;
+			// Find where to get the data and where to write it.
+			double rowId = r / 4;
+			double colId = c / 4;
+			double bufferRowId = (int)((rowId * ((double) Simulator->scaled_im_.rows-2)) / ((double) rows));
+			double bufferColId = (int)((colId * ((double) Simulator->scaled_im_.cols-2)) / ((double) cols));
+			int offset = (rowId)*(rect.width/4) + colId;
 
 			// assign rgb
-			depth_rgb[3*adr] = depth_rgb[3*adr+1] = depth_rgb[3*adr+2] =
-				(unsigned char)((1.0f-depth_buffer[r*rect.width+c])*255.0f);
+			depthBuffer[offset * 3] = depthBuffer[offset * 3 + 1] = depthBuffer[offset * 3 + 2] =
+				(unsigned char)(Simulator->scaled_im_.at<float>(bufferRowId, bufferColId));
 		}
 
-	// show in bottom-right corner, offset for profiler and sensor
-	mjrRect bottomright = {
-		smallrect.left+(3*smallrect.width)/4,
-		smallrect.bottom,
-		smallrect.width/4,
-		smallrect.height/4
-	};
-	mjr_drawPixels(depth_rgb, NULL, bottomright, &con);
 
+	mjrRect bottomright = {
+		rect.left+(3*rect.width)/4,
+		rect.bottom,
+		rect.width/4,
+		rect.height/4
+	};
+
+	mjr_drawPixels(depthBuffer, NULL, bottomright, &con);
 }
 
 
@@ -197,15 +236,6 @@ int main(int argc, const char** argv)
     // make data
     d = mj_makeData(m);
 
-    // Create the simulator.
-    Simulator = new render_kinect::Simulate(cam_info, argv[2], dotPath);
-
-    // TODO: Change with actual transformation.
-    Eigen::Affine3d transform(Eigen::Affine3d::Identity());
-
-    // Get image from kinect camera.
-    Simulator->simulateMeasurement(transform, true, true, true);
-
     // init GLFW
     if( !glfwInit() )
         mju_error("Could not initialize GLFW");
@@ -228,6 +258,10 @@ int main(int argc, const char** argv)
     glfwSetMouseButtonCallback(window, mouse_button);
     glfwSetScrollCallback(window, scroll);
 
+    // Create and start kinect simulator.
+    Simulator = new render_kinect::Simulate(cam_info, argv[2], dotPath);
+    std::thread camThread(getDepthData, window, m, d, Simulator);
+
     // run main loop, target real-time simulation and 60 fps rendering
     while( !glfwWindowShouldClose(window) )
     {
@@ -247,7 +281,7 @@ int main(int argc, const char** argv)
         // update scene and render
         mjv_updateScene(m, d, &opt, NULL, &cam, mjCAT_ALL, &scn);
         mjr_render(viewport, &scn, &con);
-    	render(window);
+    	render(window, m, d, Simulator);
 
         // swap OpenGL buffers (blocking call due to v-sync)
         glfwSwapBuffers(window);

@@ -1,0 +1,4476 @@
+ok: class CLASS ::.Imgproc : , name: Imgproc, base: 
+
+
+===== Header: /home/xxa344/Desktop/opencv-3.2.0/modules/imgproc/include/opencv2/imgproc/imgproc_c.h =====
+Namespaces: set([''])
+Ignore header: /home/xxa344/Desktop/opencv-3.2.0/modules/imgproc/include/opencv2/imgproc/imgproc_c.h
+
+
+===== Header: /home/xxa344/Desktop/opencv-3.2.0/modules/imgproc/include/opencv2/imgproc/types_c.h =====
+Namespaces: set([''])
+
+--- Incoming ---
+[u'const CV_BLUR_NO_SCALE', u'0', [], []]
+ok: CONST CV_BLUR_NO_SCALE=0
+
+--- Incoming ---
+[u'const CV_BLUR', u'1', [], []]
+ok: CONST CV_BLUR=1
+
+--- Incoming ---
+[u'const CV_GAUSSIAN', u'2', [], []]
+ok: CONST CV_GAUSSIAN=2
+
+--- Incoming ---
+[u'const CV_MEDIAN', u'3', [], []]
+ok: CONST CV_MEDIAN=3
+
+--- Incoming ---
+[u'const CV_BILATERAL', u'4', [], []]
+ok: CONST CV_BILATERAL=4
+
+--- Incoming ---
+[u'const CV_GAUSSIAN_5x5', u'7', [], []]
+ok: CONST CV_GAUSSIAN_5x5=7
+
+--- Incoming ---
+[u'const CV_SCHARR', u'-1', [], []]
+ok: CONST CV_SCHARR=-1
+
+--- Incoming ---
+[u'const CV_MAX_SOBEL_KSIZE', u'7', [], []]
+ok: CONST CV_MAX_SOBEL_KSIZE=7
+
+--- Incoming ---
+[u'const CV_BGR2BGRA', u'0', [], []]
+ignored: CONST CV_BGR2BGRA=0
+
+--- Incoming ---
+[u'const CV_RGB2RGBA', u'CV_BGR2BGRA', [], []]
+ignored: CONST CV_RGB2RGBA=CV_BGR2BGRA
+
+--- Incoming ---
+[u'const CV_BGRA2BGR', u'1', [], []]
+ignored: CONST CV_BGRA2BGR=1
+
+--- Incoming ---
+[u'const CV_RGBA2RGB', u'CV_BGRA2BGR', [], []]
+ignored: CONST CV_RGBA2RGB=CV_BGRA2BGR
+
+--- Incoming ---
+[u'const CV_BGR2RGBA', u'2', [], []]
+ignored: CONST CV_BGR2RGBA=2
+
+--- Incoming ---
+[u'const CV_RGB2BGRA', u'CV_BGR2RGBA', [], []]
+ignored: CONST CV_RGB2BGRA=CV_BGR2RGBA
+
+--- Incoming ---
+[u'const CV_RGBA2BGR', u'3', [], []]
+ignored: CONST CV_RGBA2BGR=3
+
+--- Incoming ---
+[u'const CV_BGRA2RGB', u'CV_RGBA2BGR', [], []]
+ignored: CONST CV_BGRA2RGB=CV_RGBA2BGR
+
+--- Incoming ---
+[u'const CV_BGR2RGB', u'4', [], []]
+ignored: CONST CV_BGR2RGB=4
+
+--- Incoming ---
+[u'const CV_RGB2BGR', u'CV_BGR2RGB', [], []]
+ignored: CONST CV_RGB2BGR=CV_BGR2RGB
+
+--- Incoming ---
+[u'const CV_BGRA2RGBA', u'5', [], []]
+ignored: CONST CV_BGRA2RGBA=5
+
+--- Incoming ---
+[u'const CV_RGBA2BGRA', u'CV_BGRA2RGBA', [], []]
+ignored: CONST CV_RGBA2BGRA=CV_BGRA2RGBA
+
+--- Incoming ---
+[u'const CV_BGR2GRAY', u'6', [], []]
+ignored: CONST CV_BGR2GRAY=6
+
+--- Incoming ---
+[u'const CV_RGB2GRAY', u'7', [], []]
+ignored: CONST CV_RGB2GRAY=7
+
+--- Incoming ---
+[u'const CV_GRAY2BGR', u'8', [], []]
+ignored: CONST CV_GRAY2BGR=8
+
+--- Incoming ---
+[u'const CV_GRAY2RGB', u'CV_GRAY2BGR', [], []]
+ignored: CONST CV_GRAY2RGB=CV_GRAY2BGR
+
+--- Incoming ---
+[u'const CV_GRAY2BGRA', u'9', [], []]
+ignored: CONST CV_GRAY2BGRA=9
+
+--- Incoming ---
+[u'const CV_GRAY2RGBA', u'CV_GRAY2BGRA', [], []]
+ignored: CONST CV_GRAY2RGBA=CV_GRAY2BGRA
+
+--- Incoming ---
+[u'const CV_BGRA2GRAY', u'10', [], []]
+ignored: CONST CV_BGRA2GRAY=10
+
+--- Incoming ---
+[u'const CV_RGBA2GRAY', u'11', [], []]
+ignored: CONST CV_RGBA2GRAY=11
+
+--- Incoming ---
+[u'const CV_BGR2BGR565', u'12', [], []]
+ignored: CONST CV_BGR2BGR565=12
+
+--- Incoming ---
+[u'const CV_RGB2BGR565', u'13', [], []]
+ignored: CONST CV_RGB2BGR565=13
+
+--- Incoming ---
+[u'const CV_BGR5652BGR', u'14', [], []]
+ignored: CONST CV_BGR5652BGR=14
+
+--- Incoming ---
+[u'const CV_BGR5652RGB', u'15', [], []]
+ignored: CONST CV_BGR5652RGB=15
+
+--- Incoming ---
+[u'const CV_BGRA2BGR565', u'16', [], []]
+ignored: CONST CV_BGRA2BGR565=16
+
+--- Incoming ---
+[u'const CV_RGBA2BGR565', u'17', [], []]
+ignored: CONST CV_RGBA2BGR565=17
+
+--- Incoming ---
+[u'const CV_BGR5652BGRA', u'18', [], []]
+ignored: CONST CV_BGR5652BGRA=18
+
+--- Incoming ---
+[u'const CV_BGR5652RGBA', u'19', [], []]
+ignored: CONST CV_BGR5652RGBA=19
+
+--- Incoming ---
+[u'const CV_GRAY2BGR565', u'20', [], []]
+ignored: CONST CV_GRAY2BGR565=20
+
+--- Incoming ---
+[u'const CV_BGR5652GRAY', u'21', [], []]
+ignored: CONST CV_BGR5652GRAY=21
+
+--- Incoming ---
+[u'const CV_BGR2BGR555', u'22', [], []]
+ignored: CONST CV_BGR2BGR555=22
+
+--- Incoming ---
+[u'const CV_RGB2BGR555', u'23', [], []]
+ignored: CONST CV_RGB2BGR555=23
+
+--- Incoming ---
+[u'const CV_BGR5552BGR', u'24', [], []]
+ignored: CONST CV_BGR5552BGR=24
+
+--- Incoming ---
+[u'const CV_BGR5552RGB', u'25', [], []]
+ignored: CONST CV_BGR5552RGB=25
+
+--- Incoming ---
+[u'const CV_BGRA2BGR555', u'26', [], []]
+ignored: CONST CV_BGRA2BGR555=26
+
+--- Incoming ---
+[u'const CV_RGBA2BGR555', u'27', [], []]
+ignored: CONST CV_RGBA2BGR555=27
+
+--- Incoming ---
+[u'const CV_BGR5552BGRA', u'28', [], []]
+ignored: CONST CV_BGR5552BGRA=28
+
+--- Incoming ---
+[u'const CV_BGR5552RGBA', u'29', [], []]
+ignored: CONST CV_BGR5552RGBA=29
+
+--- Incoming ---
+[u'const CV_GRAY2BGR555', u'30', [], []]
+ignored: CONST CV_GRAY2BGR555=30
+
+--- Incoming ---
+[u'const CV_BGR5552GRAY', u'31', [], []]
+ignored: CONST CV_BGR5552GRAY=31
+
+--- Incoming ---
+[u'const CV_BGR2XYZ', u'32', [], []]
+ignored: CONST CV_BGR2XYZ=32
+
+--- Incoming ---
+[u'const CV_RGB2XYZ', u'33', [], []]
+ignored: CONST CV_RGB2XYZ=33
+
+--- Incoming ---
+[u'const CV_XYZ2BGR', u'34', [], []]
+ignored: CONST CV_XYZ2BGR=34
+
+--- Incoming ---
+[u'const CV_XYZ2RGB', u'35', [], []]
+ignored: CONST CV_XYZ2RGB=35
+
+--- Incoming ---
+[u'const CV_BGR2YCrCb', u'36', [], []]
+ignored: CONST CV_BGR2YCrCb=36
+
+--- Incoming ---
+[u'const CV_RGB2YCrCb', u'37', [], []]
+ignored: CONST CV_RGB2YCrCb=37
+
+--- Incoming ---
+[u'const CV_YCrCb2BGR', u'38', [], []]
+ignored: CONST CV_YCrCb2BGR=38
+
+--- Incoming ---
+[u'const CV_YCrCb2RGB', u'39', [], []]
+ignored: CONST CV_YCrCb2RGB=39
+
+--- Incoming ---
+[u'const CV_BGR2HSV', u'40', [], []]
+ignored: CONST CV_BGR2HSV=40
+
+--- Incoming ---
+[u'const CV_RGB2HSV', u'41', [], []]
+ignored: CONST CV_RGB2HSV=41
+
+--- Incoming ---
+[u'const CV_BGR2Lab', u'44', [], []]
+ignored: CONST CV_BGR2Lab=44
+
+--- Incoming ---
+[u'const CV_RGB2Lab', u'45', [], []]
+ignored: CONST CV_RGB2Lab=45
+
+--- Incoming ---
+[u'const CV_BayerBG2BGR', u'46', [], []]
+ignored: CONST CV_BayerBG2BGR=46
+
+--- Incoming ---
+[u'const CV_BayerGB2BGR', u'47', [], []]
+ignored: CONST CV_BayerGB2BGR=47
+
+--- Incoming ---
+[u'const CV_BayerRG2BGR', u'48', [], []]
+ignored: CONST CV_BayerRG2BGR=48
+
+--- Incoming ---
+[u'const CV_BayerGR2BGR', u'49', [], []]
+ignored: CONST CV_BayerGR2BGR=49
+
+--- Incoming ---
+[u'const CV_BayerBG2RGB', u'CV_BayerRG2BGR', [], []]
+ignored: CONST CV_BayerBG2RGB=CV_BayerRG2BGR
+
+--- Incoming ---
+[u'const CV_BayerGB2RGB', u'CV_BayerGR2BGR', [], []]
+ignored: CONST CV_BayerGB2RGB=CV_BayerGR2BGR
+
+--- Incoming ---
+[u'const CV_BayerRG2RGB', u'CV_BayerBG2BGR', [], []]
+ignored: CONST CV_BayerRG2RGB=CV_BayerBG2BGR
+
+--- Incoming ---
+[u'const CV_BayerGR2RGB', u'CV_BayerGB2BGR', [], []]
+ignored: CONST CV_BayerGR2RGB=CV_BayerGB2BGR
+
+--- Incoming ---
+[u'const CV_BGR2Luv', u'50', [], []]
+ignored: CONST CV_BGR2Luv=50
+
+--- Incoming ---
+[u'const CV_RGB2Luv', u'51', [], []]
+ignored: CONST CV_RGB2Luv=51
+
+--- Incoming ---
+[u'const CV_BGR2HLS', u'52', [], []]
+ignored: CONST CV_BGR2HLS=52
+
+--- Incoming ---
+[u'const CV_RGB2HLS', u'53', [], []]
+ignored: CONST CV_RGB2HLS=53
+
+--- Incoming ---
+[u'const CV_HSV2BGR', u'54', [], []]
+ignored: CONST CV_HSV2BGR=54
+
+--- Incoming ---
+[u'const CV_HSV2RGB', u'55', [], []]
+ignored: CONST CV_HSV2RGB=55
+
+--- Incoming ---
+[u'const CV_Lab2BGR', u'56', [], []]
+ignored: CONST CV_Lab2BGR=56
+
+--- Incoming ---
+[u'const CV_Lab2RGB', u'57', [], []]
+ignored: CONST CV_Lab2RGB=57
+
+--- Incoming ---
+[u'const CV_Luv2BGR', u'58', [], []]
+ignored: CONST CV_Luv2BGR=58
+
+--- Incoming ---
+[u'const CV_Luv2RGB', u'59', [], []]
+ignored: CONST CV_Luv2RGB=59
+
+--- Incoming ---
+[u'const CV_HLS2BGR', u'60', [], []]
+ignored: CONST CV_HLS2BGR=60
+
+--- Incoming ---
+[u'const CV_HLS2RGB', u'61', [], []]
+ignored: CONST CV_HLS2RGB=61
+
+--- Incoming ---
+[u'const CV_BayerBG2BGR_VNG', u'62', [], []]
+ignored: CONST CV_BayerBG2BGR_VNG=62
+
+--- Incoming ---
+[u'const CV_BayerGB2BGR_VNG', u'63', [], []]
+ignored: CONST CV_BayerGB2BGR_VNG=63
+
+--- Incoming ---
+[u'const CV_BayerRG2BGR_VNG', u'64', [], []]
+ignored: CONST CV_BayerRG2BGR_VNG=64
+
+--- Incoming ---
+[u'const CV_BayerGR2BGR_VNG', u'65', [], []]
+ignored: CONST CV_BayerGR2BGR_VNG=65
+
+--- Incoming ---
+[u'const CV_BayerBG2RGB_VNG', u'CV_BayerRG2BGR_VNG', [], []]
+ignored: CONST CV_BayerBG2RGB_VNG=CV_BayerRG2BGR_VNG
+
+--- Incoming ---
+[u'const CV_BayerGB2RGB_VNG', u'CV_BayerGR2BGR_VNG', [], []]
+ignored: CONST CV_BayerGB2RGB_VNG=CV_BayerGR2BGR_VNG
+
+--- Incoming ---
+[u'const CV_BayerRG2RGB_VNG', u'CV_BayerBG2BGR_VNG', [], []]
+ignored: CONST CV_BayerRG2RGB_VNG=CV_BayerBG2BGR_VNG
+
+--- Incoming ---
+[u'const CV_BayerGR2RGB_VNG', u'CV_BayerGB2BGR_VNG', [], []]
+ignored: CONST CV_BayerGR2RGB_VNG=CV_BayerGB2BGR_VNG
+
+--- Incoming ---
+[u'const CV_BGR2HSV_FULL', u'66', [], []]
+ignored: CONST CV_BGR2HSV_FULL=66
+
+--- Incoming ---
+[u'const CV_RGB2HSV_FULL', u'67', [], []]
+ignored: CONST CV_RGB2HSV_FULL=67
+
+--- Incoming ---
+[u'const CV_BGR2HLS_FULL', u'68', [], []]
+ignored: CONST CV_BGR2HLS_FULL=68
+
+--- Incoming ---
+[u'const CV_RGB2HLS_FULL', u'69', [], []]
+ignored: CONST CV_RGB2HLS_FULL=69
+
+--- Incoming ---
+[u'const CV_HSV2BGR_FULL', u'70', [], []]
+ignored: CONST CV_HSV2BGR_FULL=70
+
+--- Incoming ---
+[u'const CV_HSV2RGB_FULL', u'71', [], []]
+ignored: CONST CV_HSV2RGB_FULL=71
+
+--- Incoming ---
+[u'const CV_HLS2BGR_FULL', u'72', [], []]
+ignored: CONST CV_HLS2BGR_FULL=72
+
+--- Incoming ---
+[u'const CV_HLS2RGB_FULL', u'73', [], []]
+ignored: CONST CV_HLS2RGB_FULL=73
+
+--- Incoming ---
+[u'const CV_LBGR2Lab', u'74', [], []]
+ignored: CONST CV_LBGR2Lab=74
+
+--- Incoming ---
+[u'const CV_LRGB2Lab', u'75', [], []]
+ignored: CONST CV_LRGB2Lab=75
+
+--- Incoming ---
+[u'const CV_LBGR2Luv', u'76', [], []]
+ignored: CONST CV_LBGR2Luv=76
+
+--- Incoming ---
+[u'const CV_LRGB2Luv', u'77', [], []]
+ignored: CONST CV_LRGB2Luv=77
+
+--- Incoming ---
+[u'const CV_Lab2LBGR', u'78', [], []]
+ignored: CONST CV_Lab2LBGR=78
+
+--- Incoming ---
+[u'const CV_Lab2LRGB', u'79', [], []]
+ignored: CONST CV_Lab2LRGB=79
+
+--- Incoming ---
+[u'const CV_Luv2LBGR', u'80', [], []]
+ignored: CONST CV_Luv2LBGR=80
+
+--- Incoming ---
+[u'const CV_Luv2LRGB', u'81', [], []]
+ignored: CONST CV_Luv2LRGB=81
+
+--- Incoming ---
+[u'const CV_BGR2YUV', u'82', [], []]
+ignored: CONST CV_BGR2YUV=82
+
+--- Incoming ---
+[u'const CV_RGB2YUV', u'83', [], []]
+ignored: CONST CV_RGB2YUV=83
+
+--- Incoming ---
+[u'const CV_YUV2BGR', u'84', [], []]
+ignored: CONST CV_YUV2BGR=84
+
+--- Incoming ---
+[u'const CV_YUV2RGB', u'85', [], []]
+ignored: CONST CV_YUV2RGB=85
+
+--- Incoming ---
+[u'const CV_BayerBG2GRAY', u'86', [], []]
+ignored: CONST CV_BayerBG2GRAY=86
+
+--- Incoming ---
+[u'const CV_BayerGB2GRAY', u'87', [], []]
+ignored: CONST CV_BayerGB2GRAY=87
+
+--- Incoming ---
+[u'const CV_BayerRG2GRAY', u'88', [], []]
+ignored: CONST CV_BayerRG2GRAY=88
+
+--- Incoming ---
+[u'const CV_BayerGR2GRAY', u'89', [], []]
+ignored: CONST CV_BayerGR2GRAY=89
+
+--- Incoming ---
+[u'const CV_YUV2RGB_NV12', u'90', [], []]
+ignored: CONST CV_YUV2RGB_NV12=90
+
+--- Incoming ---
+[u'const CV_YUV2BGR_NV12', u'91', [], []]
+ignored: CONST CV_YUV2BGR_NV12=91
+
+--- Incoming ---
+[u'const CV_YUV2RGB_NV21', u'92', [], []]
+ignored: CONST CV_YUV2RGB_NV21=92
+
+--- Incoming ---
+[u'const CV_YUV2BGR_NV21', u'93', [], []]
+ignored: CONST CV_YUV2BGR_NV21=93
+
+--- Incoming ---
+[u'const CV_YUV420sp2RGB', u'CV_YUV2RGB_NV21', [], []]
+ignored: CONST CV_YUV420sp2RGB=CV_YUV2RGB_NV21
+
+--- Incoming ---
+[u'const CV_YUV420sp2BGR', u'CV_YUV2BGR_NV21', [], []]
+ignored: CONST CV_YUV420sp2BGR=CV_YUV2BGR_NV21
+
+--- Incoming ---
+[u'const CV_YUV2RGBA_NV12', u'94', [], []]
+ignored: CONST CV_YUV2RGBA_NV12=94
+
+--- Incoming ---
+[u'const CV_YUV2BGRA_NV12', u'95', [], []]
+ignored: CONST CV_YUV2BGRA_NV12=95
+
+--- Incoming ---
+[u'const CV_YUV2RGBA_NV21', u'96', [], []]
+ignored: CONST CV_YUV2RGBA_NV21=96
+
+--- Incoming ---
+[u'const CV_YUV2BGRA_NV21', u'97', [], []]
+ignored: CONST CV_YUV2BGRA_NV21=97
+
+--- Incoming ---
+[u'const CV_YUV420sp2RGBA', u'CV_YUV2RGBA_NV21', [], []]
+ignored: CONST CV_YUV420sp2RGBA=CV_YUV2RGBA_NV21
+
+--- Incoming ---
+[u'const CV_YUV420sp2BGRA', u'CV_YUV2BGRA_NV21', [], []]
+ignored: CONST CV_YUV420sp2BGRA=CV_YUV2BGRA_NV21
+
+--- Incoming ---
+[u'const CV_YUV2RGB_YV12', u'98', [], []]
+ignored: CONST CV_YUV2RGB_YV12=98
+
+--- Incoming ---
+[u'const CV_YUV2BGR_YV12', u'99', [], []]
+ignored: CONST CV_YUV2BGR_YV12=99
+
+--- Incoming ---
+[u'const CV_YUV2RGB_IYUV', u'100', [], []]
+ignored: CONST CV_YUV2RGB_IYUV=100
+
+--- Incoming ---
+[u'const CV_YUV2BGR_IYUV', u'101', [], []]
+ignored: CONST CV_YUV2BGR_IYUV=101
+
+--- Incoming ---
+[u'const CV_YUV2RGB_I420', u'CV_YUV2RGB_IYUV', [], []]
+ignored: CONST CV_YUV2RGB_I420=CV_YUV2RGB_IYUV
+
+--- Incoming ---
+[u'const CV_YUV2BGR_I420', u'CV_YUV2BGR_IYUV', [], []]
+ignored: CONST CV_YUV2BGR_I420=CV_YUV2BGR_IYUV
+
+--- Incoming ---
+[u'const CV_YUV420p2RGB', u'CV_YUV2RGB_YV12', [], []]
+ignored: CONST CV_YUV420p2RGB=CV_YUV2RGB_YV12
+
+--- Incoming ---
+[u'const CV_YUV420p2BGR', u'CV_YUV2BGR_YV12', [], []]
+ignored: CONST CV_YUV420p2BGR=CV_YUV2BGR_YV12
+
+--- Incoming ---
+[u'const CV_YUV2RGBA_YV12', u'102', [], []]
+ignored: CONST CV_YUV2RGBA_YV12=102
+
+--- Incoming ---
+[u'const CV_YUV2BGRA_YV12', u'103', [], []]
+ignored: CONST CV_YUV2BGRA_YV12=103
+
+--- Incoming ---
+[u'const CV_YUV2RGBA_IYUV', u'104', [], []]
+ignored: CONST CV_YUV2RGBA_IYUV=104
+
+--- Incoming ---
+[u'const CV_YUV2BGRA_IYUV', u'105', [], []]
+ignored: CONST CV_YUV2BGRA_IYUV=105
+
+--- Incoming ---
+[u'const CV_YUV2RGBA_I420', u'CV_YUV2RGBA_IYUV', [], []]
+ignored: CONST CV_YUV2RGBA_I420=CV_YUV2RGBA_IYUV
+
+--- Incoming ---
+[u'const CV_YUV2BGRA_I420', u'CV_YUV2BGRA_IYUV', [], []]
+ignored: CONST CV_YUV2BGRA_I420=CV_YUV2BGRA_IYUV
+
+--- Incoming ---
+[u'const CV_YUV420p2RGBA', u'CV_YUV2RGBA_YV12', [], []]
+ignored: CONST CV_YUV420p2RGBA=CV_YUV2RGBA_YV12
+
+--- Incoming ---
+[u'const CV_YUV420p2BGRA', u'CV_YUV2BGRA_YV12', [], []]
+ignored: CONST CV_YUV420p2BGRA=CV_YUV2BGRA_YV12
+
+--- Incoming ---
+[u'const CV_YUV2GRAY_420', u'106', [], []]
+ignored: CONST CV_YUV2GRAY_420=106
+
+--- Incoming ---
+[u'const CV_YUV2GRAY_NV21', u'CV_YUV2GRAY_420', [], []]
+ignored: CONST CV_YUV2GRAY_NV21=CV_YUV2GRAY_420
+
+--- Incoming ---
+[u'const CV_YUV2GRAY_NV12', u'CV_YUV2GRAY_420', [], []]
+ignored: CONST CV_YUV2GRAY_NV12=CV_YUV2GRAY_420
+
+--- Incoming ---
+[u'const CV_YUV2GRAY_YV12', u'CV_YUV2GRAY_420', [], []]
+ignored: CONST CV_YUV2GRAY_YV12=CV_YUV2GRAY_420
+
+--- Incoming ---
+[u'const CV_YUV2GRAY_IYUV', u'CV_YUV2GRAY_420', [], []]
+ignored: CONST CV_YUV2GRAY_IYUV=CV_YUV2GRAY_420
+
+--- Incoming ---
+[u'const CV_YUV2GRAY_I420', u'CV_YUV2GRAY_420', [], []]
+ignored: CONST CV_YUV2GRAY_I420=CV_YUV2GRAY_420
+
+--- Incoming ---
+[u'const CV_YUV420sp2GRAY', u'CV_YUV2GRAY_420', [], []]
+ignored: CONST CV_YUV420sp2GRAY=CV_YUV2GRAY_420
+
+--- Incoming ---
+[u'const CV_YUV420p2GRAY', u'CV_YUV2GRAY_420', [], []]
+ignored: CONST CV_YUV420p2GRAY=CV_YUV2GRAY_420
+
+--- Incoming ---
+[u'const CV_YUV2RGB_UYVY', u'107', [], []]
+ignored: CONST CV_YUV2RGB_UYVY=107
+
+--- Incoming ---
+[u'const CV_YUV2BGR_UYVY', u'108', [], []]
+ignored: CONST CV_YUV2BGR_UYVY=108
+
+--- Incoming ---
+[u'const CV_YUV2RGB_Y422', u'CV_YUV2RGB_UYVY', [], []]
+ignored: CONST CV_YUV2RGB_Y422=CV_YUV2RGB_UYVY
+
+--- Incoming ---
+[u'const CV_YUV2BGR_Y422', u'CV_YUV2BGR_UYVY', [], []]
+ignored: CONST CV_YUV2BGR_Y422=CV_YUV2BGR_UYVY
+
+--- Incoming ---
+[u'const CV_YUV2RGB_UYNV', u'CV_YUV2RGB_UYVY', [], []]
+ignored: CONST CV_YUV2RGB_UYNV=CV_YUV2RGB_UYVY
+
+--- Incoming ---
+[u'const CV_YUV2BGR_UYNV', u'CV_YUV2BGR_UYVY', [], []]
+ignored: CONST CV_YUV2BGR_UYNV=CV_YUV2BGR_UYVY
+
+--- Incoming ---
+[u'const CV_YUV2RGBA_UYVY', u'111', [], []]
+ignored: CONST CV_YUV2RGBA_UYVY=111
+
+--- Incoming ---
+[u'const CV_YUV2BGRA_UYVY', u'112', [], []]
+ignored: CONST CV_YUV2BGRA_UYVY=112
+
+--- Incoming ---
+[u'const CV_YUV2RGBA_Y422', u'CV_YUV2RGBA_UYVY', [], []]
+ignored: CONST CV_YUV2RGBA_Y422=CV_YUV2RGBA_UYVY
+
+--- Incoming ---
+[u'const CV_YUV2BGRA_Y422', u'CV_YUV2BGRA_UYVY', [], []]
+ignored: CONST CV_YUV2BGRA_Y422=CV_YUV2BGRA_UYVY
+
+--- Incoming ---
+[u'const CV_YUV2RGBA_UYNV', u'CV_YUV2RGBA_UYVY', [], []]
+ignored: CONST CV_YUV2RGBA_UYNV=CV_YUV2RGBA_UYVY
+
+--- Incoming ---
+[u'const CV_YUV2BGRA_UYNV', u'CV_YUV2BGRA_UYVY', [], []]
+ignored: CONST CV_YUV2BGRA_UYNV=CV_YUV2BGRA_UYVY
+
+--- Incoming ---
+[u'const CV_YUV2RGB_YUY2', u'115', [], []]
+ignored: CONST CV_YUV2RGB_YUY2=115
+
+--- Incoming ---
+[u'const CV_YUV2BGR_YUY2', u'116', [], []]
+ignored: CONST CV_YUV2BGR_YUY2=116
+
+--- Incoming ---
+[u'const CV_YUV2RGB_YVYU', u'117', [], []]
+ignored: CONST CV_YUV2RGB_YVYU=117
+
+--- Incoming ---
+[u'const CV_YUV2BGR_YVYU', u'118', [], []]
+ignored: CONST CV_YUV2BGR_YVYU=118
+
+--- Incoming ---
+[u'const CV_YUV2RGB_YUYV', u'CV_YUV2RGB_YUY2', [], []]
+ignored: CONST CV_YUV2RGB_YUYV=CV_YUV2RGB_YUY2
+
+--- Incoming ---
+[u'const CV_YUV2BGR_YUYV', u'CV_YUV2BGR_YUY2', [], []]
+ignored: CONST CV_YUV2BGR_YUYV=CV_YUV2BGR_YUY2
+
+--- Incoming ---
+[u'const CV_YUV2RGB_YUNV', u'CV_YUV2RGB_YUY2', [], []]
+ignored: CONST CV_YUV2RGB_YUNV=CV_YUV2RGB_YUY2
+
+--- Incoming ---
+[u'const CV_YUV2BGR_YUNV', u'CV_YUV2BGR_YUY2', [], []]
+ignored: CONST CV_YUV2BGR_YUNV=CV_YUV2BGR_YUY2
+
+--- Incoming ---
+[u'const CV_YUV2RGBA_YUY2', u'119', [], []]
+ignored: CONST CV_YUV2RGBA_YUY2=119
+
+--- Incoming ---
+[u'const CV_YUV2BGRA_YUY2', u'120', [], []]
+ignored: CONST CV_YUV2BGRA_YUY2=120
+
+--- Incoming ---
+[u'const CV_YUV2RGBA_YVYU', u'121', [], []]
+ignored: CONST CV_YUV2RGBA_YVYU=121
+
+--- Incoming ---
+[u'const CV_YUV2BGRA_YVYU', u'122', [], []]
+ignored: CONST CV_YUV2BGRA_YVYU=122
+
+--- Incoming ---
+[u'const CV_YUV2RGBA_YUYV', u'CV_YUV2RGBA_YUY2', [], []]
+ignored: CONST CV_YUV2RGBA_YUYV=CV_YUV2RGBA_YUY2
+
+--- Incoming ---
+[u'const CV_YUV2BGRA_YUYV', u'CV_YUV2BGRA_YUY2', [], []]
+ignored: CONST CV_YUV2BGRA_YUYV=CV_YUV2BGRA_YUY2
+
+--- Incoming ---
+[u'const CV_YUV2RGBA_YUNV', u'CV_YUV2RGBA_YUY2', [], []]
+ignored: CONST CV_YUV2RGBA_YUNV=CV_YUV2RGBA_YUY2
+
+--- Incoming ---
+[u'const CV_YUV2BGRA_YUNV', u'CV_YUV2BGRA_YUY2', [], []]
+ignored: CONST CV_YUV2BGRA_YUNV=CV_YUV2BGRA_YUY2
+
+--- Incoming ---
+[u'const CV_YUV2GRAY_UYVY', u'123', [], []]
+ignored: CONST CV_YUV2GRAY_UYVY=123
+
+--- Incoming ---
+[u'const CV_YUV2GRAY_YUY2', u'124', [], []]
+ignored: CONST CV_YUV2GRAY_YUY2=124
+
+--- Incoming ---
+[u'const CV_YUV2GRAY_Y422', u'CV_YUV2GRAY_UYVY', [], []]
+ignored: CONST CV_YUV2GRAY_Y422=CV_YUV2GRAY_UYVY
+
+--- Incoming ---
+[u'const CV_YUV2GRAY_UYNV', u'CV_YUV2GRAY_UYVY', [], []]
+ignored: CONST CV_YUV2GRAY_UYNV=CV_YUV2GRAY_UYVY
+
+--- Incoming ---
+[u'const CV_YUV2GRAY_YVYU', u'CV_YUV2GRAY_YUY2', [], []]
+ignored: CONST CV_YUV2GRAY_YVYU=CV_YUV2GRAY_YUY2
+
+--- Incoming ---
+[u'const CV_YUV2GRAY_YUYV', u'CV_YUV2GRAY_YUY2', [], []]
+ignored: CONST CV_YUV2GRAY_YUYV=CV_YUV2GRAY_YUY2
+
+--- Incoming ---
+[u'const CV_YUV2GRAY_YUNV', u'CV_YUV2GRAY_YUY2', [], []]
+ignored: CONST CV_YUV2GRAY_YUNV=CV_YUV2GRAY_YUY2
+
+--- Incoming ---
+[u'const CV_RGBA2mRGBA', u'125', [], []]
+ok: CONST CV_RGBA2mRGBA=125
+
+--- Incoming ---
+[u'const CV_mRGBA2RGBA', u'126', [], []]
+ok: CONST CV_mRGBA2RGBA=126
+
+--- Incoming ---
+[u'const CV_RGB2YUV_I420', u'127', [], []]
+ignored: CONST CV_RGB2YUV_I420=127
+
+--- Incoming ---
+[u'const CV_BGR2YUV_I420', u'128', [], []]
+ignored: CONST CV_BGR2YUV_I420=128
+
+--- Incoming ---
+[u'const CV_RGB2YUV_IYUV', u'CV_RGB2YUV_I420', [], []]
+ignored: CONST CV_RGB2YUV_IYUV=CV_RGB2YUV_I420
+
+--- Incoming ---
+[u'const CV_BGR2YUV_IYUV', u'CV_BGR2YUV_I420', [], []]
+ignored: CONST CV_BGR2YUV_IYUV=CV_BGR2YUV_I420
+
+--- Incoming ---
+[u'const CV_RGBA2YUV_I420', u'129', [], []]
+ignored: CONST CV_RGBA2YUV_I420=129
+
+--- Incoming ---
+[u'const CV_BGRA2YUV_I420', u'130', [], []]
+ignored: CONST CV_BGRA2YUV_I420=130
+
+--- Incoming ---
+[u'const CV_RGBA2YUV_IYUV', u'CV_RGBA2YUV_I420', [], []]
+ignored: CONST CV_RGBA2YUV_IYUV=CV_RGBA2YUV_I420
+
+--- Incoming ---
+[u'const CV_BGRA2YUV_IYUV', u'CV_BGRA2YUV_I420', [], []]
+ignored: CONST CV_BGRA2YUV_IYUV=CV_BGRA2YUV_I420
+
+--- Incoming ---
+[u'const CV_RGB2YUV_YV12', u'131', [], []]
+ignored: CONST CV_RGB2YUV_YV12=131
+
+--- Incoming ---
+[u'const CV_BGR2YUV_YV12', u'132', [], []]
+ignored: CONST CV_BGR2YUV_YV12=132
+
+--- Incoming ---
+[u'const CV_RGBA2YUV_YV12', u'133', [], []]
+ignored: CONST CV_RGBA2YUV_YV12=133
+
+--- Incoming ---
+[u'const CV_BGRA2YUV_YV12', u'134', [], []]
+ignored: CONST CV_BGRA2YUV_YV12=134
+
+--- Incoming ---
+[u'const CV_BayerBG2BGR_EA', u'135', [], []]
+ignored: CONST CV_BayerBG2BGR_EA=135
+
+--- Incoming ---
+[u'const CV_BayerGB2BGR_EA', u'136', [], []]
+ignored: CONST CV_BayerGB2BGR_EA=136
+
+--- Incoming ---
+[u'const CV_BayerRG2BGR_EA', u'137', [], []]
+ignored: CONST CV_BayerRG2BGR_EA=137
+
+--- Incoming ---
+[u'const CV_BayerGR2BGR_EA', u'138', [], []]
+ignored: CONST CV_BayerGR2BGR_EA=138
+
+--- Incoming ---
+[u'const CV_BayerBG2RGB_EA', u'CV_BayerRG2BGR_EA', [], []]
+ignored: CONST CV_BayerBG2RGB_EA=CV_BayerRG2BGR_EA
+
+--- Incoming ---
+[u'const CV_BayerGB2RGB_EA', u'CV_BayerGR2BGR_EA', [], []]
+ignored: CONST CV_BayerGB2RGB_EA=CV_BayerGR2BGR_EA
+
+--- Incoming ---
+[u'const CV_BayerRG2RGB_EA', u'CV_BayerBG2BGR_EA', [], []]
+ignored: CONST CV_BayerRG2RGB_EA=CV_BayerBG2BGR_EA
+
+--- Incoming ---
+[u'const CV_BayerGR2RGB_EA', u'CV_BayerGB2BGR_EA', [], []]
+ignored: CONST CV_BayerGR2RGB_EA=CV_BayerGB2BGR_EA
+
+--- Incoming ---
+[u'const CV_COLORCVT_MAX', u'139', [], []]
+ignored: CONST CV_COLORCVT_MAX=139
+
+--- Incoming ---
+[u'const CV_INTER_NN', u'0', [], []]
+ok: CONST CV_INTER_NN=0
+
+--- Incoming ---
+[u'const CV_INTER_LINEAR', u'1', [], []]
+ok: CONST CV_INTER_LINEAR=1
+
+--- Incoming ---
+[u'const CV_INTER_CUBIC', u'2', [], []]
+ok: CONST CV_INTER_CUBIC=2
+
+--- Incoming ---
+[u'const CV_INTER_AREA', u'3', [], []]
+ok: CONST CV_INTER_AREA=3
+
+--- Incoming ---
+[u'const CV_INTER_LANCZOS4', u'4', [], []]
+ok: CONST CV_INTER_LANCZOS4=4
+
+--- Incoming ---
+[u'const CV_WARP_FILL_OUTLIERS', u'8', [], []]
+ok: CONST CV_WARP_FILL_OUTLIERS=8
+
+--- Incoming ---
+[u'const CV_WARP_INVERSE_MAP', u'16', [], []]
+ok: CONST CV_WARP_INVERSE_MAP=16
+
+--- Incoming ---
+[u'const CV_SHAPE_RECT', u'0', [], []]
+ok: CONST CV_SHAPE_RECT=0
+
+--- Incoming ---
+[u'const CV_SHAPE_CROSS', u'1', [], []]
+ok: CONST CV_SHAPE_CROSS=1
+
+--- Incoming ---
+[u'const CV_SHAPE_ELLIPSE', u'2', [], []]
+ok: CONST CV_SHAPE_ELLIPSE=2
+
+--- Incoming ---
+[u'const CV_SHAPE_CUSTOM', u'100', [], []]
+ok: CONST CV_SHAPE_CUSTOM=100
+
+--- Incoming ---
+[u'const CV_MOP_ERODE', u'0', [], []]
+ok: CONST CV_MOP_ERODE=0
+
+--- Incoming ---
+[u'const CV_MOP_DILATE', u'1', [], []]
+ok: CONST CV_MOP_DILATE=1
+
+--- Incoming ---
+[u'const CV_MOP_OPEN', u'2', [], []]
+ok: CONST CV_MOP_OPEN=2
+
+--- Incoming ---
+[u'const CV_MOP_CLOSE', u'3', [], []]
+ok: CONST CV_MOP_CLOSE=3
+
+--- Incoming ---
+[u'const CV_MOP_GRADIENT', u'4', [], []]
+ok: CONST CV_MOP_GRADIENT=4
+
+--- Incoming ---
+[u'const CV_MOP_TOPHAT', u'5', [], []]
+ok: CONST CV_MOP_TOPHAT=5
+
+--- Incoming ---
+[u'const CV_MOP_BLACKHAT', u'6', [], []]
+ok: CONST CV_MOP_BLACKHAT=6
+
+--- Incoming ---
+[u'const CV_TM_SQDIFF', u'0', [], []]
+ignored: CONST CV_TM_SQDIFF=0
+
+--- Incoming ---
+[u'const CV_TM_SQDIFF_NORMED', u'1', [], []]
+ignored: CONST CV_TM_SQDIFF_NORMED=1
+
+--- Incoming ---
+[u'const CV_TM_CCORR', u'2', [], []]
+ignored: CONST CV_TM_CCORR=2
+
+--- Incoming ---
+[u'const CV_TM_CCORR_NORMED', u'3', [], []]
+ignored: CONST CV_TM_CCORR_NORMED=3
+
+--- Incoming ---
+[u'const CV_TM_CCOEFF', u'4', [], []]
+ignored: CONST CV_TM_CCOEFF=4
+
+--- Incoming ---
+[u'const CV_TM_CCOEFF_NORMED', u'5', [], []]
+ignored: CONST CV_TM_CCOEFF_NORMED=5
+
+--- Incoming ---
+[u'const CV_RETR_EXTERNAL', u'0', [], []]
+ok: CONST CV_RETR_EXTERNAL=0
+
+--- Incoming ---
+[u'const CV_RETR_LIST', u'1', [], []]
+ok: CONST CV_RETR_LIST=1
+
+--- Incoming ---
+[u'const CV_RETR_CCOMP', u'2', [], []]
+ok: CONST CV_RETR_CCOMP=2
+
+--- Incoming ---
+[u'const CV_RETR_TREE', u'3', [], []]
+ok: CONST CV_RETR_TREE=3
+
+--- Incoming ---
+[u'const CV_RETR_FLOODFILL', u'4', [], []]
+ok: CONST CV_RETR_FLOODFILL=4
+
+--- Incoming ---
+[u'const CV_CHAIN_CODE', u'0', [], []]
+ok: CONST CV_CHAIN_CODE=0
+
+--- Incoming ---
+[u'const CV_CHAIN_APPROX_NONE', u'1', [], []]
+ok: CONST CV_CHAIN_APPROX_NONE=1
+
+--- Incoming ---
+[u'const CV_CHAIN_APPROX_SIMPLE', u'2', [], []]
+ok: CONST CV_CHAIN_APPROX_SIMPLE=2
+
+--- Incoming ---
+[u'const CV_CHAIN_APPROX_TC89_L1', u'3', [], []]
+ok: CONST CV_CHAIN_APPROX_TC89_L1=3
+
+--- Incoming ---
+[u'const CV_CHAIN_APPROX_TC89_KCOS', u'4', [], []]
+ok: CONST CV_CHAIN_APPROX_TC89_KCOS=4
+
+--- Incoming ---
+[u'const CV_LINK_RUNS', u'5', [], []]
+ok: CONST CV_LINK_RUNS=5
+
+--- Incoming ---
+[u'const CV_POLY_APPROX_DP', u'0', [], []]
+ok: CONST CV_POLY_APPROX_DP=0
+
+--- Incoming ---
+[u'const CV_CONTOURS_MATCH_I1', u'1', [], []]
+ok: CONST CV_CONTOURS_MATCH_I1=1
+
+--- Incoming ---
+[u'const CV_CONTOURS_MATCH_I2', u'2', [], []]
+ok: CONST CV_CONTOURS_MATCH_I2=2
+
+--- Incoming ---
+[u'const CV_CONTOURS_MATCH_I3', u'3', [], []]
+ok: CONST CV_CONTOURS_MATCH_I3=3
+
+--- Incoming ---
+[u'const CV_CLOCKWISE', u'1', [], []]
+ok: CONST CV_CLOCKWISE=1
+
+--- Incoming ---
+[u'const CV_COUNTER_CLOCKWISE', u'2', [], []]
+ok: CONST CV_COUNTER_CLOCKWISE=2
+
+--- Incoming ---
+[u'const CV_COMP_CORREL', u'0', [], []]
+ok: CONST CV_COMP_CORREL=0
+
+--- Incoming ---
+[u'const CV_COMP_CHISQR', u'1', [], []]
+ok: CONST CV_COMP_CHISQR=1
+
+--- Incoming ---
+[u'const CV_COMP_INTERSECT', u'2', [], []]
+ok: CONST CV_COMP_INTERSECT=2
+
+--- Incoming ---
+[u'const CV_COMP_BHATTACHARYYA', u'3', [], []]
+ok: CONST CV_COMP_BHATTACHARYYA=3
+
+--- Incoming ---
+[u'const CV_COMP_HELLINGER', u'CV_COMP_BHATTACHARYYA', [], []]
+ok: CONST CV_COMP_HELLINGER=CV_COMP_BHATTACHARYYA
+
+--- Incoming ---
+[u'const CV_COMP_CHISQR_ALT', u'4', [], []]
+ok: CONST CV_COMP_CHISQR_ALT=4
+
+--- Incoming ---
+[u'const CV_COMP_KL_DIV', u'5', [], []]
+ok: CONST CV_COMP_KL_DIV=5
+
+--- Incoming ---
+[u'const CV_DIST_MASK_3', u'3', [], []]
+ok: CONST CV_DIST_MASK_3=3
+
+--- Incoming ---
+[u'const CV_DIST_MASK_5', u'5', [], []]
+ok: CONST CV_DIST_MASK_5=5
+
+--- Incoming ---
+[u'const CV_DIST_MASK_PRECISE', u'0', [], []]
+ok: CONST CV_DIST_MASK_PRECISE=0
+
+--- Incoming ---
+[u'const CV_DIST_LABEL_CCOMP', u'0', [], []]
+ok: CONST CV_DIST_LABEL_CCOMP=0
+
+--- Incoming ---
+[u'const CV_DIST_LABEL_PIXEL', u'1', [], []]
+ok: CONST CV_DIST_LABEL_PIXEL=1
+
+--- Incoming ---
+[u'const CV_DIST_USER', u'-1', [], []]
+ok: CONST CV_DIST_USER=-1
+
+--- Incoming ---
+[u'const CV_DIST_L1', u'1', [], []]
+ok: CONST CV_DIST_L1=1
+
+--- Incoming ---
+[u'const CV_DIST_L2', u'2', [], []]
+ok: CONST CV_DIST_L2=2
+
+--- Incoming ---
+[u'const CV_DIST_C', u'3', [], []]
+ok: CONST CV_DIST_C=3
+
+--- Incoming ---
+[u'const CV_DIST_L12', u'4', [], []]
+ok: CONST CV_DIST_L12=4
+
+--- Incoming ---
+[u'const CV_DIST_FAIR', u'5', [], []]
+ok: CONST CV_DIST_FAIR=5
+
+--- Incoming ---
+[u'const CV_DIST_WELSCH', u'6', [], []]
+ok: CONST CV_DIST_WELSCH=6
+
+--- Incoming ---
+[u'const CV_DIST_HUBER', u'7', [], []]
+ok: CONST CV_DIST_HUBER=7
+
+--- Incoming ---
+[u'const CV_THRESH_BINARY', u'0', [], []]
+ok: CONST CV_THRESH_BINARY=0
+
+--- Incoming ---
+[u'const CV_THRESH_BINARY_INV', u'1', [], []]
+ok: CONST CV_THRESH_BINARY_INV=1
+
+--- Incoming ---
+[u'const CV_THRESH_TRUNC', u'2', [], []]
+ok: CONST CV_THRESH_TRUNC=2
+
+--- Incoming ---
+[u'const CV_THRESH_TOZERO', u'3', [], []]
+ok: CONST CV_THRESH_TOZERO=3
+
+--- Incoming ---
+[u'const CV_THRESH_TOZERO_INV', u'4', [], []]
+ok: CONST CV_THRESH_TOZERO_INV=4
+
+--- Incoming ---
+[u'const CV_THRESH_MASK', u'7', [], []]
+ok: CONST CV_THRESH_MASK=7
+
+--- Incoming ---
+[u'const CV_THRESH_OTSU', u'8', [], []]
+ok: CONST CV_THRESH_OTSU=8
+
+--- Incoming ---
+[u'const CV_THRESH_TRIANGLE', u'16', [], []]
+ok: CONST CV_THRESH_TRIANGLE=16
+
+--- Incoming ---
+[u'const CV_ADAPTIVE_THRESH_MEAN_C', u'0', [], []]
+ignored: CONST CV_ADAPTIVE_THRESH_MEAN_C=0
+
+--- Incoming ---
+[u'const CV_ADAPTIVE_THRESH_GAUSSIAN_C', u'1', [], []]
+ignored: CONST CV_ADAPTIVE_THRESH_GAUSSIAN_C=1
+
+--- Incoming ---
+[u'const CV_FLOODFILL_FIXED_RANGE', u'(1 << 16)', [], []]
+ignored: CONST CV_FLOODFILL_FIXED_RANGE=(1 << 16)
+
+--- Incoming ---
+[u'const CV_FLOODFILL_MASK_ONLY', u'(1 << 17)', [], []]
+ignored: CONST CV_FLOODFILL_MASK_ONLY=(1 << 17)
+
+--- Incoming ---
+[u'const CV_CANNY_L2_GRADIENT', u'(1 << 31)', [], []]
+ok: CONST CV_CANNY_L2_GRADIENT=(1 << 31)
+
+--- Incoming ---
+[u'const CV_HOUGH_STANDARD', u'0', [], []]
+ok: CONST CV_HOUGH_STANDARD=0
+
+--- Incoming ---
+[u'const CV_HOUGH_PROBABILISTIC', u'1', [], []]
+ok: CONST CV_HOUGH_PROBABILISTIC=1
+
+--- Incoming ---
+[u'const CV_HOUGH_MULTI_SCALE', u'2', [], []]
+ok: CONST CV_HOUGH_MULTI_SCALE=2
+
+--- Incoming ---
+[u'const CV_HOUGH_GRADIENT', u'3', [], []]
+ok: CONST CV_HOUGH_GRADIENT=3
+
+
+===== Header: /home/xxa344/Desktop/opencv-3.2.0/modules/imgproc/include/opencv2/imgproc/hal/interface.h =====
+Namespaces: set([''])
+Ignore header: /home/xxa344/Desktop/opencv-3.2.0/modules/imgproc/include/opencv2/imgproc/hal/interface.h
+
+
+===== Header: /home/xxa344/Desktop/opencv-3.2.0/modules/imgproc/include/opencv2/imgproc.hpp =====
+Namespaces: set(['', u'cv'])
+
+--- Incoming ---
+[u'const cv.MORPH_ERODE', u'0', [], []]
+ok: CONST MORPH_ERODE=0
+
+--- Incoming ---
+[u'const cv.MORPH_DILATE', u'1', [], []]
+ok: CONST MORPH_DILATE=1
+
+--- Incoming ---
+[u'const cv.MORPH_OPEN', u'2', [], []]
+ok: CONST MORPH_OPEN=2
+
+--- Incoming ---
+[u'const cv.MORPH_CLOSE', u'3', [], []]
+ok: CONST MORPH_CLOSE=3
+
+--- Incoming ---
+[u'const cv.MORPH_GRADIENT', u'4', [], []]
+ok: CONST MORPH_GRADIENT=4
+
+--- Incoming ---
+[u'const cv.MORPH_TOPHAT', u'5', [], []]
+ok: CONST MORPH_TOPHAT=5
+
+--- Incoming ---
+[u'const cv.MORPH_BLACKHAT', u'6', [], []]
+ok: CONST MORPH_BLACKHAT=6
+
+--- Incoming ---
+[u'const cv.MORPH_HITMISS', u'7', [], []]
+ok: CONST MORPH_HITMISS=7
+
+--- Incoming ---
+[u'const cv.MORPH_RECT', u'0', [], []]
+ok: CONST MORPH_RECT=0
+
+--- Incoming ---
+[u'const cv.MORPH_CROSS', u'1', [], []]
+ok: CONST MORPH_CROSS=1
+
+--- Incoming ---
+[u'const cv.MORPH_ELLIPSE', u'2', [], []]
+ok: CONST MORPH_ELLIPSE=2
+
+--- Incoming ---
+[u'const cv.INTER_NEAREST', u'0', [], []]
+ok: CONST INTER_NEAREST=0
+
+--- Incoming ---
+[u'const cv.INTER_LINEAR', u'1', [], []]
+ok: CONST INTER_LINEAR=1
+
+--- Incoming ---
+[u'const cv.INTER_CUBIC', u'2', [], []]
+ok: CONST INTER_CUBIC=2
+
+--- Incoming ---
+[u'const cv.INTER_AREA', u'3', [], []]
+ok: CONST INTER_AREA=3
+
+--- Incoming ---
+[u'const cv.INTER_LANCZOS4', u'4', [], []]
+ok: CONST INTER_LANCZOS4=4
+
+--- Incoming ---
+[u'const cv.INTER_MAX', u'7', [], []]
+ok: CONST INTER_MAX=7
+
+--- Incoming ---
+[u'const cv.WARP_FILL_OUTLIERS', u'8', [], []]
+ok: CONST WARP_FILL_OUTLIERS=8
+
+--- Incoming ---
+[u'const cv.WARP_INVERSE_MAP', u'16', [], []]
+ok: CONST WARP_INVERSE_MAP=16
+
+--- Incoming ---
+[u'const cv.INTER_BITS', u'5', [], []]
+ok: CONST INTER_BITS=5
+
+--- Incoming ---
+[u'const cv.INTER_BITS2', u'INTER_BITS * 2', [], []]
+ok: CONST INTER_BITS2=INTER_BITS * 2
+
+--- Incoming ---
+[u'const cv.INTER_TAB_SIZE', u'1 << INTER_BITS', [], []]
+ok: CONST INTER_TAB_SIZE=1 << INTER_BITS
+
+--- Incoming ---
+[u'const cv.INTER_TAB_SIZE2', u'INTER_TAB_SIZE * INTER_TAB_SIZE', [], []]
+ok: CONST INTER_TAB_SIZE2=INTER_TAB_SIZE * INTER_TAB_SIZE
+
+--- Incoming ---
+[u'const cv.DIST_USER', u'-1', [], []]
+ok: CONST DIST_USER=-1
+
+--- Incoming ---
+[u'const cv.DIST_L1', u'1', [], []]
+ok: CONST DIST_L1=1
+
+--- Incoming ---
+[u'const cv.DIST_L2', u'2', [], []]
+ok: CONST DIST_L2=2
+
+--- Incoming ---
+[u'const cv.DIST_C', u'3', [], []]
+ok: CONST DIST_C=3
+
+--- Incoming ---
+[u'const cv.DIST_L12', u'4', [], []]
+ok: CONST DIST_L12=4
+
+--- Incoming ---
+[u'const cv.DIST_FAIR', u'5', [], []]
+ok: CONST DIST_FAIR=5
+
+--- Incoming ---
+[u'const cv.DIST_WELSCH', u'6', [], []]
+ok: CONST DIST_WELSCH=6
+
+--- Incoming ---
+[u'const cv.DIST_HUBER', u'7', [], []]
+ok: CONST DIST_HUBER=7
+
+--- Incoming ---
+[u'const cv.DIST_MASK_3', u'3', [], []]
+ok: CONST DIST_MASK_3=3
+
+--- Incoming ---
+[u'const cv.DIST_MASK_5', u'5', [], []]
+ok: CONST DIST_MASK_5=5
+
+--- Incoming ---
+[u'const cv.DIST_MASK_PRECISE', u'0', [], []]
+ok: CONST DIST_MASK_PRECISE=0
+
+--- Incoming ---
+[u'const cv.THRESH_BINARY', u'0', [], []]
+ok: CONST THRESH_BINARY=0
+
+--- Incoming ---
+[u'const cv.THRESH_BINARY_INV', u'1', [], []]
+ok: CONST THRESH_BINARY_INV=1
+
+--- Incoming ---
+[u'const cv.THRESH_TRUNC', u'2', [], []]
+ok: CONST THRESH_TRUNC=2
+
+--- Incoming ---
+[u'const cv.THRESH_TOZERO', u'3', [], []]
+ok: CONST THRESH_TOZERO=3
+
+--- Incoming ---
+[u'const cv.THRESH_TOZERO_INV', u'4', [], []]
+ok: CONST THRESH_TOZERO_INV=4
+
+--- Incoming ---
+[u'const cv.THRESH_MASK', u'7', [], []]
+ok: CONST THRESH_MASK=7
+
+--- Incoming ---
+[u'const cv.THRESH_OTSU', u'8', [], []]
+ok: CONST THRESH_OTSU=8
+
+--- Incoming ---
+[u'const cv.THRESH_TRIANGLE', u'16', [], []]
+ok: CONST THRESH_TRIANGLE=16
+
+--- Incoming ---
+[u'const cv.ADAPTIVE_THRESH_MEAN_C', u'0', [], []]
+ok: CONST ADAPTIVE_THRESH_MEAN_C=0
+
+--- Incoming ---
+[u'const cv.ADAPTIVE_THRESH_GAUSSIAN_C', u'1', [], []]
+ok: CONST ADAPTIVE_THRESH_GAUSSIAN_C=1
+
+--- Incoming ---
+[u'const cv.PROJ_SPHERICAL_ORTHO', u'0', [], []]
+ok: CONST PROJ_SPHERICAL_ORTHO=0
+
+--- Incoming ---
+[u'const cv.PROJ_SPHERICAL_EQRECT', u'1', [], []]
+ok: CONST PROJ_SPHERICAL_EQRECT=1
+
+--- Incoming ---
+[u'const cv.GC_BGD', u'0', [], []]
+ok: CONST GC_BGD=0
+
+--- Incoming ---
+[u'const cv.GC_FGD', u'1', [], []]
+ok: CONST GC_FGD=1
+
+--- Incoming ---
+[u'const cv.GC_PR_BGD', u'2', [], []]
+ok: CONST GC_PR_BGD=2
+
+--- Incoming ---
+[u'const cv.GC_PR_FGD', u'3', [], []]
+ok: CONST GC_PR_FGD=3
+
+--- Incoming ---
+[u'const cv.GC_INIT_WITH_RECT', u'0', [], []]
+ok: CONST GC_INIT_WITH_RECT=0
+
+--- Incoming ---
+[u'const cv.GC_INIT_WITH_MASK', u'1', [], []]
+ok: CONST GC_INIT_WITH_MASK=1
+
+--- Incoming ---
+[u'const cv.GC_EVAL', u'2', [], []]
+ok: CONST GC_EVAL=2
+
+--- Incoming ---
+[u'const cv.DIST_LABEL_CCOMP', u'0', [], []]
+ok: CONST DIST_LABEL_CCOMP=0
+
+--- Incoming ---
+[u'const cv.DIST_LABEL_PIXEL', u'1', [], []]
+ok: CONST DIST_LABEL_PIXEL=1
+
+--- Incoming ---
+[u'const cv.FLOODFILL_FIXED_RANGE', u'1 << 16', [], []]
+ok: CONST FLOODFILL_FIXED_RANGE=1 << 16
+
+--- Incoming ---
+[u'const cv.FLOODFILL_MASK_ONLY', u'1 << 17', [], []]
+ok: CONST FLOODFILL_MASK_ONLY=1 << 17
+
+--- Incoming ---
+[u'const cv.CC_STAT_LEFT', u'0', [], []]
+ok: CONST CC_STAT_LEFT=0
+
+--- Incoming ---
+[u'const cv.CC_STAT_TOP', u'1', [], []]
+ok: CONST CC_STAT_TOP=1
+
+--- Incoming ---
+[u'const cv.CC_STAT_WIDTH', u'2', [], []]
+ok: CONST CC_STAT_WIDTH=2
+
+--- Incoming ---
+[u'const cv.CC_STAT_HEIGHT', u'3', [], []]
+ok: CONST CC_STAT_HEIGHT=3
+
+--- Incoming ---
+[u'const cv.CC_STAT_AREA', u'4', [], []]
+ok: CONST CC_STAT_AREA=4
+
+--- Incoming ---
+[u'const cv.CC_STAT_MAX', u'5', [], []]
+ok: CONST CC_STAT_MAX=5
+
+--- Incoming ---
+[u'const cv.CCL_WU', u'0', [], []]
+ok: CONST CCL_WU=0
+
+--- Incoming ---
+[u'const cv.CCL_DEFAULT', u'-1', [], []]
+ok: CONST CCL_DEFAULT=-1
+
+--- Incoming ---
+[u'const cv.CCL_GRANA', u'1', [], []]
+ok: CONST CCL_GRANA=1
+
+--- Incoming ---
+[u'const cv.RETR_EXTERNAL', u'0', [], []]
+ok: CONST RETR_EXTERNAL=0
+
+--- Incoming ---
+[u'const cv.RETR_LIST', u'1', [], []]
+ok: CONST RETR_LIST=1
+
+--- Incoming ---
+[u'const cv.RETR_CCOMP', u'2', [], []]
+ok: CONST RETR_CCOMP=2
+
+--- Incoming ---
+[u'const cv.RETR_TREE', u'3', [], []]
+ok: CONST RETR_TREE=3
+
+--- Incoming ---
+[u'const cv.RETR_FLOODFILL', u'4', [], []]
+ok: CONST RETR_FLOODFILL=4
+
+--- Incoming ---
+[u'const cv.CHAIN_APPROX_NONE', u'1', [], []]
+ok: CONST CHAIN_APPROX_NONE=1
+
+--- Incoming ---
+[u'const cv.CHAIN_APPROX_SIMPLE', u'2', [], []]
+ok: CONST CHAIN_APPROX_SIMPLE=2
+
+--- Incoming ---
+[u'const cv.CHAIN_APPROX_TC89_L1', u'3', [], []]
+ok: CONST CHAIN_APPROX_TC89_L1=3
+
+--- Incoming ---
+[u'const cv.CHAIN_APPROX_TC89_KCOS', u'4', [], []]
+ok: CONST CHAIN_APPROX_TC89_KCOS=4
+
+--- Incoming ---
+[u'const cv.HOUGH_STANDARD', u'0', [], []]
+ok: CONST HOUGH_STANDARD=0
+
+--- Incoming ---
+[u'const cv.HOUGH_PROBABILISTIC', u'1', [], []]
+ok: CONST HOUGH_PROBABILISTIC=1
+
+--- Incoming ---
+[u'const cv.HOUGH_MULTI_SCALE', u'2', [], []]
+ok: CONST HOUGH_MULTI_SCALE=2
+
+--- Incoming ---
+[u'const cv.HOUGH_GRADIENT', u'3', [], []]
+ok: CONST HOUGH_GRADIENT=3
+
+--- Incoming ---
+[u'const cv.LSD_REFINE_NONE', u'0', [], []]
+ok: CONST LSD_REFINE_NONE=0
+
+--- Incoming ---
+[u'const cv.LSD_REFINE_STD', u'1', [], []]
+ok: CONST LSD_REFINE_STD=1
+
+--- Incoming ---
+[u'const cv.LSD_REFINE_ADV', u'2', [], []]
+ok: CONST LSD_REFINE_ADV=2
+
+--- Incoming ---
+[u'const cv.HISTCMP_CORREL', u'0', [], []]
+ok: CONST HISTCMP_CORREL=0
+
+--- Incoming ---
+[u'const cv.HISTCMP_CHISQR', u'1', [], []]
+ok: CONST HISTCMP_CHISQR=1
+
+--- Incoming ---
+[u'const cv.HISTCMP_INTERSECT', u'2', [], []]
+ok: CONST HISTCMP_INTERSECT=2
+
+--- Incoming ---
+[u'const cv.HISTCMP_BHATTACHARYYA', u'3', [], []]
+ok: CONST HISTCMP_BHATTACHARYYA=3
+
+--- Incoming ---
+[u'const cv.HISTCMP_HELLINGER', u'HISTCMP_BHATTACHARYYA', [], []]
+ok: CONST HISTCMP_HELLINGER=HISTCMP_BHATTACHARYYA
+
+--- Incoming ---
+[u'const cv.HISTCMP_CHISQR_ALT', u'4', [], []]
+ok: CONST HISTCMP_CHISQR_ALT=4
+
+--- Incoming ---
+[u'const cv.HISTCMP_KL_DIV', u'5', [], []]
+ok: CONST HISTCMP_KL_DIV=5
+
+--- Incoming ---
+[u'const cv.COLOR_BGR2BGRA', u'0', [], []]
+ok: CONST COLOR_BGR2BGRA=0
+
+--- Incoming ---
+[u'const cv.COLOR_RGB2RGBA', u'COLOR_BGR2BGRA', [], []]
+ok: CONST COLOR_RGB2RGBA=COLOR_BGR2BGRA
+
+--- Incoming ---
+[u'const cv.COLOR_BGRA2BGR', u'1', [], []]
+ok: CONST COLOR_BGRA2BGR=1
+
+--- Incoming ---
+[u'const cv.COLOR_RGBA2RGB', u'COLOR_BGRA2BGR', [], []]
+ok: CONST COLOR_RGBA2RGB=COLOR_BGRA2BGR
+
+--- Incoming ---
+[u'const cv.COLOR_BGR2RGBA', u'2', [], []]
+ok: CONST COLOR_BGR2RGBA=2
+
+--- Incoming ---
+[u'const cv.COLOR_RGB2BGRA', u'COLOR_BGR2RGBA', [], []]
+ok: CONST COLOR_RGB2BGRA=COLOR_BGR2RGBA
+
+--- Incoming ---
+[u'const cv.COLOR_RGBA2BGR', u'3', [], []]
+ok: CONST COLOR_RGBA2BGR=3
+
+--- Incoming ---
+[u'const cv.COLOR_BGRA2RGB', u'COLOR_RGBA2BGR', [], []]
+ok: CONST COLOR_BGRA2RGB=COLOR_RGBA2BGR
+
+--- Incoming ---
+[u'const cv.COLOR_BGR2RGB', u'4', [], []]
+ok: CONST COLOR_BGR2RGB=4
+
+--- Incoming ---
+[u'const cv.COLOR_RGB2BGR', u'COLOR_BGR2RGB', [], []]
+ok: CONST COLOR_RGB2BGR=COLOR_BGR2RGB
+
+--- Incoming ---
+[u'const cv.COLOR_BGRA2RGBA', u'5', [], []]
+ok: CONST COLOR_BGRA2RGBA=5
+
+--- Incoming ---
+[u'const cv.COLOR_RGBA2BGRA', u'COLOR_BGRA2RGBA', [], []]
+ok: CONST COLOR_RGBA2BGRA=COLOR_BGRA2RGBA
+
+--- Incoming ---
+[u'const cv.COLOR_BGR2GRAY', u'6', [], []]
+ok: CONST COLOR_BGR2GRAY=6
+
+--- Incoming ---
+[u'const cv.COLOR_RGB2GRAY', u'7', [], []]
+ok: CONST COLOR_RGB2GRAY=7
+
+--- Incoming ---
+[u'const cv.COLOR_GRAY2BGR', u'8', [], []]
+ok: CONST COLOR_GRAY2BGR=8
+
+--- Incoming ---
+[u'const cv.COLOR_GRAY2RGB', u'COLOR_GRAY2BGR', [], []]
+ok: CONST COLOR_GRAY2RGB=COLOR_GRAY2BGR
+
+--- Incoming ---
+[u'const cv.COLOR_GRAY2BGRA', u'9', [], []]
+ok: CONST COLOR_GRAY2BGRA=9
+
+--- Incoming ---
+[u'const cv.COLOR_GRAY2RGBA', u'COLOR_GRAY2BGRA', [], []]
+ok: CONST COLOR_GRAY2RGBA=COLOR_GRAY2BGRA
+
+--- Incoming ---
+[u'const cv.COLOR_BGRA2GRAY', u'10', [], []]
+ok: CONST COLOR_BGRA2GRAY=10
+
+--- Incoming ---
+[u'const cv.COLOR_RGBA2GRAY', u'11', [], []]
+ok: CONST COLOR_RGBA2GRAY=11
+
+--- Incoming ---
+[u'const cv.COLOR_BGR2BGR565', u'12', [], []]
+ok: CONST COLOR_BGR2BGR565=12
+
+--- Incoming ---
+[u'const cv.COLOR_RGB2BGR565', u'13', [], []]
+ok: CONST COLOR_RGB2BGR565=13
+
+--- Incoming ---
+[u'const cv.COLOR_BGR5652BGR', u'14', [], []]
+ok: CONST COLOR_BGR5652BGR=14
+
+--- Incoming ---
+[u'const cv.COLOR_BGR5652RGB', u'15', [], []]
+ok: CONST COLOR_BGR5652RGB=15
+
+--- Incoming ---
+[u'const cv.COLOR_BGRA2BGR565', u'16', [], []]
+ok: CONST COLOR_BGRA2BGR565=16
+
+--- Incoming ---
+[u'const cv.COLOR_RGBA2BGR565', u'17', [], []]
+ok: CONST COLOR_RGBA2BGR565=17
+
+--- Incoming ---
+[u'const cv.COLOR_BGR5652BGRA', u'18', [], []]
+ok: CONST COLOR_BGR5652BGRA=18
+
+--- Incoming ---
+[u'const cv.COLOR_BGR5652RGBA', u'19', [], []]
+ok: CONST COLOR_BGR5652RGBA=19
+
+--- Incoming ---
+[u'const cv.COLOR_GRAY2BGR565', u'20', [], []]
+ok: CONST COLOR_GRAY2BGR565=20
+
+--- Incoming ---
+[u'const cv.COLOR_BGR5652GRAY', u'21', [], []]
+ok: CONST COLOR_BGR5652GRAY=21
+
+--- Incoming ---
+[u'const cv.COLOR_BGR2BGR555', u'22', [], []]
+ok: CONST COLOR_BGR2BGR555=22
+
+--- Incoming ---
+[u'const cv.COLOR_RGB2BGR555', u'23', [], []]
+ok: CONST COLOR_RGB2BGR555=23
+
+--- Incoming ---
+[u'const cv.COLOR_BGR5552BGR', u'24', [], []]
+ok: CONST COLOR_BGR5552BGR=24
+
+--- Incoming ---
+[u'const cv.COLOR_BGR5552RGB', u'25', [], []]
+ok: CONST COLOR_BGR5552RGB=25
+
+--- Incoming ---
+[u'const cv.COLOR_BGRA2BGR555', u'26', [], []]
+ok: CONST COLOR_BGRA2BGR555=26
+
+--- Incoming ---
+[u'const cv.COLOR_RGBA2BGR555', u'27', [], []]
+ok: CONST COLOR_RGBA2BGR555=27
+
+--- Incoming ---
+[u'const cv.COLOR_BGR5552BGRA', u'28', [], []]
+ok: CONST COLOR_BGR5552BGRA=28
+
+--- Incoming ---
+[u'const cv.COLOR_BGR5552RGBA', u'29', [], []]
+ok: CONST COLOR_BGR5552RGBA=29
+
+--- Incoming ---
+[u'const cv.COLOR_GRAY2BGR555', u'30', [], []]
+ok: CONST COLOR_GRAY2BGR555=30
+
+--- Incoming ---
+[u'const cv.COLOR_BGR5552GRAY', u'31', [], []]
+ok: CONST COLOR_BGR5552GRAY=31
+
+--- Incoming ---
+[u'const cv.COLOR_BGR2XYZ', u'32', [], []]
+ok: CONST COLOR_BGR2XYZ=32
+
+--- Incoming ---
+[u'const cv.COLOR_RGB2XYZ', u'33', [], []]
+ok: CONST COLOR_RGB2XYZ=33
+
+--- Incoming ---
+[u'const cv.COLOR_XYZ2BGR', u'34', [], []]
+ok: CONST COLOR_XYZ2BGR=34
+
+--- Incoming ---
+[u'const cv.COLOR_XYZ2RGB', u'35', [], []]
+ok: CONST COLOR_XYZ2RGB=35
+
+--- Incoming ---
+[u'const cv.COLOR_BGR2YCrCb', u'36', [], []]
+ok: CONST COLOR_BGR2YCrCb=36
+
+--- Incoming ---
+[u'const cv.COLOR_RGB2YCrCb', u'37', [], []]
+ok: CONST COLOR_RGB2YCrCb=37
+
+--- Incoming ---
+[u'const cv.COLOR_YCrCb2BGR', u'38', [], []]
+ok: CONST COLOR_YCrCb2BGR=38
+
+--- Incoming ---
+[u'const cv.COLOR_YCrCb2RGB', u'39', [], []]
+ok: CONST COLOR_YCrCb2RGB=39
+
+--- Incoming ---
+[u'const cv.COLOR_BGR2HSV', u'40', [], []]
+ok: CONST COLOR_BGR2HSV=40
+
+--- Incoming ---
+[u'const cv.COLOR_RGB2HSV', u'41', [], []]
+ok: CONST COLOR_RGB2HSV=41
+
+--- Incoming ---
+[u'const cv.COLOR_BGR2Lab', u'44', [], []]
+ok: CONST COLOR_BGR2Lab=44
+
+--- Incoming ---
+[u'const cv.COLOR_RGB2Lab', u'45', [], []]
+ok: CONST COLOR_RGB2Lab=45
+
+--- Incoming ---
+[u'const cv.COLOR_BGR2Luv', u'50', [], []]
+ok: CONST COLOR_BGR2Luv=50
+
+--- Incoming ---
+[u'const cv.COLOR_RGB2Luv', u'51', [], []]
+ok: CONST COLOR_RGB2Luv=51
+
+--- Incoming ---
+[u'const cv.COLOR_BGR2HLS', u'52', [], []]
+ok: CONST COLOR_BGR2HLS=52
+
+--- Incoming ---
+[u'const cv.COLOR_RGB2HLS', u'53', [], []]
+ok: CONST COLOR_RGB2HLS=53
+
+--- Incoming ---
+[u'const cv.COLOR_HSV2BGR', u'54', [], []]
+ok: CONST COLOR_HSV2BGR=54
+
+--- Incoming ---
+[u'const cv.COLOR_HSV2RGB', u'55', [], []]
+ok: CONST COLOR_HSV2RGB=55
+
+--- Incoming ---
+[u'const cv.COLOR_Lab2BGR', u'56', [], []]
+ok: CONST COLOR_Lab2BGR=56
+
+--- Incoming ---
+[u'const cv.COLOR_Lab2RGB', u'57', [], []]
+ok: CONST COLOR_Lab2RGB=57
+
+--- Incoming ---
+[u'const cv.COLOR_Luv2BGR', u'58', [], []]
+ok: CONST COLOR_Luv2BGR=58
+
+--- Incoming ---
+[u'const cv.COLOR_Luv2RGB', u'59', [], []]
+ok: CONST COLOR_Luv2RGB=59
+
+--- Incoming ---
+[u'const cv.COLOR_HLS2BGR', u'60', [], []]
+ok: CONST COLOR_HLS2BGR=60
+
+--- Incoming ---
+[u'const cv.COLOR_HLS2RGB', u'61', [], []]
+ok: CONST COLOR_HLS2RGB=61
+
+--- Incoming ---
+[u'const cv.COLOR_BGR2HSV_FULL', u'66', [], []]
+ok: CONST COLOR_BGR2HSV_FULL=66
+
+--- Incoming ---
+[u'const cv.COLOR_RGB2HSV_FULL', u'67', [], []]
+ok: CONST COLOR_RGB2HSV_FULL=67
+
+--- Incoming ---
+[u'const cv.COLOR_BGR2HLS_FULL', u'68', [], []]
+ok: CONST COLOR_BGR2HLS_FULL=68
+
+--- Incoming ---
+[u'const cv.COLOR_RGB2HLS_FULL', u'69', [], []]
+ok: CONST COLOR_RGB2HLS_FULL=69
+
+--- Incoming ---
+[u'const cv.COLOR_HSV2BGR_FULL', u'70', [], []]
+ok: CONST COLOR_HSV2BGR_FULL=70
+
+--- Incoming ---
+[u'const cv.COLOR_HSV2RGB_FULL', u'71', [], []]
+ok: CONST COLOR_HSV2RGB_FULL=71
+
+--- Incoming ---
+[u'const cv.COLOR_HLS2BGR_FULL', u'72', [], []]
+ok: CONST COLOR_HLS2BGR_FULL=72
+
+--- Incoming ---
+[u'const cv.COLOR_HLS2RGB_FULL', u'73', [], []]
+ok: CONST COLOR_HLS2RGB_FULL=73
+
+--- Incoming ---
+[u'const cv.COLOR_LBGR2Lab', u'74', [], []]
+ok: CONST COLOR_LBGR2Lab=74
+
+--- Incoming ---
+[u'const cv.COLOR_LRGB2Lab', u'75', [], []]
+ok: CONST COLOR_LRGB2Lab=75
+
+--- Incoming ---
+[u'const cv.COLOR_LBGR2Luv', u'76', [], []]
+ok: CONST COLOR_LBGR2Luv=76
+
+--- Incoming ---
+[u'const cv.COLOR_LRGB2Luv', u'77', [], []]
+ok: CONST COLOR_LRGB2Luv=77
+
+--- Incoming ---
+[u'const cv.COLOR_Lab2LBGR', u'78', [], []]
+ok: CONST COLOR_Lab2LBGR=78
+
+--- Incoming ---
+[u'const cv.COLOR_Lab2LRGB', u'79', [], []]
+ok: CONST COLOR_Lab2LRGB=79
+
+--- Incoming ---
+[u'const cv.COLOR_Luv2LBGR', u'80', [], []]
+ok: CONST COLOR_Luv2LBGR=80
+
+--- Incoming ---
+[u'const cv.COLOR_Luv2LRGB', u'81', [], []]
+ok: CONST COLOR_Luv2LRGB=81
+
+--- Incoming ---
+[u'const cv.COLOR_BGR2YUV', u'82', [], []]
+ok: CONST COLOR_BGR2YUV=82
+
+--- Incoming ---
+[u'const cv.COLOR_RGB2YUV', u'83', [], []]
+ok: CONST COLOR_RGB2YUV=83
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2BGR', u'84', [], []]
+ok: CONST COLOR_YUV2BGR=84
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2RGB', u'85', [], []]
+ok: CONST COLOR_YUV2RGB=85
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2RGB_NV12', u'90', [], []]
+ok: CONST COLOR_YUV2RGB_NV12=90
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2BGR_NV12', u'91', [], []]
+ok: CONST COLOR_YUV2BGR_NV12=91
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2RGB_NV21', u'92', [], []]
+ok: CONST COLOR_YUV2RGB_NV21=92
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2BGR_NV21', u'93', [], []]
+ok: CONST COLOR_YUV2BGR_NV21=93
+
+--- Incoming ---
+[u'const cv.COLOR_YUV420sp2RGB', u'COLOR_YUV2RGB_NV21', [], []]
+ok: CONST COLOR_YUV420sp2RGB=COLOR_YUV2RGB_NV21
+
+--- Incoming ---
+[u'const cv.COLOR_YUV420sp2BGR', u'COLOR_YUV2BGR_NV21', [], []]
+ok: CONST COLOR_YUV420sp2BGR=COLOR_YUV2BGR_NV21
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2RGBA_NV12', u'94', [], []]
+ok: CONST COLOR_YUV2RGBA_NV12=94
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2BGRA_NV12', u'95', [], []]
+ok: CONST COLOR_YUV2BGRA_NV12=95
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2RGBA_NV21', u'96', [], []]
+ok: CONST COLOR_YUV2RGBA_NV21=96
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2BGRA_NV21', u'97', [], []]
+ok: CONST COLOR_YUV2BGRA_NV21=97
+
+--- Incoming ---
+[u'const cv.COLOR_YUV420sp2RGBA', u'COLOR_YUV2RGBA_NV21', [], []]
+ok: CONST COLOR_YUV420sp2RGBA=COLOR_YUV2RGBA_NV21
+
+--- Incoming ---
+[u'const cv.COLOR_YUV420sp2BGRA', u'COLOR_YUV2BGRA_NV21', [], []]
+ok: CONST COLOR_YUV420sp2BGRA=COLOR_YUV2BGRA_NV21
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2RGB_YV12', u'98', [], []]
+ok: CONST COLOR_YUV2RGB_YV12=98
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2BGR_YV12', u'99', [], []]
+ok: CONST COLOR_YUV2BGR_YV12=99
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2RGB_IYUV', u'100', [], []]
+ok: CONST COLOR_YUV2RGB_IYUV=100
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2BGR_IYUV', u'101', [], []]
+ok: CONST COLOR_YUV2BGR_IYUV=101
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2RGB_I420', u'COLOR_YUV2RGB_IYUV', [], []]
+ok: CONST COLOR_YUV2RGB_I420=COLOR_YUV2RGB_IYUV
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2BGR_I420', u'COLOR_YUV2BGR_IYUV', [], []]
+ok: CONST COLOR_YUV2BGR_I420=COLOR_YUV2BGR_IYUV
+
+--- Incoming ---
+[u'const cv.COLOR_YUV420p2RGB', u'COLOR_YUV2RGB_YV12', [], []]
+ok: CONST COLOR_YUV420p2RGB=COLOR_YUV2RGB_YV12
+
+--- Incoming ---
+[u'const cv.COLOR_YUV420p2BGR', u'COLOR_YUV2BGR_YV12', [], []]
+ok: CONST COLOR_YUV420p2BGR=COLOR_YUV2BGR_YV12
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2RGBA_YV12', u'102', [], []]
+ok: CONST COLOR_YUV2RGBA_YV12=102
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2BGRA_YV12', u'103', [], []]
+ok: CONST COLOR_YUV2BGRA_YV12=103
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2RGBA_IYUV', u'104', [], []]
+ok: CONST COLOR_YUV2RGBA_IYUV=104
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2BGRA_IYUV', u'105', [], []]
+ok: CONST COLOR_YUV2BGRA_IYUV=105
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2RGBA_I420', u'COLOR_YUV2RGBA_IYUV', [], []]
+ok: CONST COLOR_YUV2RGBA_I420=COLOR_YUV2RGBA_IYUV
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2BGRA_I420', u'COLOR_YUV2BGRA_IYUV', [], []]
+ok: CONST COLOR_YUV2BGRA_I420=COLOR_YUV2BGRA_IYUV
+
+--- Incoming ---
+[u'const cv.COLOR_YUV420p2RGBA', u'COLOR_YUV2RGBA_YV12', [], []]
+ok: CONST COLOR_YUV420p2RGBA=COLOR_YUV2RGBA_YV12
+
+--- Incoming ---
+[u'const cv.COLOR_YUV420p2BGRA', u'COLOR_YUV2BGRA_YV12', [], []]
+ok: CONST COLOR_YUV420p2BGRA=COLOR_YUV2BGRA_YV12
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2GRAY_420', u'106', [], []]
+ok: CONST COLOR_YUV2GRAY_420=106
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2GRAY_NV21', u'COLOR_YUV2GRAY_420', [], []]
+ok: CONST COLOR_YUV2GRAY_NV21=COLOR_YUV2GRAY_420
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2GRAY_NV12', u'COLOR_YUV2GRAY_420', [], []]
+ok: CONST COLOR_YUV2GRAY_NV12=COLOR_YUV2GRAY_420
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2GRAY_YV12', u'COLOR_YUV2GRAY_420', [], []]
+ok: CONST COLOR_YUV2GRAY_YV12=COLOR_YUV2GRAY_420
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2GRAY_IYUV', u'COLOR_YUV2GRAY_420', [], []]
+ok: CONST COLOR_YUV2GRAY_IYUV=COLOR_YUV2GRAY_420
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2GRAY_I420', u'COLOR_YUV2GRAY_420', [], []]
+ok: CONST COLOR_YUV2GRAY_I420=COLOR_YUV2GRAY_420
+
+--- Incoming ---
+[u'const cv.COLOR_YUV420sp2GRAY', u'COLOR_YUV2GRAY_420', [], []]
+ok: CONST COLOR_YUV420sp2GRAY=COLOR_YUV2GRAY_420
+
+--- Incoming ---
+[u'const cv.COLOR_YUV420p2GRAY', u'COLOR_YUV2GRAY_420', [], []]
+ok: CONST COLOR_YUV420p2GRAY=COLOR_YUV2GRAY_420
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2RGB_UYVY', u'107', [], []]
+ok: CONST COLOR_YUV2RGB_UYVY=107
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2BGR_UYVY', u'108', [], []]
+ok: CONST COLOR_YUV2BGR_UYVY=108
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2RGB_Y422', u'COLOR_YUV2RGB_UYVY', [], []]
+ok: CONST COLOR_YUV2RGB_Y422=COLOR_YUV2RGB_UYVY
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2BGR_Y422', u'COLOR_YUV2BGR_UYVY', [], []]
+ok: CONST COLOR_YUV2BGR_Y422=COLOR_YUV2BGR_UYVY
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2RGB_UYNV', u'COLOR_YUV2RGB_UYVY', [], []]
+ok: CONST COLOR_YUV2RGB_UYNV=COLOR_YUV2RGB_UYVY
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2BGR_UYNV', u'COLOR_YUV2BGR_UYVY', [], []]
+ok: CONST COLOR_YUV2BGR_UYNV=COLOR_YUV2BGR_UYVY
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2RGBA_UYVY', u'111', [], []]
+ok: CONST COLOR_YUV2RGBA_UYVY=111
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2BGRA_UYVY', u'112', [], []]
+ok: CONST COLOR_YUV2BGRA_UYVY=112
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2RGBA_Y422', u'COLOR_YUV2RGBA_UYVY', [], []]
+ok: CONST COLOR_YUV2RGBA_Y422=COLOR_YUV2RGBA_UYVY
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2BGRA_Y422', u'COLOR_YUV2BGRA_UYVY', [], []]
+ok: CONST COLOR_YUV2BGRA_Y422=COLOR_YUV2BGRA_UYVY
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2RGBA_UYNV', u'COLOR_YUV2RGBA_UYVY', [], []]
+ok: CONST COLOR_YUV2RGBA_UYNV=COLOR_YUV2RGBA_UYVY
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2BGRA_UYNV', u'COLOR_YUV2BGRA_UYVY', [], []]
+ok: CONST COLOR_YUV2BGRA_UYNV=COLOR_YUV2BGRA_UYVY
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2RGB_YUY2', u'115', [], []]
+ok: CONST COLOR_YUV2RGB_YUY2=115
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2BGR_YUY2', u'116', [], []]
+ok: CONST COLOR_YUV2BGR_YUY2=116
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2RGB_YVYU', u'117', [], []]
+ok: CONST COLOR_YUV2RGB_YVYU=117
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2BGR_YVYU', u'118', [], []]
+ok: CONST COLOR_YUV2BGR_YVYU=118
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2RGB_YUYV', u'COLOR_YUV2RGB_YUY2', [], []]
+ok: CONST COLOR_YUV2RGB_YUYV=COLOR_YUV2RGB_YUY2
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2BGR_YUYV', u'COLOR_YUV2BGR_YUY2', [], []]
+ok: CONST COLOR_YUV2BGR_YUYV=COLOR_YUV2BGR_YUY2
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2RGB_YUNV', u'COLOR_YUV2RGB_YUY2', [], []]
+ok: CONST COLOR_YUV2RGB_YUNV=COLOR_YUV2RGB_YUY2
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2BGR_YUNV', u'COLOR_YUV2BGR_YUY2', [], []]
+ok: CONST COLOR_YUV2BGR_YUNV=COLOR_YUV2BGR_YUY2
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2RGBA_YUY2', u'119', [], []]
+ok: CONST COLOR_YUV2RGBA_YUY2=119
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2BGRA_YUY2', u'120', [], []]
+ok: CONST COLOR_YUV2BGRA_YUY2=120
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2RGBA_YVYU', u'121', [], []]
+ok: CONST COLOR_YUV2RGBA_YVYU=121
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2BGRA_YVYU', u'122', [], []]
+ok: CONST COLOR_YUV2BGRA_YVYU=122
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2RGBA_YUYV', u'COLOR_YUV2RGBA_YUY2', [], []]
+ok: CONST COLOR_YUV2RGBA_YUYV=COLOR_YUV2RGBA_YUY2
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2BGRA_YUYV', u'COLOR_YUV2BGRA_YUY2', [], []]
+ok: CONST COLOR_YUV2BGRA_YUYV=COLOR_YUV2BGRA_YUY2
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2RGBA_YUNV', u'COLOR_YUV2RGBA_YUY2', [], []]
+ok: CONST COLOR_YUV2RGBA_YUNV=COLOR_YUV2RGBA_YUY2
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2BGRA_YUNV', u'COLOR_YUV2BGRA_YUY2', [], []]
+ok: CONST COLOR_YUV2BGRA_YUNV=COLOR_YUV2BGRA_YUY2
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2GRAY_UYVY', u'123', [], []]
+ok: CONST COLOR_YUV2GRAY_UYVY=123
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2GRAY_YUY2', u'124', [], []]
+ok: CONST COLOR_YUV2GRAY_YUY2=124
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2GRAY_Y422', u'COLOR_YUV2GRAY_UYVY', [], []]
+ok: CONST COLOR_YUV2GRAY_Y422=COLOR_YUV2GRAY_UYVY
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2GRAY_UYNV', u'COLOR_YUV2GRAY_UYVY', [], []]
+ok: CONST COLOR_YUV2GRAY_UYNV=COLOR_YUV2GRAY_UYVY
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2GRAY_YVYU', u'COLOR_YUV2GRAY_YUY2', [], []]
+ok: CONST COLOR_YUV2GRAY_YVYU=COLOR_YUV2GRAY_YUY2
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2GRAY_YUYV', u'COLOR_YUV2GRAY_YUY2', [], []]
+ok: CONST COLOR_YUV2GRAY_YUYV=COLOR_YUV2GRAY_YUY2
+
+--- Incoming ---
+[u'const cv.COLOR_YUV2GRAY_YUNV', u'COLOR_YUV2GRAY_YUY2', [], []]
+ok: CONST COLOR_YUV2GRAY_YUNV=COLOR_YUV2GRAY_YUY2
+
+--- Incoming ---
+[u'const cv.COLOR_RGBA2mRGBA', u'125', [], []]
+ok: CONST COLOR_RGBA2mRGBA=125
+
+--- Incoming ---
+[u'const cv.COLOR_mRGBA2RGBA', u'126', [], []]
+ok: CONST COLOR_mRGBA2RGBA=126
+
+--- Incoming ---
+[u'const cv.COLOR_RGB2YUV_I420', u'127', [], []]
+ok: CONST COLOR_RGB2YUV_I420=127
+
+--- Incoming ---
+[u'const cv.COLOR_BGR2YUV_I420', u'128', [], []]
+ok: CONST COLOR_BGR2YUV_I420=128
+
+--- Incoming ---
+[u'const cv.COLOR_RGB2YUV_IYUV', u'COLOR_RGB2YUV_I420', [], []]
+ok: CONST COLOR_RGB2YUV_IYUV=COLOR_RGB2YUV_I420
+
+--- Incoming ---
+[u'const cv.COLOR_BGR2YUV_IYUV', u'COLOR_BGR2YUV_I420', [], []]
+ok: CONST COLOR_BGR2YUV_IYUV=COLOR_BGR2YUV_I420
+
+--- Incoming ---
+[u'const cv.COLOR_RGBA2YUV_I420', u'129', [], []]
+ok: CONST COLOR_RGBA2YUV_I420=129
+
+--- Incoming ---
+[u'const cv.COLOR_BGRA2YUV_I420', u'130', [], []]
+ok: CONST COLOR_BGRA2YUV_I420=130
+
+--- Incoming ---
+[u'const cv.COLOR_RGBA2YUV_IYUV', u'COLOR_RGBA2YUV_I420', [], []]
+ok: CONST COLOR_RGBA2YUV_IYUV=COLOR_RGBA2YUV_I420
+
+--- Incoming ---
+[u'const cv.COLOR_BGRA2YUV_IYUV', u'COLOR_BGRA2YUV_I420', [], []]
+ok: CONST COLOR_BGRA2YUV_IYUV=COLOR_BGRA2YUV_I420
+
+--- Incoming ---
+[u'const cv.COLOR_RGB2YUV_YV12', u'131', [], []]
+ok: CONST COLOR_RGB2YUV_YV12=131
+
+--- Incoming ---
+[u'const cv.COLOR_BGR2YUV_YV12', u'132', [], []]
+ok: CONST COLOR_BGR2YUV_YV12=132
+
+--- Incoming ---
+[u'const cv.COLOR_RGBA2YUV_YV12', u'133', [], []]
+ok: CONST COLOR_RGBA2YUV_YV12=133
+
+--- Incoming ---
+[u'const cv.COLOR_BGRA2YUV_YV12', u'134', [], []]
+ok: CONST COLOR_BGRA2YUV_YV12=134
+
+--- Incoming ---
+[u'const cv.COLOR_BayerBG2BGR', u'46', [], []]
+ok: CONST COLOR_BayerBG2BGR=46
+
+--- Incoming ---
+[u'const cv.COLOR_BayerGB2BGR', u'47', [], []]
+ok: CONST COLOR_BayerGB2BGR=47
+
+--- Incoming ---
+[u'const cv.COLOR_BayerRG2BGR', u'48', [], []]
+ok: CONST COLOR_BayerRG2BGR=48
+
+--- Incoming ---
+[u'const cv.COLOR_BayerGR2BGR', u'49', [], []]
+ok: CONST COLOR_BayerGR2BGR=49
+
+--- Incoming ---
+[u'const cv.COLOR_BayerBG2RGB', u'COLOR_BayerRG2BGR', [], []]
+ok: CONST COLOR_BayerBG2RGB=COLOR_BayerRG2BGR
+
+--- Incoming ---
+[u'const cv.COLOR_BayerGB2RGB', u'COLOR_BayerGR2BGR', [], []]
+ok: CONST COLOR_BayerGB2RGB=COLOR_BayerGR2BGR
+
+--- Incoming ---
+[u'const cv.COLOR_BayerRG2RGB', u'COLOR_BayerBG2BGR', [], []]
+ok: CONST COLOR_BayerRG2RGB=COLOR_BayerBG2BGR
+
+--- Incoming ---
+[u'const cv.COLOR_BayerGR2RGB', u'COLOR_BayerGB2BGR', [], []]
+ok: CONST COLOR_BayerGR2RGB=COLOR_BayerGB2BGR
+
+--- Incoming ---
+[u'const cv.COLOR_BayerBG2GRAY', u'86', [], []]
+ok: CONST COLOR_BayerBG2GRAY=86
+
+--- Incoming ---
+[u'const cv.COLOR_BayerGB2GRAY', u'87', [], []]
+ok: CONST COLOR_BayerGB2GRAY=87
+
+--- Incoming ---
+[u'const cv.COLOR_BayerRG2GRAY', u'88', [], []]
+ok: CONST COLOR_BayerRG2GRAY=88
+
+--- Incoming ---
+[u'const cv.COLOR_BayerGR2GRAY', u'89', [], []]
+ok: CONST COLOR_BayerGR2GRAY=89
+
+--- Incoming ---
+[u'const cv.COLOR_BayerBG2BGR_VNG', u'62', [], []]
+ok: CONST COLOR_BayerBG2BGR_VNG=62
+
+--- Incoming ---
+[u'const cv.COLOR_BayerGB2BGR_VNG', u'63', [], []]
+ok: CONST COLOR_BayerGB2BGR_VNG=63
+
+--- Incoming ---
+[u'const cv.COLOR_BayerRG2BGR_VNG', u'64', [], []]
+ok: CONST COLOR_BayerRG2BGR_VNG=64
+
+--- Incoming ---
+[u'const cv.COLOR_BayerGR2BGR_VNG', u'65', [], []]
+ok: CONST COLOR_BayerGR2BGR_VNG=65
+
+--- Incoming ---
+[u'const cv.COLOR_BayerBG2RGB_VNG', u'COLOR_BayerRG2BGR_VNG', [], []]
+ok: CONST COLOR_BayerBG2RGB_VNG=COLOR_BayerRG2BGR_VNG
+
+--- Incoming ---
+[u'const cv.COLOR_BayerGB2RGB_VNG', u'COLOR_BayerGR2BGR_VNG', [], []]
+ok: CONST COLOR_BayerGB2RGB_VNG=COLOR_BayerGR2BGR_VNG
+
+--- Incoming ---
+[u'const cv.COLOR_BayerRG2RGB_VNG', u'COLOR_BayerBG2BGR_VNG', [], []]
+ok: CONST COLOR_BayerRG2RGB_VNG=COLOR_BayerBG2BGR_VNG
+
+--- Incoming ---
+[u'const cv.COLOR_BayerGR2RGB_VNG', u'COLOR_BayerGB2BGR_VNG', [], []]
+ok: CONST COLOR_BayerGR2RGB_VNG=COLOR_BayerGB2BGR_VNG
+
+--- Incoming ---
+[u'const cv.COLOR_BayerBG2BGR_EA', u'135', [], []]
+ok: CONST COLOR_BayerBG2BGR_EA=135
+
+--- Incoming ---
+[u'const cv.COLOR_BayerGB2BGR_EA', u'136', [], []]
+ok: CONST COLOR_BayerGB2BGR_EA=136
+
+--- Incoming ---
+[u'const cv.COLOR_BayerRG2BGR_EA', u'137', [], []]
+ok: CONST COLOR_BayerRG2BGR_EA=137
+
+--- Incoming ---
+[u'const cv.COLOR_BayerGR2BGR_EA', u'138', [], []]
+ok: CONST COLOR_BayerGR2BGR_EA=138
+
+--- Incoming ---
+[u'const cv.COLOR_BayerBG2RGB_EA', u'COLOR_BayerRG2BGR_EA', [], []]
+ok: CONST COLOR_BayerBG2RGB_EA=COLOR_BayerRG2BGR_EA
+
+--- Incoming ---
+[u'const cv.COLOR_BayerGB2RGB_EA', u'COLOR_BayerGR2BGR_EA', [], []]
+ok: CONST COLOR_BayerGB2RGB_EA=COLOR_BayerGR2BGR_EA
+
+--- Incoming ---
+[u'const cv.COLOR_BayerRG2RGB_EA', u'COLOR_BayerBG2BGR_EA', [], []]
+ok: CONST COLOR_BayerRG2RGB_EA=COLOR_BayerBG2BGR_EA
+
+--- Incoming ---
+[u'const cv.COLOR_BayerGR2RGB_EA', u'COLOR_BayerGB2BGR_EA', [], []]
+ok: CONST COLOR_BayerGR2RGB_EA=COLOR_BayerGB2BGR_EA
+
+--- Incoming ---
+[u'const cv.COLOR_COLORCVT_MAX', u'139', [], []]
+ok: CONST COLOR_COLORCVT_MAX=139
+
+--- Incoming ---
+[u'const cv.INTERSECT_NONE', u'0', [], []]
+ok: CONST INTERSECT_NONE=0
+
+--- Incoming ---
+[u'const cv.INTERSECT_PARTIAL', u'1', [], []]
+ok: CONST INTERSECT_PARTIAL=1
+
+--- Incoming ---
+[u'const cv.INTERSECT_FULL', u'2', [], []]
+ok: CONST INTERSECT_FULL=2
+
+--- Incoming ---
+[u'class cv.CLAHE', ': cv::Algorithm', [], []]
+ok: class CLASS cv::.CLAHE : Algorithm, name: CLAHE, base: Algorithm
+
+--- Incoming ---
+[   u'cv.CLAHE.apply',
+    u'void',
+    [],
+    [['Mat', u'src', '', []], ['Mat', u'dst', '', ['/O']]],
+    u'void']
+ok: FUNC <void cv.CLAHE.apply [ARG Mat src=, ARG Mat dst=]>
+
+--- Incoming ---
+[   u'cv.CLAHE.setClipLimit',
+    u'void',
+    [],
+    [[u'double', u'clipLimit', u'', []]],
+    u'void']
+ok: FUNC <void cv.CLAHE.setClipLimit [ARG double clipLimit=]>
+
+--- Incoming ---
+[u'cv.CLAHE.getClipLimit', u'double', [], [], u'double']
+ok: FUNC <double cv.CLAHE.getClipLimit []>
+
+--- Incoming ---
+[   u'cv.CLAHE.setTilesGridSize',
+    u'void',
+    [],
+    [[u'Size', u'tileGridSize', u'', []]],
+    u'void']
+ok: FUNC <void cv.CLAHE.setTilesGridSize [ARG Size tileGridSize=]>
+
+--- Incoming ---
+[u'cv.CLAHE.getTilesGridSize', u'Size', [], [], u'Size']
+ok: FUNC <Size cv.CLAHE.getTilesGridSize []>
+
+--- Incoming ---
+[u'cv.CLAHE.collectGarbage', u'void', [], [], u'void']
+ok: FUNC <void cv.CLAHE.collectGarbage []>
+
+--- Incoming ---
+[u'class cv.Subdiv2D', '', [], []]
+ok: class CLASS cv::.Subdiv2D : , name: Subdiv2D, base: 
+
+--- Incoming ---
+[u'const cv.Subdiv2D.PTLOC_ERROR', u'-2', [], []]
+ok: CONST PTLOC_ERROR=-2
+
+--- Incoming ---
+[u'const cv.Subdiv2D.PTLOC_OUTSIDE_RECT', u'-1', [], []]
+ok: CONST PTLOC_OUTSIDE_RECT=-1
+
+--- Incoming ---
+[u'const cv.Subdiv2D.PTLOC_INSIDE', u'0', [], []]
+ok: CONST PTLOC_INSIDE=0
+
+--- Incoming ---
+[u'const cv.Subdiv2D.PTLOC_VERTEX', u'1', [], []]
+ok: CONST PTLOC_VERTEX=1
+
+--- Incoming ---
+[u'const cv.Subdiv2D.PTLOC_ON_EDGE', u'2', [], []]
+ok: CONST PTLOC_ON_EDGE=2
+
+--- Incoming ---
+[u'const cv.Subdiv2D.NEXT_AROUND_ORG', u'0x00', [], []]
+ok: CONST NEXT_AROUND_ORG=0x00
+
+--- Incoming ---
+[u'const cv.Subdiv2D.NEXT_AROUND_DST', u'0x22', [], []]
+ok: CONST NEXT_AROUND_DST=0x22
+
+--- Incoming ---
+[u'const cv.Subdiv2D.PREV_AROUND_ORG', u'0x11', [], []]
+ok: CONST PREV_AROUND_ORG=0x11
+
+--- Incoming ---
+[u'const cv.Subdiv2D.PREV_AROUND_DST', u'0x33', [], []]
+ok: CONST PREV_AROUND_DST=0x33
+
+--- Incoming ---
+[u'const cv.Subdiv2D.NEXT_AROUND_LEFT', u'0x13', [], []]
+ok: CONST NEXT_AROUND_LEFT=0x13
+
+--- Incoming ---
+[u'const cv.Subdiv2D.NEXT_AROUND_RIGHT', u'0x31', [], []]
+ok: CONST NEXT_AROUND_RIGHT=0x31
+
+--- Incoming ---
+[u'const cv.Subdiv2D.PREV_AROUND_LEFT', u'0x20', [], []]
+ok: CONST PREV_AROUND_LEFT=0x20
+
+--- Incoming ---
+[u'const cv.Subdiv2D.PREV_AROUND_RIGHT', u'0x02', [], []]
+ok: CONST PREV_AROUND_RIGHT=0x02
+
+--- Incoming ---
+[u'cv.Subdiv2D.Subdiv2D', '', [], []]
+ok: FUNC < cv.Subdiv2D.Subdiv2D []>
+
+--- Incoming ---
+[u'cv.Subdiv2D.Subdiv2D', '', [], [[u'Rect', u'rect', u'', []]]]
+ok: FUNC < cv.Subdiv2D.Subdiv2D [ARG Rect rect=]>
+
+--- Incoming ---
+[   u'cv.Subdiv2D.initDelaunay',
+    u'void',
+    [],
+    [[u'Rect', u'rect', u'', []]],
+    u'void']
+ok: FUNC <void cv.Subdiv2D.initDelaunay [ARG Rect rect=]>
+
+--- Incoming ---
+[u'cv.Subdiv2D.insert', u'int', [], [[u'Point2f', u'pt', u'', []]], u'int']
+ok: FUNC <int cv.Subdiv2D.insert [ARG Point2f pt=]>
+
+--- Incoming ---
+[   u'cv.Subdiv2D.insert',
+    u'void',
+    [],
+    [[u'vector_Point2f', u'ptvec', u'', []]],
+    u'void']
+ok: FUNC <void cv.Subdiv2D.insert [ARG vector_Point2f ptvec=]>
+
+--- Incoming ---
+[   u'cv.Subdiv2D.locate',
+    u'int',
+    [],
+    [   [u'Point2f', u'pt', u'', []],
+        [u'int', u'edge', u'', ['/O']],
+        [u'int', u'vertex', u'', ['/O']]],
+    u'int']
+ok: FUNC <int cv.Subdiv2D.locate [ARG Point2f pt=, ARG int edge=, ARG int vertex=]>
+
+--- Incoming ---
+[   u'cv.Subdiv2D.findNearest',
+    u'int',
+    [],
+    [[u'Point2f', u'pt', u'', []], [u'Point2f*', u'nearestPt', u'0', ['/O']]],
+    u'int']
+ok: FUNC <int cv.Subdiv2D.findNearest [ARG Point2f pt=, ARG Point2f * nearestPt=0]>
+
+--- Incoming ---
+[   u'cv.Subdiv2D.getEdgeList',
+    u'void',
+    [],
+    [[u'vector_Vec4f', u'edgeList', u'', ['/O']]],
+    u'void']
+ok: FUNC <void cv.Subdiv2D.getEdgeList [ARG vector_Vec4f edgeList=]>
+
+--- Incoming ---
+[   u'cv.Subdiv2D.getLeadingEdgeList',
+    u'void',
+    [],
+    [[u'vector_int', u'leadingEdgeList', u'', ['/O']]],
+    u'void']
+ok: FUNC <void cv.Subdiv2D.getLeadingEdgeList [ARG vector_int leadingEdgeList=]>
+
+--- Incoming ---
+[   u'cv.Subdiv2D.getTriangleList',
+    u'void',
+    [],
+    [[u'vector_Vec6f', u'triangleList', u'', ['/O']]],
+    u'void']
+ok: FUNC <void cv.Subdiv2D.getTriangleList [ARG vector_Vec6f triangleList=]>
+
+--- Incoming ---
+[   u'cv.Subdiv2D.getVoronoiFacetList',
+    u'void',
+    [],
+    [   [u'vector_int', u'idx', u'', []],
+        [u'vector_vector_Point2f', u'facetList', u'', ['/O']],
+        [u'vector_Point2f', u'facetCenters', u'', ['/O']]],
+    u'void']
+ok: FUNC <void cv.Subdiv2D.getVoronoiFacetList [ARG vector_int idx=, ARG vector_vector_Point2f facetList=, ARG vector_Point2f facetCenters=]>
+
+--- Incoming ---
+[   u'cv.Subdiv2D.getVertex',
+    u'Point2f',
+    [],
+    [[u'int', u'vertex', u'', []], [u'int*', u'firstEdge', u'0', ['/O']]],
+    u'Point2f']
+ok: FUNC <Point2f cv.Subdiv2D.getVertex [ARG int vertex=, ARG int * firstEdge=0]>
+
+--- Incoming ---
+[   u'cv.Subdiv2D.getEdge',
+    u'int',
+    [],
+    [[u'int', u'edge', u'', []], [u'int', u'nextEdgeType', u'', []]],
+    u'int']
+ok: FUNC <int cv.Subdiv2D.getEdge [ARG int edge=, ARG int nextEdgeType=]>
+
+--- Incoming ---
+[u'cv.Subdiv2D.nextEdge', u'int', [], [[u'int', u'edge', u'', []]], u'int']
+ok: FUNC <int cv.Subdiv2D.nextEdge [ARG int edge=]>
+
+--- Incoming ---
+[   u'cv.Subdiv2D.rotateEdge',
+    u'int',
+    [],
+    [[u'int', u'edge', u'', []], [u'int', u'rotate', u'', []]],
+    u'int']
+ok: FUNC <int cv.Subdiv2D.rotateEdge [ARG int edge=, ARG int rotate=]>
+
+--- Incoming ---
+[u'cv.Subdiv2D.symEdge', u'int', [], [[u'int', u'edge', u'', []]], u'int']
+ok: FUNC <int cv.Subdiv2D.symEdge [ARG int edge=]>
+
+--- Incoming ---
+[   u'cv.Subdiv2D.edgeOrg',
+    u'int',
+    [],
+    [[u'int', u'edge', u'', []], [u'Point2f*', u'orgpt', u'0', ['/O']]],
+    u'int']
+ok: FUNC <int cv.Subdiv2D.edgeOrg [ARG int edge=, ARG Point2f * orgpt=0]>
+
+--- Incoming ---
+[   u'cv.Subdiv2D.edgeDst',
+    u'int',
+    [],
+    [[u'int', u'edge', u'', []], [u'Point2f*', u'dstpt', u'0', ['/O']]],
+    u'int']
+ok: FUNC <int cv.Subdiv2D.edgeDst [ARG int edge=, ARG Point2f * dstpt=0]>
+
+--- Incoming ---
+[u'class cv.LineSegmentDetector', ': cv::Algorithm', [], []]
+ok: class CLASS cv::.LineSegmentDetector : Algorithm, name: LineSegmentDetector, base: Algorithm
+
+--- Incoming ---
+[   u'cv.LineSegmentDetector.detect',
+    u'void',
+    [],
+    [   ['Mat', u'_image', '', []],
+        ['Mat', u'_lines', '', ['/O']],
+        ['Mat', u'width', u'Mat()', ['/O']],
+        ['Mat', u'prec', u'Mat()', ['/O']],
+        ['Mat', u'nfa', u'Mat()', ['/O']]],
+    u'void']
+ok: FUNC <void cv.LineSegmentDetector.detect [ARG Mat _image=, ARG Mat _lines=, ARG Mat width=Mat(), ARG Mat prec=Mat(), ARG Mat nfa=Mat()]>
+
+--- Incoming ---
+[   u'cv.LineSegmentDetector.drawSegments',
+    u'void',
+    [],
+    [['Mat', u'_image', '', ['/IO']], ['Mat', u'lines', '', []]],
+    u'void']
+ok: FUNC <void cv.LineSegmentDetector.drawSegments [ARG Mat _image=, ARG Mat lines=]>
+
+--- Incoming ---
+[   u'cv.LineSegmentDetector.compareSegments',
+    u'int',
+    [],
+    [   [u'Size', u'size', u'', []],
+        ['Mat', u'lines1', '', []],
+        ['Mat', u'lines2', '', []],
+        ['Mat', u'_image', u'Mat()', ['/IO']]],
+    u'int']
+ok: FUNC <int cv.LineSegmentDetector.compareSegments [ARG Size size=, ARG Mat lines1=, ARG Mat lines2=, ARG Mat _image=Mat()]>
+
+--- Incoming ---
+[   u'cv.createLineSegmentDetector',
+    u'Ptr_LineSegmentDetector',
+    [],
+    [   [u'int', u'_refine', u'LSD_REFINE_STD', []],
+        [u'double', u'_scale', u'0.8', []],
+        [u'double', u'_sigma_scale', u'0.6', []],
+        [u'double', u'_quant', u'2.0', []],
+        [u'double', u'_ang_th', u'22.5', []],
+        [u'double', u'_log_eps', u'0', []],
+        [u'double', u'_density_th', u'0.7', []],
+        [u'int', u'_n_bins', u'1024', []]],
+    u'Ptr<LineSegmentDetector>']
+ok: FUNC <Ptr_LineSegmentDetector cv..createLineSegmentDetector [ARG int _refine=LSD_REFINE_STD, ARG double _scale=0.8, ARG double _sigma_scale=0.6, ARG double _quant=2.0, ARG double _ang_th=22.5, ARG double _log_eps=0, ARG double _density_th=0.7, ARG int _n_bins=1024]>
+
+--- Incoming ---
+[   u'cv.getGaussianKernel',
+    u'Mat',
+    [],
+    [   [u'int', u'ksize', u'', []],
+        [u'double', u'sigma', u'', []],
+        [u'int', u'ktype', u'CV_64F', []]],
+    u'Mat']
+ok: FUNC <Mat cv..getGaussianKernel [ARG int ksize=, ARG double sigma=, ARG int ktype=CV_64F]>
+
+--- Incoming ---
+[   u'cv.getDerivKernels',
+    u'void',
+    [],
+    [   ['Mat', u'kx', '', ['/O']],
+        ['Mat', u'ky', '', ['/O']],
+        [u'int', u'dx', u'', []],
+        [u'int', u'dy', u'', []],
+        [u'int', u'ksize', u'', []],
+        [u'bool', u'normalize', u'false', []],
+        [u'int', u'ktype', u'CV_32F', []]],
+    u'void']
+ok: FUNC <void cv..getDerivKernels [ARG Mat kx=, ARG Mat ky=, ARG int dx=, ARG int dy=, ARG int ksize=, ARG bool normalize=false, ARG int ktype=CV_32F]>
+
+--- Incoming ---
+[   u'cv.getGaborKernel',
+    u'Mat',
+    [],
+    [   [u'Size', u'ksize', u'', []],
+        [u'double', u'sigma', u'', []],
+        [u'double', u'theta', u'', []],
+        [u'double', u'lambd', u'', []],
+        [u'double', u'gamma', u'', []],
+        [u'double', u'psi', u'CV_PI*0.5', []],
+        [u'int', u'ktype', u'CV_64F', []]],
+    u'Mat']
+ok: FUNC <Mat cv..getGaborKernel [ARG Size ksize=, ARG double sigma=, ARG double theta=, ARG double lambd=, ARG double gamma=, ARG double psi=CV_PI*0.5, ARG int ktype=CV_64F]>
+
+--- Incoming ---
+[   u'cv.getStructuringElement',
+    u'Mat',
+    [],
+    [   [u'int', u'shape', u'', []],
+        [u'Size', u'ksize', u'', []],
+        [u'Point', u'anchor', u'Point(-1,-1)', []]],
+    u'Mat']
+ok: FUNC <Mat cv..getStructuringElement [ARG int shape=, ARG Size ksize=, ARG Point anchor=Point(-1,-1)]>
+
+--- Incoming ---
+[   u'cv.medianBlur',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'int', u'ksize', u'', []]],
+    u'void']
+ok: FUNC <void cv..medianBlur [ARG Mat src=, ARG Mat dst=, ARG int ksize=]>
+
+--- Incoming ---
+[   u'cv.GaussianBlur',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'Size', u'ksize', u'', []],
+        [u'double', u'sigmaX', u'', []],
+        [u'double', u'sigmaY', u'0', []],
+        [u'int', u'borderType', u'BORDER_DEFAULT', []]],
+    u'void']
+ok: FUNC <void cv..GaussianBlur [ARG Mat src=, ARG Mat dst=, ARG Size ksize=, ARG double sigmaX=, ARG double sigmaY=0, ARG int borderType=BORDER_DEFAULT]>
+
+--- Incoming ---
+[   u'cv.bilateralFilter',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'int', u'd', u'', []],
+        [u'double', u'sigmaColor', u'', []],
+        [u'double', u'sigmaSpace', u'', []],
+        [u'int', u'borderType', u'BORDER_DEFAULT', []]],
+    u'void']
+ok: FUNC <void cv..bilateralFilter [ARG Mat src=, ARG Mat dst=, ARG int d=, ARG double sigmaColor=, ARG double sigmaSpace=, ARG int borderType=BORDER_DEFAULT]>
+
+--- Incoming ---
+[   u'cv.boxFilter',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'int', u'ddepth', u'', []],
+        [u'Size', u'ksize', u'', []],
+        [u'Point', u'anchor', u'Point(-1,-1)', []],
+        [u'bool', u'normalize', u'true', []],
+        [u'int', u'borderType', u'BORDER_DEFAULT', []]],
+    u'void']
+ok: FUNC <void cv..boxFilter [ARG Mat src=, ARG Mat dst=, ARG int ddepth=, ARG Size ksize=, ARG Point anchor=Point(-1,-1), ARG bool normalize=true, ARG int borderType=BORDER_DEFAULT]>
+
+--- Incoming ---
+[   u'cv.sqrBoxFilter',
+    u'void',
+    [],
+    [   ['Mat', u'_src', '', []],
+        ['Mat', u'_dst', '', ['/O']],
+        [u'int', u'ddepth', u'', []],
+        [u'Size', u'ksize', u'', []],
+        [u'Point', u'anchor', u'Point(-1, -1)', []],
+        [u'bool', u'normalize', u'true', []],
+        [u'int', u'borderType', u'BORDER_DEFAULT', []]],
+    u'void']
+ok: FUNC <void cv..sqrBoxFilter [ARG Mat _src=, ARG Mat _dst=, ARG int ddepth=, ARG Size ksize=, ARG Point anchor=Point(-1, -1), ARG bool normalize=true, ARG int borderType=BORDER_DEFAULT]>
+
+--- Incoming ---
+[   u'cv.blur',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'Size', u'ksize', u'', []],
+        [u'Point', u'anchor', u'Point(-1,-1)', []],
+        [u'int', u'borderType', u'BORDER_DEFAULT', []]],
+    u'void']
+ok: FUNC <void cv..blur [ARG Mat src=, ARG Mat dst=, ARG Size ksize=, ARG Point anchor=Point(-1,-1), ARG int borderType=BORDER_DEFAULT]>
+
+--- Incoming ---
+[   u'cv.filter2D',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'int', u'ddepth', u'', []],
+        ['Mat', u'kernel', '', []],
+        [u'Point', u'anchor', u'Point(-1,-1)', []],
+        [u'double', u'delta', u'0', []],
+        [u'int', u'borderType', u'BORDER_DEFAULT', []]],
+    u'void']
+ok: FUNC <void cv..filter2D [ARG Mat src=, ARG Mat dst=, ARG int ddepth=, ARG Mat kernel=, ARG Point anchor=Point(-1,-1), ARG double delta=0, ARG int borderType=BORDER_DEFAULT]>
+
+--- Incoming ---
+[   u'cv.sepFilter2D',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'int', u'ddepth', u'', []],
+        ['Mat', u'kernelX', '', []],
+        ['Mat', u'kernelY', '', []],
+        [u'Point', u'anchor', u'Point(-1,-1)', []],
+        [u'double', u'delta', u'0', []],
+        [u'int', u'borderType', u'BORDER_DEFAULT', []]],
+    u'void']
+ok: FUNC <void cv..sepFilter2D [ARG Mat src=, ARG Mat dst=, ARG int ddepth=, ARG Mat kernelX=, ARG Mat kernelY=, ARG Point anchor=Point(-1,-1), ARG double delta=0, ARG int borderType=BORDER_DEFAULT]>
+
+--- Incoming ---
+[   u'cv.Sobel',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'int', u'ddepth', u'', []],
+        [u'int', u'dx', u'', []],
+        [u'int', u'dy', u'', []],
+        [u'int', u'ksize', u'3', []],
+        [u'double', u'scale', u'1', []],
+        [u'double', u'delta', u'0', []],
+        [u'int', u'borderType', u'BORDER_DEFAULT', []]],
+    u'void']
+ok: FUNC <void cv..Sobel [ARG Mat src=, ARG Mat dst=, ARG int ddepth=, ARG int dx=, ARG int dy=, ARG int ksize=3, ARG double scale=1, ARG double delta=0, ARG int borderType=BORDER_DEFAULT]>
+
+--- Incoming ---
+[   u'cv.spatialGradient',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dx', '', ['/O']],
+        ['Mat', u'dy', '', ['/O']],
+        [u'int', u'ksize', u'3', []],
+        [u'int', u'borderType', u'BORDER_DEFAULT', []]],
+    u'void']
+ok: FUNC <void cv..spatialGradient [ARG Mat src=, ARG Mat dx=, ARG Mat dy=, ARG int ksize=3, ARG int borderType=BORDER_DEFAULT]>
+
+--- Incoming ---
+[   u'cv.Scharr',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'int', u'ddepth', u'', []],
+        [u'int', u'dx', u'', []],
+        [u'int', u'dy', u'', []],
+        [u'double', u'scale', u'1', []],
+        [u'double', u'delta', u'0', []],
+        [u'int', u'borderType', u'BORDER_DEFAULT', []]],
+    u'void']
+ok: FUNC <void cv..Scharr [ARG Mat src=, ARG Mat dst=, ARG int ddepth=, ARG int dx=, ARG int dy=, ARG double scale=1, ARG double delta=0, ARG int borderType=BORDER_DEFAULT]>
+
+--- Incoming ---
+[   u'cv.Laplacian',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'int', u'ddepth', u'', []],
+        [u'int', u'ksize', u'1', []],
+        [u'double', u'scale', u'1', []],
+        [u'double', u'delta', u'0', []],
+        [u'int', u'borderType', u'BORDER_DEFAULT', []]],
+    u'void']
+ok: FUNC <void cv..Laplacian [ARG Mat src=, ARG Mat dst=, ARG int ddepth=, ARG int ksize=1, ARG double scale=1, ARG double delta=0, ARG int borderType=BORDER_DEFAULT]>
+
+--- Incoming ---
+[   u'cv.Canny',
+    u'void',
+    [],
+    [   ['Mat', u'image', '', []],
+        ['Mat', u'edges', '', ['/O']],
+        [u'double', u'threshold1', u'', []],
+        [u'double', u'threshold2', u'', []],
+        [u'int', u'apertureSize', u'3', []],
+        [u'bool', u'L2gradient', u'false', []]],
+    u'void']
+ok: FUNC <void cv..Canny [ARG Mat image=, ARG Mat edges=, ARG double threshold1=, ARG double threshold2=, ARG int apertureSize=3, ARG bool L2gradient=false]>
+
+--- Incoming ---
+[   u'cv.Canny',
+    u'void',
+    [],
+    [   ['Mat', u'dx', '', []],
+        ['Mat', u'dy', '', []],
+        ['Mat', u'edges', '', ['/O']],
+        [u'double', u'threshold1', u'', []],
+        [u'double', u'threshold2', u'', []],
+        [u'bool', u'L2gradient', u'false', []]],
+    u'void']
+ok: FUNC <void cv..Canny [ARG Mat dx=, ARG Mat dy=, ARG Mat edges=, ARG double threshold1=, ARG double threshold2=, ARG bool L2gradient=false]>
+
+--- Incoming ---
+[   u'cv.cornerMinEigenVal',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'int', u'blockSize', u'', []],
+        [u'int', u'ksize', u'3', []],
+        [u'int', u'borderType', u'BORDER_DEFAULT', []]],
+    u'void']
+ok: FUNC <void cv..cornerMinEigenVal [ARG Mat src=, ARG Mat dst=, ARG int blockSize=, ARG int ksize=3, ARG int borderType=BORDER_DEFAULT]>
+
+--- Incoming ---
+[   u'cv.cornerHarris',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'int', u'blockSize', u'', []],
+        [u'int', u'ksize', u'', []],
+        [u'double', u'k', u'', []],
+        [u'int', u'borderType', u'BORDER_DEFAULT', []]],
+    u'void']
+ok: FUNC <void cv..cornerHarris [ARG Mat src=, ARG Mat dst=, ARG int blockSize=, ARG int ksize=, ARG double k=, ARG int borderType=BORDER_DEFAULT]>
+
+--- Incoming ---
+[   u'cv.cornerEigenValsAndVecs',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'int', u'blockSize', u'', []],
+        [u'int', u'ksize', u'', []],
+        [u'int', u'borderType', u'BORDER_DEFAULT', []]],
+    u'void']
+ok: FUNC <void cv..cornerEigenValsAndVecs [ARG Mat src=, ARG Mat dst=, ARG int blockSize=, ARG int ksize=, ARG int borderType=BORDER_DEFAULT]>
+
+--- Incoming ---
+[   u'cv.preCornerDetect',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'int', u'ksize', u'', []],
+        [u'int', u'borderType', u'BORDER_DEFAULT', []]],
+    u'void']
+ok: FUNC <void cv..preCornerDetect [ARG Mat src=, ARG Mat dst=, ARG int ksize=, ARG int borderType=BORDER_DEFAULT]>
+
+--- Incoming ---
+[   u'cv.cornerSubPix',
+    u'void',
+    [],
+    [   ['Mat', u'image', '', []],
+        ['Mat', u'corners', '', ['/IO']],
+        [u'Size', u'winSize', u'', []],
+        [u'Size', u'zeroZone', u'', []],
+        [u'TermCriteria', u'criteria', u'', []]],
+    u'void']
+ok: FUNC <void cv..cornerSubPix [ARG Mat image=, ARG vector_Point2f corners=, ARG Size winSize=, ARG Size zeroZone=, ARG TermCriteria criteria=]>
+
+--- Incoming ---
+[   u'cv.goodFeaturesToTrack',
+    u'void',
+    [],
+    [   ['Mat', u'image', '', []],
+        ['Mat', u'corners', '', ['/O']],
+        [u'int', u'maxCorners', u'', []],
+        [u'double', u'qualityLevel', u'', []],
+        [u'double', u'minDistance', u'', []],
+        ['Mat', u'mask', u'Mat()', []],
+        [u'int', u'blockSize', u'3', []],
+        [u'bool', u'useHarrisDetector', u'false', []],
+        [u'double', u'k', u'0.04', []]],
+    u'void']
+ok: FUNC <void cv..goodFeaturesToTrack [ARG Mat image=, ARG vector_Point corners=, ARG int maxCorners=, ARG double qualityLevel=, ARG double minDistance=, ARG Mat mask=Mat(), ARG int blockSize=3, ARG bool useHarrisDetector=false, ARG double k=0.04]>
+
+--- Incoming ---
+[   u'cv.HoughLines',
+    u'void',
+    [],
+    [   ['Mat', u'image', '', []],
+        ['Mat', u'lines', '', ['/O']],
+        [u'double', u'rho', u'', []],
+        [u'double', u'theta', u'', []],
+        [u'int', u'threshold', u'', []],
+        [u'double', u'srn', u'0', []],
+        [u'double', u'stn', u'0', []],
+        [u'double', u'min_theta', u'0', []],
+        [u'double', u'max_theta', u'CV_PI', []]],
+    u'void']
+ok: FUNC <void cv..HoughLines [ARG Mat image=, ARG Mat lines=, ARG double rho=, ARG double theta=, ARG int threshold=, ARG double srn=0, ARG double stn=0, ARG double min_theta=0, ARG double max_theta=CV_PI]>
+
+--- Incoming ---
+[   u'cv.HoughLinesP',
+    u'void',
+    [],
+    [   ['Mat', u'image', '', []],
+        ['Mat', u'lines', '', ['/O']],
+        [u'double', u'rho', u'', []],
+        [u'double', u'theta', u'', []],
+        [u'int', u'threshold', u'', []],
+        [u'double', u'minLineLength', u'0', []],
+        [u'double', u'maxLineGap', u'0', []]],
+    u'void']
+ok: FUNC <void cv..HoughLinesP [ARG Mat image=, ARG Mat lines=, ARG double rho=, ARG double theta=, ARG int threshold=, ARG double minLineLength=0, ARG double maxLineGap=0]>
+
+--- Incoming ---
+[   u'cv.HoughCircles',
+    u'void',
+    [],
+    [   ['Mat', u'image', '', []],
+        ['Mat', u'circles', '', ['/O']],
+        [u'int', u'method', u'', []],
+        [u'double', u'dp', u'', []],
+        [u'double', u'minDist', u'', []],
+        [u'double', u'param1', u'100', []],
+        [u'double', u'param2', u'100', []],
+        [u'int', u'minRadius', u'0', []],
+        [u'int', u'maxRadius', u'0', []]],
+    u'void']
+ok: FUNC <void cv..HoughCircles [ARG Mat image=, ARG Mat circles=, ARG int method=, ARG double dp=, ARG double minDist=, ARG double param1=100, ARG double param2=100, ARG int minRadius=0, ARG int maxRadius=0]>
+
+--- Incoming ---
+[   u'cv.erode',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        ['Mat', u'kernel', '', []],
+        [u'Point', u'anchor', u'Point(-1,-1)', []],
+        [u'int', u'iterations', u'1', []],
+        [u'int', u'borderType', u'BORDER_CONSTANT', []],
+        [u'Scalar', u'borderValue', u'morphologyDefaultBorderValue()', []]],
+    u'void']
+ok: FUNC <void cv..erode [ARG Mat src=, ARG Mat dst=, ARG Mat kernel=, ARG Point anchor=Point(-1,-1), ARG int iterations=1, ARG int borderType=BORDER_CONSTANT, ARG Scalar borderValue=morphologyDefaultBorderValue()]>
+
+--- Incoming ---
+[   u'cv.dilate',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        ['Mat', u'kernel', '', []],
+        [u'Point', u'anchor', u'Point(-1,-1)', []],
+        [u'int', u'iterations', u'1', []],
+        [u'int', u'borderType', u'BORDER_CONSTANT', []],
+        [u'Scalar', u'borderValue', u'morphologyDefaultBorderValue()', []]],
+    u'void']
+ok: FUNC <void cv..dilate [ARG Mat src=, ARG Mat dst=, ARG Mat kernel=, ARG Point anchor=Point(-1,-1), ARG int iterations=1, ARG int borderType=BORDER_CONSTANT, ARG Scalar borderValue=morphologyDefaultBorderValue()]>
+
+--- Incoming ---
+[   u'cv.morphologyEx',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'int', u'op', u'', []],
+        ['Mat', u'kernel', '', []],
+        [u'Point', u'anchor', u'Point(-1,-1)', []],
+        [u'int', u'iterations', u'1', []],
+        [u'int', u'borderType', u'BORDER_CONSTANT', []],
+        [u'Scalar', u'borderValue', u'morphologyDefaultBorderValue()', []]],
+    u'void']
+ok: FUNC <void cv..morphologyEx [ARG Mat src=, ARG Mat dst=, ARG int op=, ARG Mat kernel=, ARG Point anchor=Point(-1,-1), ARG int iterations=1, ARG int borderType=BORDER_CONSTANT, ARG Scalar borderValue=morphologyDefaultBorderValue()]>
+
+--- Incoming ---
+[   u'cv.resize',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'Size', u'dsize', u'', []],
+        [u'double', u'fx', u'0', []],
+        [u'double', u'fy', u'0', []],
+        [u'int', u'interpolation', u'INTER_LINEAR', []]],
+    u'void']
+ok: FUNC <void cv..resize [ARG Mat src=, ARG Mat dst=, ARG Size dsize=, ARG double fx=0, ARG double fy=0, ARG int interpolation=INTER_LINEAR]>
+
+--- Incoming ---
+[   u'cv.warpAffine',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        ['Mat', u'M', '', []],
+        [u'Size', u'dsize', u'', []],
+        [u'int', u'flags', u'INTER_LINEAR', []],
+        [u'int', u'borderMode', u'BORDER_CONSTANT', []],
+        [u'Scalar', u'borderValue', u'Scalar()', []]],
+    u'void']
+ok: FUNC <void cv..warpAffine [ARG Mat src=, ARG Mat dst=, ARG Mat M=, ARG Size dsize=, ARG int flags=INTER_LINEAR, ARG int borderMode=BORDER_CONSTANT, ARG Scalar borderValue=Scalar()]>
+
+--- Incoming ---
+[   u'cv.warpPerspective',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        ['Mat', u'M', '', []],
+        [u'Size', u'dsize', u'', []],
+        [u'int', u'flags', u'INTER_LINEAR', []],
+        [u'int', u'borderMode', u'BORDER_CONSTANT', []],
+        [u'Scalar', u'borderValue', u'Scalar()', []]],
+    u'void']
+ok: FUNC <void cv..warpPerspective [ARG Mat src=, ARG Mat dst=, ARG Mat M=, ARG Size dsize=, ARG int flags=INTER_LINEAR, ARG int borderMode=BORDER_CONSTANT, ARG Scalar borderValue=Scalar()]>
+
+--- Incoming ---
+[   u'cv.remap',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        ['Mat', u'map1', '', []],
+        ['Mat', u'map2', '', []],
+        [u'int', u'interpolation', u'', []],
+        [u'int', u'borderMode', u'BORDER_CONSTANT', []],
+        [u'Scalar', u'borderValue', u'Scalar()', []]],
+    u'void']
+ok: FUNC <void cv..remap [ARG Mat src=, ARG Mat dst=, ARG Mat map1=, ARG Mat map2=, ARG int interpolation=, ARG int borderMode=BORDER_CONSTANT, ARG Scalar borderValue=Scalar()]>
+
+--- Incoming ---
+[   u'cv.convertMaps',
+    u'void',
+    [],
+    [   ['Mat', u'map1', '', []],
+        ['Mat', u'map2', '', []],
+        ['Mat', u'dstmap1', '', ['/O']],
+        ['Mat', u'dstmap2', '', ['/O']],
+        [u'int', u'dstmap1type', u'', []],
+        [u'bool', u'nninterpolation', u'false', []]],
+    u'void']
+ok: FUNC <void cv..convertMaps [ARG Mat map1=, ARG Mat map2=, ARG Mat dstmap1=, ARG Mat dstmap2=, ARG int dstmap1type=, ARG bool nninterpolation=false]>
+
+--- Incoming ---
+[   u'cv.getRotationMatrix2D',
+    u'Mat',
+    [],
+    [   [u'Point2f', u'center', u'', []],
+        [u'double', u'angle', u'', []],
+        [u'double', u'scale', u'', []]],
+    u'Mat']
+ok: FUNC <Mat cv..getRotationMatrix2D [ARG Point2f center=, ARG double angle=, ARG double scale=]>
+
+--- Incoming ---
+[   u'cv.invertAffineTransform',
+    u'void',
+    [],
+    [['Mat', u'M', '', []], ['Mat', u'iM', '', ['/O']]],
+    u'void']
+ok: FUNC <void cv..invertAffineTransform [ARG Mat M=, ARG Mat iM=]>
+
+--- Incoming ---
+[   u'cv.getPerspectiveTransform',
+    u'Mat',
+    [],
+    [['Mat', u'src', '', []], ['Mat', u'dst', '', []]],
+    u'Mat']
+ok: FUNC <Mat cv..getPerspectiveTransform [ARG Mat src=, ARG Mat dst=]>
+
+--- Incoming ---
+[   u'cv.getAffineTransform',
+    u'Mat',
+    [],
+    [['Mat', u'src', '', []], ['Mat', u'dst', '', []]],
+    u'Mat']
+ok: FUNC <Mat cv..getAffineTransform [ARG vector_Point2f src=, ARG vector_Point2f dst=]>
+
+--- Incoming ---
+[   u'cv.getRectSubPix',
+    u'void',
+    [],
+    [   ['Mat', u'image', '', []],
+        [u'Size', u'patchSize', u'', []],
+        [u'Point2f', u'center', u'', []],
+        ['Mat', u'patch', '', ['/O']],
+        [u'int', u'patchType', u'-1', []]],
+    u'void']
+ok: FUNC <void cv..getRectSubPix [ARG Mat image=, ARG Size patchSize=, ARG Point2f center=, ARG Mat patch=, ARG int patchType=-1]>
+
+--- Incoming ---
+[   u'cv.logPolar',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'Point2f', u'center', u'', []],
+        [u'double', u'M', u'', []],
+        [u'int', u'flags', u'', []]],
+    u'void']
+ok: FUNC <void cv..logPolar [ARG Mat src=, ARG Mat dst=, ARG Point2f center=, ARG double M=, ARG int flags=]>
+
+--- Incoming ---
+[   u'cv.linearPolar',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'Point2f', u'center', u'', []],
+        [u'double', u'maxRadius', u'', []],
+        [u'int', u'flags', u'', []]],
+    u'void']
+ok: FUNC <void cv..linearPolar [ARG Mat src=, ARG Mat dst=, ARG Point2f center=, ARG double maxRadius=, ARG int flags=]>
+
+--- Incoming ---
+[   u'cv.integral',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'sum', '', ['/O']],
+        [u'int', u'sdepth', u'-1', []]],
+    u'void']
+ok: FUNC <void cv..integral [ARG Mat src=, ARG Mat sum=, ARG int sdepth=-1]>
+
+--- Incoming ---
+[   u'cv.integral',
+    u'void',
+    [u'=integral2'],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'sum', '', ['/O']],
+        ['Mat', u'sqsum', '', ['/O']],
+        [u'int', u'sdepth', u'-1', []],
+        [u'int', u'sqdepth', u'-1', []]],
+    u'void']
+ok: FUNC <void cv..integral [ARG Mat src=, ARG Mat sum=, ARG Mat sqsum=, ARG int sdepth=-1, ARG int sqdepth=-1]>
+
+--- Incoming ---
+[   u'cv.integral',
+    u'void',
+    [u'=integral3'],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'sum', '', ['/O']],
+        ['Mat', u'sqsum', '', ['/O']],
+        ['Mat', u'tilted', '', ['/O']],
+        [u'int', u'sdepth', u'-1', []],
+        [u'int', u'sqdepth', u'-1', []]],
+    u'void']
+ok: FUNC <void cv..integral [ARG Mat src=, ARG Mat sum=, ARG Mat sqsum=, ARG Mat tilted=, ARG int sdepth=-1, ARG int sqdepth=-1]>
+
+--- Incoming ---
+[   u'cv.accumulate',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/IO']],
+        ['Mat', u'mask', u'Mat()', []]],
+    u'void']
+ok: FUNC <void cv..accumulate [ARG Mat src=, ARG Mat dst=, ARG Mat mask=Mat()]>
+
+--- Incoming ---
+[   u'cv.accumulateSquare',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/IO']],
+        ['Mat', u'mask', u'Mat()', []]],
+    u'void']
+ok: FUNC <void cv..accumulateSquare [ARG Mat src=, ARG Mat dst=, ARG Mat mask=Mat()]>
+
+--- Incoming ---
+[   u'cv.accumulateProduct',
+    u'void',
+    [],
+    [   ['Mat', u'src1', '', []],
+        ['Mat', u'src2', '', []],
+        ['Mat', u'dst', '', ['/IO']],
+        ['Mat', u'mask', u'Mat()', []]],
+    u'void']
+ok: FUNC <void cv..accumulateProduct [ARG Mat src1=, ARG Mat src2=, ARG Mat dst=, ARG Mat mask=Mat()]>
+
+--- Incoming ---
+[   u'cv.accumulateWeighted',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/IO']],
+        [u'double', u'alpha', u'', []],
+        ['Mat', u'mask', u'Mat()', []]],
+    u'void']
+ok: FUNC <void cv..accumulateWeighted [ARG Mat src=, ARG Mat dst=, ARG double alpha=, ARG Mat mask=Mat()]>
+
+--- Incoming ---
+[   u'cv.phaseCorrelate',
+    u'Point2d',
+    [],
+    [   ['Mat', u'src1', '', []],
+        ['Mat', u'src2', '', []],
+        ['Mat', u'window', u'Mat()', []],
+        [u'double*', u'response', u'0', ['/O']]],
+    u'Point2d']
+ok: FUNC <Point2d cv..phaseCorrelate [ARG Mat src1=, ARG Mat src2=, ARG Mat window=Mat(), ARG double * response=0]>
+
+--- Incoming ---
+[   u'cv.createHanningWindow',
+    u'void',
+    [],
+    [   ['Mat', u'dst', '', ['/O']],
+        [u'Size', u'winSize', u'', []],
+        [u'int', u'type', u'', []]],
+    u'void']
+ok: FUNC <void cv..createHanningWindow [ARG Mat dst=, ARG Size winSize=, ARG int type=]>
+
+--- Incoming ---
+[   u'cv.threshold',
+    u'double',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'double', u'thresh', u'', []],
+        [u'double', u'maxval', u'', []],
+        [u'int', u'type', u'', []]],
+    u'double']
+ok: FUNC <double cv..threshold [ARG Mat src=, ARG Mat dst=, ARG double thresh=, ARG double maxval=, ARG int type=]>
+
+--- Incoming ---
+[   u'cv.adaptiveThreshold',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'double', u'maxValue', u'', []],
+        [u'int', u'adaptiveMethod', u'', []],
+        [u'int', u'thresholdType', u'', []],
+        [u'int', u'blockSize', u'', []],
+        [u'double', u'C', u'', []]],
+    u'void']
+ok: FUNC <void cv..adaptiveThreshold [ARG Mat src=, ARG Mat dst=, ARG double maxValue=, ARG int adaptiveMethod=, ARG int thresholdType=, ARG int blockSize=, ARG double C=]>
+
+--- Incoming ---
+[   u'cv.pyrDown',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'Size', u'dstsize', u'Size()', []],
+        [u'int', u'borderType', u'BORDER_DEFAULT', []]],
+    u'void']
+ok: FUNC <void cv..pyrDown [ARG Mat src=, ARG Mat dst=, ARG Size dstsize=Size(), ARG int borderType=BORDER_DEFAULT]>
+
+--- Incoming ---
+[   u'cv.pyrUp',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'Size', u'dstsize', u'Size()', []],
+        [u'int', u'borderType', u'BORDER_DEFAULT', []]],
+    u'void']
+ok: FUNC <void cv..pyrUp [ARG Mat src=, ARG Mat dst=, ARG Size dstsize=Size(), ARG int borderType=BORDER_DEFAULT]>
+
+--- Incoming ---
+[   u'cv.undistort',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        ['Mat', u'cameraMatrix', '', []],
+        ['Mat', u'distCoeffs', '', []],
+        ['Mat', u'newCameraMatrix', u'Mat()', []]],
+    u'void']
+ok: FUNC <void cv..undistort [ARG Mat src=, ARG Mat dst=, ARG Mat cameraMatrix=, ARG Mat distCoeffs=, ARG Mat newCameraMatrix=Mat()]>
+
+--- Incoming ---
+[   u'cv.initUndistortRectifyMap',
+    u'void',
+    [],
+    [   ['Mat', u'cameraMatrix', '', []],
+        ['Mat', u'distCoeffs', '', []],
+        ['Mat', u'R', '', []],
+        ['Mat', u'newCameraMatrix', '', []],
+        [u'Size', u'size', u'', []],
+        [u'int', u'm1type', u'', []],
+        ['Mat', u'map1', '', ['/O']],
+        ['Mat', u'map2', '', ['/O']]],
+    u'void']
+ok: FUNC <void cv..initUndistortRectifyMap [ARG Mat cameraMatrix=, ARG Mat distCoeffs=, ARG Mat R=, ARG Mat newCameraMatrix=, ARG Size size=, ARG int m1type=, ARG Mat map1=, ARG Mat map2=]>
+
+--- Incoming ---
+[   u'cv.initWideAngleProjMap',
+    u'float',
+    [],
+    [   ['Mat', u'cameraMatrix', '', []],
+        ['Mat', u'distCoeffs', '', []],
+        [u'Size', u'imageSize', u'', []],
+        [u'int', u'destImageWidth', u'', []],
+        [u'int', u'm1type', u'', []],
+        ['Mat', u'map1', '', ['/O']],
+        ['Mat', u'map2', '', ['/O']],
+        [u'int', u'projType', u'PROJ_SPHERICAL_EQRECT', []],
+        [u'double', u'alpha', u'0', []]],
+    u'float']
+ok: FUNC <float cv..initWideAngleProjMap [ARG Mat cameraMatrix=, ARG Mat distCoeffs=, ARG Size imageSize=, ARG int destImageWidth=, ARG int m1type=, ARG Mat map1=, ARG Mat map2=, ARG int projType=PROJ_SPHERICAL_EQRECT, ARG double alpha=0]>
+
+--- Incoming ---
+[   u'cv.getDefaultNewCameraMatrix',
+    u'Mat',
+    [],
+    [   ['Mat', u'cameraMatrix', '', []],
+        [u'Size', u'imgsize', u'Size()', []],
+        [u'bool', u'centerPrincipalPoint', u'false', []]],
+    u'Mat']
+ok: FUNC <Mat cv..getDefaultNewCameraMatrix [ARG Mat cameraMatrix=, ARG Size imgsize=Size(), ARG bool centerPrincipalPoint=false]>
+
+--- Incoming ---
+[   u'cv.undistortPoints',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        ['Mat', u'cameraMatrix', '', []],
+        ['Mat', u'distCoeffs', '', []],
+        ['Mat', u'R', u'Mat()', []],
+        ['Mat', u'P', u'Mat()', []]],
+    u'void']
+ok: FUNC <void cv..undistortPoints [ARG vector_Point2f src=, ARG vector_Point2f dst=, ARG Mat cameraMatrix=, ARG Mat distCoeffs=, ARG Mat R=Mat(), ARG Mat P=Mat()]>
+
+--- Incoming ---
+[   u'cv.calcHist',
+    u'void',
+    [],
+    [   ['vector_Mat', u'images', '', []],
+        [u'vector_int', u'channels', u'', []],
+        ['Mat', u'mask', '', []],
+        ['Mat', u'hist', '', ['/O']],
+        [u'vector_int', u'histSize', u'', []],
+        [u'vector_float', u'ranges', u'', []],
+        [u'bool', u'accumulate', u'false', []]],
+    u'void']
+ok: FUNC <void cv..calcHist [ARG vector_Mat images=, ARG vector_int channels=, ARG Mat mask=, ARG Mat hist=, ARG vector_int histSize=, ARG vector_float ranges=, ARG bool accumulate=false]>
+
+--- Incoming ---
+[   u'cv.calcBackProject',
+    u'void',
+    [],
+    [   ['vector_Mat', u'images', '', []],
+        [u'vector_int', u'channels', u'', []],
+        ['Mat', u'hist', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'vector_float', u'ranges', u'', []],
+        [u'double', u'scale', u'', []]],
+    u'void']
+ok: FUNC <void cv..calcBackProject [ARG vector_Mat images=, ARG vector_int channels=, ARG Mat hist=, ARG Mat dst=, ARG vector_float ranges=, ARG double scale=]>
+
+--- Incoming ---
+[   u'cv.compareHist',
+    u'double',
+    [],
+    [   ['Mat', u'H1', '', []],
+        ['Mat', u'H2', '', []],
+        [u'int', u'method', u'', []]],
+    u'double']
+ok: FUNC <double cv..compareHist [ARG Mat H1=, ARG Mat H2=, ARG int method=]>
+
+--- Incoming ---
+[   u'cv.equalizeHist',
+    u'void',
+    [],
+    [['Mat', u'src', '', []], ['Mat', u'dst', '', ['/O']]],
+    u'void']
+ok: FUNC <void cv..equalizeHist [ARG Mat src=, ARG Mat dst=]>
+
+--- Incoming ---
+[   u'cv.watershed',
+    u'void',
+    [],
+    [['Mat', u'image', '', []], ['Mat', u'markers', '', ['/IO']]],
+    u'void']
+ok: FUNC <void cv..watershed [ARG Mat image=, ARG Mat markers=]>
+
+--- Incoming ---
+[   u'cv.pyrMeanShiftFiltering',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'double', u'sp', u'', []],
+        [u'double', u'sr', u'', []],
+        [u'int', u'maxLevel', u'1', []],
+        [   u'TermCriteria',
+            u'termcrit',
+            u'TermCriteria(TermCriteria::MAX_ITER+TermCriteria::EPS,5,1)',
+            []]],
+    u'void']
+ok: FUNC <void cv..pyrMeanShiftFiltering [ARG Mat src=, ARG Mat dst=, ARG double sp=, ARG double sr=, ARG int maxLevel=1, ARG TermCriteria termcrit=TermCriteria(TermCriteria::MAX_ITER+TermCriteria::EPS,5,1)]>
+
+--- Incoming ---
+[   u'cv.grabCut',
+    u'void',
+    [],
+    [   ['Mat', u'img', '', []],
+        ['Mat', u'mask', '', ['/IO']],
+        [u'Rect', u'rect', u'', []],
+        ['Mat', u'bgdModel', '', ['/IO']],
+        ['Mat', u'fgdModel', '', ['/IO']],
+        [u'int', u'iterCount', u'', []],
+        [u'int', u'mode', u'GC_EVAL', []]],
+    u'void']
+ok: FUNC <void cv..grabCut [ARG Mat img=, ARG Mat mask=, ARG Rect rect=, ARG Mat bgdModel=, ARG Mat fgdModel=, ARG int iterCount=, ARG int mode=GC_EVAL]>
+
+--- Incoming ---
+[   u'cv.distanceTransform',
+    u'void',
+    [u'=distanceTransformWithLabels'],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        ['Mat', u'labels', '', ['/O']],
+        [u'int', u'distanceType', u'', []],
+        [u'int', u'maskSize', u'', []],
+        [u'int', u'labelType', u'DIST_LABEL_CCOMP', []]],
+    u'void']
+ok: FUNC <void cv..distanceTransform [ARG Mat src=, ARG Mat dst=, ARG Mat labels=, ARG int distanceType=, ARG int maskSize=, ARG int labelType=DIST_LABEL_CCOMP]>
+
+--- Incoming ---
+[   u'cv.distanceTransform',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'int', u'distanceType', u'', []],
+        [u'int', u'maskSize', u'', []],
+        [u'int', u'dstType', u'CV_32F', []]],
+    u'void']
+ok: FUNC <void cv..distanceTransform [ARG Mat src=, ARG Mat dst=, ARG int distanceType=, ARG int maskSize=, ARG int dstType=CV_32F]>
+
+--- Incoming ---
+[   u'cv.floodFill',
+    u'int',
+    [],
+    [   ['Mat', u'image', '', ['/IO']],
+        ['Mat', u'mask', '', ['/IO']],
+        [u'Point', u'seedPoint', u'', []],
+        [u'Scalar', u'newVal', u'', []],
+        [u'Rect*', u'rect', u'0', ['/O']],
+        [u'Scalar', u'loDiff', u'Scalar()', []],
+        [u'Scalar', u'upDiff', u'Scalar()', []],
+        [u'int', u'flags', u'4', []]],
+    u'int']
+ok: FUNC <int cv..floodFill [ARG Mat image=, ARG Mat mask=, ARG Point seedPoint=, ARG Scalar newVal=, ARG Rect * rect=0, ARG Scalar loDiff=Scalar(), ARG Scalar upDiff=Scalar(), ARG int flags=4]>
+
+--- Incoming ---
+[   u'cv.cvtColor',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'int', u'code', u'', []],
+        [u'int', u'dstCn', u'0', []]],
+    u'void']
+ok: FUNC <void cv..cvtColor [ARG Mat src=, ARG Mat dst=, ARG int code=, ARG int dstCn=0]>
+
+--- Incoming ---
+[   u'cv.demosaicing',
+    u'void',
+    [],
+    [   ['Mat', u'_src', '', []],
+        ['Mat', u'_dst', '', ['/O']],
+        [u'int', u'code', u'', []],
+        [u'int', u'dcn', u'0', []]],
+    u'void']
+ok: FUNC <void cv..demosaicing [ARG Mat _src=, ARG Mat _dst=, ARG int code=, ARG int dcn=0]>
+
+--- Incoming ---
+[   u'cv.moments',
+    u'Moments',
+    [],
+    [['Mat', u'array', '', []], [u'bool', u'binaryImage', u'false', []]],
+    u'Moments']
+ok: FUNC <Moments cv..moments [ARG Mat array=, ARG bool binaryImage=false]>
+
+--- Incoming ---
+[   u'cv.HuMoments',
+    u'void',
+    [],
+    [[u'Moments', u'm', u'', []], ['Mat', u'hu', '', ['/O']]],
+    u'void']
+ok: FUNC <void cv..HuMoments [ARG Moments m=, ARG Mat hu=]>
+
+--- Incoming ---
+[u'const cv.TM_SQDIFF', u'0', [], []]
+ok: CONST TM_SQDIFF=0
+
+--- Incoming ---
+[u'const cv.TM_SQDIFF_NORMED', u'1', [], []]
+ok: CONST TM_SQDIFF_NORMED=1
+
+--- Incoming ---
+[u'const cv.TM_CCORR', u'2', [], []]
+ok: CONST TM_CCORR=2
+
+--- Incoming ---
+[u'const cv.TM_CCORR_NORMED', u'3', [], []]
+ok: CONST TM_CCORR_NORMED=3
+
+--- Incoming ---
+[u'const cv.TM_CCOEFF', u'4', [], []]
+ok: CONST TM_CCOEFF=4
+
+--- Incoming ---
+[u'const cv.TM_CCOEFF_NORMED', u'5', [], []]
+ok: CONST TM_CCOEFF_NORMED=5
+
+--- Incoming ---
+[   u'cv.matchTemplate',
+    u'void',
+    [],
+    [   ['Mat', u'image', '', []],
+        ['Mat', u'templ', '', []],
+        ['Mat', u'result', '', ['/O']],
+        [u'int', u'method', u'', []],
+        ['Mat', u'mask', u'Mat()', []]],
+    u'void']
+ok: FUNC <void cv..matchTemplate [ARG Mat image=, ARG Mat templ=, ARG Mat result=, ARG int method=, ARG Mat mask=Mat()]>
+
+--- Incoming ---
+[   u'cv.connectedComponents',
+    u'int',
+    [u'=connectedComponentsWithAlgorithm'],
+    [   ['Mat', u'image', '', []],
+        ['Mat', u'labels', '', ['/O']],
+        [u'int', u'connectivity', u'', []],
+        [u'int', u'ltype', u'', []],
+        [u'int', u'ccltype', u'', []]],
+    u'int']
+ok: FUNC <int cv..connectedComponents [ARG Mat image=, ARG Mat labels=, ARG int connectivity=, ARG int ltype=, ARG int ccltype=]>
+
+--- Incoming ---
+[   u'cv.connectedComponents',
+    u'int',
+    [],
+    [   ['Mat', u'image', '', []],
+        ['Mat', u'labels', '', ['/O']],
+        [u'int', u'connectivity', u'8', []],
+        [u'int', u'ltype', u'CV_32S', []]],
+    u'int']
+ok: FUNC <int cv..connectedComponents [ARG Mat image=, ARG Mat labels=, ARG int connectivity=8, ARG int ltype=CV_32S]>
+
+--- Incoming ---
+[   u'cv.connectedComponentsWithStats',
+    u'int',
+    [u'=connectedComponentsWithStatsWithAlgorithm'],
+    [   ['Mat', u'image', '', []],
+        ['Mat', u'labels', '', ['/O']],
+        ['Mat', u'stats', '', ['/O']],
+        ['Mat', u'centroids', '', ['/O']],
+        [u'int', u'connectivity', u'', []],
+        [u'int', u'ltype', u'', []],
+        [u'int', u'ccltype', u'', []]],
+    u'int']
+ok: FUNC <int cv..connectedComponentsWithStats [ARG Mat image=, ARG Mat labels=, ARG Mat stats=, ARG Mat centroids=, ARG int connectivity=, ARG int ltype=, ARG int ccltype=]>
+
+--- Incoming ---
+[   u'cv.connectedComponentsWithStats',
+    u'int',
+    [],
+    [   ['Mat', u'image', '', []],
+        ['Mat', u'labels', '', ['/O']],
+        ['Mat', u'stats', '', ['/O']],
+        ['Mat', u'centroids', '', ['/O']],
+        [u'int', u'connectivity', u'8', []],
+        [u'int', u'ltype', u'CV_32S', []]],
+    u'int']
+ok: FUNC <int cv..connectedComponentsWithStats [ARG Mat image=, ARG Mat labels=, ARG Mat stats=, ARG Mat centroids=, ARG int connectivity=8, ARG int ltype=CV_32S]>
+
+--- Incoming ---
+[   u'cv.findContours',
+    u'void',
+    [],
+    [   ['Mat', u'image', '', ['/IO']],
+        ['vector_Mat', u'contours', '', ['/O']],
+        ['Mat', u'hierarchy', '', ['/O']],
+        [u'int', u'mode', u'', []],
+        [u'int', u'method', u'', []],
+        [u'Point', u'offset', u'Point()', []]],
+    u'void']
+ok: FUNC <void cv..findContours [ARG Mat image=, ARG vector_vector_Point contours=, ARG Mat hierarchy=, ARG int mode=, ARG int method=, ARG Point offset=Point()]>
+
+--- Incoming ---
+[   u'cv.approxPolyDP',
+    u'void',
+    [],
+    [   ['Mat', u'curve', '', []],
+        ['Mat', u'approxCurve', '', ['/O']],
+        [u'double', u'epsilon', u'', []],
+        [u'bool', u'closed', u'', []]],
+    u'void']
+ok: FUNC <void cv..approxPolyDP [ARG vector_Point2f curve=, ARG vector_Point2f approxCurve=, ARG double epsilon=, ARG bool closed=]>
+
+--- Incoming ---
+[   u'cv.arcLength',
+    u'double',
+    [],
+    [['Mat', u'curve', '', []], [u'bool', u'closed', u'', []]],
+    u'double']
+ok: FUNC <double cv..arcLength [ARG vector_Point2f curve=, ARG bool closed=]>
+
+--- Incoming ---
+[u'cv.boundingRect', u'Rect', [], [['Mat', u'points', '', []]], u'Rect']
+ok: FUNC <Rect cv..boundingRect [ARG vector_Point points=]>
+
+--- Incoming ---
+[   u'cv.contourArea',
+    u'double',
+    [],
+    [['Mat', u'contour', '', []], [u'bool', u'oriented', u'false', []]],
+    u'double']
+ok: FUNC <double cv..contourArea [ARG Mat contour=, ARG bool oriented=false]>
+
+--- Incoming ---
+[   u'cv.minAreaRect',
+    u'RotatedRect',
+    [],
+    [['Mat', u'points', '', []]],
+    u'RotatedRect']
+ok: FUNC <RotatedRect cv..minAreaRect [ARG vector_Point2f points=]>
+
+--- Incoming ---
+[   u'cv.boxPoints',
+    u'void',
+    [],
+    [[u'RotatedRect', u'box', u'', []], ['Mat', u'points', '', ['/O']]],
+    u'void']
+ok: FUNC <void cv..boxPoints [ARG RotatedRect box=, ARG Mat points=]>
+
+--- Incoming ---
+[   u'cv.minEnclosingCircle',
+    u'void',
+    [],
+    [   ['Mat', u'points', '', []],
+        [u'Point2f', u'center', u'', ['/O']],
+        [u'float', u'radius', u'', ['/O']]],
+    u'void']
+ok: FUNC <void cv..minEnclosingCircle [ARG vector_Point2f points=, ARG Point2f center=, ARG float radius=]>
+
+--- Incoming ---
+[   u'cv.minEnclosingTriangle',
+    u'double',
+    [],
+    [['Mat', u'points', '', []], ['Mat', u'triangle', '', ['/O', '/O']]],
+    u'double']
+ok: FUNC <double cv..minEnclosingTriangle [ARG Mat points=, ARG Mat triangle=]>
+
+--- Incoming ---
+[   u'cv.matchShapes',
+    u'double',
+    [],
+    [   ['Mat', u'contour1', '', []],
+        ['Mat', u'contour2', '', []],
+        [u'int', u'method', u'', []],
+        [u'double', u'parameter', u'', []]],
+    u'double']
+ok: FUNC <double cv..matchShapes [ARG Mat contour1=, ARG Mat contour2=, ARG int method=, ARG double parameter=]>
+
+--- Incoming ---
+[   u'cv.convexHull',
+    u'void',
+    [],
+    [   ['Mat', u'points', '', []],
+        ['Mat', u'hull', '', ['/O']],
+        [u'bool', u'clockwise', u'false', []],
+        [u'bool', u'returnPoints', u'true', []]],
+    u'void']
+ok: FUNC <void cv..convexHull [ARG vector_Point points=, ARG vector_int hull=, ARG bool clockwise=false, ARG  returnPoints=true]>
+
+--- Incoming ---
+[   u'cv.convexityDefects',
+    u'void',
+    [],
+    [   ['Mat', u'contour', '', []],
+        ['Mat', u'convexhull', '', []],
+        ['Mat', u'convexityDefects', '', ['/O']]],
+    u'void']
+ok: FUNC <void cv..convexityDefects [ARG vector_Point contour=, ARG vector_int convexhull=, ARG vector_Vec4i convexityDefects=]>
+
+--- Incoming ---
+[u'cv.isContourConvex', u'bool', [], [['Mat', u'contour', '', []]], u'bool']
+ok: FUNC <bool cv..isContourConvex [ARG vector_Point contour=]>
+
+--- Incoming ---
+[   u'cv.intersectConvexConvex',
+    u'float',
+    [],
+    [   ['Mat', u'_p1', '', []],
+        ['Mat', u'_p2', '', []],
+        ['Mat', u'_p12', '', ['/O']],
+        [u'bool', u'handleNested', u'true', []]],
+    u'float']
+ok: FUNC <float cv..intersectConvexConvex [ARG Mat _p1=, ARG Mat _p2=, ARG Mat _p12=, ARG bool handleNested=true]>
+
+--- Incoming ---
+[   u'cv.fitEllipse',
+    u'RotatedRect',
+    [],
+    [['Mat', u'points', '', []]],
+    u'RotatedRect']
+ok: FUNC <RotatedRect cv..fitEllipse [ARG vector_Point2f points=]>
+
+--- Incoming ---
+[   u'cv.fitLine',
+    u'void',
+    [],
+    [   ['Mat', u'points', '', []],
+        ['Mat', u'line', '', ['/O']],
+        [u'int', u'distType', u'', []],
+        [u'double', u'param', u'', []],
+        [u'double', u'reps', u'', []],
+        [u'double', u'aeps', u'', []]],
+    u'void']
+ok: FUNC <void cv..fitLine [ARG Mat points=, ARG Mat line=, ARG int distType=, ARG double param=, ARG double reps=, ARG double aeps=]>
+
+--- Incoming ---
+[   u'cv.pointPolygonTest',
+    u'double',
+    [],
+    [   ['Mat', u'contour', '', []],
+        [u'Point2f', u'pt', u'', []],
+        [u'bool', u'measureDist', u'', []]],
+    u'double']
+ok: FUNC <double cv..pointPolygonTest [ARG vector_Point2f contour=, ARG Point2f pt=, ARG bool measureDist=]>
+
+--- Incoming ---
+[   u'cv.rotatedRectangleIntersection',
+    u'int',
+    [],
+    [   [u'RotatedRect', u'rect1', u'', []],
+        [u'RotatedRect', u'rect2', u'', []],
+        ['Mat', u'intersectingRegion', '', ['/O']]],
+    u'int']
+ok: FUNC <int cv..rotatedRectangleIntersection [ARG RotatedRect rect1=, ARG RotatedRect rect2=, ARG Mat intersectingRegion=]>
+
+--- Incoming ---
+[   u'cv.createCLAHE',
+    u'Ptr_CLAHE',
+    [],
+    [   [u'double', u'clipLimit', u'40.0', []],
+        [u'Size', u'tileGridSize', u'Size(8, 8)', []]],
+    u'Ptr<CLAHE>']
+ok: FUNC <Ptr_CLAHE cv..createCLAHE [ARG double clipLimit=40.0, ARG Size tileGridSize=Size(8, 8)]>
+
+--- Incoming ---
+[u'const cv.COLORMAP_AUTUMN', u'0', [], []]
+ok: CONST COLORMAP_AUTUMN=0
+
+--- Incoming ---
+[u'const cv.COLORMAP_BONE', u'1', [], []]
+ok: CONST COLORMAP_BONE=1
+
+--- Incoming ---
+[u'const cv.COLORMAP_JET', u'2', [], []]
+ok: CONST COLORMAP_JET=2
+
+--- Incoming ---
+[u'const cv.COLORMAP_WINTER', u'3', [], []]
+ok: CONST COLORMAP_WINTER=3
+
+--- Incoming ---
+[u'const cv.COLORMAP_RAINBOW', u'4', [], []]
+ok: CONST COLORMAP_RAINBOW=4
+
+--- Incoming ---
+[u'const cv.COLORMAP_OCEAN', u'5', [], []]
+ok: CONST COLORMAP_OCEAN=5
+
+--- Incoming ---
+[u'const cv.COLORMAP_SUMMER', u'6', [], []]
+ok: CONST COLORMAP_SUMMER=6
+
+--- Incoming ---
+[u'const cv.COLORMAP_SPRING', u'7', [], []]
+ok: CONST COLORMAP_SPRING=7
+
+--- Incoming ---
+[u'const cv.COLORMAP_COOL', u'8', [], []]
+ok: CONST COLORMAP_COOL=8
+
+--- Incoming ---
+[u'const cv.COLORMAP_HSV', u'9', [], []]
+ok: CONST COLORMAP_HSV=9
+
+--- Incoming ---
+[u'const cv.COLORMAP_PINK', u'10', [], []]
+ok: CONST COLORMAP_PINK=10
+
+--- Incoming ---
+[u'const cv.COLORMAP_HOT', u'11', [], []]
+ok: CONST COLORMAP_HOT=11
+
+--- Incoming ---
+[u'const cv.COLORMAP_PARULA', u'12', [], []]
+ok: CONST COLORMAP_PARULA=12
+
+--- Incoming ---
+[   u'cv.applyColorMap',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        [u'int', u'colormap', u'', []]],
+    u'void']
+ok: FUNC <void cv..applyColorMap [ARG Mat src=, ARG Mat dst=, ARG int colormap=]>
+
+--- Incoming ---
+[   u'cv.line',
+    u'void',
+    [],
+    [   ['Mat', u'img', '', ['/IO']],
+        [u'Point', u'pt1', u'', []],
+        [u'Point', u'pt2', u'', []],
+        [u'Scalar', u'color', u'', []],
+        [u'int', u'thickness', u'1', []],
+        [u'int', u'lineType', u'LINE_8', []],
+        [u'int', u'shift', u'0', []]],
+    u'void']
+ok: FUNC <void cv..line [ARG Mat img=, ARG Point pt1=, ARG Point pt2=, ARG Scalar color=, ARG int thickness=1, ARG int lineType=LINE_8, ARG int shift=0]>
+
+--- Incoming ---
+[   u'cv.arrowedLine',
+    u'void',
+    [],
+    [   ['Mat', u'img', '', ['/IO']],
+        [u'Point', u'pt1', u'', []],
+        [u'Point', u'pt2', u'', []],
+        [u'Scalar', u'color', u'', []],
+        [u'int', u'thickness', u'1', []],
+        [u'int', u'line_type', u'8', []],
+        [u'int', u'shift', u'0', []],
+        [u'double', u'tipLength', u'0.1', []]],
+    u'void']
+ok: FUNC <void cv..arrowedLine [ARG Mat img=, ARG Point pt1=, ARG Point pt2=, ARG Scalar color=, ARG int thickness=1, ARG int line_type=8, ARG int shift=0, ARG double tipLength=0.1]>
+
+--- Incoming ---
+[   u'cv.rectangle',
+    u'void',
+    [],
+    [   ['Mat', u'img', '', ['/IO']],
+        [u'Point', u'pt1', u'', []],
+        [u'Point', u'pt2', u'', []],
+        [u'Scalar', u'color', u'', []],
+        [u'int', u'thickness', u'1', []],
+        [u'int', u'lineType', u'LINE_8', []],
+        [u'int', u'shift', u'0', []]],
+    u'void']
+ok: FUNC <void cv..rectangle [ARG Mat img=, ARG Point pt1=, ARG Point pt2=, ARG Scalar color=, ARG int thickness=1, ARG int lineType=LINE_8, ARG int shift=0]>
+
+--- Incoming ---
+[   u'cv.circle',
+    u'void',
+    [],
+    [   ['Mat', u'img', '', ['/IO']],
+        [u'Point', u'center', u'', []],
+        [u'int', u'radius', u'', []],
+        [u'Scalar', u'color', u'', []],
+        [u'int', u'thickness', u'1', []],
+        [u'int', u'lineType', u'LINE_8', []],
+        [u'int', u'shift', u'0', []]],
+    u'void']
+ok: FUNC <void cv..circle [ARG Mat img=, ARG Point center=, ARG int radius=, ARG Scalar color=, ARG int thickness=1, ARG int lineType=LINE_8, ARG int shift=0]>
+
+--- Incoming ---
+[   u'cv.ellipse',
+    u'void',
+    [],
+    [   ['Mat', u'img', '', ['/IO']],
+        [u'Point', u'center', u'', []],
+        [u'Size', u'axes', u'', []],
+        [u'double', u'angle', u'', []],
+        [u'double', u'startAngle', u'', []],
+        [u'double', u'endAngle', u'', []],
+        [u'Scalar', u'color', u'', []],
+        [u'int', u'thickness', u'1', []],
+        [u'int', u'lineType', u'LINE_8', []],
+        [u'int', u'shift', u'0', []]],
+    u'void']
+ok: FUNC <void cv..ellipse [ARG Mat img=, ARG Point center=, ARG Size axes=, ARG double angle=, ARG double startAngle=, ARG double endAngle=, ARG Scalar color=, ARG int thickness=1, ARG int lineType=LINE_8, ARG int shift=0]>
+
+--- Incoming ---
+[   u'cv.ellipse',
+    u'void',
+    [],
+    [   ['Mat', u'img', '', ['/IO']],
+        [u'RotatedRect', u'box', u'', []],
+        [u'Scalar', u'color', u'', []],
+        [u'int', u'thickness', u'1', []],
+        [u'int', u'lineType', u'LINE_8', []]],
+    u'void']
+ok: FUNC <void cv..ellipse [ARG Mat img=, ARG RotatedRect box=, ARG Scalar color=, ARG int thickness=1, ARG int lineType=LINE_8]>
+
+--- Incoming ---
+[u'const cv.MARKER_CROSS', u'0', [], []]
+ok: CONST MARKER_CROSS=0
+
+--- Incoming ---
+[u'const cv.MARKER_TILTED_CROSS', u'1', [], []]
+ok: CONST MARKER_TILTED_CROSS=1
+
+--- Incoming ---
+[u'const cv.MARKER_STAR', u'2', [], []]
+ok: CONST MARKER_STAR=2
+
+--- Incoming ---
+[u'const cv.MARKER_DIAMOND', u'3', [], []]
+ok: CONST MARKER_DIAMOND=3
+
+--- Incoming ---
+[u'const cv.MARKER_SQUARE', u'4', [], []]
+ok: CONST MARKER_SQUARE=4
+
+--- Incoming ---
+[u'const cv.MARKER_TRIANGLE_UP', u'5', [], []]
+ok: CONST MARKER_TRIANGLE_UP=5
+
+--- Incoming ---
+[u'const cv.MARKER_TRIANGLE_DOWN', u'6', [], []]
+ok: CONST MARKER_TRIANGLE_DOWN=6
+
+--- Incoming ---
+[   u'cv.drawMarker',
+    u'void',
+    [],
+    [   [u'Mat', u'img', u'', ['/IO']],
+        [u'Point', u'position', u'', []],
+        [u'Scalar', u'color', u'', []],
+        [u'int', u'markerType', u'MARKER_CROSS', []],
+        [u'int', u'markerSize', u'20', []],
+        [u'int', u'thickness', u'1', []],
+        [u'int', u'line_type', u'8', []]],
+    u'void']
+ok: FUNC <void cv..drawMarker [ARG Mat img=, ARG Point position=, ARG Scalar color=, ARG int markerType=MARKER_CROSS, ARG int markerSize=20, ARG int thickness=1, ARG int line_type=8]>
+
+--- Incoming ---
+[   u'cv.fillConvexPoly',
+    u'void',
+    [],
+    [   ['Mat', u'img', '', ['/IO']],
+        ['Mat', u'points', '', []],
+        [u'Scalar', u'color', u'', []],
+        [u'int', u'lineType', u'LINE_8', []],
+        [u'int', u'shift', u'0', []]],
+    u'void']
+ok: FUNC <void cv..fillConvexPoly [ARG Mat img=, ARG vector_Point points=, ARG Scalar color=, ARG int lineType=LINE_8, ARG int shift=0]>
+
+--- Incoming ---
+[   u'cv.fillPoly',
+    u'void',
+    [],
+    [   ['Mat', u'img', '', ['/IO']],
+        ['vector_Mat', u'pts', '', []],
+        [u'Scalar', u'color', u'', []],
+        [u'int', u'lineType', u'LINE_8', []],
+        [u'int', u'shift', u'0', []],
+        [u'Point', u'offset', u'Point()', []]],
+    u'void']
+ok: FUNC <void cv..fillPoly [ARG Mat img=, ARG vector_vector_Point pts=, ARG Scalar color=, ARG int lineType=LINE_8, ARG int shift=0, ARG Point offset=Point()]>
+
+--- Incoming ---
+[   u'cv.polylines',
+    u'void',
+    [],
+    [   ['Mat', u'img', '', ['/IO']],
+        ['vector_Mat', u'pts', '', []],
+        [u'bool', u'isClosed', u'', []],
+        [u'Scalar', u'color', u'', []],
+        [u'int', u'thickness', u'1', []],
+        [u'int', u'lineType', u'LINE_8', []],
+        [u'int', u'shift', u'0', []]],
+    u'void']
+ok: FUNC <void cv..polylines [ARG Mat img=, ARG vector_vector_Point pts=, ARG bool isClosed=, ARG Scalar color=, ARG int thickness=1, ARG int lineType=LINE_8, ARG int shift=0]>
+
+--- Incoming ---
+[   u'cv.drawContours',
+    u'void',
+    [],
+    [   ['Mat', u'image', '', ['/IO']],
+        ['vector_Mat', u'contours', '', []],
+        [u'int', u'contourIdx', u'', []],
+        [u'Scalar', u'color', u'', []],
+        [u'int', u'thickness', u'1', []],
+        [u'int', u'lineType', u'LINE_8', []],
+        ['Mat', u'hierarchy', u'Mat()', []],
+        [u'int', u'maxLevel', u'INT_MAX', []],
+        [u'Point', u'offset', u'Point()', []]],
+    u'void']
+ok: FUNC <void cv..drawContours [ARG Mat image=, ARG vector_vector_Point contours=, ARG int contourIdx=, ARG Scalar color=, ARG int thickness=1, ARG int lineType=LINE_8, ARG Mat hierarchy=Mat(), ARG int maxLevel=INT_MAX, ARG Point offset=Point()]>
+
+--- Incoming ---
+[   u'cv.clipLine',
+    u'bool',
+    [],
+    [   [u'Rect', u'imgRect', u'', []],
+        [u'Point', u'pt1', u'', ['/O', '/IO']],
+        [u'Point', u'pt2', u'', ['/O', '/IO']]],
+    u'bool']
+ok: FUNC <bool cv..clipLine [ARG Rect imgRect=, ARG Point pt1=, ARG Point pt2=]>
+
+--- Incoming ---
+[   u'cv.ellipse2Poly',
+    u'void',
+    [],
+    [   [u'Point', u'center', u'', []],
+        [u'Size', u'axes', u'', []],
+        [u'int', u'angle', u'', []],
+        [u'int', u'arcStart', u'', []],
+        [u'int', u'arcEnd', u'', []],
+        [u'int', u'delta', u'', []],
+        [u'vector_Point', u'pts', u'', ['/O']]],
+    u'void']
+ok: FUNC <void cv..ellipse2Poly [ARG Point center=, ARG Size axes=, ARG int angle=, ARG int arcStart=, ARG int arcEnd=, ARG int delta=, ARG vector_Point pts=]>
+
+--- Incoming ---
+[   u'cv.putText',
+    u'void',
+    [],
+    [   ['Mat', u'img', '', ['/IO']],
+        [u'String', u'text', u'', []],
+        [u'Point', u'org', u'', []],
+        [u'int', u'fontFace', u'', []],
+        [u'double', u'fontScale', u'', []],
+        [u'Scalar', u'color', u'', []],
+        [u'int', u'thickness', u'1', []],
+        [u'int', u'lineType', u'LINE_8', []],
+        [u'bool', u'bottomLeftOrigin', u'false', []]],
+    u'void']
+ok: FUNC <void cv..putText [ARG Mat img=, ARG String text=, ARG Point org=, ARG int fontFace=, ARG double fontScale=, ARG Scalar color=, ARG int thickness=1, ARG int lineType=LINE_8, ARG bool bottomLeftOrigin=false]>
+
+--- Incoming ---
+[   u'cv.getTextSize',
+    u'Size',
+    [],
+    [   [u'String', u'text', u'', []],
+        [u'int', u'fontFace', u'', []],
+        [u'double', u'fontScale', u'', []],
+        [u'int', u'thickness', u'', []],
+        [u'int*', u'baseLine', u'', ['/O']]],
+    u'Size']
+manual: FUNC <Size cv..getTextSize [ARG String text=, ARG int fontFace=, ARG double fontScale=, ARG int thickness=, ARG int * baseLine=]>
+
+
+===== Header: /home/xxa344/Desktop/opencv-3.2.0/modules/imgproc/include/opencv2/imgproc/imgproc.hpp =====
+Namespaces: set(['', u'cv'])
+Ignore header: /home/xxa344/Desktop/opencv-3.2.0/modules/imgproc/include/opencv2/imgproc/imgproc.hpp
+
+
+===== Header: /home/xxa344/Desktop/opencv-3.2.0/modules/imgproc/include/opencv2/imgproc/hal/hal.hpp =====
+Namespaces: set(['', u'cv.hal', u'cv'])
+Ignore header: /home/xxa344/Desktop/opencv-3.2.0/modules/imgproc/include/opencv2/imgproc/hal/hal.hpp
+
+
+===== Header: /home/xxa344/Desktop/opencv-3.2.0/modules/imgproc/include/opencv2/imgproc/detail/distortion_model.hpp =====
+Namespaces: set(['', u'cv.detail', u'cv.hal', u'cv'])
+Ignore header: /home/xxa344/Desktop/opencv-3.2.0/modules/imgproc/include/opencv2/imgproc/detail/distortion_model.hpp
+
+
+===== Generating... =====
+CLASS cv::.LineSegmentDetector : Algorithm
+FUNC <int cv.LineSegmentDetector.compareSegments [ARG Size size=, ARG Mat lines1=, ARG Mat lines2=, ARG Mat _image=Mat()]>
+java: int compareSegments(Size size, Mat lines1, Mat lines2, Mat _image)
+java: int compareSegments(Size size, Mat lines1, Mat lines2)
+FUNC <void cv.LineSegmentDetector.detect [ARG Mat _image=, ARG Mat _lines=, ARG Mat width=Mat(), ARG Mat prec=Mat(), ARG Mat nfa=Mat()]>
+java: void detect(Mat _image, Mat _lines, Mat width, Mat prec, Mat nfa)
+java: void detect(Mat _image, Mat _lines)
+FUNC <void cv.LineSegmentDetector.drawSegments [ARG Mat _image=, ARG Mat lines=]>
+java: void drawSegments(Mat _image, Mat lines)
+CLASS cv::.Subdiv2D : 
+[CONST PTLOC_ERROR=-2, CONST PTLOC_OUTSIDE_RECT=-1, CONST PTLOC_INSIDE=0, CONST PTLOC_VERTEX=1, CONST PTLOC_ON_EDGE=2, CONST NEXT_AROUND_ORG=0x00, CONST NEXT_AROUND_DST=0x22, CONST PREV_AROUND_ORG=0x11, CONST PREV_AROUND_DST=0x33, CONST NEXT_AROUND_LEFT=0x13, CONST NEXT_AROUND_RIGHT=0x31, CONST PREV_AROUND_LEFT=0x20, CONST PREV_AROUND_RIGHT=0x02]
+FUNC < cv.Subdiv2D.Subdiv2D [ARG Rect rect=]>
+java:  Subdiv2D(Rect rect)
+FUNC < cv.Subdiv2D.Subdiv2D []>
+java:  Subdiv2D()
+FUNC <Point2f cv.Subdiv2D.getVertex [ARG int vertex=, ARG int * firstEdge=0]>
+java: Point getVertex(int vertex, int[] firstEdge)
+java: Point getVertex(int vertex)
+FUNC <int cv.Subdiv2D.edgeDst [ARG int edge=, ARG Point2f * dstpt=0]>
+java: int edgeDst(int edge, Point dstpt)
+java: int edgeDst(int edge)
+FUNC <int cv.Subdiv2D.edgeOrg [ARG int edge=, ARG Point2f * orgpt=0]>
+java: int edgeOrg(int edge, Point orgpt)
+java: int edgeOrg(int edge)
+FUNC <int cv.Subdiv2D.findNearest [ARG Point2f pt=, ARG Point2f * nearestPt=0]>
+java: int findNearest(Point pt, Point nearestPt)
+java: int findNearest(Point pt)
+FUNC <int cv.Subdiv2D.getEdge [ARG int edge=, ARG int nextEdgeType=]>
+java: int getEdge(int edge, int nextEdgeType)
+FUNC <int cv.Subdiv2D.insert [ARG Point2f pt=]>
+java: int insert(Point pt)
+FUNC <int cv.Subdiv2D.locate [ARG Point2f pt=, ARG int edge=, ARG int vertex=]>
+java: int locate(Point pt, int[] edge, int[] vertex)
+FUNC <int cv.Subdiv2D.nextEdge [ARG int edge=]>
+java: int nextEdge(int edge)
+FUNC <int cv.Subdiv2D.rotateEdge [ARG int edge=, ARG int rotate=]>
+java: int rotateEdge(int edge, int rotate)
+FUNC <int cv.Subdiv2D.symEdge [ARG int edge=]>
+java: int symEdge(int edge)
+FUNC <void cv.Subdiv2D.getEdgeList [ARG vector_Vec4f edgeList=]>
+java: void getEdgeList(MatOfFloat4 edgeList)
+FUNC <void cv.Subdiv2D.getLeadingEdgeList [ARG vector_int leadingEdgeList=]>
+java: void getLeadingEdgeList(MatOfInt leadingEdgeList)
+FUNC <void cv.Subdiv2D.getTriangleList [ARG vector_Vec6f triangleList=]>
+java: void getTriangleList(MatOfFloat6 triangleList)
+FUNC <void cv.Subdiv2D.getVoronoiFacetList [ARG vector_int idx=, ARG vector_vector_Point2f facetList=, ARG vector_Point2f facetCenters=]>
+java: void getVoronoiFacetList(MatOfInt idx, List<MatOfPoint2f> facetList, MatOfPoint2f facetCenters)
+FUNC <void cv.Subdiv2D.initDelaunay [ARG Rect rect=]>
+java: void initDelaunay(Rect rect)
+FUNC <void cv.Subdiv2D.insert [ARG vector_Point2f ptvec=]>
+java: void insert(MatOfPoint2f ptvec)
+CLASS ::.Imgproc : 
+[CONST IPL_BORDER_CONSTANT=0(manual), CONST IPL_BORDER_REPLICATE=1(manual), CONST IPL_BORDER_REFLECT=2(manual), CONST IPL_BORDER_WRAP=3(manual), CONST IPL_BORDER_REFLECT_101=4(manual), CONST IPL_BORDER_TRANSPARENT=5(manual), CONST CV_INTER_NN=0, CONST CV_INTER_LINEAR=1, CONST CV_INTER_CUBIC=2, CONST CV_INTER_AREA=3, CONST CV_INTER_LANCZOS4=4, CONST CV_MOP_ERODE=0, CONST CV_MOP_DILATE=1, CONST CV_MOP_OPEN=2, CONST CV_MOP_CLOSE=3, CONST CV_MOP_GRADIENT=4, CONST CV_MOP_TOPHAT=5, CONST CV_MOP_BLACKHAT=6, CONST CV_RETR_EXTERNAL=0, CONST CV_RETR_LIST=1, CONST CV_RETR_CCOMP=2, CONST CV_RETR_TREE=3, CONST CV_RETR_FLOODFILL=4, CONST CV_CHAIN_APPROX_NONE=1, CONST CV_CHAIN_APPROX_SIMPLE=2, CONST CV_CHAIN_APPROX_TC89_L1=3, CONST CV_CHAIN_APPROX_TC89_KCOS=4, CONST CV_THRESH_BINARY=0, CONST CV_THRESH_BINARY_INV=1, CONST CV_THRESH_TRUNC=2, CONST CV_THRESH_TOZERO=3, CONST CV_THRESH_TOZERO_INV=4, CONST CV_THRESH_MASK=7, CONST CV_THRESH_OTSU=8, CONST CV_THRESH_TRIANGLE=16]
+[CONST LINE_AA=16(manual), CONST LINE_8=8(manual), CONST LINE_4=4(manual), CONST CV_BLUR_NO_SCALE=0, CONST CV_BLUR=1, CONST CV_GAUSSIAN=2, CONST CV_MEDIAN=3, CONST CV_BILATERAL=4, CONST CV_GAUSSIAN_5x5=7, CONST CV_SCHARR=-1, CONST CV_MAX_SOBEL_KSIZE=7, CONST CV_RGBA2mRGBA=125, CONST CV_mRGBA2RGBA=126, CONST CV_WARP_FILL_OUTLIERS=8, CONST CV_WARP_INVERSE_MAP=16, CONST CV_SHAPE_RECT=0, CONST CV_SHAPE_CROSS=1, CONST CV_SHAPE_ELLIPSE=2, CONST CV_SHAPE_CUSTOM=100, CONST CV_CHAIN_CODE=0, CONST CV_LINK_RUNS=5, CONST CV_POLY_APPROX_DP=0, CONST CV_CONTOURS_MATCH_I1=1, CONST CV_CONTOURS_MATCH_I2=2, CONST CV_CONTOURS_MATCH_I3=3, CONST CV_CLOCKWISE=1, CONST CV_COUNTER_CLOCKWISE=2, CONST CV_COMP_CORREL=0, CONST CV_COMP_CHISQR=1, CONST CV_COMP_INTERSECT=2, CONST CV_COMP_BHATTACHARYYA=3, CONST CV_COMP_HELLINGER=CV_COMP_BHATTACHARYYA, CONST CV_COMP_CHISQR_ALT=4, CONST CV_COMP_KL_DIV=5, CONST CV_DIST_MASK_3=3, CONST CV_DIST_MASK_5=5, CONST CV_DIST_MASK_PRECISE=0, CONST CV_DIST_LABEL_CCOMP=0, CONST CV_DIST_LABEL_PIXEL=1, CONST CV_DIST_USER=-1, CONST CV_DIST_L1=1, CONST CV_DIST_L2=2, CONST CV_DIST_C=3, CONST CV_DIST_L12=4, CONST CV_DIST_FAIR=5, CONST CV_DIST_WELSCH=6, CONST CV_DIST_HUBER=7, CONST CV_CANNY_L2_GRADIENT=(1 << 31), CONST CV_HOUGH_STANDARD=0, CONST CV_HOUGH_PROBABILISTIC=1, CONST CV_HOUGH_MULTI_SCALE=2, CONST CV_HOUGH_GRADIENT=3, CONST MORPH_ERODE=0, CONST MORPH_DILATE=1, CONST MORPH_OPEN=2, CONST MORPH_CLOSE=3, CONST MORPH_GRADIENT=4, CONST MORPH_TOPHAT=5, CONST MORPH_BLACKHAT=6, CONST MORPH_HITMISS=7, CONST MORPH_RECT=0, CONST MORPH_CROSS=1, CONST MORPH_ELLIPSE=2, CONST INTER_NEAREST=0, CONST INTER_LINEAR=1, CONST INTER_CUBIC=2, CONST INTER_AREA=3, CONST INTER_LANCZOS4=4, CONST INTER_MAX=7, CONST WARP_FILL_OUTLIERS=8, CONST WARP_INVERSE_MAP=16, CONST INTER_BITS=5, CONST INTER_BITS2=INTER_BITS * 2, CONST INTER_TAB_SIZE=1 << INTER_BITS, CONST INTER_TAB_SIZE2=INTER_TAB_SIZE * INTER_TAB_SIZE, CONST DIST_USER=-1, CONST DIST_L1=1, CONST DIST_L2=2, CONST DIST_C=3, CONST DIST_L12=4, CONST DIST_FAIR=5, CONST DIST_WELSCH=6, CONST DIST_HUBER=7, CONST DIST_MASK_3=3, CONST DIST_MASK_5=5, CONST DIST_MASK_PRECISE=0, CONST THRESH_BINARY=0, CONST THRESH_BINARY_INV=1, CONST THRESH_TRUNC=2, CONST THRESH_TOZERO=3, CONST THRESH_TOZERO_INV=4, CONST THRESH_MASK=7, CONST THRESH_OTSU=8, CONST THRESH_TRIANGLE=16, CONST ADAPTIVE_THRESH_MEAN_C=0, CONST ADAPTIVE_THRESH_GAUSSIAN_C=1, CONST PROJ_SPHERICAL_ORTHO=0, CONST PROJ_SPHERICAL_EQRECT=1, CONST GC_BGD=0, CONST GC_FGD=1, CONST GC_PR_BGD=2, CONST GC_PR_FGD=3, CONST GC_INIT_WITH_RECT=0, CONST GC_INIT_WITH_MASK=1, CONST GC_EVAL=2, CONST DIST_LABEL_CCOMP=0, CONST DIST_LABEL_PIXEL=1, CONST FLOODFILL_FIXED_RANGE=1 << 16, CONST FLOODFILL_MASK_ONLY=1 << 17, CONST CC_STAT_LEFT=0, CONST CC_STAT_TOP=1, CONST CC_STAT_WIDTH=2, CONST CC_STAT_HEIGHT=3, CONST CC_STAT_AREA=4, CONST CC_STAT_MAX=5, CONST CCL_WU=0, CONST CCL_DEFAULT=-1, CONST CCL_GRANA=1, CONST RETR_EXTERNAL=0, CONST RETR_LIST=1, CONST RETR_CCOMP=2, CONST RETR_TREE=3, CONST RETR_FLOODFILL=4, CONST CHAIN_APPROX_NONE=1, CONST CHAIN_APPROX_SIMPLE=2, CONST CHAIN_APPROX_TC89_L1=3, CONST CHAIN_APPROX_TC89_KCOS=4, CONST HOUGH_STANDARD=0, CONST HOUGH_PROBABILISTIC=1, CONST HOUGH_MULTI_SCALE=2, CONST HOUGH_GRADIENT=3, CONST LSD_REFINE_NONE=0, CONST LSD_REFINE_STD=1, CONST LSD_REFINE_ADV=2, CONST HISTCMP_CORREL=0, CONST HISTCMP_CHISQR=1, CONST HISTCMP_INTERSECT=2, CONST HISTCMP_BHATTACHARYYA=3, CONST HISTCMP_HELLINGER=HISTCMP_BHATTACHARYYA, CONST HISTCMP_CHISQR_ALT=4, CONST HISTCMP_KL_DIV=5, CONST COLOR_BGR2BGRA=0, CONST COLOR_RGB2RGBA=COLOR_BGR2BGRA, CONST COLOR_BGRA2BGR=1, CONST COLOR_RGBA2RGB=COLOR_BGRA2BGR, CONST COLOR_BGR2RGBA=2, CONST COLOR_RGB2BGRA=COLOR_BGR2RGBA, CONST COLOR_RGBA2BGR=3, CONST COLOR_BGRA2RGB=COLOR_RGBA2BGR, CONST COLOR_BGR2RGB=4, CONST COLOR_RGB2BGR=COLOR_BGR2RGB, CONST COLOR_BGRA2RGBA=5, CONST COLOR_RGBA2BGRA=COLOR_BGRA2RGBA, CONST COLOR_BGR2GRAY=6, CONST COLOR_RGB2GRAY=7, CONST COLOR_GRAY2BGR=8, CONST COLOR_GRAY2RGB=COLOR_GRAY2BGR, CONST COLOR_GRAY2BGRA=9, CONST COLOR_GRAY2RGBA=COLOR_GRAY2BGRA, CONST COLOR_BGRA2GRAY=10, CONST COLOR_RGBA2GRAY=11, CONST COLOR_BGR2BGR565=12, CONST COLOR_RGB2BGR565=13, CONST COLOR_BGR5652BGR=14, CONST COLOR_BGR5652RGB=15, CONST COLOR_BGRA2BGR565=16, CONST COLOR_RGBA2BGR565=17, CONST COLOR_BGR5652BGRA=18, CONST COLOR_BGR5652RGBA=19, CONST COLOR_GRAY2BGR565=20, CONST COLOR_BGR5652GRAY=21, CONST COLOR_BGR2BGR555=22, CONST COLOR_RGB2BGR555=23, CONST COLOR_BGR5552BGR=24, CONST COLOR_BGR5552RGB=25, CONST COLOR_BGRA2BGR555=26, CONST COLOR_RGBA2BGR555=27, CONST COLOR_BGR5552BGRA=28, CONST COLOR_BGR5552RGBA=29, CONST COLOR_GRAY2BGR555=30, CONST COLOR_BGR5552GRAY=31, CONST COLOR_BGR2XYZ=32, CONST COLOR_RGB2XYZ=33, CONST COLOR_XYZ2BGR=34, CONST COLOR_XYZ2RGB=35, CONST COLOR_BGR2YCrCb=36, CONST COLOR_RGB2YCrCb=37, CONST COLOR_YCrCb2BGR=38, CONST COLOR_YCrCb2RGB=39, CONST COLOR_BGR2HSV=40, CONST COLOR_RGB2HSV=41, CONST COLOR_BGR2Lab=44, CONST COLOR_RGB2Lab=45, CONST COLOR_BGR2Luv=50, CONST COLOR_RGB2Luv=51, CONST COLOR_BGR2HLS=52, CONST COLOR_RGB2HLS=53, CONST COLOR_HSV2BGR=54, CONST COLOR_HSV2RGB=55, CONST COLOR_Lab2BGR=56, CONST COLOR_Lab2RGB=57, CONST COLOR_Luv2BGR=58, CONST COLOR_Luv2RGB=59, CONST COLOR_HLS2BGR=60, CONST COLOR_HLS2RGB=61, CONST COLOR_BGR2HSV_FULL=66, CONST COLOR_RGB2HSV_FULL=67, CONST COLOR_BGR2HLS_FULL=68, CONST COLOR_RGB2HLS_FULL=69, CONST COLOR_HSV2BGR_FULL=70, CONST COLOR_HSV2RGB_FULL=71, CONST COLOR_HLS2BGR_FULL=72, CONST COLOR_HLS2RGB_FULL=73, CONST COLOR_LBGR2Lab=74, CONST COLOR_LRGB2Lab=75, CONST COLOR_LBGR2Luv=76, CONST COLOR_LRGB2Luv=77, CONST COLOR_Lab2LBGR=78, CONST COLOR_Lab2LRGB=79, CONST COLOR_Luv2LBGR=80, CONST COLOR_Luv2LRGB=81, CONST COLOR_BGR2YUV=82, CONST COLOR_RGB2YUV=83, CONST COLOR_YUV2BGR=84, CONST COLOR_YUV2RGB=85, CONST COLOR_YUV2RGB_NV12=90, CONST COLOR_YUV2BGR_NV12=91, CONST COLOR_YUV2RGB_NV21=92, CONST COLOR_YUV2BGR_NV21=93, CONST COLOR_YUV420sp2RGB=COLOR_YUV2RGB_NV21, CONST COLOR_YUV420sp2BGR=COLOR_YUV2BGR_NV21, CONST COLOR_YUV2RGBA_NV12=94, CONST COLOR_YUV2BGRA_NV12=95, CONST COLOR_YUV2RGBA_NV21=96, CONST COLOR_YUV2BGRA_NV21=97, CONST COLOR_YUV420sp2RGBA=COLOR_YUV2RGBA_NV21, CONST COLOR_YUV420sp2BGRA=COLOR_YUV2BGRA_NV21, CONST COLOR_YUV2RGB_YV12=98, CONST COLOR_YUV2BGR_YV12=99, CONST COLOR_YUV2RGB_IYUV=100, CONST COLOR_YUV2BGR_IYUV=101, CONST COLOR_YUV2RGB_I420=COLOR_YUV2RGB_IYUV, CONST COLOR_YUV2BGR_I420=COLOR_YUV2BGR_IYUV, CONST COLOR_YUV420p2RGB=COLOR_YUV2RGB_YV12, CONST COLOR_YUV420p2BGR=COLOR_YUV2BGR_YV12, CONST COLOR_YUV2RGBA_YV12=102, CONST COLOR_YUV2BGRA_YV12=103, CONST COLOR_YUV2RGBA_IYUV=104, CONST COLOR_YUV2BGRA_IYUV=105, CONST COLOR_YUV2RGBA_I420=COLOR_YUV2RGBA_IYUV, CONST COLOR_YUV2BGRA_I420=COLOR_YUV2BGRA_IYUV, CONST COLOR_YUV420p2RGBA=COLOR_YUV2RGBA_YV12, CONST COLOR_YUV420p2BGRA=COLOR_YUV2BGRA_YV12, CONST COLOR_YUV2GRAY_420=106, CONST COLOR_YUV2GRAY_NV21=COLOR_YUV2GRAY_420, CONST COLOR_YUV2GRAY_NV12=COLOR_YUV2GRAY_420, CONST COLOR_YUV2GRAY_YV12=COLOR_YUV2GRAY_420, CONST COLOR_YUV2GRAY_IYUV=COLOR_YUV2GRAY_420, CONST COLOR_YUV2GRAY_I420=COLOR_YUV2GRAY_420, CONST COLOR_YUV420sp2GRAY=COLOR_YUV2GRAY_420, CONST COLOR_YUV420p2GRAY=COLOR_YUV2GRAY_420, CONST COLOR_YUV2RGB_UYVY=107, CONST COLOR_YUV2BGR_UYVY=108, CONST COLOR_YUV2RGB_Y422=COLOR_YUV2RGB_UYVY, CONST COLOR_YUV2BGR_Y422=COLOR_YUV2BGR_UYVY, CONST COLOR_YUV2RGB_UYNV=COLOR_YUV2RGB_UYVY, CONST COLOR_YUV2BGR_UYNV=COLOR_YUV2BGR_UYVY, CONST COLOR_YUV2RGBA_UYVY=111, CONST COLOR_YUV2BGRA_UYVY=112, CONST COLOR_YUV2RGBA_Y422=COLOR_YUV2RGBA_UYVY, CONST COLOR_YUV2BGRA_Y422=COLOR_YUV2BGRA_UYVY, CONST COLOR_YUV2RGBA_UYNV=COLOR_YUV2RGBA_UYVY, CONST COLOR_YUV2BGRA_UYNV=COLOR_YUV2BGRA_UYVY, CONST COLOR_YUV2RGB_YUY2=115, CONST COLOR_YUV2BGR_YUY2=116, CONST COLOR_YUV2RGB_YVYU=117, CONST COLOR_YUV2BGR_YVYU=118, CONST COLOR_YUV2RGB_YUYV=COLOR_YUV2RGB_YUY2, CONST COLOR_YUV2BGR_YUYV=COLOR_YUV2BGR_YUY2, CONST COLOR_YUV2RGB_YUNV=COLOR_YUV2RGB_YUY2, CONST COLOR_YUV2BGR_YUNV=COLOR_YUV2BGR_YUY2, CONST COLOR_YUV2RGBA_YUY2=119, CONST COLOR_YUV2BGRA_YUY2=120, CONST COLOR_YUV2RGBA_YVYU=121, CONST COLOR_YUV2BGRA_YVYU=122, CONST COLOR_YUV2RGBA_YUYV=COLOR_YUV2RGBA_YUY2, CONST COLOR_YUV2BGRA_YUYV=COLOR_YUV2BGRA_YUY2, CONST COLOR_YUV2RGBA_YUNV=COLOR_YUV2RGBA_YUY2, CONST COLOR_YUV2BGRA_YUNV=COLOR_YUV2BGRA_YUY2, CONST COLOR_YUV2GRAY_UYVY=123, CONST COLOR_YUV2GRAY_YUY2=124, CONST COLOR_YUV2GRAY_Y422=COLOR_YUV2GRAY_UYVY, CONST COLOR_YUV2GRAY_UYNV=COLOR_YUV2GRAY_UYVY, CONST COLOR_YUV2GRAY_YVYU=COLOR_YUV2GRAY_YUY2, CONST COLOR_YUV2GRAY_YUYV=COLOR_YUV2GRAY_YUY2, CONST COLOR_YUV2GRAY_YUNV=COLOR_YUV2GRAY_YUY2, CONST COLOR_RGBA2mRGBA=125, CONST COLOR_mRGBA2RGBA=126, CONST COLOR_RGB2YUV_I420=127, CONST COLOR_BGR2YUV_I420=128, CONST COLOR_RGB2YUV_IYUV=COLOR_RGB2YUV_I420, CONST COLOR_BGR2YUV_IYUV=COLOR_BGR2YUV_I420, CONST COLOR_RGBA2YUV_I420=129, CONST COLOR_BGRA2YUV_I420=130, CONST COLOR_RGBA2YUV_IYUV=COLOR_RGBA2YUV_I420, CONST COLOR_BGRA2YUV_IYUV=COLOR_BGRA2YUV_I420, CONST COLOR_RGB2YUV_YV12=131, CONST COLOR_BGR2YUV_YV12=132, CONST COLOR_RGBA2YUV_YV12=133, CONST COLOR_BGRA2YUV_YV12=134, CONST COLOR_BayerBG2BGR=46, CONST COLOR_BayerGB2BGR=47, CONST COLOR_BayerRG2BGR=48, CONST COLOR_BayerGR2BGR=49, CONST COLOR_BayerBG2RGB=COLOR_BayerRG2BGR, CONST COLOR_BayerGB2RGB=COLOR_BayerGR2BGR, CONST COLOR_BayerRG2RGB=COLOR_BayerBG2BGR, CONST COLOR_BayerGR2RGB=COLOR_BayerGB2BGR, CONST COLOR_BayerBG2GRAY=86, CONST COLOR_BayerGB2GRAY=87, CONST COLOR_BayerRG2GRAY=88, CONST COLOR_BayerGR2GRAY=89, CONST COLOR_BayerBG2BGR_VNG=62, CONST COLOR_BayerGB2BGR_VNG=63, CONST COLOR_BayerRG2BGR_VNG=64, CONST COLOR_BayerGR2BGR_VNG=65, CONST COLOR_BayerBG2RGB_VNG=COLOR_BayerRG2BGR_VNG, CONST COLOR_BayerGB2RGB_VNG=COLOR_BayerGR2BGR_VNG, CONST COLOR_BayerRG2RGB_VNG=COLOR_BayerBG2BGR_VNG, CONST COLOR_BayerGR2RGB_VNG=COLOR_BayerGB2BGR_VNG, CONST COLOR_BayerBG2BGR_EA=135, CONST COLOR_BayerGB2BGR_EA=136, CONST COLOR_BayerRG2BGR_EA=137, CONST COLOR_BayerGR2BGR_EA=138, CONST COLOR_BayerBG2RGB_EA=COLOR_BayerRG2BGR_EA, CONST COLOR_BayerGB2RGB_EA=COLOR_BayerGR2BGR_EA, CONST COLOR_BayerRG2RGB_EA=COLOR_BayerBG2BGR_EA, CONST COLOR_BayerGR2RGB_EA=COLOR_BayerGB2BGR_EA, CONST COLOR_COLORCVT_MAX=139, CONST INTERSECT_NONE=0, CONST INTERSECT_PARTIAL=1, CONST INTERSECT_FULL=2, CONST TM_SQDIFF=0, CONST TM_SQDIFF_NORMED=1, CONST TM_CCORR=2, CONST TM_CCORR_NORMED=3, CONST TM_CCOEFF=4, CONST TM_CCOEFF_NORMED=5, CONST COLORMAP_AUTUMN=0, CONST COLORMAP_BONE=1, CONST COLORMAP_JET=2, CONST COLORMAP_WINTER=3, CONST COLORMAP_RAINBOW=4, CONST COLORMAP_OCEAN=5, CONST COLORMAP_SUMMER=6, CONST COLORMAP_SPRING=7, CONST COLORMAP_COOL=8, CONST COLORMAP_HSV=9, CONST COLORMAP_PINK=10, CONST COLORMAP_HOT=11, CONST COLORMAP_PARULA=12, CONST MARKER_CROSS=0, CONST MARKER_TILTED_CROSS=1, CONST MARKER_STAR=2, CONST MARKER_DIAMOND=3, CONST MARKER_SQUARE=4, CONST MARKER_TRIANGLE_UP=5, CONST MARKER_TRIANGLE_DOWN=6]
+FUNC <Mat cv..getAffineTransform [ARG vector_Point2f src=, ARG vector_Point2f dst=]>
+java: Mat getAffineTransform(MatOfPoint2f src, MatOfPoint2f dst)
+FUNC <Mat cv..getDefaultNewCameraMatrix [ARG Mat cameraMatrix=, ARG Size imgsize=Size(), ARG bool centerPrincipalPoint=false]>
+java: Mat getDefaultNewCameraMatrix(Mat cameraMatrix, Size imgsize, boolean centerPrincipalPoint)
+java: Mat getDefaultNewCameraMatrix(Mat cameraMatrix)
+FUNC <Mat cv..getGaborKernel [ARG Size ksize=, ARG double sigma=, ARG double theta=, ARG double lambd=, ARG double gamma=, ARG double psi=CV_PI*0.5, ARG int ktype=CV_64F]>
+java: Mat getGaborKernel(Size ksize, double sigma, double theta, double lambd, double gamma, double psi, int ktype)
+java: Mat getGaborKernel(Size ksize, double sigma, double theta, double lambd, double gamma)
+FUNC <Mat cv..getGaussianKernel [ARG int ksize=, ARG double sigma=, ARG int ktype=CV_64F]>
+java: Mat getGaussianKernel(int ksize, double sigma, int ktype)
+java: Mat getGaussianKernel(int ksize, double sigma)
+FUNC <Mat cv..getPerspectiveTransform [ARG Mat src=, ARG Mat dst=]>
+java: Mat getPerspectiveTransform(Mat src, Mat dst)
+FUNC <Mat cv..getRotationMatrix2D [ARG Point2f center=, ARG double angle=, ARG double scale=]>
+java: Mat getRotationMatrix2D(Point center, double angle, double scale)
+FUNC <Mat cv..getStructuringElement [ARG int shape=, ARG Size ksize=, ARG Point anchor=Point(-1,-1)]>
+java: Mat getStructuringElement(int shape, Size ksize, Point anchor)
+java: Mat getStructuringElement(int shape, Size ksize)
+FUNC <Moments cv..moments [ARG Mat array=, ARG bool binaryImage=false]>
+java: Moments moments(Mat array, boolean binaryImage)
+java: Moments moments(Mat array)
+FUNC <Point2d cv..phaseCorrelate [ARG Mat src1=, ARG Mat src2=, ARG Mat window=Mat(), ARG double * response=0]>
+java: Point phaseCorrelate(Mat src1, Mat src2, Mat window, double[] response)
+java: Point phaseCorrelate(Mat src1, Mat src2)
+FUNC <Ptr_CLAHE cv..createCLAHE [ARG double clipLimit=40.0, ARG Size tileGridSize=Size(8, 8)]>
+java: CLAHE createCLAHE(double clipLimit, Size tileGridSize)
+java: CLAHE createCLAHE()
+FUNC <Ptr_LineSegmentDetector cv..createLineSegmentDetector [ARG int _refine=LSD_REFINE_STD, ARG double _scale=0.8, ARG double _sigma_scale=0.6, ARG double _quant=2.0, ARG double _ang_th=22.5, ARG double _log_eps=0, ARG double _density_th=0.7, ARG int _n_bins=1024]>
+java: LineSegmentDetector createLineSegmentDetector(int _refine, double _scale, double _sigma_scale, double _quant, double _ang_th, double _log_eps, double _density_th, int _n_bins)
+java: LineSegmentDetector createLineSegmentDetector()
+FUNC <Rect cv..boundingRect [ARG vector_Point points=]>
+java: Rect boundingRect(MatOfPoint points)
+FUNC <RotatedRect cv..fitEllipse [ARG vector_Point2f points=]>
+java: RotatedRect fitEllipse(MatOfPoint2f points)
+FUNC <RotatedRect cv..minAreaRect [ARG vector_Point2f points=]>
+java: RotatedRect minAreaRect(MatOfPoint2f points)
+FUNC <bool cv..clipLine [ARG Rect imgRect=, ARG Point pt1=, ARG Point pt2=]>
+java: boolean clipLine(Rect imgRect, Point pt1, Point pt2)
+FUNC <bool cv..isContourConvex [ARG vector_Point contour=]>
+java: boolean isContourConvex(MatOfPoint contour)
+FUNC <double cv..arcLength [ARG vector_Point2f curve=, ARG bool closed=]>
+java: double arcLength(MatOfPoint2f curve, boolean closed)
+FUNC <double cv..compareHist [ARG Mat H1=, ARG Mat H2=, ARG int method=]>
+java: double compareHist(Mat H1, Mat H2, int method)
+FUNC <double cv..contourArea [ARG Mat contour=, ARG bool oriented=false]>
+java: double contourArea(Mat contour, boolean oriented)
+java: double contourArea(Mat contour)
+FUNC <double cv..matchShapes [ARG Mat contour1=, ARG Mat contour2=, ARG int method=, ARG double parameter=]>
+java: double matchShapes(Mat contour1, Mat contour2, int method, double parameter)
+FUNC <double cv..minEnclosingTriangle [ARG Mat points=, ARG Mat triangle=]>
+java: double minEnclosingTriangle(Mat points, Mat triangle)
+FUNC <double cv..pointPolygonTest [ARG vector_Point2f contour=, ARG Point2f pt=, ARG bool measureDist=]>
+java: double pointPolygonTest(MatOfPoint2f contour, Point pt, boolean measureDist)
+FUNC <double cv..threshold [ARG Mat src=, ARG Mat dst=, ARG double thresh=, ARG double maxval=, ARG int type=]>
+java: double threshold(Mat src, Mat dst, double thresh, double maxval, int type)
+FUNC <float cv..initWideAngleProjMap [ARG Mat cameraMatrix=, ARG Mat distCoeffs=, ARG Size imageSize=, ARG int destImageWidth=, ARG int m1type=, ARG Mat map1=, ARG Mat map2=, ARG int projType=PROJ_SPHERICAL_EQRECT, ARG double alpha=0]>
+java: float initWideAngleProjMap(Mat cameraMatrix, Mat distCoeffs, Size imageSize, int destImageWidth, int m1type, Mat map1, Mat map2, int projType, double alpha)
+java: float initWideAngleProjMap(Mat cameraMatrix, Mat distCoeffs, Size imageSize, int destImageWidth, int m1type, Mat map1, Mat map2)
+FUNC <float cv..intersectConvexConvex [ARG Mat _p1=, ARG Mat _p2=, ARG Mat _p12=, ARG bool handleNested=true]>
+java: float intersectConvexConvex(Mat _p1, Mat _p2, Mat _p12, boolean handleNested)
+java: float intersectConvexConvex(Mat _p1, Mat _p2, Mat _p12)
+FUNC <int cv..connectedComponents [ARG Mat image=, ARG Mat labels=, ARG int connectivity=, ARG int ltype=, ARG int ccltype=]>
+java: int connectedComponentsWithAlgorithm(Mat image, Mat labels, int connectivity, int ltype, int ccltype)
+FUNC <int cv..connectedComponents [ARG Mat image=, ARG Mat labels=, ARG int connectivity=8, ARG int ltype=CV_32S]>
+java: int connectedComponents(Mat image, Mat labels, int connectivity, int ltype)
+java: int connectedComponents(Mat image, Mat labels)
+FUNC <int cv..connectedComponentsWithStats [ARG Mat image=, ARG Mat labels=, ARG Mat stats=, ARG Mat centroids=, ARG int connectivity=, ARG int ltype=, ARG int ccltype=]>
+java: int connectedComponentsWithStatsWithAlgorithm(Mat image, Mat labels, Mat stats, Mat centroids, int connectivity, int ltype, int ccltype)
+FUNC <int cv..connectedComponentsWithStats [ARG Mat image=, ARG Mat labels=, ARG Mat stats=, ARG Mat centroids=, ARG int connectivity=8, ARG int ltype=CV_32S]>
+java: int connectedComponentsWithStats(Mat image, Mat labels, Mat stats, Mat centroids, int connectivity, int ltype)
+java: int connectedComponentsWithStats(Mat image, Mat labels, Mat stats, Mat centroids)
+FUNC <int cv..floodFill [ARG Mat image=, ARG Mat mask=, ARG Point seedPoint=, ARG Scalar newVal=, ARG Rect * rect=0, ARG Scalar loDiff=Scalar(), ARG Scalar upDiff=Scalar(), ARG int flags=4]>
+java: int floodFill(Mat image, Mat mask, Point seedPoint, Scalar newVal, Rect rect, Scalar loDiff, Scalar upDiff, int flags)
+java: int floodFill(Mat image, Mat mask, Point seedPoint, Scalar newVal)
+FUNC <int cv..rotatedRectangleIntersection [ARG RotatedRect rect1=, ARG RotatedRect rect2=, ARG Mat intersectingRegion=]>
+java: int rotatedRectangleIntersection(RotatedRect rect1, RotatedRect rect2, Mat intersectingRegion)
+FUNC <void cv..Canny [ARG Mat dx=, ARG Mat dy=, ARG Mat edges=, ARG double threshold1=, ARG double threshold2=, ARG bool L2gradient=false]>
+java: void Canny(Mat dx, Mat dy, Mat edges, double threshold1, double threshold2, boolean L2gradient)
+java: void Canny(Mat dx, Mat dy, Mat edges, double threshold1, double threshold2)
+FUNC <void cv..Canny [ARG Mat image=, ARG Mat edges=, ARG double threshold1=, ARG double threshold2=, ARG int apertureSize=3, ARG bool L2gradient=false]>
+java: void Canny(Mat image, Mat edges, double threshold1, double threshold2, int apertureSize, boolean L2gradient)
+java: void Canny(Mat image, Mat edges, double threshold1, double threshold2)
+FUNC <void cv..GaussianBlur [ARG Mat src=, ARG Mat dst=, ARG Size ksize=, ARG double sigmaX=, ARG double sigmaY=0, ARG int borderType=BORDER_DEFAULT]>
+java: void GaussianBlur(Mat src, Mat dst, Size ksize, double sigmaX, double sigmaY, int borderType)
+java: void GaussianBlur(Mat src, Mat dst, Size ksize, double sigmaX, double sigmaY)
+java: void GaussianBlur(Mat src, Mat dst, Size ksize, double sigmaX)
+FUNC <void cv..HoughCircles [ARG Mat image=, ARG Mat circles=, ARG int method=, ARG double dp=, ARG double minDist=, ARG double param1=100, ARG double param2=100, ARG int minRadius=0, ARG int maxRadius=0]>
+java: void HoughCircles(Mat image, Mat circles, int method, double dp, double minDist, double param1, double param2, int minRadius, int maxRadius)
+java: void HoughCircles(Mat image, Mat circles, int method, double dp, double minDist)
+FUNC <void cv..HoughLines [ARG Mat image=, ARG Mat lines=, ARG double rho=, ARG double theta=, ARG int threshold=, ARG double srn=0, ARG double stn=0, ARG double min_theta=0, ARG double max_theta=CV_PI]>
+java: void HoughLines(Mat image, Mat lines, double rho, double theta, int threshold, double srn, double stn, double min_theta, double max_theta)
+java: void HoughLines(Mat image, Mat lines, double rho, double theta, int threshold)
+FUNC <void cv..HoughLinesP [ARG Mat image=, ARG Mat lines=, ARG double rho=, ARG double theta=, ARG int threshold=, ARG double minLineLength=0, ARG double maxLineGap=0]>
+java: void HoughLinesP(Mat image, Mat lines, double rho, double theta, int threshold, double minLineLength, double maxLineGap)
+java: void HoughLinesP(Mat image, Mat lines, double rho, double theta, int threshold)
+FUNC <void cv..HuMoments [ARG Moments m=, ARG Mat hu=]>
+java: void HuMoments(Moments m, Mat hu)
+FUNC <void cv..Laplacian [ARG Mat src=, ARG Mat dst=, ARG int ddepth=, ARG int ksize=1, ARG double scale=1, ARG double delta=0, ARG int borderType=BORDER_DEFAULT]>
+java: void Laplacian(Mat src, Mat dst, int ddepth, int ksize, double scale, double delta, int borderType)
+java: void Laplacian(Mat src, Mat dst, int ddepth, int ksize, double scale, double delta)
+java: void Laplacian(Mat src, Mat dst, int ddepth)
+FUNC <void cv..Scharr [ARG Mat src=, ARG Mat dst=, ARG int ddepth=, ARG int dx=, ARG int dy=, ARG double scale=1, ARG double delta=0, ARG int borderType=BORDER_DEFAULT]>
+java: void Scharr(Mat src, Mat dst, int ddepth, int dx, int dy, double scale, double delta, int borderType)
+java: void Scharr(Mat src, Mat dst, int ddepth, int dx, int dy, double scale, double delta)
+java: void Scharr(Mat src, Mat dst, int ddepth, int dx, int dy)
+FUNC <void cv..Sobel [ARG Mat src=, ARG Mat dst=, ARG int ddepth=, ARG int dx=, ARG int dy=, ARG int ksize=3, ARG double scale=1, ARG double delta=0, ARG int borderType=BORDER_DEFAULT]>
+java: void Sobel(Mat src, Mat dst, int ddepth, int dx, int dy, int ksize, double scale, double delta, int borderType)
+java: void Sobel(Mat src, Mat dst, int ddepth, int dx, int dy, int ksize, double scale, double delta)
+java: void Sobel(Mat src, Mat dst, int ddepth, int dx, int dy)
+FUNC <void cv..accumulate [ARG Mat src=, ARG Mat dst=, ARG Mat mask=Mat()]>
+java: void accumulate(Mat src, Mat dst, Mat mask)
+java: void accumulate(Mat src, Mat dst)
+FUNC <void cv..accumulateProduct [ARG Mat src1=, ARG Mat src2=, ARG Mat dst=, ARG Mat mask=Mat()]>
+java: void accumulateProduct(Mat src1, Mat src2, Mat dst, Mat mask)
+java: void accumulateProduct(Mat src1, Mat src2, Mat dst)
+FUNC <void cv..accumulateSquare [ARG Mat src=, ARG Mat dst=, ARG Mat mask=Mat()]>
+java: void accumulateSquare(Mat src, Mat dst, Mat mask)
+java: void accumulateSquare(Mat src, Mat dst)
+FUNC <void cv..accumulateWeighted [ARG Mat src=, ARG Mat dst=, ARG double alpha=, ARG Mat mask=Mat()]>
+java: void accumulateWeighted(Mat src, Mat dst, double alpha, Mat mask)
+java: void accumulateWeighted(Mat src, Mat dst, double alpha)
+FUNC <void cv..adaptiveThreshold [ARG Mat src=, ARG Mat dst=, ARG double maxValue=, ARG int adaptiveMethod=, ARG int thresholdType=, ARG int blockSize=, ARG double C=]>
+java: void adaptiveThreshold(Mat src, Mat dst, double maxValue, int adaptiveMethod, int thresholdType, int blockSize, double C)
+FUNC <void cv..applyColorMap [ARG Mat src=, ARG Mat dst=, ARG int colormap=]>
+java: void applyColorMap(Mat src, Mat dst, int colormap)
+FUNC <void cv..approxPolyDP [ARG vector_Point2f curve=, ARG vector_Point2f approxCurve=, ARG double epsilon=, ARG bool closed=]>
+java: void approxPolyDP(MatOfPoint2f curve, MatOfPoint2f approxCurve, double epsilon, boolean closed)
+FUNC <void cv..arrowedLine [ARG Mat img=, ARG Point pt1=, ARG Point pt2=, ARG Scalar color=, ARG int thickness=1, ARG int line_type=8, ARG int shift=0, ARG double tipLength=0.1]>
+java: void arrowedLine(Mat img, Point pt1, Point pt2, Scalar color, int thickness, int line_type, int shift, double tipLength)
+java: void arrowedLine(Mat img, Point pt1, Point pt2, Scalar color)
+FUNC <void cv..bilateralFilter [ARG Mat src=, ARG Mat dst=, ARG int d=, ARG double sigmaColor=, ARG double sigmaSpace=, ARG int borderType=BORDER_DEFAULT]>
+java: void bilateralFilter(Mat src, Mat dst, int d, double sigmaColor, double sigmaSpace, int borderType)
+java: void bilateralFilter(Mat src, Mat dst, int d, double sigmaColor, double sigmaSpace)
+FUNC <void cv..blur [ARG Mat src=, ARG Mat dst=, ARG Size ksize=, ARG Point anchor=Point(-1,-1), ARG int borderType=BORDER_DEFAULT]>
+java: void blur(Mat src, Mat dst, Size ksize, Point anchor, int borderType)
+java: void blur(Mat src, Mat dst, Size ksize, Point anchor)
+java: void blur(Mat src, Mat dst, Size ksize)
+FUNC <void cv..boxFilter [ARG Mat src=, ARG Mat dst=, ARG int ddepth=, ARG Size ksize=, ARG Point anchor=Point(-1,-1), ARG bool normalize=true, ARG int borderType=BORDER_DEFAULT]>
+java: void boxFilter(Mat src, Mat dst, int ddepth, Size ksize, Point anchor, boolean normalize, int borderType)
+java: void boxFilter(Mat src, Mat dst, int ddepth, Size ksize, Point anchor, boolean normalize)
+java: void boxFilter(Mat src, Mat dst, int ddepth, Size ksize)
+FUNC <void cv..boxPoints [ARG RotatedRect box=, ARG Mat points=]>
+java: void boxPoints(RotatedRect box, Mat points)
+FUNC <void cv..calcBackProject [ARG vector_Mat images=, ARG vector_int channels=, ARG Mat hist=, ARG Mat dst=, ARG vector_float ranges=, ARG double scale=]>
+java: void calcBackProject(List<Mat> images, MatOfInt channels, Mat hist, Mat dst, MatOfFloat ranges, double scale)
+FUNC <void cv..calcHist [ARG vector_Mat images=, ARG vector_int channels=, ARG Mat mask=, ARG Mat hist=, ARG vector_int histSize=, ARG vector_float ranges=, ARG bool accumulate=false]>
+java: void calcHist(List<Mat> images, MatOfInt channels, Mat mask, Mat hist, MatOfInt histSize, MatOfFloat ranges, boolean accumulate)
+java: void calcHist(List<Mat> images, MatOfInt channels, Mat mask, Mat hist, MatOfInt histSize, MatOfFloat ranges)
+FUNC <void cv..circle [ARG Mat img=, ARG Point center=, ARG int radius=, ARG Scalar color=, ARG int thickness=1, ARG int lineType=LINE_8, ARG int shift=0]>
+java: void circle(Mat img, Point center, int radius, Scalar color, int thickness, int lineType, int shift)
+java: void circle(Mat img, Point center, int radius, Scalar color, int thickness)
+java: void circle(Mat img, Point center, int radius, Scalar color)
+FUNC <void cv..convertMaps [ARG Mat map1=, ARG Mat map2=, ARG Mat dstmap1=, ARG Mat dstmap2=, ARG int dstmap1type=, ARG bool nninterpolation=false]>
+java: void convertMaps(Mat map1, Mat map2, Mat dstmap1, Mat dstmap2, int dstmap1type, boolean nninterpolation)
+java: void convertMaps(Mat map1, Mat map2, Mat dstmap1, Mat dstmap2, int dstmap1type)
+FUNC <void cv..convexHull [ARG vector_Point points=, ARG vector_int hull=, ARG bool clockwise=false, ARG  returnPoints=true]>
+java: void convexHull(MatOfPoint points, MatOfInt hull, boolean clockwise)
+java: void convexHull(MatOfPoint points, MatOfInt hull)
+FUNC <void cv..convexityDefects [ARG vector_Point contour=, ARG vector_int convexhull=, ARG vector_Vec4i convexityDefects=]>
+java: void convexityDefects(MatOfPoint contour, MatOfInt convexhull, MatOfInt4 convexityDefects)
+FUNC <void cv..cornerEigenValsAndVecs [ARG Mat src=, ARG Mat dst=, ARG int blockSize=, ARG int ksize=, ARG int borderType=BORDER_DEFAULT]>
+java: void cornerEigenValsAndVecs(Mat src, Mat dst, int blockSize, int ksize, int borderType)
+java: void cornerEigenValsAndVecs(Mat src, Mat dst, int blockSize, int ksize)
+FUNC <void cv..cornerHarris [ARG Mat src=, ARG Mat dst=, ARG int blockSize=, ARG int ksize=, ARG double k=, ARG int borderType=BORDER_DEFAULT]>
+java: void cornerHarris(Mat src, Mat dst, int blockSize, int ksize, double k, int borderType)
+java: void cornerHarris(Mat src, Mat dst, int blockSize, int ksize, double k)
+FUNC <void cv..cornerMinEigenVal [ARG Mat src=, ARG Mat dst=, ARG int blockSize=, ARG int ksize=3, ARG int borderType=BORDER_DEFAULT]>
+java: void cornerMinEigenVal(Mat src, Mat dst, int blockSize, int ksize, int borderType)
+java: void cornerMinEigenVal(Mat src, Mat dst, int blockSize, int ksize)
+java: void cornerMinEigenVal(Mat src, Mat dst, int blockSize)
+FUNC <void cv..cornerSubPix [ARG Mat image=, ARG vector_Point2f corners=, ARG Size winSize=, ARG Size zeroZone=, ARG TermCriteria criteria=]>
+java: void cornerSubPix(Mat image, MatOfPoint2f corners, Size winSize, Size zeroZone, TermCriteria criteria)
+FUNC <void cv..createHanningWindow [ARG Mat dst=, ARG Size winSize=, ARG int type=]>
+java: void createHanningWindow(Mat dst, Size winSize, int type)
+FUNC <void cv..cvtColor [ARG Mat src=, ARG Mat dst=, ARG int code=, ARG int dstCn=0]>
+java: void cvtColor(Mat src, Mat dst, int code, int dstCn)
+java: void cvtColor(Mat src, Mat dst, int code)
+FUNC <void cv..demosaicing [ARG Mat _src=, ARG Mat _dst=, ARG int code=, ARG int dcn=0]>
+java: void demosaicing(Mat _src, Mat _dst, int code, int dcn)
+java: void demosaicing(Mat _src, Mat _dst, int code)
+FUNC <void cv..dilate [ARG Mat src=, ARG Mat dst=, ARG Mat kernel=, ARG Point anchor=Point(-1,-1), ARG int iterations=1, ARG int borderType=BORDER_CONSTANT, ARG Scalar borderValue=morphologyDefaultBorderValue()]>
+java: void dilate(Mat src, Mat dst, Mat kernel, Point anchor, int iterations, int borderType, Scalar borderValue)
+java: void dilate(Mat src, Mat dst, Mat kernel, Point anchor, int iterations)
+java: void dilate(Mat src, Mat dst, Mat kernel)
+FUNC <void cv..distanceTransform [ARG Mat src=, ARG Mat dst=, ARG Mat labels=, ARG int distanceType=, ARG int maskSize=, ARG int labelType=DIST_LABEL_CCOMP]>
+java: void distanceTransformWithLabels(Mat src, Mat dst, Mat labels, int distanceType, int maskSize, int labelType)
+java: void distanceTransformWithLabels(Mat src, Mat dst, Mat labels, int distanceType, int maskSize)
+FUNC <void cv..distanceTransform [ARG Mat src=, ARG Mat dst=, ARG int distanceType=, ARG int maskSize=, ARG int dstType=CV_32F]>
+java: void distanceTransform(Mat src, Mat dst, int distanceType, int maskSize, int dstType)
+java: void distanceTransform(Mat src, Mat dst, int distanceType, int maskSize)
+FUNC <void cv..drawContours [ARG Mat image=, ARG vector_vector_Point contours=, ARG int contourIdx=, ARG Scalar color=, ARG int thickness=1, ARG int lineType=LINE_8, ARG Mat hierarchy=Mat(), ARG int maxLevel=INT_MAX, ARG Point offset=Point()]>
+java: void drawContours(Mat image, List<MatOfPoint> contours, int contourIdx, Scalar color, int thickness, int lineType, Mat hierarchy, int maxLevel, Point offset)
+java: void drawContours(Mat image, List<MatOfPoint> contours, int contourIdx, Scalar color, int thickness)
+java: void drawContours(Mat image, List<MatOfPoint> contours, int contourIdx, Scalar color)
+FUNC <void cv..drawMarker [ARG Mat img=, ARG Point position=, ARG Scalar color=, ARG int markerType=MARKER_CROSS, ARG int markerSize=20, ARG int thickness=1, ARG int line_type=8]>
+java: void drawMarker(Mat img, Point position, Scalar color, int markerType, int markerSize, int thickness, int line_type)
+java: void drawMarker(Mat img, Point position, Scalar color)
+FUNC <void cv..ellipse [ARG Mat img=, ARG Point center=, ARG Size axes=, ARG double angle=, ARG double startAngle=, ARG double endAngle=, ARG Scalar color=, ARG int thickness=1, ARG int lineType=LINE_8, ARG int shift=0]>
+java: void ellipse(Mat img, Point center, Size axes, double angle, double startAngle, double endAngle, Scalar color, int thickness, int lineType, int shift)
+java: void ellipse(Mat img, Point center, Size axes, double angle, double startAngle, double endAngle, Scalar color, int thickness)
+java: void ellipse(Mat img, Point center, Size axes, double angle, double startAngle, double endAngle, Scalar color)
+FUNC <void cv..ellipse [ARG Mat img=, ARG RotatedRect box=, ARG Scalar color=, ARG int thickness=1, ARG int lineType=LINE_8]>
+java: void ellipse(Mat img, RotatedRect box, Scalar color, int thickness, int lineType)
+java: void ellipse(Mat img, RotatedRect box, Scalar color, int thickness)
+java: void ellipse(Mat img, RotatedRect box, Scalar color)
+FUNC <void cv..ellipse2Poly [ARG Point center=, ARG Size axes=, ARG int angle=, ARG int arcStart=, ARG int arcEnd=, ARG int delta=, ARG vector_Point pts=]>
+java: void ellipse2Poly(Point center, Size axes, int angle, int arcStart, int arcEnd, int delta, MatOfPoint pts)
+FUNC <void cv..equalizeHist [ARG Mat src=, ARG Mat dst=]>
+java: void equalizeHist(Mat src, Mat dst)
+FUNC <void cv..erode [ARG Mat src=, ARG Mat dst=, ARG Mat kernel=, ARG Point anchor=Point(-1,-1), ARG int iterations=1, ARG int borderType=BORDER_CONSTANT, ARG Scalar borderValue=morphologyDefaultBorderValue()]>
+java: void erode(Mat src, Mat dst, Mat kernel, Point anchor, int iterations, int borderType, Scalar borderValue)
+java: void erode(Mat src, Mat dst, Mat kernel, Point anchor, int iterations)
+java: void erode(Mat src, Mat dst, Mat kernel)
+FUNC <void cv..fillConvexPoly [ARG Mat img=, ARG vector_Point points=, ARG Scalar color=, ARG int lineType=LINE_8, ARG int shift=0]>
+java: void fillConvexPoly(Mat img, MatOfPoint points, Scalar color, int lineType, int shift)
+java: void fillConvexPoly(Mat img, MatOfPoint points, Scalar color)
+FUNC <void cv..fillPoly [ARG Mat img=, ARG vector_vector_Point pts=, ARG Scalar color=, ARG int lineType=LINE_8, ARG int shift=0, ARG Point offset=Point()]>
+java: void fillPoly(Mat img, List<MatOfPoint> pts, Scalar color, int lineType, int shift, Point offset)
+java: void fillPoly(Mat img, List<MatOfPoint> pts, Scalar color)
+FUNC <void cv..filter2D [ARG Mat src=, ARG Mat dst=, ARG int ddepth=, ARG Mat kernel=, ARG Point anchor=Point(-1,-1), ARG double delta=0, ARG int borderType=BORDER_DEFAULT]>
+java: void filter2D(Mat src, Mat dst, int ddepth, Mat kernel, Point anchor, double delta, int borderType)
+java: void filter2D(Mat src, Mat dst, int ddepth, Mat kernel, Point anchor, double delta)
+java: void filter2D(Mat src, Mat dst, int ddepth, Mat kernel)
+FUNC <void cv..findContours [ARG Mat image=, ARG vector_vector_Point contours=, ARG Mat hierarchy=, ARG int mode=, ARG int method=, ARG Point offset=Point()]>
+java: void findContours(Mat image, List<MatOfPoint> contours, Mat hierarchy, int mode, int method, Point offset)
+java: void findContours(Mat image, List<MatOfPoint> contours, Mat hierarchy, int mode, int method)
+FUNC <void cv..fitLine [ARG Mat points=, ARG Mat line=, ARG int distType=, ARG double param=, ARG double reps=, ARG double aeps=]>
+java: void fitLine(Mat points, Mat line, int distType, double param, double reps, double aeps)
+FUNC <void cv..getDerivKernels [ARG Mat kx=, ARG Mat ky=, ARG int dx=, ARG int dy=, ARG int ksize=, ARG bool normalize=false, ARG int ktype=CV_32F]>
+java: void getDerivKernels(Mat kx, Mat ky, int dx, int dy, int ksize, boolean normalize, int ktype)
+java: void getDerivKernels(Mat kx, Mat ky, int dx, int dy, int ksize)
+FUNC <void cv..getRectSubPix [ARG Mat image=, ARG Size patchSize=, ARG Point2f center=, ARG Mat patch=, ARG int patchType=-1]>
+java: void getRectSubPix(Mat image, Size patchSize, Point center, Mat patch, int patchType)
+java: void getRectSubPix(Mat image, Size patchSize, Point center, Mat patch)
+FUNC <void cv..goodFeaturesToTrack [ARG Mat image=, ARG vector_Point corners=, ARG int maxCorners=, ARG double qualityLevel=, ARG double minDistance=, ARG Mat mask=Mat(), ARG int blockSize=3, ARG bool useHarrisDetector=false, ARG double k=0.04]>
+java: void goodFeaturesToTrack(Mat image, MatOfPoint corners, int maxCorners, double qualityLevel, double minDistance, Mat mask, int blockSize, boolean useHarrisDetector, double k)
+java: void goodFeaturesToTrack(Mat image, MatOfPoint corners, int maxCorners, double qualityLevel, double minDistance)
+FUNC <void cv..grabCut [ARG Mat img=, ARG Mat mask=, ARG Rect rect=, ARG Mat bgdModel=, ARG Mat fgdModel=, ARG int iterCount=, ARG int mode=GC_EVAL]>
+java: void grabCut(Mat img, Mat mask, Rect rect, Mat bgdModel, Mat fgdModel, int iterCount, int mode)
+java: void grabCut(Mat img, Mat mask, Rect rect, Mat bgdModel, Mat fgdModel, int iterCount)
+FUNC <void cv..initUndistortRectifyMap [ARG Mat cameraMatrix=, ARG Mat distCoeffs=, ARG Mat R=, ARG Mat newCameraMatrix=, ARG Size size=, ARG int m1type=, ARG Mat map1=, ARG Mat map2=]>
+java: void initUndistortRectifyMap(Mat cameraMatrix, Mat distCoeffs, Mat R, Mat newCameraMatrix, Size size, int m1type, Mat map1, Mat map2)
+FUNC <void cv..integral [ARG Mat src=, ARG Mat sum=, ARG Mat sqsum=, ARG Mat tilted=, ARG int sdepth=-1, ARG int sqdepth=-1]>
+java: void integral3(Mat src, Mat sum, Mat sqsum, Mat tilted, int sdepth, int sqdepth)
+java: void integral3(Mat src, Mat sum, Mat sqsum, Mat tilted)
+FUNC <void cv..integral [ARG Mat src=, ARG Mat sum=, ARG Mat sqsum=, ARG int sdepth=-1, ARG int sqdepth=-1]>
+java: void integral2(Mat src, Mat sum, Mat sqsum, int sdepth, int sqdepth)
+java: void integral2(Mat src, Mat sum, Mat sqsum)
+FUNC <void cv..integral [ARG Mat src=, ARG Mat sum=, ARG int sdepth=-1]>
+java: void integral(Mat src, Mat sum, int sdepth)
+java: void integral(Mat src, Mat sum)
+FUNC <void cv..invertAffineTransform [ARG Mat M=, ARG Mat iM=]>
+java: void invertAffineTransform(Mat M, Mat iM)
+FUNC <void cv..line [ARG Mat img=, ARG Point pt1=, ARG Point pt2=, ARG Scalar color=, ARG int thickness=1, ARG int lineType=LINE_8, ARG int shift=0]>
+java: void line(Mat img, Point pt1, Point pt2, Scalar color, int thickness, int lineType, int shift)
+java: void line(Mat img, Point pt1, Point pt2, Scalar color, int thickness)
+java: void line(Mat img, Point pt1, Point pt2, Scalar color)
+FUNC <void cv..linearPolar [ARG Mat src=, ARG Mat dst=, ARG Point2f center=, ARG double maxRadius=, ARG int flags=]>
+java: void linearPolar(Mat src, Mat dst, Point center, double maxRadius, int flags)
+FUNC <void cv..logPolar [ARG Mat src=, ARG Mat dst=, ARG Point2f center=, ARG double M=, ARG int flags=]>
+java: void logPolar(Mat src, Mat dst, Point center, double M, int flags)
+FUNC <void cv..matchTemplate [ARG Mat image=, ARG Mat templ=, ARG Mat result=, ARG int method=, ARG Mat mask=Mat()]>
+java: void matchTemplate(Mat image, Mat templ, Mat result, int method, Mat mask)
+java: void matchTemplate(Mat image, Mat templ, Mat result, int method)
+FUNC <void cv..medianBlur [ARG Mat src=, ARG Mat dst=, ARG int ksize=]>
+java: void medianBlur(Mat src, Mat dst, int ksize)
+FUNC <void cv..minEnclosingCircle [ARG vector_Point2f points=, ARG Point2f center=, ARG float radius=]>
+java: void minEnclosingCircle(MatOfPoint2f points, Point center, float[] radius)
+FUNC <void cv..morphologyEx [ARG Mat src=, ARG Mat dst=, ARG int op=, ARG Mat kernel=, ARG Point anchor=Point(-1,-1), ARG int iterations=1, ARG int borderType=BORDER_CONSTANT, ARG Scalar borderValue=morphologyDefaultBorderValue()]>
+java: void morphologyEx(Mat src, Mat dst, int op, Mat kernel, Point anchor, int iterations, int borderType, Scalar borderValue)
+java: void morphologyEx(Mat src, Mat dst, int op, Mat kernel, Point anchor, int iterations)
+java: void morphologyEx(Mat src, Mat dst, int op, Mat kernel)
+FUNC <void cv..polylines [ARG Mat img=, ARG vector_vector_Point pts=, ARG bool isClosed=, ARG Scalar color=, ARG int thickness=1, ARG int lineType=LINE_8, ARG int shift=0]>
+java: void polylines(Mat img, List<MatOfPoint> pts, boolean isClosed, Scalar color, int thickness, int lineType, int shift)
+java: void polylines(Mat img, List<MatOfPoint> pts, boolean isClosed, Scalar color, int thickness)
+java: void polylines(Mat img, List<MatOfPoint> pts, boolean isClosed, Scalar color)
+FUNC <void cv..preCornerDetect [ARG Mat src=, ARG Mat dst=, ARG int ksize=, ARG int borderType=BORDER_DEFAULT]>
+java: void preCornerDetect(Mat src, Mat dst, int ksize, int borderType)
+java: void preCornerDetect(Mat src, Mat dst, int ksize)
+FUNC <void cv..putText [ARG Mat img=, ARG String text=, ARG Point org=, ARG int fontFace=, ARG double fontScale=, ARG Scalar color=, ARG int thickness=1, ARG int lineType=LINE_8, ARG bool bottomLeftOrigin=false]>
+java: void putText(Mat img, String text, Point org, int fontFace, double fontScale, Scalar color, int thickness, int lineType, boolean bottomLeftOrigin)
+java: void putText(Mat img, String text, Point org, int fontFace, double fontScale, Scalar color, int thickness)
+java: void putText(Mat img, String text, Point org, int fontFace, double fontScale, Scalar color)
+FUNC <void cv..pyrDown [ARG Mat src=, ARG Mat dst=, ARG Size dstsize=Size(), ARG int borderType=BORDER_DEFAULT]>
+java: void pyrDown(Mat src, Mat dst, Size dstsize, int borderType)
+java: void pyrDown(Mat src, Mat dst, Size dstsize)
+java: void pyrDown(Mat src, Mat dst)
+FUNC <void cv..pyrMeanShiftFiltering [ARG Mat src=, ARG Mat dst=, ARG double sp=, ARG double sr=, ARG int maxLevel=1, ARG TermCriteria termcrit=TermCriteria(TermCriteria::MAX_ITER+TermCriteria::EPS,5,1)]>
+java: void pyrMeanShiftFiltering(Mat src, Mat dst, double sp, double sr, int maxLevel, TermCriteria termcrit)
+java: void pyrMeanShiftFiltering(Mat src, Mat dst, double sp, double sr)
+FUNC <void cv..pyrUp [ARG Mat src=, ARG Mat dst=, ARG Size dstsize=Size(), ARG int borderType=BORDER_DEFAULT]>
+java: void pyrUp(Mat src, Mat dst, Size dstsize, int borderType)
+java: void pyrUp(Mat src, Mat dst, Size dstsize)
+java: void pyrUp(Mat src, Mat dst)
+FUNC <void cv..rectangle [ARG Mat img=, ARG Point pt1=, ARG Point pt2=, ARG Scalar color=, ARG int thickness=1, ARG int lineType=LINE_8, ARG int shift=0]>
+java: void rectangle(Mat img, Point pt1, Point pt2, Scalar color, int thickness, int lineType, int shift)
+java: void rectangle(Mat img, Point pt1, Point pt2, Scalar color, int thickness)
+java: void rectangle(Mat img, Point pt1, Point pt2, Scalar color)
+FUNC <void cv..remap [ARG Mat src=, ARG Mat dst=, ARG Mat map1=, ARG Mat map2=, ARG int interpolation=, ARG int borderMode=BORDER_CONSTANT, ARG Scalar borderValue=Scalar()]>
+java: void remap(Mat src, Mat dst, Mat map1, Mat map2, int interpolation, int borderMode, Scalar borderValue)
+java: void remap(Mat src, Mat dst, Mat map1, Mat map2, int interpolation)
+FUNC <void cv..resize [ARG Mat src=, ARG Mat dst=, ARG Size dsize=, ARG double fx=0, ARG double fy=0, ARG int interpolation=INTER_LINEAR]>
+java: void resize(Mat src, Mat dst, Size dsize, double fx, double fy, int interpolation)
+java: void resize(Mat src, Mat dst, Size dsize)
+FUNC <void cv..sepFilter2D [ARG Mat src=, ARG Mat dst=, ARG int ddepth=, ARG Mat kernelX=, ARG Mat kernelY=, ARG Point anchor=Point(-1,-1), ARG double delta=0, ARG int borderType=BORDER_DEFAULT]>
+java: void sepFilter2D(Mat src, Mat dst, int ddepth, Mat kernelX, Mat kernelY, Point anchor, double delta, int borderType)
+java: void sepFilter2D(Mat src, Mat dst, int ddepth, Mat kernelX, Mat kernelY, Point anchor, double delta)
+java: void sepFilter2D(Mat src, Mat dst, int ddepth, Mat kernelX, Mat kernelY)
+FUNC <void cv..spatialGradient [ARG Mat src=, ARG Mat dx=, ARG Mat dy=, ARG int ksize=3, ARG int borderType=BORDER_DEFAULT]>
+java: void spatialGradient(Mat src, Mat dx, Mat dy, int ksize, int borderType)
+java: void spatialGradient(Mat src, Mat dx, Mat dy, int ksize)
+java: void spatialGradient(Mat src, Mat dx, Mat dy)
+FUNC <void cv..sqrBoxFilter [ARG Mat _src=, ARG Mat _dst=, ARG int ddepth=, ARG Size ksize=, ARG Point anchor=Point(-1, -1), ARG bool normalize=true, ARG int borderType=BORDER_DEFAULT]>
+java: void sqrBoxFilter(Mat _src, Mat _dst, int ddepth, Size ksize, Point anchor, boolean normalize, int borderType)
+java: void sqrBoxFilter(Mat _src, Mat _dst, int ddepth, Size ksize, Point anchor, boolean normalize)
+java: void sqrBoxFilter(Mat _src, Mat _dst, int ddepth, Size ksize)
+FUNC <void cv..undistort [ARG Mat src=, ARG Mat dst=, ARG Mat cameraMatrix=, ARG Mat distCoeffs=, ARG Mat newCameraMatrix=Mat()]>
+java: void undistort(Mat src, Mat dst, Mat cameraMatrix, Mat distCoeffs, Mat newCameraMatrix)
+java: void undistort(Mat src, Mat dst, Mat cameraMatrix, Mat distCoeffs)
+FUNC <void cv..undistortPoints [ARG vector_Point2f src=, ARG vector_Point2f dst=, ARG Mat cameraMatrix=, ARG Mat distCoeffs=, ARG Mat R=Mat(), ARG Mat P=Mat()]>
+java: void undistortPoints(MatOfPoint2f src, MatOfPoint2f dst, Mat cameraMatrix, Mat distCoeffs, Mat R, Mat P)
+java: void undistortPoints(MatOfPoint2f src, MatOfPoint2f dst, Mat cameraMatrix, Mat distCoeffs)
+FUNC <void cv..warpAffine [ARG Mat src=, ARG Mat dst=, ARG Mat M=, ARG Size dsize=, ARG int flags=INTER_LINEAR, ARG int borderMode=BORDER_CONSTANT, ARG Scalar borderValue=Scalar()]>
+java: void warpAffine(Mat src, Mat dst, Mat M, Size dsize, int flags, int borderMode, Scalar borderValue)
+java: void warpAffine(Mat src, Mat dst, Mat M, Size dsize, int flags)
+java: void warpAffine(Mat src, Mat dst, Mat M, Size dsize)
+FUNC <void cv..warpPerspective [ARG Mat src=, ARG Mat dst=, ARG Mat M=, ARG Size dsize=, ARG int flags=INTER_LINEAR, ARG int borderMode=BORDER_CONSTANT, ARG Scalar borderValue=Scalar()]>
+java: void warpPerspective(Mat src, Mat dst, Mat M, Size dsize, int flags, int borderMode, Scalar borderValue)
+java: void warpPerspective(Mat src, Mat dst, Mat M, Size dsize, int flags)
+java: void warpPerspective(Mat src, Mat dst, Mat M, Size dsize)
+FUNC <void cv..watershed [ARG Mat image=, ARG Mat markers=]>
+java: void watershed(Mat image, Mat markers)
+CLASS cv::.CLAHE : Algorithm
+FUNC <Size cv.CLAHE.getTilesGridSize []>
+java: Size getTilesGridSize()
+FUNC <double cv.CLAHE.getClipLimit []>
+java: double getClipLimit()
+FUNC <void cv.CLAHE.apply [ARG Mat src=, ARG Mat dst=]>
+java: void apply(Mat src, Mat dst)
+FUNC <void cv.CLAHE.collectGarbage []>
+java: void collectGarbage()
+FUNC <void cv.CLAHE.setClipLimit [ARG double clipLimit=]>
+java: void setClipLimit(double clipLimit)
+FUNC <void cv.CLAHE.setTilesGridSize [ARG Size tileGridSize=]>
+java: void setTilesGridSize(Size tileGridSize)

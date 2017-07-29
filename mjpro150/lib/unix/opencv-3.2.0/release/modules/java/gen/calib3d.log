@@ -1,0 +1,1514 @@
+ok: class CLASS ::.Calib3d : , name: Calib3d, base: 
+
+===== Common header : /home/xxa344/Desktop/opencv-3.2.0/modules/features2d/misc/java/src/cpp/features2d_converters.hpp =====
+
+
+===== Header: /home/xxa344/Desktop/opencv-3.2.0/modules/calib3d/include/opencv2/calib3d/calib3d_c.h =====
+Namespaces: set([''])
+
+--- Incoming ---
+[u'const CV_ITERATIVE', u'0', [], []]
+ok: CONST CV_ITERATIVE=0
+
+--- Incoming ---
+[u'const CV_EPNP', u'1', [], []]
+ok: CONST CV_EPNP=1
+
+--- Incoming ---
+[u'const CV_P3P', u'2', [], []]
+ok: CONST CV_P3P=2
+
+--- Incoming ---
+[u'const CV_DLS', u'3', [], []]
+ok: CONST CV_DLS=3
+
+--- Incoming ---
+[u'const CvLevMarq.DONE', u'0', [], []]
+class not found: CONST DONE=0
+
+--- Incoming ---
+[u'const CvLevMarq.STARTED', u'1', [], []]
+class not found: CONST STARTED=1
+
+--- Incoming ---
+[u'const CvLevMarq.CALC_J', u'2', [], []]
+class not found: CONST CALC_J=2
+
+--- Incoming ---
+[u'const CvLevMarq.CHECK_ERR', u'3', [], []]
+class not found: CONST CHECK_ERR=3
+
+
+===== Header: /home/xxa344/Desktop/opencv-3.2.0/modules/calib3d/include/opencv2/calib3d.hpp =====
+Namespaces: set(['', u'cv.fisheye', u'cv'])
+
+--- Incoming ---
+[u'const cv.LMEDS', u'4', [], []]
+ok: CONST LMEDS=4
+
+--- Incoming ---
+[u'const cv.RANSAC', u'8', [], []]
+ok: CONST RANSAC=8
+
+--- Incoming ---
+[u'const cv.RHO', u'16', [], []]
+ok: CONST RHO=16
+
+--- Incoming ---
+[u'const cv.SOLVEPNP_ITERATIVE', u'0', [], []]
+ok: CONST SOLVEPNP_ITERATIVE=0
+
+--- Incoming ---
+[u'const cv.SOLVEPNP_EPNP', u'1', [], []]
+ok: CONST SOLVEPNP_EPNP=1
+
+--- Incoming ---
+[u'const cv.SOLVEPNP_P3P', u'2', [], []]
+ok: CONST SOLVEPNP_P3P=2
+
+--- Incoming ---
+[u'const cv.SOLVEPNP_DLS', u'3', [], []]
+ok: CONST SOLVEPNP_DLS=3
+
+--- Incoming ---
+[u'const cv.SOLVEPNP_UPNP', u'4', [], []]
+ok: CONST SOLVEPNP_UPNP=4
+
+--- Incoming ---
+[u'const cv.CALIB_CB_ADAPTIVE_THRESH', u'1', [], []]
+ok: CONST CALIB_CB_ADAPTIVE_THRESH=1
+
+--- Incoming ---
+[u'const cv.CALIB_CB_NORMALIZE_IMAGE', u'2', [], []]
+ok: CONST CALIB_CB_NORMALIZE_IMAGE=2
+
+--- Incoming ---
+[u'const cv.CALIB_CB_FILTER_QUADS', u'4', [], []]
+ok: CONST CALIB_CB_FILTER_QUADS=4
+
+--- Incoming ---
+[u'const cv.CALIB_CB_FAST_CHECK', u'8', [], []]
+ok: CONST CALIB_CB_FAST_CHECK=8
+
+--- Incoming ---
+[u'const cv.CALIB_CB_SYMMETRIC_GRID', u'1', [], []]
+ok: CONST CALIB_CB_SYMMETRIC_GRID=1
+
+--- Incoming ---
+[u'const cv.CALIB_CB_ASYMMETRIC_GRID', u'2', [], []]
+ok: CONST CALIB_CB_ASYMMETRIC_GRID=2
+
+--- Incoming ---
+[u'const cv.CALIB_CB_CLUSTERING', u'4', [], []]
+ok: CONST CALIB_CB_CLUSTERING=4
+
+--- Incoming ---
+[u'const cv.CALIB_USE_INTRINSIC_GUESS', u'0x00001', [], []]
+manual: CONST CALIB_USE_INTRINSIC_GUESS=0x00001
+
+--- Incoming ---
+[u'const cv.CALIB_FIX_ASPECT_RATIO', u'0x00002', [], []]
+ok: CONST CALIB_FIX_ASPECT_RATIO=0x00002
+
+--- Incoming ---
+[u'const cv.CALIB_FIX_PRINCIPAL_POINT', u'0x00004', [], []]
+ok: CONST CALIB_FIX_PRINCIPAL_POINT=0x00004
+
+--- Incoming ---
+[u'const cv.CALIB_ZERO_TANGENT_DIST', u'0x00008', [], []]
+ok: CONST CALIB_ZERO_TANGENT_DIST=0x00008
+
+--- Incoming ---
+[u'const cv.CALIB_FIX_FOCAL_LENGTH', u'0x00010', [], []]
+ok: CONST CALIB_FIX_FOCAL_LENGTH=0x00010
+
+--- Incoming ---
+[u'const cv.CALIB_FIX_K1', u'0x00020', [], []]
+manual: CONST CALIB_FIX_K1=0x00020
+
+--- Incoming ---
+[u'const cv.CALIB_FIX_K2', u'0x00040', [], []]
+manual: CONST CALIB_FIX_K2=0x00040
+
+--- Incoming ---
+[u'const cv.CALIB_FIX_K3', u'0x00080', [], []]
+manual: CONST CALIB_FIX_K3=0x00080
+
+--- Incoming ---
+[u'const cv.CALIB_FIX_K4', u'0x00800', [], []]
+manual: CONST CALIB_FIX_K4=0x00800
+
+--- Incoming ---
+[u'const cv.CALIB_FIX_K5', u'0x01000', [], []]
+ok: CONST CALIB_FIX_K5=0x01000
+
+--- Incoming ---
+[u'const cv.CALIB_FIX_K6', u'0x02000', [], []]
+ok: CONST CALIB_FIX_K6=0x02000
+
+--- Incoming ---
+[u'const cv.CALIB_RATIONAL_MODEL', u'0x04000', [], []]
+ok: CONST CALIB_RATIONAL_MODEL=0x04000
+
+--- Incoming ---
+[u'const cv.CALIB_THIN_PRISM_MODEL', u'0x08000', [], []]
+ok: CONST CALIB_THIN_PRISM_MODEL=0x08000
+
+--- Incoming ---
+[u'const cv.CALIB_FIX_S1_S2_S3_S4', u'0x10000', [], []]
+ok: CONST CALIB_FIX_S1_S2_S3_S4=0x10000
+
+--- Incoming ---
+[u'const cv.CALIB_TILTED_MODEL', u'0x40000', [], []]
+ok: CONST CALIB_TILTED_MODEL=0x40000
+
+--- Incoming ---
+[u'const cv.CALIB_FIX_TAUX_TAUY', u'0x80000', [], []]
+ok: CONST CALIB_FIX_TAUX_TAUY=0x80000
+
+--- Incoming ---
+[u'const cv.CALIB_USE_QR', u'0x100000', [], []]
+ok: CONST CALIB_USE_QR=0x100000
+
+--- Incoming ---
+[u'const cv.CALIB_FIX_INTRINSIC', u'0x00100', [], []]
+manual: CONST CALIB_FIX_INTRINSIC=0x00100
+
+--- Incoming ---
+[u'const cv.CALIB_SAME_FOCAL_LENGTH', u'0x00200', [], []]
+ok: CONST CALIB_SAME_FOCAL_LENGTH=0x00200
+
+--- Incoming ---
+[u'const cv.CALIB_ZERO_DISPARITY', u'0x00400', [], []]
+ok: CONST CALIB_ZERO_DISPARITY=0x00400
+
+--- Incoming ---
+[u'const cv.CALIB_USE_LU', u'(1 << 17)', [], []]
+ok: CONST CALIB_USE_LU=(1 << 17)
+
+--- Incoming ---
+[u'const cv.FM_7POINT', u'1', [], []]
+ok: CONST FM_7POINT=1
+
+--- Incoming ---
+[u'const cv.FM_8POINT', u'2', [], []]
+ok: CONST FM_8POINT=2
+
+--- Incoming ---
+[u'const cv.FM_LMEDS', u'4', [], []]
+ok: CONST FM_LMEDS=4
+
+--- Incoming ---
+[u'const cv.FM_RANSAC', u'8', [], []]
+ok: CONST FM_RANSAC=8
+
+--- Incoming ---
+[   u'cv.Rodrigues',
+    u'void',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', ['/O']],
+        ['Mat', u'jacobian', u'Mat()', ['/O']]],
+    u'void']
+ok: FUNC <void cv..Rodrigues [ARG Mat src=, ARG Mat dst=, ARG Mat jacobian=Mat()]>
+
+--- Incoming ---
+[   u'cv.findHomography',
+    u'Mat',
+    [],
+    [   ['Mat', u'srcPoints', '', []],
+        ['Mat', u'dstPoints', '', []],
+        [u'int', u'method', u'0', []],
+        [u'double', u'ransacReprojThreshold', u'3', []],
+        ['Mat', u'mask', u'Mat()', ['/O']],
+        [u'int', u'maxIters', u'2000', []],
+        [u'double', u'confidence', u'0.995', []]],
+    u'Mat']
+ok: FUNC <Mat cv..findHomography [ARG vector_Point2f srcPoints=, ARG vector_Point2f dstPoints=, ARG int method=0, ARG double ransacReprojThreshold=3, ARG Mat mask=Mat(), ARG int maxIters=2000, ARG double confidence=0.995]>
+
+--- Incoming ---
+[   u'cv.RQDecomp3x3',
+    u'Vec3d',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'mtxR', '', ['/O']],
+        ['Mat', u'mtxQ', '', ['/O']],
+        ['Mat', u'Qx', u'Mat()', ['/O']],
+        ['Mat', u'Qy', u'Mat()', ['/O']],
+        ['Mat', u'Qz', u'Mat()', ['/O']]],
+    u'Vec3d']
+ok: FUNC <Vec3d cv..RQDecomp3x3 [ARG Mat src=, ARG Mat mtxR=, ARG Mat mtxQ=, ARG Mat Qx=Mat(), ARG Mat Qy=Mat(), ARG Mat Qz=Mat()]>
+
+--- Incoming ---
+[   u'cv.decomposeProjectionMatrix',
+    u'void',
+    [],
+    [   ['Mat', u'projMatrix', '', []],
+        ['Mat', u'cameraMatrix', '', ['/O']],
+        ['Mat', u'rotMatrix', '', ['/O']],
+        ['Mat', u'transVect', '', ['/O']],
+        ['Mat', u'rotMatrixX', u'Mat()', ['/O']],
+        ['Mat', u'rotMatrixY', u'Mat()', ['/O']],
+        ['Mat', u'rotMatrixZ', u'Mat()', ['/O']],
+        ['Mat', u'eulerAngles', u'Mat()', ['/O']]],
+    u'void']
+ok: FUNC <void cv..decomposeProjectionMatrix [ARG Mat projMatrix=, ARG Mat cameraMatrix=, ARG Mat rotMatrix=, ARG Mat transVect=, ARG Mat rotMatrixX=Mat(), ARG Mat rotMatrixY=Mat(), ARG Mat rotMatrixZ=Mat(), ARG Mat eulerAngles=Mat()]>
+
+--- Incoming ---
+[   u'cv.matMulDeriv',
+    u'void',
+    [],
+    [   ['Mat', u'A', '', []],
+        ['Mat', u'B', '', []],
+        ['Mat', u'dABdA', '', ['/O']],
+        ['Mat', u'dABdB', '', ['/O']]],
+    u'void']
+ok: FUNC <void cv..matMulDeriv [ARG Mat A=, ARG Mat B=, ARG Mat dABdA=, ARG Mat dABdB=]>
+
+--- Incoming ---
+[   u'cv.composeRT',
+    u'void',
+    [],
+    [   ['Mat', u'rvec1', '', []],
+        ['Mat', u'tvec1', '', []],
+        ['Mat', u'rvec2', '', []],
+        ['Mat', u'tvec2', '', []],
+        ['Mat', u'rvec3', '', ['/O']],
+        ['Mat', u'tvec3', '', ['/O']],
+        ['Mat', u'dr3dr1', u'Mat()', ['/O']],
+        ['Mat', u'dr3dt1', u'Mat()', ['/O']],
+        ['Mat', u'dr3dr2', u'Mat()', ['/O']],
+        ['Mat', u'dr3dt2', u'Mat()', ['/O']],
+        ['Mat', u'dt3dr1', u'Mat()', ['/O']],
+        ['Mat', u'dt3dt1', u'Mat()', ['/O']],
+        ['Mat', u'dt3dr2', u'Mat()', ['/O']],
+        ['Mat', u'dt3dt2', u'Mat()', ['/O']]],
+    u'void']
+ok: FUNC <void cv..composeRT [ARG Mat rvec1=, ARG Mat tvec1=, ARG Mat rvec2=, ARG Mat tvec2=, ARG Mat rvec3=, ARG Mat tvec3=, ARG Mat dr3dr1=Mat(), ARG Mat dr3dt1=Mat(), ARG Mat dr3dr2=Mat(), ARG Mat dr3dt2=Mat(), ARG Mat dt3dr1=Mat(), ARG Mat dt3dt1=Mat(), ARG Mat dt3dr2=Mat(), ARG Mat dt3dt2=Mat()]>
+
+--- Incoming ---
+[   u'cv.projectPoints',
+    u'void',
+    [],
+    [   ['Mat', u'objectPoints', '', []],
+        ['Mat', u'rvec', '', []],
+        ['Mat', u'tvec', '', []],
+        ['Mat', u'cameraMatrix', '', []],
+        ['Mat', u'distCoeffs', '', []],
+        ['Mat', u'imagePoints', '', ['/O']],
+        ['Mat', u'jacobian', u'Mat()', ['/O']],
+        [u'double', u'aspectRatio', u'0', []]],
+    u'void']
+ok: FUNC <void cv..projectPoints [ARG vector_Point3f objectPoints=, ARG Mat rvec=, ARG Mat tvec=, ARG Mat cameraMatrix=, ARG vector_double distCoeffs=, ARG vector_Point2f imagePoints=, ARG Mat jacobian=Mat(), ARG double aspectRatio=0]>
+
+--- Incoming ---
+[   u'cv.solvePnP',
+    u'bool',
+    [],
+    [   ['Mat', u'objectPoints', '', []],
+        ['Mat', u'imagePoints', '', []],
+        ['Mat', u'cameraMatrix', '', []],
+        ['Mat', u'distCoeffs', '', []],
+        ['Mat', u'rvec', '', ['/O']],
+        ['Mat', u'tvec', '', ['/O']],
+        [u'bool', u'useExtrinsicGuess', u'false', []],
+        [u'int', u'flags', u'SOLVEPNP_ITERATIVE', []]],
+    u'bool']
+ok: FUNC <bool cv..solvePnP [ARG vector_Point3f objectPoints=, ARG vector_Point2f imagePoints=, ARG Mat cameraMatrix=, ARG vector_double distCoeffs=, ARG Mat rvec=, ARG Mat tvec=, ARG bool useExtrinsicGuess=false, ARG int flags=SOLVEPNP_ITERATIVE]>
+
+--- Incoming ---
+[   u'cv.solvePnPRansac',
+    u'bool',
+    [],
+    [   ['Mat', u'objectPoints', '', []],
+        ['Mat', u'imagePoints', '', []],
+        ['Mat', u'cameraMatrix', '', []],
+        ['Mat', u'distCoeffs', '', []],
+        ['Mat', u'rvec', '', ['/O']],
+        ['Mat', u'tvec', '', ['/O']],
+        [u'bool', u'useExtrinsicGuess', u'false', []],
+        [u'int', u'iterationsCount', u'100', []],
+        [u'float', u'reprojectionError', u'8.0', []],
+        [u'double', u'confidence', u'0.99', []],
+        ['Mat', u'inliers', u'Mat()', ['/O']],
+        [u'int', u'flags', u'SOLVEPNP_ITERATIVE', []]],
+    u'bool']
+ok: FUNC <bool cv..solvePnPRansac [ARG vector_Point3f objectPoints=, ARG vector_Point2f imagePoints=, ARG Mat cameraMatrix=, ARG vector_double distCoeffs=, ARG Mat rvec=, ARG Mat tvec=, ARG bool useExtrinsicGuess=false, ARG int iterationsCount=100, ARG float reprojectionError=8.0, ARG double confidence=0.99, ARG Mat inliers=Mat(), ARG int flags=SOLVEPNP_ITERATIVE]>
+
+--- Incoming ---
+[   u'cv.initCameraMatrix2D',
+    u'Mat',
+    [],
+    [   ['vector_Mat', u'objectPoints', '', []],
+        ['vector_Mat', u'imagePoints', '', []],
+        [u'Size', u'imageSize', u'', []],
+        [u'double', u'aspectRatio', u'1.0', []]],
+    u'Mat']
+ok: FUNC <Mat cv..initCameraMatrix2D [ARG vector_vector_Point3f objectPoints=, ARG vector_vector_Point2f imagePoints=, ARG Size imageSize=, ARG double aspectRatio=1.0]>
+
+--- Incoming ---
+[   u'cv.findChessboardCorners',
+    u'bool',
+    [],
+    [   ['Mat', u'image', '', []],
+        [u'Size', u'patternSize', u'', []],
+        ['Mat', u'corners', '', ['/O']],
+        [   u'int',
+            u'flags',
+            u'CALIB_CB_ADAPTIVE_THRESH + CALIB_CB_NORMALIZE_IMAGE',
+            []]],
+    u'bool']
+ok: FUNC <bool cv..findChessboardCorners [ARG Mat image=, ARG Size patternSize=, ARG vector_Point2f corners=, ARG int flags=CALIB_CB_ADAPTIVE_THRESH + CALIB_CB_NORMALIZE_IMAGE]>
+
+--- Incoming ---
+[   u'cv.drawChessboardCorners',
+    u'void',
+    [],
+    [   ['Mat', u'image', '', ['/IO']],
+        [u'Size', u'patternSize', u'', []],
+        ['Mat', u'corners', '', []],
+        [u'bool', u'patternWasFound', u'', []]],
+    u'void']
+ok: FUNC <void cv..drawChessboardCorners [ARG Mat image=, ARG Size patternSize=, ARG vector_Point2f corners=, ARG bool patternWasFound=]>
+
+--- Incoming ---
+[   u'cv.findCirclesGrid',
+    u'bool',
+    [],
+    [   ['Mat', u'image', '', []],
+        [u'Size', u'patternSize', u'', []],
+        ['Mat', u'centers', '', ['/O']],
+        [u'int', u'flags', u'CALIB_CB_SYMMETRIC_GRID', []],
+        [   u'Ptr_FeatureDetector',
+            u'blobDetector',
+            u'SimpleBlobDetector::create()',
+            []]],
+    u'bool']
+ok: FUNC <bool cv..findCirclesGrid [ARG Mat image=, ARG Size patternSize=, ARG Mat centers=, ARG int flags=CALIB_CB_SYMMETRIC_GRID, ARG Ptr_FeatureDetector blobDetector=SimpleBlobDetector::create()]>
+
+--- Incoming ---
+[   u'cv.calibrateCamera',
+    u'double',
+    [u'=calibrateCameraExtended'],
+    [   ['vector_Mat', u'objectPoints', '', []],
+        ['vector_Mat', u'imagePoints', '', []],
+        [u'Size', u'imageSize', u'', []],
+        ['Mat', u'cameraMatrix', '', ['/IO']],
+        ['Mat', u'distCoeffs', '', ['/IO']],
+        ['vector_Mat', u'rvecs', '', ['/O']],
+        ['vector_Mat', u'tvecs', '', ['/O']],
+        ['Mat', u'stdDeviationsIntrinsics', '', ['/O']],
+        ['Mat', u'stdDeviationsExtrinsics', '', ['/O']],
+        ['Mat', u'perViewErrors', '', ['/O']],
+        [u'int', u'flags', u'0', []],
+        [   u'TermCriteria',
+            u'criteria',
+            u'TermCriteria( TermCriteria::COUNT + TermCriteria::EPS, 30, DBL_EPSILON)',
+            []]],
+    u'double']
+ok: FUNC <double cv..calibrateCamera [ARG vector_Mat objectPoints=, ARG vector_Mat imagePoints=, ARG Size imageSize=, ARG Mat cameraMatrix=, ARG Mat distCoeffs=, ARG vector_Mat rvecs=, ARG vector_Mat tvecs=, ARG Mat stdDeviationsIntrinsics=, ARG Mat stdDeviationsExtrinsics=, ARG Mat perViewErrors=, ARG int flags=0, ARG TermCriteria criteria=TermCriteria( TermCriteria::COUNT + TermCriteria::EPS, 30, DBL_EPSILON)]>
+
+--- Incoming ---
+[   u'cv.calibrateCamera',
+    u'double',
+    [],
+    [   ['vector_Mat', u'objectPoints', '', []],
+        ['vector_Mat', u'imagePoints', '', []],
+        [u'Size', u'imageSize', u'', []],
+        ['Mat', u'cameraMatrix', '', ['/IO']],
+        ['Mat', u'distCoeffs', '', ['/IO']],
+        ['vector_Mat', u'rvecs', '', ['/O']],
+        ['vector_Mat', u'tvecs', '', ['/O']],
+        [u'int', u'flags', u'0', []],
+        [   u'TermCriteria',
+            u'criteria',
+            u'TermCriteria( TermCriteria::COUNT + TermCriteria::EPS, 30, DBL_EPSILON)',
+            []]],
+    u'double']
+ok: FUNC <double cv..calibrateCamera [ARG vector_Mat objectPoints=, ARG vector_Mat imagePoints=, ARG Size imageSize=, ARG Mat cameraMatrix=, ARG Mat distCoeffs=, ARG vector_Mat rvecs=, ARG vector_Mat tvecs=, ARG int flags=0, ARG TermCriteria criteria=TermCriteria( TermCriteria::COUNT + TermCriteria::EPS, 30, DBL_EPSILON)]>
+
+--- Incoming ---
+[   u'cv.calibrationMatrixValues',
+    u'void',
+    [],
+    [   ['Mat', u'cameraMatrix', '', []],
+        [u'Size', u'imageSize', u'', []],
+        [u'double', u'apertureWidth', u'', []],
+        [u'double', u'apertureHeight', u'', []],
+        [u'double', u'fovx', u'', ['/O']],
+        [u'double', u'fovy', u'', ['/O']],
+        [u'double', u'focalLength', u'', ['/O']],
+        [u'Point2d', u'principalPoint', u'', ['/O']],
+        [u'double', u'aspectRatio', u'', ['/O']]],
+    u'void']
+ok: FUNC <void cv..calibrationMatrixValues [ARG Mat cameraMatrix=, ARG Size imageSize=, ARG double apertureWidth=, ARG double apertureHeight=, ARG double fovx=, ARG double fovy=, ARG double focalLength=, ARG Point2d principalPoint=, ARG double aspectRatio=]>
+
+--- Incoming ---
+[   u'cv.stereoCalibrate',
+    u'double',
+    [],
+    [   ['vector_Mat', u'objectPoints', '', []],
+        ['vector_Mat', u'imagePoints1', '', []],
+        ['vector_Mat', u'imagePoints2', '', []],
+        ['Mat', u'cameraMatrix1', '', ['/IO']],
+        ['Mat', u'distCoeffs1', '', ['/IO']],
+        ['Mat', u'cameraMatrix2', '', ['/IO']],
+        ['Mat', u'distCoeffs2', '', ['/IO']],
+        [u'Size', u'imageSize', u'', []],
+        ['Mat', u'R', '', ['/O']],
+        ['Mat', u'T', '', ['/O']],
+        ['Mat', u'E', '', ['/O']],
+        ['Mat', u'F', '', ['/O']],
+        [u'int', u'flags', u'CALIB_FIX_INTRINSIC', []],
+        [   u'TermCriteria',
+            u'criteria',
+            u'TermCriteria(TermCriteria::COUNT+TermCriteria::EPS, 30, 1e-6)',
+            []]],
+    u'double']
+ok: FUNC <double cv..stereoCalibrate [ARG vector_Mat objectPoints=, ARG vector_Mat imagePoints1=, ARG vector_Mat imagePoints2=, ARG Mat cameraMatrix1=, ARG Mat distCoeffs1=, ARG Mat cameraMatrix2=, ARG Mat distCoeffs2=, ARG Size imageSize=, ARG Mat R=, ARG Mat T=, ARG Mat E=, ARG Mat F=, ARG int flags=CALIB_FIX_INTRINSIC, ARG TermCriteria criteria=TermCriteria(TermCriteria::COUNT+TermCriteria::EPS, 30, 1e-6)]>
+
+--- Incoming ---
+[   u'cv.stereoRectify',
+    u'void',
+    [],
+    [   ['Mat', u'cameraMatrix1', '', []],
+        ['Mat', u'distCoeffs1', '', []],
+        ['Mat', u'cameraMatrix2', '', []],
+        ['Mat', u'distCoeffs2', '', []],
+        [u'Size', u'imageSize', u'', []],
+        ['Mat', u'R', '', []],
+        ['Mat', u'T', '', []],
+        ['Mat', u'R1', '', ['/O']],
+        ['Mat', u'R2', '', ['/O']],
+        ['Mat', u'P1', '', ['/O']],
+        ['Mat', u'P2', '', ['/O']],
+        ['Mat', u'Q', '', ['/O']],
+        [u'int', u'flags', u'CALIB_ZERO_DISPARITY', []],
+        [u'double', u'alpha', u'-1', []],
+        [u'Size', u'newImageSize', u'Size()', []],
+        [u'Rect*', u'validPixROI1', u'0', ['/O']],
+        [u'Rect*', u'validPixROI2', u'0', ['/O']]],
+    u'void']
+ok: FUNC <void cv..stereoRectify [ARG Mat cameraMatrix1=, ARG Mat distCoeffs1=, ARG Mat cameraMatrix2=, ARG Mat distCoeffs2=, ARG Size imageSize=, ARG Mat R=, ARG Mat T=, ARG Mat R1=, ARG Mat R2=, ARG Mat P1=, ARG Mat P2=, ARG Mat Q=, ARG int flags=CALIB_ZERO_DISPARITY, ARG double alpha=-1, ARG Size newImageSize=Size(), ARG Rect * validPixROI1=0, ARG Rect * validPixROI2=0]>
+
+--- Incoming ---
+[   u'cv.stereoRectifyUncalibrated',
+    u'bool',
+    [],
+    [   ['Mat', u'points1', '', []],
+        ['Mat', u'points2', '', []],
+        ['Mat', u'F', '', []],
+        [u'Size', u'imgSize', u'', []],
+        ['Mat', u'H1', '', ['/O']],
+        ['Mat', u'H2', '', ['/O']],
+        [u'double', u'threshold', u'5', []]],
+    u'bool']
+ok: FUNC <bool cv..stereoRectifyUncalibrated [ARG Mat points1=, ARG Mat points2=, ARG Mat F=, ARG Size imgSize=, ARG Mat H1=, ARG Mat H2=, ARG double threshold=5]>
+
+--- Incoming ---
+[   u'cv.rectify3Collinear',
+    u'float',
+    [],
+    [   ['Mat', u'cameraMatrix1', '', []],
+        ['Mat', u'distCoeffs1', '', []],
+        ['Mat', u'cameraMatrix2', '', []],
+        ['Mat', u'distCoeffs2', '', []],
+        ['Mat', u'cameraMatrix3', '', []],
+        ['Mat', u'distCoeffs3', '', []],
+        ['vector_Mat', u'imgpt1', '', []],
+        ['vector_Mat', u'imgpt3', '', []],
+        [u'Size', u'imageSize', u'', []],
+        ['Mat', u'R12', '', []],
+        ['Mat', u'T12', '', []],
+        ['Mat', u'R13', '', []],
+        ['Mat', u'T13', '', []],
+        ['Mat', u'R1', '', ['/O']],
+        ['Mat', u'R2', '', ['/O']],
+        ['Mat', u'R3', '', ['/O']],
+        ['Mat', u'P1', '', ['/O']],
+        ['Mat', u'P2', '', ['/O']],
+        ['Mat', u'P3', '', ['/O']],
+        ['Mat', u'Q', '', ['/O']],
+        [u'double', u'alpha', u'', []],
+        [u'Size', u'newImgSize', u'', []],
+        [u'Rect*', u'roi1', u'', ['/O']],
+        [u'Rect*', u'roi2', u'', ['/O']],
+        [u'int', u'flags', u'', []]],
+    u'float']
+ok: FUNC <float cv..rectify3Collinear [ARG Mat cameraMatrix1=, ARG Mat distCoeffs1=, ARG Mat cameraMatrix2=, ARG Mat distCoeffs2=, ARG Mat cameraMatrix3=, ARG Mat distCoeffs3=, ARG vector_Mat imgpt1=, ARG vector_Mat imgpt3=, ARG Size imageSize=, ARG Mat R12=, ARG Mat T12=, ARG Mat R13=, ARG Mat T13=, ARG Mat R1=, ARG Mat R2=, ARG Mat R3=, ARG Mat P1=, ARG Mat P2=, ARG Mat P3=, ARG Mat Q=, ARG double alpha=, ARG Size newImgSize=, ARG Rect * roi1=, ARG Rect * roi2=, ARG int flags=]>
+
+--- Incoming ---
+[   u'cv.getOptimalNewCameraMatrix',
+    u'Mat',
+    [],
+    [   ['Mat', u'cameraMatrix', '', []],
+        ['Mat', u'distCoeffs', '', []],
+        [u'Size', u'imageSize', u'', []],
+        [u'double', u'alpha', u'', []],
+        [u'Size', u'newImgSize', u'Size()', []],
+        [u'Rect*', u'validPixROI', u'0', ['/O']],
+        [u'bool', u'centerPrincipalPoint', u'false', []]],
+    u'Mat']
+ok: FUNC <Mat cv..getOptimalNewCameraMatrix [ARG Mat cameraMatrix=, ARG Mat distCoeffs=, ARG Size imageSize=, ARG double alpha=, ARG Size newImgSize=Size(), ARG Rect * validPixROI=0, ARG bool centerPrincipalPoint=false]>
+
+--- Incoming ---
+[   u'cv.convertPointsToHomogeneous',
+    u'void',
+    [],
+    [['Mat', u'src', '', []], ['Mat', u'dst', '', ['/O']]],
+    u'void']
+ok: FUNC <void cv..convertPointsToHomogeneous [ARG Mat src=, ARG Mat dst=]>
+
+--- Incoming ---
+[   u'cv.convertPointsFromHomogeneous',
+    u'void',
+    [],
+    [['Mat', u'src', '', []], ['Mat', u'dst', '', ['/O']]],
+    u'void']
+ok: FUNC <void cv..convertPointsFromHomogeneous [ARG Mat src=, ARG Mat dst=]>
+
+--- Incoming ---
+[   u'cv.findFundamentalMat',
+    u'Mat',
+    [],
+    [   ['Mat', u'points1', '', []],
+        ['Mat', u'points2', '', []],
+        [u'int', u'method', u'FM_RANSAC', []],
+        [u'double', u'param1', u'3.', []],
+        [u'double', u'param2', u'0.99', []],
+        ['Mat', u'mask', u'Mat()', ['/O']]],
+    u'Mat']
+ok: FUNC <Mat cv..findFundamentalMat [ARG vector_Point2f points1=, ARG vector_Point2f points2=, ARG int method=FM_RANSAC, ARG double param1=3., ARG double param2=0.99, ARG Mat mask=Mat()]>
+
+--- Incoming ---
+[   u'cv.findEssentialMat',
+    u'Mat',
+    [],
+    [   ['Mat', u'points1', '', []],
+        ['Mat', u'points2', '', []],
+        ['Mat', u'cameraMatrix', '', []],
+        [u'int', u'method', u'RANSAC', []],
+        [u'double', u'prob', u'0.999', []],
+        [u'double', u'threshold', u'1.0', []],
+        ['Mat', u'mask', u'Mat()', ['/O']]],
+    u'Mat']
+ok: FUNC <Mat cv..findEssentialMat [ARG Mat points1=, ARG Mat points2=, ARG Mat cameraMatrix=, ARG int method=RANSAC, ARG double prob=0.999, ARG double threshold=1.0, ARG Mat mask=Mat()]>
+
+--- Incoming ---
+[   u'cv.findEssentialMat',
+    u'Mat',
+    [],
+    [   ['Mat', u'points1', '', []],
+        ['Mat', u'points2', '', []],
+        [u'double', u'focal', u'1.0', []],
+        [u'Point2d', u'pp', u'Point2d(0, 0)', []],
+        [u'int', u'method', u'RANSAC', []],
+        [u'double', u'prob', u'0.999', []],
+        [u'double', u'threshold', u'1.0', []],
+        ['Mat', u'mask', u'Mat()', ['/O']]],
+    u'Mat']
+ok: FUNC <Mat cv..findEssentialMat [ARG Mat points1=, ARG Mat points2=, ARG double focal=1.0, ARG Point2d pp=Point2d(0, 0), ARG int method=RANSAC, ARG double prob=0.999, ARG double threshold=1.0, ARG Mat mask=Mat()]>
+
+--- Incoming ---
+[   u'cv.decomposeEssentialMat',
+    u'void',
+    [],
+    [   ['Mat', u'E', '', []],
+        ['Mat', u'R1', '', ['/O']],
+        ['Mat', u'R2', '', ['/O']],
+        ['Mat', u't', '', ['/O']]],
+    u'void']
+ok: FUNC <void cv..decomposeEssentialMat [ARG Mat E=, ARG Mat R1=, ARG Mat R2=, ARG Mat t=]>
+
+--- Incoming ---
+[   u'cv.recoverPose',
+    u'int',
+    [],
+    [   ['Mat', u'E', '', []],
+        ['Mat', u'points1', '', []],
+        ['Mat', u'points2', '', []],
+        ['Mat', u'cameraMatrix', '', []],
+        ['Mat', u'R', '', ['/O']],
+        ['Mat', u't', '', ['/O']],
+        ['Mat', u'mask', u'Mat()', ['/IO']]],
+    u'int']
+ok: FUNC <int cv..recoverPose [ARG Mat E=, ARG Mat points1=, ARG Mat points2=, ARG Mat cameraMatrix=, ARG Mat R=, ARG Mat t=, ARG Mat mask=Mat()]>
+
+--- Incoming ---
+[   u'cv.recoverPose',
+    u'int',
+    [],
+    [   ['Mat', u'E', '', []],
+        ['Mat', u'points1', '', []],
+        ['Mat', u'points2', '', []],
+        ['Mat', u'R', '', ['/O']],
+        ['Mat', u't', '', ['/O']],
+        [u'double', u'focal', u'1.0', []],
+        [u'Point2d', u'pp', u'Point2d(0, 0)', []],
+        ['Mat', u'mask', u'Mat()', ['/IO']]],
+    u'int']
+ok: FUNC <int cv..recoverPose [ARG Mat E=, ARG Mat points1=, ARG Mat points2=, ARG Mat R=, ARG Mat t=, ARG double focal=1.0, ARG Point2d pp=Point2d(0, 0), ARG Mat mask=Mat()]>
+
+--- Incoming ---
+[   u'cv.computeCorrespondEpilines',
+    u'void',
+    [],
+    [   ['Mat', u'points', '', []],
+        [u'int', u'whichImage', u'', []],
+        ['Mat', u'F', '', []],
+        ['Mat', u'lines', '', ['/O']]],
+    u'void']
+ok: FUNC <void cv..computeCorrespondEpilines [ARG Mat points=, ARG int whichImage=, ARG Mat F=, ARG Mat lines=]>
+
+--- Incoming ---
+[   u'cv.triangulatePoints',
+    u'void',
+    [],
+    [   ['Mat', u'projMatr1', '', []],
+        ['Mat', u'projMatr2', '', []],
+        ['Mat', u'projPoints1', '', []],
+        ['Mat', u'projPoints2', '', []],
+        ['Mat', u'points4D', '', ['/O']]],
+    u'void']
+ok: FUNC <void cv..triangulatePoints [ARG Mat projMatr1=, ARG Mat projMatr2=, ARG Mat projPoints1=, ARG Mat projPoints2=, ARG Mat points4D=]>
+
+--- Incoming ---
+[   u'cv.correctMatches',
+    u'void',
+    [],
+    [   ['Mat', u'F', '', []],
+        ['Mat', u'points1', '', []],
+        ['Mat', u'points2', '', []],
+        ['Mat', u'newPoints1', '', ['/O']],
+        ['Mat', u'newPoints2', '', ['/O']]],
+    u'void']
+ok: FUNC <void cv..correctMatches [ARG Mat F=, ARG Mat points1=, ARG Mat points2=, ARG Mat newPoints1=, ARG Mat newPoints2=]>
+
+--- Incoming ---
+[   u'cv.filterSpeckles',
+    u'void',
+    [],
+    [   ['Mat', u'img', '', ['/IO']],
+        [u'double', u'newVal', u'', []],
+        [u'int', u'maxSpeckleSize', u'', []],
+        [u'double', u'maxDiff', u'', []],
+        ['Mat', u'buf', u'Mat()', ['/IO']]],
+    u'void']
+ok: FUNC <void cv..filterSpeckles [ARG Mat img=, ARG double newVal=, ARG int maxSpeckleSize=, ARG double maxDiff=, ARG Mat buf=Mat()]>
+
+--- Incoming ---
+[   u'cv.getValidDisparityROI',
+    u'Rect',
+    [],
+    [   [u'Rect', u'roi1', u'', []],
+        [u'Rect', u'roi2', u'', []],
+        [u'int', u'minDisparity', u'', []],
+        [u'int', u'numberOfDisparities', u'', []],
+        [u'int', u'SADWindowSize', u'', []]],
+    u'Rect']
+ok: FUNC <Rect cv..getValidDisparityROI [ARG Rect roi1=, ARG Rect roi2=, ARG int minDisparity=, ARG int numberOfDisparities=, ARG int SADWindowSize=]>
+
+--- Incoming ---
+[   u'cv.validateDisparity',
+    u'void',
+    [],
+    [   ['Mat', u'disparity', '', ['/IO']],
+        ['Mat', u'cost', '', []],
+        [u'int', u'minDisparity', u'', []],
+        [u'int', u'numberOfDisparities', u'', []],
+        [u'int', u'disp12MaxDisp', u'1', []]],
+    u'void']
+ok: FUNC <void cv..validateDisparity [ARG Mat disparity=, ARG Mat cost=, ARG int minDisparity=, ARG int numberOfDisparities=, ARG int disp12MaxDisp=1]>
+
+--- Incoming ---
+[   u'cv.reprojectImageTo3D',
+    u'void',
+    [],
+    [   ['Mat', u'disparity', '', []],
+        ['Mat', u'_3dImage', '', ['/O']],
+        ['Mat', u'Q', '', []],
+        [u'bool', u'handleMissingValues', u'false', []],
+        [u'int', u'ddepth', u'-1', []]],
+    u'void']
+ok: FUNC <void cv..reprojectImageTo3D [ARG Mat disparity=, ARG Mat _3dImage=, ARG Mat Q=, ARG bool handleMissingValues=false, ARG int ddepth=-1]>
+
+--- Incoming ---
+[   u'cv.sampsonDistance',
+    u'double',
+    [],
+    [['Mat', u'pt1', '', []], ['Mat', u'pt2', '', []], ['Mat', u'F', '', []]],
+    u'double']
+ok: FUNC <double cv..sampsonDistance [ARG Mat pt1=, ARG Mat pt2=, ARG Mat F=]>
+
+--- Incoming ---
+[   u'cv.estimateAffine3D',
+    u'int',
+    [],
+    [   ['Mat', u'src', '', []],
+        ['Mat', u'dst', '', []],
+        ['Mat', u'out', '', ['/O']],
+        ['Mat', u'inliers', '', ['/O']],
+        [u'double', u'ransacThreshold', u'3', []],
+        [u'double', u'confidence', u'0.99', []]],
+    u'int']
+ok: FUNC <int cv..estimateAffine3D [ARG Mat src=, ARG Mat dst=, ARG Mat out=, ARG Mat inliers=, ARG double ransacThreshold=3, ARG double confidence=0.99]>
+
+--- Incoming ---
+[   u'cv.estimateAffine2D',
+    u'Mat',
+    [],
+    [   ['Mat', u'from', '', []],
+        ['Mat', u'to', '', []],
+        ['Mat', u'inliers', u'Mat()', ['/O']],
+        [u'int', u'method', u'RANSAC', []],
+        [u'double', u'ransacReprojThreshold', u'3', []],
+        [u'size_t', u'maxIters', u'2000', []],
+        [u'double', u'confidence', u'0.99', []],
+        [u'size_t', u'refineIters', u'10', []]],
+    u'cv::Mat']
+ok: FUNC <Mat cv..estimateAffine2D [ARG Mat from=, ARG Mat to=, ARG Mat inliers=Mat(), ARG int method=RANSAC, ARG double ransacReprojThreshold=3, ARG size_t maxIters=2000, ARG double confidence=0.99, ARG size_t refineIters=10]>
+
+--- Incoming ---
+[   u'cv.estimateAffinePartial2D',
+    u'Mat',
+    [],
+    [   ['Mat', u'from', '', []],
+        ['Mat', u'to', '', []],
+        ['Mat', u'inliers', u'Mat()', ['/O']],
+        [u'int', u'method', u'RANSAC', []],
+        [u'double', u'ransacReprojThreshold', u'3', []],
+        [u'size_t', u'maxIters', u'2000', []],
+        [u'double', u'confidence', u'0.99', []],
+        [u'size_t', u'refineIters', u'10', []]],
+    u'cv::Mat']
+ok: FUNC <Mat cv..estimateAffinePartial2D [ARG Mat from=, ARG Mat to=, ARG Mat inliers=Mat(), ARG int method=RANSAC, ARG double ransacReprojThreshold=3, ARG size_t maxIters=2000, ARG double confidence=0.99, ARG size_t refineIters=10]>
+
+--- Incoming ---
+[   u'cv.decomposeHomographyMat',
+    u'int',
+    [],
+    [   ['Mat', u'H', '', []],
+        ['Mat', u'K', '', []],
+        ['vector_Mat', u'rotations', '', ['/O']],
+        ['vector_Mat', u'translations', '', ['/O']],
+        ['vector_Mat', u'normals', '', ['/O']]],
+    u'int']
+ok: FUNC <int cv..decomposeHomographyMat [ARG Mat H=, ARG Mat K=, ARG vector_Mat rotations=, ARG vector_Mat translations=, ARG vector_Mat normals=]>
+
+--- Incoming ---
+[u'class cv.StereoMatcher', ': cv::Algorithm', [], []]
+ok: class CLASS cv::.StereoMatcher : Algorithm, name: StereoMatcher, base: Algorithm
+
+--- Incoming ---
+[u'const cv.StereoMatcher.DISP_SHIFT', u'4', [], []]
+ok: CONST DISP_SHIFT=4
+
+--- Incoming ---
+[u'const cv.StereoMatcher.DISP_SCALE', u'(1 << DISP_SHIFT)', [], []]
+ok: CONST DISP_SCALE=(1 << DISP_SHIFT)
+
+--- Incoming ---
+[   u'cv.StereoMatcher.compute',
+    u'void',
+    [],
+    [   ['Mat', u'left', '', []],
+        ['Mat', u'right', '', []],
+        ['Mat', u'disparity', '', ['/O']]],
+    u'void']
+ok: FUNC <void cv.StereoMatcher.compute [ARG Mat left=, ARG Mat right=, ARG Mat disparity=]>
+
+--- Incoming ---
+[u'cv.StereoMatcher.getMinDisparity', u'int', [], [], u'int']
+ok: FUNC <int cv.StereoMatcher.getMinDisparity []>
+
+--- Incoming ---
+[   u'cv.StereoMatcher.setMinDisparity',
+    u'void',
+    [],
+    [[u'int', u'minDisparity', u'', []]],
+    u'void']
+ok: FUNC <void cv.StereoMatcher.setMinDisparity [ARG int minDisparity=]>
+
+--- Incoming ---
+[u'cv.StereoMatcher.getNumDisparities', u'int', [], [], u'int']
+ok: FUNC <int cv.StereoMatcher.getNumDisparities []>
+
+--- Incoming ---
+[   u'cv.StereoMatcher.setNumDisparities',
+    u'void',
+    [],
+    [[u'int', u'numDisparities', u'', []]],
+    u'void']
+ok: FUNC <void cv.StereoMatcher.setNumDisparities [ARG int numDisparities=]>
+
+--- Incoming ---
+[u'cv.StereoMatcher.getBlockSize', u'int', [], [], u'int']
+ok: FUNC <int cv.StereoMatcher.getBlockSize []>
+
+--- Incoming ---
+[   u'cv.StereoMatcher.setBlockSize',
+    u'void',
+    [],
+    [[u'int', u'blockSize', u'', []]],
+    u'void']
+ok: FUNC <void cv.StereoMatcher.setBlockSize [ARG int blockSize=]>
+
+--- Incoming ---
+[u'cv.StereoMatcher.getSpeckleWindowSize', u'int', [], [], u'int']
+ok: FUNC <int cv.StereoMatcher.getSpeckleWindowSize []>
+
+--- Incoming ---
+[   u'cv.StereoMatcher.setSpeckleWindowSize',
+    u'void',
+    [],
+    [[u'int', u'speckleWindowSize', u'', []]],
+    u'void']
+ok: FUNC <void cv.StereoMatcher.setSpeckleWindowSize [ARG int speckleWindowSize=]>
+
+--- Incoming ---
+[u'cv.StereoMatcher.getSpeckleRange', u'int', [], [], u'int']
+ok: FUNC <int cv.StereoMatcher.getSpeckleRange []>
+
+--- Incoming ---
+[   u'cv.StereoMatcher.setSpeckleRange',
+    u'void',
+    [],
+    [[u'int', u'speckleRange', u'', []]],
+    u'void']
+ok: FUNC <void cv.StereoMatcher.setSpeckleRange [ARG int speckleRange=]>
+
+--- Incoming ---
+[u'cv.StereoMatcher.getDisp12MaxDiff', u'int', [], [], u'int']
+ok: FUNC <int cv.StereoMatcher.getDisp12MaxDiff []>
+
+--- Incoming ---
+[   u'cv.StereoMatcher.setDisp12MaxDiff',
+    u'void',
+    [],
+    [[u'int', u'disp12MaxDiff', u'', []]],
+    u'void']
+ok: FUNC <void cv.StereoMatcher.setDisp12MaxDiff [ARG int disp12MaxDiff=]>
+
+--- Incoming ---
+[u'class cv.StereoBM', u': cv::StereoMatcher', [], []]
+ok: class CLASS cv::.StereoBM : StereoMatcher, name: StereoBM, base: StereoMatcher
+
+--- Incoming ---
+[u'const cv.StereoBM.PREFILTER_NORMALIZED_RESPONSE', u'0', [], []]
+ok: CONST PREFILTER_NORMALIZED_RESPONSE=0
+
+--- Incoming ---
+[u'const cv.StereoBM.PREFILTER_XSOBEL', u'1', [], []]
+ok: CONST PREFILTER_XSOBEL=1
+
+--- Incoming ---
+[u'cv.StereoBM.getPreFilterType', u'int', [], [], u'int']
+ok: FUNC <int cv.StereoBM.getPreFilterType []>
+
+--- Incoming ---
+[   u'cv.StereoBM.setPreFilterType',
+    u'void',
+    [],
+    [[u'int', u'preFilterType', u'', []]],
+    u'void']
+ok: FUNC <void cv.StereoBM.setPreFilterType [ARG int preFilterType=]>
+
+--- Incoming ---
+[u'cv.StereoBM.getPreFilterSize', u'int', [], [], u'int']
+ok: FUNC <int cv.StereoBM.getPreFilterSize []>
+
+--- Incoming ---
+[   u'cv.StereoBM.setPreFilterSize',
+    u'void',
+    [],
+    [[u'int', u'preFilterSize', u'', []]],
+    u'void']
+ok: FUNC <void cv.StereoBM.setPreFilterSize [ARG int preFilterSize=]>
+
+--- Incoming ---
+[u'cv.StereoBM.getPreFilterCap', u'int', [], [], u'int']
+ok: FUNC <int cv.StereoBM.getPreFilterCap []>
+
+--- Incoming ---
+[   u'cv.StereoBM.setPreFilterCap',
+    u'void',
+    [],
+    [[u'int', u'preFilterCap', u'', []]],
+    u'void']
+ok: FUNC <void cv.StereoBM.setPreFilterCap [ARG int preFilterCap=]>
+
+--- Incoming ---
+[u'cv.StereoBM.getTextureThreshold', u'int', [], [], u'int']
+ok: FUNC <int cv.StereoBM.getTextureThreshold []>
+
+--- Incoming ---
+[   u'cv.StereoBM.setTextureThreshold',
+    u'void',
+    [],
+    [[u'int', u'textureThreshold', u'', []]],
+    u'void']
+ok: FUNC <void cv.StereoBM.setTextureThreshold [ARG int textureThreshold=]>
+
+--- Incoming ---
+[u'cv.StereoBM.getUniquenessRatio', u'int', [], [], u'int']
+ok: FUNC <int cv.StereoBM.getUniquenessRatio []>
+
+--- Incoming ---
+[   u'cv.StereoBM.setUniquenessRatio',
+    u'void',
+    [],
+    [[u'int', u'uniquenessRatio', u'', []]],
+    u'void']
+ok: FUNC <void cv.StereoBM.setUniquenessRatio [ARG int uniquenessRatio=]>
+
+--- Incoming ---
+[u'cv.StereoBM.getSmallerBlockSize', u'int', [], [], u'int']
+ok: FUNC <int cv.StereoBM.getSmallerBlockSize []>
+
+--- Incoming ---
+[   u'cv.StereoBM.setSmallerBlockSize',
+    u'void',
+    [],
+    [[u'int', u'blockSize', u'', []]],
+    u'void']
+ok: FUNC <void cv.StereoBM.setSmallerBlockSize [ARG int blockSize=]>
+
+--- Incoming ---
+[u'cv.StereoBM.getROI1', u'Rect', [], [], u'Rect']
+ok: FUNC <Rect cv.StereoBM.getROI1 []>
+
+--- Incoming ---
+[u'cv.StereoBM.setROI1', u'void', [], [[u'Rect', u'roi1', u'', []]], u'void']
+ok: FUNC <void cv.StereoBM.setROI1 [ARG Rect roi1=]>
+
+--- Incoming ---
+[u'cv.StereoBM.getROI2', u'Rect', [], [], u'Rect']
+ok: FUNC <Rect cv.StereoBM.getROI2 []>
+
+--- Incoming ---
+[u'cv.StereoBM.setROI2', u'void', [], [[u'Rect', u'roi2', u'', []]], u'void']
+ok: FUNC <void cv.StereoBM.setROI2 [ARG Rect roi2=]>
+
+--- Incoming ---
+[   u'cv.StereoBM.create',
+    u'Ptr_StereoBM',
+    ['/S'],
+    [[u'int', u'numDisparities', u'0', []], [u'int', u'blockSize', u'21', []]],
+    u'Ptr<StereoBM>']
+ok: FUNC <Ptr_StereoBM cv.StereoBM.create [ARG int numDisparities=0, ARG int blockSize=21]>
+
+--- Incoming ---
+[u'class cv.StereoSGBM', u': cv::StereoMatcher', [], []]
+ok: class CLASS cv::.StereoSGBM : StereoMatcher, name: StereoSGBM, base: StereoMatcher
+
+--- Incoming ---
+[u'const cv.StereoSGBM.MODE_SGBM', u'0', [], []]
+ok: CONST MODE_SGBM=0
+
+--- Incoming ---
+[u'const cv.StereoSGBM.MODE_HH', u'1', [], []]
+ok: CONST MODE_HH=1
+
+--- Incoming ---
+[u'const cv.StereoSGBM.MODE_SGBM_3WAY', u'2', [], []]
+ok: CONST MODE_SGBM_3WAY=2
+
+--- Incoming ---
+[u'cv.StereoSGBM.getPreFilterCap', u'int', [], [], u'int']
+ok: FUNC <int cv.StereoSGBM.getPreFilterCap []>
+
+--- Incoming ---
+[   u'cv.StereoSGBM.setPreFilterCap',
+    u'void',
+    [],
+    [[u'int', u'preFilterCap', u'', []]],
+    u'void']
+ok: FUNC <void cv.StereoSGBM.setPreFilterCap [ARG int preFilterCap=]>
+
+--- Incoming ---
+[u'cv.StereoSGBM.getUniquenessRatio', u'int', [], [], u'int']
+ok: FUNC <int cv.StereoSGBM.getUniquenessRatio []>
+
+--- Incoming ---
+[   u'cv.StereoSGBM.setUniquenessRatio',
+    u'void',
+    [],
+    [[u'int', u'uniquenessRatio', u'', []]],
+    u'void']
+ok: FUNC <void cv.StereoSGBM.setUniquenessRatio [ARG int uniquenessRatio=]>
+
+--- Incoming ---
+[u'cv.StereoSGBM.getP1', u'int', [], [], u'int']
+ok: FUNC <int cv.StereoSGBM.getP1 []>
+
+--- Incoming ---
+[u'cv.StereoSGBM.setP1', u'void', [], [[u'int', u'P1', u'', []]], u'void']
+ok: FUNC <void cv.StereoSGBM.setP1 [ARG int P1=]>
+
+--- Incoming ---
+[u'cv.StereoSGBM.getP2', u'int', [], [], u'int']
+ok: FUNC <int cv.StereoSGBM.getP2 []>
+
+--- Incoming ---
+[u'cv.StereoSGBM.setP2', u'void', [], [[u'int', u'P2', u'', []]], u'void']
+ok: FUNC <void cv.StereoSGBM.setP2 [ARG int P2=]>
+
+--- Incoming ---
+[u'cv.StereoSGBM.getMode', u'int', [], [], u'int']
+ok: FUNC <int cv.StereoSGBM.getMode []>
+
+--- Incoming ---
+[u'cv.StereoSGBM.setMode', u'void', [], [[u'int', u'mode', u'', []]], u'void']
+ok: FUNC <void cv.StereoSGBM.setMode [ARG int mode=]>
+
+--- Incoming ---
+[   u'cv.StereoSGBM.create',
+    u'Ptr_StereoSGBM',
+    ['/S'],
+    [   [u'int', u'minDisparity', u'', []],
+        [u'int', u'numDisparities', u'', []],
+        [u'int', u'blockSize', u'', []],
+        [u'int', u'P1', u'0', []],
+        [u'int', u'P2', u'0', []],
+        [u'int', u'disp12MaxDiff', u'0', []],
+        [u'int', u'preFilterCap', u'0', []],
+        [u'int', u'uniquenessRatio', u'0', []],
+        [u'int', u'speckleWindowSize', u'0', []],
+        [u'int', u'speckleRange', u'0', []],
+        [u'int', u'mode', u'StereoSGBM::MODE_SGBM', []]],
+    u'Ptr<StereoSGBM>']
+ok: FUNC <Ptr_StereoSGBM cv.StereoSGBM.create [ARG int minDisparity=, ARG int numDisparities=, ARG int blockSize=, ARG int P1=0, ARG int P2=0, ARG int disp12MaxDiff=0, ARG int preFilterCap=0, ARG int uniquenessRatio=0, ARG int speckleWindowSize=0, ARG int speckleRange=0, ARG int mode=StereoSGBM::MODE_SGBM]>
+
+--- Incoming ---
+[u'const cv.fisheye.CALIB_USE_INTRINSIC_GUESS', u'1 << 0', [], []]
+manual: CONST CALIB_USE_INTRINSIC_GUESS=1 << 0
+
+--- Incoming ---
+[u'const cv.fisheye.CALIB_RECOMPUTE_EXTRINSIC', u'1 << 1', [], []]
+manual: CONST CALIB_RECOMPUTE_EXTRINSIC=1 << 1
+
+--- Incoming ---
+[u'const cv.fisheye.CALIB_CHECK_COND', u'1 << 2', [], []]
+manual: CONST CALIB_CHECK_COND=1 << 2
+
+--- Incoming ---
+[u'const cv.fisheye.CALIB_FIX_SKEW', u'1 << 3', [], []]
+manual: CONST CALIB_FIX_SKEW=1 << 3
+
+--- Incoming ---
+[u'const cv.fisheye.CALIB_FIX_K1', u'1 << 4', [], []]
+manual: CONST CALIB_FIX_K1=1 << 4
+
+--- Incoming ---
+[u'const cv.fisheye.CALIB_FIX_K2', u'1 << 5', [], []]
+manual: CONST CALIB_FIX_K2=1 << 5
+
+--- Incoming ---
+[u'const cv.fisheye.CALIB_FIX_K3', u'1 << 6', [], []]
+manual: CONST CALIB_FIX_K3=1 << 6
+
+--- Incoming ---
+[u'const cv.fisheye.CALIB_FIX_K4', u'1 << 7', [], []]
+manual: CONST CALIB_FIX_K4=1 << 7
+
+--- Incoming ---
+[u'const cv.fisheye.CALIB_FIX_INTRINSIC', u'1 << 8', [], []]
+manual: CONST CALIB_FIX_INTRINSIC=1 << 8
+
+--- Incoming ---
+[u'const cv.fisheye.CALIB_FIX_PRINCIPAL_POINT', u'1 << 9', [], []]
+duplicated: CONST CALIB_FIX_PRINCIPAL_POINT=1 << 9
+
+--- Incoming ---
+[   u'cv.fisheye.projectPoints',
+    u'void',
+    [],
+    [   ['Mat', u'objectPoints', '', []],
+        ['Mat', u'imagePoints', '', ['/O']],
+        ['Mat', u'rvec', '', []],
+        ['Mat', u'tvec', '', []],
+        ['Mat', u'K', '', []],
+        ['Mat', u'D', '', []],
+        [u'double', u'alpha', u'0', []],
+        ['Mat', u'jacobian', u'Mat()', ['/O']]],
+    u'void']
+ok: FUNC <void cv.fisheye..projectPoints [ARG vector_Point3f objectPoints=, ARG vector_Point2f imagePoints=, ARG Mat rvec=, ARG Mat tvec=, ARG Mat K=, ARG Mat D=, ARG double alpha=0, ARG Mat jacobian=Mat()]>
+
+--- Incoming ---
+[   u'cv.fisheye.distortPoints',
+    u'void',
+    [],
+    [   ['Mat', u'undistorted', '', []],
+        ['Mat', u'distorted', '', ['/O']],
+        ['Mat', u'K', '', []],
+        ['Mat', u'D', '', []],
+        [u'double', u'alpha', u'0', []]],
+    u'void']
+ok: FUNC <void cv.fisheye..distortPoints [ARG Mat undistorted=, ARG Mat distorted=, ARG Mat K=, ARG Mat D=, ARG double alpha=0]>
+
+--- Incoming ---
+[   u'cv.fisheye.undistortPoints',
+    u'void',
+    [],
+    [   ['Mat', u'distorted', '', []],
+        ['Mat', u'undistorted', '', ['/O']],
+        ['Mat', u'K', '', []],
+        ['Mat', u'D', '', []],
+        ['Mat', u'R', u'Mat()', []],
+        ['Mat', u'P', u'Mat()', []]],
+    u'void']
+ok: FUNC <void cv.fisheye..undistortPoints [ARG Mat distorted=, ARG Mat undistorted=, ARG Mat K=, ARG Mat D=, ARG Mat R=Mat(), ARG Mat P=Mat()]>
+
+--- Incoming ---
+[   u'cv.fisheye.initUndistortRectifyMap',
+    u'void',
+    [],
+    [   ['Mat', u'K', '', []],
+        ['Mat', u'D', '', []],
+        ['Mat', u'R', '', []],
+        ['Mat', u'P', '', []],
+        [u'Size', u'size', u'', []],
+        [u'int', u'm1type', u'', []],
+        ['Mat', u'map1', '', ['/O']],
+        ['Mat', u'map2', '', ['/O']]],
+    u'void']
+ok: FUNC <void cv.fisheye..initUndistortRectifyMap [ARG Mat K=, ARG Mat D=, ARG Mat R=, ARG Mat P=, ARG Size size=, ARG int m1type=, ARG Mat map1=, ARG Mat map2=]>
+
+--- Incoming ---
+[   u'cv.fisheye.undistortImage',
+    u'void',
+    [],
+    [   ['Mat', u'distorted', '', []],
+        ['Mat', u'undistorted', '', ['/O']],
+        ['Mat', u'K', '', []],
+        ['Mat', u'D', '', []],
+        ['Mat', u'Knew', u'cv::Mat()', []],
+        [u'Size', u'new_size', u'Size()', []]],
+    u'void']
+ok: FUNC <void cv.fisheye..undistortImage [ARG Mat distorted=, ARG Mat undistorted=, ARG Mat K=, ARG Mat D=, ARG Mat Knew=cv::Mat(), ARG Size new_size=Size()]>
+
+--- Incoming ---
+[   u'cv.fisheye.estimateNewCameraMatrixForUndistortRectify',
+    u'void',
+    [],
+    [   ['Mat', u'K', '', []],
+        ['Mat', u'D', '', []],
+        [u'Size', u'image_size', u'', []],
+        ['Mat', u'R', '', []],
+        ['Mat', u'P', '', ['/O']],
+        [u'double', u'balance', u'0.0', []],
+        [u'Size', u'new_size', u'Size()', []],
+        [u'double', u'fov_scale', u'1.0', []]],
+    u'void']
+ok: FUNC <void cv.fisheye..estimateNewCameraMatrixForUndistortRectify [ARG Mat K=, ARG Mat D=, ARG Size image_size=, ARG Mat R=, ARG Mat P=, ARG double balance=0.0, ARG Size new_size=Size(), ARG double fov_scale=1.0]>
+
+--- Incoming ---
+[   u'cv.fisheye.calibrate',
+    u'double',
+    [],
+    [   ['vector_Mat', u'objectPoints', '', []],
+        ['vector_Mat', u'imagePoints', '', []],
+        [u'Size', u'image_size', u'', []],
+        ['Mat', u'K', '', ['/IO']],
+        ['Mat', u'D', '', ['/IO']],
+        ['vector_Mat', u'rvecs', '', ['/O']],
+        ['vector_Mat', u'tvecs', '', ['/O']],
+        [u'int', u'flags', u'0', []],
+        [   u'TermCriteria',
+            u'criteria',
+            u'TermCriteria(TermCriteria::COUNT + TermCriteria::EPS, 100, DBL_EPSILON)',
+            []]],
+    u'double']
+ok: FUNC <double cv.fisheye..calibrate [ARG vector_Mat objectPoints=, ARG vector_Mat imagePoints=, ARG Size image_size=, ARG Mat K=, ARG Mat D=, ARG vector_Mat rvecs=, ARG vector_Mat tvecs=, ARG int flags=0, ARG TermCriteria criteria=TermCriteria(TermCriteria::COUNT + TermCriteria::EPS, 100, DBL_EPSILON)]>
+
+--- Incoming ---
+[   u'cv.fisheye.stereoRectify',
+    u'void',
+    [],
+    [   ['Mat', u'K1', '', []],
+        ['Mat', u'D1', '', []],
+        ['Mat', u'K2', '', []],
+        ['Mat', u'D2', '', []],
+        [u'Size', u'imageSize', u'', []],
+        ['Mat', u'R', '', []],
+        ['Mat', u'tvec', '', []],
+        ['Mat', u'R1', '', ['/O']],
+        ['Mat', u'R2', '', ['/O']],
+        ['Mat', u'P1', '', ['/O']],
+        ['Mat', u'P2', '', ['/O']],
+        ['Mat', u'Q', '', ['/O']],
+        [u'int', u'flags', u'', []],
+        [u'Size', u'newImageSize', u'Size()', []],
+        [u'double', u'balance', u'0.0', []],
+        [u'double', u'fov_scale', u'1.0', []]],
+    u'void']
+ok: FUNC <void cv.fisheye..stereoRectify [ARG Mat K1=, ARG Mat D1=, ARG Mat K2=, ARG Mat D2=, ARG Size imageSize=, ARG Mat R=, ARG Mat tvec=, ARG Mat R1=, ARG Mat R2=, ARG Mat P1=, ARG Mat P2=, ARG Mat Q=, ARG int flags=, ARG Size newImageSize=Size(), ARG double balance=0.0, ARG double fov_scale=1.0]>
+
+--- Incoming ---
+[   u'cv.fisheye.stereoCalibrate',
+    u'double',
+    [],
+    [   ['vector_Mat', u'objectPoints', '', []],
+        ['vector_Mat', u'imagePoints1', '', []],
+        ['vector_Mat', u'imagePoints2', '', []],
+        ['Mat', u'K1', '', ['/IO']],
+        ['Mat', u'D1', '', ['/IO']],
+        ['Mat', u'K2', '', ['/IO']],
+        ['Mat', u'D2', '', ['/IO']],
+        [u'Size', u'imageSize', u'', []],
+        ['Mat', u'R', '', ['/O']],
+        ['Mat', u'T', '', ['/O']],
+        [u'int', u'flags', u'fisheye::CALIB_FIX_INTRINSIC', []],
+        [   u'TermCriteria',
+            u'criteria',
+            u'TermCriteria(TermCriteria::COUNT + TermCriteria::EPS, 100, DBL_EPSILON)',
+            []]],
+    u'double']
+ok: FUNC <double cv.fisheye..stereoCalibrate [ARG vector_Mat objectPoints=, ARG vector_Mat imagePoints1=, ARG vector_Mat imagePoints2=, ARG Mat K1=, ARG Mat D1=, ARG Mat K2=, ARG Mat D2=, ARG Size imageSize=, ARG Mat R=, ARG Mat T=, ARG int flags=fisheye::CALIB_FIX_INTRINSIC, ARG TermCriteria criteria=TermCriteria(TermCriteria::COUNT + TermCriteria::EPS, 100, DBL_EPSILON)]>
+
+
+===== Header: /home/xxa344/Desktop/opencv-3.2.0/modules/calib3d/include/opencv2/calib3d/calib3d.hpp =====
+Namespaces: set(['', u'cv.fisheye', u'cv'])
+Ignore header: /home/xxa344/Desktop/opencv-3.2.0/modules/calib3d/include/opencv2/calib3d/calib3d.hpp
+
+
+===== Generating... =====
+CLASS cv::.StereoSGBM : StereoMatcher
+[CONST MODE_SGBM=0, CONST MODE_HH=1, CONST MODE_SGBM_3WAY=2]
+FUNC <Ptr_StereoSGBM cv.StereoSGBM.create [ARG int minDisparity=, ARG int numDisparities=, ARG int blockSize=, ARG int P1=0, ARG int P2=0, ARG int disp12MaxDiff=0, ARG int preFilterCap=0, ARG int uniquenessRatio=0, ARG int speckleWindowSize=0, ARG int speckleRange=0, ARG int mode=StereoSGBM::MODE_SGBM]>
+java: StereoSGBM create(int minDisparity, int numDisparities, int blockSize, int P1, int P2, int disp12MaxDiff, int preFilterCap, int uniquenessRatio, int speckleWindowSize, int speckleRange, int mode)
+java: StereoSGBM create(int minDisparity, int numDisparities, int blockSize)
+FUNC <int cv.StereoSGBM.getMode []>
+java: int getMode()
+FUNC <int cv.StereoSGBM.getP1 []>
+java: int getP1()
+FUNC <int cv.StereoSGBM.getP2 []>
+java: int getP2()
+FUNC <int cv.StereoSGBM.getPreFilterCap []>
+java: int getPreFilterCap()
+FUNC <int cv.StereoSGBM.getUniquenessRatio []>
+java: int getUniquenessRatio()
+FUNC <void cv.StereoSGBM.setMode [ARG int mode=]>
+java: void setMode(int mode)
+FUNC <void cv.StereoSGBM.setP1 [ARG int P1=]>
+java: void setP1(int P1)
+FUNC <void cv.StereoSGBM.setP2 [ARG int P2=]>
+java: void setP2(int P2)
+FUNC <void cv.StereoSGBM.setPreFilterCap [ARG int preFilterCap=]>
+java: void setPreFilterCap(int preFilterCap)
+FUNC <void cv.StereoSGBM.setUniquenessRatio [ARG int uniquenessRatio=]>
+java: void setUniquenessRatio(int uniquenessRatio)
+CLASS cv::.StereoBM : StereoMatcher
+[CONST PREFILTER_NORMALIZED_RESPONSE=0, CONST PREFILTER_XSOBEL=1]
+FUNC <Ptr_StereoBM cv.StereoBM.create [ARG int numDisparities=0, ARG int blockSize=21]>
+java: StereoBM create(int numDisparities, int blockSize)
+java: StereoBM create()
+FUNC <Rect cv.StereoBM.getROI1 []>
+java: Rect getROI1()
+FUNC <Rect cv.StereoBM.getROI2 []>
+java: Rect getROI2()
+FUNC <int cv.StereoBM.getPreFilterCap []>
+java: int getPreFilterCap()
+FUNC <int cv.StereoBM.getPreFilterSize []>
+java: int getPreFilterSize()
+FUNC <int cv.StereoBM.getPreFilterType []>
+java: int getPreFilterType()
+FUNC <int cv.StereoBM.getSmallerBlockSize []>
+java: int getSmallerBlockSize()
+FUNC <int cv.StereoBM.getTextureThreshold []>
+java: int getTextureThreshold()
+FUNC <int cv.StereoBM.getUniquenessRatio []>
+java: int getUniquenessRatio()
+FUNC <void cv.StereoBM.setPreFilterCap [ARG int preFilterCap=]>
+java: void setPreFilterCap(int preFilterCap)
+FUNC <void cv.StereoBM.setPreFilterSize [ARG int preFilterSize=]>
+java: void setPreFilterSize(int preFilterSize)
+FUNC <void cv.StereoBM.setPreFilterType [ARG int preFilterType=]>
+java: void setPreFilterType(int preFilterType)
+FUNC <void cv.StereoBM.setROI1 [ARG Rect roi1=]>
+java: void setROI1(Rect roi1)
+FUNC <void cv.StereoBM.setROI2 [ARG Rect roi2=]>
+java: void setROI2(Rect roi2)
+FUNC <void cv.StereoBM.setSmallerBlockSize [ARG int blockSize=]>
+java: void setSmallerBlockSize(int blockSize)
+FUNC <void cv.StereoBM.setTextureThreshold [ARG int textureThreshold=]>
+java: void setTextureThreshold(int textureThreshold)
+FUNC <void cv.StereoBM.setUniquenessRatio [ARG int uniquenessRatio=]>
+java: void setUniquenessRatio(int uniquenessRatio)
+CLASS cv::.StereoMatcher : Algorithm
+[CONST DISP_SHIFT=4, CONST DISP_SCALE=(1 << DISP_SHIFT)]
+FUNC <int cv.StereoMatcher.getBlockSize []>
+java: int getBlockSize()
+FUNC <int cv.StereoMatcher.getDisp12MaxDiff []>
+java: int getDisp12MaxDiff()
+FUNC <int cv.StereoMatcher.getMinDisparity []>
+java: int getMinDisparity()
+FUNC <int cv.StereoMatcher.getNumDisparities []>
+java: int getNumDisparities()
+FUNC <int cv.StereoMatcher.getSpeckleRange []>
+java: int getSpeckleRange()
+FUNC <int cv.StereoMatcher.getSpeckleWindowSize []>
+java: int getSpeckleWindowSize()
+FUNC <void cv.StereoMatcher.compute [ARG Mat left=, ARG Mat right=, ARG Mat disparity=]>
+java: void compute(Mat left, Mat right, Mat disparity)
+FUNC <void cv.StereoMatcher.setBlockSize [ARG int blockSize=]>
+java: void setBlockSize(int blockSize)
+FUNC <void cv.StereoMatcher.setDisp12MaxDiff [ARG int disp12MaxDiff=]>
+java: void setDisp12MaxDiff(int disp12MaxDiff)
+FUNC <void cv.StereoMatcher.setMinDisparity [ARG int minDisparity=]>
+java: void setMinDisparity(int minDisparity)
+FUNC <void cv.StereoMatcher.setNumDisparities [ARG int numDisparities=]>
+java: void setNumDisparities(int numDisparities)
+FUNC <void cv.StereoMatcher.setSpeckleRange [ARG int speckleRange=]>
+java: void setSpeckleRange(int speckleRange)
+FUNC <void cv.StereoMatcher.setSpeckleWindowSize [ARG int speckleWindowSize=]>
+java: void setSpeckleWindowSize(int speckleWindowSize)
+CLASS ::.Calib3d : 
+[CONST CALIB_USE_INTRINSIC_GUESS=1(manual), CONST CALIB_RECOMPUTE_EXTRINSIC=2(manual), CONST CALIB_CHECK_COND=4(manual), CONST CALIB_FIX_SKEW=8(manual), CONST CALIB_FIX_K1=16(manual), CONST CALIB_FIX_K2=32(manual), CONST CALIB_FIX_K3=64(manual), CONST CALIB_FIX_K4=128(manual), CONST CALIB_FIX_INTRINSIC=256(manual), CONST CV_ITERATIVE=0, CONST CV_EPNP=1, CONST CV_P3P=2, CONST CV_DLS=3, CONST LMEDS=4, CONST RANSAC=8, CONST RHO=16, CONST SOLVEPNP_ITERATIVE=0, CONST SOLVEPNP_EPNP=1, CONST SOLVEPNP_P3P=2, CONST SOLVEPNP_DLS=3, CONST SOLVEPNP_UPNP=4, CONST CALIB_CB_ADAPTIVE_THRESH=1, CONST CALIB_CB_NORMALIZE_IMAGE=2, CONST CALIB_CB_FILTER_QUADS=4, CONST CALIB_CB_FAST_CHECK=8, CONST CALIB_CB_SYMMETRIC_GRID=1, CONST CALIB_CB_ASYMMETRIC_GRID=2, CONST CALIB_CB_CLUSTERING=4, CONST CALIB_FIX_ASPECT_RATIO=0x00002, CONST CALIB_FIX_PRINCIPAL_POINT=0x00004, CONST CALIB_ZERO_TANGENT_DIST=0x00008, CONST CALIB_FIX_FOCAL_LENGTH=0x00010, CONST CALIB_FIX_K5=0x01000, CONST CALIB_FIX_K6=0x02000, CONST CALIB_RATIONAL_MODEL=0x04000, CONST CALIB_THIN_PRISM_MODEL=0x08000, CONST CALIB_FIX_S1_S2_S3_S4=0x10000, CONST CALIB_TILTED_MODEL=0x40000, CONST CALIB_FIX_TAUX_TAUY=0x80000, CONST CALIB_USE_QR=0x100000, CONST CALIB_SAME_FOCAL_LENGTH=0x00200, CONST CALIB_ZERO_DISPARITY=0x00400, CONST CALIB_USE_LU=(1 << 17), CONST FM_7POINT=1, CONST FM_8POINT=2, CONST FM_LMEDS=4, CONST FM_RANSAC=8]
+FUNC <Mat cv..estimateAffine2D [ARG Mat from=, ARG Mat to=, ARG Mat inliers=Mat(), ARG int method=RANSAC, ARG double ransacReprojThreshold=3, ARG size_t maxIters=2000, ARG double confidence=0.99, ARG size_t refineIters=10]>
+java: Mat estimateAffine2D(Mat from, Mat to, Mat inliers, int method, double ransacReprojThreshold, long maxIters, double confidence, long refineIters)
+java: Mat estimateAffine2D(Mat from, Mat to)
+FUNC <Mat cv..estimateAffinePartial2D [ARG Mat from=, ARG Mat to=, ARG Mat inliers=Mat(), ARG int method=RANSAC, ARG double ransacReprojThreshold=3, ARG size_t maxIters=2000, ARG double confidence=0.99, ARG size_t refineIters=10]>
+java: Mat estimateAffinePartial2D(Mat from, Mat to, Mat inliers, int method, double ransacReprojThreshold, long maxIters, double confidence, long refineIters)
+java: Mat estimateAffinePartial2D(Mat from, Mat to)
+FUNC <Mat cv..findEssentialMat [ARG Mat points1=, ARG Mat points2=, ARG Mat cameraMatrix=, ARG int method=RANSAC, ARG double prob=0.999, ARG double threshold=1.0, ARG Mat mask=Mat()]>
+java: Mat findEssentialMat(Mat points1, Mat points2, Mat cameraMatrix, int method, double prob, double threshold, Mat mask)
+java: Mat findEssentialMat(Mat points1, Mat points2, Mat cameraMatrix, int method, double prob, double threshold)
+java: Mat findEssentialMat(Mat points1, Mat points2, Mat cameraMatrix)
+FUNC <Mat cv..findEssentialMat [ARG Mat points1=, ARG Mat points2=, ARG double focal=1.0, ARG Point2d pp=Point2d(0, 0), ARG int method=RANSAC, ARG double prob=0.999, ARG double threshold=1.0, ARG Mat mask=Mat()]>
+java: Mat findEssentialMat(Mat points1, Mat points2, double focal, Point pp, int method, double prob, double threshold, Mat mask)
+java: Mat findEssentialMat(Mat points1, Mat points2, double focal, Point pp, int method, double prob, double threshold)
+java: Mat findEssentialMat(Mat points1, Mat points2)
+FUNC <Mat cv..findFundamentalMat [ARG vector_Point2f points1=, ARG vector_Point2f points2=, ARG int method=FM_RANSAC, ARG double param1=3., ARG double param2=0.99, ARG Mat mask=Mat()]>
+java: Mat findFundamentalMat(MatOfPoint2f points1, MatOfPoint2f points2, int method, double param1, double param2, Mat mask)
+java: Mat findFundamentalMat(MatOfPoint2f points1, MatOfPoint2f points2, int method, double param1, double param2)
+java: Mat findFundamentalMat(MatOfPoint2f points1, MatOfPoint2f points2)
+FUNC <Mat cv..findHomography [ARG vector_Point2f srcPoints=, ARG vector_Point2f dstPoints=, ARG int method=0, ARG double ransacReprojThreshold=3, ARG Mat mask=Mat(), ARG int maxIters=2000, ARG double confidence=0.995]>
+java: Mat findHomography(MatOfPoint2f srcPoints, MatOfPoint2f dstPoints, int method, double ransacReprojThreshold, Mat mask, int maxIters, double confidence)
+java: Mat findHomography(MatOfPoint2f srcPoints, MatOfPoint2f dstPoints, int method, double ransacReprojThreshold)
+java: Mat findHomography(MatOfPoint2f srcPoints, MatOfPoint2f dstPoints)
+FUNC <Mat cv..getOptimalNewCameraMatrix [ARG Mat cameraMatrix=, ARG Mat distCoeffs=, ARG Size imageSize=, ARG double alpha=, ARG Size newImgSize=Size(), ARG Rect * validPixROI=0, ARG bool centerPrincipalPoint=false]>
+java: Mat getOptimalNewCameraMatrix(Mat cameraMatrix, Mat distCoeffs, Size imageSize, double alpha, Size newImgSize, Rect validPixROI, boolean centerPrincipalPoint)
+java: Mat getOptimalNewCameraMatrix(Mat cameraMatrix, Mat distCoeffs, Size imageSize, double alpha)
+FUNC <Mat cv..initCameraMatrix2D [ARG vector_vector_Point3f objectPoints=, ARG vector_vector_Point2f imagePoints=, ARG Size imageSize=, ARG double aspectRatio=1.0]>
+java: Mat initCameraMatrix2D(List<MatOfPoint3f> objectPoints, List<MatOfPoint2f> imagePoints, Size imageSize, double aspectRatio)
+java: Mat initCameraMatrix2D(List<MatOfPoint3f> objectPoints, List<MatOfPoint2f> imagePoints, Size imageSize)
+FUNC <Rect cv..getValidDisparityROI [ARG Rect roi1=, ARG Rect roi2=, ARG int minDisparity=, ARG int numberOfDisparities=, ARG int SADWindowSize=]>
+java: Rect getValidDisparityROI(Rect roi1, Rect roi2, int minDisparity, int numberOfDisparities, int SADWindowSize)
+FUNC <Vec3d cv..RQDecomp3x3 [ARG Mat src=, ARG Mat mtxR=, ARG Mat mtxQ=, ARG Mat Qx=Mat(), ARG Mat Qy=Mat(), ARG Mat Qz=Mat()]>
+java: double[] RQDecomp3x3(Mat src, Mat mtxR, Mat mtxQ, Mat Qx, Mat Qy, Mat Qz)
+java: double[] RQDecomp3x3(Mat src, Mat mtxR, Mat mtxQ)
+FUNC <bool cv..findChessboardCorners [ARG Mat image=, ARG Size patternSize=, ARG vector_Point2f corners=, ARG int flags=CALIB_CB_ADAPTIVE_THRESH + CALIB_CB_NORMALIZE_IMAGE]>
+java: boolean findChessboardCorners(Mat image, Size patternSize, MatOfPoint2f corners, int flags)
+java: boolean findChessboardCorners(Mat image, Size patternSize, MatOfPoint2f corners)
+FUNC <bool cv..findCirclesGrid [ARG Mat image=, ARG Size patternSize=, ARG Mat centers=, ARG int flags=CALIB_CB_SYMMETRIC_GRID, ARG Ptr_FeatureDetector blobDetector=SimpleBlobDetector::create()]>
+java: boolean findCirclesGrid(Mat image, Size patternSize, Mat centers, int flags)
+java: boolean findCirclesGrid(Mat image, Size patternSize, Mat centers)
+FUNC <bool cv..solvePnP [ARG vector_Point3f objectPoints=, ARG vector_Point2f imagePoints=, ARG Mat cameraMatrix=, ARG vector_double distCoeffs=, ARG Mat rvec=, ARG Mat tvec=, ARG bool useExtrinsicGuess=false, ARG int flags=SOLVEPNP_ITERATIVE]>
+java: boolean solvePnP(MatOfPoint3f objectPoints, MatOfPoint2f imagePoints, Mat cameraMatrix, MatOfDouble distCoeffs, Mat rvec, Mat tvec, boolean useExtrinsicGuess, int flags)
+java: boolean solvePnP(MatOfPoint3f objectPoints, MatOfPoint2f imagePoints, Mat cameraMatrix, MatOfDouble distCoeffs, Mat rvec, Mat tvec)
+FUNC <bool cv..solvePnPRansac [ARG vector_Point3f objectPoints=, ARG vector_Point2f imagePoints=, ARG Mat cameraMatrix=, ARG vector_double distCoeffs=, ARG Mat rvec=, ARG Mat tvec=, ARG bool useExtrinsicGuess=false, ARG int iterationsCount=100, ARG float reprojectionError=8.0, ARG double confidence=0.99, ARG Mat inliers=Mat(), ARG int flags=SOLVEPNP_ITERATIVE]>
+java: boolean solvePnPRansac(MatOfPoint3f objectPoints, MatOfPoint2f imagePoints, Mat cameraMatrix, MatOfDouble distCoeffs, Mat rvec, Mat tvec, boolean useExtrinsicGuess, int iterationsCount, float reprojectionError, double confidence, Mat inliers, int flags)
+java: boolean solvePnPRansac(MatOfPoint3f objectPoints, MatOfPoint2f imagePoints, Mat cameraMatrix, MatOfDouble distCoeffs, Mat rvec, Mat tvec)
+FUNC <bool cv..stereoRectifyUncalibrated [ARG Mat points1=, ARG Mat points2=, ARG Mat F=, ARG Size imgSize=, ARG Mat H1=, ARG Mat H2=, ARG double threshold=5]>
+java: boolean stereoRectifyUncalibrated(Mat points1, Mat points2, Mat F, Size imgSize, Mat H1, Mat H2, double threshold)
+java: boolean stereoRectifyUncalibrated(Mat points1, Mat points2, Mat F, Size imgSize, Mat H1, Mat H2)
+FUNC <double cv..calibrateCamera [ARG vector_Mat objectPoints=, ARG vector_Mat imagePoints=, ARG Size imageSize=, ARG Mat cameraMatrix=, ARG Mat distCoeffs=, ARG vector_Mat rvecs=, ARG vector_Mat tvecs=, ARG Mat stdDeviationsIntrinsics=, ARG Mat stdDeviationsExtrinsics=, ARG Mat perViewErrors=, ARG int flags=0, ARG TermCriteria criteria=TermCriteria( TermCriteria::COUNT + TermCriteria::EPS, 30, DBL_EPSILON)]>
+java: double calibrateCameraExtended(List<Mat> objectPoints, List<Mat> imagePoints, Size imageSize, Mat cameraMatrix, Mat distCoeffs, List<Mat> rvecs, List<Mat> tvecs, Mat stdDeviationsIntrinsics, Mat stdDeviationsExtrinsics, Mat perViewErrors, int flags, TermCriteria criteria)
+java: double calibrateCameraExtended(List<Mat> objectPoints, List<Mat> imagePoints, Size imageSize, Mat cameraMatrix, Mat distCoeffs, List<Mat> rvecs, List<Mat> tvecs, Mat stdDeviationsIntrinsics, Mat stdDeviationsExtrinsics, Mat perViewErrors, int flags)
+java: double calibrateCameraExtended(List<Mat> objectPoints, List<Mat> imagePoints, Size imageSize, Mat cameraMatrix, Mat distCoeffs, List<Mat> rvecs, List<Mat> tvecs, Mat stdDeviationsIntrinsics, Mat stdDeviationsExtrinsics, Mat perViewErrors)
+FUNC <double cv..calibrateCamera [ARG vector_Mat objectPoints=, ARG vector_Mat imagePoints=, ARG Size imageSize=, ARG Mat cameraMatrix=, ARG Mat distCoeffs=, ARG vector_Mat rvecs=, ARG vector_Mat tvecs=, ARG int flags=0, ARG TermCriteria criteria=TermCriteria( TermCriteria::COUNT + TermCriteria::EPS, 30, DBL_EPSILON)]>
+java: double calibrateCamera(List<Mat> objectPoints, List<Mat> imagePoints, Size imageSize, Mat cameraMatrix, Mat distCoeffs, List<Mat> rvecs, List<Mat> tvecs, int flags, TermCriteria criteria)
+java: double calibrateCamera(List<Mat> objectPoints, List<Mat> imagePoints, Size imageSize, Mat cameraMatrix, Mat distCoeffs, List<Mat> rvecs, List<Mat> tvecs, int flags)
+java: double calibrateCamera(List<Mat> objectPoints, List<Mat> imagePoints, Size imageSize, Mat cameraMatrix, Mat distCoeffs, List<Mat> rvecs, List<Mat> tvecs)
+FUNC <double cv..sampsonDistance [ARG Mat pt1=, ARG Mat pt2=, ARG Mat F=]>
+java: double sampsonDistance(Mat pt1, Mat pt2, Mat F)
+FUNC <double cv..stereoCalibrate [ARG vector_Mat objectPoints=, ARG vector_Mat imagePoints1=, ARG vector_Mat imagePoints2=, ARG Mat cameraMatrix1=, ARG Mat distCoeffs1=, ARG Mat cameraMatrix2=, ARG Mat distCoeffs2=, ARG Size imageSize=, ARG Mat R=, ARG Mat T=, ARG Mat E=, ARG Mat F=, ARG int flags=CALIB_FIX_INTRINSIC, ARG TermCriteria criteria=TermCriteria(TermCriteria::COUNT+TermCriteria::EPS, 30, 1e-6)]>
+java: double stereoCalibrate(List<Mat> objectPoints, List<Mat> imagePoints1, List<Mat> imagePoints2, Mat cameraMatrix1, Mat distCoeffs1, Mat cameraMatrix2, Mat distCoeffs2, Size imageSize, Mat R, Mat T, Mat E, Mat F, int flags, TermCriteria criteria)
+java: double stereoCalibrate(List<Mat> objectPoints, List<Mat> imagePoints1, List<Mat> imagePoints2, Mat cameraMatrix1, Mat distCoeffs1, Mat cameraMatrix2, Mat distCoeffs2, Size imageSize, Mat R, Mat T, Mat E, Mat F, int flags)
+java: double stereoCalibrate(List<Mat> objectPoints, List<Mat> imagePoints1, List<Mat> imagePoints2, Mat cameraMatrix1, Mat distCoeffs1, Mat cameraMatrix2, Mat distCoeffs2, Size imageSize, Mat R, Mat T, Mat E, Mat F)
+FUNC <double cv.fisheye..calibrate [ARG vector_Mat objectPoints=, ARG vector_Mat imagePoints=, ARG Size image_size=, ARG Mat K=, ARG Mat D=, ARG vector_Mat rvecs=, ARG vector_Mat tvecs=, ARG int flags=0, ARG TermCriteria criteria=TermCriteria(TermCriteria::COUNT + TermCriteria::EPS, 100, DBL_EPSILON)]>
+java: double calibrate(List<Mat> objectPoints, List<Mat> imagePoints, Size image_size, Mat K, Mat D, List<Mat> rvecs, List<Mat> tvecs, int flags, TermCriteria criteria)
+java: double calibrate(List<Mat> objectPoints, List<Mat> imagePoints, Size image_size, Mat K, Mat D, List<Mat> rvecs, List<Mat> tvecs, int flags)
+java: double calibrate(List<Mat> objectPoints, List<Mat> imagePoints, Size image_size, Mat K, Mat D, List<Mat> rvecs, List<Mat> tvecs)
+FUNC <double cv.fisheye..stereoCalibrate [ARG vector_Mat objectPoints=, ARG vector_Mat imagePoints1=, ARG vector_Mat imagePoints2=, ARG Mat K1=, ARG Mat D1=, ARG Mat K2=, ARG Mat D2=, ARG Size imageSize=, ARG Mat R=, ARG Mat T=, ARG int flags=fisheye::CALIB_FIX_INTRINSIC, ARG TermCriteria criteria=TermCriteria(TermCriteria::COUNT + TermCriteria::EPS, 100, DBL_EPSILON)]>
+java: double stereoCalibrate(List<Mat> objectPoints, List<Mat> imagePoints1, List<Mat> imagePoints2, Mat K1, Mat D1, Mat K2, Mat D2, Size imageSize, Mat R, Mat T, int flags, TermCriteria criteria)
+java: double stereoCalibrate(List<Mat> objectPoints, List<Mat> imagePoints1, List<Mat> imagePoints2, Mat K1, Mat D1, Mat K2, Mat D2, Size imageSize, Mat R, Mat T, int flags)
+java: double stereoCalibrate(List<Mat> objectPoints, List<Mat> imagePoints1, List<Mat> imagePoints2, Mat K1, Mat D1, Mat K2, Mat D2, Size imageSize, Mat R, Mat T)
+FUNC <float cv..rectify3Collinear [ARG Mat cameraMatrix1=, ARG Mat distCoeffs1=, ARG Mat cameraMatrix2=, ARG Mat distCoeffs2=, ARG Mat cameraMatrix3=, ARG Mat distCoeffs3=, ARG vector_Mat imgpt1=, ARG vector_Mat imgpt3=, ARG Size imageSize=, ARG Mat R12=, ARG Mat T12=, ARG Mat R13=, ARG Mat T13=, ARG Mat R1=, ARG Mat R2=, ARG Mat R3=, ARG Mat P1=, ARG Mat P2=, ARG Mat P3=, ARG Mat Q=, ARG double alpha=, ARG Size newImgSize=, ARG Rect * roi1=, ARG Rect * roi2=, ARG int flags=]>
+java: float rectify3Collinear(Mat cameraMatrix1, Mat distCoeffs1, Mat cameraMatrix2, Mat distCoeffs2, Mat cameraMatrix3, Mat distCoeffs3, List<Mat> imgpt1, List<Mat> imgpt3, Size imageSize, Mat R12, Mat T12, Mat R13, Mat T13, Mat R1, Mat R2, Mat R3, Mat P1, Mat P2, Mat P3, Mat Q, double alpha, Size newImgSize, Rect roi1, Rect roi2, int flags)
+FUNC <int cv..decomposeHomographyMat [ARG Mat H=, ARG Mat K=, ARG vector_Mat rotations=, ARG vector_Mat translations=, ARG vector_Mat normals=]>
+java: int decomposeHomographyMat(Mat H, Mat K, List<Mat> rotations, List<Mat> translations, List<Mat> normals)
+FUNC <int cv..estimateAffine3D [ARG Mat src=, ARG Mat dst=, ARG Mat out=, ARG Mat inliers=, ARG double ransacThreshold=3, ARG double confidence=0.99]>
+java: int estimateAffine3D(Mat src, Mat dst, Mat out, Mat inliers, double ransacThreshold, double confidence)
+java: int estimateAffine3D(Mat src, Mat dst, Mat out, Mat inliers)
+FUNC <int cv..recoverPose [ARG Mat E=, ARG Mat points1=, ARG Mat points2=, ARG Mat R=, ARG Mat t=, ARG double focal=1.0, ARG Point2d pp=Point2d(0, 0), ARG Mat mask=Mat()]>
+java: int recoverPose(Mat E, Mat points1, Mat points2, Mat R, Mat t, double focal, Point pp, Mat mask)
+java: int recoverPose(Mat E, Mat points1, Mat points2, Mat R, Mat t, double focal, Point pp)
+java: int recoverPose(Mat E, Mat points1, Mat points2, Mat R, Mat t)
+FUNC <int cv..recoverPose [ARG Mat E=, ARG Mat points1=, ARG Mat points2=, ARG Mat cameraMatrix=, ARG Mat R=, ARG Mat t=, ARG Mat mask=Mat()]>
+java: int recoverPose(Mat E, Mat points1, Mat points2, Mat cameraMatrix, Mat R, Mat t, Mat mask)
+java: int recoverPose(Mat E, Mat points1, Mat points2, Mat cameraMatrix, Mat R, Mat t)
+FUNC <void cv..Rodrigues [ARG Mat src=, ARG Mat dst=, ARG Mat jacobian=Mat()]>
+java: void Rodrigues(Mat src, Mat dst, Mat jacobian)
+java: void Rodrigues(Mat src, Mat dst)
+FUNC <void cv..calibrationMatrixValues [ARG Mat cameraMatrix=, ARG Size imageSize=, ARG double apertureWidth=, ARG double apertureHeight=, ARG double fovx=, ARG double fovy=, ARG double focalLength=, ARG Point2d principalPoint=, ARG double aspectRatio=]>
+java: void calibrationMatrixValues(Mat cameraMatrix, Size imageSize, double apertureWidth, double apertureHeight, double[] fovx, double[] fovy, double[] focalLength, Point principalPoint, double[] aspectRatio)
+FUNC <void cv..composeRT [ARG Mat rvec1=, ARG Mat tvec1=, ARG Mat rvec2=, ARG Mat tvec2=, ARG Mat rvec3=, ARG Mat tvec3=, ARG Mat dr3dr1=Mat(), ARG Mat dr3dt1=Mat(), ARG Mat dr3dr2=Mat(), ARG Mat dr3dt2=Mat(), ARG Mat dt3dr1=Mat(), ARG Mat dt3dt1=Mat(), ARG Mat dt3dr2=Mat(), ARG Mat dt3dt2=Mat()]>
+java: void composeRT(Mat rvec1, Mat tvec1, Mat rvec2, Mat tvec2, Mat rvec3, Mat tvec3, Mat dr3dr1, Mat dr3dt1, Mat dr3dr2, Mat dr3dt2, Mat dt3dr1, Mat dt3dt1, Mat dt3dr2, Mat dt3dt2)
+java: void composeRT(Mat rvec1, Mat tvec1, Mat rvec2, Mat tvec2, Mat rvec3, Mat tvec3)
+FUNC <void cv..computeCorrespondEpilines [ARG Mat points=, ARG int whichImage=, ARG Mat F=, ARG Mat lines=]>
+java: void computeCorrespondEpilines(Mat points, int whichImage, Mat F, Mat lines)
+FUNC <void cv..convertPointsFromHomogeneous [ARG Mat src=, ARG Mat dst=]>
+java: void convertPointsFromHomogeneous(Mat src, Mat dst)
+FUNC <void cv..convertPointsToHomogeneous [ARG Mat src=, ARG Mat dst=]>
+java: void convertPointsToHomogeneous(Mat src, Mat dst)
+FUNC <void cv..correctMatches [ARG Mat F=, ARG Mat points1=, ARG Mat points2=, ARG Mat newPoints1=, ARG Mat newPoints2=]>
+java: void correctMatches(Mat F, Mat points1, Mat points2, Mat newPoints1, Mat newPoints2)
+FUNC <void cv..decomposeEssentialMat [ARG Mat E=, ARG Mat R1=, ARG Mat R2=, ARG Mat t=]>
+java: void decomposeEssentialMat(Mat E, Mat R1, Mat R2, Mat t)
+FUNC <void cv..decomposeProjectionMatrix [ARG Mat projMatrix=, ARG Mat cameraMatrix=, ARG Mat rotMatrix=, ARG Mat transVect=, ARG Mat rotMatrixX=Mat(), ARG Mat rotMatrixY=Mat(), ARG Mat rotMatrixZ=Mat(), ARG Mat eulerAngles=Mat()]>
+java: void decomposeProjectionMatrix(Mat projMatrix, Mat cameraMatrix, Mat rotMatrix, Mat transVect, Mat rotMatrixX, Mat rotMatrixY, Mat rotMatrixZ, Mat eulerAngles)
+java: void decomposeProjectionMatrix(Mat projMatrix, Mat cameraMatrix, Mat rotMatrix, Mat transVect)
+FUNC <void cv..drawChessboardCorners [ARG Mat image=, ARG Size patternSize=, ARG vector_Point2f corners=, ARG bool patternWasFound=]>
+java: void drawChessboardCorners(Mat image, Size patternSize, MatOfPoint2f corners, boolean patternWasFound)
+FUNC <void cv..filterSpeckles [ARG Mat img=, ARG double newVal=, ARG int maxSpeckleSize=, ARG double maxDiff=, ARG Mat buf=Mat()]>
+java: void filterSpeckles(Mat img, double newVal, int maxSpeckleSize, double maxDiff, Mat buf)
+java: void filterSpeckles(Mat img, double newVal, int maxSpeckleSize, double maxDiff)
+FUNC <void cv..matMulDeriv [ARG Mat A=, ARG Mat B=, ARG Mat dABdA=, ARG Mat dABdB=]>
+java: void matMulDeriv(Mat A, Mat B, Mat dABdA, Mat dABdB)
+FUNC <void cv..projectPoints [ARG vector_Point3f objectPoints=, ARG Mat rvec=, ARG Mat tvec=, ARG Mat cameraMatrix=, ARG vector_double distCoeffs=, ARG vector_Point2f imagePoints=, ARG Mat jacobian=Mat(), ARG double aspectRatio=0]>
+java: void projectPoints(MatOfPoint3f objectPoints, Mat rvec, Mat tvec, Mat cameraMatrix, MatOfDouble distCoeffs, MatOfPoint2f imagePoints, Mat jacobian, double aspectRatio)
+java: void projectPoints(MatOfPoint3f objectPoints, Mat rvec, Mat tvec, Mat cameraMatrix, MatOfDouble distCoeffs, MatOfPoint2f imagePoints)
+FUNC <void cv..reprojectImageTo3D [ARG Mat disparity=, ARG Mat _3dImage=, ARG Mat Q=, ARG bool handleMissingValues=false, ARG int ddepth=-1]>
+java: void reprojectImageTo3D(Mat disparity, Mat _3dImage, Mat Q, boolean handleMissingValues, int ddepth)
+java: void reprojectImageTo3D(Mat disparity, Mat _3dImage, Mat Q, boolean handleMissingValues)
+java: void reprojectImageTo3D(Mat disparity, Mat _3dImage, Mat Q)
+FUNC <void cv..stereoRectify [ARG Mat cameraMatrix1=, ARG Mat distCoeffs1=, ARG Mat cameraMatrix2=, ARG Mat distCoeffs2=, ARG Size imageSize=, ARG Mat R=, ARG Mat T=, ARG Mat R1=, ARG Mat R2=, ARG Mat P1=, ARG Mat P2=, ARG Mat Q=, ARG int flags=CALIB_ZERO_DISPARITY, ARG double alpha=-1, ARG Size newImageSize=Size(), ARG Rect * validPixROI1=0, ARG Rect * validPixROI2=0]>
+java: void stereoRectify(Mat cameraMatrix1, Mat distCoeffs1, Mat cameraMatrix2, Mat distCoeffs2, Size imageSize, Mat R, Mat T, Mat R1, Mat R2, Mat P1, Mat P2, Mat Q, int flags, double alpha, Size newImageSize, Rect validPixROI1, Rect validPixROI2)
+java: void stereoRectify(Mat cameraMatrix1, Mat distCoeffs1, Mat cameraMatrix2, Mat distCoeffs2, Size imageSize, Mat R, Mat T, Mat R1, Mat R2, Mat P1, Mat P2, Mat Q)
+FUNC <void cv..triangulatePoints [ARG Mat projMatr1=, ARG Mat projMatr2=, ARG Mat projPoints1=, ARG Mat projPoints2=, ARG Mat points4D=]>
+java: void triangulatePoints(Mat projMatr1, Mat projMatr2, Mat projPoints1, Mat projPoints2, Mat points4D)
+FUNC <void cv..validateDisparity [ARG Mat disparity=, ARG Mat cost=, ARG int minDisparity=, ARG int numberOfDisparities=, ARG int disp12MaxDisp=1]>
+java: void validateDisparity(Mat disparity, Mat cost, int minDisparity, int numberOfDisparities, int disp12MaxDisp)
+java: void validateDisparity(Mat disparity, Mat cost, int minDisparity, int numberOfDisparities)
+FUNC <void cv.fisheye..distortPoints [ARG Mat undistorted=, ARG Mat distorted=, ARG Mat K=, ARG Mat D=, ARG double alpha=0]>
+java: void distortPoints(Mat undistorted, Mat distorted, Mat K, Mat D, double alpha)
+java: void distortPoints(Mat undistorted, Mat distorted, Mat K, Mat D)
+FUNC <void cv.fisheye..estimateNewCameraMatrixForUndistortRectify [ARG Mat K=, ARG Mat D=, ARG Size image_size=, ARG Mat R=, ARG Mat P=, ARG double balance=0.0, ARG Size new_size=Size(), ARG double fov_scale=1.0]>
+java: void estimateNewCameraMatrixForUndistortRectify(Mat K, Mat D, Size image_size, Mat R, Mat P, double balance, Size new_size, double fov_scale)
+java: void estimateNewCameraMatrixForUndistortRectify(Mat K, Mat D, Size image_size, Mat R, Mat P)
+FUNC <void cv.fisheye..initUndistortRectifyMap [ARG Mat K=, ARG Mat D=, ARG Mat R=, ARG Mat P=, ARG Size size=, ARG int m1type=, ARG Mat map1=, ARG Mat map2=]>
+java: void initUndistortRectifyMap(Mat K, Mat D, Mat R, Mat P, Size size, int m1type, Mat map1, Mat map2)
+FUNC <void cv.fisheye..projectPoints [ARG vector_Point3f objectPoints=, ARG vector_Point2f imagePoints=, ARG Mat rvec=, ARG Mat tvec=, ARG Mat K=, ARG Mat D=, ARG double alpha=0, ARG Mat jacobian=Mat()]>
+java: void projectPoints(MatOfPoint3f objectPoints, MatOfPoint2f imagePoints, Mat rvec, Mat tvec, Mat K, Mat D, double alpha, Mat jacobian)
+java: void projectPoints(MatOfPoint3f objectPoints, MatOfPoint2f imagePoints, Mat rvec, Mat tvec, Mat K, Mat D)
+FUNC <void cv.fisheye..stereoRectify [ARG Mat K1=, ARG Mat D1=, ARG Mat K2=, ARG Mat D2=, ARG Size imageSize=, ARG Mat R=, ARG Mat tvec=, ARG Mat R1=, ARG Mat R2=, ARG Mat P1=, ARG Mat P2=, ARG Mat Q=, ARG int flags=, ARG Size newImageSize=Size(), ARG double balance=0.0, ARG double fov_scale=1.0]>
+java: void stereoRectify(Mat K1, Mat D1, Mat K2, Mat D2, Size imageSize, Mat R, Mat tvec, Mat R1, Mat R2, Mat P1, Mat P2, Mat Q, int flags, Size newImageSize, double balance, double fov_scale)
+java: void stereoRectify(Mat K1, Mat D1, Mat K2, Mat D2, Size imageSize, Mat R, Mat tvec, Mat R1, Mat R2, Mat P1, Mat P2, Mat Q, int flags)
+FUNC <void cv.fisheye..undistortImage [ARG Mat distorted=, ARG Mat undistorted=, ARG Mat K=, ARG Mat D=, ARG Mat Knew=cv::Mat(), ARG Size new_size=Size()]>
+java: void undistortImage(Mat distorted, Mat undistorted, Mat K, Mat D, Mat Knew, Size new_size)
+java: void undistortImage(Mat distorted, Mat undistorted, Mat K, Mat D)
+FUNC <void cv.fisheye..undistortPoints [ARG Mat distorted=, ARG Mat undistorted=, ARG Mat K=, ARG Mat D=, ARG Mat R=Mat(), ARG Mat P=Mat()]>
+java: void undistortPoints(Mat distorted, Mat undistorted, Mat K, Mat D, Mat R, Mat P)
+java: void undistortPoints(Mat distorted, Mat undistorted, Mat K, Mat D)
