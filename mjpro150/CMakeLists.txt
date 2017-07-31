@@ -77,7 +77,7 @@ add_library(${PROJECT_NAME} src/sensor/kinectSimulator.cpp src/sensor/noiseutils
 if (APPLE)
 	target_link_libraries(${PROJECT_NAME} -lmujoco150 -L${PROJECT_SOURCE_DIR}/lib/macos assimp ${PCL_IO_LIBRARIES} ${CGAL_LIBRARY} ${NOISE_LIBRARY} -lglfw.3 ${OpenCV_LIBS} ${LIBS} ${OPENGL_gl_LIBRARY})
 elseif (UNIX)
-    target_link_libraries(${PROJECT_NAME}  -fopenmp -lmujoco150 -L${PROJECT_SOURCE_DIR}/lib/unix -lGL -lglew -lglfw assimp CGAL noise ${OpenCV_LIBS} ${LIBS} ${OPENGL_gl_LIBRARY})
+    target_link_libraries(${PROJECT_NAME}  -fopenmp -lmujoco150  ${PCL_IO_LIBRARIES} -lboost_system -L${PROJECT_SOURCE_DIR}/lib/unix -lGL -lglew -lglfw assimp CGAL noise ${OpenCV_LIBS} ${LIBS} ${OPENGL_gl_LIBRARY})
 endif ()
 
 file(GLOB_RECURSE CTRL_SOURCES "src/controller/*.cpp")
