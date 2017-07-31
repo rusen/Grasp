@@ -7,7 +7,7 @@ message("Starteda")
 
 # Add compile options here.
 if (APPLE)
-	add_compile_options(-O0 -g3 -fopenmp -I${PROJECT_SOURCE_DIR}/include -frounding-math)
+	add_compile_options(-O0 -g3 -I${PROJECT_SOURCE_DIR}/include -frounding-math)
 elseif (UNIX)
 	add_compile_options(-O0 -g3 -fopenmp -I${PROJECT_SOURCE_DIR}/include -mavx -frounding-math)
 	set(OpenCV_DIR "${PROJECT_SOURCE_DIR}/lib/unix/opencv-3.2.0/release")
@@ -58,10 +58,9 @@ find_package(PCL 1.3 QUIET REQUIRED COMPONENTS io)
 if(PCL_FOUND)
   message("Found PCL")
   include_directories(${PCL_INCLUDE_DIRS})
-  # in case your PCL installation is part of ros you might need to add this include path
-  #include_directories(${PCL_INCLUDE_DIRS} /opt/ros/<ros_distro>/include/)
-  set(LIBS ${LIBS} ${PCL_LIBRARIES})
+  link_directories(${PCL_LIBRARY_DIRS})
   add_definitions(${PCL_DEFINITIONS})
+  #  set(LIBS ${LIBS} ${PCL_LIBRARIES})
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS} -DHAVE_PCL")
 endif(PCL_FOUND)
 
@@ -70,10 +69,13 @@ message("Found OpenCV")
 include_directories(${OpenCV_INCLUDE_DIRS})
 set(LIBS ${LIBS} ${OpenCV_LIBS})
 
+find_library(CGAL_LIBRARY CGAL /usr/local)
+find_library(NOISE_LIBRARY noise /usr/local)
+
 add_library(${PROJECT_NAME} src/sensor/kinectSimulator.cpp src/sensor/noiseutils.cpp)
 
 if (APPLE)
-    target_link_libraries(${PROJECT_NAME}  -fopenmp -lmujoco150 -L${PROJECT_SOURCE_DIR}/lib/macos -lglfw.3 assimp CGAL noise ${OpenCV_LIBS} ${LIBS} ${OPENGL_gl_LIBRARY})
+	target_link_libraries(${PROJECT_NAME} -lmujoco150 -L${PROJECT_SOURCE_DIR}/lib/macos assimp ${PCL_IO_LIBRARIES} ${CGAL_LIBRARY} ${NOISE_LIBRARY} -lglfw.3 ${OpenCV_LIBS} ${LIBS} ${OPENGL_gl_LIBRARY})
 elseif (UNIX)
     target_link_libraries(${PROJECT_NAME}  -fopenmp -lmujoco150 -L${PROJECT_SOURCE_DIR}/lib/unix -lGL -lglew -lglfw assimp CGAL noise ${OpenCV_LIBS} ${LIBS} ${OPENGL_gl_LIBRARY})
 endif ()
