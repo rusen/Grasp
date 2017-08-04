@@ -56,7 +56,7 @@ static const int perm[512] = {
   138,236,205,93,222,114,67,29,24,72,243,141,128,195,78,66,215,61,156,180
 };
 
-namespace render_kinect
+namespace Grasp
 {
   class SimplexNoise : public Noise
   {

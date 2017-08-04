@@ -37,7 +37,7 @@
 
 #include <sensor/noise.h>
 
-namespace render_kinect
+namespace Grasp
 {
   class GaussianNoise : public Noise
   {
@@ -50,7 +50,7 @@ namespace render_kinect
     
     void generateNoiseField( cv::Mat &noise_field)
     {
-      noise_field = cv::Mat(height_,width_,CV_32FC1);
+      noise_field = cv::Mat(height_,width_, CV_32FC1);
       cv::randn(noise_field, mean_, std_);
     }
     

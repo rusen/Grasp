@@ -42,7 +42,7 @@
 
 #include <opencv2/opencv.hpp>
 
-namespace render_kinect
+namespace Grasp
 {
   enum NoiseType
   {
@@ -60,7 +60,10 @@ namespace render_kinect
     double z_near = 0.35, z_far = 1.4;
     double fx_ = 575.0, fy_ = 575.0;
     double cx_ = 320, cy_ = 240;
-    double tx_ = 0.075;
+    double tx_ = 0.0075;
+
+    // Camera's position relative to the hand.
+ //   double relPosHand[3] =
 
     NoiseType noise_ = GAUSSIAN;
 

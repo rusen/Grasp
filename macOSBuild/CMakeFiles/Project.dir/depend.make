@@ -212,6 +212,11 @@ CMakeFiles/Project.dir/src/sensor/kinectSimulator.o: /Users/rusi/git/Grasp/mjpro
 CMakeFiles/Project.dir/src/sensor/kinectSimulator.o: /Users/rusi/git/Grasp/mjpro150/include/Eigen/src/plugins/CommonCwiseUnaryOps.h
 CMakeFiles/Project.dir/src/sensor/kinectSimulator.o: /Users/rusi/git/Grasp/mjpro150/include/Eigen/src/plugins/MatrixCwiseBinaryOps.h
 CMakeFiles/Project.dir/src/sensor/kinectSimulator.o: /Users/rusi/git/Grasp/mjpro150/include/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+CMakeFiles/Project.dir/src/sensor/kinectSimulator.o: /Users/rusi/git/Grasp/mjpro150/include/mjdata.h
+CMakeFiles/Project.dir/src/sensor/kinectSimulator.o: /Users/rusi/git/Grasp/mjpro150/include/mjmodel.h
+CMakeFiles/Project.dir/src/sensor/kinectSimulator.o: /Users/rusi/git/Grasp/mjpro150/include/mjrender.h
+CMakeFiles/Project.dir/src/sensor/kinectSimulator.o: /Users/rusi/git/Grasp/mjpro150/include/mjvisualize.h
+CMakeFiles/Project.dir/src/sensor/kinectSimulator.o: /Users/rusi/git/Grasp/mjpro150/include/mujoco.h
 CMakeFiles/Project.dir/src/sensor/kinectSimulator.o: /Users/rusi/git/Grasp/mjpro150/include/sensor/camera.h
 CMakeFiles/Project.dir/src/sensor/kinectSimulator.o: /Users/rusi/git/Grasp/mjpro150/include/sensor/gaussian.h
 CMakeFiles/Project.dir/src/sensor/kinectSimulator.o: /Users/rusi/git/Grasp/mjpro150/include/sensor/kinectSimulator.h

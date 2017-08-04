@@ -1048,6 +1048,28 @@ lapacke_mangling.h
 
 /Users/rusi/git/Grasp/mjpro150/include/Eigen/src/plugins/MatrixCwiseUnaryOps.h
 
+/Users/rusi/git/Grasp/mjpro150/include/mjdata.h
+
+/Users/rusi/git/Grasp/mjpro150/include/mjmodel.h
+
+/Users/rusi/git/Grasp/mjpro150/include/mjrender.h
+
+/Users/rusi/git/Grasp/mjpro150/include/mjvisualize.h
+
+/Users/rusi/git/Grasp/mjpro150/include/mujoco.h
+stdlib.h
+/Users/rusi/git/Grasp/mjpro150/include/stdlib.h
+math.h
+/Users/rusi/git/Grasp/mjpro150/include/math.h
+mjmodel.h
+/Users/rusi/git/Grasp/mjpro150/include/mjmodel.h
+mjdata.h
+/Users/rusi/git/Grasp/mjpro150/include/mjdata.h
+mjvisualize.h
+/Users/rusi/git/Grasp/mjpro150/include/mjvisualize.h
+mjrender.h
+/Users/rusi/git/Grasp/mjpro150/include/mjrender.h
+
 /Users/rusi/git/Grasp/mjpro150/include/sensor/camera.h
 opencv2/opencv.hpp
 -
@@ -1057,6 +1079,8 @@ sensor/noise.h
 -
 
 /Users/rusi/git/Grasp/mjpro150/include/sensor/kinectSimulator.h
+mujoco.h
+/Users/rusi/git/Grasp/mjpro150/include/sensor/mujoco.h
 boost/shared_ptr.hpp
 -
 sensor/objectMeshModel.h

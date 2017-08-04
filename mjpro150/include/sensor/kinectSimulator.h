@@ -38,6 +38,7 @@
 #ifndef KINECTSIMULATOR_H_
 #define KINECTSIMULATOR_H_
 
+#include "mujoco.h"
 #include <boost/shared_ptr.hpp>
 
 #include <sensor/objectMeshModel.h>
@@ -57,14 +58,11 @@ inline double sq(float x)
 }
 
 
-namespace render_kinect
+namespace Grasp
 {
   class KinectSimulator
   {
   private:
-
-    boost::shared_ptr<ObjectMeshModel> model_;
-    TreeAndTri* search_;
 
     Camera camera_;
     static const float invalid_disp_;
@@ -101,7 +99,7 @@ namespace render_kinect
 
     uchar getBG ()const{return background_;}
 
-    void intersect(const Eigen::Affine3d &p_transform,//tf::Transform &p_transform, 
+    void intersect(const mjModel* m, mjData* d,//tf::Transform &p_transform,
 		   cv::Mat &point_cloud,
 		   cv::Mat &depth_map,
 		   cv::Mat &labels);

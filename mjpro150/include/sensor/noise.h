@@ -35,7 +35,7 @@
 #ifndef _NOISE_H_
 #define _NOISE_H_
 
-namespace render_kinect
+namespace Grasp
 {
   class Noise
   {

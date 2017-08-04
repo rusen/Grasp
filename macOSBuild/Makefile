@@ -197,6 +197,21 @@ src/planner/GraspPlanner.s:
 .PHONY : src/planner/GraspPlanner.s
 
 # target to build an object file
+src/sensor/CollectData.o:
+	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o
+.PHONY : src/sensor/CollectData.o
+
+# target to preprocess a source file
+src/sensor/CollectData.i:
+	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/sensor/CollectData.i
+.PHONY : src/sensor/CollectData.i
+
+# target to generate assembly for a file
+src/sensor/CollectData.s:
+	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/sensor/CollectData.s
+.PHONY : src/sensor/CollectData.s
+
+# target to build an object file
 src/sensor/kinectSimulator.o:
 	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o
 	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/sensor/kinectSimulator.o
@@ -254,6 +269,9 @@ help:
 	@echo "... src/planner/GraspPlanner.o"
 	@echo "... src/planner/GraspPlanner.i"
 	@echo "... src/planner/GraspPlanner.s"
+	@echo "... src/sensor/CollectData.o"
+	@echo "... src/sensor/CollectData.i"
+	@echo "... src/sensor/CollectData.s"
 	@echo "... src/sensor/kinectSimulator.o"
 	@echo "... src/sensor/kinectSimulator.i"
 	@echo "... src/sensor/kinectSimulator.s"

@@ -6,6 +6,9 @@
  */
 
 #include <planner/GraspPlanner.h>
+#include <Eigen/Geometry>
+#include <Eigen/Core>
+#include <thread>
 
 namespace Grasp {
 
@@ -16,6 +19,11 @@ void copyArray(glm::vec3 d, double*s, int c)
 }
 
 GraspPlanner::GraspPlanner() {
+
+    // Create and start kinect simulator.
+	CameraInfo camInfo;
+    Simulator = new Simulate(camInfo, "text", "text2");
+//    std::thread camThread(getDepthData, window, m, d, Simulator);
 
 	// Allocate space for trajectory arrays.
 	initialApproachPos = new glm::vec3[approachCounterLimit];
@@ -56,7 +64,6 @@ GraspPlanner::~GraspPlanner() {
 glm::vec3 getPt( glm::vec3 n1 , glm::vec3 n2 , float perc )
 {
     glm::vec3 diff = n2 - n1;
-
     return n1 + ( diff * perc );
 }
 
@@ -158,7 +165,7 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, HandControllerInter
 	{
 	case initial:
 		// Set initial position of the hand.
-		if (~startFlag)
+		if (!startFlag)
 		{
 			startFlag = true;
 			controller.SetPose(m, d, initialApproachPos[0], initialApproachQuat[0]);
@@ -167,8 +174,27 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, HandControllerInter
 		success = handController->Grasp(m, d, initialGrasp);
 		if (success){
 			ComputeTrajectory();
+			startFlag = false;
+			graspState = collectingData;
+		}
+		break;
+	case collectingData:
+		// Data collection from the kinect camera. We start a new thread with the camera acquisition function, and wait for it to finish.
+		if (!startFlag)
+		{
+			startFlag = true;
+	//		CollectData(Simulator, m, d, camSize);
+			std::thread camThread(CollectData, Simulator, m, d, camSize);
+		}
+
+		// Processing done, move on.
+		if (finishFlag)
+		{
+			finishFlag = false;
+			startFlag = false;
 			graspState = approaching;
 		}
+
 		break;
 	case approaching:
 		success = FollowTrajectory(m, d, initialApproach);

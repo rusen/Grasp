@@ -162,6 +162,11 @@
 			<location>/Users/rusi/git/Grasp/mjpro150/src/planner/GraspPlanner.cpp</location>
 		</link>
 		<link>
+			<name>[Targets]/[exe] basicGrasp/Source Files/CollectData.cpp</name>
+			<type>1</type>
+			<location>/Users/rusi/git/Grasp/mjpro150/src/sensor/CollectData.cpp</location>
+		</link>
+		<link>
 			<name>[Targets]/[exe] basicGrasp/Source Files/kinectSimulator.cpp</name>
 			<type>1</type>
 			<location>/Users/rusi/git/Grasp/mjpro150/src/sensor/kinectSimulator.cpp</location>

@@ -52,7 +52,7 @@
 
 static unsigned countf = 0;
 
-namespace render_kinect {
+namespace Grasp {
 
   class Simulate {
   public:
@@ -77,15 +77,12 @@ namespace render_kinect {
       delete object_model_;
     }
 
-    void simulateMeasurement(const Eigen::Affine3d &new_tf, bool store_depth, bool store_label, bool store_pcd) {
+    void simulateMeasurement(const mjModel* m, mjData* d) {
       countf++;
       
-      // update old transform
-      transform_ = new_tf;
-
       // simulate measurement of object and store in image, point cloud and labeled image
       cv::Mat p_result;
-      object_model_->intersect(transform_, point_cloud_, depth_im_, labels_);
+      object_model_->intersect(m, d, point_cloud_, depth_im_, labels_);
       
       // in case object is not in view, don't store any data
       // However, if background is used, there will be points in the point cloud
@@ -96,31 +93,8 @@ namespace render_kinect {
 	return;
       }
 
-      // store on disk
-      if (store_depth) {
-	std::stringstream lD;
-	lD << out_path_ << "depth_orig" << std::setw(3) << std::setfill('0')
-	   << countf << ".png";
-	convertScaleAbs(depth_im_, scaled_im_, 255.0f);
-	cv::imwrite(lD.str().c_str(), scaled_im_);
-      }
-
-      // store on disk
-      if (store_label) {
-	std::stringstream lD;
-	lD << out_path_ << "labels" << std::setw(3) << std::setfill('0')
-	   << countf << ".png";
-	cv::imwrite(lD.str().c_str(), labels_);
-      }
-
-      //convert point cloud to pcl/pcd format
-      if (store_pcd) {
 
 #ifdef HAVE_PCL
-	std::stringstream lD;
-	lD << out_path_ << "point_cloud" << std::setw(3)
-	   << std::setfill('0') << countf << ".pcd";
-
 	pcl::PointCloud<pcl::PointXYZ> cloud;
 	// Fill in the cloud data
 	cloud.width = point_cloud_.rows;
@@ -134,14 +108,9 @@ namespace render_kinect {
 	  cloud.points[i].y = point[1];
 	  cloud.points[i].z = point[2];
 	}
-	
-	if (pcl::io::savePCDFileBinary(lD.str(), cloud) != 0)
-	  std::cout << "Couldn't store point cloud at " << lD.str() << std::endl;
-
 #else
 	std::cout << "Couldn't store point cloud since PCL is not installed." << std::endl;
 #endif
-      }
     }
 
     KinectSimulator *object_model_;
@@ -153,5 +122,8 @@ namespace render_kinect {
 
   };
 
-} //namespace render_kinect
+  // Function to collect data from simulated Kinect camera.
+  unsigned char* CollectData(Simulate* Simulator, const mjModel* m, mjData* d, int * camSize);
+
+} //namespace Grasp
 #endif // SIMULATE_H

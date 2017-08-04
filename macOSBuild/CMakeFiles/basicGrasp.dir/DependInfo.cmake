@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/rusi/git/Grasp/mjpro150/src/controller/HandControllerInterface.cpp" "/Users/rusi/git/Grasp/macOSBuild/CMakeFiles/basicGrasp.dir/src/controller/HandControllerInterface.o"
   "/Users/rusi/git/Grasp/mjpro150/src/controller/MPLHandController.cpp" "/Users/rusi/git/Grasp/macOSBuild/CMakeFiles/basicGrasp.dir/src/controller/MPLHandController.o"
   "/Users/rusi/git/Grasp/mjpro150/src/planner/GraspPlanner.cpp" "/Users/rusi/git/Grasp/macOSBuild/CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o"
+  "/Users/rusi/git/Grasp/mjpro150/src/sensor/CollectData.cpp" "/Users/rusi/git/Grasp/macOSBuild/CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o"
   "/Users/rusi/git/Grasp/mjpro150/src/sensor/kinectSimulator.cpp" "/Users/rusi/git/Grasp/macOSBuild/CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o"
   "/Users/rusi/git/Grasp/mjpro150/src/sensor/noiseutils.cpp" "/Users/rusi/git/Grasp/macOSBuild/CMakeFiles/basicGrasp.dir/src/sensor/noiseutils.o"
   )

@@ -84,10 +84,6 @@ file(GLOB_RECURSE CTRL_SOURCES "src/controller/*.cpp")
 file(GLOB_RECURSE PLAN_SOURCES "src/planner/*.cpp")
 file(GLOB_RECURSE SNSR_SOURCES "src/sensor/*.cpp")
 
-if (UNIX)
-add_executable(basicGrasp src/basicGrasp.cpp ${CTRL_SOURCES} ${PLAN_SOURCES} ${SNSR_SOURCES})
-endif (UNIX)
-
 add_executable(basicGrasp src/basicGrasp.cpp ${CTRL_SOURCES} ${PLAN_SOURCES} ${SNSR_SOURCES})
 
 target_link_libraries(basicGrasp ${PROJECT_NAME})

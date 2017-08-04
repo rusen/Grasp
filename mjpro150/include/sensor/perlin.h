@@ -11,7 +11,7 @@
 #include <libnoise/noise.h>
 using namespace noise;
 
-namespace render_kinect
+namespace Grasp
 {
   class PerlinNoise : public Noise
   {

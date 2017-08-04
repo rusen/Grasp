@@ -73,7 +73,7 @@
 //static unsigned countf = 0;
 //static const int prec = 5;
 
-namespace render_kinect {
+namespace Grasp {
 
   const float KinectSimulator::invalid_disp_ = 99999999.9;
   const float KinectSimulator::window_inlier_distance_ = 0.1;
@@ -88,15 +88,6 @@ namespace render_kinect {
     , noisy_labels_(0)
   {
     
-    std::cout << "Width and Height: " << p_camera_info.width << "x"
-	      << p_camera_info.height << std::endl;
-    std::cout << "Loading models for objects: " << object_name << std::endl;
-
-    model_ = boost::shared_ptr<ObjectMeshModel>(new ObjectMeshModel(object_name));
-    
-    search_ = new TreeAndTri; 
-    updateTree();
-
     // colour map assumes there is only one object
     color_map_.push_back(cv::Scalar( rand()&255, rand()&255, rand()&255 ));
 
@@ -160,39 +151,13 @@ namespace render_kinect {
       delete noise_gen_;
   }
   
-  // Function that exchanges current object transform
-  void KinectSimulator::updateObjectPoses(const Eigen::Affine3d &p_transform)   
-  {
-    model_->updateTransformation(p_transform);
-  }
-  
-  // Function that triggers AABB tree update by exchanging old vertices 
-  // with new vertices according to the updated transform
-  void KinectSimulator::updateTree()
-  {
-    model_->uploadVertices(search_);
-    model_->uploadIndices(search_);
-    // since we are only dealing with one mesh for now, ID=0
-    model_->uploadPartIDs(search_, 0);
-    
-    search_->tree.rebuild(search_->triangles.begin(), search_->triangles.end());
-    search_->tree.accelerate_distance_queries();
-  }
   
   // Function that intersects rays with the object model at current state.
-  void KinectSimulator::intersect(const Eigen::Affine3d &p_transform, 
+  void KinectSimulator::intersect(const mjModel* m, mjData* d,
 				  cv::Mat &point_cloud,
 				  cv::Mat &depth_map,
 				  cv::Mat &labels) 
   {
-    // Note that for this simple example case of one rigid object, the tree would actually not needed 
-    // to be updated. Instead the camera could be moved and rays could be casted from these 
-    // new positions.
-    // However, for articulated or multiple rigid objects that change their configuration over 
-    // time, this update is necessary and is therefore kept in this code.
-    updateObjectPoses(p_transform);
-    updateTree();
-
     // allocate memory for depth map and labels
     depth_map = cv::Mat(camera_.getHeight(), camera_.getWidth(), CV_64FC1);
     depth_map.setTo(0.0);
@@ -205,17 +170,24 @@ namespace render_kinect {
     int n_occluded = 0;
     vec.reserve(camera_.getHeight() * camera_.getWidth());
 
-#if HAVE_OMP
-#pragma omp parallel for collapse(2)
-#endif
+    mjtNum pnt[3] = {0,0,0};
+    mjtNum pnt2[3] = {0,0,1};
+    int * geomId = new int();
+
     for(int c=0; c<camera_.getWidth(); ++c) {
       for(int r=0; r<camera_.getHeight(); ++r) {
+
 	// compute ray from pixel and camera configuration
+    double distance  = mj_ray (m, d, pnt, pnt2, NULL, true, 0, geomId);
 	cv::Point3f ray = camera_.projectPixelTo3dRay(cv::Point2f(c,r));
+
+	// Rotate ray based on the current camera pose.
+
+
+/*
 	// check if there is any intersection of the ray with an object by do_intersect
 	uint32_t reach_mesh = search_->tree.do_intersect(Ray(Point(0,0,0), Vector(ray.x, ray.y, ray.z)));
 
-	/*
 	if (reach_mesh){
 	  // if there is one or many intersections, order them according to distance to camera 
 	  // and continue computation with closest
@@ -298,12 +270,11 @@ namespace render_kinect {
 	      } // if there are non-zero intersections from right camera
 	    } // if mesh reached from right camera
 	  } // if non-zero intersections
-
 	} // if mesh reached 
+
 	*/
       } // camera_.getHeight()
     } // camera_.getWidth()
-
 
     // Filter disparity image and add noise 
     cv::Mat out_disp, out_labels;
@@ -331,6 +302,7 @@ namespace render_kinect {
       }
     }
     point_cloud = cv::Mat(vec).reshape(1).clone();
+
   }
 
   // filter disparity with a 9x9 correlation window

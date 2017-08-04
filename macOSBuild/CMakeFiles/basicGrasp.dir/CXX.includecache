@@ -1913,6 +1913,10 @@ controller/HandControllerInterface.h
 -
 controller/MPLHandController.h
 -
+sensor/simulate.h
+-
+sensor/camera.h
+-
 glm/glm.hpp
 -
 glm/gtc/quaternion.hpp
@@ -1941,6 +1945,8 @@ sensor/noise.h
 -
 
 /Users/rusi/git/Grasp/mjpro150/include/sensor/kinectSimulator.h
+mujoco.h
+/Users/rusi/git/Grasp/mjpro150/include/sensor/mujoco.h
 boost/shared_ptr.hpp
 -
 sensor/objectMeshModel.h
@@ -2037,8 +2043,12 @@ mujoco.h
 /Users/rusi/git/Grasp/mjpro150/src/mujoco.h
 glfw3.h
 /Users/rusi/git/Grasp/mjpro150/src/glfw3.h
+opencv2/core/core.hpp
+-
+opencv2/highgui/highgui.hpp
+-
 stdio.h
-/Users/rusi/git/Grasp/mjpro150/src/stdio.h
+-
 stdlib.h
 /Users/rusi/git/Grasp/mjpro150/src/stdlib.h
 string.h
@@ -2080,6 +2090,24 @@ cmath
 
 /Users/rusi/git/Grasp/mjpro150/src/planner/GraspPlanner.cpp
 planner/GraspPlanner.h
+-
+Eigen/Geometry
+-
+Eigen/Core
+-
+thread
+-
+
+/Users/rusi/git/Grasp/mjpro150/src/sensor/CollectData.cpp
+sensor/simulate.h
+-
+mujoco.h
+/Users/rusi/git/Grasp/mjpro150/src/sensor/mujoco.h
+Eigen/Geometry
+-
+Eigen/Core
+-
+thread
 -
 
 /Users/rusi/git/Grasp/mjpro150/src/sensor/kinectSimulator.cpp

@@ -86,7 +86,7 @@ struct TreeAndTri {
   Tree tree;
 };
 
-namespace render_kinect
+namespace Grasp
 {
   // Class that stores all the object geometry information and transformation
   class ObjectMeshModel

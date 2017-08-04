@@ -11,6 +11,8 @@
 #include "mujoco.h"
 #include <controller/HandControllerInterface.h>
 #include <controller/MPLHandController.h>
+#include <sensor/simulate.h>
+#include <sensor/camera.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/quaternion.hpp>
 #include <glm/gtx/quaternion.hpp>
@@ -23,12 +25,16 @@
 
 namespace Grasp {
 
-enum state { initial, approaching, atPreGraspLocation, atFinalApproach, readyToGrasp, grasping, lifting, done };
+enum state { initial, collectingData, approaching, atPreGraspLocation, atFinalApproach, readyToGrasp, grasping, lifting, done };
 enum handType {MPL};
 enum approachType {initialApproach, finalApproach};
 
 class GraspPlanner {
 public:
+
+	int camSize[2] = {480, 640};
+	unsigned char depthBuffer[640*480*3];
+
 	GraspPlanner();
 	virtual ~GraspPlanner();
 
@@ -44,6 +50,7 @@ public:
 private:
 	state graspState = initial;
 	bool startFlag = false;
+	bool finishFlag = false;
 
 	// Steps to perform approach.
 	int counter = 0;
@@ -62,6 +69,10 @@ private:
 
 	// Hand controller allocation.
 	MPLHandController controller;
+
+	// Cam parameters and buffers.
+	// Rendering params
+	Simulate* Simulator = NULL;
 };
 
 
