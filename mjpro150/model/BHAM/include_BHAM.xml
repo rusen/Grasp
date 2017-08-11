@@ -1,0 +1,87 @@
+<mujoco model="BHAM">
+    
+    <compiler angle="radian" meshdir="mesh/" texturedir="texture/" convexhull="true"/>
+    <option timestep="0.002" iterations="50" apirate="50" noslip_iterations="10"/>
+    <size njmax="600" nconmax="150" nstack="300000"/>
+
+    <default>
+		<default class="BHAM"> 
+			<geom material="MatMesh" contype="1" conaffinity="1" condim="6" solimp="0.99 0.999 0.1" solref="0.04 1.0"/>
+        	<joint limited="true" damping="0.2" armature=".01"/>
+        	<site material="MatTouch" type="ellipsoid" group="3"/>
+            <position kp="10" ctrllimited="true" forcelimited="true" forcerange="-20 20"/>
+		</default>
+
+        <default class="IMU">
+	        <site material="MatIMU" type="box" group="4"/>
+        </default>
+        
+        <default class="free">
+            <joint type="free" damping="0" armature="0" limited="false"/>
+        </default>     
+    </default>
+
+    <asset>
+		<mesh name="righthandbase" 		file="righthandbase.stl"/>
+		<mesh name="fore_basecover" 	file="fore_basecover.stl"/>
+		<mesh name="fore_distalp" 	file="fore_distalp.stl"/>
+		<mesh name="fore_middlep" 	file="fore_middlep.stl"/>
+		<mesh name="fore_proximalp" 	file="fore_proximalp.stl"/>
+		<mesh name="little_basecover" 	file="little_basecover.stl"/>
+		<mesh name="little_distalp" 	file="little_distalp.stl"/>
+		<mesh name="little_middlep" 	file="little_middlep.stl"/>
+		<mesh name="little_proximalp" 	file="little_proximalp.stl"/>
+		<mesh name="middle_basecover" 	file="middle_basecover.stl"/>
+		<mesh name="middle_distalp" 	file="middle_distalp.stl"/>
+		<mesh name="middle_middlep" 	file="middle_middlep.stl"/>
+		<mesh name="middle_proximalp" 	file="middle_proximalp.stl"/>
+		<mesh name="ring_basecover" 	file="ring_basecover.stl"/>
+		<mesh name="ring_distalp" 	file="ring_distalp.stl"/>
+		<mesh name="ring_middlep" 	file="ring_middlep.stl"/>
+		<mesh name="ring_proximalp" 	file="ring_proximalp.stl"/>
+		<mesh name="thumb_basecover" 	file="thumb_basecover.stl"/>
+		<mesh name="thumb_distalp" 	file="thumb_distalp.stl"/>
+		<mesh name="thumb_middlep" 	file="thumb_middlep.stl"/>
+		<mesh name="thumb_proximalp" 	file="thumb_proximalp.stl"/>
+        
+		<texture type="skybox" builtin="gradient" rgb1=".4 .6 .8" rgb2="0 0 0" 
+			width="100" height="100"/>
+		<texture name="groundplane" type="2d" builtin="checker" rgb1=".2 .3 .4" rgb2=".1 .2 .3" 
+            width="100" height="100"/>
+		<texture name="skin" type="cube" file="skin.png"/>
+		<texture name="marble2d" type="2d" file="marble.png"/>
+		<texture name="marblecube" type="cube" file="marble.png"/>
+
+		<material name="groundplane" texture="groundplane" texrepeat="10 10"/>
+		<material name="table2d" texture="marble2d" reflectance="0.3" rgba=".8 .8 .8 1"/>
+		<material name="tablecube" texture="marblecube" rgba=".8 .8 .8 1"/>
+        <material name="MatTouch" rgba=".3 .9 .3 .3"/>
+        <material name="MatIMU" rgba=".1 .1 .9 1"/>
+        <material name="MatMesh" texture="skin"/>
+	</asset>
+
+    <worldbody>
+        <light directional="false" cutoff="35" exponent="10" diffuse=".7 .7 .7" pos="0.4 -0.2 1.5" dir="-0.4 0.2 -1.5" specular=".3 .3 .3"/>
+		
+        <camera name="fixed" pos="0 -0.7 0.7" zaxis="0 -1 1" fovy="45" ipd="0.068"/>
+	
+		<geom type="plane" material="table2d" pos="0 0 0" size=".5 .5 .025"/>
+
+		<geom contype="0" conaffinity="0" type="box" material="tablecube" pos="0 0 -0.026" size=".5 .5 .025"/>
+		<geom contype="0" conaffinity="0" type="cylinder" fromto=".4 .4 -1.001 .4 .4 -0.001" size="0.04"/>
+		<geom contype="0" conaffinity="0" type="cylinder" fromto="-.4 .4 -1.001 -.4 .4 -0.001" size="0.04"/>
+		<geom contype="0" conaffinity="0" type="cylinder" fromto=".4 -.4 -1.001 .4 -.4 -0.001" size="0.04"/>
+		<geom contype="0" conaffinity="0" type="cylinder" fromto="-.4 -.4 -1.001 -.4 -.4 -0.001" size="0.04"/>
+        <geom contype="0" conaffinity="0" type="plane" pos="0 0 -1" size="10 10 0.25" material="groundplane"/>
+
+		<!-- ======= ROBOT ======= -->
+        <body childclass="BHAM" name="hand" pos="0 -0.35 1" axisangle="0 0 1 3.141592">
+		  	<!-- ======= PALM  ======= -->
+            <body name="palm" pos="0.0000075 0.000022 0.0000175">
+                <inertial pos="-0.0217876 -0.0376147 0.00276997" quat="-0.146373 0.723094 0.0985561 0.66783" mass="0.119867" diaginertia="0.000123088 0.000100082 6.89467e-005" />
+                <geom type="mesh" mesh="righthandbase"/>
+        	</body>
+        </body>
+    </worldbody>
+	
+</mujoco>

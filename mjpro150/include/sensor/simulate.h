@@ -57,9 +57,10 @@ namespace Grasp {
   class Simulate {
   public:
   
-  Simulate(CameraInfo &cam_info, std::string object_name, std::string dot_path) 
+  Simulate()
     : out_path_("/tmp/") 
       {
+
 	// allocate memory for depth image
 	int w = cam_info.width;
 	int h = cam_info.height;
@@ -67,7 +68,7 @@ namespace Grasp {
 	depth_im_ = cv::Mat(h, w, CV_32FC1);
 	scaled_im_ = cv::Mat(h, w, CV_32FC1);
 
-	object_model_ = new KinectSimulator(cam_info, object_name, dot_path);
+	object_model_ = new KinectSimulator(cam_info);
 
 	transform_ = Eigen::Affine3d::Identity();
 
@@ -77,22 +78,17 @@ namespace Grasp {
       delete object_model_;
     }
 
-    void simulateMeasurement(const mjModel* m, mjData* d) {
+    void simulateMeasurement(const mjModel* m, mjData* d, glm::vec3 newCamPos, glm::vec3 newCamGaze) {
       countf++;
       
       // simulate measurement of object and store in image, point cloud and labeled image
       cv::Mat p_result;
-      object_model_->intersect(m, d, point_cloud_, depth_im_, labels_);
+      object_model_->intersect(m, d, point_cloud_, depth_im_, newCamPos, newCamGaze);
       
-      // in case object is not in view, don't store any data
-      // However, if background is used, there will be points in the point cloud
-      // although they don't belong to the arm
-      int n_vis = 4000;
-      if(point_cloud_.rows<n_vis) {
-	std::cout << "Object not in view.\n";
-	return;
-      }
-
+      // store on disk
+  	  std::stringstream lD;
+  	  convertScaleAbs(depth_im_, scaled_im_, 255.0f);
+  	  cv::imwrite("/tmp/deneme.png", scaled_im_);
 
 #ifdef HAVE_PCL
 	pcl::PointCloud<pcl::PointXYZ> cloud;
@@ -107,13 +103,17 @@ namespace Grasp {
 	  cloud.points[i].x = point[0];
 	  cloud.points[i].y = point[1];
 	  cloud.points[i].z = point[2];
+
+//	  std::cout<<" POINT "<<i<<" : "<<point[0]<<" "<<point[1]<<" "<<point[2]<<std::endl;
 	}
 #else
 	std::cout << "Couldn't store point cloud since PCL is not installed." << std::endl;
 #endif
+
     }
 
     KinectSimulator *object_model_;
+    CameraInfo cam_info;
     cv::Mat depth_im_, scaled_im_, point_cloud_, labels_;
     std::string out_path_;
     Eigen::Affine3d transform_; 
@@ -123,7 +123,7 @@ namespace Grasp {
   };
 
   // Function to collect data from simulated Kinect camera.
-  unsigned char* CollectData(Simulate* Simulator, const mjModel* m, mjData* d, int * camSize);
+  cv::Mat CollectData(Simulate* Simulator, const mjModel* m, mjData* d, unsigned char* depthBuffer, glm::vec3 cameraPos, glm::vec3 gazeDir, int * camSize, bool*finishFlag);
 
 } //namespace Grasp
 #endif // SIMULATE_H

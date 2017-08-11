@@ -46,6 +46,8 @@
 #include <sensor/noise.h>
 
 #include <opencv/highgui.h>
+#include <glm/gtc/quaternion.hpp>
+#include <glm/gtx/quaternion.hpp>
 
 inline double abs(Point p)
 {
@@ -67,13 +69,8 @@ namespace Grasp
     Camera camera_;
     static const float invalid_disp_;
     static const float window_inlier_distance_;
-    //static constexpr float invalid_disp_ = 99999999.9;
-    //static constexpr float window_inlier_distance_ = 0.1;
 
-    void initRobot();
-    void updateObjectPoses(const Eigen::Affine3d &p_transform);
-    void updateTree();
-    void filterDisp(const cv::Mat &disp, const cv::Mat &labels, cv::Mat &out_disp, cv::Mat& out_labels);
+    void filterDisp(const cv::Mat &disp, cv::Mat &out_disp);
     
     // filter masks 
     static const int size_filt_ = 9;
@@ -87,10 +84,7 @@ namespace Grasp
     
     // kinect dot pattern
     std::string dot_path_;
-    cv::Mat dot_pattern_;    
-
-    // wether label image should overlap with the noisy depth image
-    bool noisy_labels_;
+    cv::Mat dot_pattern_;
 
   public:
     
@@ -102,11 +96,10 @@ namespace Grasp
     void intersect(const mjModel* m, mjData* d,//tf::Transform &p_transform,
 		   cv::Mat &point_cloud,
 		   cv::Mat &depth_map,
-		   cv::Mat &labels);
+		   glm::vec3 newCamPos,
+		   glm::vec3 newCamGaze);
 
-    KinectSimulator(const CameraInfo &p_camera_info,
-		    std::string object_name,
-		    std::string dot_path);
+    KinectSimulator(const CameraInfo &p_camera_info);
     ~KinectSimulator();
 
    

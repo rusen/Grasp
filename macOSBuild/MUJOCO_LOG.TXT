@@ -1,3 +1,39 @@
 Mon Jul 31 11:52:55 2017
 ERROR: Could not open activation key file mjkey_macos.txt
 
+Mon Aug  7 15:16:29 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 2.8560.
+
+Mon Aug  7 15:33:44 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 1.7400.
+
+Mon Aug  7 23:36:54 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 6.3140.
+
+Mon Aug  7 23:38:07 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 4.7120.
+
+Mon Aug  7 23:39:02 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 4.4960.
+
+Mon Aug  7 23:43:10 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 9.9860.
+
+Fri Aug 11 16:11:54 2017
+ERROR: Load model error: XML Error: Schema violation: unrecognized attribute: 'gravity'
+
+Element 'compiler', line 3, column 5
+
+
+Fri Aug 11 16:12:05 2017
+ERROR: Load model error: Error: mass and inertia of moving bodies must be positive
+Object name = hand, id = 1, line = 78, column = 9
+
+Fri Aug 11 16:13:37 2017
+ERROR: Load model error: Error: PNG file load error 'empty input or file doesn't exist' in texture id = 2
+Object name = skin, id = 2, line = 51, column = 9
+
+Fri Aug 11 16:14:10 2017
+ERROR: Load model error: Error: texture 'marble2d' not found in material 1
+Object name = table2d, id = 1, line = 53, column = 9
+

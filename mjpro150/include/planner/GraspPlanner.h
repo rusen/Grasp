@@ -25,15 +25,19 @@
 
 namespace Grasp {
 
-enum state { initial, collectingData, approaching, atPreGraspLocation, atFinalApproach, readyToGrasp, grasping, lifting, done };
+enum state { initial, atDataApproach, collectingData, approaching, atPreGraspLocation, atFinalApproach, readyToGrasp, grasping, lifting, done };
 enum handType {MPL};
-enum approachType {initialApproach, finalApproach};
+enum approachType {initialApproach, preApproach, finalApproach};
 
 class GraspPlanner {
 public:
 
 	int camSize[2] = {480, 640};
 	unsigned char depthBuffer[640*480*3];
+	cv::Mat pointCloud;
+
+	// Simulator allocation
+	Simulate* Simulator = NULL;
 
 	GraspPlanner();
 	virtual ~GraspPlanner();
@@ -51,6 +55,7 @@ private:
 	state graspState = initial;
 	bool startFlag = false;
 	bool finishFlag = false;
+	bool fastSim = false; // If true, we're in fast simulation mode -  no unnecessary work.
 
 	// Steps to perform approach.
 	int counter = 0;
@@ -60,19 +65,19 @@ private:
 	// Allocate space for trajectories.
 	glm::vec3 *initialApproachPos = NULL;
 	glm::quat *initialApproachQuat = NULL;
+	glm::vec3 *preApproachPos = NULL;
+	glm::quat *preApproachQuat = NULL;
 	glm::vec3 *finalApproachPos = NULL;
 	glm::quat *finalApproachQuat = NULL;
 
 	// Info for bezier curve.
 	glm::vec3 initDir, finalDir;
 	glm::vec3 p1, p2;
+	glm::vec3 cameraPos, gazeDir;
 
 	// Hand controller allocation.
 	MPLHandController controller;
 
-	// Cam parameters and buffers.
-	// Rendering params
-	Simulate* Simulator = NULL;
 };
 
 

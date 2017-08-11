@@ -1,0 +1,97 @@
+<kinbody name="ring_finger">
+	<body name="ring_base">
+		<translation>0.0075 0.022 0.0175</translation>
+	
+		<geom type="trimesh">
+			<render>HandFiles/ring_basecover.iv</render>
+			<collision>HandFiles/ring_basecover.iv</collision>
+		</geom>
+	</body>
+
+	<body name="ring_proximal">
+		<translation>0.0075 0.022 0.0175</translation>
+		
+		<mass>
+			<total>0.044370598</total>
+		</mass>
+		
+		<geom type="trimesh">
+			<render>HandFiles/ring_proximalp.iv</render>
+			<collision>HandFiles/ring_proximalp.iv</collision>
+		</geom>
+	</body>
+
+	<body name="ring_middle">
+		<translation>0.0075 0.022 0.0175</translation>
+		
+		<mass>
+			<total>0.027110192</total>
+		</mass>
+		
+		<geom type="trimesh">
+			<render>HandFiles/ring_middlep.iv</render>
+			<collision>HandFiles/ring_middlep.iv</collision>
+		</geom>
+	</body>
+
+	<body name="ring_distal">
+		<translation>0.0075 0.022 0.0175</translation>
+		
+		<mass>
+			<total>0.018179709</total>
+		</mass>
+		
+		<geom type="trimesh">
+			<render>HandFiles/ring_distalp.iv</render>
+			<collision>HandFiles/ring_distalp.iv</collision>
+		</geom>
+	</body>
+	
+	<joint name="ring_abductor" type="hinge">
+		<body>ring_base</body>
+		<body>ring_proximal</body>
+	
+		<anchor>-0.0166936 0.112641 -0.00258767</anchor>
+		<axis>-0.087156 0.000000 -0.996195</axis>
+	
+		<!--limitsdeg>-15.0 15.0</limitsdeg-->
+		<limitsrad>-0.26180 0.26180</limitsrad>
+		<initial>0.000000</initial>
+	</joint>
+
+	<joint name="ring_inner" type="hinge">
+		<body>palm</body>
+		<body>ring_base</body>
+	
+		<anchor>-0.0166936 0.112641 -0.00258767</anchor>
+		<axis>0.996195 0.000000 -0.087156</axis>
+	
+		<!--limitsdeg>5.0 65.0</limitsdeg-->
+		<limitsrad>0.087266 1.1345</limitsrad>
+		<initial>0.087266</initial>
+	</joint>
+
+	<joint name="ring_outer" type="hinge">
+		<body>ring_proximal</body>
+		<body>ring_middle</body>
+	
+		<anchor>-0.0190593 0.166601 -0.00127116</anchor>
+		<axis>0.996195 0.000000 -0.087156</axis>
+	
+		<!--limitsdeg>5.0 85.0</limitsdeg-->
+		<limitsrad>0.087266 1.4835</limitsrad>
+		<initial>0.087266</initial>
+	</joint>
+
+	<joint name="ring_passiv" type="hinge" enable="false" mimic_pos="ring_outer" mimic_vel="|ring_outer 1">
+		<body>ring_middle</body>
+		<body>ring_distal</body>
+	
+		<anchor>-0.0156983 0.191513 -0.00163061</anchor>
+		<axis>0.996195 0.000000 -0.087156</axis>
+	
+		<!--limitsdeg>5.0 85.0</limitsdeg-->
+		<limitsrad>0.087266 1.4835</limitsrad>
+		<initial>0.087266</initial>
+	</joint>
+</kinbody>

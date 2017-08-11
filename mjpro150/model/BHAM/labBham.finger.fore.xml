@@ -1,0 +1,95 @@
+<kinbody name="fore_finger">
+	<body name="fore_base">
+		<translation>0.0075 0.022 0.0175</translation>
+	
+		<geom type="trimesh">
+			<render>HandFiles/fore_basecover.iv</render>
+			<collision>HandFiles/fore_basecover.iv</collision>
+		</geom>
+	</body>
+
+	<body name="fore_proximal">
+		<translation>0.0075 0.022 0.0175</translation>
+		
+		<mass>
+			<total>0.044370598</total>
+		</mass>
+		
+		<geom type="trimesh">
+			<render>HandFiles/fore_proximalp.iv</render>
+			<collision>HandFiles/fore_proximalp.iv</collision>
+		</geom>
+	</body>
+
+	<body name="fore_middle">
+		<translation>0.0075 0.022 0.0175</translation>
+		
+		<mass>
+			<total>0.027110192</total>
+		</mass>
+		
+		<geom type="trimesh">
+			<render>HandFiles/fore_middlep.iv</render>
+			<collision>HandFiles/fore_middlep.iv</collision>
+		</geom>
+	</body>
+
+	<body name="fore_distal">
+		<translation>0.0075 0.022 0.0175</translation>
+		
+		<mass>
+			<total>0.018179709</total>
+		</mass>
+		
+		<geom type="trimesh">
+			<render>HandFiles/fore_distalp.iv</render>
+			<collision>HandFiles/fore_distalp.iv</collision>
+		</geom>
+	</body>
+	
+	<joint name="fore_abductor" type="hinge">
+		<body>fore_base</body>
+		<body>fore_proximal</body>
+	
+		<anchor>0.0369151 0.107841 -0.00256829</anchor>
+		<axis>0.087156 0.000000 -0.996195</axis>
+	
+		<!--limitsdeg>-15.0 15.0</limitsdeg-->
+		<limitsrad>-0.26180 0.26180</limitsrad>
+		<initial>0.000000</initial>
+	</joint>
+	
+	<joint name="fore_inner" type="hinge">
+		<body>palm</body>
+		<body>fore_base</body>
+	
+		<anchor>0.0369151 0.107841 -0.00256829</anchor>
+		<axis>0.996195 0.000000 0.087156</axis>
+	
+		<!--limitsdeg>5.0 65.0</limitsdeg-->
+		<limitsrad>0.087266 1.1345</limitsrad>
+		<initial>0.087266</initial>
+	</joint>
+
+	<joint name="fore_outer" type="hinge">
+		<body>fore_proximal</body>
+		<body>fore_middle</body>
+	
+		<anchor>0.0343567 0.161801 -0.00168261</anchor>
+		<axis>0.996195 0.000000 0.087156</axis>
+	
+		<limitsrad>0.087266 1.4835</limitsrad>
+		<initial>0.087266</initial>
+	</joint>
+
+	<joint name="fore_passiv" type="hinge" enable="false" mimic_pos="fore_outer" mimic_vel="|fore_outer 1">
+		<body>fore_middle</body>
+		<body>fore_distal</body>
+	
+		<anchor>0.0377291 0.186713 -0.00145294</anchor>
+		<axis>0.996195 0.000000 0.087156</axis>
+	
+		<limitsrad>0.087266 1.4835</limitsrad>
+		<initial>0.087266</initial>
+	</joint>
+</kinbody>

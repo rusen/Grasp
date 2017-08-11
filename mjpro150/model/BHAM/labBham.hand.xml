@@ -1,0 +1,30 @@
+<robot name="hand">
+	
+	<!--	Palm		-->
+	<kinbody name="hand_root">
+		<body name="palm">
+			<translation>0.0075 0.022 0.0175</translation>
+		
+			<geom type="trimesh">
+				<render>HandFiles/righthandbase.iv</render>
+				<collision>HandFiles/righthandbase.iv</collision>
+			</geom>
+		</body>
+	</kinbody>
+
+
+	<!--	Thumb finger	-->
+	<robot file="labBham.finger.thumb.xml" />
+	
+	<!--	Fore finger	-->
+	<robot file="labBham.finger.fore.xml" />
+	
+	<!--	Middle finger	-->
+	<robot file="labBham.finger.middle.xml" />
+	
+	<!--	Ring finger	-->
+	<robot file="labBham.finger.ring.xml" />
+
+	<!--	Little finger	-->
+	<robot file="labBham.finger.little.xml" />
+</robot>

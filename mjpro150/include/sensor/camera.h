@@ -41,6 +41,9 @@
 #define KINECT_SIM_CAMERA_H_
 
 #include <opencv2/opencv.hpp>
+#include <iostream>
+#include <glm/gtc/quaternion.hpp>
+#include <glm/gtx/quaternion.hpp>
 
 namespace Grasp
 {
@@ -51,19 +54,16 @@ namespace Grasp
     SIMPLEX,
     NONE
   };
-  
+
   class CameraInfo
   {
   public:
 	// Initialized with Carmine 1.09 parameters.
     int width = 640, height = 480;
-    double z_near = 0.35, z_far = 1.4;
-    double fx_ = 575.0, fy_ = 575.0;
+    double z_near = 0.1, z_far = 1.4;
+    double fx = 575.0, fy = 450.0;
     double cx_ = 320, cy_ = 240;
-    double tx_ = 0.0075;
-
-    // Camera's position relative to the hand.
- //   double relPosHand[3] =
+    double tx_ = -0.05; // 0.075 normally.
 
     NoiseType noise_ = GAUSSIAN;
 
@@ -75,12 +75,12 @@ namespace Grasp
     
     double getFx()
     {
-      return info_.fx_;
+      return info_.fx;
     }
 
     double getFy()
     {
-      return info_.fy_;
+      return info_.fy;
     }
 
     double getCx()
@@ -117,31 +117,50 @@ namespace Grasp
     {
       return info_.tx_;
     }
-
     
   Camera(const CameraInfo p_info)
     : info_(p_info) {}
     
     // two functions adopted from ros::image_geometry::PinholeCameraModel
-    cv::Point2d project3dToPixel(const cv::Point3d& xyz) const
+    cv::Point2d project3dToPixel(const glm::vec3 tempP, const Eigen::Matrix4d TM) const
       {
-	
-	// [U V W]^T = P * [X Y Z 1]^T
-	// u = U/W
-	// v = V/W
-	cv::Point2d uv_rect;
-	uv_rect.x = (info_.fx_*xyz.x) / xyz.z + info_.cx_;
-	uv_rect.y = (info_.fy_*xyz.y) / xyz.z + info_.cy_;
-	return uv_rect;
+    	Eigen::Matrix<double, 4, 1> p;
+    	p << tempP[0], tempP[1], tempP[2], 1;
+
+    	// Convert p to camera coordinates.
+    	p = TM * p;
+
+    	// Make p homogenous
+    	p = p / p[3];
+
+    	// Write back the output.
+		cv::Point2d uv_rect;
+		int x = info_.width - ((info_.fx * p[0]) + info_.cx_);
+    	uv_rect.x = (double) x;
+    	uv_rect.y = (info_.fy * p[1]) + info_.cy_;
+		return uv_rect;
       }
 
-    cv::Point3d projectPixelTo3dRay(const cv::Point2d& uv_rect) const
+    glm::vec3 projectPixelTo3dRay(const cv::Point2d& uv_rect, const glm::vec3 cameraPos, const glm::vec3 viewportCenter, const glm::vec3 normGaze, const glm::vec3 normRight, const glm::vec3 viewUp)
       {
-	cv::Point3d ray;
-	ray.x = (uv_rect.x - info_.cx_) / info_.fx_;
-	ray.y = (uv_rect.y - info_.cy_) / info_.fy_;
-	ray.z = 1.0;
-	return ray;
+    	glm::vec3 ray;
+
+		// We need to find where the ray is supposed to go.
+		glm::vec3 added1, added2, temp(0,0,0);
+		added1 = (normRight * (float)(uv_rect.x- info_.cx_))/(float)info_.fx;
+		added2 = (viewUp * (float) (uv_rect.y- info_.cy_))/(float)info_.fy;
+		temp = viewportCenter + added1 + added2;
+
+//		std::cout<<"Temp point:"<<temp[0]<<" "<<temp[1]<<" "<<temp[2]<<std::endl;
+//		std::cout<<"Camera pos:"<<cameraPos[0]<<" "<<cameraPos[1]<<" "<<cameraPos[2]<<std::endl;
+		// Calculate ray.
+		ray = temp - cameraPos;
+		ray = normalize(ray);
+//		std::cout<<"Ray:"<<ray[0]<<" "<<ray[1]<<" "<<ray[2]<<" "<<glm::length(ray)<<std::endl;
+//		glm::vec3 temp2 = (float)glm::length(ray) * ray + cameraPos;
+//		std::cout<<"Temp point:"<<temp[0]<<" "<<temp[1]<<" "<<temp[2]<<" Second temp:"<<temp2[0]<<" "<<temp2[1]<<" "<<temp2[2]<<std::endl;
+
+		return ray;
       }
 
   private:
@@ -149,5 +168,8 @@ namespace Grasp
   };
  
 } // namespace render_kinect
+
+
+
 
 #endif // KINECT_SIM_CAMERA_H_

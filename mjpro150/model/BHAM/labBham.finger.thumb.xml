@@ -1,0 +1,97 @@
+<kinbody name="thumb_finger">
+	<body name="thumb_base">
+		<translation>0.0075 0.022 0.0175</translation>
+	
+		<geom type="trimesh">
+			<render>HandFiles/thumb_basecover.iv</render>
+			<collision>HandFiles/thumb_basecover.iv</collision>
+		</geom>
+	</body>
+
+	<body name="thumb_proximal">
+		<translation>0.0075 0.022 0.0175</translation>
+		
+		<mass>
+			<total>0.044370598</total>
+		</mass>
+		
+		<geom type="trimesh">
+			<render>HandFiles/thumb_proximalp.iv</render>
+			<collision>HandFiles/thumb_proximalp.iv</collision>
+		</geom>
+	</body>
+
+	<body name="thumb_thumb">
+		<translation>0.0075 0.022 0.0175</translation>
+		
+		<mass>
+			<total>0.027110192</total>
+		</mass>
+		
+		<geom type="trimesh">
+			<render>HandFiles/thumb_middlep.iv</render>
+			<collision>HandFiles/thumb_middlep.iv</collision>
+		</geom>
+	</body>
+
+	<body name="thumb_distal">
+		<translation>0.0075 0.022 0.0175</translation>
+		
+		<mass>
+			<total>0.018179709</total>
+		</mass>
+		
+		<geom type="trimesh">
+			<render>HandFiles/thumb_distalp.iv</render>
+			<collision>HandFiles/thumb_distalp.iv</collision>
+		</geom>
+	</body>
+
+	<joint name="thumb_abductor" type="hinge">
+		<body>thumb_base</body>
+		<body>thumb_proximal</body>
+	
+		<anchor>0.0443196 0.0787516 0.0622977</anchor>
+		<axis>0.549586 -0.456218 0.699872</axis>
+	
+		<!--limitsdeg>-15.0 15.0</limitsdeg-->
+		<limitsrad>-0.26180 0.26180</limitsrad>
+		<initial>0.000000</initial>
+	</joint>
+
+	<joint name="thumb_inner" type="hinge">
+		<body>palm</body>
+		<body>thumb_base</body>
+	
+		<anchor>0.0443196 0.0787516 0.0622977</anchor>
+		<axis>-0.814200 -0.104803 0.571047</axis>
+	
+		<!--limitsdeg>5.0 65.0</limitsdeg-->
+		<limitsrad>0.087266 1.1345</limitsrad>
+		<initial>0.087266</initial>
+	</joint>
+
+	<joint name="thumb_outer" type="hinge">
+		<body>thumb_proximal</body>
+		<body>thumb_thumb</body>
+	
+		<anchor>0.0558242 0.127198 0.0832645</anchor>
+		<axis>-0.814200 -0.104803 0.571047</axis>
+	
+		<!--limitsdeg>5.0 85.0</limitsdeg-->
+		<limitsrad>0.087266 1.4835</limitsrad>
+		<initial>0.087266</initial>
+	</joint>
+
+	<joint name="thumb_passiv" type="hinge" enable="false" mimic_pos="thumb_outer" mimic_vel="|thumb_outer 1">
+		<body>thumb_thumb</body>
+		<body>thumb_distal</body>
+	
+		<anchor>0.0577711 0.148828 0.0959286</anchor>
+		<axis>-0.814200 -0.104803 0.571047</axis>
+	
+		<!--limitsdeg>5.0 85.0</limitsdeg-->
+		<limitsrad>0.087266 1.4835</limitsrad>
+		<initial>0.087266</initial>
+	</joint>
+</kinbody>

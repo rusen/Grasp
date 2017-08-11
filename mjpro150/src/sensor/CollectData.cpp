@@ -10,26 +10,23 @@
 #include <Eigen/Geometry>
 #include <Eigen/Core>
 #include <thread>
+#include <iostream>
+#include <unistd.h>
 
 namespace Grasp{
 
-unsigned char* CollectData(Simulate* Simulator, const mjModel* m, mjData* d, int * camSize)
+cv::Mat CollectData(Simulate* Simulator, const mjModel* m, mjData* d, unsigned char* depthBuffer,
+		glm::vec3 cameraPos, glm::vec3 gazeDir, int * camSize, bool*finishFlag)
 {
-	// Allocate space for output.
-	unsigned char * depthBuffer = new unsigned char(camSize[0] * camSize[1]);
+	std::cout<<"Entered data collection"<<std::endl;
+	std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
 
-	// Modify the object's position and orientation.
+	// up vector
+	glm::vec3 newCamUp;
 	int startIdx = (m->nbody-1);
-	Eigen::Affine3d transformObject(Eigen::Affine3d::Identity());
-	transformObject.translate(Eigen::Vector3d(d->xpos[startIdx * 3], d->xpos[startIdx * 3 + 1], d->xpos[startIdx * 3 + 2]));
-	transformObject.rotate(Eigen::Quaterniond(d->xquat[startIdx * 4],d->xquat[startIdx * 4 + 1],d->xquat[startIdx * 4 + 2],d->xquat[startIdx * 4 + 3]));
 
 	// Get image from kinect camera.
-	std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
-	Simulator->simulateMeasurement(m, d);
-	std::chrono::steady_clock::time_point end= std::chrono::steady_clock::now();
-
-	std::cout << "Time difference = " << std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count() <<std::endl;
+	Simulator->simulateMeasurement(m, d, cameraPos, gazeDir);
 
 	// Tell the world you've captured an image.
 	std::cout<<"Depth image captured!"<<std::endl;
@@ -49,8 +46,14 @@ unsigned char* CollectData(Simulate* Simulator, const mjModel* m, mjData* d, int
 					Simulator->scaled_im_.at<unsigned char>(rowId, colId); //input[offset];
 		}
 	}
-	return depthBuffer;
+	*finishFlag = true;
+
+	std::chrono::steady_clock::time_point end= std::chrono::steady_clock::now();
+	std::cout << "Time difference = " << std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count() <<std::endl;
+
+	return Simulator->point_cloud_;
 }
+
 }
 
 

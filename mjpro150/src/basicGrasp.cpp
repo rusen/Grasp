@@ -15,14 +15,19 @@
 #include <sensor/simulate.h>
 #include <sensor/camera.h>
 #include <iostream>
+#include <math.h>       /* cos */
 #include <thread>         // std::thread
 #include <controller/MPLHandController.h>
 #include <planner/GraspPlanner.h>
+#include <sensor/camera.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/quaternion.hpp>
 #include <glm/gtx/quaternion.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 #include <Eigen/Geometry>
 #include <Eigen/Core>
+
+#define PI 3.14159265
 
 // MuJoCo data structures
 mjModel* m = NULL;                  // MuJoCo model
@@ -45,6 +50,12 @@ std::string dotPath = "./kinect-pattern_3x3.png";
 
 // Grasp planner.
 Grasp::GraspPlanner planner;
+
+// Camera stuff
+glm::vec3 camDirection, camPosition;
+glm::mat4 TM;
+unsigned char glBuffer[2400*4000*3];
+unsigned char addonBuffer[2400*4000];
 
 // Hand controller
 Grasp::HandControllerInterface * handController = new Grasp::MPLHandController();
@@ -81,10 +92,57 @@ void mouse_button(GLFWwindow* window, int button, int act, int mods)
     glfwGetCursorPos(window, &lastx, &lasty);
 }
 
+void print(glm::vec3 a){
+	std::cout<<a[0]<<" "<<a[1]<<" "<<a[2]<<std::endl;
+	return;
+}
+
+
+glm::mat4 getTM(glm::vec3 gaze, glm::vec3 pos, bool usePerspective){
+	// Obtain handedness and up vectors.
+	glm::vec3 r = glm::normalize(glm::cross(gaze, glm::vec3(0,0,1)));
+	glm::vec3 u = glm::normalize(glm::cross(r, gaze));
+
+	/*
+	std::cout<<"VECTORS G H U POS:"<<std::endl;
+	std::cout<<gaze[0]<<" "<<gaze[1]<<" "<<gaze[2]<<std::endl;
+	std::cout<<r[0]<<" "<<r[1]<<" "<<r[2]<<std::endl;
+	std::cout<<u[0]<<" "<<u[1]<<" "<<u[2]<<std::endl;
+	std::cout<<pos[0]<<" "<<pos[1]<<" "<<pos[2]<<std::endl;
+*/
+    // Create transformation vector for second camera.
+	glm::mat4 s(-1, 0, 0, 0,
+		  0, 1, 0, 0,
+		  0, 0, 1, 0,
+		  0, 0, 0, 1);
+	glm::mat4 rot(r[0], r[1], r[2], 0,
+			    u[0], 	u[1], 	  u[2], 0,
+			    gaze[0],  gaze[1],  gaze[2], 0,
+				0, 0, 0, 1);
+	glm::mat4 t(1, 0, 0, -pos[0],
+				0, 1, 0, -pos[1],
+				0, 0, 1, -pos[2],
+				0, 0, 0, 1);
+	glm::mat4 p( 1, 0, 0, 0,
+				 0, 1, 0, 0,
+				 0, 0, 1, 0,
+				 0, 0, 1, 0);
+
+	glm::mat4 TM;
+	// Create camera transformation matrix.
+	if (usePerspective)
+		TM = p * (s * (rot * t));
+	else
+		TM = s * (rot * t);
+
+	return TM;
+}
+
 
 // mouse move callback
 void mouse_move(GLFWwindow* window, double xpos, double ypos)
 {
+
     // no buttons down: nothing to do
     if( !button_left && !button_middle && !button_right )
         return;
@@ -117,6 +175,7 @@ void mouse_move(GLFWwindow* window, double xpos, double ypos)
 }
 
 
+
 // scroll callback
 void scroll(GLFWwindow* window, double xoffset, double yoffset)
 {
@@ -131,6 +190,7 @@ void graspObject(const mjModel* m, mjData* d){
 
 void render(GLFWwindow* window, const mjModel* m, mjData* d)
 {
+
     // past data for FPS calculation
     static double lastrendertm = 0;
 
@@ -145,16 +205,48 @@ void render(GLFWwindow* window, const mjModel* m, mjData* d)
 		planner.camSize[0]
 	};
 
+	// Read gl buffer.
+//	mjr_readPixels(glBuffer, NULL, rect, &con);
+
+	/*
+	// Print point cloud.
+	for (int i = 0; i<rect.height; i++)
+		for (int j = 0; j < rect.width; j++)
+		{
+			int offset = (i * rect.width + j);
+			int offset2 = offset * 3;
+			if (addonBuffer[offset] > 0)
+			{
+				glBuffer[offset2] = 255;
+				glBuffer[offset2 + 1] = 0;
+				glBuffer[offset2 + 2] = 0;
+			}
+		}
+		*/
+
+	// Render the scene.
+//	mjr_drawPixels(glBuffer, NULL, rect, &con);
+
+	// Render the scene.
 	mjr_drawPixels(planner.depthBuffer, NULL, bottomright, &con);
+
+	// Fill in relevant pixels with point cloud data.
+	glBegin(GL_POINTS);
+	for (int i = 0; i < planner.pointCloud.rows; i++) {
+	  const float* point = planner.pointCloud.ptr<float>(i);
+	  glVertex3f(point[0], point[1], point[2]);
+	}
+	glEnd();
+
 }
 
 // main function
 int main(int argc, const char** argv)
 {
     // check command-line arguments
-    if( argc!=3 )
+    if( argc!=2 )
     {
-        printf(" USAGE:  basic mujocoModel.xml model.obj \n");
+        printf(" USAGE:  basic mujocoModel.xml\n");
         return 0;
     }
 
@@ -201,6 +293,10 @@ int main(int argc, const char** argv)
     glfwSetCursorPosCallback(window, mouse_move);
     glfwSetMouseButtonCallback(window, mouse_button);
     glfwSetScrollCallback(window, scroll);
+
+    // Enable point size
+ //   glEnable(GL_PROGRAM_POINT_SIZE);
+    glPointSize(5);
 
     // run main loop, target real-time simulation and 60 fps rendering
     while( !glfwWindowShouldClose(window) )

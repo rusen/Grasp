@@ -1,0 +1,97 @@
+<kinbody name="middle_finger">
+	<body name="middle_base">
+		<translation>0.0075 0.022 0.0175</translation>
+	
+		<geom type="trimesh">
+			<render>HandFiles/middle_basecover.iv</render>
+			<collision>HandFiles/middle_basecover.iv</collision>
+		</geom>
+	</body>
+
+	<body name="middle_proximal">
+		<translation>0.0075 0.022 0.0175</translation>
+		
+		<mass>
+			<total>0.044370598</total>
+		</mass>
+		
+		<geom type="trimesh">
+			<render>HandFiles/middle_proximalp.iv</render>
+			<collision>HandFiles/middle_proximalp.iv</collision>
+		</geom>
+	</body>
+
+	<body name="middle_middle">
+		<translation>0.0075 0.022 0.0175</translation>
+		
+		<mass>
+			<total>0.027110192</total>
+		</mass>
+		
+		<geom type="trimesh">
+			<render>HandFiles/middle_middlep.iv</render>
+			<collision>HandFiles/middle_middlep.iv</collision>
+		</geom>
+	</body>
+
+	<body name="middle_distal">
+		<translation>0.0075 0.022 0.0175</translation>
+		
+		<mass>
+			<total>0.018179709</total>
+		</mass>
+		
+		<geom type="trimesh">
+			<render>HandFiles/middle_distalp.iv</render>
+			<collision>HandFiles/middle_distalp.iv</collision>
+		</geom>
+	</body>
+	
+	<joint name="middle_abductor" type="hinge">
+		<body>middle_base</body>
+		<body>middle_proximal</body>
+	
+		<anchor>0.0101112 0.117841 -0.00374828</anchor>
+		<axis>0.000000 0.000000 -1.000000</axis>
+	
+		<!--limitsdeg>-15.0 15.0</limitsdeg-->
+		<limitsrad>-0.26180 0.26180</limitsrad>
+		<initial>0.000000</initial>
+	</joint>
+	
+	<joint name="middle_inner" type="hinge">
+		<body>palm</body>
+		<body>middle_base</body>
+	
+		<anchor>0.0101112 0.117841 -0.00374828</anchor>
+		<axis>1.000000 0.000000 0.000000</axis>
+	
+		<!--limitsdeg>5.0 65.0</limitsdeg-->
+		<limitsrad>0.087266 1.1345</limitsrad>
+		<initial>0.087266</initial>
+	</joint>
+
+	<joint name="middle_outer" type="hinge">
+		<body>middle_proximal</body>
+		<body>middle_middle</body>
+	
+		<anchor>0.00763968 0.171801 -0.00264297</anchor>
+		<axis>1.000000 0.000000 0.000000</axis>
+	
+		<!--limitsdeg>5.0 85.0</limitsdeg-->
+		<limitsrad>0.087266 1.4835</limitsrad>
+		<initial>0.087266</initial>
+	</joint>
+
+	<joint name="middle_passiv" type="hinge" enable="false" mimic_pos="middle_outer" mimic_vel="|middle_outer 1">
+		<body>middle_middle</body>
+		<body>middle_distal</body>
+	
+		<anchor>0.0110193 0.196713 -0.00270811</anchor>
+		<axis>1.000000 0.000000 0.000000</axis>
+	
+		<!--limitsdeg>5.0 85.0</limitsdeg-->
+		<limitsrad>0.087266 1.4835</limitsrad>
+		<initial>0.087266</initial>
+	</joint>
+</kinbody>
