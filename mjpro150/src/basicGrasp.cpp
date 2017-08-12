@@ -57,6 +57,9 @@ glm::mat4 TM;
 unsigned char glBuffer[2400*4000*3];
 unsigned char addonBuffer[2400*4000];
 
+// Joint info debugging data.
+double jointArr[20][6];
+
 // Hand controller
 Grasp::HandControllerInterface * handController = new Grasp::MPLHandController();
 
@@ -184,6 +187,13 @@ void scroll(GLFWwindow* window, double xoffset, double yoffset)
 }
 
 void graspObject(const mjModel* m, mjData* d){
+	std::cout<<"*******************"<<std::endl;
+	std::cout<<" *** "<<m->njnt<<std::endl;
+	for (int i = 0; i<m->njnt; i++)
+	{
+		std::cout<<d->xanchor[i*3]<<" "<<d->xanchor[i*3 + 1]<<" "<<d->xanchor[i*3 + 2]<<std::endl;
+	}
+
 	if (!pauseFlag)
 		planner.PerformGrasp(m, d, handController);
 }
@@ -205,28 +215,6 @@ void render(GLFWwindow* window, const mjModel* m, mjData* d)
 		planner.camSize[0]
 	};
 
-	// Read gl buffer.
-//	mjr_readPixels(glBuffer, NULL, rect, &con);
-
-	/*
-	// Print point cloud.
-	for (int i = 0; i<rect.height; i++)
-		for (int j = 0; j < rect.width; j++)
-		{
-			int offset = (i * rect.width + j);
-			int offset2 = offset * 3;
-			if (addonBuffer[offset] > 0)
-			{
-				glBuffer[offset2] = 255;
-				glBuffer[offset2 + 1] = 0;
-				glBuffer[offset2 + 2] = 0;
-			}
-		}
-		*/
-
-	// Render the scene.
-//	mjr_drawPixels(glBuffer, NULL, rect, &con);
-
 	// Render the scene.
 	mjr_drawPixels(planner.depthBuffer, NULL, bottomright, &con);
 
@@ -237,6 +225,25 @@ void render(GLFWwindow* window, const mjModel* m, mjData* d)
 	  glVertex3f(point[0], point[1], point[2]);
 	}
 	glEnd();
+
+	/*
+	// Highlight the joint information here.
+	glColor3f(1.0f, 0.0f, 0.0f);
+	glBegin(GL_POINTS);
+	for (int i = 0; i < 20; i++) {
+	  glVertex3f(jointArr[i][0], jointArr[i][1], jointArr[i][2]);
+	}
+	glEnd();
+
+	glLineWidth(2.5);
+	glColor3f(1.0, 0.0, 0.0);
+	glBegin(GL_LINES);
+	for (int i = 0; i < 20; i++) {
+		glVertex3f(jointArr[i][0], jointArr[i][1], jointArr[i][2]);
+		glVertex3f(jointArr[i][0] + (jointArr[i][3]/10), jointArr[i][1] + (jointArr[i][4]/10), jointArr[i][2] + (jointArr[i][5]/10));
+	}
+	glEnd();
+	*/
 
 }
 
@@ -294,9 +301,21 @@ int main(int argc, const char** argv)
     glfwSetMouseButtonCallback(window, mouse_button);
     glfwSetScrollCallback(window, scroll);
 
-    // Enable point size
- //   glEnable(GL_PROGRAM_POINT_SIZE);
-    glPointSize(5);
+    // Read joint data.
+    FILE * f = fopen("./jointinfo.txt", "r");
+    for (int i = 0; i<20; i++){
+    	fscanf(f, "%lf %lf %lf %lf %lf %lf",
+    			&jointArr[i][0], &jointArr[i][1], &jointArr[i][2], &jointArr[i][3], &jointArr[i][4], &jointArr[i][5]);
+    }
+    fclose(f);
+
+    for (int i = 0; i<20; i++){
+    	printf("%lf %lf %lf %lf %lf %lf\n",
+    			jointArr[i][0], jointArr[i][1], jointArr[i][2], jointArr[i][3], jointArr[i][4], jointArr[i][5]);
+    }
+
+    // Enlarge the points
+    glPointSize(20);
 
     // run main loop, target real-time simulation and 60 fps rendering
     while( !glfwWindowShouldClose(window) )

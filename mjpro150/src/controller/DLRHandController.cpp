@@ -1,27 +1,27 @@
 /*
- * MPLHandController.cpp
+ * DLRHandController.cpp
  *
  *  Created on: 7 Jul 2017
  *      Author: rusi
  */
 
-#include <controller/MPLHandController.h>
+#include <controller/DLRHandController.h>
 #include <iostream>
 #include <cmath>        // std::abs
 
 namespace Grasp{
 
-MPLHandController::MPLHandController() {
+DLRHandController::DLRHandController() {
 	// TODO Auto-generated constructor stub
-	jointCount = 13;
+	jointCount = 15;
 }
 
-MPLHandController::~MPLHandController() {
+DLRHandController::~DLRHandController() {
 	// TODO Auto-generated destructor stub
 
 }
 
-void MPLHandController::SetPose(const mjModel* m, mjData* d, glm::vec3 pos, glm::quat q){
+void DLRHandController::SetPose(const mjModel* m, mjData* d, glm::vec3 pos, glm::quat q){
 	// Assign position
 	d->mocap_pos[0] = pos[0];
 	d->mocap_pos[1] = pos[1];
@@ -33,11 +33,9 @@ void MPLHandController::SetPose(const mjModel* m, mjData* d, glm::vec3 pos, glm:
 	d->mocap_quat[2] = q[0];
 	d->mocap_quat[3] = q[3];
 
-//	std::cout<<d->mocap_quat[0]<<" "<<d->mocap_quat[1]<<" "<<d->mocap_quat[2]<<" "<<d->mocap_quat[3]<<std::endl;
-
 }
 
-bool MPLHandController::Grasp(const mjModel* m, mjData* d, graspType type){
+bool DLRHandController::Grasp(const mjModel* m, mjData* d, graspType type){
 
 	// Decide which joint modifications to use.
 	double * curPoses = NULL;
@@ -52,7 +50,7 @@ bool MPLHandController::Grasp(const mjModel* m, mjData* d, graspType type){
 	}
 
 	// Move joints to initial positions.
-	for (int i = 0; i < 13; i++)
+	for (int i = 0; i < jointCount; i++)
 	{
 		if (std::abs(curPoses[i]) > 0.001)
 		{
@@ -70,5 +68,6 @@ bool MPLHandController::Grasp(const mjModel* m, mjData* d, graspType type){
 	else
 		return false;
 }
+
 
 }

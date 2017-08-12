@@ -1,11 +1,30 @@
-<mujoco model="BHAM">
+<mujoco model="MPL(v1.31)">
+    <!--
+    This file and the .stl mesh files referenced from it have been derived by Roboti LLC from the model of the Modular Prosthetic Limb developed by The Johns Hopkins University / Applied Physics Laboratory. The modifications are as follows: the original meshes have been replaced with their convex hulls; the original URDF model has been converted to the MJCF format and a number of MJCF-specific fields have been added.
+
+    The Johns Hopkins University / Applied Physics Laboratory has given Roboti LLC permission to distribute the modified model under the following license:
+
+    =========================
+
+    (C) 2013 The Johns Hopkins University / Applied Physics Laboratory All Rights Reserved.
+
+    Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+    ========================
+
+    The modifications made by Roboti LLC are also licensed under the Apache License version 2.0.
+    -->
     
-    <compiler angle="radian" meshdir="mesh/" texturedir="texture/" convexhull="true"/>
+    <compiler angle="radian" meshdir="mesh/" texturedir="texture/" convexhull="true" coordinate="local"/>
     <option timestep="0.002" iterations="50" apirate="50" noslip_iterations="10"/>
     <size njmax="600" nconmax="150" nstack="300000"/>
 
     <default>
-		<default class="BHAM"> 
+		<default class="MPL"> 
 			<geom material="MatMesh" contype="1" conaffinity="1" condim="6" solimp="0.99 0.999 0.1" solref="0.04 1.0"/>
         	<joint limited="true" damping="0.2" armature=".01"/>
         	<site material="MatTouch" type="ellipsoid" group="3"/>
@@ -21,11 +40,19 @@
         </default>     
     </default>
 
+    <statistic extent="1" center="0 -0.2 0.2"/>
+
+    <visual>
+        <quality shadowsize="2048"/>
+    	<map fogstart="6" fogend="10"/>
+    	<headlight diffuse=".6 .6 .6" specular="0 0 0"/>
+    </visual>
+
     <asset>
 		<mesh name="righthandbase" 		file="righthandbase.stl"/>
 		<mesh name="fore_basecover" 	file="fore_basecover.stl"/>
-		<mesh name="fore_distalp" 	file="fore_distalp.stl"/>
-		<mesh name="fore_middlep" 	file="fore_middlep.stl"/>
+		<mesh name="fore_distalp" 		file="fore_distalp.stl"/>
+		<mesh name="fore_middlep" 		file="fore_middlep.stl"/>
 		<mesh name="fore_proximalp" 	file="fore_proximalp.stl"/>
 		<mesh name="little_basecover" 	file="little_basecover.stl"/>
 		<mesh name="little_distalp" 	file="little_distalp.stl"/>
@@ -36,12 +63,12 @@
 		<mesh name="middle_middlep" 	file="middle_middlep.stl"/>
 		<mesh name="middle_proximalp" 	file="middle_proximalp.stl"/>
 		<mesh name="ring_basecover" 	file="ring_basecover.stl"/>
-		<mesh name="ring_distalp" 	file="ring_distalp.stl"/>
-		<mesh name="ring_middlep" 	file="ring_middlep.stl"/>
+		<mesh name="ring_distalp" 		file="ring_distalp.stl"/>
+		<mesh name="ring_middlep" 		file="ring_middlep.stl"/>
 		<mesh name="ring_proximalp" 	file="ring_proximalp.stl"/>
 		<mesh name="thumb_basecover" 	file="thumb_basecover.stl"/>
-		<mesh name="thumb_distalp" 	file="thumb_distalp.stl"/>
-		<mesh name="thumb_middlep" 	file="thumb_middlep.stl"/>
+		<mesh name="thumb_distalp" 		file="thumb_distalp.stl"/>
+		<mesh name="thumb_middlep" 		file="thumb_middlep.stl"/>
 		<mesh name="thumb_proximalp" 	file="thumb_proximalp.stl"/>
         
 		<texture type="skybox" builtin="gradient" rgb1=".4 .6 .8" rgb2="0 0 0" 
@@ -60,28 +87,212 @@
         <material name="MatMesh" texture="skin"/>
 	</asset>
 
+    <contact>       
+		<exclude body1="palm" body2="thumb1"/>
+        <exclude body1="palm" body2="fore1"/>
+        <exclude body1="palm" body2="middle1"/>
+        <exclude body1="palm" body2="ring1"/>
+        <exclude body1="palm" body2="little1"/>
+    </contact>
+
     <worldbody>
         <light directional="false" cutoff="35" exponent="10" diffuse=".7 .7 .7" pos="0.4 -0.2 1.5" dir="-0.4 0.2 -1.5" specular=".3 .3 .3"/>
 		
         <camera name="fixed" pos="0 -0.7 0.7" zaxis="0 -1 1" fovy="45" ipd="0.068"/>
 	
-		<geom type="plane" material="table2d" pos="0 0 0" size=".5 .5 .025"/>
-
-		<geom contype="0" conaffinity="0" type="box" material="tablecube" pos="0 0 -0.026" size=".5 .5 .025"/>
+		<geom type="plane" material="table2d" pos="0 0 0" size="1 1 .025"/>
+		<geom contype="0" conaffinity="0" type="box" material="tablecube" pos="0 0 -0.026" size="1 1 .025"/>
 		<geom contype="0" conaffinity="0" type="cylinder" fromto=".4 .4 -1.001 .4 .4 -0.001" size="0.04"/>
 		<geom contype="0" conaffinity="0" type="cylinder" fromto="-.4 .4 -1.001 -.4 .4 -0.001" size="0.04"/>
 		<geom contype="0" conaffinity="0" type="cylinder" fromto=".4 -.4 -1.001 .4 -.4 -0.001" size="0.04"/>
 		<geom contype="0" conaffinity="0" type="cylinder" fromto="-.4 -.4 -1.001 -.4 -.4 -0.001" size="0.04"/>
         <geom contype="0" conaffinity="0" type="plane" pos="0 0 -1" size="10 10 0.25" material="groundplane"/>
-
+        
+        <body name="mocap" mocap="true" pos="-0.0075 -0.04 0.98">
+            <geom type="box" group="1" size="0.02 0.02 0.02" contype="0" conaffinity="0" rgba=".9 .5 .5 1"/>
+        </body>
+        
 		<!-- ======= ROBOT ======= -->
-        <body childclass="BHAM" name="hand" pos="0 -0.35 1" axisangle="0 0 1 3.141592">
-		  	<!-- ======= PALM  ======= -->
-            <body name="palm" pos="0.0000075 0.000022 0.0000175">
-                <inertial pos="-0.0217876 -0.0376147 0.00276997" quat="-0.146373 0.723094 0.0985561 0.66783" mass="0.119867" diaginertia="0.000123088 0.000100082 6.89467e-005" />
+        <body childclass="MPL" name="forearm" pos="0 0 1">
+            <joint class="free"/>
+            <geom type="cylinder" size="0.02 0.01"/>
+            <body name="palm" pos="0 0 0">
                 <geom type="mesh" mesh="righthandbase"/>
+                <!-- ======= THUMB  ======= -->
+                <body name="thumb0">
+               	<joint name="thumb_ABD" type="hinge" pos="0.0443196 0.0787516 0.0622977" axis="0.549586 -0.456218 0.699872" range="-0.26180 0.26180"/>
+                	<geom type="mesh" mesh="thumb_basecover"/>
+					<body name="thumb1">
+						<joint name="thumb_IN" type="hinge" pos="0.036754 0.056714 0.04474" axis="-0.814200 -0.104803 0.571047" range="0.087266 1.1345" ref="0.087266"/>
+                		<geom type="mesh" mesh="thumb_proximalp"/>
+						<body name="thumb2">
+							<joint name="thumb_OUT" type="hinge" pos="0.046615 0.10503 0.06708" axis="-0.814200 -0.104803 0.571047" range="0.087266 1.4835" ref="0.087266"/>
+							<geom type="mesh" mesh="thumb_middlep"/>
+							<body name="thumb3">
+								<joint name="thumb_PAS" type="hinge" pos="0.050016 0.12692 0.078691" axis="-0.814200 -0.104803 0.571047" range="0.087266 1.4835" ref="0.087266"/>
+								<geom type="mesh" mesh="thumb_distalp"/>
+							</body>
+						</body>
+					</body>
+				</body>
+				
+				<!-- ======= FORE  ======= -->
+                <body name="fore0">
+                	<joint name="fore_ABD" type="hinge" pos="0.0369151 0.107841 -0.00256829" axis="0.087156 0.000000 -0.996195" range="-0.26180 0.26180"/> 
+					<geom type="mesh" mesh="fore_basecover"/>
+					<body name="fore1">
+						<joint name="fore_IN" type="hinge" pos="0.029434 0.08577 -0.020007" axis="0.996195 0.000000 0.087156" range="0.087266 1.1345" ref="0.087266"/>
+                		<geom type="mesh" mesh="fore_proximalp"/>
+						<body name="fore2">
+							<joint name="fore_OUT" type="hinge" pos="0.029014 0.1399 -0.019052" axis="0.996195 0.000000 0.087156" range="0.087266 1.4835" ref="0.087266"/>
+							<geom type="mesh" mesh="fore_middlep"/>
+							<body name="fore3">
+								<joint name="fore_PAS" type="hinge" pos="0.030576 0.16486 -0.018924" axis="0.996195 0.000000 0.087156" range="0.087266 1.4835" ref="0.087266"/>
+								<geom type="mesh" mesh="fore_distalp"/>
+							</body>
+						</body>
+					</body>
+				</body>
+				
+				<!-- ======= MIDDLE  ======= -->
+                <body name="middle0">
+					<joint name="middle_ABD" type="hinge" pos="0.0101112 0.117841 -0.00374828" axis="0.000000 0.000000 -1.000000" range="-0.26180 0.26180"/>
+					<geom type="mesh" mesh="middle_basecover"/>
+					<body name="middle1">
+						<joint name="middle_IN" type="hinge" pos="0.0026354 0.09577 -0.021189" axis="1.000000 0.000000 0.000000" range="0.087266 1.1345" ref="0.087266"/>
+                		<geom type="mesh" mesh="middle_proximalp"/>
+						<body name="middle2">
+							<joint name="middle_OUT" type="hinge" pos="0.0023 0.1499 -0.020201" axis="1.000000 0.000000 0.000000" range="0.087266 1.4835" ref="0.087266"/>
+							<geom type="mesh" mesh="middle_middlep"/>
+							<body name="middle3">
+								<joint name="middle_PAS" type="hinge" pos="0.003867 0.17486 -0.02021" axis="1.000000 0.000000 0.000000" range="0.087266 1.4835" ref="0.087266"/>
+								<geom type="mesh" mesh="middle_distalp"/>
+							</body>
+						</body>
+					</body>
+				</body>
+				
+				<!-- ======= RING  ======= -->
+                <body name="ring0">
+					<joint name="ring_ABD" type="hinge" pos="-0.0166936 0.112641 -0.00258767" axis="-0.087156 0.000000 -0.996195" range="-0.26180 0.26180"/>
+					<geom type="mesh" mesh="ring_basecover"/>
+					<body name="ring1">
+						<joint name="ring_IN" type="hinge" pos="-0.024164 0.09057 -0.020031" axis="0.996195 0.000000 -0.087156" range="0.087266 1.1345" ref="0.087266"/>
+                		<geom type="mesh" mesh="ring_proximalp"/>
+						<body name="ring2">
+							<joint name="ring_OUT" type="hinge" pos="-0.024412 0.1447 -0.019017" axis="0.996195 0.000000 -0.087156" range="0.087266 1.4835" ref="0.087266"/>
+							<geom type="mesh" mesh="ring_middlep"/>
+							<body name="ring3">
+								<joint name="ring_PAS" type="hinge" pos="-0.022852 0.16966 -0.019162" axis="0.996195 0.000000 -0.087156" range="0.087266 1.4835" ref="0.087266"/>
+								<geom type="mesh" mesh="ring_distalp"/>
+							</body>
+						</body>
+					</body>
+				</body>
+				
+				<!-- ======= LITTLE  ======= -->
+                <body name="little0">
+					<joint name="little_ABD" type="hinge" pos="-0.050761 0.07157 -0.016541" axis="-0.173648 0.000000 -0.984808" range="-0.26180 0.26180"/>
+					<geom type="mesh" mesh="little_basecover"/>
+					<body name="little1">
+						<joint name="little_IN" type="hinge" pos="-0.050761 0.07157 -0.016541" axis="0.98481 0.00000 -0.17365" range="0.087266 1.1345" ref="0.087266"/>
+                		<geom type="mesh" mesh="little_proximalp"/>
+						<body name="little2">
+						<joint name="little_OUT" type="hinge" pos="-0.05092 0.1257 -0.015509" axis="0.98481 0.00000 -0.17365" range="0.087266 1.4835" ref="0.087266"/>
+							<geom type="mesh" mesh="little_middlep"/>
+							<body name="little3">
+							<joint name="little_PAS" type="hinge" pos="-0.049378 0.15066 -0.01579" axis="0.98481 0.00000 -0.17365" range="0.087266 1.4835" ref="0.087266"/>
+								<geom type="mesh" mesh="little_distalp"/>
+							</body>
+						</body>
+					</body>
+				</body>
         	</body>
         </body>
     </worldbody>
+	
+<!--
+	<tendon>
+		<fixed name="T_index32_cpl" range="0 1">
+			<joint joint="index_DIP"  coef="0.00705"/>
+			<joint joint="index_PIP"  coef="-0.00805"/>
+		</fixed>
+		<fixed name="T_index21_cpl" range="0 1">
+			<joint joint="index_PIP"  coef="0.010"/>
+			<joint joint="index_MCP"  coef="-0.010"/>
+		</fixed>
+		
+		<fixed name="T_middle32_cpl">
+			<joint joint="middle_DIP"  coef="0.00705"/>
+			<joint joint="middle_PIP"  coef="-0.00805"/>
+		</fixed>
+		<fixed name="T_middle21_cpl">
+			<joint joint="middle_PIP"  coef="0.010"/>
+			<joint joint="middle_MCP"  coef="-0.010"/>
+		</fixed>
+		
+		<fixed name="T_ring32_cpl">
+			<joint joint="ring_DIP"  coef="0.00705"/>
+			<joint joint="ring_PIP"  coef="-0.00805"/>
+		</fixed>
+		<fixed name="T_ring21_cpl">
+			<joint joint="ring_PIP"  coef="0.010"/>
+			<joint joint="ring_MCP"  coef="-0.010"/>
+		</fixed>
+		
+		<fixed name="T_pinky32_cpl">
+			<joint joint="pinky_DIP"  coef="0.00705"/>
+			<joint joint="pinky_PIP"  coef="-0.00805"/>
+		</fixed>
+		<fixed name="T_pinky21_cpl">
+			<joint joint="pinky_PIP"  coef="0.010"/>
+			<joint joint="pinky_MCP"  coef="-0.010"/>
+		</fixed>
+		
+	</tendon>
+	-->
+	
+	
+	
+	<equality>
+        <weld body1="mocap" body2="forearm" solref="0.01 1" solimp=".9 .9 0.01"/>
+    </equality>
+    
+	<!--
+	<equality>
+        <weld body1="mocap" body2="forearm" solref="0.01 1" solimp=".9 .9 0.01"/>
+
+		<tendon name="E_index32_cpl" 	tendon1="T_index32_cpl"/>
+		<tendon name="E_index21_cpl" 	tendon1="T_index21_cpl"/>
+		<tendon name="E_middle32_cpl" 	tendon1="T_middle32_cpl"/>
+		<tendon name="E_middle21_cpl" 	tendon1="T_middle21_cpl"/>
+		<tendon name="E_ring32_cpl" 	tendon1="T_ring32_cpl"/>
+		<tendon name="E_ring21_cpl" 	tendon1="T_ring21_cpl"/>
+		<tendon name="E_pinky32_cpl" 	tendon1="T_pinky32_cpl"/>
+		<tendon name="E_pinky21_cpl" 	tendon1="T_pinky21_cpl"/>
+		
+		<joint name="ring_pinky_cpl" joint1="ring_ABD" joint2="pinky_ABD" polycoef="0 0.5 0 0 0"/>
+	</equality>
+	
+
+	-->
+	
+	<actuator>
+        <position name="A_thumb_ABD"  class="MPL" joint="thumb_ABD"  ctrlrange="-0.26180 0.26180"/>
+        <position name="A_thumb_IN"  class="MPL" joint="thumb_IN"  ctrlrange="0.087266 1.1345"/>
+        <position name="A_thumb_OUT"  class="MPL" joint="thumb_OUT"  ctrlrange="0.087266 1.4835"/>
+        <position name="A_fore_ABD"  class="MPL" joint="fore_ABD"  ctrlrange="-0.26180 0.26180"/>
+        <position name="A_fore_IN"  class="MPL" joint="fore_IN"  ctrlrange="0.087266 1.1345"/>
+        <position name="A_fore_OUT"  class="MPL" joint="fore_OUT"  ctrlrange="0.087266 1.4835"/>
+        <position name="A_middle_ABD"  class="MPL" joint="middle_ABD"  ctrlrange="-0.26180 0.26180"/>
+        <position name="A_middle_IN"  class="MPL" joint="middle_IN"  ctrlrange="0.087266 1.1345"/>
+        <position name="A_middle_OUT"  class="MPL" joint="middle_OUT"  ctrlrange="0.087266 1.4835"/>
+        <position name="A_ring_ABD"  class="MPL" joint="ring_ABD"  ctrlrange="-0.26180 0.26180"/>
+        <position name="A_ring_IN"  class="MPL" joint="ring_IN"  ctrlrange="0.087266 1.1345"/>
+        <position name="A_ring_OUT"  class="MPL" joint="ring_OUT"  ctrlrange="0.087266 1.4835"/>
+        <position name="A_little_ABD"  class="MPL" joint="little_ABD"  ctrlrange="-0.26180 0.26180"/>
+        <position name="A_little_IN"  class="MPL" joint="little_IN"  ctrlrange="0.087266 1.1345"/>
+        <position name="A_little_OUT"  class="MPL" joint="little_OUT"  ctrlrange="0.087266 1.4835"/>
+	</actuator>
 	
 </mujoco>

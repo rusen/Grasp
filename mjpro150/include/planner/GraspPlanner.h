@@ -11,6 +11,7 @@
 #include "mujoco.h"
 #include <controller/HandControllerInterface.h>
 #include <controller/MPLHandController.h>
+#include <controller/DLRHandController.h>
 #include <sensor/simulate.h>
 #include <sensor/camera.h>
 #include <glm/glm.hpp>
@@ -76,7 +77,7 @@ private:
 	glm::vec3 cameraPos, gazeDir;
 
 	// Hand controller allocation.
-	MPLHandController controller;
+	DLRHandController controller;
 
 };
 

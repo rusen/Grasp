@@ -33,8 +33,12 @@ public:
 	int getState() const;
 	void setState(int state = 1);
 
+	int getCounter() const;
+	void setCounter(int counter = 0);
+
 protected:
 	int counter = 0;
+	int jointCount = 0;
 	int counterLimit = 300;
 };
 

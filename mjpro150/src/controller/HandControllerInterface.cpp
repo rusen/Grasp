@@ -16,4 +16,12 @@ HandControllerInterface::~HandControllerInterface() {
 	// TODO Auto-generated destructor stub
 }
 
+int HandControllerInterface::getCounter() const {
+	return counter;
+}
+
+void HandControllerInterface::setCounter(int counter) {
+	this->counter = counter;
+}
+
 }

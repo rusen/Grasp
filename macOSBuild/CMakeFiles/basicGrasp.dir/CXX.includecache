@@ -1062,6 +1062,12 @@ lapacke_mangling.h
 
 /Users/rusi/git/Grasp/mjpro150/include/Eigen/src/plugins/MatrixCwiseUnaryOps.h
 
+/Users/rusi/git/Grasp/mjpro150/include/controller/DLRHandController.h
+HandControllerInterface.h
+/Users/rusi/git/Grasp/mjpro150/include/controller/HandControllerInterface.h
+stdio.h
+/Users/rusi/git/Grasp/mjpro150/include/controller/stdio.h
+
 /Users/rusi/git/Grasp/mjpro150/include/controller/HandControllerInterface.h
 mujoco.h
 /Users/rusi/git/Grasp/mjpro150/include/controller/mujoco.h
@@ -1934,6 +1940,8 @@ mujoco.h
 controller/HandControllerInterface.h
 -
 controller/MPLHandController.h
+-
+controller/DLRHandController.h
 -
 sensor/simulate.h
 -

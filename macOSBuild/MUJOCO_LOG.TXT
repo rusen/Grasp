@@ -37,3 +37,94 @@ Fri Aug 11 16:14:10 2017
 ERROR: Load model error: Error: texture 'marble2d' not found in material 1
 Object name = table2d, id = 1, line = 53, column = 9
 
+Fri Aug 11 22:11:46 2017
+ERROR: Load model error: XML Error: required attribute missing: 'pos'
+Element 'inertial', line 88, column 17
+
+
+Fri Aug 11 22:28:15 2017
+ERROR: Load model error: Error: repeated name in body array, position 5
+Object name = thumb0, id = 5, line = 91, column = 21
+
+Fri Aug 11 22:32:27 2017
+ERROR: Load model error: Error: repeated name in body array, position 7
+Object name = thumb2, id = 7, line = 95, column = 29
+
+Fri Aug 11 23:54:26 2017
+ERROR: Load model error: XML Error: Schema violation: unrecognized element
+
+Element 'anchor', line 101, column 33
+
+
+Fri Aug 11 23:54:37 2017
+ERROR: Load model error: XML Error: Schema violation: unrecognized element
+
+Element 'axis', line 102, column 33
+
+
+Sat Aug 12 12:26:39 2017
+ERROR: Load model error: XML Error: Schema violation: unrecognized attribute: 'gravity'
+
+Element 'compiler', line 3, column 5
+
+
+Sat Aug 12 15:08:09 2017
+ERROR: Load model error: Error: mass and inertia of moving bodies must be positive
+Object name = hand, id = 1, line = 86, column = 9
+
+Sat Aug 12 15:12:20 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 9. The simulation is unstable. Time = 2.7160.
+
+Sat Aug 12 15:13:22 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 12. The simulation is unstable. Time = 1.9880.
+
+Sat Aug 12 15:14:37 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 3. The simulation is unstable. Time = 3.6740.
+
+Sat Aug 12 16:35:47 2017
+ERROR: Load model error: Error: body 'index1' not found in bodypair 1
+Object name = , id = 1, line = 65, column = 9
+
+Sat Aug 12 16:35:58 2017
+ERROR: Load model error: Error: body 'pinky1' not found in bodypair 4
+Object name = , id = 4, line = 68, column = 9
+
+Sat Aug 12 16:37:52 2017
+ERROR: Load model error: Error: mocap body 'mocap' is not a fixed child of world
+Object name = mocap, id = 1, line = 90, column = 9
+
+Sat Aug 12 16:39:21 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 3. The simulation is unstable. Time = 5.3000.
+
+Sat Aug 12 16:46:53 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 4.3480.
+
+Sat Aug 12 16:47:25 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 3.7540.
+
+Sat Aug 12 16:47:43 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 1.3240.
+
+Sat Aug 12 16:48:05 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 1. The simulation is unstable. Time = 1.4740.
+
+Sat Aug 12 16:48:12 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 1.2740.
+
+Sat Aug 12 16:48:36 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 1. The simulation is unstable. Time = 2.9140.
+
+Sat Aug 12 16:49:19 2017
+ERROR: Load model error: XML parse error at line 0, column 0:
+Failed to open file
+
+
+Sat Aug 12 16:55:34 2017
+ERROR: Load model error: XML parse error at line 260, column 5:
+Error reading end tag.
+
+
+Sat Aug 12 16:55:57 2017
+ERROR: Load model error: Error: mesh 'righthandbase' not found in geom 9
+Object name = , id = 9, line = 124, column = 17
+

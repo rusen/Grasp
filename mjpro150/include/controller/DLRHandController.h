@@ -5,19 +5,19 @@
  *      Author: rusi
  */
 
-#ifndef GRASP_CONTROLLER_MPLHANDCONTROLLER_H_
-#define GRASP_CONTROLLER_MPLHANDCONTROLLER_H_
+#ifndef GRASP_CONTROLLER_DLRHANDCONTROLLER_H_
+#define GRASP_CONTROLLER_DLRHANDCONTROLLER_H_
 
 #include "HandControllerInterface.h"
 #include "stdio.h"
 
 namespace Grasp{
 
-class MPLHandController: public HandControllerInterface {
+class DLRHandController: public HandControllerInterface {
 
 public:
-	MPLHandController();
-	~MPLHandController();
+	DLRHandController();
+	~DLRHandController();
 
 	void ComputeTrajectory();
 
@@ -29,12 +29,11 @@ public:
 
 protected:
 
-
 private:
-	double initialPoses[13] = {0, 0, -0.25, 1.6, 0.8, 0, 0, 0.34, 0, 0, 0, 0.34, 0};
-	double finalPoses[13] = {0, 0, 0, 0, 0, 1, 0.2, 0, 1.2, 1.2, 1.2, 0, 1.2};
+	double initialPoses[15] = {0, 0.25, 0, 0, 0.25, 0, 0, 0.25, 0, 0, 0.25, 0, 0, 0.25, 0};
+	double finalPoses[15] = {0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1};
 };
 
 
 } //namespace grasp
-#endif /* SAMPLE_CONTROLLER_MPLHANDCONTROLLER_H_ */
+#endif /* GRASP_CONTROLLER_DLRHANDCONTROLLER_H_ */

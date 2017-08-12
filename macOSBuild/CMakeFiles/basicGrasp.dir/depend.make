@@ -215,6 +215,7 @@ CMakeFiles/basicGrasp.dir/src/basicGrasp.o: /Users/rusi/git/Grasp/mjpro150/inclu
 CMakeFiles/basicGrasp.dir/src/basicGrasp.o: /Users/rusi/git/Grasp/mjpro150/include/Eigen/src/plugins/CommonCwiseUnaryOps.h
 CMakeFiles/basicGrasp.dir/src/basicGrasp.o: /Users/rusi/git/Grasp/mjpro150/include/Eigen/src/plugins/MatrixCwiseBinaryOps.h
 CMakeFiles/basicGrasp.dir/src/basicGrasp.o: /Users/rusi/git/Grasp/mjpro150/include/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+CMakeFiles/basicGrasp.dir/src/basicGrasp.o: /Users/rusi/git/Grasp/mjpro150/include/controller/DLRHandController.h
 CMakeFiles/basicGrasp.dir/src/basicGrasp.o: /Users/rusi/git/Grasp/mjpro150/include/controller/HandControllerInterface.h
 CMakeFiles/basicGrasp.dir/src/basicGrasp.o: /Users/rusi/git/Grasp/mjpro150/include/controller/MPLHandController.h
 CMakeFiles/basicGrasp.dir/src/basicGrasp.o: /Users/rusi/git/Grasp/mjpro150/include/glfw3.h
@@ -2933,6 +2934,7 @@ CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o: /Users/rusi/git/Grasp/mjpr
 CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o: /Users/rusi/git/Grasp/mjpro150/include/Eigen/src/plugins/CommonCwiseUnaryOps.h
 CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o: /Users/rusi/git/Grasp/mjpro150/include/Eigen/src/plugins/MatrixCwiseBinaryOps.h
 CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o: /Users/rusi/git/Grasp/mjpro150/include/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o: /Users/rusi/git/Grasp/mjpro150/include/controller/DLRHandController.h
 CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o: /Users/rusi/git/Grasp/mjpro150/include/controller/HandControllerInterface.h
 CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o: /Users/rusi/git/Grasp/mjpro150/include/controller/MPLHandController.h
 CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o: /Users/rusi/git/Grasp/mjpro150/include/glm/common.hpp
