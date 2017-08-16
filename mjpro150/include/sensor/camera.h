@@ -135,7 +135,7 @@ namespace Grasp
 
     	// Write back the output.
 		cv::Point2d uv_rect;
-		int x = info_.width - ((info_.fx * p[0]) + info_.cx_);
+		double x = info_.width - ((info_.fx * p[0]) + info_.cx_);
     	uv_rect.x = (double) x;
     	uv_rect.y = (info_.fy * p[1]) + info_.cy_;
 		return uv_rect;

@@ -1,4 +1,4 @@
-<mujoco model="MPL(v1.31)">
+<mujoco model="BHAM">
     <!--
     This file and the .stl mesh files referenced from it have been derived by Roboti LLC from the model of the Modular Prosthetic Limb developed by The Johns Hopkins University / Applied Physics Laboratory. The modifications are as follows: the original meshes have been replaced with their convex hulls; the original URDF model has been converted to the MJCF format and a number of MJCF-specific fields have been added.
 
@@ -21,10 +21,10 @@
     
     <compiler angle="radian" meshdir="mesh/" texturedir="texture/" convexhull="true" coordinate="local"/>
     <option timestep="0.002" iterations="50" apirate="50" noslip_iterations="10"/>
-    <size njmax="600" nconmax="150" nstack="300000"/>
+    <size njmax="1000" nconmax="150" nstack="300000"/>
 
     <default>
-		<default class="MPL"> 
+		<default class="BHAM"> 
 			<geom material="MatMesh" contype="1" conaffinity="1" condim="6" solimp="0.99 0.999 0.1" solref="0.04 1.0"/>
         	<joint limited="true" damping="0.2" armature=".01"/>
         	<site material="MatTouch" type="ellipsoid" group="3"/>
@@ -50,6 +50,25 @@
 
     <asset>
 		<mesh name="righthandbase" 		file="righthandbase.stl"/>
+		<mesh name="palm1" 		file="palm1.stl"/>
+		<mesh name="palm2" 		file="palm2.stl"/>
+		<mesh name="palm3" 		file="palm3.stl"/>
+		<mesh name="palm4" 		file="palm4.stl"/>
+		<mesh name="palm5" 		file="palm5.stl"/>
+		<mesh name="palm6" 		file="palm6.stl"/>
+		<mesh name="palm7" 		file="palm7.stl"/>
+		<mesh name="palm8" 		file="palm8.stl"/>
+		<mesh name="palm9" 		file="palm9.stl"/>
+		<mesh name="palm10" 		file="palm10.stl"/>
+		<mesh name="palm11" 		file="palm11.stl"/>
+		<mesh name="palm12" 		file="palm12.stl"/>
+		<mesh name="palm13" 		file="palm13.stl"/>
+		<mesh name="palm14" 		file="palm14.stl"/>
+		<mesh name="palm15" 		file="palm15.stl"/>
+		<mesh name="palm16" 		file="palm16.stl"/>
+		<mesh name="palm17" 		file="palm17.stl"/>
+		<mesh name="palm18" 		file="palm18.stl"/>
+		<mesh name="palm19" 		file="palm19.stl"/>
 		<mesh name="fore_basecover" 	file="fore_basecover.stl"/>
 		<mesh name="fore_distalp" 		file="fore_distalp.stl"/>
 		<mesh name="fore_middlep" 		file="fore_middlep.stl"/>
@@ -84,7 +103,7 @@
 		<material name="tablecube" texture="marblecube" rgba=".8 .8 .8 1"/>
         <material name="MatTouch" rgba=".3 .9 .3 .3"/>
         <material name="MatIMU" rgba=".1 .1 .9 1"/>
-        <material name="MatMesh" texture="skin"/>
+        <material name="MatMesh" rgba=".6 .6 .6 1"/>
 	</asset>
 
     <contact>       
@@ -100,24 +119,44 @@
 		
         <camera name="fixed" pos="0 -0.7 0.7" zaxis="0 -1 1" fovy="45" ipd="0.068"/>
 	
-		<geom type="plane" material="table2d" pos="0 0 0" size="1 1 .025"/>
-		<geom contype="0" conaffinity="0" type="box" material="tablecube" pos="0 0 -0.026" size="1 1 .025"/>
+		<geom type="plane" material="table2d" pos="0 0 0" size="0.5 0.5 .025"/>
+		<geom contype="0" conaffinity="0" type="box" material="tablecube" pos="0 0 -0.026" size="0.5 0.5 .025"/>
 		<geom contype="0" conaffinity="0" type="cylinder" fromto=".4 .4 -1.001 .4 .4 -0.001" size="0.04"/>
 		<geom contype="0" conaffinity="0" type="cylinder" fromto="-.4 .4 -1.001 -.4 .4 -0.001" size="0.04"/>
 		<geom contype="0" conaffinity="0" type="cylinder" fromto=".4 -.4 -1.001 .4 -.4 -0.001" size="0.04"/>
 		<geom contype="0" conaffinity="0" type="cylinder" fromto="-.4 -.4 -1.001 -.4 -.4 -0.001" size="0.04"/>
         <geom contype="0" conaffinity="0" type="plane" pos="0 0 -1" size="10 10 0.25" material="groundplane"/>
         
-        <body name="mocap" mocap="true" pos="-0.0075 -0.04 0.98">
+        <body name="mocap" mocap="true" pos="-0.0075 0.03 1.02">
             <geom type="box" group="1" size="0.02 0.02 0.02" contype="0" conaffinity="0" rgba=".9 .5 .5 1"/>
         </body>
         
 		<!-- ======= ROBOT ======= -->
-        <body childclass="MPL" name="forearm" pos="0 0 1">
+        <body childclass="BHAM" name="forearm" pos="0 0 1" euler="0 3.141592 3.141592">
             <joint class="free"/>
             <geom type="cylinder" size="0.02 0.01"/>
             <body name="palm" pos="0 0 0">
-                <geom type="mesh" mesh="righthandbase"/>
+            	<geom type="mesh" mass="0" contype="0" conaffinity="0" mesh="righthandbase"/>
+                <geom type="mesh" mesh="palm1" rgba="0 0 0 0"/>
+                <geom type="mesh" mesh="palm2" rgba="0 0 0 0"/>
+                <geom type="mesh" mesh="palm3" rgba="0 0 0 0"/>
+                <geom type="mesh" mesh="palm4" rgba="0 0 0 0"/>
+                <geom type="mesh" mesh="palm5" rgba="0 0 0 0"/>
+                <geom type="mesh" mesh="palm6" rgba="0 0 0 0"/>
+                <geom type="mesh" mesh="palm7" rgba="0 0 0 0"/>
+                <geom type="mesh" mesh="palm8" rgba="0 0 0 0"/>
+                <geom type="mesh" mesh="palm9" rgba="0 0 0 0"/>
+                <geom type="mesh" mesh="palm10" rgba="0 0 0 0"/>
+                <geom type="mesh" mesh="palm11" rgba="0 0 0 0"/>
+                <geom type="mesh" mesh="palm12" rgba="0 0 0 0"/>
+                <geom type="mesh" mesh="palm13" rgba="0 0 0 0"/>
+                <geom type="mesh" mesh="palm14" rgba="0 0 0 0"/>
+                <geom type="mesh" mesh="palm15" rgba="0 0 0 0"/>
+                <geom type="mesh" mesh="palm16" rgba="0 0 0 0"/>
+                <geom type="mesh" mesh="palm17" rgba="0 0 0 0"/>
+                <geom type="mesh" mesh="palm18" rgba="0 0 0 0"/>
+                <geom type="mesh" mesh="palm19" rgba="0 0 0 0"/>
+                
                 <!-- ======= THUMB  ======= -->
                 <body name="thumb0">
                	<joint name="thumb_ABD" type="hinge" pos="0.0443196 0.0787516 0.0622977" axis="0.549586 -0.456218 0.699872" range="-0.26180 0.26180"/>
@@ -278,21 +317,21 @@
 	-->
 	
 	<actuator>
-        <position name="A_thumb_ABD"  class="MPL" joint="thumb_ABD"  ctrlrange="-0.26180 0.26180"/>
-        <position name="A_thumb_IN"  class="MPL" joint="thumb_IN"  ctrlrange="0.087266 1.1345"/>
-        <position name="A_thumb_OUT"  class="MPL" joint="thumb_OUT"  ctrlrange="0.087266 1.4835"/>
-        <position name="A_fore_ABD"  class="MPL" joint="fore_ABD"  ctrlrange="-0.26180 0.26180"/>
-        <position name="A_fore_IN"  class="MPL" joint="fore_IN"  ctrlrange="0.087266 1.1345"/>
-        <position name="A_fore_OUT"  class="MPL" joint="fore_OUT"  ctrlrange="0.087266 1.4835"/>
-        <position name="A_middle_ABD"  class="MPL" joint="middle_ABD"  ctrlrange="-0.26180 0.26180"/>
-        <position name="A_middle_IN"  class="MPL" joint="middle_IN"  ctrlrange="0.087266 1.1345"/>
-        <position name="A_middle_OUT"  class="MPL" joint="middle_OUT"  ctrlrange="0.087266 1.4835"/>
-        <position name="A_ring_ABD"  class="MPL" joint="ring_ABD"  ctrlrange="-0.26180 0.26180"/>
-        <position name="A_ring_IN"  class="MPL" joint="ring_IN"  ctrlrange="0.087266 1.1345"/>
-        <position name="A_ring_OUT"  class="MPL" joint="ring_OUT"  ctrlrange="0.087266 1.4835"/>
-        <position name="A_little_ABD"  class="MPL" joint="little_ABD"  ctrlrange="-0.26180 0.26180"/>
-        <position name="A_little_IN"  class="MPL" joint="little_IN"  ctrlrange="0.087266 1.1345"/>
-        <position name="A_little_OUT"  class="MPL" joint="little_OUT"  ctrlrange="0.087266 1.4835"/>
+        <position name="A_thumb_ABD"  class="BHAM" joint="thumb_ABD"  ctrlrange="-0.26180 0.26180"/>
+        <position name="A_thumb_IN"  class="BHAM" joint="thumb_IN"  ctrlrange="0.087266 1.1345"/>
+        <position name="A_thumb_OUT"  class="BHAM" joint="thumb_OUT"  ctrlrange="0.087266 1.4835"/>
+        <position name="A_fore_ABD"  class="BHAM" joint="fore_ABD"  ctrlrange="-0.26180 0.26180"/>
+        <position name="A_fore_IN"  class="BHAM" joint="fore_IN"  ctrlrange="0.087266 1.1345"/>
+        <position name="A_fore_OUT"  class="BHAM" joint="fore_OUT"  ctrlrange="0.087266 1.4835"/>
+        <position name="A_middle_ABD"  class="BHAM" joint="middle_ABD"  ctrlrange="-0.26180 0.26180"/>
+        <position name="A_middle_IN"  class="BHAM" joint="middle_IN"  ctrlrange="0.087266 1.1345"/>
+        <position name="A_middle_OUT"  class="BHAM" joint="middle_OUT"  ctrlrange="0.087266 1.4835"/>
+        <position name="A_ring_ABD"  class="BHAM" joint="ring_ABD"  ctrlrange="-0.26180 0.26180"/>
+        <position name="A_ring_IN"  class="BHAM" joint="ring_IN"  ctrlrange="0.087266 1.1345"/>
+        <position name="A_ring_OUT"  class="BHAM" joint="ring_OUT"  ctrlrange="0.087266 1.4835"/>
+        <position name="A_little_ABD"  class="BHAM" joint="little_ABD"  ctrlrange="-0.26180 0.26180"/>
+        <position name="A_little_IN"  class="BHAM" joint="little_IN"  ctrlrange="0.087266 1.1345"/>
+        <position name="A_little_OUT"  class="BHAM" joint="little_OUT"  ctrlrange="0.087266 1.4835"/>
 	</actuator>
 	
 </mujoco>

@@ -50,7 +50,7 @@ public:
 	bool FollowTrajectory(const mjModel* m, mjData* d, approachType type);
 
 	// Perform grasp.
-	void PerformGrasp(const mjModel* m, mjData* d, HandControllerInterface * handController);
+	void PerformGrasp(const mjModel* m, mjData* d);
 
 private:
 	state graspState = initial;

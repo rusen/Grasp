@@ -81,9 +81,33 @@ CMakeFiles/basicGrasp.dir/src/basicGrasp.o.provides: CMakeFiles/basicGrasp.dir/s
 CMakeFiles/basicGrasp.dir/src/basicGrasp.o.provides.build: CMakeFiles/basicGrasp.dir/src/basicGrasp.o
 
 
+CMakeFiles/basicGrasp.dir/src/controller/DLRHandController.o: CMakeFiles/basicGrasp.dir/flags.make
+CMakeFiles/basicGrasp.dir/src/controller/DLRHandController.o: /Users/rusi/git/Grasp/mjpro150/src/controller/DLRHandController.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rusi/git/Grasp/macOSBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/basicGrasp.dir/src/controller/DLRHandController.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/basicGrasp.dir/src/controller/DLRHandController.o -c /Users/rusi/git/Grasp/mjpro150/src/controller/DLRHandController.cpp
+
+CMakeFiles/basicGrasp.dir/src/controller/DLRHandController.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/basicGrasp.dir/src/controller/DLRHandController.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/rusi/git/Grasp/mjpro150/src/controller/DLRHandController.cpp > CMakeFiles/basicGrasp.dir/src/controller/DLRHandController.i
+
+CMakeFiles/basicGrasp.dir/src/controller/DLRHandController.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/basicGrasp.dir/src/controller/DLRHandController.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/rusi/git/Grasp/mjpro150/src/controller/DLRHandController.cpp -o CMakeFiles/basicGrasp.dir/src/controller/DLRHandController.s
+
+CMakeFiles/basicGrasp.dir/src/controller/DLRHandController.o.requires:
+
+.PHONY : CMakeFiles/basicGrasp.dir/src/controller/DLRHandController.o.requires
+
+CMakeFiles/basicGrasp.dir/src/controller/DLRHandController.o.provides: CMakeFiles/basicGrasp.dir/src/controller/DLRHandController.o.requires
+	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/controller/DLRHandController.o.provides.build
+.PHONY : CMakeFiles/basicGrasp.dir/src/controller/DLRHandController.o.provides
+
+CMakeFiles/basicGrasp.dir/src/controller/DLRHandController.o.provides.build: CMakeFiles/basicGrasp.dir/src/controller/DLRHandController.o
+
+
 CMakeFiles/basicGrasp.dir/src/controller/HandControllerInterface.o: CMakeFiles/basicGrasp.dir/flags.make
 CMakeFiles/basicGrasp.dir/src/controller/HandControllerInterface.o: /Users/rusi/git/Grasp/mjpro150/src/controller/HandControllerInterface.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rusi/git/Grasp/macOSBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/basicGrasp.dir/src/controller/HandControllerInterface.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rusi/git/Grasp/macOSBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/basicGrasp.dir/src/controller/HandControllerInterface.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/basicGrasp.dir/src/controller/HandControllerInterface.o -c /Users/rusi/git/Grasp/mjpro150/src/controller/HandControllerInterface.cpp
 
 CMakeFiles/basicGrasp.dir/src/controller/HandControllerInterface.i: cmake_force
@@ -107,7 +131,7 @@ CMakeFiles/basicGrasp.dir/src/controller/HandControllerInterface.o.provides.buil
 
 CMakeFiles/basicGrasp.dir/src/controller/MPLHandController.o: CMakeFiles/basicGrasp.dir/flags.make
 CMakeFiles/basicGrasp.dir/src/controller/MPLHandController.o: /Users/rusi/git/Grasp/mjpro150/src/controller/MPLHandController.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rusi/git/Grasp/macOSBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/basicGrasp.dir/src/controller/MPLHandController.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rusi/git/Grasp/macOSBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/basicGrasp.dir/src/controller/MPLHandController.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/basicGrasp.dir/src/controller/MPLHandController.o -c /Users/rusi/git/Grasp/mjpro150/src/controller/MPLHandController.cpp
 
 CMakeFiles/basicGrasp.dir/src/controller/MPLHandController.i: cmake_force
@@ -131,7 +155,7 @@ CMakeFiles/basicGrasp.dir/src/controller/MPLHandController.o.provides.build: CMa
 
 CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o: CMakeFiles/basicGrasp.dir/flags.make
 CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o: /Users/rusi/git/Grasp/mjpro150/src/planner/GraspPlanner.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rusi/git/Grasp/macOSBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rusi/git/Grasp/macOSBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o -c /Users/rusi/git/Grasp/mjpro150/src/planner/GraspPlanner.cpp
 
 CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.i: cmake_force
@@ -155,7 +179,7 @@ CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o.provides.build: CMakeFiles/
 
 CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o: CMakeFiles/basicGrasp.dir/flags.make
 CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o: /Users/rusi/git/Grasp/mjpro150/src/sensor/CollectData.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rusi/git/Grasp/macOSBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rusi/git/Grasp/macOSBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o -c /Users/rusi/git/Grasp/mjpro150/src/sensor/CollectData.cpp
 
 CMakeFiles/basicGrasp.dir/src/sensor/CollectData.i: cmake_force
@@ -179,7 +203,7 @@ CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o.provides.build: CMakeFiles/ba
 
 CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o: CMakeFiles/basicGrasp.dir/flags.make
 CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o: /Users/rusi/git/Grasp/mjpro150/src/sensor/kinectSimulator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rusi/git/Grasp/macOSBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rusi/git/Grasp/macOSBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o -c /Users/rusi/git/Grasp/mjpro150/src/sensor/kinectSimulator.cpp
 
 CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.i: cmake_force
@@ -203,7 +227,7 @@ CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o.provides.build: CMakeFile
 
 CMakeFiles/basicGrasp.dir/src/sensor/noiseutils.o: CMakeFiles/basicGrasp.dir/flags.make
 CMakeFiles/basicGrasp.dir/src/sensor/noiseutils.o: /Users/rusi/git/Grasp/mjpro150/src/sensor/noiseutils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rusi/git/Grasp/macOSBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/basicGrasp.dir/src/sensor/noiseutils.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rusi/git/Grasp/macOSBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/basicGrasp.dir/src/sensor/noiseutils.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/basicGrasp.dir/src/sensor/noiseutils.o -c /Users/rusi/git/Grasp/mjpro150/src/sensor/noiseutils.cpp
 
 CMakeFiles/basicGrasp.dir/src/sensor/noiseutils.i: cmake_force
@@ -228,6 +252,7 @@ CMakeFiles/basicGrasp.dir/src/sensor/noiseutils.o.provides.build: CMakeFiles/bas
 # Object files for target basicGrasp
 basicGrasp_OBJECTS = \
 "CMakeFiles/basicGrasp.dir/src/basicGrasp.o" \
+"CMakeFiles/basicGrasp.dir/src/controller/DLRHandController.o" \
 "CMakeFiles/basicGrasp.dir/src/controller/HandControllerInterface.o" \
 "CMakeFiles/basicGrasp.dir/src/controller/MPLHandController.o" \
 "CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o" \
@@ -239,6 +264,7 @@ basicGrasp_OBJECTS = \
 basicGrasp_EXTERNAL_OBJECTS =
 
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: CMakeFiles/basicGrasp.dir/src/basicGrasp.o
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: CMakeFiles/basicGrasp.dir/src/controller/DLRHandController.o
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: CMakeFiles/basicGrasp.dir/src/controller/HandControllerInterface.o
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: CMakeFiles/basicGrasp.dir/src/controller/MPLHandController.o
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o
@@ -413,7 +439,7 @@ basicGrasp_EXTERNAL_OBJECTS =
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libCGAL.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libnoise.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: CMakeFiles/basicGrasp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/rusi/git/Grasp/macOSBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/rusi/git/Grasp/macOSBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/basicGrasp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -422,6 +448,7 @@ CMakeFiles/basicGrasp.dir/build: /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp
 .PHONY : CMakeFiles/basicGrasp.dir/build
 
 CMakeFiles/basicGrasp.dir/requires: CMakeFiles/basicGrasp.dir/src/basicGrasp.o.requires
+CMakeFiles/basicGrasp.dir/requires: CMakeFiles/basicGrasp.dir/src/controller/DLRHandController.o.requires
 CMakeFiles/basicGrasp.dir/requires: CMakeFiles/basicGrasp.dir/src/controller/HandControllerInterface.o.requires
 CMakeFiles/basicGrasp.dir/requires: CMakeFiles/basicGrasp.dir/src/controller/MPLHandController.o.requires
 CMakeFiles/basicGrasp.dir/requires: CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o.requires

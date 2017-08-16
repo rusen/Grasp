@@ -152,6 +152,21 @@ src/basicGrasp.s:
 .PHONY : src/basicGrasp.s
 
 # target to build an object file
+src/controller/DLRHandController.o:
+	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/controller/DLRHandController.o
+.PHONY : src/controller/DLRHandController.o
+
+# target to preprocess a source file
+src/controller/DLRHandController.i:
+	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/controller/DLRHandController.i
+.PHONY : src/controller/DLRHandController.i
+
+# target to generate assembly for a file
+src/controller/DLRHandController.s:
+	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/controller/DLRHandController.s
+.PHONY : src/controller/DLRHandController.s
+
+# target to build an object file
 src/controller/HandControllerInterface.o:
 	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/controller/HandControllerInterface.o
 .PHONY : src/controller/HandControllerInterface.o
@@ -260,6 +275,9 @@ help:
 	@echo "... src/basicGrasp.o"
 	@echo "... src/basicGrasp.i"
 	@echo "... src/basicGrasp.s"
+	@echo "... src/controller/DLRHandController.o"
+	@echo "... src/controller/DLRHandController.i"
+	@echo "... src/controller/DLRHandController.s"
 	@echo "... src/controller/HandControllerInterface.o"
 	@echo "... src/controller/HandControllerInterface.i"
 	@echo "... src/controller/HandControllerInterface.s"

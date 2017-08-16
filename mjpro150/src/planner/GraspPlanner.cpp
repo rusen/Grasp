@@ -84,8 +84,8 @@ GraspPlanner::GraspPlanner() {
 	preApproachQuat[approachCounterLimit-1] = glm::quat(finalDir);
 
 	// TODO: Specify pre-grasp to grasp points here as well.
-	finalApproachPos[0] = glm::vec3(0.03, -0.11, 0.275);
-	finalApproachPos[finalApproachCounterLimit-1] = glm::vec3(0.03, -0.11, 0.170);
+	finalApproachPos[0] = finalPosition;
+	finalApproachPos[finalApproachCounterLimit-1] = glm::vec3(0.03, -0.11, 0.20);
 }
 
 GraspPlanner::~GraspPlanner() {
@@ -185,7 +185,6 @@ bool GraspPlanner::FollowTrajectory(const mjModel* m, mjData* d, approachType ty
 	else if (type == preApproach)
 	{
 		controller.SetPose(m, d, preApproachPos[counter], preApproachQuat[counter]);
-//		std::cout<<"Pos:"<<counter<<":"<<preApproachPos[counter][0]<<":"<<preApproachPos[counter][1]<<":"<<preApproachPos[counter][2]<<std::endl;
 	}
 	else
 	{
@@ -211,7 +210,7 @@ bool GraspPlanner::FollowTrajectory(const mjModel* m, mjData* d, approachType ty
 
 // Main function that plans a grasp from initial position to the final trajectory.
 // It's a state driven function since it is called in every simulation step.
-void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, HandControllerInterface* handController){
+void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d){
 
 	bool success = false;
 	switch (graspState)
@@ -223,7 +222,7 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, HandControllerInter
 			startFlag = true;
 			controller.SetPose(m, d, initialApproachPos[0], initialApproachQuat[0]);
 		}
-		success = handController->Grasp(m, d, initialGrasp);
+		success = controller.Grasp(m, d, initialGrasp);
 		if (success){
 			ComputeTrajectory();
 			startFlag = false;
@@ -231,6 +230,7 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, HandControllerInter
 		}
 		break;
 	case atDataApproach:
+
 		success = FollowTrajectory(m, d, initialApproach);
 		if (success)
 		{
@@ -285,7 +285,7 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, HandControllerInter
 		counter = 0;
 		break;
 	case grasping:
-		success = handController->Grasp(m, d, finalGrasp);
+		success = controller.Grasp(m, d, finalGrasp);
 		if (success)
 			graspState = lifting;
 			break;

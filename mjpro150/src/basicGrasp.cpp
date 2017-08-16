@@ -17,7 +17,6 @@
 #include <iostream>
 #include <math.h>       /* cos */
 #include <thread>         // std::thread
-#include <controller/MPLHandController.h>
 #include <planner/GraspPlanner.h>
 #include <sensor/camera.h>
 #include <glm/glm.hpp>
@@ -59,9 +58,6 @@ unsigned char addonBuffer[2400*4000];
 
 // Joint info debugging data.
 double jointArr[20][6];
-
-// Hand controller
-Grasp::HandControllerInterface * handController = new Grasp::MPLHandController();
 
 // keyboard callback
 void keyboard(GLFWwindow* window, int key, int scancode, int act, int mods)
@@ -106,13 +102,6 @@ glm::mat4 getTM(glm::vec3 gaze, glm::vec3 pos, bool usePerspective){
 	glm::vec3 r = glm::normalize(glm::cross(gaze, glm::vec3(0,0,1)));
 	glm::vec3 u = glm::normalize(glm::cross(r, gaze));
 
-	/*
-	std::cout<<"VECTORS G H U POS:"<<std::endl;
-	std::cout<<gaze[0]<<" "<<gaze[1]<<" "<<gaze[2]<<std::endl;
-	std::cout<<r[0]<<" "<<r[1]<<" "<<r[2]<<std::endl;
-	std::cout<<u[0]<<" "<<u[1]<<" "<<u[2]<<std::endl;
-	std::cout<<pos[0]<<" "<<pos[1]<<" "<<pos[2]<<std::endl;
-*/
     // Create transformation vector for second camera.
 	glm::mat4 s(-1, 0, 0, 0,
 		  0, 1, 0, 0,
@@ -145,7 +134,6 @@ glm::mat4 getTM(glm::vec3 gaze, glm::vec3 pos, bool usePerspective){
 // mouse move callback
 void mouse_move(GLFWwindow* window, double xpos, double ypos)
 {
-
     // no buttons down: nothing to do
     if( !button_left && !button_middle && !button_right )
         return;
@@ -187,15 +175,8 @@ void scroll(GLFWwindow* window, double xoffset, double yoffset)
 }
 
 void graspObject(const mjModel* m, mjData* d){
-	std::cout<<"*******************"<<std::endl;
-	std::cout<<" *** "<<m->njnt<<std::endl;
-	for (int i = 0; i<m->njnt; i++)
-	{
-		std::cout<<d->xanchor[i*3]<<" "<<d->xanchor[i*3 + 1]<<" "<<d->xanchor[i*3 + 2]<<std::endl;
-	}
-
 	if (!pauseFlag)
-		planner.PerformGrasp(m, d, handController);
+		planner.PerformGrasp(m, d);
 }
 
 void render(GLFWwindow* window, const mjModel* m, mjData* d)
@@ -309,13 +290,8 @@ int main(int argc, const char** argv)
     }
     fclose(f);
 
-    for (int i = 0; i<20; i++){
-    	printf("%lf %lf %lf %lf %lf %lf\n",
-    			jointArr[i][0], jointArr[i][1], jointArr[i][2], jointArr[i][3], jointArr[i][4], jointArr[i][5]);
-    }
-
     // Enlarge the points
-    glPointSize(20);
+    glPointSize(5);
 
     // run main loop, target real-time simulation and 60 fps rendering
     while( !glfwWindowShouldClose(window) )

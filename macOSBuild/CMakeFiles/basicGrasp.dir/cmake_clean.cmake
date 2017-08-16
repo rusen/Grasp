@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/basicGrasp.dir/src/basicGrasp.o"
+  "CMakeFiles/basicGrasp.dir/src/controller/DLRHandController.o"
   "CMakeFiles/basicGrasp.dir/src/controller/HandControllerInterface.o"
   "CMakeFiles/basicGrasp.dir/src/controller/MPLHandController.o"
   "CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o"

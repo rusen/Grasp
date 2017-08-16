@@ -220,8 +220,8 @@ namespace Grasp {
 	// Create camera transformation matrix.
 	Eigen::Matrix4d TM = p * (s * (r * t));
 
-    vopt.geomgroup[0] = 1;
-    vopt.geomgroup[1] = 0;
+    vopt.geomgroup[0] = 0;
+    vopt.geomgroup[1] = 1;
     vopt.geomgroup[2] = 0;
 
 //    FILE* f = fopen("deneme.txt", "w");
@@ -270,11 +270,13 @@ namespace Grasp {
 				  cv::Point2f left_pixel = camera_.project3dToPixel(tempP, TM);
 
 				  // quantize right_pixel
-				  left_pixel.x = round(left_pixel.x*8.0)/8.0;
-				  left_pixel.y = round(left_pixel.y*8.0)/8.0;
+//				  left_pixel.x = round(left_pixel.x*8.0)/8.0;
+//				  left_pixel.y = round(left_pixel.y*8.0)/8.0;
 
 				  // compute disparity image
-				  float quant_disp = c - left_pixel.x;
+				  float quant_disp = (float)c - left_pixel.x;
+
+				  std::cout<<quant_disp<<std::endl;
 				  float* disp_i = disp.ptr<float>(r);
 				  disp_i[(int)c] = quant_disp;
 				}
@@ -285,6 +287,7 @@ namespace Grasp {
 
     // Filter disparity image and add noise 
     cv::Mat out_disp;
+    out_disp = disp;
     filterDisp(disp, out_disp);
 
     //Go over disparity image and recompute depth map and point cloud after filtering and adding noise etc

@@ -147,6 +147,11 @@
 			<location>/Users/rusi/git/Grasp/mjpro150/src/basicGrasp.cpp</location>
 		</link>
 		<link>
+			<name>[Targets]/[exe] basicGrasp/Source Files/DLRHandController.cpp</name>
+			<type>1</type>
+			<location>/Users/rusi/git/Grasp/mjpro150/src/controller/DLRHandController.cpp</location>
+		</link>
+		<link>
 			<name>[Targets]/[exe] basicGrasp/Source Files/HandControllerInterface.cpp</name>
 			<type>1</type>
 			<location>/Users/rusi/git/Grasp/mjpro150/src/controller/HandControllerInterface.cpp</location>
