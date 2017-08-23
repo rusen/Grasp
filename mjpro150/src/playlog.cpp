@@ -8,7 +8,9 @@
 #include "glfw3.h"
 #include "stdio.h"
 #include "string.h"
+#include <iostream>
 
+#define _FILE_OFFSET_BITS 64
 
 //-------------------------------- global variables -------------------------------------
 
@@ -190,6 +192,9 @@ void initMuJoCo(const char* filename, const char* logfile)
     if( !m )
         mju_error_s("Load model error: %s", error);
 
+
+    std::cout<<"INITIAL"<<std::endl;
+
     // copy timestep, adjust later
     timestep = m->opt.timestep;
 
@@ -230,10 +235,10 @@ void initMuJoCo(const char* filename, const char* logfile)
 
     // get remaining file size and number of records (Visual Studio)
     //  on Posix use feeko, ftello, #define _FILE_OFFSET_BITS 64
-    long long startpos = _ftelli64(fp);
-    _fseeki64(fp, 0, SEEK_END);
-    long long filesz = _ftelli64(fp) - startpos;
-    _fseeki64(fp, startpos, SEEK_SET);
+    long long startpos = ftello(fp);
+    fseek(fp, 0, SEEK_END);
+    long long filesz = ftello(fp) - startpos;
+    fseek(fp, startpos, SEEK_SET);
     numrec = filesz/recsz/sizeof(float);
     if( numrec*recsz*sizeof(float)!=filesz )
         mju_error("Logfile size is not divisible by frame size");
@@ -899,6 +904,14 @@ void render(GLFWwindow* window)
 
 int main(int argc, const char** argv)
 {
+
+	#ifdef __unix__
+	// activate software
+	mj_activate("mjkey_unix.txt");
+	#elif __APPLE__
+	mj_activate("mjkey_macos.txt");
+	#endif
+
     // internal version check
     if( mjVERSION_HEADER!=mj_version() )
         mju_error("MuJoCo headers and library have different versions");
@@ -922,8 +935,10 @@ int main(int argc, const char** argv)
             fontscale = 1.5;
     }
 
+
     // init
     initOpenGL(argv[1], argv[2]);
+    //
     initMuJoCo(argv[1], argv[2]);
 
     // set GLFW callbacks

@@ -49,14 +49,11 @@ bool DLRHandController::Grasp(const mjModel* m, mjData* d, graspType type){
 			break;
 	}
 
-	std::cout<<"DLR Hand Control:"<<jointCount<<std::endl;
-
 	// Move joints to initial positions.
 	for (int i = 0; i < jointCount; i++)
 	{
 		if (std::abs(curPoses[i]) > 0.001)
 		{
-			std::cout<<"Increasing "<<i<<std::endl;
 			d->ctrl[i] += curPoses[i]/counterLimit;
 		}
 	}

@@ -9,9 +9,12 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/rusi/git/Grasp/mjpro150/src/controller/HandControllerInterface.cpp" "/Users/rusi/git/Grasp/macOSBuild/CMakeFiles/basicGrasp.dir/src/controller/HandControllerInterface.o"
   "/Users/rusi/git/Grasp/mjpro150/src/controller/MPLHandController.cpp" "/Users/rusi/git/Grasp/macOSBuild/CMakeFiles/basicGrasp.dir/src/controller/MPLHandController.o"
   "/Users/rusi/git/Grasp/mjpro150/src/planner/GraspPlanner.cpp" "/Users/rusi/git/Grasp/macOSBuild/CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o"
+  "/Users/rusi/git/Grasp/mjpro150/src/record/savelog.cpp" "/Users/rusi/git/Grasp/macOSBuild/CMakeFiles/basicGrasp.dir/src/record/savelog.o"
+  "/Users/rusi/git/Grasp/mjpro150/src/record/writeHeader.cpp" "/Users/rusi/git/Grasp/macOSBuild/CMakeFiles/basicGrasp.dir/src/record/writeHeader.o"
   "/Users/rusi/git/Grasp/mjpro150/src/sensor/CollectData.cpp" "/Users/rusi/git/Grasp/macOSBuild/CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o"
   "/Users/rusi/git/Grasp/mjpro150/src/sensor/kinectSimulator.cpp" "/Users/rusi/git/Grasp/macOSBuild/CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o"
   "/Users/rusi/git/Grasp/mjpro150/src/sensor/noiseutils.cpp" "/Users/rusi/git/Grasp/macOSBuild/CMakeFiles/basicGrasp.dir/src/sensor/noiseutils.o"
+  "/Users/rusi/git/Grasp/mjpro150/src/util/Connector.cpp" "/Users/rusi/git/Grasp/macOSBuild/CMakeFiles/basicGrasp.dir/src/util/Connector.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 
@@ -23,6 +26,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
   "DISABLE_LIBUSB_1_0"
   "DISABLE_PCAP"
   "DISABLE_PNG"
+  "FLANN_STATIC"
   "vtkDomainsChemistry_AUTOINIT=1(vtkDomainsChemistryOpenGL2)"
   "vtkIOExport_AUTOINIT=1(vtkIOExportOpenGL2)"
   "vtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL2)"

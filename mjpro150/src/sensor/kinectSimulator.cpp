@@ -140,14 +140,12 @@ namespace Grasp {
   // Destructor
   KinectSimulator::~KinectSimulator() 
   {
-    if(noise_gen_!=NULL)
-      delete noise_gen_;
+	  delete noise_gen_;
   }
   
   
   // Function that intersects rays with the object model at current state.
-  void KinectSimulator::intersect(const mjModel* m, mjData* d,
-				  cv::Mat &point_cloud,
+pcl::PointCloud<pcl::PointXYZRGBNormal> * KinectSimulator::intersect(const mjModel* m, mjData* d,
 				  cv::Mat &depth_map,
 				  glm::vec3 newCamPos,
 				  glm::vec3 newCamGaze)
@@ -158,10 +156,6 @@ namespace Grasp {
     depth_map.setTo(0.0);
     cv::Mat disp(camera_.getHeight(), camera_.getWidth(), CV_32FC1);
     disp.setTo(invalid_disp_);
-
-    // go through the whole image and create a ray from a pixel -> dir    
-    std::vector<cv::Point3f> vec;
-    vec.reserve(camera_.getHeight() * camera_.getWidth());
 
     // Allocate space for vectors.
     glm::vec3 rayDir = {0,0,0}, normGaze, viewportCenter;
@@ -224,7 +218,7 @@ namespace Grasp {
     vopt.geomgroup[1] = 1;
     vopt.geomgroup[2] = 0;
 
-//    FILE* f = fopen("deneme.txt", "w");
+    int pointCount = 0;
 
     // Send rays for each and every pixel!
     for(int c=0; c<camera_.getWidth(); ++c) {
@@ -276,9 +270,9 @@ namespace Grasp {
 				  // compute disparity image
 				  float quant_disp = (float)c - left_pixel.x;
 
-				  std::cout<<quant_disp<<std::endl;
 				  float* disp_i = disp.ptr<float>(r);
 				  disp_i[(int)c] = quant_disp;
+				  pointCount ++;
 				}
 			}
 		} // if mesh reached from right camera
@@ -290,10 +284,15 @@ namespace Grasp {
     out_disp = disp;
     filterDisp(disp, out_disp);
 
+    // Allocate space for cloud.
+    pcl::PointCloud<pcl::PointXYZRGBNormal> *cloud = new pcl::PointCloud<pcl::PointXYZRGBNormal>(pointCount, 1);
+
+    // Reset point counter.
+    pointCount = 0;
+
     //Go over disparity image and recompute depth map and point cloud after filtering and adding noise etc
     for(int r=0; r<camera_.getHeight(); ++r) {
       float* disp_i = out_disp.ptr<float>(r);
- //     float* disp_i = disp.ptr<float>(r);
       double* depth_map_i = depth_map.ptr<double>(r);
       for(int c=0; c<camera_.getWidth(); ++c) {
 	float disp = disp_i[camera_.getWidth() - c];
@@ -304,29 +303,39 @@ namespace Grasp {
 	  if(new_p.z<camera_.getZNear() || new_p.z>camera_.getZFar()){
 	    continue;
 	  }
-
 	  new_p.x = (new_p.z/ camera_.getFx()) * (c - camera_.getCx());
 	  new_p.y = (new_p.z/ camera_.getFy()) * (r - camera_.getCy());
-	  vec.push_back(new_p);
+
+	  // Set x-y-z coordinates of points.
+	  cloud->points[pointCount].x = new_p.x;
+	  cloud->points[pointCount].y = new_p.y;
+	  cloud->points[pointCount].z = new_p.z;
+
+	  // Assign colours to these poins.
+  	  cloud->points[pointCount].r = 127;
+  	  cloud->points[pointCount].g = 127;
+  	  cloud->points[pointCount].b = 127;
+	  pointCount++;
+
 	  depth_map_i[(int)c] = new_p.z;
 	}
       }
     }
-    point_cloud = cv::Mat(vec).reshape(1).clone();
 
  // Convert into real world coordinates.
     Eigen::Matrix4d T = s * (r * tOrg);
     Eigen::Matrix4d invT = T.inverse();
 
-	for (int i = 0; i < point_cloud.rows; i++) {
-	  float* point = point_cloud.ptr<float>(i);
-	  Eigen::Vector4d p(point[0], point[1], point[2], 1);
+	for (int i = 0; i < pointCount; i++) {
+	  Eigen::Vector4d p(cloud->points[i].x, cloud->points[i].y, cloud->points[i].z, 1);
 	  p = invT * p;
 	  p = p / p(3);
-	  point[0] = (float) p[0];
-	  point[1] = (float) p[1];
-	  point[2] = (float) p[2];
+	  cloud->points[i].x = (float) p[0] + 0.5;
+	  cloud->points[i].y = (float) p[1];
+	  cloud->points[i].z = (float) p[2];
 	}
+
+	return cloud;
   }
 
   // filter disparity with a 9x9 correlation window

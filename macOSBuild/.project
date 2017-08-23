@@ -127,6 +127,101 @@
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
+			<name>[Targets]/[exe] playlog</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] playlog/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] playlog/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] playlog/Source Files/playlog.cpp</name>
+			<type>1</type>
+			<location>/Users/rusi/git/Grasp/mjpro150/src/playlog.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] playlog/Source Files/DLRHandController.cpp</name>
+			<type>1</type>
+			<location>/Users/rusi/git/Grasp/mjpro150/src/controller/DLRHandController.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] playlog/Source Files/HandControllerInterface.cpp</name>
+			<type>1</type>
+			<location>/Users/rusi/git/Grasp/mjpro150/src/controller/HandControllerInterface.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] playlog/Source Files/MPLHandController.cpp</name>
+			<type>1</type>
+			<location>/Users/rusi/git/Grasp/mjpro150/src/controller/MPLHandController.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] playlog/Source Files/GraspPlanner.cpp</name>
+			<type>1</type>
+			<location>/Users/rusi/git/Grasp/mjpro150/src/planner/GraspPlanner.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] playlog/Source Files/savelog.cpp</name>
+			<type>1</type>
+			<location>/Users/rusi/git/Grasp/mjpro150/src/record/savelog.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] playlog/Source Files/writeHeader.cpp</name>
+			<type>1</type>
+			<location>/Users/rusi/git/Grasp/mjpro150/src/record/writeHeader.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] playlog/Source Files/CollectData.cpp</name>
+			<type>1</type>
+			<location>/Users/rusi/git/Grasp/mjpro150/src/sensor/CollectData.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] playlog/Source Files/kinectSimulator.cpp</name>
+			<type>1</type>
+			<location>/Users/rusi/git/Grasp/mjpro150/src/sensor/kinectSimulator.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] playlog/Source Files/noiseutils.cpp</name>
+			<type>1</type>
+			<location>/Users/rusi/git/Grasp/mjpro150/src/sensor/noiseutils.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] playlog/Source Files/Connector.cpp</name>
+			<type>1</type>
+			<location>/Users/rusi/git/Grasp/mjpro150/src/util/Connector.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] playlog/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] playlog/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] playlog/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] playlog/Object Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] playlog/Object Libraries</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
 			<name>[Targets]/[exe] basicGrasp</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
@@ -167,6 +262,16 @@
 			<location>/Users/rusi/git/Grasp/mjpro150/src/planner/GraspPlanner.cpp</location>
 		</link>
 		<link>
+			<name>[Targets]/[exe] basicGrasp/Source Files/savelog.cpp</name>
+			<type>1</type>
+			<location>/Users/rusi/git/Grasp/mjpro150/src/record/savelog.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] basicGrasp/Source Files/writeHeader.cpp</name>
+			<type>1</type>
+			<location>/Users/rusi/git/Grasp/mjpro150/src/record/writeHeader.cpp</location>
+		</link>
+		<link>
 			<name>[Targets]/[exe] basicGrasp/Source Files/CollectData.cpp</name>
 			<type>1</type>
 			<location>/Users/rusi/git/Grasp/mjpro150/src/sensor/CollectData.cpp</location>
@@ -180,6 +285,11 @@
 			<name>[Targets]/[exe] basicGrasp/Source Files/noiseutils.cpp</name>
 			<type>1</type>
 			<location>/Users/rusi/git/Grasp/mjpro150/src/sensor/noiseutils.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] basicGrasp/Source Files/Connector.cpp</name>
+			<type>1</type>
+			<location>/Users/rusi/git/Grasp/mjpro150/src/util/Connector.cpp</location>
 		</link>
 		<link>
 			<name>[Targets]/[exe] basicGrasp/Header Files</name>

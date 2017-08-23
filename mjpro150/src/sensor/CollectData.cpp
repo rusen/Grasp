@@ -15,7 +15,7 @@
 
 namespace Grasp{
 
-cv::Mat CollectData(Simulate* Simulator, const mjModel* m, mjData* d, unsigned char* depthBuffer,
+void CollectData(Simulate* Simulator, const mjModel* m, mjData* d, unsigned char* depthBuffer,
 		glm::vec3 cameraPos, glm::vec3 gazeDir, int * camSize, bool*finishFlag)
 {
 	std::cout<<"Entered data collection"<<std::endl;
@@ -27,9 +27,7 @@ cv::Mat CollectData(Simulate* Simulator, const mjModel* m, mjData* d, unsigned c
 
 	// Get image from kinect camera.
 	Simulator->simulateMeasurement(m, d, cameraPos, gazeDir);
-
-	// Tell the world you've captured an image.
-	std::cout<<"Depth image captured!"<<std::endl;
+    pcl::PCDWriter().write(Simulator->name, *(Simulator->cloud), true);
 
 	int rows = Simulator->scaled_im_.rows;
 	int cols = Simulator->scaled_im_.cols;
@@ -49,9 +47,8 @@ cv::Mat CollectData(Simulate* Simulator, const mjModel* m, mjData* d, unsigned c
 	*finishFlag = true;
 
 	std::chrono::steady_clock::time_point end= std::chrono::steady_clock::now();
+	std::cout<<"Depth image captured!"<<std::endl;
 	std::cout << "Time difference = " << std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count() <<std::endl;
-
-	return Simulator->point_cloud_;
 }
 
 }

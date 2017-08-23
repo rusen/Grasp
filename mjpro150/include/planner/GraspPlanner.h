@@ -26,7 +26,7 @@
 
 namespace Grasp {
 
-enum state { initial, atDataApproach, collectingData, approaching, atPreGraspLocation, atFinalApproach, readyToGrasp, grasping, lifting, done };
+enum state { initial, atDataApproach, collectingData, planning, approaching, atPreGraspLocation, atFinalApproach, readyToGrasp, grasping, lifting, done };
 enum handType {MPL};
 enum approachType {initialApproach, preApproach, finalApproach};
 
@@ -35,7 +35,12 @@ public:
 
 	int camSize[2] = {480, 640};
 	unsigned char depthBuffer[640*480*3];
-	cv::Mat pointCloud;
+	char fileId [10]; // Unique file id.
+	char logFile [50]; // Log file
+	char pointFile [50]; // Point cloud data file (.pcd)
+	char rgbFile [50];  // RGB file (.png)
+	char resultFile[50]; // Grasp success/diagnostics file (.gd)
+	char trajectoryFile[50]; // Trajectory file (.trj)
 
 	// Simulator allocation
 	Simulate* Simulator = NULL;

@@ -117,7 +117,7 @@
     <worldbody>
         <light directional="false" cutoff="35" exponent="10" diffuse=".7 .7 .7" pos="0.4 -0.2 1.5" dir="-0.4 0.2 -1.5" specular=".3 .3 .3"/>
 		
-        <camera name="fixed" pos="0 -0.7 0.7" zaxis="0 -1 1" fovy="45" ipd="0.068"/>
+        <camera name="fixed" pos="-1 0 0.7" zaxis="-1 0 1" fovy="57.5" ipd="0.068"/>
 	
 		<geom type="plane" material="table2d" pos="0 0 0" size="0.5 0.5 .025"/>
 		<geom contype="0" conaffinity="0" type="box" material="tablecube" pos="0 0 -0.026" size="0.5 0.5 .025"/>

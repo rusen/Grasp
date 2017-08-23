@@ -26,6 +26,7 @@
 				<pathentry kind="mac" name="vtkRenderingFreeType_AUTOINIT" path="" value="1(vtkRenderingFreeTypeFontConfig)"/>
 				<pathentry kind="mac" name="vtkRenderingOpenGL2_AUTOINIT" path="" value="1(vtkRenderingGL2PSOpenGL2)"/>
 				<pathentry kind="mac" name="vtkRenderingVolume_AUTOINIT" path="" value="1(vtkRenderingVolumeOpenGL2)"/>
+				<pathentry kind="mac" name="FLANN_STATIC" path="" value=""/>
 				<pathentry kind="mac" name="DISABLE_ENSENSO" path="" value=""/>
 				<pathentry kind="mac" name="DISABLE_DAVIDSDK" path="" value=""/>
 				<pathentry kind="mac" name="DISABLE_DSSDK" path="" value=""/>
@@ -405,6 +406,34 @@
 						<buildCommand>/usr/bin/make</buildCommand>
 						<buildArguments>-j8</buildArguments>
 						<buildTarget>edit_cache</buildTarget>
+						<stopOnError>true</stopOnError>
+						<useDefaultCommand>false</useDefaultCommand>
+					</target>
+					<target name="[exe] playlog" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+						<buildCommand>/usr/bin/make</buildCommand>
+						<buildArguments>-j8</buildArguments>
+						<buildTarget>playlog</buildTarget>
+						<stopOnError>true</stopOnError>
+						<useDefaultCommand>false</useDefaultCommand>
+					</target>
+					<target name="[exe] playlog/fast" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+						<buildCommand>/usr/bin/make</buildCommand>
+						<buildArguments>-j8</buildArguments>
+						<buildTarget>playlog/fast</buildTarget>
+						<stopOnError>true</stopOnError>
+						<useDefaultCommand>false</useDefaultCommand>
+					</target>
+					<target name="Build" path="[Targets]/[exe] playlog" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+						<buildCommand>/usr/bin/make</buildCommand>
+						<buildArguments>-C "/Users/rusi/git/Grasp/macOSBuild" -j8</buildArguments>
+						<buildTarget>playlog</buildTarget>
+						<stopOnError>true</stopOnError>
+						<useDefaultCommand>false</useDefaultCommand>
+					</target>
+					<target name="Clean" path="[Targets]/[exe] playlog" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+						<buildCommand>/usr/local/Cellar/cmake/3.9.0/bin/cmake</buildCommand>
+						<buildArguments>-E chdir "/Users/rusi/git/Grasp/macOSBuild" "/usr/local/Cellar/cmake/3.9.0/bin/cmake" -P "CMakeFiles/playlog.dir/cmake_clean.cmake"</buildArguments>
+						<buildTarget></buildTarget>
 						<stopOnError>true</stopOnError>
 						<useDefaultCommand>false</useDefaultCommand>
 					</target>

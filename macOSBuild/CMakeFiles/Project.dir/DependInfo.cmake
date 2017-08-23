@@ -17,6 +17,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
   "DISABLE_LIBUSB_1_0"
   "DISABLE_PCAP"
   "DISABLE_PNG"
+  "FLANN_STATIC"
   "vtkDomainsChemistry_AUTOINIT=1(vtkDomainsChemistryOpenGL2)"
   "vtkIOExport_AUTOINIT=1(vtkIOExportOpenGL2)"
   "vtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL2)"

@@ -15,10 +15,12 @@
 #include <sensor/simulate.h>
 #include <sensor/camera.h>
 #include <iostream>
+#include <fstream>
 #include <math.h>       /* cos */
 #include <thread>         // std::thread
 #include <planner/GraspPlanner.h>
 #include <sensor/camera.h>
+#include <record/savelog.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/quaternion.hpp>
 #include <glm/gtx/quaternion.hpp>
@@ -56,6 +58,10 @@ glm::mat4 TM;
 unsigned char glBuffer[2400*4000*3];
 unsigned char addonBuffer[2400*4000];
 
+// Data output stuff
+FILE * outFile = NULL;
+int skipSteps = 5, ctr = 0;
+
 // Joint info debugging data.
 double jointArr[20][6];
 
@@ -77,7 +83,6 @@ void keyboard(GLFWwindow* window, int key, int scancode, int act, int mods)
 		else pauseFlag = true;
 	}
 }
-
 
 // mouse button callback
 void mouse_button(GLFWwindow* window, int button, int act, int mods)
@@ -165,8 +170,6 @@ void mouse_move(GLFWwindow* window, double xpos, double ypos)
     mjv_moveCamera(m, action, dx/height, dy/height, &scn, &cam);
 }
 
-
-
 // scroll callback
 void scroll(GLFWwindow* window, double xoffset, double yoffset)
 {
@@ -200,12 +203,48 @@ void render(GLFWwindow* window, const mjModel* m, mjData* d)
 	mjr_drawPixels(planner.depthBuffer, NULL, bottomright, &con);
 
 	// Fill in relevant pixels with point cloud data.
-	glBegin(GL_POINTS);
-	for (int i = 0; i < planner.pointCloud.rows; i++) {
-	  const float* point = planner.pointCloud.ptr<float>(i);
-	  glVertex3f(point[0], point[1], point[2]);
+	if (planner.Simulator->cloud != nullptr){
+		glBegin(GL_POINTS);
+		for (int i = 0; i < planner.Simulator->cloud->height * planner.Simulator->cloud->width; i++) {
+		  if (planner.Simulator->cloud->points[i].r > 0)
+		  {
+			  /*
+			  glVertex3f(planner.Simulator->cloud->points[i].y, //.x
+					  planner.Simulator->cloud->points[i].x - 0.5, //.y
+					  planner.Simulator->cloud->points[i].z);
+					  */
+			  glVertex3f(planner.Simulator->cloud->points[i].x - 0.5, //.x
+			  					  planner.Simulator->cloud->points[i].y, //.y
+			  					  planner.Simulator->cloud->points[i].z);
+		  }
+		}
+		glEnd();
+
+		/*
+
+		glBegin(GL_LINES);
+		for (int i = 0; i < planner.Simulator->cloud->height * planner.Simulator->cloud->width; i++) {
+			  glVertex3f(planner.Simulator->cloud->points[i].x,
+					  planner.Simulator->cloud->points[i].y,
+					  planner.Simulator->cloud->points[i].z);
+
+			  glVertex3f(planner.Simulator->cloud->points[i].x + planner.Simulator->cloud->points[i].normal_x*0.01,
+					  planner.Simulator->cloud->points[i].y + planner.Simulator->cloud->points[i].normal_y*0.01,
+					  planner.Simulator->cloud->points[i].z + planner.Simulator->cloud->points[i].normal_z*0.01);
+		}
+		glEnd();
+	*/
 	}
-	glEnd();
+
+	// Here, we save data. Skip steps if needed.
+	if (skipSteps > 0 && ctr < skipSteps)
+	{
+		ctr++;
+		return;
+	}
+
+	savelog(m, d, outFile);
+	ctr = 0;
 
 	/*
 	// Highlight the joint information here.
@@ -225,6 +264,7 @@ void render(GLFWwindow* window, const mjModel* m, mjData* d)
 	}
 	glEnd();
 	*/
+
 
 }
 
@@ -282,13 +322,23 @@ int main(int argc, const char** argv)
     glfwSetMouseButtonCallback(window, mouse_button);
     glfwSetScrollCallback(window, scroll);
 
-    // Read joint data.
-    FILE * f = fopen("./jointinfo.txt", "r");
-    for (int i = 0; i<20; i++){
-    	fscanf(f, "%lf %lf %lf %lf %lf %lf",
-    			&jointArr[i][0], &jointArr[i][1], &jointArr[i][2], &jointArr[i][3], &jointArr[i][4], &jointArr[i][5]);
+    // Create random file name.
+	boost::filesystem::create_directory("./tmp/"); // Create temp dir
+    std::srand(std::time(NULL));
+
+    // Open out file.
+    outFile = fopen(planner.logFile, "wb");
+    std::cout<<planner.logFile<<" opened!"<<std::endl;
+
+	// Print header.
+    writeHeader(m, d, outFile);
+
+    // Write object names.
+    char c;
+    for( int n=0; n<strlen(m->names); n++ )
+    {
+        std::fwrite(&c, 1, 1, outFile);
     }
-    fclose(f);
 
     // Enlarge the points
     glPointSize(5);
@@ -330,6 +380,9 @@ int main(int argc, const char** argv)
     mj_deleteData(d);
     mj_deleteModel(m);
     mj_deactivate();
+
+    // Close record file
+    fclose(outFile);
 
     return 1;
 }

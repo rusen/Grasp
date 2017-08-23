@@ -49,6 +49,11 @@
 #include <glm/gtc/quaternion.hpp>
 #include <glm/gtx/quaternion.hpp>
 
+#include <pcl/point_cloud.h>
+#include <pcl/point_types.h>
+#include <pcl/io/pcd_io.h>
+#include <pcl/features/normal_3d.h>
+
 inline double abs(Point p)
 {
   return std::sqrt(p.x()*p.x() + p.y()*p.y() + p.z()*p.z());
@@ -93,8 +98,7 @@ namespace Grasp
 
     uchar getBG ()const{return background_;}
 
-    void intersect(const mjModel* m, mjData* d,//tf::Transform &p_transform,
-		   cv::Mat &point_cloud,
+    pcl::PointCloud<pcl::PointXYZRGBNormal> * intersect(const mjModel* m, mjData* d,//tf::Transform &p_transform,
 		   cv::Mat &depth_map,
 		   glm::vec3 newCamPos,
 		   glm::vec3 newCamGaze);

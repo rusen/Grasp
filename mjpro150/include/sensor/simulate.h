@@ -39,14 +39,15 @@
 
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/highgui/highgui.hpp>
-
-#ifdef HAVE_PCL
 #include <pcl/point_cloud.h>
 #include <pcl/point_types.h>
 #include <pcl/io/pcd_io.h>
-#endif 
+#include <pcl/features/normal_3d.h>
 
 #include <string.h>
+#include <cstdio>
+#include <iostream>
+#include <string>
 
 #include <sensor/kinectSimulator.h>
 
@@ -61,69 +62,89 @@ namespace Grasp {
     : out_path_("/tmp/") 
       {
 
-	// allocate memory for depth image
-	int w = cam_info.width;
-	int h = cam_info.height;
+		// allocate memory for depth image
+		int w = cam_info.width;
+		int h = cam_info.height;
 
-	depth_im_ = cv::Mat(h, w, CV_32FC1);
-	scaled_im_ = cv::Mat(h, w, CV_32FC1);
+		depth_im_ = cv::Mat(h, w, CV_32FC1);
+		scaled_im_ = cv::Mat(h, w, CV_32FC1);
 
-	object_model_ = new KinectSimulator(cam_info);
+		object_model_ = new KinectSimulator(cam_info);
 
-	transform_ = Eigen::Affine3d::Identity();
-
+		transform_ = Eigen::Affine3d::Identity();
+		name = NULL;
+		cloud = nullptr;
       }
 
     ~Simulate() {
       delete object_model_;
+      if (cloud != nullptr)
+    	  delete cloud;
     }
 
     void simulateMeasurement(const mjModel* m, mjData* d, glm::vec3 newCamPos, glm::vec3 newCamGaze) {
       countf++;
-      
+
       // simulate measurement of object and store in image, point cloud and labeled image
       cv::Mat p_result;
-      object_model_->intersect(m, d, point_cloud_, depth_im_, newCamPos, newCamGaze);
+      cloud = object_model_->intersect(m, d, depth_im_, newCamPos, newCamGaze);
       
       // store on disk
   	  std::stringstream lD;
   	  convertScaleAbs(depth_im_, scaled_im_, 255.0f);
-  	  cv::imwrite("/tmp/deneme.png", scaled_im_);
 
-#ifdef HAVE_PCL
-	pcl::PointCloud<pcl::PointXYZ> cloud;
-	// Fill in the cloud data
-	cloud.width = point_cloud_.rows;
-	cloud.height = 1;
-	cloud.is_dense = false;
-	cloud.points.resize(cloud.width * cloud.height);
+  	  // Calculate surface normals as well!
+  	  int pointCount = cloud->size();
+  	  boost::shared_ptr<pcl::PointCloud<pcl::PointXYZ>> ptr(new pcl::PointCloud<pcl::PointXYZ>(pointCount, 1));
+  	  for (int i = 0; i < pointCount; i++) {
+  		  if (cloud->points[i].r > 0)
+  		  {
+				ptr->points[i].x = cloud->points[i].x;
+				ptr->points[i].y = cloud->points[i].y;
+				ptr->points[i].z = cloud->points[i].z;
+  		  }
+  	  }
 
-	for (int i = 0; i < point_cloud_.rows; i++) {
-	  const float* point = point_cloud_.ptr<float>(i);
-	  cloud.points[i].x = point[0];
-	  cloud.points[i].y = point[1];
-	  cloud.points[i].z = point[2];
+  	  // Calculate normals.
+  	  ne.setInputCloud(ptr);
+      pcl::search::KdTree<pcl::PointXYZ>::Ptr tree (new pcl::search::KdTree<pcl::PointXYZ>);
+      ne.setSearchMethod (tree);
+      pcl::PointCloud<pcl::Normal>::Ptr cloud_normals (new pcl::PointCloud<pcl::Normal>);
+      ne.setRadiusSearch (0.05);
+      ne.compute (*cloud_normals);
+      normals = cloud_normals;
 
-//	  std::cout<<" POINT "<<i<<" : "<<point[0]<<" "<<point[1]<<" "<<point[2]<<std::endl;
-	}
-#else
-	std::cout << "Couldn't store point cloud since PCL is not installed." << std::endl;
-#endif
-
+      // Assign back the normals.
+  	  for (int i = 0; i < pointCount; i++) {
+  		  if (cloud->points[i].r > 0)
+  		  {
+				cloud->points[i].normal_x = -normals->points[i].normal_x;
+				cloud->points[i].normal_y = -normals->points[i].normal_y;
+				cloud->points[i].normal_z = -normals->points[i].normal_z;
+				cloud->points[i].curvature = -normals->points[i].curvature;
+  		  }
+  	  }
+  	  ptr.reset();
+  	  tree.reset();
+  	  cloud_normals.reset();
     }
 
     KinectSimulator *object_model_;
     CameraInfo cam_info;
-    cv::Mat depth_im_, scaled_im_, point_cloud_, labels_;
+    cv::Mat depth_im_, scaled_im_, labels_;
     std::string out_path_;
     Eigen::Affine3d transform_; 
+    pcl::PointCloud<pcl::PointXYZRGBNormal> *cloud;
+	pcl::NormalEstimation<pcl::PointXYZ, pcl::Normal> ne;
+	pcl::PointCloud<pcl::Normal>::Ptr normals;
+	char * name;
 
     EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 
   };
 
   // Function to collect data from simulated Kinect camera.
-  cv::Mat CollectData(Simulate* Simulator, const mjModel* m, mjData* d, unsigned char* depthBuffer, glm::vec3 cameraPos, glm::vec3 gazeDir, int * camSize, bool*finishFlag);
+  void CollectData(Simulate* Simulator, const mjModel* m, mjData* d, unsigned char* depthBuffer, glm::vec3 cameraPos, glm::vec3 gazeDir, int * camSize, bool*finishFlag);
 
 } //namespace Grasp
 #endif // SIMULATE_H

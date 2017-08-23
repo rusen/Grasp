@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named playlog
+
+# Build rule for target.
+playlog: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 playlog
+.PHONY : playlog
+
+# fast build rule for target.
+playlog/fast:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/build
+.PHONY : playlog/fast
+
+#=============================================================================
 # Target rules for targets named basicGrasp
 
 # Build rule for target.
@@ -153,114 +166,204 @@ src/basicGrasp.s:
 
 # target to build an object file
 src/controller/DLRHandController.o:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/controller/DLRHandController.o
 	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/controller/DLRHandController.o
 .PHONY : src/controller/DLRHandController.o
 
 # target to preprocess a source file
 src/controller/DLRHandController.i:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/controller/DLRHandController.i
 	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/controller/DLRHandController.i
 .PHONY : src/controller/DLRHandController.i
 
 # target to generate assembly for a file
 src/controller/DLRHandController.s:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/controller/DLRHandController.s
 	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/controller/DLRHandController.s
 .PHONY : src/controller/DLRHandController.s
 
 # target to build an object file
 src/controller/HandControllerInterface.o:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/controller/HandControllerInterface.o
 	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/controller/HandControllerInterface.o
 .PHONY : src/controller/HandControllerInterface.o
 
 # target to preprocess a source file
 src/controller/HandControllerInterface.i:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/controller/HandControllerInterface.i
 	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/controller/HandControllerInterface.i
 .PHONY : src/controller/HandControllerInterface.i
 
 # target to generate assembly for a file
 src/controller/HandControllerInterface.s:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/controller/HandControllerInterface.s
 	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/controller/HandControllerInterface.s
 .PHONY : src/controller/HandControllerInterface.s
 
 # target to build an object file
 src/controller/MPLHandController.o:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/controller/MPLHandController.o
 	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/controller/MPLHandController.o
 .PHONY : src/controller/MPLHandController.o
 
 # target to preprocess a source file
 src/controller/MPLHandController.i:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/controller/MPLHandController.i
 	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/controller/MPLHandController.i
 .PHONY : src/controller/MPLHandController.i
 
 # target to generate assembly for a file
 src/controller/MPLHandController.s:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/controller/MPLHandController.s
 	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/controller/MPLHandController.s
 .PHONY : src/controller/MPLHandController.s
 
 # target to build an object file
 src/planner/GraspPlanner.o:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/planner/GraspPlanner.o
 	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o
 .PHONY : src/planner/GraspPlanner.o
 
 # target to preprocess a source file
 src/planner/GraspPlanner.i:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/planner/GraspPlanner.i
 	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.i
 .PHONY : src/planner/GraspPlanner.i
 
 # target to generate assembly for a file
 src/planner/GraspPlanner.s:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/planner/GraspPlanner.s
 	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.s
 .PHONY : src/planner/GraspPlanner.s
 
 # target to build an object file
+src/playlog.o:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/playlog.o
+.PHONY : src/playlog.o
+
+# target to preprocess a source file
+src/playlog.i:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/playlog.i
+.PHONY : src/playlog.i
+
+# target to generate assembly for a file
+src/playlog.s:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/playlog.s
+.PHONY : src/playlog.s
+
+# target to build an object file
+src/record/savelog.o:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/record/savelog.o
+	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/record/savelog.o
+.PHONY : src/record/savelog.o
+
+# target to preprocess a source file
+src/record/savelog.i:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/record/savelog.i
+	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/record/savelog.i
+.PHONY : src/record/savelog.i
+
+# target to generate assembly for a file
+src/record/savelog.s:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/record/savelog.s
+	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/record/savelog.s
+.PHONY : src/record/savelog.s
+
+# target to build an object file
+src/record/writeHeader.o:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/record/writeHeader.o
+	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/record/writeHeader.o
+.PHONY : src/record/writeHeader.o
+
+# target to preprocess a source file
+src/record/writeHeader.i:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/record/writeHeader.i
+	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/record/writeHeader.i
+.PHONY : src/record/writeHeader.i
+
+# target to generate assembly for a file
+src/record/writeHeader.s:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/record/writeHeader.s
+	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/record/writeHeader.s
+.PHONY : src/record/writeHeader.s
+
+# target to build an object file
 src/sensor/CollectData.o:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/sensor/CollectData.o
 	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o
 .PHONY : src/sensor/CollectData.o
 
 # target to preprocess a source file
 src/sensor/CollectData.i:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/sensor/CollectData.i
 	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/sensor/CollectData.i
 .PHONY : src/sensor/CollectData.i
 
 # target to generate assembly for a file
 src/sensor/CollectData.s:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/sensor/CollectData.s
 	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/sensor/CollectData.s
 .PHONY : src/sensor/CollectData.s
 
 # target to build an object file
 src/sensor/kinectSimulator.o:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/sensor/kinectSimulator.o
 	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o
 	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/sensor/kinectSimulator.o
 .PHONY : src/sensor/kinectSimulator.o
 
 # target to preprocess a source file
 src/sensor/kinectSimulator.i:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/sensor/kinectSimulator.i
 	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.i
 	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/sensor/kinectSimulator.i
 .PHONY : src/sensor/kinectSimulator.i
 
 # target to generate assembly for a file
 src/sensor/kinectSimulator.s:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/sensor/kinectSimulator.s
 	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.s
 	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/sensor/kinectSimulator.s
 .PHONY : src/sensor/kinectSimulator.s
 
 # target to build an object file
 src/sensor/noiseutils.o:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/sensor/noiseutils.o
 	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/sensor/noiseutils.o
 	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/sensor/noiseutils.o
 .PHONY : src/sensor/noiseutils.o
 
 # target to preprocess a source file
 src/sensor/noiseutils.i:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/sensor/noiseutils.i
 	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/sensor/noiseutils.i
 	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/sensor/noiseutils.i
 .PHONY : src/sensor/noiseutils.i
 
 # target to generate assembly for a file
 src/sensor/noiseutils.s:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/sensor/noiseutils.s
 	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/sensor/noiseutils.s
 	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/sensor/noiseutils.s
 .PHONY : src/sensor/noiseutils.s
+
+# target to build an object file
+src/util/Connector.o:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/util/Connector.o
+	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/util/Connector.o
+.PHONY : src/util/Connector.o
+
+# target to preprocess a source file
+src/util/Connector.i:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/util/Connector.i
+	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/util/Connector.i
+.PHONY : src/util/Connector.i
+
+# target to generate assembly for a file
+src/util/Connector.s:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/util/Connector.s
+	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/util/Connector.s
+.PHONY : src/util/Connector.s
 
 # Help Target
 help:
@@ -270,6 +373,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... playlog"
 	@echo "... basicGrasp"
 	@echo "... Project"
 	@echo "... src/basicGrasp.o"
@@ -287,6 +391,15 @@ help:
 	@echo "... src/planner/GraspPlanner.o"
 	@echo "... src/planner/GraspPlanner.i"
 	@echo "... src/planner/GraspPlanner.s"
+	@echo "... src/playlog.o"
+	@echo "... src/playlog.i"
+	@echo "... src/playlog.s"
+	@echo "... src/record/savelog.o"
+	@echo "... src/record/savelog.i"
+	@echo "... src/record/savelog.s"
+	@echo "... src/record/writeHeader.o"
+	@echo "... src/record/writeHeader.i"
+	@echo "... src/record/writeHeader.s"
 	@echo "... src/sensor/CollectData.o"
 	@echo "... src/sensor/CollectData.i"
 	@echo "... src/sensor/CollectData.s"
@@ -296,6 +409,9 @@ help:
 	@echo "... src/sensor/noiseutils.o"
 	@echo "... src/sensor/noiseutils.i"
 	@echo "... src/sensor/noiseutils.s"
+	@echo "... src/util/Connector.o"
+	@echo "... src/util/Connector.i"
+	@echo "... src/util/Connector.s"
 .PHONY : help
 
 

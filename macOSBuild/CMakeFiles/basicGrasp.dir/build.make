@@ -177,9 +177,57 @@ CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o.provides: CMakeFiles/basicG
 CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o.provides.build: CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o
 
 
+CMakeFiles/basicGrasp.dir/src/record/savelog.o: CMakeFiles/basicGrasp.dir/flags.make
+CMakeFiles/basicGrasp.dir/src/record/savelog.o: /Users/rusi/git/Grasp/mjpro150/src/record/savelog.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rusi/git/Grasp/macOSBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/basicGrasp.dir/src/record/savelog.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/basicGrasp.dir/src/record/savelog.o -c /Users/rusi/git/Grasp/mjpro150/src/record/savelog.cpp
+
+CMakeFiles/basicGrasp.dir/src/record/savelog.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/basicGrasp.dir/src/record/savelog.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/rusi/git/Grasp/mjpro150/src/record/savelog.cpp > CMakeFiles/basicGrasp.dir/src/record/savelog.i
+
+CMakeFiles/basicGrasp.dir/src/record/savelog.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/basicGrasp.dir/src/record/savelog.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/rusi/git/Grasp/mjpro150/src/record/savelog.cpp -o CMakeFiles/basicGrasp.dir/src/record/savelog.s
+
+CMakeFiles/basicGrasp.dir/src/record/savelog.o.requires:
+
+.PHONY : CMakeFiles/basicGrasp.dir/src/record/savelog.o.requires
+
+CMakeFiles/basicGrasp.dir/src/record/savelog.o.provides: CMakeFiles/basicGrasp.dir/src/record/savelog.o.requires
+	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/record/savelog.o.provides.build
+.PHONY : CMakeFiles/basicGrasp.dir/src/record/savelog.o.provides
+
+CMakeFiles/basicGrasp.dir/src/record/savelog.o.provides.build: CMakeFiles/basicGrasp.dir/src/record/savelog.o
+
+
+CMakeFiles/basicGrasp.dir/src/record/writeHeader.o: CMakeFiles/basicGrasp.dir/flags.make
+CMakeFiles/basicGrasp.dir/src/record/writeHeader.o: /Users/rusi/git/Grasp/mjpro150/src/record/writeHeader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rusi/git/Grasp/macOSBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/basicGrasp.dir/src/record/writeHeader.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/basicGrasp.dir/src/record/writeHeader.o -c /Users/rusi/git/Grasp/mjpro150/src/record/writeHeader.cpp
+
+CMakeFiles/basicGrasp.dir/src/record/writeHeader.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/basicGrasp.dir/src/record/writeHeader.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/rusi/git/Grasp/mjpro150/src/record/writeHeader.cpp > CMakeFiles/basicGrasp.dir/src/record/writeHeader.i
+
+CMakeFiles/basicGrasp.dir/src/record/writeHeader.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/basicGrasp.dir/src/record/writeHeader.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/rusi/git/Grasp/mjpro150/src/record/writeHeader.cpp -o CMakeFiles/basicGrasp.dir/src/record/writeHeader.s
+
+CMakeFiles/basicGrasp.dir/src/record/writeHeader.o.requires:
+
+.PHONY : CMakeFiles/basicGrasp.dir/src/record/writeHeader.o.requires
+
+CMakeFiles/basicGrasp.dir/src/record/writeHeader.o.provides: CMakeFiles/basicGrasp.dir/src/record/writeHeader.o.requires
+	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/record/writeHeader.o.provides.build
+.PHONY : CMakeFiles/basicGrasp.dir/src/record/writeHeader.o.provides
+
+CMakeFiles/basicGrasp.dir/src/record/writeHeader.o.provides.build: CMakeFiles/basicGrasp.dir/src/record/writeHeader.o
+
+
 CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o: CMakeFiles/basicGrasp.dir/flags.make
 CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o: /Users/rusi/git/Grasp/mjpro150/src/sensor/CollectData.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rusi/git/Grasp/macOSBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rusi/git/Grasp/macOSBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o -c /Users/rusi/git/Grasp/mjpro150/src/sensor/CollectData.cpp
 
 CMakeFiles/basicGrasp.dir/src/sensor/CollectData.i: cmake_force
@@ -203,7 +251,7 @@ CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o.provides.build: CMakeFiles/ba
 
 CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o: CMakeFiles/basicGrasp.dir/flags.make
 CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o: /Users/rusi/git/Grasp/mjpro150/src/sensor/kinectSimulator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rusi/git/Grasp/macOSBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rusi/git/Grasp/macOSBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o -c /Users/rusi/git/Grasp/mjpro150/src/sensor/kinectSimulator.cpp
 
 CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.i: cmake_force
@@ -227,7 +275,7 @@ CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o.provides.build: CMakeFile
 
 CMakeFiles/basicGrasp.dir/src/sensor/noiseutils.o: CMakeFiles/basicGrasp.dir/flags.make
 CMakeFiles/basicGrasp.dir/src/sensor/noiseutils.o: /Users/rusi/git/Grasp/mjpro150/src/sensor/noiseutils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rusi/git/Grasp/macOSBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/basicGrasp.dir/src/sensor/noiseutils.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rusi/git/Grasp/macOSBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/basicGrasp.dir/src/sensor/noiseutils.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/basicGrasp.dir/src/sensor/noiseutils.o -c /Users/rusi/git/Grasp/mjpro150/src/sensor/noiseutils.cpp
 
 CMakeFiles/basicGrasp.dir/src/sensor/noiseutils.i: cmake_force
@@ -249,6 +297,30 @@ CMakeFiles/basicGrasp.dir/src/sensor/noiseutils.o.provides: CMakeFiles/basicGras
 CMakeFiles/basicGrasp.dir/src/sensor/noiseutils.o.provides.build: CMakeFiles/basicGrasp.dir/src/sensor/noiseutils.o
 
 
+CMakeFiles/basicGrasp.dir/src/util/Connector.o: CMakeFiles/basicGrasp.dir/flags.make
+CMakeFiles/basicGrasp.dir/src/util/Connector.o: /Users/rusi/git/Grasp/mjpro150/src/util/Connector.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rusi/git/Grasp/macOSBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/basicGrasp.dir/src/util/Connector.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/basicGrasp.dir/src/util/Connector.o -c /Users/rusi/git/Grasp/mjpro150/src/util/Connector.cpp
+
+CMakeFiles/basicGrasp.dir/src/util/Connector.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/basicGrasp.dir/src/util/Connector.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/rusi/git/Grasp/mjpro150/src/util/Connector.cpp > CMakeFiles/basicGrasp.dir/src/util/Connector.i
+
+CMakeFiles/basicGrasp.dir/src/util/Connector.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/basicGrasp.dir/src/util/Connector.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/rusi/git/Grasp/mjpro150/src/util/Connector.cpp -o CMakeFiles/basicGrasp.dir/src/util/Connector.s
+
+CMakeFiles/basicGrasp.dir/src/util/Connector.o.requires:
+
+.PHONY : CMakeFiles/basicGrasp.dir/src/util/Connector.o.requires
+
+CMakeFiles/basicGrasp.dir/src/util/Connector.o.provides: CMakeFiles/basicGrasp.dir/src/util/Connector.o.requires
+	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/util/Connector.o.provides.build
+.PHONY : CMakeFiles/basicGrasp.dir/src/util/Connector.o.provides
+
+CMakeFiles/basicGrasp.dir/src/util/Connector.o.provides.build: CMakeFiles/basicGrasp.dir/src/util/Connector.o
+
+
 # Object files for target basicGrasp
 basicGrasp_OBJECTS = \
 "CMakeFiles/basicGrasp.dir/src/basicGrasp.o" \
@@ -256,9 +328,12 @@ basicGrasp_OBJECTS = \
 "CMakeFiles/basicGrasp.dir/src/controller/HandControllerInterface.o" \
 "CMakeFiles/basicGrasp.dir/src/controller/MPLHandController.o" \
 "CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o" \
+"CMakeFiles/basicGrasp.dir/src/record/savelog.o" \
+"CMakeFiles/basicGrasp.dir/src/record/writeHeader.o" \
 "CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o" \
 "CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o" \
-"CMakeFiles/basicGrasp.dir/src/sensor/noiseutils.o"
+"CMakeFiles/basicGrasp.dir/src/sensor/noiseutils.o" \
+"CMakeFiles/basicGrasp.dir/src/util/Connector.o"
 
 # External object files for target basicGrasp
 basicGrasp_EXTERNAL_OBJECTS =
@@ -268,29 +343,17 @@ basicGrasp_EXTERNAL_OBJECTS =
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: CMakeFiles/basicGrasp.dir/src/controller/HandControllerInterface.o
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: CMakeFiles/basicGrasp.dir/src/controller/MPLHandController.o
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: CMakeFiles/basicGrasp.dir/src/record/savelog.o
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: CMakeFiles/basicGrasp.dir/src/record/writeHeader.o
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: CMakeFiles/basicGrasp.dir/src/sensor/noiseutils.o
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: CMakeFiles/basicGrasp.dir/src/util/Connector.o
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: CMakeFiles/basicGrasp.dir/build.make
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /Users/rusi/git/Grasp/mjpro150/lib/libProject.a
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libopencv_contrib.2.4.13.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libopencv_nonfree.2.4.13.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libopencv_ocl.2.4.13.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libopencv_gpu.2.4.13.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libopencv_objdetect.2.4.13.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libopencv_legacy.2.4.13.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libopencv_calib3d.2.4.13.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libopencv_video.2.4.13.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libopencv_features2d.2.4.13.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libopencv_ml.2.4.13.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libopencv_highgui.2.4.13.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libopencv_flann.2.4.13.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libopencv_photo.2.4.13.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libopencv_imgproc.2.4.13.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libopencv_core.2.4.13.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libOpenNI.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/ni2/libOpenNI2.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/lib/libexpat.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/Cellar/vtk/8.0.0/lib/libvtkDomainsChemistryOpenGL2-8.0.1.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/Cellar/vtk/8.0.0/lib/libvtkDomainsChemistry-8.0.1.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/Cellar/vtk/8.0.0/lib/libvtkFiltersFlowPaths-8.0.1.dylib
@@ -300,7 +363,6 @@ basicGrasp_EXTERNAL_OBJECTS =
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/Cellar/vtk/8.0.0/lib/libvtkFiltersPoints-8.0.1.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/Cellar/vtk/8.0.0/lib/libvtkFiltersProgrammable-8.0.1.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/Cellar/vtk/8.0.0/lib/libvtkFiltersPython-8.0.1.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /System/Library/Frameworks/Python.framework/Versions/2.7/Python
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/Cellar/vtk/8.0.0/lib/libvtkWrappingPython27Core-8.0.1.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/Cellar/vtk/8.0.0/lib/libvtkWrappingTools-8.0.a
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/Cellar/vtk/8.0.0/lib/libvtkFiltersSMP-8.0.1.dylib
@@ -310,17 +372,9 @@ basicGrasp_EXTERNAL_OBJECTS =
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/Cellar/vtk/8.0.0/lib/libvtkFiltersVerdict-8.0.1.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/Cellar/vtk/8.0.0/lib/libvtkverdict-8.0.1.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/Cellar/vtk/8.0.0/lib/libvtkGeovisCore-8.0.1.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libjpeg.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libpng.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libtiff.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/Cellar/vtk/8.0.0/lib/libvtkproj4-8.0.1.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/Cellar/vtk/8.0.0/lib/libvtkIOAMR-8.0.1.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/Cellar/vtk/8.0.0/lib/libvtkFiltersAMR-8.0.1.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libhdf5.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libsz.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/lib/libdl.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/lib/libm.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libhdf5_hl.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/Cellar/vtk/8.0.0/lib/libvtkIOEnSight-8.0.1.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/Cellar/vtk/8.0.0/lib/libvtkIOExodus-8.0.1.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/Cellar/vtk/8.0.0/lib/libvtkIOExportOpenGL2-8.0.1.dylib
@@ -330,7 +384,6 @@ basicGrasp_EXTERNAL_OBJECTS =
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/Cellar/vtk/8.0.0/lib/libvtkgl2ps-8.0.1.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/Cellar/vtk/8.0.0/lib/libvtkIOImport-8.0.1.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/Cellar/vtk/8.0.0/lib/libvtkIOInfovis-8.0.1.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/lib/libxml2.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/Cellar/vtk/8.0.0/lib/libvtkIOLSDyna-8.0.1.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/Cellar/vtk/8.0.0/lib/libvtkIOMINC-8.0.1.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/Cellar/vtk/8.0.0/lib/libvtkIOMovie-8.0.1.dylib
@@ -342,7 +395,6 @@ basicGrasp_EXTERNAL_OBJECTS =
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/Cellar/vtk/8.0.0/lib/libvtkIOGeometry-8.0.1.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/Cellar/vtk/8.0.0/lib/libvtkIONetCDF-8.0.1.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/Cellar/vtk/8.0.0/lib/libvtknetcdf_c++.4.2.0.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libnetcdf.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/Cellar/vtk/8.0.0/lib/libvtkjsoncpp-8.0.1.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/Cellar/vtk/8.0.0/lib/libvtkIOParallelXML-8.0.1.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/Cellar/vtk/8.0.0/lib/libvtkParallelCore-8.0.1.dylib
@@ -412,8 +464,37 @@ basicGrasp_EXTERNAL_OBJECTS =
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/Cellar/vtk/8.0.0/lib/libvtkCommonCore-8.0.1.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/Cellar/vtk/8.0.0/lib/libvtksys-8.0.1.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/Cellar/vtk/8.0.0/lib/libvtkfreetype-8.0.1.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/lib/libz.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libboost_system-mt.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libboost_filesystem-mt.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libboost_thread-mt.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libboost_date_time-mt.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libboost_iostreams-mt.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libboost_serialization-mt.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libboost_chrono-mt.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libboost_atomic-mt.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libboost_regex-mt.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libpcl_common.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libflann_cpp_s.a
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libpcl_kdtree.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libpcl_octree.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libpcl_sample_consensus.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libpcl_filters.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/lib/libexpat.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /System/Library/Frameworks/Python.framework/Versions/2.7/Python
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libjpeg.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libpng.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libtiff.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libhdf5.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libsz.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/lib/libdl.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/lib/libm.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libhdf5_hl.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/lib/libxml2.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libpcl_features.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libOpenNI.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/ni2/libOpenNI2.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libpcl_io.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libpcl_search.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libboost_system-mt.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libboost_filesystem-mt.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libboost_thread-mt.dylib
@@ -424,22 +505,33 @@ basicGrasp_EXTERNAL_OBJECTS =
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libboost_atomic-mt.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libboost_regex-mt.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libpcl_common.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libflann_cpp_s.a
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libpcl_kdtree.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libpcl_octree.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libboost_system-mt.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libboost_filesystem-mt.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libboost_thread-mt.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libboost_date_time-mt.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libboost_iostreams-mt.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libboost_serialization-mt.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libboost_chrono-mt.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libboost_atomic-mt.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libboost_regex-mt.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libpcl_common.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libpcl_octree.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libpcl_sample_consensus.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libpcl_filters.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/lib/libexpat.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /System/Library/Frameworks/Python.framework/Versions/2.7/Python
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libjpeg.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libpng.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libtiff.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libhdf5.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libsz.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/lib/libdl.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/lib/libm.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libhdf5_hl.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/lib/libxml2.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libpcl_features.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libOpenNI.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/ni2/libOpenNI2.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libpcl_io.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libpcl_search.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/lib/libz.dylib
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libnetcdf.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libCGAL.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libnoise.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: CMakeFiles/basicGrasp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/rusi/git/Grasp/macOSBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/rusi/git/Grasp/macOSBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/basicGrasp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -452,9 +544,12 @@ CMakeFiles/basicGrasp.dir/requires: CMakeFiles/basicGrasp.dir/src/controller/DLR
 CMakeFiles/basicGrasp.dir/requires: CMakeFiles/basicGrasp.dir/src/controller/HandControllerInterface.o.requires
 CMakeFiles/basicGrasp.dir/requires: CMakeFiles/basicGrasp.dir/src/controller/MPLHandController.o.requires
 CMakeFiles/basicGrasp.dir/requires: CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o.requires
+CMakeFiles/basicGrasp.dir/requires: CMakeFiles/basicGrasp.dir/src/record/savelog.o.requires
+CMakeFiles/basicGrasp.dir/requires: CMakeFiles/basicGrasp.dir/src/record/writeHeader.o.requires
 CMakeFiles/basicGrasp.dir/requires: CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o.requires
 CMakeFiles/basicGrasp.dir/requires: CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o.requires
 CMakeFiles/basicGrasp.dir/requires: CMakeFiles/basicGrasp.dir/src/sensor/noiseutils.o.requires
+CMakeFiles/basicGrasp.dir/requires: CMakeFiles/basicGrasp.dir/src/util/Connector.o.requires
 
 .PHONY : CMakeFiles/basicGrasp.dir/requires
 

@@ -6,12 +6,20 @@
  */
 
 #include "mujoco.h"
+#include <util/Connector.h>
 #include <planner/GraspPlanner.h>
 #include <Eigen/Geometry>
 #include <Eigen/Core>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/quaternion.hpp>
 #include <glm/gtx/quaternion.hpp>
+
+#include <cstdlib>
+#include <cerrno>
+#include <curlpp/cURLpp.hpp>
+#include <curlpp/Easy.hpp>
+#include <curlpp/Options.hpp>
+#include <curlpp/Exception.hpp>
 
 namespace Grasp {
 
@@ -22,10 +30,22 @@ void copyArray(glm::vec3 d, double*s, int c)
 }
 
 GraspPlanner::GraspPlanner() {
+	// Create file paths.
+	fileId[0] = 0;
+    strcat(fileId, "XXXXXX");
+    mktemp(fileId);
+	char baseFolder[50];
+	baseFolder[0] = 0;
+	strcat(baseFolder, "./tmp/");
+	strcat(baseFolder, fileId);
+	logFile [0] = pointFile [0] = rgbFile [0] = resultFile[0] = trajectoryFile[0] = 0; // Set to ""
+	strcat(logFile, baseFolder); strcat(pointFile, baseFolder); strcat(rgbFile, baseFolder); strcat(resultFile, baseFolder); strcat(trajectoryFile, baseFolder); // Set to ./tmp/
+	strcat(logFile, ".log"); strcat(pointFile, ".pcd"); strcat(rgbFile, ".png"); strcat(resultFile, ".gb"); strcat(trajectoryFile, ".trj");
 
     // Create and start kinect simulator.
 	CameraInfo camInfo;
     Simulator = new Simulate();
+    Simulator->name = pointFile;
 
 	// Allocate space for trajectory arrays.
 	initialApproachPos = new glm::vec3[approachCounterLimit];
@@ -211,7 +231,10 @@ bool GraspPlanner::FollowTrajectory(const mjModel* m, mjData* d, approachType ty
 // Main function that plans a grasp from initial position to the final trajectory.
 // It's a state driven function since it is called in every simulation step.
 void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d){
-
+	char ext[] = ".pcd";
+	char extTr[] = ".trajectory";
+	char extG[] = ".graspdata";
+	char extNext[] = "";
 	bool success = false;
 	switch (graspState)
 	{
@@ -230,7 +253,6 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d){
 		}
 		break;
 	case atDataApproach:
-
 		success = FollowTrajectory(m, d, initialApproach);
 		if (success)
 		{
@@ -251,15 +273,32 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d){
 		if (!startFlag)
 		{
 			startFlag = true;
-			pointCloud = CollectData(Simulator, m, d, depthBuffer, cameraPos, gazeDir, camSize, &finishFlag);
+			CollectData(Simulator, m, d, depthBuffer, cameraPos, gazeDir, camSize, &finishFlag);
 		}
 		// Processing done, move on.
 		if (finishFlag)
 		{
 			finishFlag = false;
 			startFlag = false;
-			graspState = approaching;
+			graspState = planning;
 		}
+		break;
+	case planning:
+		// First, upload the pcd file to the web server.
+		Connector::DownloadFile("");
+
+		success = Connector::Uploadfile(pointFile);
+		if (!success)
+			break;
+
+		// Next, wait for the .trajectory file to be available.
+		Connector::DownloadFile(pointFile);
+		Connector::DownloadFile(trajectoryFile);
+		Connector::DownloadFile("");
+
+		// All good! Move on.
+		if (success)
+	    	graspState = approaching;
 		break;
 	case approaching:
 		success = FollowTrajectory(m, d, preApproach);
