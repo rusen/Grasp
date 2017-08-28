@@ -10,6 +10,7 @@
 
 #include "HandControllerInterface.h"
 #include "stdio.h"
+#define DLR_JOINT_COUNT 20
 
 namespace Grasp{
 
@@ -30,9 +31,9 @@ public:
 protected:
 
 private:
-	double initialPoses[15] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+	double initialPoses[DLR_JOINT_COUNT] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 //	double initialPoses[15] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-	double finalPoses[15] = {0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1};
+	double finalPoses[DLR_JOINT_COUNT] = {0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1};
 //	double finalPoses[15] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 };
 

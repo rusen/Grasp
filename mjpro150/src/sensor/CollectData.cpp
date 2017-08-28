@@ -7,8 +7,6 @@
 
 #include <sensor/simulate.h>
 #include "mujoco.h"
-#include <Eigen/Geometry>
-#include <Eigen/Core>
 #include <thread>
 #include <iostream>
 #include <unistd.h>

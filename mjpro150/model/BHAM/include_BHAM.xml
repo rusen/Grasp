@@ -168,7 +168,7 @@
 							<joint name="thumb_OUT" type="hinge" pos="0.046615 0.10503 0.06708" axis="-0.814200 -0.104803 0.571047" range="0.087266 1.4835" ref="0.087266"/>
 							<geom type="mesh" mesh="thumb_middlep"/>
 							<body name="thumb3">
-								<joint name="thumb_PAS" type="hinge" pos="0.050016 0.12692 0.078691" axis="-0.814200 -0.104803 0.571047" range="0.087266 1.4835" ref="0.087266"/>
+								<joint name="thumb_TIP" type="hinge" pos="0.050016 0.12692 0.078691" axis="-0.814200 -0.104803 0.571047" range="0.087266 1.4835" ref="0.087266"/>
 								<geom type="mesh" mesh="thumb_distalp"/>
 							</body>
 						</body>
@@ -186,7 +186,7 @@
 							<joint name="fore_OUT" type="hinge" pos="0.029014 0.1399 -0.019052" axis="0.996195 0.000000 0.087156" range="0.087266 1.4835" ref="0.087266"/>
 							<geom type="mesh" mesh="fore_middlep"/>
 							<body name="fore3">
-								<joint name="fore_PAS" type="hinge" pos="0.030576 0.16486 -0.018924" axis="0.996195 0.000000 0.087156" range="0.087266 1.4835" ref="0.087266"/>
+								<joint name="fore_TIP" type="hinge" pos="0.030576 0.16486 -0.018924" axis="0.996195 0.000000 0.087156" range="0.087266 1.4835" ref="0.087266"/>
 								<geom type="mesh" mesh="fore_distalp"/>
 							</body>
 						</body>
@@ -204,7 +204,7 @@
 							<joint name="middle_OUT" type="hinge" pos="0.0023 0.1499 -0.020201" axis="1.000000 0.000000 0.000000" range="0.087266 1.4835" ref="0.087266"/>
 							<geom type="mesh" mesh="middle_middlep"/>
 							<body name="middle3">
-								<joint name="middle_PAS" type="hinge" pos="0.003867 0.17486 -0.02021" axis="1.000000 0.000000 0.000000" range="0.087266 1.4835" ref="0.087266"/>
+								<joint name="middle_TIP" type="hinge" pos="0.003867 0.17486 -0.02021" axis="1.000000 0.000000 0.000000" range="0.087266 1.4835" ref="0.087266"/>
 								<geom type="mesh" mesh="middle_distalp"/>
 							</body>
 						</body>
@@ -222,7 +222,7 @@
 							<joint name="ring_OUT" type="hinge" pos="-0.024412 0.1447 -0.019017" axis="0.996195 0.000000 -0.087156" range="0.087266 1.4835" ref="0.087266"/>
 							<geom type="mesh" mesh="ring_middlep"/>
 							<body name="ring3">
-								<joint name="ring_PAS" type="hinge" pos="-0.022852 0.16966 -0.019162" axis="0.996195 0.000000 -0.087156" range="0.087266 1.4835" ref="0.087266"/>
+								<joint name="ring_TIP" type="hinge" pos="-0.022852 0.16966 -0.019162" axis="0.996195 0.000000 -0.087156" range="0.087266 1.4835" ref="0.087266"/>
 								<geom type="mesh" mesh="ring_distalp"/>
 							</body>
 						</body>
@@ -240,7 +240,7 @@
 						<joint name="little_OUT" type="hinge" pos="-0.05092 0.1257 -0.015509" axis="0.98481 0.00000 -0.17365" range="0.087266 1.4835" ref="0.087266"/>
 							<geom type="mesh" mesh="little_middlep"/>
 							<body name="little3">
-							<joint name="little_PAS" type="hinge" pos="-0.049378 0.15066 -0.01579" axis="0.98481 0.00000 -0.17365" range="0.087266 1.4835" ref="0.087266"/>
+							<joint name="little_TIP" type="hinge" pos="-0.049378 0.15066 -0.01579" axis="0.98481 0.00000 -0.17365" range="0.087266 1.4835" ref="0.087266"/>
 								<geom type="mesh" mesh="little_distalp"/>
 							</body>
 						</body>
@@ -291,8 +291,6 @@
 	</tendon>
 	-->
 	
-	
-	
 	<equality>
         <weld body1="mocap" body2="forearm" solref="0.01 1" solimp=".9 .9 0.01"/>
     </equality>
@@ -320,18 +318,23 @@
         <position name="A_thumb_ABD"  class="BHAM" joint="thumb_ABD"  ctrlrange="-0.26180 0.26180"/>
         <position name="A_thumb_IN"  class="BHAM" joint="thumb_IN"  ctrlrange="0.087266 1.1345"/>
         <position name="A_thumb_OUT"  class="BHAM" joint="thumb_OUT"  ctrlrange="0.087266 1.4835"/>
+        <position name="A_thumb_TIP"  class="BHAM" joint="thumb_TIP"  ctrlrange="0.087266 1.4835"/>
         <position name="A_fore_ABD"  class="BHAM" joint="fore_ABD"  ctrlrange="-0.26180 0.26180"/>
         <position name="A_fore_IN"  class="BHAM" joint="fore_IN"  ctrlrange="0.087266 1.1345"/>
         <position name="A_fore_OUT"  class="BHAM" joint="fore_OUT"  ctrlrange="0.087266 1.4835"/>
+        <position name="A_fore_TIP"  class="BHAM" joint="fore_TIP"  ctrlrange="0.087266 1.4835"/>
         <position name="A_middle_ABD"  class="BHAM" joint="middle_ABD"  ctrlrange="-0.26180 0.26180"/>
         <position name="A_middle_IN"  class="BHAM" joint="middle_IN"  ctrlrange="0.087266 1.1345"/>
         <position name="A_middle_OUT"  class="BHAM" joint="middle_OUT"  ctrlrange="0.087266 1.4835"/>
+        <position name="A_middle_TIP"  class="BHAM" joint="middle_TIP"  ctrlrange="0.087266 1.4835"/>
         <position name="A_ring_ABD"  class="BHAM" joint="ring_ABD"  ctrlrange="-0.26180 0.26180"/>
         <position name="A_ring_IN"  class="BHAM" joint="ring_IN"  ctrlrange="0.087266 1.1345"/>
         <position name="A_ring_OUT"  class="BHAM" joint="ring_OUT"  ctrlrange="0.087266 1.4835"/>
+        <position name="A_ring_TIP"  class="BHAM" joint="ring_TIP"  ctrlrange="0.087266 1.4835"/>
         <position name="A_little_ABD"  class="BHAM" joint="little_ABD"  ctrlrange="-0.26180 0.26180"/>
         <position name="A_little_IN"  class="BHAM" joint="little_IN"  ctrlrange="0.087266 1.1345"/>
         <position name="A_little_OUT"  class="BHAM" joint="little_OUT"  ctrlrange="0.087266 1.4835"/>
+        <position name="A_little_TIP"  class="BHAM" joint="little_TIP"  ctrlrange="0.087266 1.4835"/>
 	</actuator>
 	
 </mujoco>

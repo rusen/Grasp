@@ -13,7 +13,7 @@ namespace Grasp{
 
 DLRHandController::DLRHandController() {
 	// TODO Auto-generated constructor stub
-	jointCount = 15;
+	jointCount = DLR_JOINT_COUNT;
 }
 
 DLRHandController::~DLRHandController() {

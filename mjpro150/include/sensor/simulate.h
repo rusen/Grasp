@@ -71,7 +71,6 @@ namespace Grasp {
 
 		object_model_ = new KinectSimulator(cam_info);
 
-		transform_ = Eigen::Affine3d::Identity();
 		name = NULL;
 		cloud = nullptr;
       }
@@ -133,13 +132,10 @@ namespace Grasp {
     CameraInfo cam_info;
     cv::Mat depth_im_, scaled_im_, labels_;
     std::string out_path_;
-    Eigen::Affine3d transform_; 
     pcl::PointCloud<pcl::PointXYZRGBNormal> *cloud;
 	pcl::NormalEstimation<pcl::PointXYZ, pcl::Normal> ne;
 	pcl::PointCloud<pcl::Normal>::Ptr normals;
 	char * name;
-
-    EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 
   };
 

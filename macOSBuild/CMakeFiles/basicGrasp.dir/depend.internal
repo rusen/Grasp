@@ -332,326 +332,8 @@ CMakeFiles/basicGrasp.dir/src/basicGrasp.o
  /Users/rusi/git/Grasp/mjpro150/include/sensor/camera.h
  /Users/rusi/git/Grasp/mjpro150/include/sensor/kinectSimulator.h
  /Users/rusi/git/Grasp/mjpro150/include/sensor/noise.h
- /Users/rusi/git/Grasp/mjpro150/include/sensor/objectMeshModel.h
  /Users/rusi/git/Grasp/mjpro150/include/sensor/simulate.h
  /Users/rusi/git/Grasp/mjpro150/src/basicGrasp.cpp
- /usr/local/include/CGAL/AABB_intersections.h
- /usr/local/include/CGAL/AABB_primitive.h
- /usr/local/include/CGAL/AABB_traits.h
- /usr/local/include/CGAL/AABB_tree.h
- /usr/local/include/CGAL/AABB_triangle_primitive.h
- /usr/local/include/CGAL/Aff_transformation_2.h
- /usr/local/include/CGAL/Aff_transformation_3.h
- /usr/local/include/CGAL/Algebraic_extension_traits.h
- /usr/local/include/CGAL/Algebraic_structure_traits.h
- /usr/local/include/CGAL/Bbox_2.h
- /usr/local/include/CGAL/Bbox_3.h
- /usr/local/include/CGAL/CC_safe_handle.h
- /usr/local/include/CGAL/Cartesian/Aff_transformation_2.h
- /usr/local/include/CGAL/Cartesian/Aff_transformation_3.h
- /usr/local/include/CGAL/Cartesian/Aff_transformation_rep_2.h
- /usr/local/include/CGAL/Cartesian/Aff_transformation_rep_3.h
- /usr/local/include/CGAL/Cartesian/Cartesian_base.h
- /usr/local/include/CGAL/Cartesian/Circle_2.h
- /usr/local/include/CGAL/Cartesian/Circle_3.h
- /usr/local/include/CGAL/Cartesian/Data_accessor_2.h
- /usr/local/include/CGAL/Cartesian/Direction_2.h
- /usr/local/include/CGAL/Cartesian/Direction_3.h
- /usr/local/include/CGAL/Cartesian/Iso_cuboid_3.h
- /usr/local/include/CGAL/Cartesian/Iso_rectangle_2.h
- /usr/local/include/CGAL/Cartesian/Line_2.h
- /usr/local/include/CGAL/Cartesian/Line_3.h
- /usr/local/include/CGAL/Cartesian/Plane_3.h
- /usr/local/include/CGAL/Cartesian/Point_2.h
- /usr/local/include/CGAL/Cartesian/Point_3.h
- /usr/local/include/CGAL/Cartesian/Ray_2.h
- /usr/local/include/CGAL/Cartesian/Ray_3.h
- /usr/local/include/CGAL/Cartesian/Rotation_rep_2.h
- /usr/local/include/CGAL/Cartesian/Scaling_rep_2.h
- /usr/local/include/CGAL/Cartesian/Scaling_rep_3.h
- /usr/local/include/CGAL/Cartesian/Segment_2.h
- /usr/local/include/CGAL/Cartesian/Segment_3.h
- /usr/local/include/CGAL/Cartesian/Sphere_3.h
- /usr/local/include/CGAL/Cartesian/Tetrahedron_3.h
- /usr/local/include/CGAL/Cartesian/Translation_rep_2.h
- /usr/local/include/CGAL/Cartesian/Translation_rep_3.h
- /usr/local/include/CGAL/Cartesian/Triangle_2.h
- /usr/local/include/CGAL/Cartesian/Triangle_3.h
- /usr/local/include/CGAL/Cartesian/Vector_2.h
- /usr/local/include/CGAL/Cartesian/Vector_3.h
- /usr/local/include/CGAL/Cartesian/basic_constructions_2.h
- /usr/local/include/CGAL/Cartesian/basic_constructions_3.h
- /usr/local/include/CGAL/Cartesian/ft_constructions_2.h
- /usr/local/include/CGAL/Cartesian/ft_constructions_3.h
- /usr/local/include/CGAL/Cartesian/function_objects.h
- /usr/local/include/CGAL/Cartesian/line_constructions_2.h
- /usr/local/include/CGAL/Cartesian/plane_constructions_3.h
- /usr/local/include/CGAL/Cartesian/point_constructions_2.h
- /usr/local/include/CGAL/Cartesian/point_constructions_3.h
- /usr/local/include/CGAL/Cartesian/predicates_on_directions_2.h
- /usr/local/include/CGAL/Cartesian/predicates_on_planes_3.h
- /usr/local/include/CGAL/Cartesian/predicates_on_points_2.h
- /usr/local/include/CGAL/Cartesian/predicates_on_points_3.h
- /usr/local/include/CGAL/Cartesian/solve_3.h
- /usr/local/include/CGAL/Cartesian_converter.h
- /usr/local/include/CGAL/Circle_2.h
- /usr/local/include/CGAL/Circle_2_Circle_2_intersection.h
- /usr/local/include/CGAL/Circle_2_Line_2_intersection.h
- /usr/local/include/CGAL/Circle_3.h
- /usr/local/include/CGAL/Coercion_traits.h
- /usr/local/include/CGAL/Compact_container.h
- /usr/local/include/CGAL/ConicCPA2.h
- /usr/local/include/CGAL/Conic_2.h
- /usr/local/include/CGAL/Conic_misc.h
- /usr/local/include/CGAL/Default.h
- /usr/local/include/CGAL/Dimension.h
- /usr/local/include/CGAL/Direction_2.h
- /usr/local/include/CGAL/Direction_3.h
- /usr/local/include/CGAL/Enum_converter.h
- /usr/local/include/CGAL/Euclidean_distance.h
- /usr/local/include/CGAL/FPU.h
- /usr/local/include/CGAL/Fraction_traits.h
- /usr/local/include/CGAL/Handle_for.h
- /usr/local/include/CGAL/Handle_for_virtual.h
- /usr/local/include/CGAL/Has_timestamp.h
- /usr/local/include/CGAL/IEEE_754_unions.h
- /usr/local/include/CGAL/IO/Color.h
- /usr/local/include/CGAL/IO/Color_impl.h
- /usr/local/include/CGAL/IO/io.h
- /usr/local/include/CGAL/IO/io_impl.h
- /usr/local/include/CGAL/IO/io_tags.h
- /usr/local/include/CGAL/Intersection_traits.h
- /usr/local/include/CGAL/Intersection_traits_2.h
- /usr/local/include/CGAL/Intersection_traits_3.h
- /usr/local/include/CGAL/Intersections_2/Triangle_2_Triangle_2_intersection_impl.h
- /usr/local/include/CGAL/Intersections_3/intersection_3_1_impl.h
- /usr/local/include/CGAL/Interval_nt.h
- /usr/local/include/CGAL/Interval_traits.h
- /usr/local/include/CGAL/Iso_cuboid_3.h
- /usr/local/include/CGAL/Iso_rectangle_2.h
- /usr/local/include/CGAL/Iso_rectangle_2_Iso_rectangle_2_intersection.h
- /usr/local/include/CGAL/Kd_tree.h
- /usr/local/include/CGAL/Kd_tree_node.h
- /usr/local/include/CGAL/Kd_tree_rectangle.h
- /usr/local/include/CGAL/Kernel/Dimension_utils.h
- /usr/local/include/CGAL/Kernel/Return_base_tag.h
- /usr/local/include/CGAL/Kernel/Same_uncertainty.h
- /usr/local/include/CGAL/Kernel/Type_equality_wrapper.h
- /usr/local/include/CGAL/Kernel/Type_mapper.h
- /usr/local/include/CGAL/Kernel/Wutils.h
- /usr/local/include/CGAL/Kernel/function_objects.h
- /usr/local/include/CGAL/Kernel/global_functions.h
- /usr/local/include/CGAL/Kernel/global_functions_2.h
- /usr/local/include/CGAL/Kernel/global_functions_3.h
- /usr/local/include/CGAL/Kernel/global_functions_internal_2.h
- /usr/local/include/CGAL/Kernel/global_functions_internal_3.h
- /usr/local/include/CGAL/Kernel/interface_macros.h
- /usr/local/include/CGAL/Kernel/mpl.h
- /usr/local/include/CGAL/Kernel/solve.h
- /usr/local/include/CGAL/Kernel_traits.h
- /usr/local/include/CGAL/Line_2.h
- /usr/local/include/CGAL/Line_2_Iso_rectangle_2_intersection.h
- /usr/local/include/CGAL/Line_2_Line_2_intersection.h
- /usr/local/include/CGAL/Line_2_Triangle_2_intersection.h
- /usr/local/include/CGAL/Line_3.h
- /usr/local/include/CGAL/Modular_arithmetic/Residue_type.h
- /usr/local/include/CGAL/Modular_traits.h
- /usr/local/include/CGAL/NT_converter.h
- /usr/local/include/CGAL/Needs_parens_as_product.h
- /usr/local/include/CGAL/Object.h
- /usr/local/include/CGAL/Origin.h
- /usr/local/include/CGAL/Origin_impl.h
- /usr/local/include/CGAL/Orthogonal_k_neighbor_search.h
- /usr/local/include/CGAL/Plane_3.h
- /usr/local/include/CGAL/Plane_separator.h
- /usr/local/include/CGAL/Point_2.h
- /usr/local/include/CGAL/Point_2_Iso_rectangle_2_intersection.h
- /usr/local/include/CGAL/Point_2_Line_2_intersection.h
- /usr/local/include/CGAL/Point_2_Point_2_intersection.h
- /usr/local/include/CGAL/Point_2_Ray_2_intersection.h
- /usr/local/include/CGAL/Point_2_Segment_2_intersection.h
- /usr/local/include/CGAL/Point_2_Triangle_2_intersection.h
- /usr/local/include/CGAL/Point_3.h
- /usr/local/include/CGAL/Point_container.h
- /usr/local/include/CGAL/Profile_counter.h
- /usr/local/include/CGAL/Quotient_fwd.h
- /usr/local/include/CGAL/Rational_traits.h
- /usr/local/include/CGAL/Ray_2.h
- /usr/local/include/CGAL/Ray_2_Iso_rectangle_2_intersection.h
- /usr/local/include/CGAL/Ray_2_Line_2_intersection.h
- /usr/local/include/CGAL/Ray_2_Ray_2_intersection.h
- /usr/local/include/CGAL/Ray_2_Segment_2_intersection.h
- /usr/local/include/CGAL/Ray_2_Triangle_2_intersection.h
- /usr/local/include/CGAL/Ray_3.h
- /usr/local/include/CGAL/Real_embeddable_traits.h
- /usr/local/include/CGAL/Residue.h
- /usr/local/include/CGAL/Scalar_factor_traits.h
- /usr/local/include/CGAL/Search_traits_3.h
- /usr/local/include/CGAL/Segment_2.h
- /usr/local/include/CGAL/Segment_2_Iso_rectangle_2_intersection.h
- /usr/local/include/CGAL/Segment_2_Line_2_intersection.h
- /usr/local/include/CGAL/Segment_2_Segment_2_intersection.h
- /usr/local/include/CGAL/Segment_2_Triangle_2_intersection.h
- /usr/local/include/CGAL/Segment_3.h
- /usr/local/include/CGAL/Simple_cartesian.h
- /usr/local/include/CGAL/Sphere_3.h
- /usr/local/include/CGAL/Splitters.h
- /usr/local/include/CGAL/Straight_2.h
- /usr/local/include/CGAL/Tetrahedron_3.h
- /usr/local/include/CGAL/Time_stamper.h
- /usr/local/include/CGAL/Triangle_2.h
- /usr/local/include/CGAL/Triangle_2_Iso_rectangle_2_intersection.h
- /usr/local/include/CGAL/Triangle_2_Line_2_intersection.h
- /usr/local/include/CGAL/Triangle_2_Ray_2_intersection.h
- /usr/local/include/CGAL/Triangle_2_Segment_2_intersection.h
- /usr/local/include/CGAL/Triangle_2_Triangle_2_do_intersect.h
- /usr/local/include/CGAL/Triangle_2_Triangle_2_intersection.h
- /usr/local/include/CGAL/Triangle_3.h
- /usr/local/include/CGAL/Triangle_3_Line_3_do_intersect.h
- /usr/local/include/CGAL/Triangle_3_Plane_3_do_intersect.h
- /usr/local/include/CGAL/Triangle_3_Point_3_do_intersect.h
- /usr/local/include/CGAL/Triangle_3_Ray_3_do_intersect.h
- /usr/local/include/CGAL/Triangle_3_Segment_3_do_intersect.h
- /usr/local/include/CGAL/Triangle_3_Tetrahedron_3_do_intersect.h
- /usr/local/include/CGAL/Triangle_3_Triangle_3_do_intersect.h
- /usr/local/include/CGAL/Triangle_3_Triangle_3_intersection.h
- /usr/local/include/CGAL/Uncertain.h
- /usr/local/include/CGAL/Vector_2.h
- /usr/local/include/CGAL/Vector_3.h
- /usr/local/include/CGAL/aff_transformation_tags.h
- /usr/local/include/CGAL/aff_transformation_tags_impl.h
- /usr/local/include/CGAL/algorithm.h
- /usr/local/include/CGAL/array.h
- /usr/local/include/CGAL/assertions.h
- /usr/local/include/CGAL/assertions_behaviour.h
- /usr/local/include/CGAL/assertions_impl.h
- /usr/local/include/CGAL/auto_link/CGAL.h
- /usr/local/include/CGAL/auto_link/auto_link.h
- /usr/local/include/CGAL/basic.h
- /usr/local/include/CGAL/basic_classes.h
- /usr/local/include/CGAL/bbox_intersection_3.h
- /usr/local/include/CGAL/boost/iterator/transform_iterator.hpp
- /usr/local/include/CGAL/centroid.h
- /usr/local/include/CGAL/circulator.h
- /usr/local/include/CGAL/circulator_bases.h
- /usr/local/include/CGAL/compiler_config.h
- /usr/local/include/CGAL/config.h
- /usr/local/include/CGAL/constant.h
- /usr/local/include/CGAL/constructions/kernel_ftC2.h
- /usr/local/include/CGAL/constructions/kernel_ftC3.h
- /usr/local/include/CGAL/determinant.h
- /usr/local/include/CGAL/double.h
- /usr/local/include/CGAL/enum.h
- /usr/local/include/CGAL/exceptions.h
- /usr/local/include/CGAL/export/CGAL.h
- /usr/local/include/CGAL/export/helpers.h
- /usr/local/include/CGAL/float.h
- /usr/local/include/CGAL/gmpxx.h
- /usr/local/include/CGAL/gmpxx_coercion_traits.h
- /usr/local/include/CGAL/int.h
- /usr/local/include/CGAL/internal/AABB_tree/AABB_node.h
- /usr/local/include/CGAL/internal/AABB_tree/AABB_ray_intersection.h
- /usr/local/include/CGAL/internal/AABB_tree/AABB_search_tree.h
- /usr/local/include/CGAL/internal/AABB_tree/AABB_traversal_traits.h
- /usr/local/include/CGAL/internal/AABB_tree/Has_nested_type_Shared_data.h
- /usr/local/include/CGAL/internal/AABB_tree/Is_ray_intersection_geomtraits.h
- /usr/local/include/CGAL/internal/AABB_tree/Primitive_helper.h
- /usr/local/include/CGAL/internal/AABB_tree/nearest_point_segment_3.h
- /usr/local/include/CGAL/internal/AABB_tree/nearest_point_triangle_3.h
- /usr/local/include/CGAL/internal/Get_dimension_tag.h
- /usr/local/include/CGAL/internal/Intersections_3/Bbox_3_Bbox_3_do_intersect.h
- /usr/local/include/CGAL/internal/Intersections_3/Bbox_3_Line_3_do_intersect.h
- /usr/local/include/CGAL/internal/Intersections_3/Bbox_3_Plane_3_do_intersect.h
- /usr/local/include/CGAL/internal/Intersections_3/Bbox_3_Ray_3_do_intersect.h
- /usr/local/include/CGAL/internal/Intersections_3/Bbox_3_Segment_3_do_intersect.h
- /usr/local/include/CGAL/internal/Intersections_3/Bbox_3_Sphere_3_do_intersect.h
- /usr/local/include/CGAL/internal/Intersections_3/Bbox_3_Triangle_3_do_intersect.h
- /usr/local/include/CGAL/internal/Intersections_3/Triangle_3_Line_3_intersection.h
- /usr/local/include/CGAL/internal/Intersections_3/Triangle_3_Ray_3_intersection.h
- /usr/local/include/CGAL/internal/Intersections_3/Triangle_3_Segment_3_intersection.h
- /usr/local/include/CGAL/internal/K_neighbor_search.h
- /usr/local/include/CGAL/internal/bounded_priority_queue.h
- /usr/local/include/CGAL/intersection_2.h
- /usr/local/include/CGAL/intersection_2_1.h
- /usr/local/include/CGAL/intersection_2_2.h
- /usr/local/include/CGAL/intersection_2_3.h
- /usr/local/include/CGAL/intersection_3.h
- /usr/local/include/CGAL/intersection_3_1.h
- /usr/local/include/CGAL/intersections.h
- /usr/local/include/CGAL/is_convertible.h
- /usr/local/include/CGAL/is_iterator.h
- /usr/local/include/CGAL/iterator.h
- /usr/local/include/CGAL/kernel_assertions.h
- /usr/local/include/CGAL/kernel_basic.h
- /usr/local/include/CGAL/kernel_config.h
- /usr/local/include/CGAL/long_double.h
- /usr/local/include/CGAL/long_long.h
- /usr/local/include/CGAL/memory.h
- /usr/local/include/CGAL/mpq_class.h
- /usr/local/include/CGAL/mpz_class.h
- /usr/local/include/CGAL/mutex.h
- /usr/local/include/CGAL/number_type_basic.h
- /usr/local/include/CGAL/number_type_config.h
- /usr/local/include/CGAL/number_utils.h
- /usr/local/include/CGAL/number_utils_classes.h
- /usr/local/include/CGAL/predicates/kernel_ftC2.h
- /usr/local/include/CGAL/predicates/kernel_ftC3.h
- /usr/local/include/CGAL/predicates/sign_of_determinant.h
- /usr/local/include/CGAL/predicates_on_points_2.h
- /usr/local/include/CGAL/property_map.h
- /usr/local/include/CGAL/rational_rotation.h
- /usr/local/include/CGAL/representation_tags.h
- /usr/local/include/CGAL/result_of.h
- /usr/local/include/CGAL/squared_distance_2.h
- /usr/local/include/CGAL/squared_distance_2_1.h
- /usr/local/include/CGAL/squared_distance_2_2.h
- /usr/local/include/CGAL/squared_distance_3.h
- /usr/local/include/CGAL/squared_distance_3_0.h
- /usr/local/include/CGAL/squared_distance_3_1.h
- /usr/local/include/CGAL/squared_distance_3_2.h
- /usr/local/include/CGAL/squared_distance_utils.h
- /usr/local/include/CGAL/sse2.h
- /usr/local/include/CGAL/tags.h
- /usr/local/include/CGAL/test_FPU_rounding_mode_impl.h
- /usr/local/include/CGAL/tss.h
- /usr/local/include/CGAL/tuple.h
- /usr/local/include/CGAL/type_traits.h
- /usr/local/include/CGAL/use.h
- /usr/local/include/CGAL/user_classes.h
- /usr/local/include/CGAL/utils.h
- /usr/local/include/CGAL/utils_classes.h
- /usr/local/include/CGAL/value_type_traits.h
- /usr/local/include/CGAL/version.h
- /usr/local/include/CGAL/wmult.h
- /usr/local/include/assimp/./Compiler/poppack1.h
- /usr/local/include/assimp/./Compiler/pushpack1.h
- /usr/local/include/assimp/Compiler/pstdint.h
- /usr/local/include/assimp/anim.h
- /usr/local/include/assimp/camera.h
- /usr/local/include/assimp/cimport.h
- /usr/local/include/assimp/color4.h
- /usr/local/include/assimp/color4.inl
- /usr/local/include/assimp/config.h
- /usr/local/include/assimp/defs.h
- /usr/local/include/assimp/importerdesc.h
- /usr/local/include/assimp/light.h
- /usr/local/include/assimp/material.h
- /usr/local/include/assimp/material.inl
- /usr/local/include/assimp/matrix3x3.h
- /usr/local/include/assimp/matrix3x3.inl
- /usr/local/include/assimp/matrix4x4.h
- /usr/local/include/assimp/matrix4x4.inl
- /usr/local/include/assimp/mesh.h
- /usr/local/include/assimp/metadata.h
- /usr/local/include/assimp/postprocess.h
- /usr/local/include/assimp/quaternion.h
- /usr/local/include/assimp/scene.h
- /usr/local/include/assimp/texture.h
- /usr/local/include/assimp/types.h
- /usr/local/include/assimp/vector2.h
- /usr/local/include/assimp/vector2.inl
- /usr/local/include/assimp/vector3.h
- /usr/local/include/assimp/vector3.inl
  /usr/local/include/boost/algorithm/string.hpp
  /usr/local/include/boost/algorithm/string/case_conv.hpp
  /usr/local/include/boost/algorithm/string/classification.hpp
@@ -692,24 +374,6 @@ CMakeFiles/basicGrasp.dir/src/basicGrasp.o
  /usr/local/include/boost/algorithm/string/trim.hpp
  /usr/local/include/boost/algorithm/string/yes_no_type.hpp
  /usr/local/include/boost/aligned_storage.hpp
- /usr/local/include/boost/any.hpp
- /usr/local/include/boost/archive/archive_exception.hpp
- /usr/local/include/boost/archive/basic_archive.hpp
- /usr/local/include/boost/archive/detail/abi_prefix.hpp
- /usr/local/include/boost/archive/detail/abi_suffix.hpp
- /usr/local/include/boost/archive/detail/archive_serializer_map.hpp
- /usr/local/include/boost/archive/detail/auto_link_archive.hpp
- /usr/local/include/boost/archive/detail/basic_oarchive.hpp
- /usr/local/include/boost/archive/detail/basic_oserializer.hpp
- /usr/local/include/boost/archive/detail/basic_pointer_oserializer.hpp
- /usr/local/include/boost/archive/detail/basic_serializer.hpp
- /usr/local/include/boost/archive/detail/check.hpp
- /usr/local/include/boost/archive/detail/common_oarchive.hpp
- /usr/local/include/boost/archive/detail/decl.hpp
- /usr/local/include/boost/archive/detail/helper_collection.hpp
- /usr/local/include/boost/archive/detail/interface_oarchive.hpp
- /usr/local/include/boost/archive/detail/oserializer.hpp
- /usr/local/include/boost/archive/detail/register_archive.hpp
  /usr/local/include/boost/array.hpp
  /usr/local/include/boost/assert.hpp
  /usr/local/include/boost/atomic.hpp
@@ -803,7 +467,6 @@ CMakeFiles/basicGrasp.dir/src/basicGrasp.o
  /usr/local/include/boost/concept/detail/has_constraints.hpp
  /usr/local/include/boost/concept/detail/msvc.hpp
  /usr/local/include/boost/concept/usage.hpp
- /usr/local/include/boost/concept_archetype.hpp
  /usr/local/include/boost/concept_check.hpp
  /usr/local/include/boost/config.hpp
  /usr/local/include/boost/config/abi_prefix.hpp
@@ -873,7 +536,6 @@ CMakeFiles/basicGrasp.dir/src/basicGrasp.o
  /usr/local/include/boost/config/warning_disable.hpp
  /usr/local/include/boost/container/allocator_traits.hpp
  /usr/local/include/boost/container/container_fwd.hpp
- /usr/local/include/boost/container/deque.hpp
  /usr/local/include/boost/container/detail/addressof.hpp
  /usr/local/include/boost/container/detail/advanced_insert_int.hpp
  /usr/local/include/boost/container/detail/algorithm.hpp
@@ -1006,7 +668,6 @@ CMakeFiles/basicGrasp.dir/src/basicGrasp.o
  /usr/local/include/boost/date_time/time_system_split.hpp
  /usr/local/include/boost/date_time/wrapping_int.hpp
  /usr/local/include/boost/date_time/year_month_day.hpp
- /usr/local/include/boost/detail/allocator_utilities.hpp
  /usr/local/include/boost/detail/atomic_redef_macros.hpp
  /usr/local/include/boost/detail/atomic_undef_macros.hpp
  /usr/local/include/boost/detail/basic_pointerbuf.hpp
@@ -1018,11 +679,9 @@ CMakeFiles/basicGrasp.dir/src/basicGrasp.o
  /usr/local/include/boost/detail/fenv.hpp
  /usr/local/include/boost/detail/indirect_traits.hpp
  /usr/local/include/boost/detail/interlocked.hpp
- /usr/local/include/boost/detail/is_incrementable.hpp
  /usr/local/include/boost/detail/is_xxx.hpp
  /usr/local/include/boost/detail/iterator.hpp
  /usr/local/include/boost/detail/lcast_precision.hpp
- /usr/local/include/boost/detail/lightweight_mutex.hpp
  /usr/local/include/boost/detail/no_exceptions_support.hpp
  /usr/local/include/boost/detail/reference_content.hpp
  /usr/local/include/boost/detail/scoped_enum_emulation.hpp
@@ -1363,13 +1022,6 @@ CMakeFiles/basicGrasp.dir/src/basicGrasp.o
  /usr/local/include/boost/fusion/view/single_view/single_view.hpp
  /usr/local/include/boost/fusion/view/single_view/single_view_iterator.hpp
  /usr/local/include/boost/get_pointer.hpp
- /usr/local/include/boost/heap/detail/heap_comparison.hpp
- /usr/local/include/boost/heap/detail/stable_heap.hpp
- /usr/local/include/boost/heap/heap_concepts.hpp
- /usr/local/include/boost/heap/heap_merge.hpp
- /usr/local/include/boost/heap/policies.hpp
- /usr/local/include/boost/heap/priority_queue.hpp
- /usr/local/include/boost/indirect_reference.hpp
  /usr/local/include/boost/integer.hpp
  /usr/local/include/boost/integer/common_factor_rt.hpp
  /usr/local/include/boost/integer/integer_log2.hpp
@@ -1460,25 +1112,6 @@ CMakeFiles/basicGrasp.dir/src/basicGrasp.o
  /usr/local/include/boost/iterator/minimum_category.hpp
  /usr/local/include/boost/iterator/reverse_iterator.hpp
  /usr/local/include/boost/iterator/transform_iterator.hpp
- /usr/local/include/boost/lambda/core.hpp
- /usr/local/include/boost/lambda/detail/actions.hpp
- /usr/local/include/boost/lambda/detail/arity_code.hpp
- /usr/local/include/boost/lambda/detail/function_adaptors.hpp
- /usr/local/include/boost/lambda/detail/is_instance_of.hpp
- /usr/local/include/boost/lambda/detail/lambda_config.hpp
- /usr/local/include/boost/lambda/detail/lambda_functor_base.hpp
- /usr/local/include/boost/lambda/detail/lambda_functors.hpp
- /usr/local/include/boost/lambda/detail/lambda_fwd.hpp
- /usr/local/include/boost/lambda/detail/lambda_traits.hpp
- /usr/local/include/boost/lambda/detail/member_ptr.hpp
- /usr/local/include/boost/lambda/detail/operator_actions.hpp
- /usr/local/include/boost/lambda/detail/operator_lambda_func_base.hpp
- /usr/local/include/boost/lambda/detail/operator_return_type_traits.hpp
- /usr/local/include/boost/lambda/detail/operators.hpp
- /usr/local/include/boost/lambda/detail/ret.hpp
- /usr/local/include/boost/lambda/detail/return_type_traits.hpp
- /usr/local/include/boost/lambda/detail/select_functions.hpp
- /usr/local/include/boost/lambda/lambda.hpp
  /usr/local/include/boost/lexical_cast.hpp
  /usr/local/include/boost/lexical_cast/bad_lexical_cast.hpp
  /usr/local/include/boost/lexical_cast/detail/converter_lexical.hpp
@@ -1529,14 +1162,6 @@ CMakeFiles/basicGrasp.dir/src/basicGrasp.o
  /usr/local/include/boost/move/unique_ptr.hpp
  /usr/local/include/boost/move/utility.hpp
  /usr/local/include/boost/move/utility_core.hpp
- /usr/local/include/boost/mpi/config.hpp
- /usr/local/include/boost/mpi/datatype.hpp
- /usr/local/include/boost/mpi/datatype_fwd.hpp
- /usr/local/include/boost/mpi/detail/ignore_skeleton_oarchive.hpp
- /usr/local/include/boost/mpi/detail/mpi_datatype_cache.hpp
- /usr/local/include/boost/mpi/detail/mpi_datatype_oarchive.hpp
- /usr/local/include/boost/mpi/detail/mpi_datatype_primitive.hpp
- /usr/local/include/boost/mpi/exception.hpp
  /usr/local/include/boost/mpl/O1_size.hpp
  /usr/local/include/boost/mpl/O1_size_fwd.hpp
  /usr/local/include/boost/mpl/advance.hpp
@@ -1663,7 +1288,6 @@ CMakeFiles/basicGrasp.dir/src/basicGrasp.o
  /usr/local/include/boost/mpl/aux_/push_front_impl.hpp
  /usr/local/include/boost/mpl/aux_/reverse_fold_impl.hpp
  /usr/local/include/boost/mpl/aux_/reverse_fold_impl_body.hpp
- /usr/local/include/boost/mpl/aux_/reverse_iter_fold_impl.hpp
  /usr/local/include/boost/mpl/aux_/sequence_wrapper.hpp
  /usr/local/include/boost/mpl/aux_/size_impl.hpp
  /usr/local/include/boost/mpl/aux_/static_cast.hpp
@@ -1697,7 +1321,6 @@ CMakeFiles/basicGrasp.dir/src/basicGrasp.o
  /usr/local/include/boost/mpl/empty_base.hpp
  /usr/local/include/boost/mpl/empty_fwd.hpp
  /usr/local/include/boost/mpl/end.hpp
- /usr/local/include/boost/mpl/equal.hpp
  /usr/local/include/boost/mpl/equal_to.hpp
  /usr/local/include/boost/mpl/erase.hpp
  /usr/local/include/boost/mpl/erase_fwd.hpp
@@ -1770,7 +1393,6 @@ CMakeFiles/basicGrasp.dir/src/basicGrasp.o
  /usr/local/include/boost/mpl/pop_back_fwd.hpp
  /usr/local/include/boost/mpl/pop_front.hpp
  /usr/local/include/boost/mpl/pop_front_fwd.hpp
- /usr/local/include/boost/mpl/print.hpp
  /usr/local/include/boost/mpl/prior.hpp
  /usr/local/include/boost/mpl/protect.hpp
  /usr/local/include/boost/mpl/push_back.hpp
@@ -1778,10 +1400,8 @@ CMakeFiles/basicGrasp.dir/src/basicGrasp.o
  /usr/local/include/boost/mpl/push_front.hpp
  /usr/local/include/boost/mpl/push_front_fwd.hpp
  /usr/local/include/boost/mpl/quote.hpp
- /usr/local/include/boost/mpl/remove.hpp
  /usr/local/include/boost/mpl/remove_if.hpp
  /usr/local/include/boost/mpl/reverse_fold.hpp
- /usr/local/include/boost/mpl/reverse_iter_fold.hpp
  /usr/local/include/boost/mpl/same_as.hpp
  /usr/local/include/boost/mpl/sequence_tag.hpp
  /usr/local/include/boost/mpl/sequence_tag_fwd.hpp
@@ -1837,58 +1457,7 @@ CMakeFiles/basicGrasp.dir/src/basicGrasp.o
  /usr/local/include/boost/mpl/vector/vector50.hpp
  /usr/local/include/boost/mpl/void.hpp
  /usr/local/include/boost/mpl/void_fwd.hpp
- /usr/local/include/boost/multi_index/detail/access_specifier.hpp
- /usr/local/include/boost/multi_index/detail/adl_swap.hpp
- /usr/local/include/boost/multi_index/detail/archive_constructed.hpp
- /usr/local/include/boost/multi_index/detail/auto_space.hpp
- /usr/local/include/boost/multi_index/detail/base_type.hpp
- /usr/local/include/boost/multi_index/detail/bidir_node_iterator.hpp
- /usr/local/include/boost/multi_index/detail/bucket_array.hpp
- /usr/local/include/boost/multi_index/detail/converter.hpp
- /usr/local/include/boost/multi_index/detail/copy_map.hpp
- /usr/local/include/boost/multi_index/detail/do_not_copy_elements_tag.hpp
- /usr/local/include/boost/multi_index/detail/has_tag.hpp
- /usr/local/include/boost/multi_index/detail/hash_index_args.hpp
- /usr/local/include/boost/multi_index/detail/hash_index_iterator.hpp
- /usr/local/include/boost/multi_index/detail/hash_index_node.hpp
- /usr/local/include/boost/multi_index/detail/header_holder.hpp
- /usr/local/include/boost/multi_index/detail/ignore_wstrict_aliasing.hpp
- /usr/local/include/boost/multi_index/detail/index_base.hpp
- /usr/local/include/boost/multi_index/detail/index_loader.hpp
- /usr/local/include/boost/multi_index/detail/index_matcher.hpp
- /usr/local/include/boost/multi_index/detail/index_node_base.hpp
- /usr/local/include/boost/multi_index/detail/index_saver.hpp
- /usr/local/include/boost/multi_index/detail/invariant_assert.hpp
- /usr/local/include/boost/multi_index/detail/is_index_list.hpp
- /usr/local/include/boost/multi_index/detail/is_transparent.hpp
- /usr/local/include/boost/multi_index/detail/iter_adaptor.hpp
- /usr/local/include/boost/multi_index/detail/modify_key_adaptor.hpp
- /usr/local/include/boost/multi_index/detail/no_duplicate_tags.hpp
- /usr/local/include/boost/multi_index/detail/node_type.hpp
- /usr/local/include/boost/multi_index/detail/ord_index_args.hpp
- /usr/local/include/boost/multi_index/detail/ord_index_impl_fwd.hpp
- /usr/local/include/boost/multi_index/detail/promotes_arg.hpp
- /usr/local/include/boost/multi_index/detail/raw_ptr.hpp
- /usr/local/include/boost/multi_index/detail/restore_wstrict_aliasing.hpp
- /usr/local/include/boost/multi_index/detail/safe_mode.hpp
  /usr/local/include/boost/multi_index/detail/scope_guard.hpp
- /usr/local/include/boost/multi_index/detail/seq_index_node.hpp
- /usr/local/include/boost/multi_index/detail/seq_index_ops.hpp
- /usr/local/include/boost/multi_index/detail/serialization_version.hpp
- /usr/local/include/boost/multi_index/detail/vartempl_support.hpp
- /usr/local/include/boost/multi_index/hashed_index.hpp
- /usr/local/include/boost/multi_index/hashed_index_fwd.hpp
- /usr/local/include/boost/multi_index/identity.hpp
- /usr/local/include/boost/multi_index/identity_fwd.hpp
- /usr/local/include/boost/multi_index/indexed_by.hpp
- /usr/local/include/boost/multi_index/member.hpp
- /usr/local/include/boost/multi_index/ordered_index_fwd.hpp
- /usr/local/include/boost/multi_index/safe_mode_errors.hpp
- /usr/local/include/boost/multi_index/sequenced_index.hpp
- /usr/local/include/boost/multi_index/sequenced_index_fwd.hpp
- /usr/local/include/boost/multi_index/tag.hpp
- /usr/local/include/boost/multi_index_container.hpp
- /usr/local/include/boost/multi_index_container_fwd.hpp
  /usr/local/include/boost/next_prior.hpp
  /usr/local/include/boost/non_type.hpp
  /usr/local/include/boost/noncopyable.hpp
@@ -1956,7 +1525,6 @@ CMakeFiles/basicGrasp.dir/src/basicGrasp.o
  /usr/local/include/boost/parameter/value_type.hpp
  /usr/local/include/boost/pending/integer_log2.hpp
  /usr/local/include/boost/pending/lowest_bit.hpp
- /usr/local/include/boost/pointee.hpp
  /usr/local/include/boost/predef.h
  /usr/local/include/boost/predef/architecture.h
  /usr/local/include/boost/predef/architecture/alpha.h
@@ -2167,7 +1735,6 @@ CMakeFiles/basicGrasp.dir/src/basicGrasp.o
  /usr/local/include/boost/preprocessor/punctuation/detail/is_begin_parens.hpp
  /usr/local/include/boost/preprocessor/punctuation/is_begin_parens.hpp
  /usr/local/include/boost/preprocessor/repeat.hpp
- /usr/local/include/boost/preprocessor/repeat_2nd.hpp
  /usr/local/include/boost/preprocessor/repetition.hpp
  /usr/local/include/boost/preprocessor/repetition/deduce_r.hpp
  /usr/local/include/boost/preprocessor/repetition/deduce_z.hpp
@@ -2218,18 +1785,6 @@ CMakeFiles/basicGrasp.dir/src/basicGrasp.o
  /usr/local/include/boost/preprocessor/tuple/to_list.hpp
  /usr/local/include/boost/preprocessor/variadic/elem.hpp
  /usr/local/include/boost/preprocessor/variadic/size.hpp
- /usr/local/include/boost/property_map/parallel/basic_reduce.hpp
- /usr/local/include/boost/property_map/parallel/detail/untracked_pair.hpp
- /usr/local/include/boost/property_map/parallel/distributed_property_map.hpp
- /usr/local/include/boost/property_map/parallel/impl/distributed_property_map.ipp
- /usr/local/include/boost/property_map/parallel/local_property_map.hpp
- /usr/local/include/boost/property_map/parallel/parallel_property_maps.hpp
- /usr/local/include/boost/property_map/parallel/process_group.hpp
- /usr/local/include/boost/property_map/parallel/simple_trigger.hpp
- /usr/local/include/boost/property_map/parallel/unsafe_serialize.hpp
- /usr/local/include/boost/property_map/parallel/vector_property_map.hpp
- /usr/local/include/boost/property_map/property_map.hpp
- /usr/local/include/boost/property_map/vector_property_map.hpp
  /usr/local/include/boost/range/algorithm/equal.hpp
  /usr/local/include/boost/range/as_literal.hpp
  /usr/local/include/boost/range/begin.hpp
@@ -2285,40 +1840,6 @@ CMakeFiles/basicGrasp.dir/src/basicGrasp.o
  /usr/local/include/boost/ref.hpp
  /usr/local/include/boost/scoped_array.hpp
  /usr/local/include/boost/scoped_ptr.hpp
- /usr/local/include/boost/serialization/access.hpp
- /usr/local/include/boost/serialization/array.hpp
- /usr/local/include/boost/serialization/array_optimization.hpp
- /usr/local/include/boost/serialization/array_wrapper.hpp
- /usr/local/include/boost/serialization/assume_abstract.hpp
- /usr/local/include/boost/serialization/base_object.hpp
- /usr/local/include/boost/serialization/collection_size_type.hpp
- /usr/local/include/boost/serialization/config.hpp
- /usr/local/include/boost/serialization/extended_type_info.hpp
- /usr/local/include/boost/serialization/extended_type_info_typeid.hpp
- /usr/local/include/boost/serialization/factory.hpp
- /usr/local/include/boost/serialization/force_include.hpp
- /usr/local/include/boost/serialization/is_bitwise_serializable.hpp
- /usr/local/include/boost/serialization/item_version_type.hpp
- /usr/local/include/boost/serialization/level.hpp
- /usr/local/include/boost/serialization/level_enum.hpp
- /usr/local/include/boost/serialization/nvp.hpp
- /usr/local/include/boost/serialization/serialization.hpp
- /usr/local/include/boost/serialization/singleton.hpp
- /usr/local/include/boost/serialization/smart_cast.hpp
- /usr/local/include/boost/serialization/split_free.hpp
- /usr/local/include/boost/serialization/split_member.hpp
- /usr/local/include/boost/serialization/static_warning.hpp
- /usr/local/include/boost/serialization/strong_typedef.hpp
- /usr/local/include/boost/serialization/throw_exception.hpp
- /usr/local/include/boost/serialization/tracking.hpp
- /usr/local/include/boost/serialization/tracking_enum.hpp
- /usr/local/include/boost/serialization/traits.hpp
- /usr/local/include/boost/serialization/type_info_implementation.hpp
- /usr/local/include/boost/serialization/utility.hpp
- /usr/local/include/boost/serialization/version.hpp
- /usr/local/include/boost/serialization/void_cast.hpp
- /usr/local/include/boost/serialization/void_cast_fwd.hpp
- /usr/local/include/boost/serialization/wrapper.hpp
  /usr/local/include/boost/shared_array.hpp
  /usr/local/include/boost/shared_ptr.hpp
  /usr/local/include/boost/signals2.hpp
@@ -2517,7 +2038,6 @@ CMakeFiles/basicGrasp.dir/src/basicGrasp.o
  /usr/local/include/boost/tokenizer.hpp
  /usr/local/include/boost/tuple/detail/tuple_basic.hpp
  /usr/local/include/boost/tuple/tuple.hpp
- /usr/local/include/boost/tuple/tuple_comparison.hpp
  /usr/local/include/boost/type.hpp
  /usr/local/include/boost/type_index.hpp
  /usr/local/include/boost/type_index/ctti_type_index.hpp
@@ -2544,7 +2064,6 @@ CMakeFiles/basicGrasp.dir/src/basicGrasp.o
  /usr/local/include/boost/type_traits/cv_traits.hpp
  /usr/local/include/boost/type_traits/decay.hpp
  /usr/local/include/boost/type_traits/declval.hpp
- /usr/local/include/boost/type_traits/detail/bool_trait_undef.hpp
  /usr/local/include/boost/type_traits/detail/common_arithmetic_type.hpp
  /usr/local/include/boost/type_traits/detail/common_type_impl.hpp
  /usr/local/include/boost/type_traits/detail/composite_member_pointer_type.hpp
@@ -2663,7 +2182,6 @@ CMakeFiles/basicGrasp.dir/src/basicGrasp.o
  /usr/local/include/boost/type_traits/make_signed.hpp
  /usr/local/include/boost/type_traits/make_unsigned.hpp
  /usr/local/include/boost/type_traits/make_void.hpp
- /usr/local/include/boost/type_traits/object_traits.hpp
  /usr/local/include/boost/type_traits/promote.hpp
  /usr/local/include/boost/type_traits/rank.hpp
  /usr/local/include/boost/type_traits/remove_all_extents.hpp
@@ -2675,7 +2193,6 @@ CMakeFiles/basicGrasp.dir/src/basicGrasp.o
  /usr/local/include/boost/type_traits/remove_reference.hpp
  /usr/local/include/boost/type_traits/remove_volatile.hpp
  /usr/local/include/boost/type_traits/same_traits.hpp
- /usr/local/include/boost/type_traits/transform_traits.hpp
  /usr/local/include/boost/type_traits/type_identity.hpp
  /usr/local/include/boost/type_traits/type_with_alignment.hpp
  /usr/local/include/boost/utility.hpp
@@ -2688,17 +2205,13 @@ CMakeFiles/basicGrasp.dir/src/basicGrasp.o
  /usr/local/include/boost/utility/identity_type.hpp
  /usr/local/include/boost/utility/result_of.hpp
  /usr/local/include/boost/utility/swap.hpp
- /usr/local/include/boost/variant.hpp
  /usr/local/include/boost/variant/apply_visitor.hpp
- /usr/local/include/boost/variant/bad_visit.hpp
  /usr/local/include/boost/variant/detail/apply_visitor_binary.hpp
  /usr/local/include/boost/variant/detail/apply_visitor_delayed.hpp
  /usr/local/include/boost/variant/detail/apply_visitor_unary.hpp
  /usr/local/include/boost/variant/detail/backup_holder.hpp
  /usr/local/include/boost/variant/detail/cast_storage.hpp
  /usr/local/include/boost/variant/detail/config.hpp
- /usr/local/include/boost/variant/detail/element_index.hpp
- /usr/local/include/boost/variant/detail/enable_recursive.hpp
  /usr/local/include/boost/variant/detail/enable_recursive_fwd.hpp
  /usr/local/include/boost/variant/detail/forced_return.hpp
  /usr/local/include/boost/variant/detail/generic_result_type.hpp
@@ -2708,18 +2221,13 @@ CMakeFiles/basicGrasp.dir/src/basicGrasp.o
  /usr/local/include/boost/variant/detail/make_variant_list.hpp
  /usr/local/include/boost/variant/detail/move.hpp
  /usr/local/include/boost/variant/detail/over_sequence.hpp
- /usr/local/include/boost/variant/detail/substitute.hpp
  /usr/local/include/boost/variant/detail/substitute_fwd.hpp
  /usr/local/include/boost/variant/detail/variant_io.hpp
  /usr/local/include/boost/variant/detail/visitation_impl.hpp
- /usr/local/include/boost/variant/get.hpp
- /usr/local/include/boost/variant/recursive_variant.hpp
- /usr/local/include/boost/variant/recursive_wrapper.hpp
  /usr/local/include/boost/variant/recursive_wrapper_fwd.hpp
  /usr/local/include/boost/variant/static_visitor.hpp
  /usr/local/include/boost/variant/variant.hpp
  /usr/local/include/boost/variant/variant_fwd.hpp
- /usr/local/include/boost/variant/visitor_ptr.hpp
  /usr/local/include/boost/version.hpp
  /usr/local/include/boost/visit_each.hpp
  /usr/local/include/boost/weak_ptr.hpp
@@ -2757,11 +2265,6 @@ CMakeFiles/basicGrasp.dir/src/basicGrasp.o
  /usr/local/include/flann/util/saving.h
  /usr/local/include/flann/util/serialization.h
  /usr/local/include/flann/util/timer.h
- /usr/local/include/gmp.h
- /usr/local/include/gmpxx.h
- /usr/local/include/mpfr.h
- /usr/local/include/mpi.h
- /usr/local/include/mpi_portable_platform.h
  /usr/local/include/opencv/highgui.h
  /usr/local/include/opencv2/calib3d/calib3d.hpp
  /usr/local/include/opencv2/contrib/contrib.hpp
@@ -2868,39 +2371,6 @@ CMakeFiles/basicGrasp.dir/src/basicGrasp.o
  /usr/local/include/pcl-1.8/pcl/search/organized.h
  /usr/local/include/pcl-1.8/pcl/search/pcl_search.h
  /usr/local/include/pcl-1.8/pcl/search/search.h
- /usr/local/include/tbb/atomic.h
- /usr/local/include/tbb/cache_aligned_allocator.h
- /usr/local/include/tbb/concurrent_hash_map.h
- /usr/local/include/tbb/internal/_mutex_padding.h
- /usr/local/include/tbb/internal/_tbb_hash_compare_impl.h
- /usr/local/include/tbb/internal/_tbb_strings.h
- /usr/local/include/tbb/internal/_tbb_windef.h
- /usr/local/include/tbb/internal/_x86_rtm_rw_mutex_impl.h
- /usr/local/include/tbb/machine/gcc_armv7.h
- /usr/local/include/tbb/machine/gcc_generic.h
- /usr/local/include/tbb/machine/gcc_ia32_common.h
- /usr/local/include/tbb/machine/gcc_itsx.h
- /usr/local/include/tbb/machine/ibm_aix51.h
- /usr/local/include/tbb/machine/icc_generic.h
- /usr/local/include/tbb/machine/linux_common.h
- /usr/local/include/tbb/machine/linux_ia32.h
- /usr/local/include/tbb/machine/linux_ia64.h
- /usr/local/include/tbb/machine/linux_intel64.h
- /usr/local/include/tbb/machine/mac_ppc.h
- /usr/local/include/tbb/machine/macos_common.h
- /usr/local/include/tbb/machine/mic_common.h
- /usr/local/include/tbb/machine/msvc_armv7.h
- /usr/local/include/tbb/machine/msvc_ia32_common.h
- /usr/local/include/tbb/machine/sunos_sparc.h
- /usr/local/include/tbb/machine/windows_ia32.h
- /usr/local/include/tbb/machine/windows_intel64.h
- /usr/local/include/tbb/spin_rw_mutex.h
- /usr/local/include/tbb/tbb_allocator.h
- /usr/local/include/tbb/tbb_config.h
- /usr/local/include/tbb/tbb_exception.h
- /usr/local/include/tbb/tbb_machine.h
- /usr/local/include/tbb/tbb_profiling.h
- /usr/local/include/tbb/tbb_stddef.h
 CMakeFiles/basicGrasp.dir/src/controller/DLRHandController.o
  /Users/rusi/git/Grasp/mjpro150/include/controller/DLRHandController.h
  /Users/rusi/git/Grasp/mjpro150/include/controller/HandControllerInterface.h
@@ -3556,327 +3026,9 @@ CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o
  /Users/rusi/git/Grasp/mjpro150/include/sensor/camera.h
  /Users/rusi/git/Grasp/mjpro150/include/sensor/kinectSimulator.h
  /Users/rusi/git/Grasp/mjpro150/include/sensor/noise.h
- /Users/rusi/git/Grasp/mjpro150/include/sensor/objectMeshModel.h
  /Users/rusi/git/Grasp/mjpro150/include/sensor/simulate.h
  /Users/rusi/git/Grasp/mjpro150/include/util/Connector.h
  /Users/rusi/git/Grasp/mjpro150/src/planner/GraspPlanner.cpp
- /usr/local/include/CGAL/AABB_intersections.h
- /usr/local/include/CGAL/AABB_primitive.h
- /usr/local/include/CGAL/AABB_traits.h
- /usr/local/include/CGAL/AABB_tree.h
- /usr/local/include/CGAL/AABB_triangle_primitive.h
- /usr/local/include/CGAL/Aff_transformation_2.h
- /usr/local/include/CGAL/Aff_transformation_3.h
- /usr/local/include/CGAL/Algebraic_extension_traits.h
- /usr/local/include/CGAL/Algebraic_structure_traits.h
- /usr/local/include/CGAL/Bbox_2.h
- /usr/local/include/CGAL/Bbox_3.h
- /usr/local/include/CGAL/CC_safe_handle.h
- /usr/local/include/CGAL/Cartesian/Aff_transformation_2.h
- /usr/local/include/CGAL/Cartesian/Aff_transformation_3.h
- /usr/local/include/CGAL/Cartesian/Aff_transformation_rep_2.h
- /usr/local/include/CGAL/Cartesian/Aff_transformation_rep_3.h
- /usr/local/include/CGAL/Cartesian/Cartesian_base.h
- /usr/local/include/CGAL/Cartesian/Circle_2.h
- /usr/local/include/CGAL/Cartesian/Circle_3.h
- /usr/local/include/CGAL/Cartesian/Data_accessor_2.h
- /usr/local/include/CGAL/Cartesian/Direction_2.h
- /usr/local/include/CGAL/Cartesian/Direction_3.h
- /usr/local/include/CGAL/Cartesian/Iso_cuboid_3.h
- /usr/local/include/CGAL/Cartesian/Iso_rectangle_2.h
- /usr/local/include/CGAL/Cartesian/Line_2.h
- /usr/local/include/CGAL/Cartesian/Line_3.h
- /usr/local/include/CGAL/Cartesian/Plane_3.h
- /usr/local/include/CGAL/Cartesian/Point_2.h
- /usr/local/include/CGAL/Cartesian/Point_3.h
- /usr/local/include/CGAL/Cartesian/Ray_2.h
- /usr/local/include/CGAL/Cartesian/Ray_3.h
- /usr/local/include/CGAL/Cartesian/Rotation_rep_2.h
- /usr/local/include/CGAL/Cartesian/Scaling_rep_2.h
- /usr/local/include/CGAL/Cartesian/Scaling_rep_3.h
- /usr/local/include/CGAL/Cartesian/Segment_2.h
- /usr/local/include/CGAL/Cartesian/Segment_3.h
- /usr/local/include/CGAL/Cartesian/Sphere_3.h
- /usr/local/include/CGAL/Cartesian/Tetrahedron_3.h
- /usr/local/include/CGAL/Cartesian/Translation_rep_2.h
- /usr/local/include/CGAL/Cartesian/Translation_rep_3.h
- /usr/local/include/CGAL/Cartesian/Triangle_2.h
- /usr/local/include/CGAL/Cartesian/Triangle_3.h
- /usr/local/include/CGAL/Cartesian/Vector_2.h
- /usr/local/include/CGAL/Cartesian/Vector_3.h
- /usr/local/include/CGAL/Cartesian/basic_constructions_2.h
- /usr/local/include/CGAL/Cartesian/basic_constructions_3.h
- /usr/local/include/CGAL/Cartesian/ft_constructions_2.h
- /usr/local/include/CGAL/Cartesian/ft_constructions_3.h
- /usr/local/include/CGAL/Cartesian/function_objects.h
- /usr/local/include/CGAL/Cartesian/line_constructions_2.h
- /usr/local/include/CGAL/Cartesian/plane_constructions_3.h
- /usr/local/include/CGAL/Cartesian/point_constructions_2.h
- /usr/local/include/CGAL/Cartesian/point_constructions_3.h
- /usr/local/include/CGAL/Cartesian/predicates_on_directions_2.h
- /usr/local/include/CGAL/Cartesian/predicates_on_planes_3.h
- /usr/local/include/CGAL/Cartesian/predicates_on_points_2.h
- /usr/local/include/CGAL/Cartesian/predicates_on_points_3.h
- /usr/local/include/CGAL/Cartesian/solve_3.h
- /usr/local/include/CGAL/Cartesian_converter.h
- /usr/local/include/CGAL/Circle_2.h
- /usr/local/include/CGAL/Circle_2_Circle_2_intersection.h
- /usr/local/include/CGAL/Circle_2_Line_2_intersection.h
- /usr/local/include/CGAL/Circle_3.h
- /usr/local/include/CGAL/Coercion_traits.h
- /usr/local/include/CGAL/Compact_container.h
- /usr/local/include/CGAL/ConicCPA2.h
- /usr/local/include/CGAL/Conic_2.h
- /usr/local/include/CGAL/Conic_misc.h
- /usr/local/include/CGAL/Default.h
- /usr/local/include/CGAL/Dimension.h
- /usr/local/include/CGAL/Direction_2.h
- /usr/local/include/CGAL/Direction_3.h
- /usr/local/include/CGAL/Enum_converter.h
- /usr/local/include/CGAL/Euclidean_distance.h
- /usr/local/include/CGAL/FPU.h
- /usr/local/include/CGAL/Fraction_traits.h
- /usr/local/include/CGAL/Handle_for.h
- /usr/local/include/CGAL/Handle_for_virtual.h
- /usr/local/include/CGAL/Has_timestamp.h
- /usr/local/include/CGAL/IEEE_754_unions.h
- /usr/local/include/CGAL/IO/Color.h
- /usr/local/include/CGAL/IO/Color_impl.h
- /usr/local/include/CGAL/IO/io.h
- /usr/local/include/CGAL/IO/io_impl.h
- /usr/local/include/CGAL/IO/io_tags.h
- /usr/local/include/CGAL/Intersection_traits.h
- /usr/local/include/CGAL/Intersection_traits_2.h
- /usr/local/include/CGAL/Intersection_traits_3.h
- /usr/local/include/CGAL/Intersections_2/Triangle_2_Triangle_2_intersection_impl.h
- /usr/local/include/CGAL/Intersections_3/intersection_3_1_impl.h
- /usr/local/include/CGAL/Interval_nt.h
- /usr/local/include/CGAL/Interval_traits.h
- /usr/local/include/CGAL/Iso_cuboid_3.h
- /usr/local/include/CGAL/Iso_rectangle_2.h
- /usr/local/include/CGAL/Iso_rectangle_2_Iso_rectangle_2_intersection.h
- /usr/local/include/CGAL/Kd_tree.h
- /usr/local/include/CGAL/Kd_tree_node.h
- /usr/local/include/CGAL/Kd_tree_rectangle.h
- /usr/local/include/CGAL/Kernel/Dimension_utils.h
- /usr/local/include/CGAL/Kernel/Return_base_tag.h
- /usr/local/include/CGAL/Kernel/Same_uncertainty.h
- /usr/local/include/CGAL/Kernel/Type_equality_wrapper.h
- /usr/local/include/CGAL/Kernel/Type_mapper.h
- /usr/local/include/CGAL/Kernel/Wutils.h
- /usr/local/include/CGAL/Kernel/function_objects.h
- /usr/local/include/CGAL/Kernel/global_functions.h
- /usr/local/include/CGAL/Kernel/global_functions_2.h
- /usr/local/include/CGAL/Kernel/global_functions_3.h
- /usr/local/include/CGAL/Kernel/global_functions_internal_2.h
- /usr/local/include/CGAL/Kernel/global_functions_internal_3.h
- /usr/local/include/CGAL/Kernel/interface_macros.h
- /usr/local/include/CGAL/Kernel/mpl.h
- /usr/local/include/CGAL/Kernel/solve.h
- /usr/local/include/CGAL/Kernel_traits.h
- /usr/local/include/CGAL/Line_2.h
- /usr/local/include/CGAL/Line_2_Iso_rectangle_2_intersection.h
- /usr/local/include/CGAL/Line_2_Line_2_intersection.h
- /usr/local/include/CGAL/Line_2_Triangle_2_intersection.h
- /usr/local/include/CGAL/Line_3.h
- /usr/local/include/CGAL/Modular_arithmetic/Residue_type.h
- /usr/local/include/CGAL/Modular_traits.h
- /usr/local/include/CGAL/NT_converter.h
- /usr/local/include/CGAL/Needs_parens_as_product.h
- /usr/local/include/CGAL/Object.h
- /usr/local/include/CGAL/Origin.h
- /usr/local/include/CGAL/Origin_impl.h
- /usr/local/include/CGAL/Orthogonal_k_neighbor_search.h
- /usr/local/include/CGAL/Plane_3.h
- /usr/local/include/CGAL/Plane_separator.h
- /usr/local/include/CGAL/Point_2.h
- /usr/local/include/CGAL/Point_2_Iso_rectangle_2_intersection.h
- /usr/local/include/CGAL/Point_2_Line_2_intersection.h
- /usr/local/include/CGAL/Point_2_Point_2_intersection.h
- /usr/local/include/CGAL/Point_2_Ray_2_intersection.h
- /usr/local/include/CGAL/Point_2_Segment_2_intersection.h
- /usr/local/include/CGAL/Point_2_Triangle_2_intersection.h
- /usr/local/include/CGAL/Point_3.h
- /usr/local/include/CGAL/Point_container.h
- /usr/local/include/CGAL/Profile_counter.h
- /usr/local/include/CGAL/Quotient_fwd.h
- /usr/local/include/CGAL/Rational_traits.h
- /usr/local/include/CGAL/Ray_2.h
- /usr/local/include/CGAL/Ray_2_Iso_rectangle_2_intersection.h
- /usr/local/include/CGAL/Ray_2_Line_2_intersection.h
- /usr/local/include/CGAL/Ray_2_Ray_2_intersection.h
- /usr/local/include/CGAL/Ray_2_Segment_2_intersection.h
- /usr/local/include/CGAL/Ray_2_Triangle_2_intersection.h
- /usr/local/include/CGAL/Ray_3.h
- /usr/local/include/CGAL/Real_embeddable_traits.h
- /usr/local/include/CGAL/Residue.h
- /usr/local/include/CGAL/Scalar_factor_traits.h
- /usr/local/include/CGAL/Search_traits_3.h
- /usr/local/include/CGAL/Segment_2.h
- /usr/local/include/CGAL/Segment_2_Iso_rectangle_2_intersection.h
- /usr/local/include/CGAL/Segment_2_Line_2_intersection.h
- /usr/local/include/CGAL/Segment_2_Segment_2_intersection.h
- /usr/local/include/CGAL/Segment_2_Triangle_2_intersection.h
- /usr/local/include/CGAL/Segment_3.h
- /usr/local/include/CGAL/Simple_cartesian.h
- /usr/local/include/CGAL/Sphere_3.h
- /usr/local/include/CGAL/Splitters.h
- /usr/local/include/CGAL/Straight_2.h
- /usr/local/include/CGAL/Tetrahedron_3.h
- /usr/local/include/CGAL/Time_stamper.h
- /usr/local/include/CGAL/Triangle_2.h
- /usr/local/include/CGAL/Triangle_2_Iso_rectangle_2_intersection.h
- /usr/local/include/CGAL/Triangle_2_Line_2_intersection.h
- /usr/local/include/CGAL/Triangle_2_Ray_2_intersection.h
- /usr/local/include/CGAL/Triangle_2_Segment_2_intersection.h
- /usr/local/include/CGAL/Triangle_2_Triangle_2_do_intersect.h
- /usr/local/include/CGAL/Triangle_2_Triangle_2_intersection.h
- /usr/local/include/CGAL/Triangle_3.h
- /usr/local/include/CGAL/Triangle_3_Line_3_do_intersect.h
- /usr/local/include/CGAL/Triangle_3_Plane_3_do_intersect.h
- /usr/local/include/CGAL/Triangle_3_Point_3_do_intersect.h
- /usr/local/include/CGAL/Triangle_3_Ray_3_do_intersect.h
- /usr/local/include/CGAL/Triangle_3_Segment_3_do_intersect.h
- /usr/local/include/CGAL/Triangle_3_Tetrahedron_3_do_intersect.h
- /usr/local/include/CGAL/Triangle_3_Triangle_3_do_intersect.h
- /usr/local/include/CGAL/Triangle_3_Triangle_3_intersection.h
- /usr/local/include/CGAL/Uncertain.h
- /usr/local/include/CGAL/Vector_2.h
- /usr/local/include/CGAL/Vector_3.h
- /usr/local/include/CGAL/aff_transformation_tags.h
- /usr/local/include/CGAL/aff_transformation_tags_impl.h
- /usr/local/include/CGAL/algorithm.h
- /usr/local/include/CGAL/array.h
- /usr/local/include/CGAL/assertions.h
- /usr/local/include/CGAL/assertions_behaviour.h
- /usr/local/include/CGAL/assertions_impl.h
- /usr/local/include/CGAL/auto_link/CGAL.h
- /usr/local/include/CGAL/auto_link/auto_link.h
- /usr/local/include/CGAL/basic.h
- /usr/local/include/CGAL/basic_classes.h
- /usr/local/include/CGAL/bbox_intersection_3.h
- /usr/local/include/CGAL/boost/iterator/transform_iterator.hpp
- /usr/local/include/CGAL/centroid.h
- /usr/local/include/CGAL/circulator.h
- /usr/local/include/CGAL/circulator_bases.h
- /usr/local/include/CGAL/compiler_config.h
- /usr/local/include/CGAL/config.h
- /usr/local/include/CGAL/constant.h
- /usr/local/include/CGAL/constructions/kernel_ftC2.h
- /usr/local/include/CGAL/constructions/kernel_ftC3.h
- /usr/local/include/CGAL/determinant.h
- /usr/local/include/CGAL/double.h
- /usr/local/include/CGAL/enum.h
- /usr/local/include/CGAL/exceptions.h
- /usr/local/include/CGAL/export/CGAL.h
- /usr/local/include/CGAL/export/helpers.h
- /usr/local/include/CGAL/float.h
- /usr/local/include/CGAL/gmpxx.h
- /usr/local/include/CGAL/gmpxx_coercion_traits.h
- /usr/local/include/CGAL/int.h
- /usr/local/include/CGAL/internal/AABB_tree/AABB_node.h
- /usr/local/include/CGAL/internal/AABB_tree/AABB_ray_intersection.h
- /usr/local/include/CGAL/internal/AABB_tree/AABB_search_tree.h
- /usr/local/include/CGAL/internal/AABB_tree/AABB_traversal_traits.h
- /usr/local/include/CGAL/internal/AABB_tree/Has_nested_type_Shared_data.h
- /usr/local/include/CGAL/internal/AABB_tree/Is_ray_intersection_geomtraits.h
- /usr/local/include/CGAL/internal/AABB_tree/Primitive_helper.h
- /usr/local/include/CGAL/internal/AABB_tree/nearest_point_segment_3.h
- /usr/local/include/CGAL/internal/AABB_tree/nearest_point_triangle_3.h
- /usr/local/include/CGAL/internal/Get_dimension_tag.h
- /usr/local/include/CGAL/internal/Intersections_3/Bbox_3_Bbox_3_do_intersect.h
- /usr/local/include/CGAL/internal/Intersections_3/Bbox_3_Line_3_do_intersect.h
- /usr/local/include/CGAL/internal/Intersections_3/Bbox_3_Plane_3_do_intersect.h
- /usr/local/include/CGAL/internal/Intersections_3/Bbox_3_Ray_3_do_intersect.h
- /usr/local/include/CGAL/internal/Intersections_3/Bbox_3_Segment_3_do_intersect.h
- /usr/local/include/CGAL/internal/Intersections_3/Bbox_3_Sphere_3_do_intersect.h
- /usr/local/include/CGAL/internal/Intersections_3/Bbox_3_Triangle_3_do_intersect.h
- /usr/local/include/CGAL/internal/Intersections_3/Triangle_3_Line_3_intersection.h
- /usr/local/include/CGAL/internal/Intersections_3/Triangle_3_Ray_3_intersection.h
- /usr/local/include/CGAL/internal/Intersections_3/Triangle_3_Segment_3_intersection.h
- /usr/local/include/CGAL/internal/K_neighbor_search.h
- /usr/local/include/CGAL/internal/bounded_priority_queue.h
- /usr/local/include/CGAL/intersection_2.h
- /usr/local/include/CGAL/intersection_2_1.h
- /usr/local/include/CGAL/intersection_2_2.h
- /usr/local/include/CGAL/intersection_2_3.h
- /usr/local/include/CGAL/intersection_3.h
- /usr/local/include/CGAL/intersection_3_1.h
- /usr/local/include/CGAL/intersections.h
- /usr/local/include/CGAL/is_convertible.h
- /usr/local/include/CGAL/is_iterator.h
- /usr/local/include/CGAL/iterator.h
- /usr/local/include/CGAL/kernel_assertions.h
- /usr/local/include/CGAL/kernel_basic.h
- /usr/local/include/CGAL/kernel_config.h
- /usr/local/include/CGAL/long_double.h
- /usr/local/include/CGAL/long_long.h
- /usr/local/include/CGAL/memory.h
- /usr/local/include/CGAL/mpq_class.h
- /usr/local/include/CGAL/mpz_class.h
- /usr/local/include/CGAL/mutex.h
- /usr/local/include/CGAL/number_type_basic.h
- /usr/local/include/CGAL/number_type_config.h
- /usr/local/include/CGAL/number_utils.h
- /usr/local/include/CGAL/number_utils_classes.h
- /usr/local/include/CGAL/predicates/kernel_ftC2.h
- /usr/local/include/CGAL/predicates/kernel_ftC3.h
- /usr/local/include/CGAL/predicates/sign_of_determinant.h
- /usr/local/include/CGAL/predicates_on_points_2.h
- /usr/local/include/CGAL/property_map.h
- /usr/local/include/CGAL/rational_rotation.h
- /usr/local/include/CGAL/representation_tags.h
- /usr/local/include/CGAL/result_of.h
- /usr/local/include/CGAL/squared_distance_2.h
- /usr/local/include/CGAL/squared_distance_2_1.h
- /usr/local/include/CGAL/squared_distance_2_2.h
- /usr/local/include/CGAL/squared_distance_3.h
- /usr/local/include/CGAL/squared_distance_3_0.h
- /usr/local/include/CGAL/squared_distance_3_1.h
- /usr/local/include/CGAL/squared_distance_3_2.h
- /usr/local/include/CGAL/squared_distance_utils.h
- /usr/local/include/CGAL/sse2.h
- /usr/local/include/CGAL/tags.h
- /usr/local/include/CGAL/test_FPU_rounding_mode_impl.h
- /usr/local/include/CGAL/tss.h
- /usr/local/include/CGAL/tuple.h
- /usr/local/include/CGAL/type_traits.h
- /usr/local/include/CGAL/use.h
- /usr/local/include/CGAL/user_classes.h
- /usr/local/include/CGAL/utils.h
- /usr/local/include/CGAL/utils_classes.h
- /usr/local/include/CGAL/value_type_traits.h
- /usr/local/include/CGAL/version.h
- /usr/local/include/CGAL/wmult.h
- /usr/local/include/assimp/./Compiler/poppack1.h
- /usr/local/include/assimp/./Compiler/pushpack1.h
- /usr/local/include/assimp/Compiler/pstdint.h
- /usr/local/include/assimp/anim.h
- /usr/local/include/assimp/camera.h
- /usr/local/include/assimp/cimport.h
- /usr/local/include/assimp/color4.h
- /usr/local/include/assimp/color4.inl
- /usr/local/include/assimp/config.h
- /usr/local/include/assimp/defs.h
- /usr/local/include/assimp/importerdesc.h
- /usr/local/include/assimp/light.h
- /usr/local/include/assimp/material.h
- /usr/local/include/assimp/material.inl
- /usr/local/include/assimp/matrix3x3.h
- /usr/local/include/assimp/matrix3x3.inl
- /usr/local/include/assimp/matrix4x4.h
- /usr/local/include/assimp/matrix4x4.inl
- /usr/local/include/assimp/mesh.h
- /usr/local/include/assimp/metadata.h
- /usr/local/include/assimp/postprocess.h
- /usr/local/include/assimp/quaternion.h
- /usr/local/include/assimp/scene.h
- /usr/local/include/assimp/texture.h
- /usr/local/include/assimp/types.h
- /usr/local/include/assimp/vector2.h
- /usr/local/include/assimp/vector2.inl
- /usr/local/include/assimp/vector3.h
- /usr/local/include/assimp/vector3.inl
  /usr/local/include/boost/algorithm/string.hpp
  /usr/local/include/boost/algorithm/string/case_conv.hpp
  /usr/local/include/boost/algorithm/string/classification.hpp
@@ -3917,24 +3069,6 @@ CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o
  /usr/local/include/boost/algorithm/string/trim.hpp
  /usr/local/include/boost/algorithm/string/yes_no_type.hpp
  /usr/local/include/boost/aligned_storage.hpp
- /usr/local/include/boost/any.hpp
- /usr/local/include/boost/archive/archive_exception.hpp
- /usr/local/include/boost/archive/basic_archive.hpp
- /usr/local/include/boost/archive/detail/abi_prefix.hpp
- /usr/local/include/boost/archive/detail/abi_suffix.hpp
- /usr/local/include/boost/archive/detail/archive_serializer_map.hpp
- /usr/local/include/boost/archive/detail/auto_link_archive.hpp
- /usr/local/include/boost/archive/detail/basic_oarchive.hpp
- /usr/local/include/boost/archive/detail/basic_oserializer.hpp
- /usr/local/include/boost/archive/detail/basic_pointer_oserializer.hpp
- /usr/local/include/boost/archive/detail/basic_serializer.hpp
- /usr/local/include/boost/archive/detail/check.hpp
- /usr/local/include/boost/archive/detail/common_oarchive.hpp
- /usr/local/include/boost/archive/detail/decl.hpp
- /usr/local/include/boost/archive/detail/helper_collection.hpp
- /usr/local/include/boost/archive/detail/interface_oarchive.hpp
- /usr/local/include/boost/archive/detail/oserializer.hpp
- /usr/local/include/boost/archive/detail/register_archive.hpp
  /usr/local/include/boost/array.hpp
  /usr/local/include/boost/assert.hpp
  /usr/local/include/boost/atomic.hpp
@@ -4028,7 +3162,6 @@ CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o
  /usr/local/include/boost/concept/detail/has_constraints.hpp
  /usr/local/include/boost/concept/detail/msvc.hpp
  /usr/local/include/boost/concept/usage.hpp
- /usr/local/include/boost/concept_archetype.hpp
  /usr/local/include/boost/concept_check.hpp
  /usr/local/include/boost/config.hpp
  /usr/local/include/boost/config/abi_prefix.hpp
@@ -4098,7 +3231,6 @@ CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o
  /usr/local/include/boost/config/warning_disable.hpp
  /usr/local/include/boost/container/allocator_traits.hpp
  /usr/local/include/boost/container/container_fwd.hpp
- /usr/local/include/boost/container/deque.hpp
  /usr/local/include/boost/container/detail/addressof.hpp
  /usr/local/include/boost/container/detail/advanced_insert_int.hpp
  /usr/local/include/boost/container/detail/algorithm.hpp
@@ -4231,7 +3363,6 @@ CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o
  /usr/local/include/boost/date_time/time_system_split.hpp
  /usr/local/include/boost/date_time/wrapping_int.hpp
  /usr/local/include/boost/date_time/year_month_day.hpp
- /usr/local/include/boost/detail/allocator_utilities.hpp
  /usr/local/include/boost/detail/atomic_redef_macros.hpp
  /usr/local/include/boost/detail/atomic_undef_macros.hpp
  /usr/local/include/boost/detail/basic_pointerbuf.hpp
@@ -4243,11 +3374,9 @@ CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o
  /usr/local/include/boost/detail/fenv.hpp
  /usr/local/include/boost/detail/indirect_traits.hpp
  /usr/local/include/boost/detail/interlocked.hpp
- /usr/local/include/boost/detail/is_incrementable.hpp
  /usr/local/include/boost/detail/is_xxx.hpp
  /usr/local/include/boost/detail/iterator.hpp
  /usr/local/include/boost/detail/lcast_precision.hpp
- /usr/local/include/boost/detail/lightweight_mutex.hpp
  /usr/local/include/boost/detail/no_exceptions_support.hpp
  /usr/local/include/boost/detail/reference_content.hpp
  /usr/local/include/boost/detail/scoped_enum_emulation.hpp
@@ -4588,13 +3717,6 @@ CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o
  /usr/local/include/boost/fusion/view/single_view/single_view.hpp
  /usr/local/include/boost/fusion/view/single_view/single_view_iterator.hpp
  /usr/local/include/boost/get_pointer.hpp
- /usr/local/include/boost/heap/detail/heap_comparison.hpp
- /usr/local/include/boost/heap/detail/stable_heap.hpp
- /usr/local/include/boost/heap/heap_concepts.hpp
- /usr/local/include/boost/heap/heap_merge.hpp
- /usr/local/include/boost/heap/policies.hpp
- /usr/local/include/boost/heap/priority_queue.hpp
- /usr/local/include/boost/indirect_reference.hpp
  /usr/local/include/boost/integer.hpp
  /usr/local/include/boost/integer/common_factor_rt.hpp
  /usr/local/include/boost/integer/integer_log2.hpp
@@ -4685,25 +3807,6 @@ CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o
  /usr/local/include/boost/iterator/minimum_category.hpp
  /usr/local/include/boost/iterator/reverse_iterator.hpp
  /usr/local/include/boost/iterator/transform_iterator.hpp
- /usr/local/include/boost/lambda/core.hpp
- /usr/local/include/boost/lambda/detail/actions.hpp
- /usr/local/include/boost/lambda/detail/arity_code.hpp
- /usr/local/include/boost/lambda/detail/function_adaptors.hpp
- /usr/local/include/boost/lambda/detail/is_instance_of.hpp
- /usr/local/include/boost/lambda/detail/lambda_config.hpp
- /usr/local/include/boost/lambda/detail/lambda_functor_base.hpp
- /usr/local/include/boost/lambda/detail/lambda_functors.hpp
- /usr/local/include/boost/lambda/detail/lambda_fwd.hpp
- /usr/local/include/boost/lambda/detail/lambda_traits.hpp
- /usr/local/include/boost/lambda/detail/member_ptr.hpp
- /usr/local/include/boost/lambda/detail/operator_actions.hpp
- /usr/local/include/boost/lambda/detail/operator_lambda_func_base.hpp
- /usr/local/include/boost/lambda/detail/operator_return_type_traits.hpp
- /usr/local/include/boost/lambda/detail/operators.hpp
- /usr/local/include/boost/lambda/detail/ret.hpp
- /usr/local/include/boost/lambda/detail/return_type_traits.hpp
- /usr/local/include/boost/lambda/detail/select_functions.hpp
- /usr/local/include/boost/lambda/lambda.hpp
  /usr/local/include/boost/lexical_cast.hpp
  /usr/local/include/boost/lexical_cast/bad_lexical_cast.hpp
  /usr/local/include/boost/lexical_cast/detail/converter_lexical.hpp
@@ -4754,14 +3857,6 @@ CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o
  /usr/local/include/boost/move/unique_ptr.hpp
  /usr/local/include/boost/move/utility.hpp
  /usr/local/include/boost/move/utility_core.hpp
- /usr/local/include/boost/mpi/config.hpp
- /usr/local/include/boost/mpi/datatype.hpp
- /usr/local/include/boost/mpi/datatype_fwd.hpp
- /usr/local/include/boost/mpi/detail/ignore_skeleton_oarchive.hpp
- /usr/local/include/boost/mpi/detail/mpi_datatype_cache.hpp
- /usr/local/include/boost/mpi/detail/mpi_datatype_oarchive.hpp
- /usr/local/include/boost/mpi/detail/mpi_datatype_primitive.hpp
- /usr/local/include/boost/mpi/exception.hpp
  /usr/local/include/boost/mpl/O1_size.hpp
  /usr/local/include/boost/mpl/O1_size_fwd.hpp
  /usr/local/include/boost/mpl/advance.hpp
@@ -4888,7 +3983,6 @@ CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o
  /usr/local/include/boost/mpl/aux_/push_front_impl.hpp
  /usr/local/include/boost/mpl/aux_/reverse_fold_impl.hpp
  /usr/local/include/boost/mpl/aux_/reverse_fold_impl_body.hpp
- /usr/local/include/boost/mpl/aux_/reverse_iter_fold_impl.hpp
  /usr/local/include/boost/mpl/aux_/sequence_wrapper.hpp
  /usr/local/include/boost/mpl/aux_/size_impl.hpp
  /usr/local/include/boost/mpl/aux_/static_cast.hpp
@@ -4922,7 +4016,6 @@ CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o
  /usr/local/include/boost/mpl/empty_base.hpp
  /usr/local/include/boost/mpl/empty_fwd.hpp
  /usr/local/include/boost/mpl/end.hpp
- /usr/local/include/boost/mpl/equal.hpp
  /usr/local/include/boost/mpl/equal_to.hpp
  /usr/local/include/boost/mpl/erase.hpp
  /usr/local/include/boost/mpl/erase_fwd.hpp
@@ -4995,7 +4088,6 @@ CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o
  /usr/local/include/boost/mpl/pop_back_fwd.hpp
  /usr/local/include/boost/mpl/pop_front.hpp
  /usr/local/include/boost/mpl/pop_front_fwd.hpp
- /usr/local/include/boost/mpl/print.hpp
  /usr/local/include/boost/mpl/prior.hpp
  /usr/local/include/boost/mpl/protect.hpp
  /usr/local/include/boost/mpl/push_back.hpp
@@ -5003,10 +4095,8 @@ CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o
  /usr/local/include/boost/mpl/push_front.hpp
  /usr/local/include/boost/mpl/push_front_fwd.hpp
  /usr/local/include/boost/mpl/quote.hpp
- /usr/local/include/boost/mpl/remove.hpp
  /usr/local/include/boost/mpl/remove_if.hpp
  /usr/local/include/boost/mpl/reverse_fold.hpp
- /usr/local/include/boost/mpl/reverse_iter_fold.hpp
  /usr/local/include/boost/mpl/same_as.hpp
  /usr/local/include/boost/mpl/sequence_tag.hpp
  /usr/local/include/boost/mpl/sequence_tag_fwd.hpp
@@ -5062,58 +4152,7 @@ CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o
  /usr/local/include/boost/mpl/vector/vector50.hpp
  /usr/local/include/boost/mpl/void.hpp
  /usr/local/include/boost/mpl/void_fwd.hpp
- /usr/local/include/boost/multi_index/detail/access_specifier.hpp
- /usr/local/include/boost/multi_index/detail/adl_swap.hpp
- /usr/local/include/boost/multi_index/detail/archive_constructed.hpp
- /usr/local/include/boost/multi_index/detail/auto_space.hpp
- /usr/local/include/boost/multi_index/detail/base_type.hpp
- /usr/local/include/boost/multi_index/detail/bidir_node_iterator.hpp
- /usr/local/include/boost/multi_index/detail/bucket_array.hpp
- /usr/local/include/boost/multi_index/detail/converter.hpp
- /usr/local/include/boost/multi_index/detail/copy_map.hpp
- /usr/local/include/boost/multi_index/detail/do_not_copy_elements_tag.hpp
- /usr/local/include/boost/multi_index/detail/has_tag.hpp
- /usr/local/include/boost/multi_index/detail/hash_index_args.hpp
- /usr/local/include/boost/multi_index/detail/hash_index_iterator.hpp
- /usr/local/include/boost/multi_index/detail/hash_index_node.hpp
- /usr/local/include/boost/multi_index/detail/header_holder.hpp
- /usr/local/include/boost/multi_index/detail/ignore_wstrict_aliasing.hpp
- /usr/local/include/boost/multi_index/detail/index_base.hpp
- /usr/local/include/boost/multi_index/detail/index_loader.hpp
- /usr/local/include/boost/multi_index/detail/index_matcher.hpp
- /usr/local/include/boost/multi_index/detail/index_node_base.hpp
- /usr/local/include/boost/multi_index/detail/index_saver.hpp
- /usr/local/include/boost/multi_index/detail/invariant_assert.hpp
- /usr/local/include/boost/multi_index/detail/is_index_list.hpp
- /usr/local/include/boost/multi_index/detail/is_transparent.hpp
- /usr/local/include/boost/multi_index/detail/iter_adaptor.hpp
- /usr/local/include/boost/multi_index/detail/modify_key_adaptor.hpp
- /usr/local/include/boost/multi_index/detail/no_duplicate_tags.hpp
- /usr/local/include/boost/multi_index/detail/node_type.hpp
- /usr/local/include/boost/multi_index/detail/ord_index_args.hpp
- /usr/local/include/boost/multi_index/detail/ord_index_impl_fwd.hpp
- /usr/local/include/boost/multi_index/detail/promotes_arg.hpp
- /usr/local/include/boost/multi_index/detail/raw_ptr.hpp
- /usr/local/include/boost/multi_index/detail/restore_wstrict_aliasing.hpp
- /usr/local/include/boost/multi_index/detail/safe_mode.hpp
  /usr/local/include/boost/multi_index/detail/scope_guard.hpp
- /usr/local/include/boost/multi_index/detail/seq_index_node.hpp
- /usr/local/include/boost/multi_index/detail/seq_index_ops.hpp
- /usr/local/include/boost/multi_index/detail/serialization_version.hpp
- /usr/local/include/boost/multi_index/detail/vartempl_support.hpp
- /usr/local/include/boost/multi_index/hashed_index.hpp
- /usr/local/include/boost/multi_index/hashed_index_fwd.hpp
- /usr/local/include/boost/multi_index/identity.hpp
- /usr/local/include/boost/multi_index/identity_fwd.hpp
- /usr/local/include/boost/multi_index/indexed_by.hpp
- /usr/local/include/boost/multi_index/member.hpp
- /usr/local/include/boost/multi_index/ordered_index_fwd.hpp
- /usr/local/include/boost/multi_index/safe_mode_errors.hpp
- /usr/local/include/boost/multi_index/sequenced_index.hpp
- /usr/local/include/boost/multi_index/sequenced_index_fwd.hpp
- /usr/local/include/boost/multi_index/tag.hpp
- /usr/local/include/boost/multi_index_container.hpp
- /usr/local/include/boost/multi_index_container_fwd.hpp
  /usr/local/include/boost/next_prior.hpp
  /usr/local/include/boost/non_type.hpp
  /usr/local/include/boost/noncopyable.hpp
@@ -5181,7 +4220,6 @@ CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o
  /usr/local/include/boost/parameter/value_type.hpp
  /usr/local/include/boost/pending/integer_log2.hpp
  /usr/local/include/boost/pending/lowest_bit.hpp
- /usr/local/include/boost/pointee.hpp
  /usr/local/include/boost/predef.h
  /usr/local/include/boost/predef/architecture.h
  /usr/local/include/boost/predef/architecture/alpha.h
@@ -5392,7 +4430,6 @@ CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o
  /usr/local/include/boost/preprocessor/punctuation/detail/is_begin_parens.hpp
  /usr/local/include/boost/preprocessor/punctuation/is_begin_parens.hpp
  /usr/local/include/boost/preprocessor/repeat.hpp
- /usr/local/include/boost/preprocessor/repeat_2nd.hpp
  /usr/local/include/boost/preprocessor/repetition.hpp
  /usr/local/include/boost/preprocessor/repetition/deduce_r.hpp
  /usr/local/include/boost/preprocessor/repetition/deduce_z.hpp
@@ -5443,18 +4480,6 @@ CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o
  /usr/local/include/boost/preprocessor/tuple/to_list.hpp
  /usr/local/include/boost/preprocessor/variadic/elem.hpp
  /usr/local/include/boost/preprocessor/variadic/size.hpp
- /usr/local/include/boost/property_map/parallel/basic_reduce.hpp
- /usr/local/include/boost/property_map/parallel/detail/untracked_pair.hpp
- /usr/local/include/boost/property_map/parallel/distributed_property_map.hpp
- /usr/local/include/boost/property_map/parallel/impl/distributed_property_map.ipp
- /usr/local/include/boost/property_map/parallel/local_property_map.hpp
- /usr/local/include/boost/property_map/parallel/parallel_property_maps.hpp
- /usr/local/include/boost/property_map/parallel/process_group.hpp
- /usr/local/include/boost/property_map/parallel/simple_trigger.hpp
- /usr/local/include/boost/property_map/parallel/unsafe_serialize.hpp
- /usr/local/include/boost/property_map/parallel/vector_property_map.hpp
- /usr/local/include/boost/property_map/property_map.hpp
- /usr/local/include/boost/property_map/vector_property_map.hpp
  /usr/local/include/boost/range/algorithm/equal.hpp
  /usr/local/include/boost/range/as_literal.hpp
  /usr/local/include/boost/range/begin.hpp
@@ -5510,40 +4535,6 @@ CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o
  /usr/local/include/boost/ref.hpp
  /usr/local/include/boost/scoped_array.hpp
  /usr/local/include/boost/scoped_ptr.hpp
- /usr/local/include/boost/serialization/access.hpp
- /usr/local/include/boost/serialization/array.hpp
- /usr/local/include/boost/serialization/array_optimization.hpp
- /usr/local/include/boost/serialization/array_wrapper.hpp
- /usr/local/include/boost/serialization/assume_abstract.hpp
- /usr/local/include/boost/serialization/base_object.hpp
- /usr/local/include/boost/serialization/collection_size_type.hpp
- /usr/local/include/boost/serialization/config.hpp
- /usr/local/include/boost/serialization/extended_type_info.hpp
- /usr/local/include/boost/serialization/extended_type_info_typeid.hpp
- /usr/local/include/boost/serialization/factory.hpp
- /usr/local/include/boost/serialization/force_include.hpp
- /usr/local/include/boost/serialization/is_bitwise_serializable.hpp
- /usr/local/include/boost/serialization/item_version_type.hpp
- /usr/local/include/boost/serialization/level.hpp
- /usr/local/include/boost/serialization/level_enum.hpp
- /usr/local/include/boost/serialization/nvp.hpp
- /usr/local/include/boost/serialization/serialization.hpp
- /usr/local/include/boost/serialization/singleton.hpp
- /usr/local/include/boost/serialization/smart_cast.hpp
- /usr/local/include/boost/serialization/split_free.hpp
- /usr/local/include/boost/serialization/split_member.hpp
- /usr/local/include/boost/serialization/static_warning.hpp
- /usr/local/include/boost/serialization/strong_typedef.hpp
- /usr/local/include/boost/serialization/throw_exception.hpp
- /usr/local/include/boost/serialization/tracking.hpp
- /usr/local/include/boost/serialization/tracking_enum.hpp
- /usr/local/include/boost/serialization/traits.hpp
- /usr/local/include/boost/serialization/type_info_implementation.hpp
- /usr/local/include/boost/serialization/utility.hpp
- /usr/local/include/boost/serialization/version.hpp
- /usr/local/include/boost/serialization/void_cast.hpp
- /usr/local/include/boost/serialization/void_cast_fwd.hpp
- /usr/local/include/boost/serialization/wrapper.hpp
  /usr/local/include/boost/shared_array.hpp
  /usr/local/include/boost/shared_ptr.hpp
  /usr/local/include/boost/signals2.hpp
@@ -5742,7 +4733,6 @@ CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o
  /usr/local/include/boost/tokenizer.hpp
  /usr/local/include/boost/tuple/detail/tuple_basic.hpp
  /usr/local/include/boost/tuple/tuple.hpp
- /usr/local/include/boost/tuple/tuple_comparison.hpp
  /usr/local/include/boost/type.hpp
  /usr/local/include/boost/type_index.hpp
  /usr/local/include/boost/type_index/ctti_type_index.hpp
@@ -5769,7 +4759,6 @@ CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o
  /usr/local/include/boost/type_traits/cv_traits.hpp
  /usr/local/include/boost/type_traits/decay.hpp
  /usr/local/include/boost/type_traits/declval.hpp
- /usr/local/include/boost/type_traits/detail/bool_trait_undef.hpp
  /usr/local/include/boost/type_traits/detail/common_arithmetic_type.hpp
  /usr/local/include/boost/type_traits/detail/common_type_impl.hpp
  /usr/local/include/boost/type_traits/detail/composite_member_pointer_type.hpp
@@ -5888,7 +4877,6 @@ CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o
  /usr/local/include/boost/type_traits/make_signed.hpp
  /usr/local/include/boost/type_traits/make_unsigned.hpp
  /usr/local/include/boost/type_traits/make_void.hpp
- /usr/local/include/boost/type_traits/object_traits.hpp
  /usr/local/include/boost/type_traits/promote.hpp
  /usr/local/include/boost/type_traits/rank.hpp
  /usr/local/include/boost/type_traits/remove_all_extents.hpp
@@ -5900,7 +4888,6 @@ CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o
  /usr/local/include/boost/type_traits/remove_reference.hpp
  /usr/local/include/boost/type_traits/remove_volatile.hpp
  /usr/local/include/boost/type_traits/same_traits.hpp
- /usr/local/include/boost/type_traits/transform_traits.hpp
  /usr/local/include/boost/type_traits/type_identity.hpp
  /usr/local/include/boost/type_traits/type_with_alignment.hpp
  /usr/local/include/boost/utility.hpp
@@ -5913,17 +4900,13 @@ CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o
  /usr/local/include/boost/utility/identity_type.hpp
  /usr/local/include/boost/utility/result_of.hpp
  /usr/local/include/boost/utility/swap.hpp
- /usr/local/include/boost/variant.hpp
  /usr/local/include/boost/variant/apply_visitor.hpp
- /usr/local/include/boost/variant/bad_visit.hpp
  /usr/local/include/boost/variant/detail/apply_visitor_binary.hpp
  /usr/local/include/boost/variant/detail/apply_visitor_delayed.hpp
  /usr/local/include/boost/variant/detail/apply_visitor_unary.hpp
  /usr/local/include/boost/variant/detail/backup_holder.hpp
  /usr/local/include/boost/variant/detail/cast_storage.hpp
  /usr/local/include/boost/variant/detail/config.hpp
- /usr/local/include/boost/variant/detail/element_index.hpp
- /usr/local/include/boost/variant/detail/enable_recursive.hpp
  /usr/local/include/boost/variant/detail/enable_recursive_fwd.hpp
  /usr/local/include/boost/variant/detail/forced_return.hpp
  /usr/local/include/boost/variant/detail/generic_result_type.hpp
@@ -5933,46 +4916,16 @@ CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o
  /usr/local/include/boost/variant/detail/make_variant_list.hpp
  /usr/local/include/boost/variant/detail/move.hpp
  /usr/local/include/boost/variant/detail/over_sequence.hpp
- /usr/local/include/boost/variant/detail/substitute.hpp
  /usr/local/include/boost/variant/detail/substitute_fwd.hpp
  /usr/local/include/boost/variant/detail/variant_io.hpp
  /usr/local/include/boost/variant/detail/visitation_impl.hpp
- /usr/local/include/boost/variant/get.hpp
- /usr/local/include/boost/variant/recursive_variant.hpp
- /usr/local/include/boost/variant/recursive_wrapper.hpp
  /usr/local/include/boost/variant/recursive_wrapper_fwd.hpp
  /usr/local/include/boost/variant/static_visitor.hpp
  /usr/local/include/boost/variant/variant.hpp
  /usr/local/include/boost/variant/variant_fwd.hpp
- /usr/local/include/boost/variant/visitor_ptr.hpp
  /usr/local/include/boost/version.hpp
  /usr/local/include/boost/visit_each.hpp
  /usr/local/include/boost/weak_ptr.hpp
- /usr/local/include/curl/curl.h
- /usr/local/include/curl/curlver.h
- /usr/local/include/curl/easy.h
- /usr/local/include/curl/multi.h
- /usr/local/include/curl/system.h
- /usr/local/include/curl/typecheck-gcc.h
- /usr/local/include/curlpp/Easy.hpp
- /usr/local/include/curlpp/Easy.inl
- /usr/local/include/curlpp/Exception.hpp
- /usr/local/include/curlpp/Form.hpp
- /usr/local/include/curlpp/Option.hpp
- /usr/local/include/curlpp/Option.inl
- /usr/local/include/curlpp/OptionBase.hpp
- /usr/local/include/curlpp/Options.hpp
- /usr/local/include/curlpp/Types.hpp
- /usr/local/include/curlpp/cURLpp.hpp
- /usr/local/include/curlpp/internal/CurlHandle.hpp
- /usr/local/include/curlpp/internal/CurlHandle.inl
- /usr/local/include/curlpp/internal/OptionContainer.hpp
- /usr/local/include/curlpp/internal/OptionContainer.inl
- /usr/local/include/curlpp/internal/OptionContainerType.hpp
- /usr/local/include/curlpp/internal/OptionList.hpp
- /usr/local/include/curlpp/internal/OptionSetter.hpp
- /usr/local/include/curlpp/internal/OptionSetter.inl
- /usr/local/include/curlpp/internal/SList.hpp
  /usr/local/include/flann/algorithms/all_indices.h
  /usr/local/include/flann/algorithms/autotuned_index.h
  /usr/local/include/flann/algorithms/center_chooser.h
@@ -6007,11 +4960,6 @@ CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o
  /usr/local/include/flann/util/saving.h
  /usr/local/include/flann/util/serialization.h
  /usr/local/include/flann/util/timer.h
- /usr/local/include/gmp.h
- /usr/local/include/gmpxx.h
- /usr/local/include/mpfr.h
- /usr/local/include/mpi.h
- /usr/local/include/mpi_portable_platform.h
  /usr/local/include/opencv/highgui.h
  /usr/local/include/opencv2/calib3d/calib3d.hpp
  /usr/local/include/opencv2/contrib/contrib.hpp
@@ -6118,40 +5066,6 @@ CMakeFiles/basicGrasp.dir/src/planner/GraspPlanner.o
  /usr/local/include/pcl-1.8/pcl/search/organized.h
  /usr/local/include/pcl-1.8/pcl/search/pcl_search.h
  /usr/local/include/pcl-1.8/pcl/search/search.h
- /usr/local/include/tbb/atomic.h
- /usr/local/include/tbb/cache_aligned_allocator.h
- /usr/local/include/tbb/concurrent_hash_map.h
- /usr/local/include/tbb/internal/_mutex_padding.h
- /usr/local/include/tbb/internal/_tbb_hash_compare_impl.h
- /usr/local/include/tbb/internal/_tbb_strings.h
- /usr/local/include/tbb/internal/_tbb_windef.h
- /usr/local/include/tbb/internal/_x86_rtm_rw_mutex_impl.h
- /usr/local/include/tbb/machine/gcc_armv7.h
- /usr/local/include/tbb/machine/gcc_generic.h
- /usr/local/include/tbb/machine/gcc_ia32_common.h
- /usr/local/include/tbb/machine/gcc_itsx.h
- /usr/local/include/tbb/machine/ibm_aix51.h
- /usr/local/include/tbb/machine/icc_generic.h
- /usr/local/include/tbb/machine/linux_common.h
- /usr/local/include/tbb/machine/linux_ia32.h
- /usr/local/include/tbb/machine/linux_ia64.h
- /usr/local/include/tbb/machine/linux_intel64.h
- /usr/local/include/tbb/machine/mac_ppc.h
- /usr/local/include/tbb/machine/macos_common.h
- /usr/local/include/tbb/machine/mic_common.h
- /usr/local/include/tbb/machine/msvc_armv7.h
- /usr/local/include/tbb/machine/msvc_ia32_common.h
- /usr/local/include/tbb/machine/sunos_sparc.h
- /usr/local/include/tbb/machine/windows_ia32.h
- /usr/local/include/tbb/machine/windows_intel64.h
- /usr/local/include/tbb/spin_rw_mutex.h
- /usr/local/include/tbb/tbb_allocator.h
- /usr/local/include/tbb/tbb_config.h
- /usr/local/include/tbb/tbb_exception.h
- /usr/local/include/tbb/tbb_machine.h
- /usr/local/include/tbb/tbb_profiling.h
- /usr/local/include/tbb/tbb_stddef.h
- /usr/local/include/utilspp/clone_ptr.hpp
 CMakeFiles/basicGrasp.dir/src/record/savelog.o
  /Users/rusi/git/Grasp/mjpro150/include/mjdata.h
  /Users/rusi/git/Grasp/mjpro150/include/mjmodel.h
@@ -6491,326 +5405,8 @@ CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o
  /Users/rusi/git/Grasp/mjpro150/include/sensor/camera.h
  /Users/rusi/git/Grasp/mjpro150/include/sensor/kinectSimulator.h
  /Users/rusi/git/Grasp/mjpro150/include/sensor/noise.h
- /Users/rusi/git/Grasp/mjpro150/include/sensor/objectMeshModel.h
  /Users/rusi/git/Grasp/mjpro150/include/sensor/simulate.h
  /Users/rusi/git/Grasp/mjpro150/src/sensor/CollectData.cpp
- /usr/local/include/CGAL/AABB_intersections.h
- /usr/local/include/CGAL/AABB_primitive.h
- /usr/local/include/CGAL/AABB_traits.h
- /usr/local/include/CGAL/AABB_tree.h
- /usr/local/include/CGAL/AABB_triangle_primitive.h
- /usr/local/include/CGAL/Aff_transformation_2.h
- /usr/local/include/CGAL/Aff_transformation_3.h
- /usr/local/include/CGAL/Algebraic_extension_traits.h
- /usr/local/include/CGAL/Algebraic_structure_traits.h
- /usr/local/include/CGAL/Bbox_2.h
- /usr/local/include/CGAL/Bbox_3.h
- /usr/local/include/CGAL/CC_safe_handle.h
- /usr/local/include/CGAL/Cartesian/Aff_transformation_2.h
- /usr/local/include/CGAL/Cartesian/Aff_transformation_3.h
- /usr/local/include/CGAL/Cartesian/Aff_transformation_rep_2.h
- /usr/local/include/CGAL/Cartesian/Aff_transformation_rep_3.h
- /usr/local/include/CGAL/Cartesian/Cartesian_base.h
- /usr/local/include/CGAL/Cartesian/Circle_2.h
- /usr/local/include/CGAL/Cartesian/Circle_3.h
- /usr/local/include/CGAL/Cartesian/Data_accessor_2.h
- /usr/local/include/CGAL/Cartesian/Direction_2.h
- /usr/local/include/CGAL/Cartesian/Direction_3.h
- /usr/local/include/CGAL/Cartesian/Iso_cuboid_3.h
- /usr/local/include/CGAL/Cartesian/Iso_rectangle_2.h
- /usr/local/include/CGAL/Cartesian/Line_2.h
- /usr/local/include/CGAL/Cartesian/Line_3.h
- /usr/local/include/CGAL/Cartesian/Plane_3.h
- /usr/local/include/CGAL/Cartesian/Point_2.h
- /usr/local/include/CGAL/Cartesian/Point_3.h
- /usr/local/include/CGAL/Cartesian/Ray_2.h
- /usr/local/include/CGAL/Cartesian/Ray_3.h
- /usr/local/include/CGAL/Cartesian/Rotation_rep_2.h
- /usr/local/include/CGAL/Cartesian/Scaling_rep_2.h
- /usr/local/include/CGAL/Cartesian/Scaling_rep_3.h
- /usr/local/include/CGAL/Cartesian/Segment_2.h
- /usr/local/include/CGAL/Cartesian/Segment_3.h
- /usr/local/include/CGAL/Cartesian/Sphere_3.h
- /usr/local/include/CGAL/Cartesian/Tetrahedron_3.h
- /usr/local/include/CGAL/Cartesian/Translation_rep_2.h
- /usr/local/include/CGAL/Cartesian/Translation_rep_3.h
- /usr/local/include/CGAL/Cartesian/Triangle_2.h
- /usr/local/include/CGAL/Cartesian/Triangle_3.h
- /usr/local/include/CGAL/Cartesian/Vector_2.h
- /usr/local/include/CGAL/Cartesian/Vector_3.h
- /usr/local/include/CGAL/Cartesian/basic_constructions_2.h
- /usr/local/include/CGAL/Cartesian/basic_constructions_3.h
- /usr/local/include/CGAL/Cartesian/ft_constructions_2.h
- /usr/local/include/CGAL/Cartesian/ft_constructions_3.h
- /usr/local/include/CGAL/Cartesian/function_objects.h
- /usr/local/include/CGAL/Cartesian/line_constructions_2.h
- /usr/local/include/CGAL/Cartesian/plane_constructions_3.h
- /usr/local/include/CGAL/Cartesian/point_constructions_2.h
- /usr/local/include/CGAL/Cartesian/point_constructions_3.h
- /usr/local/include/CGAL/Cartesian/predicates_on_directions_2.h
- /usr/local/include/CGAL/Cartesian/predicates_on_planes_3.h
- /usr/local/include/CGAL/Cartesian/predicates_on_points_2.h
- /usr/local/include/CGAL/Cartesian/predicates_on_points_3.h
- /usr/local/include/CGAL/Cartesian/solve_3.h
- /usr/local/include/CGAL/Cartesian_converter.h
- /usr/local/include/CGAL/Circle_2.h
- /usr/local/include/CGAL/Circle_2_Circle_2_intersection.h
- /usr/local/include/CGAL/Circle_2_Line_2_intersection.h
- /usr/local/include/CGAL/Circle_3.h
- /usr/local/include/CGAL/Coercion_traits.h
- /usr/local/include/CGAL/Compact_container.h
- /usr/local/include/CGAL/ConicCPA2.h
- /usr/local/include/CGAL/Conic_2.h
- /usr/local/include/CGAL/Conic_misc.h
- /usr/local/include/CGAL/Default.h
- /usr/local/include/CGAL/Dimension.h
- /usr/local/include/CGAL/Direction_2.h
- /usr/local/include/CGAL/Direction_3.h
- /usr/local/include/CGAL/Enum_converter.h
- /usr/local/include/CGAL/Euclidean_distance.h
- /usr/local/include/CGAL/FPU.h
- /usr/local/include/CGAL/Fraction_traits.h
- /usr/local/include/CGAL/Handle_for.h
- /usr/local/include/CGAL/Handle_for_virtual.h
- /usr/local/include/CGAL/Has_timestamp.h
- /usr/local/include/CGAL/IEEE_754_unions.h
- /usr/local/include/CGAL/IO/Color.h
- /usr/local/include/CGAL/IO/Color_impl.h
- /usr/local/include/CGAL/IO/io.h
- /usr/local/include/CGAL/IO/io_impl.h
- /usr/local/include/CGAL/IO/io_tags.h
- /usr/local/include/CGAL/Intersection_traits.h
- /usr/local/include/CGAL/Intersection_traits_2.h
- /usr/local/include/CGAL/Intersection_traits_3.h
- /usr/local/include/CGAL/Intersections_2/Triangle_2_Triangle_2_intersection_impl.h
- /usr/local/include/CGAL/Intersections_3/intersection_3_1_impl.h
- /usr/local/include/CGAL/Interval_nt.h
- /usr/local/include/CGAL/Interval_traits.h
- /usr/local/include/CGAL/Iso_cuboid_3.h
- /usr/local/include/CGAL/Iso_rectangle_2.h
- /usr/local/include/CGAL/Iso_rectangle_2_Iso_rectangle_2_intersection.h
- /usr/local/include/CGAL/Kd_tree.h
- /usr/local/include/CGAL/Kd_tree_node.h
- /usr/local/include/CGAL/Kd_tree_rectangle.h
- /usr/local/include/CGAL/Kernel/Dimension_utils.h
- /usr/local/include/CGAL/Kernel/Return_base_tag.h
- /usr/local/include/CGAL/Kernel/Same_uncertainty.h
- /usr/local/include/CGAL/Kernel/Type_equality_wrapper.h
- /usr/local/include/CGAL/Kernel/Type_mapper.h
- /usr/local/include/CGAL/Kernel/Wutils.h
- /usr/local/include/CGAL/Kernel/function_objects.h
- /usr/local/include/CGAL/Kernel/global_functions.h
- /usr/local/include/CGAL/Kernel/global_functions_2.h
- /usr/local/include/CGAL/Kernel/global_functions_3.h
- /usr/local/include/CGAL/Kernel/global_functions_internal_2.h
- /usr/local/include/CGAL/Kernel/global_functions_internal_3.h
- /usr/local/include/CGAL/Kernel/interface_macros.h
- /usr/local/include/CGAL/Kernel/mpl.h
- /usr/local/include/CGAL/Kernel/solve.h
- /usr/local/include/CGAL/Kernel_traits.h
- /usr/local/include/CGAL/Line_2.h
- /usr/local/include/CGAL/Line_2_Iso_rectangle_2_intersection.h
- /usr/local/include/CGAL/Line_2_Line_2_intersection.h
- /usr/local/include/CGAL/Line_2_Triangle_2_intersection.h
- /usr/local/include/CGAL/Line_3.h
- /usr/local/include/CGAL/Modular_arithmetic/Residue_type.h
- /usr/local/include/CGAL/Modular_traits.h
- /usr/local/include/CGAL/NT_converter.h
- /usr/local/include/CGAL/Needs_parens_as_product.h
- /usr/local/include/CGAL/Object.h
- /usr/local/include/CGAL/Origin.h
- /usr/local/include/CGAL/Origin_impl.h
- /usr/local/include/CGAL/Orthogonal_k_neighbor_search.h
- /usr/local/include/CGAL/Plane_3.h
- /usr/local/include/CGAL/Plane_separator.h
- /usr/local/include/CGAL/Point_2.h
- /usr/local/include/CGAL/Point_2_Iso_rectangle_2_intersection.h
- /usr/local/include/CGAL/Point_2_Line_2_intersection.h
- /usr/local/include/CGAL/Point_2_Point_2_intersection.h
- /usr/local/include/CGAL/Point_2_Ray_2_intersection.h
- /usr/local/include/CGAL/Point_2_Segment_2_intersection.h
- /usr/local/include/CGAL/Point_2_Triangle_2_intersection.h
- /usr/local/include/CGAL/Point_3.h
- /usr/local/include/CGAL/Point_container.h
- /usr/local/include/CGAL/Profile_counter.h
- /usr/local/include/CGAL/Quotient_fwd.h
- /usr/local/include/CGAL/Rational_traits.h
- /usr/local/include/CGAL/Ray_2.h
- /usr/local/include/CGAL/Ray_2_Iso_rectangle_2_intersection.h
- /usr/local/include/CGAL/Ray_2_Line_2_intersection.h
- /usr/local/include/CGAL/Ray_2_Ray_2_intersection.h
- /usr/local/include/CGAL/Ray_2_Segment_2_intersection.h
- /usr/local/include/CGAL/Ray_2_Triangle_2_intersection.h
- /usr/local/include/CGAL/Ray_3.h
- /usr/local/include/CGAL/Real_embeddable_traits.h
- /usr/local/include/CGAL/Residue.h
- /usr/local/include/CGAL/Scalar_factor_traits.h
- /usr/local/include/CGAL/Search_traits_3.h
- /usr/local/include/CGAL/Segment_2.h
- /usr/local/include/CGAL/Segment_2_Iso_rectangle_2_intersection.h
- /usr/local/include/CGAL/Segment_2_Line_2_intersection.h
- /usr/local/include/CGAL/Segment_2_Segment_2_intersection.h
- /usr/local/include/CGAL/Segment_2_Triangle_2_intersection.h
- /usr/local/include/CGAL/Segment_3.h
- /usr/local/include/CGAL/Simple_cartesian.h
- /usr/local/include/CGAL/Sphere_3.h
- /usr/local/include/CGAL/Splitters.h
- /usr/local/include/CGAL/Straight_2.h
- /usr/local/include/CGAL/Tetrahedron_3.h
- /usr/local/include/CGAL/Time_stamper.h
- /usr/local/include/CGAL/Triangle_2.h
- /usr/local/include/CGAL/Triangle_2_Iso_rectangle_2_intersection.h
- /usr/local/include/CGAL/Triangle_2_Line_2_intersection.h
- /usr/local/include/CGAL/Triangle_2_Ray_2_intersection.h
- /usr/local/include/CGAL/Triangle_2_Segment_2_intersection.h
- /usr/local/include/CGAL/Triangle_2_Triangle_2_do_intersect.h
- /usr/local/include/CGAL/Triangle_2_Triangle_2_intersection.h
- /usr/local/include/CGAL/Triangle_3.h
- /usr/local/include/CGAL/Triangle_3_Line_3_do_intersect.h
- /usr/local/include/CGAL/Triangle_3_Plane_3_do_intersect.h
- /usr/local/include/CGAL/Triangle_3_Point_3_do_intersect.h
- /usr/local/include/CGAL/Triangle_3_Ray_3_do_intersect.h
- /usr/local/include/CGAL/Triangle_3_Segment_3_do_intersect.h
- /usr/local/include/CGAL/Triangle_3_Tetrahedron_3_do_intersect.h
- /usr/local/include/CGAL/Triangle_3_Triangle_3_do_intersect.h
- /usr/local/include/CGAL/Triangle_3_Triangle_3_intersection.h
- /usr/local/include/CGAL/Uncertain.h
- /usr/local/include/CGAL/Vector_2.h
- /usr/local/include/CGAL/Vector_3.h
- /usr/local/include/CGAL/aff_transformation_tags.h
- /usr/local/include/CGAL/aff_transformation_tags_impl.h
- /usr/local/include/CGAL/algorithm.h
- /usr/local/include/CGAL/array.h
- /usr/local/include/CGAL/assertions.h
- /usr/local/include/CGAL/assertions_behaviour.h
- /usr/local/include/CGAL/assertions_impl.h
- /usr/local/include/CGAL/auto_link/CGAL.h
- /usr/local/include/CGAL/auto_link/auto_link.h
- /usr/local/include/CGAL/basic.h
- /usr/local/include/CGAL/basic_classes.h
- /usr/local/include/CGAL/bbox_intersection_3.h
- /usr/local/include/CGAL/boost/iterator/transform_iterator.hpp
- /usr/local/include/CGAL/centroid.h
- /usr/local/include/CGAL/circulator.h
- /usr/local/include/CGAL/circulator_bases.h
- /usr/local/include/CGAL/compiler_config.h
- /usr/local/include/CGAL/config.h
- /usr/local/include/CGAL/constant.h
- /usr/local/include/CGAL/constructions/kernel_ftC2.h
- /usr/local/include/CGAL/constructions/kernel_ftC3.h
- /usr/local/include/CGAL/determinant.h
- /usr/local/include/CGAL/double.h
- /usr/local/include/CGAL/enum.h
- /usr/local/include/CGAL/exceptions.h
- /usr/local/include/CGAL/export/CGAL.h
- /usr/local/include/CGAL/export/helpers.h
- /usr/local/include/CGAL/float.h
- /usr/local/include/CGAL/gmpxx.h
- /usr/local/include/CGAL/gmpxx_coercion_traits.h
- /usr/local/include/CGAL/int.h
- /usr/local/include/CGAL/internal/AABB_tree/AABB_node.h
- /usr/local/include/CGAL/internal/AABB_tree/AABB_ray_intersection.h
- /usr/local/include/CGAL/internal/AABB_tree/AABB_search_tree.h
- /usr/local/include/CGAL/internal/AABB_tree/AABB_traversal_traits.h
- /usr/local/include/CGAL/internal/AABB_tree/Has_nested_type_Shared_data.h
- /usr/local/include/CGAL/internal/AABB_tree/Is_ray_intersection_geomtraits.h
- /usr/local/include/CGAL/internal/AABB_tree/Primitive_helper.h
- /usr/local/include/CGAL/internal/AABB_tree/nearest_point_segment_3.h
- /usr/local/include/CGAL/internal/AABB_tree/nearest_point_triangle_3.h
- /usr/local/include/CGAL/internal/Get_dimension_tag.h
- /usr/local/include/CGAL/internal/Intersections_3/Bbox_3_Bbox_3_do_intersect.h
- /usr/local/include/CGAL/internal/Intersections_3/Bbox_3_Line_3_do_intersect.h
- /usr/local/include/CGAL/internal/Intersections_3/Bbox_3_Plane_3_do_intersect.h
- /usr/local/include/CGAL/internal/Intersections_3/Bbox_3_Ray_3_do_intersect.h
- /usr/local/include/CGAL/internal/Intersections_3/Bbox_3_Segment_3_do_intersect.h
- /usr/local/include/CGAL/internal/Intersections_3/Bbox_3_Sphere_3_do_intersect.h
- /usr/local/include/CGAL/internal/Intersections_3/Bbox_3_Triangle_3_do_intersect.h
- /usr/local/include/CGAL/internal/Intersections_3/Triangle_3_Line_3_intersection.h
- /usr/local/include/CGAL/internal/Intersections_3/Triangle_3_Ray_3_intersection.h
- /usr/local/include/CGAL/internal/Intersections_3/Triangle_3_Segment_3_intersection.h
- /usr/local/include/CGAL/internal/K_neighbor_search.h
- /usr/local/include/CGAL/internal/bounded_priority_queue.h
- /usr/local/include/CGAL/intersection_2.h
- /usr/local/include/CGAL/intersection_2_1.h
- /usr/local/include/CGAL/intersection_2_2.h
- /usr/local/include/CGAL/intersection_2_3.h
- /usr/local/include/CGAL/intersection_3.h
- /usr/local/include/CGAL/intersection_3_1.h
- /usr/local/include/CGAL/intersections.h
- /usr/local/include/CGAL/is_convertible.h
- /usr/local/include/CGAL/is_iterator.h
- /usr/local/include/CGAL/iterator.h
- /usr/local/include/CGAL/kernel_assertions.h
- /usr/local/include/CGAL/kernel_basic.h
- /usr/local/include/CGAL/kernel_config.h
- /usr/local/include/CGAL/long_double.h
- /usr/local/include/CGAL/long_long.h
- /usr/local/include/CGAL/memory.h
- /usr/local/include/CGAL/mpq_class.h
- /usr/local/include/CGAL/mpz_class.h
- /usr/local/include/CGAL/mutex.h
- /usr/local/include/CGAL/number_type_basic.h
- /usr/local/include/CGAL/number_type_config.h
- /usr/local/include/CGAL/number_utils.h
- /usr/local/include/CGAL/number_utils_classes.h
- /usr/local/include/CGAL/predicates/kernel_ftC2.h
- /usr/local/include/CGAL/predicates/kernel_ftC3.h
- /usr/local/include/CGAL/predicates/sign_of_determinant.h
- /usr/local/include/CGAL/predicates_on_points_2.h
- /usr/local/include/CGAL/property_map.h
- /usr/local/include/CGAL/rational_rotation.h
- /usr/local/include/CGAL/representation_tags.h
- /usr/local/include/CGAL/result_of.h
- /usr/local/include/CGAL/squared_distance_2.h
- /usr/local/include/CGAL/squared_distance_2_1.h
- /usr/local/include/CGAL/squared_distance_2_2.h
- /usr/local/include/CGAL/squared_distance_3.h
- /usr/local/include/CGAL/squared_distance_3_0.h
- /usr/local/include/CGAL/squared_distance_3_1.h
- /usr/local/include/CGAL/squared_distance_3_2.h
- /usr/local/include/CGAL/squared_distance_utils.h
- /usr/local/include/CGAL/sse2.h
- /usr/local/include/CGAL/tags.h
- /usr/local/include/CGAL/test_FPU_rounding_mode_impl.h
- /usr/local/include/CGAL/tss.h
- /usr/local/include/CGAL/tuple.h
- /usr/local/include/CGAL/type_traits.h
- /usr/local/include/CGAL/use.h
- /usr/local/include/CGAL/user_classes.h
- /usr/local/include/CGAL/utils.h
- /usr/local/include/CGAL/utils_classes.h
- /usr/local/include/CGAL/value_type_traits.h
- /usr/local/include/CGAL/version.h
- /usr/local/include/CGAL/wmult.h
- /usr/local/include/assimp/./Compiler/poppack1.h
- /usr/local/include/assimp/./Compiler/pushpack1.h
- /usr/local/include/assimp/Compiler/pstdint.h
- /usr/local/include/assimp/anim.h
- /usr/local/include/assimp/camera.h
- /usr/local/include/assimp/cimport.h
- /usr/local/include/assimp/color4.h
- /usr/local/include/assimp/color4.inl
- /usr/local/include/assimp/config.h
- /usr/local/include/assimp/defs.h
- /usr/local/include/assimp/importerdesc.h
- /usr/local/include/assimp/light.h
- /usr/local/include/assimp/material.h
- /usr/local/include/assimp/material.inl
- /usr/local/include/assimp/matrix3x3.h
- /usr/local/include/assimp/matrix3x3.inl
- /usr/local/include/assimp/matrix4x4.h
- /usr/local/include/assimp/matrix4x4.inl
- /usr/local/include/assimp/mesh.h
- /usr/local/include/assimp/metadata.h
- /usr/local/include/assimp/postprocess.h
- /usr/local/include/assimp/quaternion.h
- /usr/local/include/assimp/scene.h
- /usr/local/include/assimp/texture.h
- /usr/local/include/assimp/types.h
- /usr/local/include/assimp/vector2.h
- /usr/local/include/assimp/vector2.inl
- /usr/local/include/assimp/vector3.h
- /usr/local/include/assimp/vector3.inl
  /usr/local/include/boost/algorithm/string.hpp
  /usr/local/include/boost/algorithm/string/case_conv.hpp
  /usr/local/include/boost/algorithm/string/classification.hpp
@@ -6851,24 +5447,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o
  /usr/local/include/boost/algorithm/string/trim.hpp
  /usr/local/include/boost/algorithm/string/yes_no_type.hpp
  /usr/local/include/boost/aligned_storage.hpp
- /usr/local/include/boost/any.hpp
- /usr/local/include/boost/archive/archive_exception.hpp
- /usr/local/include/boost/archive/basic_archive.hpp
- /usr/local/include/boost/archive/detail/abi_prefix.hpp
- /usr/local/include/boost/archive/detail/abi_suffix.hpp
- /usr/local/include/boost/archive/detail/archive_serializer_map.hpp
- /usr/local/include/boost/archive/detail/auto_link_archive.hpp
- /usr/local/include/boost/archive/detail/basic_oarchive.hpp
- /usr/local/include/boost/archive/detail/basic_oserializer.hpp
- /usr/local/include/boost/archive/detail/basic_pointer_oserializer.hpp
- /usr/local/include/boost/archive/detail/basic_serializer.hpp
- /usr/local/include/boost/archive/detail/check.hpp
- /usr/local/include/boost/archive/detail/common_oarchive.hpp
- /usr/local/include/boost/archive/detail/decl.hpp
- /usr/local/include/boost/archive/detail/helper_collection.hpp
- /usr/local/include/boost/archive/detail/interface_oarchive.hpp
- /usr/local/include/boost/archive/detail/oserializer.hpp
- /usr/local/include/boost/archive/detail/register_archive.hpp
  /usr/local/include/boost/array.hpp
  /usr/local/include/boost/assert.hpp
  /usr/local/include/boost/atomic.hpp
@@ -6962,7 +5540,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o
  /usr/local/include/boost/concept/detail/has_constraints.hpp
  /usr/local/include/boost/concept/detail/msvc.hpp
  /usr/local/include/boost/concept/usage.hpp
- /usr/local/include/boost/concept_archetype.hpp
  /usr/local/include/boost/concept_check.hpp
  /usr/local/include/boost/config.hpp
  /usr/local/include/boost/config/abi_prefix.hpp
@@ -7032,7 +5609,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o
  /usr/local/include/boost/config/warning_disable.hpp
  /usr/local/include/boost/container/allocator_traits.hpp
  /usr/local/include/boost/container/container_fwd.hpp
- /usr/local/include/boost/container/deque.hpp
  /usr/local/include/boost/container/detail/addressof.hpp
  /usr/local/include/boost/container/detail/advanced_insert_int.hpp
  /usr/local/include/boost/container/detail/algorithm.hpp
@@ -7165,7 +5741,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o
  /usr/local/include/boost/date_time/time_system_split.hpp
  /usr/local/include/boost/date_time/wrapping_int.hpp
  /usr/local/include/boost/date_time/year_month_day.hpp
- /usr/local/include/boost/detail/allocator_utilities.hpp
  /usr/local/include/boost/detail/atomic_redef_macros.hpp
  /usr/local/include/boost/detail/atomic_undef_macros.hpp
  /usr/local/include/boost/detail/basic_pointerbuf.hpp
@@ -7177,11 +5752,9 @@ CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o
  /usr/local/include/boost/detail/fenv.hpp
  /usr/local/include/boost/detail/indirect_traits.hpp
  /usr/local/include/boost/detail/interlocked.hpp
- /usr/local/include/boost/detail/is_incrementable.hpp
  /usr/local/include/boost/detail/is_xxx.hpp
  /usr/local/include/boost/detail/iterator.hpp
  /usr/local/include/boost/detail/lcast_precision.hpp
- /usr/local/include/boost/detail/lightweight_mutex.hpp
  /usr/local/include/boost/detail/no_exceptions_support.hpp
  /usr/local/include/boost/detail/reference_content.hpp
  /usr/local/include/boost/detail/scoped_enum_emulation.hpp
@@ -7522,13 +6095,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o
  /usr/local/include/boost/fusion/view/single_view/single_view.hpp
  /usr/local/include/boost/fusion/view/single_view/single_view_iterator.hpp
  /usr/local/include/boost/get_pointer.hpp
- /usr/local/include/boost/heap/detail/heap_comparison.hpp
- /usr/local/include/boost/heap/detail/stable_heap.hpp
- /usr/local/include/boost/heap/heap_concepts.hpp
- /usr/local/include/boost/heap/heap_merge.hpp
- /usr/local/include/boost/heap/policies.hpp
- /usr/local/include/boost/heap/priority_queue.hpp
- /usr/local/include/boost/indirect_reference.hpp
  /usr/local/include/boost/integer.hpp
  /usr/local/include/boost/integer/common_factor_rt.hpp
  /usr/local/include/boost/integer/integer_log2.hpp
@@ -7619,25 +6185,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o
  /usr/local/include/boost/iterator/minimum_category.hpp
  /usr/local/include/boost/iterator/reverse_iterator.hpp
  /usr/local/include/boost/iterator/transform_iterator.hpp
- /usr/local/include/boost/lambda/core.hpp
- /usr/local/include/boost/lambda/detail/actions.hpp
- /usr/local/include/boost/lambda/detail/arity_code.hpp
- /usr/local/include/boost/lambda/detail/function_adaptors.hpp
- /usr/local/include/boost/lambda/detail/is_instance_of.hpp
- /usr/local/include/boost/lambda/detail/lambda_config.hpp
- /usr/local/include/boost/lambda/detail/lambda_functor_base.hpp
- /usr/local/include/boost/lambda/detail/lambda_functors.hpp
- /usr/local/include/boost/lambda/detail/lambda_fwd.hpp
- /usr/local/include/boost/lambda/detail/lambda_traits.hpp
- /usr/local/include/boost/lambda/detail/member_ptr.hpp
- /usr/local/include/boost/lambda/detail/operator_actions.hpp
- /usr/local/include/boost/lambda/detail/operator_lambda_func_base.hpp
- /usr/local/include/boost/lambda/detail/operator_return_type_traits.hpp
- /usr/local/include/boost/lambda/detail/operators.hpp
- /usr/local/include/boost/lambda/detail/ret.hpp
- /usr/local/include/boost/lambda/detail/return_type_traits.hpp
- /usr/local/include/boost/lambda/detail/select_functions.hpp
- /usr/local/include/boost/lambda/lambda.hpp
  /usr/local/include/boost/lexical_cast.hpp
  /usr/local/include/boost/lexical_cast/bad_lexical_cast.hpp
  /usr/local/include/boost/lexical_cast/detail/converter_lexical.hpp
@@ -7688,14 +6235,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o
  /usr/local/include/boost/move/unique_ptr.hpp
  /usr/local/include/boost/move/utility.hpp
  /usr/local/include/boost/move/utility_core.hpp
- /usr/local/include/boost/mpi/config.hpp
- /usr/local/include/boost/mpi/datatype.hpp
- /usr/local/include/boost/mpi/datatype_fwd.hpp
- /usr/local/include/boost/mpi/detail/ignore_skeleton_oarchive.hpp
- /usr/local/include/boost/mpi/detail/mpi_datatype_cache.hpp
- /usr/local/include/boost/mpi/detail/mpi_datatype_oarchive.hpp
- /usr/local/include/boost/mpi/detail/mpi_datatype_primitive.hpp
- /usr/local/include/boost/mpi/exception.hpp
  /usr/local/include/boost/mpl/O1_size.hpp
  /usr/local/include/boost/mpl/O1_size_fwd.hpp
  /usr/local/include/boost/mpl/advance.hpp
@@ -7822,7 +6361,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o
  /usr/local/include/boost/mpl/aux_/push_front_impl.hpp
  /usr/local/include/boost/mpl/aux_/reverse_fold_impl.hpp
  /usr/local/include/boost/mpl/aux_/reverse_fold_impl_body.hpp
- /usr/local/include/boost/mpl/aux_/reverse_iter_fold_impl.hpp
  /usr/local/include/boost/mpl/aux_/sequence_wrapper.hpp
  /usr/local/include/boost/mpl/aux_/size_impl.hpp
  /usr/local/include/boost/mpl/aux_/static_cast.hpp
@@ -7856,7 +6394,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o
  /usr/local/include/boost/mpl/empty_base.hpp
  /usr/local/include/boost/mpl/empty_fwd.hpp
  /usr/local/include/boost/mpl/end.hpp
- /usr/local/include/boost/mpl/equal.hpp
  /usr/local/include/boost/mpl/equal_to.hpp
  /usr/local/include/boost/mpl/erase.hpp
  /usr/local/include/boost/mpl/erase_fwd.hpp
@@ -7929,7 +6466,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o
  /usr/local/include/boost/mpl/pop_back_fwd.hpp
  /usr/local/include/boost/mpl/pop_front.hpp
  /usr/local/include/boost/mpl/pop_front_fwd.hpp
- /usr/local/include/boost/mpl/print.hpp
  /usr/local/include/boost/mpl/prior.hpp
  /usr/local/include/boost/mpl/protect.hpp
  /usr/local/include/boost/mpl/push_back.hpp
@@ -7937,10 +6473,8 @@ CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o
  /usr/local/include/boost/mpl/push_front.hpp
  /usr/local/include/boost/mpl/push_front_fwd.hpp
  /usr/local/include/boost/mpl/quote.hpp
- /usr/local/include/boost/mpl/remove.hpp
  /usr/local/include/boost/mpl/remove_if.hpp
  /usr/local/include/boost/mpl/reverse_fold.hpp
- /usr/local/include/boost/mpl/reverse_iter_fold.hpp
  /usr/local/include/boost/mpl/same_as.hpp
  /usr/local/include/boost/mpl/sequence_tag.hpp
  /usr/local/include/boost/mpl/sequence_tag_fwd.hpp
@@ -7996,58 +6530,7 @@ CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o
  /usr/local/include/boost/mpl/vector/vector50.hpp
  /usr/local/include/boost/mpl/void.hpp
  /usr/local/include/boost/mpl/void_fwd.hpp
- /usr/local/include/boost/multi_index/detail/access_specifier.hpp
- /usr/local/include/boost/multi_index/detail/adl_swap.hpp
- /usr/local/include/boost/multi_index/detail/archive_constructed.hpp
- /usr/local/include/boost/multi_index/detail/auto_space.hpp
- /usr/local/include/boost/multi_index/detail/base_type.hpp
- /usr/local/include/boost/multi_index/detail/bidir_node_iterator.hpp
- /usr/local/include/boost/multi_index/detail/bucket_array.hpp
- /usr/local/include/boost/multi_index/detail/converter.hpp
- /usr/local/include/boost/multi_index/detail/copy_map.hpp
- /usr/local/include/boost/multi_index/detail/do_not_copy_elements_tag.hpp
- /usr/local/include/boost/multi_index/detail/has_tag.hpp
- /usr/local/include/boost/multi_index/detail/hash_index_args.hpp
- /usr/local/include/boost/multi_index/detail/hash_index_iterator.hpp
- /usr/local/include/boost/multi_index/detail/hash_index_node.hpp
- /usr/local/include/boost/multi_index/detail/header_holder.hpp
- /usr/local/include/boost/multi_index/detail/ignore_wstrict_aliasing.hpp
- /usr/local/include/boost/multi_index/detail/index_base.hpp
- /usr/local/include/boost/multi_index/detail/index_loader.hpp
- /usr/local/include/boost/multi_index/detail/index_matcher.hpp
- /usr/local/include/boost/multi_index/detail/index_node_base.hpp
- /usr/local/include/boost/multi_index/detail/index_saver.hpp
- /usr/local/include/boost/multi_index/detail/invariant_assert.hpp
- /usr/local/include/boost/multi_index/detail/is_index_list.hpp
- /usr/local/include/boost/multi_index/detail/is_transparent.hpp
- /usr/local/include/boost/multi_index/detail/iter_adaptor.hpp
- /usr/local/include/boost/multi_index/detail/modify_key_adaptor.hpp
- /usr/local/include/boost/multi_index/detail/no_duplicate_tags.hpp
- /usr/local/include/boost/multi_index/detail/node_type.hpp
- /usr/local/include/boost/multi_index/detail/ord_index_args.hpp
- /usr/local/include/boost/multi_index/detail/ord_index_impl_fwd.hpp
- /usr/local/include/boost/multi_index/detail/promotes_arg.hpp
- /usr/local/include/boost/multi_index/detail/raw_ptr.hpp
- /usr/local/include/boost/multi_index/detail/restore_wstrict_aliasing.hpp
- /usr/local/include/boost/multi_index/detail/safe_mode.hpp
  /usr/local/include/boost/multi_index/detail/scope_guard.hpp
- /usr/local/include/boost/multi_index/detail/seq_index_node.hpp
- /usr/local/include/boost/multi_index/detail/seq_index_ops.hpp
- /usr/local/include/boost/multi_index/detail/serialization_version.hpp
- /usr/local/include/boost/multi_index/detail/vartempl_support.hpp
- /usr/local/include/boost/multi_index/hashed_index.hpp
- /usr/local/include/boost/multi_index/hashed_index_fwd.hpp
- /usr/local/include/boost/multi_index/identity.hpp
- /usr/local/include/boost/multi_index/identity_fwd.hpp
- /usr/local/include/boost/multi_index/indexed_by.hpp
- /usr/local/include/boost/multi_index/member.hpp
- /usr/local/include/boost/multi_index/ordered_index_fwd.hpp
- /usr/local/include/boost/multi_index/safe_mode_errors.hpp
- /usr/local/include/boost/multi_index/sequenced_index.hpp
- /usr/local/include/boost/multi_index/sequenced_index_fwd.hpp
- /usr/local/include/boost/multi_index/tag.hpp
- /usr/local/include/boost/multi_index_container.hpp
- /usr/local/include/boost/multi_index_container_fwd.hpp
  /usr/local/include/boost/next_prior.hpp
  /usr/local/include/boost/non_type.hpp
  /usr/local/include/boost/noncopyable.hpp
@@ -8115,7 +6598,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o
  /usr/local/include/boost/parameter/value_type.hpp
  /usr/local/include/boost/pending/integer_log2.hpp
  /usr/local/include/boost/pending/lowest_bit.hpp
- /usr/local/include/boost/pointee.hpp
  /usr/local/include/boost/predef.h
  /usr/local/include/boost/predef/architecture.h
  /usr/local/include/boost/predef/architecture/alpha.h
@@ -8326,7 +6808,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o
  /usr/local/include/boost/preprocessor/punctuation/detail/is_begin_parens.hpp
  /usr/local/include/boost/preprocessor/punctuation/is_begin_parens.hpp
  /usr/local/include/boost/preprocessor/repeat.hpp
- /usr/local/include/boost/preprocessor/repeat_2nd.hpp
  /usr/local/include/boost/preprocessor/repetition.hpp
  /usr/local/include/boost/preprocessor/repetition/deduce_r.hpp
  /usr/local/include/boost/preprocessor/repetition/deduce_z.hpp
@@ -8377,18 +6858,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o
  /usr/local/include/boost/preprocessor/tuple/to_list.hpp
  /usr/local/include/boost/preprocessor/variadic/elem.hpp
  /usr/local/include/boost/preprocessor/variadic/size.hpp
- /usr/local/include/boost/property_map/parallel/basic_reduce.hpp
- /usr/local/include/boost/property_map/parallel/detail/untracked_pair.hpp
- /usr/local/include/boost/property_map/parallel/distributed_property_map.hpp
- /usr/local/include/boost/property_map/parallel/impl/distributed_property_map.ipp
- /usr/local/include/boost/property_map/parallel/local_property_map.hpp
- /usr/local/include/boost/property_map/parallel/parallel_property_maps.hpp
- /usr/local/include/boost/property_map/parallel/process_group.hpp
- /usr/local/include/boost/property_map/parallel/simple_trigger.hpp
- /usr/local/include/boost/property_map/parallel/unsafe_serialize.hpp
- /usr/local/include/boost/property_map/parallel/vector_property_map.hpp
- /usr/local/include/boost/property_map/property_map.hpp
- /usr/local/include/boost/property_map/vector_property_map.hpp
  /usr/local/include/boost/range/algorithm/equal.hpp
  /usr/local/include/boost/range/as_literal.hpp
  /usr/local/include/boost/range/begin.hpp
@@ -8444,40 +6913,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o
  /usr/local/include/boost/ref.hpp
  /usr/local/include/boost/scoped_array.hpp
  /usr/local/include/boost/scoped_ptr.hpp
- /usr/local/include/boost/serialization/access.hpp
- /usr/local/include/boost/serialization/array.hpp
- /usr/local/include/boost/serialization/array_optimization.hpp
- /usr/local/include/boost/serialization/array_wrapper.hpp
- /usr/local/include/boost/serialization/assume_abstract.hpp
- /usr/local/include/boost/serialization/base_object.hpp
- /usr/local/include/boost/serialization/collection_size_type.hpp
- /usr/local/include/boost/serialization/config.hpp
- /usr/local/include/boost/serialization/extended_type_info.hpp
- /usr/local/include/boost/serialization/extended_type_info_typeid.hpp
- /usr/local/include/boost/serialization/factory.hpp
- /usr/local/include/boost/serialization/force_include.hpp
- /usr/local/include/boost/serialization/is_bitwise_serializable.hpp
- /usr/local/include/boost/serialization/item_version_type.hpp
- /usr/local/include/boost/serialization/level.hpp
- /usr/local/include/boost/serialization/level_enum.hpp
- /usr/local/include/boost/serialization/nvp.hpp
- /usr/local/include/boost/serialization/serialization.hpp
- /usr/local/include/boost/serialization/singleton.hpp
- /usr/local/include/boost/serialization/smart_cast.hpp
- /usr/local/include/boost/serialization/split_free.hpp
- /usr/local/include/boost/serialization/split_member.hpp
- /usr/local/include/boost/serialization/static_warning.hpp
- /usr/local/include/boost/serialization/strong_typedef.hpp
- /usr/local/include/boost/serialization/throw_exception.hpp
- /usr/local/include/boost/serialization/tracking.hpp
- /usr/local/include/boost/serialization/tracking_enum.hpp
- /usr/local/include/boost/serialization/traits.hpp
- /usr/local/include/boost/serialization/type_info_implementation.hpp
- /usr/local/include/boost/serialization/utility.hpp
- /usr/local/include/boost/serialization/version.hpp
- /usr/local/include/boost/serialization/void_cast.hpp
- /usr/local/include/boost/serialization/void_cast_fwd.hpp
- /usr/local/include/boost/serialization/wrapper.hpp
  /usr/local/include/boost/shared_array.hpp
  /usr/local/include/boost/shared_ptr.hpp
  /usr/local/include/boost/signals2.hpp
@@ -8676,7 +7111,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o
  /usr/local/include/boost/tokenizer.hpp
  /usr/local/include/boost/tuple/detail/tuple_basic.hpp
  /usr/local/include/boost/tuple/tuple.hpp
- /usr/local/include/boost/tuple/tuple_comparison.hpp
  /usr/local/include/boost/type.hpp
  /usr/local/include/boost/type_index.hpp
  /usr/local/include/boost/type_index/ctti_type_index.hpp
@@ -8703,7 +7137,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o
  /usr/local/include/boost/type_traits/cv_traits.hpp
  /usr/local/include/boost/type_traits/decay.hpp
  /usr/local/include/boost/type_traits/declval.hpp
- /usr/local/include/boost/type_traits/detail/bool_trait_undef.hpp
  /usr/local/include/boost/type_traits/detail/common_arithmetic_type.hpp
  /usr/local/include/boost/type_traits/detail/common_type_impl.hpp
  /usr/local/include/boost/type_traits/detail/composite_member_pointer_type.hpp
@@ -8822,7 +7255,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o
  /usr/local/include/boost/type_traits/make_signed.hpp
  /usr/local/include/boost/type_traits/make_unsigned.hpp
  /usr/local/include/boost/type_traits/make_void.hpp
- /usr/local/include/boost/type_traits/object_traits.hpp
  /usr/local/include/boost/type_traits/promote.hpp
  /usr/local/include/boost/type_traits/rank.hpp
  /usr/local/include/boost/type_traits/remove_all_extents.hpp
@@ -8834,7 +7266,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o
  /usr/local/include/boost/type_traits/remove_reference.hpp
  /usr/local/include/boost/type_traits/remove_volatile.hpp
  /usr/local/include/boost/type_traits/same_traits.hpp
- /usr/local/include/boost/type_traits/transform_traits.hpp
  /usr/local/include/boost/type_traits/type_identity.hpp
  /usr/local/include/boost/type_traits/type_with_alignment.hpp
  /usr/local/include/boost/utility.hpp
@@ -8847,17 +7278,13 @@ CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o
  /usr/local/include/boost/utility/identity_type.hpp
  /usr/local/include/boost/utility/result_of.hpp
  /usr/local/include/boost/utility/swap.hpp
- /usr/local/include/boost/variant.hpp
  /usr/local/include/boost/variant/apply_visitor.hpp
- /usr/local/include/boost/variant/bad_visit.hpp
  /usr/local/include/boost/variant/detail/apply_visitor_binary.hpp
  /usr/local/include/boost/variant/detail/apply_visitor_delayed.hpp
  /usr/local/include/boost/variant/detail/apply_visitor_unary.hpp
  /usr/local/include/boost/variant/detail/backup_holder.hpp
  /usr/local/include/boost/variant/detail/cast_storage.hpp
  /usr/local/include/boost/variant/detail/config.hpp
- /usr/local/include/boost/variant/detail/element_index.hpp
- /usr/local/include/boost/variant/detail/enable_recursive.hpp
  /usr/local/include/boost/variant/detail/enable_recursive_fwd.hpp
  /usr/local/include/boost/variant/detail/forced_return.hpp
  /usr/local/include/boost/variant/detail/generic_result_type.hpp
@@ -8867,18 +7294,13 @@ CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o
  /usr/local/include/boost/variant/detail/make_variant_list.hpp
  /usr/local/include/boost/variant/detail/move.hpp
  /usr/local/include/boost/variant/detail/over_sequence.hpp
- /usr/local/include/boost/variant/detail/substitute.hpp
  /usr/local/include/boost/variant/detail/substitute_fwd.hpp
  /usr/local/include/boost/variant/detail/variant_io.hpp
  /usr/local/include/boost/variant/detail/visitation_impl.hpp
- /usr/local/include/boost/variant/get.hpp
- /usr/local/include/boost/variant/recursive_variant.hpp
- /usr/local/include/boost/variant/recursive_wrapper.hpp
  /usr/local/include/boost/variant/recursive_wrapper_fwd.hpp
  /usr/local/include/boost/variant/static_visitor.hpp
  /usr/local/include/boost/variant/variant.hpp
  /usr/local/include/boost/variant/variant_fwd.hpp
- /usr/local/include/boost/variant/visitor_ptr.hpp
  /usr/local/include/boost/version.hpp
  /usr/local/include/boost/visit_each.hpp
  /usr/local/include/boost/weak_ptr.hpp
@@ -8916,11 +7338,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o
  /usr/local/include/flann/util/saving.h
  /usr/local/include/flann/util/serialization.h
  /usr/local/include/flann/util/timer.h
- /usr/local/include/gmp.h
- /usr/local/include/gmpxx.h
- /usr/local/include/mpfr.h
- /usr/local/include/mpi.h
- /usr/local/include/mpi_portable_platform.h
  /usr/local/include/opencv/highgui.h
  /usr/local/include/opencv2/calib3d/calib3d.hpp
  /usr/local/include/opencv2/contrib/contrib.hpp
@@ -9027,39 +7444,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o
  /usr/local/include/pcl-1.8/pcl/search/organized.h
  /usr/local/include/pcl-1.8/pcl/search/pcl_search.h
  /usr/local/include/pcl-1.8/pcl/search/search.h
- /usr/local/include/tbb/atomic.h
- /usr/local/include/tbb/cache_aligned_allocator.h
- /usr/local/include/tbb/concurrent_hash_map.h
- /usr/local/include/tbb/internal/_mutex_padding.h
- /usr/local/include/tbb/internal/_tbb_hash_compare_impl.h
- /usr/local/include/tbb/internal/_tbb_strings.h
- /usr/local/include/tbb/internal/_tbb_windef.h
- /usr/local/include/tbb/internal/_x86_rtm_rw_mutex_impl.h
- /usr/local/include/tbb/machine/gcc_armv7.h
- /usr/local/include/tbb/machine/gcc_generic.h
- /usr/local/include/tbb/machine/gcc_ia32_common.h
- /usr/local/include/tbb/machine/gcc_itsx.h
- /usr/local/include/tbb/machine/ibm_aix51.h
- /usr/local/include/tbb/machine/icc_generic.h
- /usr/local/include/tbb/machine/linux_common.h
- /usr/local/include/tbb/machine/linux_ia32.h
- /usr/local/include/tbb/machine/linux_ia64.h
- /usr/local/include/tbb/machine/linux_intel64.h
- /usr/local/include/tbb/machine/mac_ppc.h
- /usr/local/include/tbb/machine/macos_common.h
- /usr/local/include/tbb/machine/mic_common.h
- /usr/local/include/tbb/machine/msvc_armv7.h
- /usr/local/include/tbb/machine/msvc_ia32_common.h
- /usr/local/include/tbb/machine/sunos_sparc.h
- /usr/local/include/tbb/machine/windows_ia32.h
- /usr/local/include/tbb/machine/windows_intel64.h
- /usr/local/include/tbb/spin_rw_mutex.h
- /usr/local/include/tbb/tbb_allocator.h
- /usr/local/include/tbb/tbb_config.h
- /usr/local/include/tbb/tbb_exception.h
- /usr/local/include/tbb/tbb_machine.h
- /usr/local/include/tbb/tbb_profiling.h
- /usr/local/include/tbb/tbb_stddef.h
 CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o
  /Users/rusi/git/Grasp/mjpro150/include/Eigen/Cholesky
  /Users/rusi/git/Grasp/mjpro150/include/Eigen/Core
@@ -9346,9 +7730,13 @@ CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o
  /Users/rusi/git/Grasp/mjpro150/include/glm/glm.hpp
  /Users/rusi/git/Grasp/mjpro150/include/glm/gtc/constants.hpp
  /Users/rusi/git/Grasp/mjpro150/include/glm/gtc/constants.inl
+ /Users/rusi/git/Grasp/mjpro150/include/glm/gtc/matrix_transform.hpp
+ /Users/rusi/git/Grasp/mjpro150/include/glm/gtc/matrix_transform.inl
  /Users/rusi/git/Grasp/mjpro150/include/glm/gtc/quaternion.hpp
  /Users/rusi/git/Grasp/mjpro150/include/glm/gtc/quaternion.inl
  /Users/rusi/git/Grasp/mjpro150/include/glm/gtc/quaternion_simd.inl
+ /Users/rusi/git/Grasp/mjpro150/include/glm/gtc/type_ptr.hpp
+ /Users/rusi/git/Grasp/mjpro150/include/glm/gtc/type_ptr.inl
  /Users/rusi/git/Grasp/mjpro150/include/glm/gtx/norm.hpp
  /Users/rusi/git/Grasp/mjpro150/include/glm/gtx/norm.inl
  /Users/rusi/git/Grasp/mjpro150/include/glm/gtx/quaternion.hpp
@@ -9385,327 +7773,9 @@ CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o
  /Users/rusi/git/Grasp/mjpro150/include/sensor/kinectSimulator.h
  /Users/rusi/git/Grasp/mjpro150/include/sensor/noise.h
  /Users/rusi/git/Grasp/mjpro150/include/sensor/noiseutils.h
- /Users/rusi/git/Grasp/mjpro150/include/sensor/objectMeshModel.h
  /Users/rusi/git/Grasp/mjpro150/include/sensor/perlin.h
  /Users/rusi/git/Grasp/mjpro150/include/sensor/simplex.h
  /Users/rusi/git/Grasp/mjpro150/src/sensor/kinectSimulator.cpp
- /usr/local/include/CGAL/AABB_intersections.h
- /usr/local/include/CGAL/AABB_primitive.h
- /usr/local/include/CGAL/AABB_traits.h
- /usr/local/include/CGAL/AABB_tree.h
- /usr/local/include/CGAL/AABB_triangle_primitive.h
- /usr/local/include/CGAL/Aff_transformation_2.h
- /usr/local/include/CGAL/Aff_transformation_3.h
- /usr/local/include/CGAL/Algebraic_extension_traits.h
- /usr/local/include/CGAL/Algebraic_structure_traits.h
- /usr/local/include/CGAL/Bbox_2.h
- /usr/local/include/CGAL/Bbox_3.h
- /usr/local/include/CGAL/CC_safe_handle.h
- /usr/local/include/CGAL/Cartesian/Aff_transformation_2.h
- /usr/local/include/CGAL/Cartesian/Aff_transformation_3.h
- /usr/local/include/CGAL/Cartesian/Aff_transformation_rep_2.h
- /usr/local/include/CGAL/Cartesian/Aff_transformation_rep_3.h
- /usr/local/include/CGAL/Cartesian/Cartesian_base.h
- /usr/local/include/CGAL/Cartesian/Circle_2.h
- /usr/local/include/CGAL/Cartesian/Circle_3.h
- /usr/local/include/CGAL/Cartesian/Data_accessor_2.h
- /usr/local/include/CGAL/Cartesian/Direction_2.h
- /usr/local/include/CGAL/Cartesian/Direction_3.h
- /usr/local/include/CGAL/Cartesian/Iso_cuboid_3.h
- /usr/local/include/CGAL/Cartesian/Iso_rectangle_2.h
- /usr/local/include/CGAL/Cartesian/Line_2.h
- /usr/local/include/CGAL/Cartesian/Line_3.h
- /usr/local/include/CGAL/Cartesian/Plane_3.h
- /usr/local/include/CGAL/Cartesian/Point_2.h
- /usr/local/include/CGAL/Cartesian/Point_3.h
- /usr/local/include/CGAL/Cartesian/Ray_2.h
- /usr/local/include/CGAL/Cartesian/Ray_3.h
- /usr/local/include/CGAL/Cartesian/Rotation_rep_2.h
- /usr/local/include/CGAL/Cartesian/Scaling_rep_2.h
- /usr/local/include/CGAL/Cartesian/Scaling_rep_3.h
- /usr/local/include/CGAL/Cartesian/Segment_2.h
- /usr/local/include/CGAL/Cartesian/Segment_3.h
- /usr/local/include/CGAL/Cartesian/Sphere_3.h
- /usr/local/include/CGAL/Cartesian/Tetrahedron_3.h
- /usr/local/include/CGAL/Cartesian/Translation_rep_2.h
- /usr/local/include/CGAL/Cartesian/Translation_rep_3.h
- /usr/local/include/CGAL/Cartesian/Triangle_2.h
- /usr/local/include/CGAL/Cartesian/Triangle_3.h
- /usr/local/include/CGAL/Cartesian/Vector_2.h
- /usr/local/include/CGAL/Cartesian/Vector_3.h
- /usr/local/include/CGAL/Cartesian/basic_constructions_2.h
- /usr/local/include/CGAL/Cartesian/basic_constructions_3.h
- /usr/local/include/CGAL/Cartesian/ft_constructions_2.h
- /usr/local/include/CGAL/Cartesian/ft_constructions_3.h
- /usr/local/include/CGAL/Cartesian/function_objects.h
- /usr/local/include/CGAL/Cartesian/line_constructions_2.h
- /usr/local/include/CGAL/Cartesian/plane_constructions_3.h
- /usr/local/include/CGAL/Cartesian/point_constructions_2.h
- /usr/local/include/CGAL/Cartesian/point_constructions_3.h
- /usr/local/include/CGAL/Cartesian/predicates_on_directions_2.h
- /usr/local/include/CGAL/Cartesian/predicates_on_planes_3.h
- /usr/local/include/CGAL/Cartesian/predicates_on_points_2.h
- /usr/local/include/CGAL/Cartesian/predicates_on_points_3.h
- /usr/local/include/CGAL/Cartesian/solve_3.h
- /usr/local/include/CGAL/Cartesian_converter.h
- /usr/local/include/CGAL/Circle_2.h
- /usr/local/include/CGAL/Circle_2_Circle_2_intersection.h
- /usr/local/include/CGAL/Circle_2_Line_2_intersection.h
- /usr/local/include/CGAL/Circle_3.h
- /usr/local/include/CGAL/Coercion_traits.h
- /usr/local/include/CGAL/Compact_container.h
- /usr/local/include/CGAL/ConicCPA2.h
- /usr/local/include/CGAL/Conic_2.h
- /usr/local/include/CGAL/Conic_misc.h
- /usr/local/include/CGAL/Default.h
- /usr/local/include/CGAL/Dimension.h
- /usr/local/include/CGAL/Direction_2.h
- /usr/local/include/CGAL/Direction_3.h
- /usr/local/include/CGAL/Enum_converter.h
- /usr/local/include/CGAL/Euclidean_distance.h
- /usr/local/include/CGAL/FPU.h
- /usr/local/include/CGAL/Fraction_traits.h
- /usr/local/include/CGAL/Handle_for.h
- /usr/local/include/CGAL/Handle_for_virtual.h
- /usr/local/include/CGAL/Has_timestamp.h
- /usr/local/include/CGAL/IEEE_754_unions.h
- /usr/local/include/CGAL/IO/Color.h
- /usr/local/include/CGAL/IO/Color_impl.h
- /usr/local/include/CGAL/IO/io.h
- /usr/local/include/CGAL/IO/io_impl.h
- /usr/local/include/CGAL/IO/io_tags.h
- /usr/local/include/CGAL/Intersection_traits.h
- /usr/local/include/CGAL/Intersection_traits_2.h
- /usr/local/include/CGAL/Intersection_traits_3.h
- /usr/local/include/CGAL/Intersections_2/Triangle_2_Triangle_2_intersection_impl.h
- /usr/local/include/CGAL/Intersections_3/intersection_3_1_impl.h
- /usr/local/include/CGAL/Interval_nt.h
- /usr/local/include/CGAL/Interval_traits.h
- /usr/local/include/CGAL/Iso_cuboid_3.h
- /usr/local/include/CGAL/Iso_rectangle_2.h
- /usr/local/include/CGAL/Iso_rectangle_2_Iso_rectangle_2_intersection.h
- /usr/local/include/CGAL/Kd_tree.h
- /usr/local/include/CGAL/Kd_tree_node.h
- /usr/local/include/CGAL/Kd_tree_rectangle.h
- /usr/local/include/CGAL/Kernel/Dimension_utils.h
- /usr/local/include/CGAL/Kernel/Return_base_tag.h
- /usr/local/include/CGAL/Kernel/Same_uncertainty.h
- /usr/local/include/CGAL/Kernel/Type_equality_wrapper.h
- /usr/local/include/CGAL/Kernel/Type_mapper.h
- /usr/local/include/CGAL/Kernel/Wutils.h
- /usr/local/include/CGAL/Kernel/function_objects.h
- /usr/local/include/CGAL/Kernel/global_functions.h
- /usr/local/include/CGAL/Kernel/global_functions_2.h
- /usr/local/include/CGAL/Kernel/global_functions_3.h
- /usr/local/include/CGAL/Kernel/global_functions_internal_2.h
- /usr/local/include/CGAL/Kernel/global_functions_internal_3.h
- /usr/local/include/CGAL/Kernel/interface_macros.h
- /usr/local/include/CGAL/Kernel/mpl.h
- /usr/local/include/CGAL/Kernel/solve.h
- /usr/local/include/CGAL/Kernel_traits.h
- /usr/local/include/CGAL/Line_2.h
- /usr/local/include/CGAL/Line_2_Iso_rectangle_2_intersection.h
- /usr/local/include/CGAL/Line_2_Line_2_intersection.h
- /usr/local/include/CGAL/Line_2_Triangle_2_intersection.h
- /usr/local/include/CGAL/Line_3.h
- /usr/local/include/CGAL/Modular_arithmetic/Residue_type.h
- /usr/local/include/CGAL/Modular_traits.h
- /usr/local/include/CGAL/NT_converter.h
- /usr/local/include/CGAL/Needs_parens_as_product.h
- /usr/local/include/CGAL/Object.h
- /usr/local/include/CGAL/Origin.h
- /usr/local/include/CGAL/Origin_impl.h
- /usr/local/include/CGAL/Orthogonal_k_neighbor_search.h
- /usr/local/include/CGAL/Plane_3.h
- /usr/local/include/CGAL/Plane_separator.h
- /usr/local/include/CGAL/Point_2.h
- /usr/local/include/CGAL/Point_2_Iso_rectangle_2_intersection.h
- /usr/local/include/CGAL/Point_2_Line_2_intersection.h
- /usr/local/include/CGAL/Point_2_Point_2_intersection.h
- /usr/local/include/CGAL/Point_2_Ray_2_intersection.h
- /usr/local/include/CGAL/Point_2_Segment_2_intersection.h
- /usr/local/include/CGAL/Point_2_Triangle_2_intersection.h
- /usr/local/include/CGAL/Point_3.h
- /usr/local/include/CGAL/Point_container.h
- /usr/local/include/CGAL/Profile_counter.h
- /usr/local/include/CGAL/Quotient_fwd.h
- /usr/local/include/CGAL/Rational_traits.h
- /usr/local/include/CGAL/Ray_2.h
- /usr/local/include/CGAL/Ray_2_Iso_rectangle_2_intersection.h
- /usr/local/include/CGAL/Ray_2_Line_2_intersection.h
- /usr/local/include/CGAL/Ray_2_Ray_2_intersection.h
- /usr/local/include/CGAL/Ray_2_Segment_2_intersection.h
- /usr/local/include/CGAL/Ray_2_Triangle_2_intersection.h
- /usr/local/include/CGAL/Ray_3.h
- /usr/local/include/CGAL/Real_embeddable_traits.h
- /usr/local/include/CGAL/Residue.h
- /usr/local/include/CGAL/Scalar_factor_traits.h
- /usr/local/include/CGAL/Search_traits_3.h
- /usr/local/include/CGAL/Segment_2.h
- /usr/local/include/CGAL/Segment_2_Iso_rectangle_2_intersection.h
- /usr/local/include/CGAL/Segment_2_Line_2_intersection.h
- /usr/local/include/CGAL/Segment_2_Segment_2_intersection.h
- /usr/local/include/CGAL/Segment_2_Triangle_2_intersection.h
- /usr/local/include/CGAL/Segment_3.h
- /usr/local/include/CGAL/Simple_cartesian.h
- /usr/local/include/CGAL/Sphere_3.h
- /usr/local/include/CGAL/Splitters.h
- /usr/local/include/CGAL/Straight_2.h
- /usr/local/include/CGAL/Tetrahedron_3.h
- /usr/local/include/CGAL/Time_stamper.h
- /usr/local/include/CGAL/Triangle_2.h
- /usr/local/include/CGAL/Triangle_2_Iso_rectangle_2_intersection.h
- /usr/local/include/CGAL/Triangle_2_Line_2_intersection.h
- /usr/local/include/CGAL/Triangle_2_Ray_2_intersection.h
- /usr/local/include/CGAL/Triangle_2_Segment_2_intersection.h
- /usr/local/include/CGAL/Triangle_2_Triangle_2_do_intersect.h
- /usr/local/include/CGAL/Triangle_2_Triangle_2_intersection.h
- /usr/local/include/CGAL/Triangle_3.h
- /usr/local/include/CGAL/Triangle_3_Line_3_do_intersect.h
- /usr/local/include/CGAL/Triangle_3_Plane_3_do_intersect.h
- /usr/local/include/CGAL/Triangle_3_Point_3_do_intersect.h
- /usr/local/include/CGAL/Triangle_3_Ray_3_do_intersect.h
- /usr/local/include/CGAL/Triangle_3_Segment_3_do_intersect.h
- /usr/local/include/CGAL/Triangle_3_Tetrahedron_3_do_intersect.h
- /usr/local/include/CGAL/Triangle_3_Triangle_3_do_intersect.h
- /usr/local/include/CGAL/Triangle_3_Triangle_3_intersection.h
- /usr/local/include/CGAL/Uncertain.h
- /usr/local/include/CGAL/Vector_2.h
- /usr/local/include/CGAL/Vector_3.h
- /usr/local/include/CGAL/aff_transformation_tags.h
- /usr/local/include/CGAL/aff_transformation_tags_impl.h
- /usr/local/include/CGAL/algorithm.h
- /usr/local/include/CGAL/array.h
- /usr/local/include/CGAL/assertions.h
- /usr/local/include/CGAL/assertions_behaviour.h
- /usr/local/include/CGAL/assertions_impl.h
- /usr/local/include/CGAL/auto_link/CGAL.h
- /usr/local/include/CGAL/auto_link/auto_link.h
- /usr/local/include/CGAL/basic.h
- /usr/local/include/CGAL/basic_classes.h
- /usr/local/include/CGAL/bbox_intersection_3.h
- /usr/local/include/CGAL/boost/iterator/transform_iterator.hpp
- /usr/local/include/CGAL/centroid.h
- /usr/local/include/CGAL/circulator.h
- /usr/local/include/CGAL/circulator_bases.h
- /usr/local/include/CGAL/compiler_config.h
- /usr/local/include/CGAL/config.h
- /usr/local/include/CGAL/constant.h
- /usr/local/include/CGAL/constructions/kernel_ftC2.h
- /usr/local/include/CGAL/constructions/kernel_ftC3.h
- /usr/local/include/CGAL/determinant.h
- /usr/local/include/CGAL/double.h
- /usr/local/include/CGAL/enum.h
- /usr/local/include/CGAL/exceptions.h
- /usr/local/include/CGAL/export/CGAL.h
- /usr/local/include/CGAL/export/helpers.h
- /usr/local/include/CGAL/float.h
- /usr/local/include/CGAL/gmpxx.h
- /usr/local/include/CGAL/gmpxx_coercion_traits.h
- /usr/local/include/CGAL/int.h
- /usr/local/include/CGAL/internal/AABB_tree/AABB_node.h
- /usr/local/include/CGAL/internal/AABB_tree/AABB_ray_intersection.h
- /usr/local/include/CGAL/internal/AABB_tree/AABB_search_tree.h
- /usr/local/include/CGAL/internal/AABB_tree/AABB_traversal_traits.h
- /usr/local/include/CGAL/internal/AABB_tree/Has_nested_type_Shared_data.h
- /usr/local/include/CGAL/internal/AABB_tree/Is_ray_intersection_geomtraits.h
- /usr/local/include/CGAL/internal/AABB_tree/Primitive_helper.h
- /usr/local/include/CGAL/internal/AABB_tree/nearest_point_segment_3.h
- /usr/local/include/CGAL/internal/AABB_tree/nearest_point_triangle_3.h
- /usr/local/include/CGAL/internal/Get_dimension_tag.h
- /usr/local/include/CGAL/internal/Intersections_3/Bbox_3_Bbox_3_do_intersect.h
- /usr/local/include/CGAL/internal/Intersections_3/Bbox_3_Line_3_do_intersect.h
- /usr/local/include/CGAL/internal/Intersections_3/Bbox_3_Plane_3_do_intersect.h
- /usr/local/include/CGAL/internal/Intersections_3/Bbox_3_Ray_3_do_intersect.h
- /usr/local/include/CGAL/internal/Intersections_3/Bbox_3_Segment_3_do_intersect.h
- /usr/local/include/CGAL/internal/Intersections_3/Bbox_3_Sphere_3_do_intersect.h
- /usr/local/include/CGAL/internal/Intersections_3/Bbox_3_Triangle_3_do_intersect.h
- /usr/local/include/CGAL/internal/Intersections_3/Triangle_3_Line_3_intersection.h
- /usr/local/include/CGAL/internal/Intersections_3/Triangle_3_Ray_3_intersection.h
- /usr/local/include/CGAL/internal/Intersections_3/Triangle_3_Segment_3_intersection.h
- /usr/local/include/CGAL/internal/K_neighbor_search.h
- /usr/local/include/CGAL/internal/bounded_priority_queue.h
- /usr/local/include/CGAL/intersection_2.h
- /usr/local/include/CGAL/intersection_2_1.h
- /usr/local/include/CGAL/intersection_2_2.h
- /usr/local/include/CGAL/intersection_2_3.h
- /usr/local/include/CGAL/intersection_3.h
- /usr/local/include/CGAL/intersection_3_1.h
- /usr/local/include/CGAL/intersections.h
- /usr/local/include/CGAL/is_convertible.h
- /usr/local/include/CGAL/is_iterator.h
- /usr/local/include/CGAL/iterator.h
- /usr/local/include/CGAL/kernel_assertions.h
- /usr/local/include/CGAL/kernel_basic.h
- /usr/local/include/CGAL/kernel_config.h
- /usr/local/include/CGAL/long_double.h
- /usr/local/include/CGAL/long_long.h
- /usr/local/include/CGAL/memory.h
- /usr/local/include/CGAL/mpq_class.h
- /usr/local/include/CGAL/mpz_class.h
- /usr/local/include/CGAL/mutex.h
- /usr/local/include/CGAL/number_type_basic.h
- /usr/local/include/CGAL/number_type_config.h
- /usr/local/include/CGAL/number_utils.h
- /usr/local/include/CGAL/number_utils_classes.h
- /usr/local/include/CGAL/predicates/kernel_ftC2.h
- /usr/local/include/CGAL/predicates/kernel_ftC3.h
- /usr/local/include/CGAL/predicates/sign_of_determinant.h
- /usr/local/include/CGAL/predicates_on_points_2.h
- /usr/local/include/CGAL/property_map.h
- /usr/local/include/CGAL/rational_rotation.h
- /usr/local/include/CGAL/representation_tags.h
- /usr/local/include/CGAL/result_of.h
- /usr/local/include/CGAL/squared_distance_2.h
- /usr/local/include/CGAL/squared_distance_2_1.h
- /usr/local/include/CGAL/squared_distance_2_2.h
- /usr/local/include/CGAL/squared_distance_3.h
- /usr/local/include/CGAL/squared_distance_3_0.h
- /usr/local/include/CGAL/squared_distance_3_1.h
- /usr/local/include/CGAL/squared_distance_3_2.h
- /usr/local/include/CGAL/squared_distance_utils.h
- /usr/local/include/CGAL/sse2.h
- /usr/local/include/CGAL/tags.h
- /usr/local/include/CGAL/test_FPU_rounding_mode_impl.h
- /usr/local/include/CGAL/tss.h
- /usr/local/include/CGAL/tuple.h
- /usr/local/include/CGAL/type_traits.h
- /usr/local/include/CGAL/use.h
- /usr/local/include/CGAL/user_classes.h
- /usr/local/include/CGAL/utils.h
- /usr/local/include/CGAL/utils_classes.h
- /usr/local/include/CGAL/value_type_traits.h
- /usr/local/include/CGAL/version.h
- /usr/local/include/CGAL/wmult.h
- /usr/local/include/assimp/./Compiler/poppack1.h
- /usr/local/include/assimp/./Compiler/pushpack1.h
- /usr/local/include/assimp/Compiler/pstdint.h
- /usr/local/include/assimp/anim.h
- /usr/local/include/assimp/camera.h
- /usr/local/include/assimp/cimport.h
- /usr/local/include/assimp/color4.h
- /usr/local/include/assimp/color4.inl
- /usr/local/include/assimp/config.h
- /usr/local/include/assimp/defs.h
- /usr/local/include/assimp/importerdesc.h
- /usr/local/include/assimp/light.h
- /usr/local/include/assimp/material.h
- /usr/local/include/assimp/material.inl
- /usr/local/include/assimp/matrix3x3.h
- /usr/local/include/assimp/matrix3x3.inl
- /usr/local/include/assimp/matrix4x4.h
- /usr/local/include/assimp/matrix4x4.inl
- /usr/local/include/assimp/mesh.h
- /usr/local/include/assimp/metadata.h
- /usr/local/include/assimp/postprocess.h
- /usr/local/include/assimp/quaternion.h
- /usr/local/include/assimp/scene.h
- /usr/local/include/assimp/texture.h
- /usr/local/include/assimp/types.h
- /usr/local/include/assimp/vector2.h
- /usr/local/include/assimp/vector2.inl
- /usr/local/include/assimp/vector3.h
- /usr/local/include/assimp/vector3.inl
  /usr/local/include/boost/algorithm/string.hpp
  /usr/local/include/boost/algorithm/string/case_conv.hpp
  /usr/local/include/boost/algorithm/string/classification.hpp
@@ -9746,24 +7816,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o
  /usr/local/include/boost/algorithm/string/trim.hpp
  /usr/local/include/boost/algorithm/string/yes_no_type.hpp
  /usr/local/include/boost/aligned_storage.hpp
- /usr/local/include/boost/any.hpp
- /usr/local/include/boost/archive/archive_exception.hpp
- /usr/local/include/boost/archive/basic_archive.hpp
- /usr/local/include/boost/archive/detail/abi_prefix.hpp
- /usr/local/include/boost/archive/detail/abi_suffix.hpp
- /usr/local/include/boost/archive/detail/archive_serializer_map.hpp
- /usr/local/include/boost/archive/detail/auto_link_archive.hpp
- /usr/local/include/boost/archive/detail/basic_oarchive.hpp
- /usr/local/include/boost/archive/detail/basic_oserializer.hpp
- /usr/local/include/boost/archive/detail/basic_pointer_oserializer.hpp
- /usr/local/include/boost/archive/detail/basic_serializer.hpp
- /usr/local/include/boost/archive/detail/check.hpp
- /usr/local/include/boost/archive/detail/common_oarchive.hpp
- /usr/local/include/boost/archive/detail/decl.hpp
- /usr/local/include/boost/archive/detail/helper_collection.hpp
- /usr/local/include/boost/archive/detail/interface_oarchive.hpp
- /usr/local/include/boost/archive/detail/oserializer.hpp
- /usr/local/include/boost/archive/detail/register_archive.hpp
  /usr/local/include/boost/array.hpp
  /usr/local/include/boost/assert.hpp
  /usr/local/include/boost/atomic.hpp
@@ -9857,7 +7909,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o
  /usr/local/include/boost/concept/detail/has_constraints.hpp
  /usr/local/include/boost/concept/detail/msvc.hpp
  /usr/local/include/boost/concept/usage.hpp
- /usr/local/include/boost/concept_archetype.hpp
  /usr/local/include/boost/concept_check.hpp
  /usr/local/include/boost/config.hpp
  /usr/local/include/boost/config/abi_prefix.hpp
@@ -9927,7 +7978,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o
  /usr/local/include/boost/config/warning_disable.hpp
  /usr/local/include/boost/container/allocator_traits.hpp
  /usr/local/include/boost/container/container_fwd.hpp
- /usr/local/include/boost/container/deque.hpp
  /usr/local/include/boost/container/detail/addressof.hpp
  /usr/local/include/boost/container/detail/advanced_insert_int.hpp
  /usr/local/include/boost/container/detail/algorithm.hpp
@@ -10060,7 +8110,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o
  /usr/local/include/boost/date_time/time_system_split.hpp
  /usr/local/include/boost/date_time/wrapping_int.hpp
  /usr/local/include/boost/date_time/year_month_day.hpp
- /usr/local/include/boost/detail/allocator_utilities.hpp
  /usr/local/include/boost/detail/atomic_redef_macros.hpp
  /usr/local/include/boost/detail/atomic_undef_macros.hpp
  /usr/local/include/boost/detail/basic_pointerbuf.hpp
@@ -10072,11 +8121,9 @@ CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o
  /usr/local/include/boost/detail/fenv.hpp
  /usr/local/include/boost/detail/indirect_traits.hpp
  /usr/local/include/boost/detail/interlocked.hpp
- /usr/local/include/boost/detail/is_incrementable.hpp
  /usr/local/include/boost/detail/is_xxx.hpp
  /usr/local/include/boost/detail/iterator.hpp
  /usr/local/include/boost/detail/lcast_precision.hpp
- /usr/local/include/boost/detail/lightweight_mutex.hpp
  /usr/local/include/boost/detail/no_exceptions_support.hpp
  /usr/local/include/boost/detail/reference_content.hpp
  /usr/local/include/boost/detail/scoped_enum_emulation.hpp
@@ -10417,13 +8464,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o
  /usr/local/include/boost/fusion/view/single_view/single_view.hpp
  /usr/local/include/boost/fusion/view/single_view/single_view_iterator.hpp
  /usr/local/include/boost/get_pointer.hpp
- /usr/local/include/boost/heap/detail/heap_comparison.hpp
- /usr/local/include/boost/heap/detail/stable_heap.hpp
- /usr/local/include/boost/heap/heap_concepts.hpp
- /usr/local/include/boost/heap/heap_merge.hpp
- /usr/local/include/boost/heap/policies.hpp
- /usr/local/include/boost/heap/priority_queue.hpp
- /usr/local/include/boost/indirect_reference.hpp
  /usr/local/include/boost/integer.hpp
  /usr/local/include/boost/integer/common_factor_rt.hpp
  /usr/local/include/boost/integer/integer_log2.hpp
@@ -10514,25 +8554,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o
  /usr/local/include/boost/iterator/minimum_category.hpp
  /usr/local/include/boost/iterator/reverse_iterator.hpp
  /usr/local/include/boost/iterator/transform_iterator.hpp
- /usr/local/include/boost/lambda/core.hpp
- /usr/local/include/boost/lambda/detail/actions.hpp
- /usr/local/include/boost/lambda/detail/arity_code.hpp
- /usr/local/include/boost/lambda/detail/function_adaptors.hpp
- /usr/local/include/boost/lambda/detail/is_instance_of.hpp
- /usr/local/include/boost/lambda/detail/lambda_config.hpp
- /usr/local/include/boost/lambda/detail/lambda_functor_base.hpp
- /usr/local/include/boost/lambda/detail/lambda_functors.hpp
- /usr/local/include/boost/lambda/detail/lambda_fwd.hpp
- /usr/local/include/boost/lambda/detail/lambda_traits.hpp
- /usr/local/include/boost/lambda/detail/member_ptr.hpp
- /usr/local/include/boost/lambda/detail/operator_actions.hpp
- /usr/local/include/boost/lambda/detail/operator_lambda_func_base.hpp
- /usr/local/include/boost/lambda/detail/operator_return_type_traits.hpp
- /usr/local/include/boost/lambda/detail/operators.hpp
- /usr/local/include/boost/lambda/detail/ret.hpp
- /usr/local/include/boost/lambda/detail/return_type_traits.hpp
- /usr/local/include/boost/lambda/detail/select_functions.hpp
- /usr/local/include/boost/lambda/lambda.hpp
  /usr/local/include/boost/lexical_cast.hpp
  /usr/local/include/boost/lexical_cast/bad_lexical_cast.hpp
  /usr/local/include/boost/lexical_cast/detail/converter_lexical.hpp
@@ -10583,14 +8604,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o
  /usr/local/include/boost/move/unique_ptr.hpp
  /usr/local/include/boost/move/utility.hpp
  /usr/local/include/boost/move/utility_core.hpp
- /usr/local/include/boost/mpi/config.hpp
- /usr/local/include/boost/mpi/datatype.hpp
- /usr/local/include/boost/mpi/datatype_fwd.hpp
- /usr/local/include/boost/mpi/detail/ignore_skeleton_oarchive.hpp
- /usr/local/include/boost/mpi/detail/mpi_datatype_cache.hpp
- /usr/local/include/boost/mpi/detail/mpi_datatype_oarchive.hpp
- /usr/local/include/boost/mpi/detail/mpi_datatype_primitive.hpp
- /usr/local/include/boost/mpi/exception.hpp
  /usr/local/include/boost/mpl/O1_size.hpp
  /usr/local/include/boost/mpl/O1_size_fwd.hpp
  /usr/local/include/boost/mpl/advance.hpp
@@ -10717,7 +8730,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o
  /usr/local/include/boost/mpl/aux_/push_front_impl.hpp
  /usr/local/include/boost/mpl/aux_/reverse_fold_impl.hpp
  /usr/local/include/boost/mpl/aux_/reverse_fold_impl_body.hpp
- /usr/local/include/boost/mpl/aux_/reverse_iter_fold_impl.hpp
  /usr/local/include/boost/mpl/aux_/sequence_wrapper.hpp
  /usr/local/include/boost/mpl/aux_/size_impl.hpp
  /usr/local/include/boost/mpl/aux_/static_cast.hpp
@@ -10751,7 +8763,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o
  /usr/local/include/boost/mpl/empty_base.hpp
  /usr/local/include/boost/mpl/empty_fwd.hpp
  /usr/local/include/boost/mpl/end.hpp
- /usr/local/include/boost/mpl/equal.hpp
  /usr/local/include/boost/mpl/equal_to.hpp
  /usr/local/include/boost/mpl/erase.hpp
  /usr/local/include/boost/mpl/erase_fwd.hpp
@@ -10824,7 +8835,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o
  /usr/local/include/boost/mpl/pop_back_fwd.hpp
  /usr/local/include/boost/mpl/pop_front.hpp
  /usr/local/include/boost/mpl/pop_front_fwd.hpp
- /usr/local/include/boost/mpl/print.hpp
  /usr/local/include/boost/mpl/prior.hpp
  /usr/local/include/boost/mpl/protect.hpp
  /usr/local/include/boost/mpl/push_back.hpp
@@ -10832,10 +8842,8 @@ CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o
  /usr/local/include/boost/mpl/push_front.hpp
  /usr/local/include/boost/mpl/push_front_fwd.hpp
  /usr/local/include/boost/mpl/quote.hpp
- /usr/local/include/boost/mpl/remove.hpp
  /usr/local/include/boost/mpl/remove_if.hpp
  /usr/local/include/boost/mpl/reverse_fold.hpp
- /usr/local/include/boost/mpl/reverse_iter_fold.hpp
  /usr/local/include/boost/mpl/same_as.hpp
  /usr/local/include/boost/mpl/sequence_tag.hpp
  /usr/local/include/boost/mpl/sequence_tag_fwd.hpp
@@ -10891,58 +8899,7 @@ CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o
  /usr/local/include/boost/mpl/vector/vector50.hpp
  /usr/local/include/boost/mpl/void.hpp
  /usr/local/include/boost/mpl/void_fwd.hpp
- /usr/local/include/boost/multi_index/detail/access_specifier.hpp
- /usr/local/include/boost/multi_index/detail/adl_swap.hpp
- /usr/local/include/boost/multi_index/detail/archive_constructed.hpp
- /usr/local/include/boost/multi_index/detail/auto_space.hpp
- /usr/local/include/boost/multi_index/detail/base_type.hpp
- /usr/local/include/boost/multi_index/detail/bidir_node_iterator.hpp
- /usr/local/include/boost/multi_index/detail/bucket_array.hpp
- /usr/local/include/boost/multi_index/detail/converter.hpp
- /usr/local/include/boost/multi_index/detail/copy_map.hpp
- /usr/local/include/boost/multi_index/detail/do_not_copy_elements_tag.hpp
- /usr/local/include/boost/multi_index/detail/has_tag.hpp
- /usr/local/include/boost/multi_index/detail/hash_index_args.hpp
- /usr/local/include/boost/multi_index/detail/hash_index_iterator.hpp
- /usr/local/include/boost/multi_index/detail/hash_index_node.hpp
- /usr/local/include/boost/multi_index/detail/header_holder.hpp
- /usr/local/include/boost/multi_index/detail/ignore_wstrict_aliasing.hpp
- /usr/local/include/boost/multi_index/detail/index_base.hpp
- /usr/local/include/boost/multi_index/detail/index_loader.hpp
- /usr/local/include/boost/multi_index/detail/index_matcher.hpp
- /usr/local/include/boost/multi_index/detail/index_node_base.hpp
- /usr/local/include/boost/multi_index/detail/index_saver.hpp
- /usr/local/include/boost/multi_index/detail/invariant_assert.hpp
- /usr/local/include/boost/multi_index/detail/is_index_list.hpp
- /usr/local/include/boost/multi_index/detail/is_transparent.hpp
- /usr/local/include/boost/multi_index/detail/iter_adaptor.hpp
- /usr/local/include/boost/multi_index/detail/modify_key_adaptor.hpp
- /usr/local/include/boost/multi_index/detail/no_duplicate_tags.hpp
- /usr/local/include/boost/multi_index/detail/node_type.hpp
- /usr/local/include/boost/multi_index/detail/ord_index_args.hpp
- /usr/local/include/boost/multi_index/detail/ord_index_impl_fwd.hpp
- /usr/local/include/boost/multi_index/detail/promotes_arg.hpp
- /usr/local/include/boost/multi_index/detail/raw_ptr.hpp
- /usr/local/include/boost/multi_index/detail/restore_wstrict_aliasing.hpp
- /usr/local/include/boost/multi_index/detail/safe_mode.hpp
  /usr/local/include/boost/multi_index/detail/scope_guard.hpp
- /usr/local/include/boost/multi_index/detail/seq_index_node.hpp
- /usr/local/include/boost/multi_index/detail/seq_index_ops.hpp
- /usr/local/include/boost/multi_index/detail/serialization_version.hpp
- /usr/local/include/boost/multi_index/detail/vartempl_support.hpp
- /usr/local/include/boost/multi_index/hashed_index.hpp
- /usr/local/include/boost/multi_index/hashed_index_fwd.hpp
- /usr/local/include/boost/multi_index/identity.hpp
- /usr/local/include/boost/multi_index/identity_fwd.hpp
- /usr/local/include/boost/multi_index/indexed_by.hpp
- /usr/local/include/boost/multi_index/member.hpp
- /usr/local/include/boost/multi_index/ordered_index_fwd.hpp
- /usr/local/include/boost/multi_index/safe_mode_errors.hpp
- /usr/local/include/boost/multi_index/sequenced_index.hpp
- /usr/local/include/boost/multi_index/sequenced_index_fwd.hpp
- /usr/local/include/boost/multi_index/tag.hpp
- /usr/local/include/boost/multi_index_container.hpp
- /usr/local/include/boost/multi_index_container_fwd.hpp
  /usr/local/include/boost/next_prior.hpp
  /usr/local/include/boost/non_type.hpp
  /usr/local/include/boost/noncopyable.hpp
@@ -11010,7 +8967,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o
  /usr/local/include/boost/parameter/value_type.hpp
  /usr/local/include/boost/pending/integer_log2.hpp
  /usr/local/include/boost/pending/lowest_bit.hpp
- /usr/local/include/boost/pointee.hpp
  /usr/local/include/boost/predef.h
  /usr/local/include/boost/predef/architecture.h
  /usr/local/include/boost/predef/architecture/alpha.h
@@ -11221,7 +9177,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o
  /usr/local/include/boost/preprocessor/punctuation/detail/is_begin_parens.hpp
  /usr/local/include/boost/preprocessor/punctuation/is_begin_parens.hpp
  /usr/local/include/boost/preprocessor/repeat.hpp
- /usr/local/include/boost/preprocessor/repeat_2nd.hpp
  /usr/local/include/boost/preprocessor/repetition.hpp
  /usr/local/include/boost/preprocessor/repetition/deduce_r.hpp
  /usr/local/include/boost/preprocessor/repetition/deduce_z.hpp
@@ -11272,18 +9227,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o
  /usr/local/include/boost/preprocessor/tuple/to_list.hpp
  /usr/local/include/boost/preprocessor/variadic/elem.hpp
  /usr/local/include/boost/preprocessor/variadic/size.hpp
- /usr/local/include/boost/property_map/parallel/basic_reduce.hpp
- /usr/local/include/boost/property_map/parallel/detail/untracked_pair.hpp
- /usr/local/include/boost/property_map/parallel/distributed_property_map.hpp
- /usr/local/include/boost/property_map/parallel/impl/distributed_property_map.ipp
- /usr/local/include/boost/property_map/parallel/local_property_map.hpp
- /usr/local/include/boost/property_map/parallel/parallel_property_maps.hpp
- /usr/local/include/boost/property_map/parallel/process_group.hpp
- /usr/local/include/boost/property_map/parallel/simple_trigger.hpp
- /usr/local/include/boost/property_map/parallel/unsafe_serialize.hpp
- /usr/local/include/boost/property_map/parallel/vector_property_map.hpp
- /usr/local/include/boost/property_map/property_map.hpp
- /usr/local/include/boost/property_map/vector_property_map.hpp
  /usr/local/include/boost/range/algorithm/equal.hpp
  /usr/local/include/boost/range/as_literal.hpp
  /usr/local/include/boost/range/begin.hpp
@@ -11339,40 +9282,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o
  /usr/local/include/boost/ref.hpp
  /usr/local/include/boost/scoped_array.hpp
  /usr/local/include/boost/scoped_ptr.hpp
- /usr/local/include/boost/serialization/access.hpp
- /usr/local/include/boost/serialization/array.hpp
- /usr/local/include/boost/serialization/array_optimization.hpp
- /usr/local/include/boost/serialization/array_wrapper.hpp
- /usr/local/include/boost/serialization/assume_abstract.hpp
- /usr/local/include/boost/serialization/base_object.hpp
- /usr/local/include/boost/serialization/collection_size_type.hpp
- /usr/local/include/boost/serialization/config.hpp
- /usr/local/include/boost/serialization/extended_type_info.hpp
- /usr/local/include/boost/serialization/extended_type_info_typeid.hpp
- /usr/local/include/boost/serialization/factory.hpp
- /usr/local/include/boost/serialization/force_include.hpp
- /usr/local/include/boost/serialization/is_bitwise_serializable.hpp
- /usr/local/include/boost/serialization/item_version_type.hpp
- /usr/local/include/boost/serialization/level.hpp
- /usr/local/include/boost/serialization/level_enum.hpp
- /usr/local/include/boost/serialization/nvp.hpp
- /usr/local/include/boost/serialization/serialization.hpp
- /usr/local/include/boost/serialization/singleton.hpp
- /usr/local/include/boost/serialization/smart_cast.hpp
- /usr/local/include/boost/serialization/split_free.hpp
- /usr/local/include/boost/serialization/split_member.hpp
- /usr/local/include/boost/serialization/static_warning.hpp
- /usr/local/include/boost/serialization/strong_typedef.hpp
- /usr/local/include/boost/serialization/throw_exception.hpp
- /usr/local/include/boost/serialization/tracking.hpp
- /usr/local/include/boost/serialization/tracking_enum.hpp
- /usr/local/include/boost/serialization/traits.hpp
- /usr/local/include/boost/serialization/type_info_implementation.hpp
- /usr/local/include/boost/serialization/utility.hpp
- /usr/local/include/boost/serialization/version.hpp
- /usr/local/include/boost/serialization/void_cast.hpp
- /usr/local/include/boost/serialization/void_cast_fwd.hpp
- /usr/local/include/boost/serialization/wrapper.hpp
  /usr/local/include/boost/shared_array.hpp
  /usr/local/include/boost/shared_ptr.hpp
  /usr/local/include/boost/signals2.hpp
@@ -11571,7 +9480,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o
  /usr/local/include/boost/tokenizer.hpp
  /usr/local/include/boost/tuple/detail/tuple_basic.hpp
  /usr/local/include/boost/tuple/tuple.hpp
- /usr/local/include/boost/tuple/tuple_comparison.hpp
  /usr/local/include/boost/type.hpp
  /usr/local/include/boost/type_index.hpp
  /usr/local/include/boost/type_index/ctti_type_index.hpp
@@ -11598,7 +9506,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o
  /usr/local/include/boost/type_traits/cv_traits.hpp
  /usr/local/include/boost/type_traits/decay.hpp
  /usr/local/include/boost/type_traits/declval.hpp
- /usr/local/include/boost/type_traits/detail/bool_trait_undef.hpp
  /usr/local/include/boost/type_traits/detail/common_arithmetic_type.hpp
  /usr/local/include/boost/type_traits/detail/common_type_impl.hpp
  /usr/local/include/boost/type_traits/detail/composite_member_pointer_type.hpp
@@ -11717,7 +9624,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o
  /usr/local/include/boost/type_traits/make_signed.hpp
  /usr/local/include/boost/type_traits/make_unsigned.hpp
  /usr/local/include/boost/type_traits/make_void.hpp
- /usr/local/include/boost/type_traits/object_traits.hpp
  /usr/local/include/boost/type_traits/promote.hpp
  /usr/local/include/boost/type_traits/rank.hpp
  /usr/local/include/boost/type_traits/remove_all_extents.hpp
@@ -11729,7 +9635,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o
  /usr/local/include/boost/type_traits/remove_reference.hpp
  /usr/local/include/boost/type_traits/remove_volatile.hpp
  /usr/local/include/boost/type_traits/same_traits.hpp
- /usr/local/include/boost/type_traits/transform_traits.hpp
  /usr/local/include/boost/type_traits/type_identity.hpp
  /usr/local/include/boost/type_traits/type_with_alignment.hpp
  /usr/local/include/boost/utility.hpp
@@ -11742,17 +9647,13 @@ CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o
  /usr/local/include/boost/utility/identity_type.hpp
  /usr/local/include/boost/utility/result_of.hpp
  /usr/local/include/boost/utility/swap.hpp
- /usr/local/include/boost/variant.hpp
  /usr/local/include/boost/variant/apply_visitor.hpp
- /usr/local/include/boost/variant/bad_visit.hpp
  /usr/local/include/boost/variant/detail/apply_visitor_binary.hpp
  /usr/local/include/boost/variant/detail/apply_visitor_delayed.hpp
  /usr/local/include/boost/variant/detail/apply_visitor_unary.hpp
  /usr/local/include/boost/variant/detail/backup_holder.hpp
  /usr/local/include/boost/variant/detail/cast_storage.hpp
  /usr/local/include/boost/variant/detail/config.hpp
- /usr/local/include/boost/variant/detail/element_index.hpp
- /usr/local/include/boost/variant/detail/enable_recursive.hpp
  /usr/local/include/boost/variant/detail/enable_recursive_fwd.hpp
  /usr/local/include/boost/variant/detail/forced_return.hpp
  /usr/local/include/boost/variant/detail/generic_result_type.hpp
@@ -11762,18 +9663,13 @@ CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o
  /usr/local/include/boost/variant/detail/make_variant_list.hpp
  /usr/local/include/boost/variant/detail/move.hpp
  /usr/local/include/boost/variant/detail/over_sequence.hpp
- /usr/local/include/boost/variant/detail/substitute.hpp
  /usr/local/include/boost/variant/detail/substitute_fwd.hpp
  /usr/local/include/boost/variant/detail/variant_io.hpp
  /usr/local/include/boost/variant/detail/visitation_impl.hpp
- /usr/local/include/boost/variant/get.hpp
- /usr/local/include/boost/variant/recursive_variant.hpp
- /usr/local/include/boost/variant/recursive_wrapper.hpp
  /usr/local/include/boost/variant/recursive_wrapper_fwd.hpp
  /usr/local/include/boost/variant/static_visitor.hpp
  /usr/local/include/boost/variant/variant.hpp
  /usr/local/include/boost/variant/variant_fwd.hpp
- /usr/local/include/boost/variant/visitor_ptr.hpp
  /usr/local/include/boost/version.hpp
  /usr/local/include/boost/visit_each.hpp
  /usr/local/include/boost/weak_ptr.hpp
@@ -11811,8 +9707,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o
  /usr/local/include/flann/util/saving.h
  /usr/local/include/flann/util/serialization.h
  /usr/local/include/flann/util/timer.h
- /usr/local/include/gmp.h
- /usr/local/include/gmpxx.h
  /usr/local/include/libnoise/basictypes.h
  /usr/local/include/libnoise/exception.h
  /usr/local/include/libnoise/misc.h
@@ -11853,9 +9747,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o
  /usr/local/include/libnoise/module/voronoi.h
  /usr/local/include/libnoise/noise.h
  /usr/local/include/libnoise/noisegen.h
- /usr/local/include/mpfr.h
- /usr/local/include/mpi.h
- /usr/local/include/mpi_portable_platform.h
  /usr/local/include/opencv/highgui.h
  /usr/local/include/opencv2/calib3d/calib3d.hpp
  /usr/local/include/opencv2/contrib/contrib.hpp
@@ -11962,39 +9853,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o
  /usr/local/include/pcl-1.8/pcl/search/organized.h
  /usr/local/include/pcl-1.8/pcl/search/pcl_search.h
  /usr/local/include/pcl-1.8/pcl/search/search.h
- /usr/local/include/tbb/atomic.h
- /usr/local/include/tbb/cache_aligned_allocator.h
- /usr/local/include/tbb/concurrent_hash_map.h
- /usr/local/include/tbb/internal/_mutex_padding.h
- /usr/local/include/tbb/internal/_tbb_hash_compare_impl.h
- /usr/local/include/tbb/internal/_tbb_strings.h
- /usr/local/include/tbb/internal/_tbb_windef.h
- /usr/local/include/tbb/internal/_x86_rtm_rw_mutex_impl.h
- /usr/local/include/tbb/machine/gcc_armv7.h
- /usr/local/include/tbb/machine/gcc_generic.h
- /usr/local/include/tbb/machine/gcc_ia32_common.h
- /usr/local/include/tbb/machine/gcc_itsx.h
- /usr/local/include/tbb/machine/ibm_aix51.h
- /usr/local/include/tbb/machine/icc_generic.h
- /usr/local/include/tbb/machine/linux_common.h
- /usr/local/include/tbb/machine/linux_ia32.h
- /usr/local/include/tbb/machine/linux_ia64.h
- /usr/local/include/tbb/machine/linux_intel64.h
- /usr/local/include/tbb/machine/mac_ppc.h
- /usr/local/include/tbb/machine/macos_common.h
- /usr/local/include/tbb/machine/mic_common.h
- /usr/local/include/tbb/machine/msvc_armv7.h
- /usr/local/include/tbb/machine/msvc_ia32_common.h
- /usr/local/include/tbb/machine/sunos_sparc.h
- /usr/local/include/tbb/machine/windows_ia32.h
- /usr/local/include/tbb/machine/windows_intel64.h
- /usr/local/include/tbb/spin_rw_mutex.h
- /usr/local/include/tbb/tbb_allocator.h
- /usr/local/include/tbb/tbb_config.h
- /usr/local/include/tbb/tbb_exception.h
- /usr/local/include/tbb/tbb_machine.h
- /usr/local/include/tbb/tbb_profiling.h
- /usr/local/include/tbb/tbb_stddef.h
 CMakeFiles/basicGrasp.dir/src/sensor/noiseutils.o
  /Users/rusi/git/Grasp/mjpro150/include/sensor/noiseutils.h
  /Users/rusi/git/Grasp/mjpro150/src/sensor/noiseutils.cpp
@@ -12043,535 +9901,6 @@ CMakeFiles/basicGrasp.dir/src/sensor/noiseutils.o
 CMakeFiles/basicGrasp.dir/src/util/Connector.o
  /Users/rusi/git/Grasp/mjpro150/include/util/Connector.h
  /Users/rusi/git/Grasp/mjpro150/src/util/Connector.cpp
- /usr/local/include/boost/assert.hpp
- /usr/local/include/boost/cerrno.hpp
- /usr/local/include/boost/checked_delete.hpp
- /usr/local/include/boost/config.hpp
- /usr/local/include/boost/config/abi_prefix.hpp
- /usr/local/include/boost/config/abi_suffix.hpp
- /usr/local/include/boost/config/auto_link.hpp
- /usr/local/include/boost/config/compiler/borland.hpp
- /usr/local/include/boost/config/compiler/clang.hpp
- /usr/local/include/boost/config/compiler/codegear.hpp
- /usr/local/include/boost/config/compiler/comeau.hpp
- /usr/local/include/boost/config/compiler/common_edg.hpp
- /usr/local/include/boost/config/compiler/compaq_cxx.hpp
- /usr/local/include/boost/config/compiler/cray.hpp
- /usr/local/include/boost/config/compiler/digitalmars.hpp
- /usr/local/include/boost/config/compiler/gcc.hpp
- /usr/local/include/boost/config/compiler/gcc_xml.hpp
- /usr/local/include/boost/config/compiler/greenhills.hpp
- /usr/local/include/boost/config/compiler/hp_acc.hpp
- /usr/local/include/boost/config/compiler/intel.hpp
- /usr/local/include/boost/config/compiler/kai.hpp
- /usr/local/include/boost/config/compiler/metrowerks.hpp
- /usr/local/include/boost/config/compiler/mpw.hpp
- /usr/local/include/boost/config/compiler/nvcc.hpp
- /usr/local/include/boost/config/compiler/pathscale.hpp
- /usr/local/include/boost/config/compiler/pgi.hpp
- /usr/local/include/boost/config/compiler/sgi_mipspro.hpp
- /usr/local/include/boost/config/compiler/sunpro_cc.hpp
- /usr/local/include/boost/config/compiler/vacpp.hpp
- /usr/local/include/boost/config/compiler/visualc.hpp
- /usr/local/include/boost/config/no_tr1/memory.hpp
- /usr/local/include/boost/config/no_tr1/utility.hpp
- /usr/local/include/boost/config/platform/aix.hpp
- /usr/local/include/boost/config/platform/amigaos.hpp
- /usr/local/include/boost/config/platform/beos.hpp
- /usr/local/include/boost/config/platform/bsd.hpp
- /usr/local/include/boost/config/platform/cray.hpp
- /usr/local/include/boost/config/platform/cygwin.hpp
- /usr/local/include/boost/config/platform/hpux.hpp
- /usr/local/include/boost/config/platform/irix.hpp
- /usr/local/include/boost/config/platform/linux.hpp
- /usr/local/include/boost/config/platform/macos.hpp
- /usr/local/include/boost/config/platform/qnxnto.hpp
- /usr/local/include/boost/config/platform/solaris.hpp
- /usr/local/include/boost/config/platform/symbian.hpp
- /usr/local/include/boost/config/platform/vms.hpp
- /usr/local/include/boost/config/platform/vxworks.hpp
- /usr/local/include/boost/config/platform/win32.hpp
- /usr/local/include/boost/config/posix_features.hpp
- /usr/local/include/boost/config/select_compiler_config.hpp
- /usr/local/include/boost/config/select_platform_config.hpp
- /usr/local/include/boost/config/select_stdlib_config.hpp
- /usr/local/include/boost/config/stdlib/dinkumware.hpp
- /usr/local/include/boost/config/stdlib/libcomo.hpp
- /usr/local/include/boost/config/stdlib/libcpp.hpp
- /usr/local/include/boost/config/stdlib/libstdcpp3.hpp
- /usr/local/include/boost/config/stdlib/modena.hpp
- /usr/local/include/boost/config/stdlib/msl.hpp
- /usr/local/include/boost/config/stdlib/roguewave.hpp
- /usr/local/include/boost/config/stdlib/sgi.hpp
- /usr/local/include/boost/config/stdlib/stlport.hpp
- /usr/local/include/boost/config/stdlib/vacpp.hpp
- /usr/local/include/boost/config/suffix.hpp
- /usr/local/include/boost/config/user.hpp
- /usr/local/include/boost/config/warning_disable.hpp
- /usr/local/include/boost/core/addressof.hpp
- /usr/local/include/boost/core/checked_delete.hpp
- /usr/local/include/boost/core/demangle.hpp
- /usr/local/include/boost/core/enable_if.hpp
- /usr/local/include/boost/core/noncopyable.hpp
- /usr/local/include/boost/core/scoped_enum.hpp
- /usr/local/include/boost/core/typeinfo.hpp
- /usr/local/include/boost/cstdint.hpp
- /usr/local/include/boost/current_function.hpp
- /usr/local/include/boost/detail/bitmask.hpp
- /usr/local/include/boost/detail/indirect_traits.hpp
- /usr/local/include/boost/detail/iterator.hpp
- /usr/local/include/boost/detail/scoped_enum_emulation.hpp
- /usr/local/include/boost/detail/sp_typeinfo.hpp
- /usr/local/include/boost/detail/workaround.hpp
- /usr/local/include/boost/exception/exception.hpp
- /usr/local/include/boost/filesystem.hpp
- /usr/local/include/boost/filesystem/config.hpp
- /usr/local/include/boost/filesystem/convenience.hpp
- /usr/local/include/boost/filesystem/fstream.hpp
- /usr/local/include/boost/filesystem/operations.hpp
- /usr/local/include/boost/filesystem/path.hpp
- /usr/local/include/boost/filesystem/path_traits.hpp
- /usr/local/include/boost/filesystem/string_file.hpp
- /usr/local/include/boost/functional/hash/hash_fwd.hpp
- /usr/local/include/boost/functional/hash_fwd.hpp
- /usr/local/include/boost/io/detail/quoted_manip.hpp
- /usr/local/include/boost/io/ios_state.hpp
- /usr/local/include/boost/io_fwd.hpp
- /usr/local/include/boost/iterator.hpp
- /usr/local/include/boost/iterator/detail/config_def.hpp
- /usr/local/include/boost/iterator/detail/config_undef.hpp
- /usr/local/include/boost/iterator/detail/enable_if.hpp
- /usr/local/include/boost/iterator/detail/facade_iterator_category.hpp
- /usr/local/include/boost/iterator/interoperable.hpp
- /usr/local/include/boost/iterator/iterator_categories.hpp
- /usr/local/include/boost/iterator/iterator_facade.hpp
- /usr/local/include/boost/iterator/iterator_traits.hpp
- /usr/local/include/boost/limits.hpp
- /usr/local/include/boost/mpl/always.hpp
- /usr/local/include/boost/mpl/and.hpp
- /usr/local/include/boost/mpl/apply.hpp
- /usr/local/include/boost/mpl/apply_fwd.hpp
- /usr/local/include/boost/mpl/apply_wrap.hpp
- /usr/local/include/boost/mpl/arg.hpp
- /usr/local/include/boost/mpl/arg_fwd.hpp
- /usr/local/include/boost/mpl/assert.hpp
- /usr/local/include/boost/mpl/aux_/adl_barrier.hpp
- /usr/local/include/boost/mpl/aux_/arg_typedef.hpp
- /usr/local/include/boost/mpl/aux_/arity.hpp
- /usr/local/include/boost/mpl/aux_/arity_spec.hpp
- /usr/local/include/boost/mpl/aux_/common_name_wknd.hpp
- /usr/local/include/boost/mpl/aux_/config/adl.hpp
- /usr/local/include/boost/mpl/aux_/config/arrays.hpp
- /usr/local/include/boost/mpl/aux_/config/bcc.hpp
- /usr/local/include/boost/mpl/aux_/config/bind.hpp
- /usr/local/include/boost/mpl/aux_/config/compiler.hpp
- /usr/local/include/boost/mpl/aux_/config/ctps.hpp
- /usr/local/include/boost/mpl/aux_/config/dmc_ambiguous_ctps.hpp
- /usr/local/include/boost/mpl/aux_/config/dtp.hpp
- /usr/local/include/boost/mpl/aux_/config/eti.hpp
- /usr/local/include/boost/mpl/aux_/config/gcc.hpp
- /usr/local/include/boost/mpl/aux_/config/gpu.hpp
- /usr/local/include/boost/mpl/aux_/config/has_apply.hpp
- /usr/local/include/boost/mpl/aux_/config/has_xxx.hpp
- /usr/local/include/boost/mpl/aux_/config/integral.hpp
- /usr/local/include/boost/mpl/aux_/config/intel.hpp
- /usr/local/include/boost/mpl/aux_/config/lambda.hpp
- /usr/local/include/boost/mpl/aux_/config/msvc.hpp
- /usr/local/include/boost/mpl/aux_/config/msvc_typename.hpp
- /usr/local/include/boost/mpl/aux_/config/nttp.hpp
- /usr/local/include/boost/mpl/aux_/config/overload_resolution.hpp
- /usr/local/include/boost/mpl/aux_/config/pp_counter.hpp
- /usr/local/include/boost/mpl/aux_/config/preprocessor.hpp
- /usr/local/include/boost/mpl/aux_/config/static_constant.hpp
- /usr/local/include/boost/mpl/aux_/config/ttp.hpp
- /usr/local/include/boost/mpl/aux_/config/use_preprocessed.hpp
- /usr/local/include/boost/mpl/aux_/config/workaround.hpp
- /usr/local/include/boost/mpl/aux_/count_args.hpp
- /usr/local/include/boost/mpl/aux_/full_lambda.hpp
- /usr/local/include/boost/mpl/aux_/has_apply.hpp
- /usr/local/include/boost/mpl/aux_/has_rebind.hpp
- /usr/local/include/boost/mpl/aux_/has_type.hpp
- /usr/local/include/boost/mpl/aux_/include_preprocessed.hpp
- /usr/local/include/boost/mpl/aux_/integral_wrapper.hpp
- /usr/local/include/boost/mpl/aux_/lambda_arity_param.hpp
- /usr/local/include/boost/mpl/aux_/lambda_no_ctps.hpp
- /usr/local/include/boost/mpl/aux_/lambda_support.hpp
- /usr/local/include/boost/mpl/aux_/logical_op.hpp
- /usr/local/include/boost/mpl/aux_/msvc_dtw.hpp
- /usr/local/include/boost/mpl/aux_/msvc_is_class.hpp
- /usr/local/include/boost/mpl/aux_/msvc_never_true.hpp
- /usr/local/include/boost/mpl/aux_/na.hpp
- /usr/local/include/boost/mpl/aux_/na_assert.hpp
- /usr/local/include/boost/mpl/aux_/na_fwd.hpp
- /usr/local/include/boost/mpl/aux_/na_spec.hpp
- /usr/local/include/boost/mpl/aux_/nested_type_wknd.hpp
- /usr/local/include/boost/mpl/aux_/nttp_decl.hpp
- /usr/local/include/boost/mpl/aux_/preprocessor/add.hpp
- /usr/local/include/boost/mpl/aux_/preprocessor/def_params_tail.hpp
- /usr/local/include/boost/mpl/aux_/preprocessor/default_params.hpp
- /usr/local/include/boost/mpl/aux_/preprocessor/enum.hpp
- /usr/local/include/boost/mpl/aux_/preprocessor/ext_params.hpp
- /usr/local/include/boost/mpl/aux_/preprocessor/filter_params.hpp
- /usr/local/include/boost/mpl/aux_/preprocessor/params.hpp
- /usr/local/include/boost/mpl/aux_/preprocessor/partial_spec_params.hpp
- /usr/local/include/boost/mpl/aux_/preprocessor/range.hpp
- /usr/local/include/boost/mpl/aux_/preprocessor/repeat.hpp
- /usr/local/include/boost/mpl/aux_/preprocessor/sub.hpp
- /usr/local/include/boost/mpl/aux_/preprocessor/tuple.hpp
- /usr/local/include/boost/mpl/aux_/static_cast.hpp
- /usr/local/include/boost/mpl/aux_/template_arity.hpp
- /usr/local/include/boost/mpl/aux_/template_arity_fwd.hpp
- /usr/local/include/boost/mpl/aux_/type_wrapper.hpp
- /usr/local/include/boost/mpl/aux_/value_wknd.hpp
- /usr/local/include/boost/mpl/aux_/yes_no.hpp
- /usr/local/include/boost/mpl/bind.hpp
- /usr/local/include/boost/mpl/bind_fwd.hpp
- /usr/local/include/boost/mpl/bool.hpp
- /usr/local/include/boost/mpl/bool_fwd.hpp
- /usr/local/include/boost/mpl/eval_if.hpp
- /usr/local/include/boost/mpl/has_xxx.hpp
- /usr/local/include/boost/mpl/identity.hpp
- /usr/local/include/boost/mpl/if.hpp
- /usr/local/include/boost/mpl/int.hpp
- /usr/local/include/boost/mpl/int_fwd.hpp
- /usr/local/include/boost/mpl/integral_c_tag.hpp
- /usr/local/include/boost/mpl/is_placeholder.hpp
- /usr/local/include/boost/mpl/lambda.hpp
- /usr/local/include/boost/mpl/lambda_fwd.hpp
- /usr/local/include/boost/mpl/limits/arity.hpp
- /usr/local/include/boost/mpl/next.hpp
- /usr/local/include/boost/mpl/next_prior.hpp
- /usr/local/include/boost/mpl/not.hpp
- /usr/local/include/boost/mpl/or.hpp
- /usr/local/include/boost/mpl/placeholders.hpp
- /usr/local/include/boost/mpl/protect.hpp
- /usr/local/include/boost/mpl/quote.hpp
- /usr/local/include/boost/mpl/void.hpp
- /usr/local/include/boost/mpl/void_fwd.hpp
- /usr/local/include/boost/noncopyable.hpp
- /usr/local/include/boost/predef.h
- /usr/local/include/boost/predef/architecture.h
- /usr/local/include/boost/predef/architecture/alpha.h
- /usr/local/include/boost/predef/architecture/arm.h
- /usr/local/include/boost/predef/architecture/blackfin.h
- /usr/local/include/boost/predef/architecture/convex.h
- /usr/local/include/boost/predef/architecture/ia64.h
- /usr/local/include/boost/predef/architecture/m68k.h
- /usr/local/include/boost/predef/architecture/mips.h
- /usr/local/include/boost/predef/architecture/parisc.h
- /usr/local/include/boost/predef/architecture/ppc.h
- /usr/local/include/boost/predef/architecture/pyramid.h
- /usr/local/include/boost/predef/architecture/rs6k.h
- /usr/local/include/boost/predef/architecture/sparc.h
- /usr/local/include/boost/predef/architecture/superh.h
- /usr/local/include/boost/predef/architecture/sys370.h
- /usr/local/include/boost/predef/architecture/sys390.h
- /usr/local/include/boost/predef/architecture/x86.h
- /usr/local/include/boost/predef/architecture/x86/32.h
- /usr/local/include/boost/predef/architecture/x86/64.h
- /usr/local/include/boost/predef/architecture/z.h
- /usr/local/include/boost/predef/compiler.h
- /usr/local/include/boost/predef/compiler/borland.h
- /usr/local/include/boost/predef/compiler/clang.h
- /usr/local/include/boost/predef/compiler/comeau.h
- /usr/local/include/boost/predef/compiler/compaq.h
- /usr/local/include/boost/predef/compiler/diab.h
- /usr/local/include/boost/predef/compiler/digitalmars.h
- /usr/local/include/boost/predef/compiler/dignus.h
- /usr/local/include/boost/predef/compiler/edg.h
- /usr/local/include/boost/predef/compiler/ekopath.h
- /usr/local/include/boost/predef/compiler/gcc.h
- /usr/local/include/boost/predef/compiler/gcc_xml.h
- /usr/local/include/boost/predef/compiler/greenhills.h
- /usr/local/include/boost/predef/compiler/hp_acc.h
- /usr/local/include/boost/predef/compiler/iar.h
- /usr/local/include/boost/predef/compiler/ibm.h
- /usr/local/include/boost/predef/compiler/intel.h
- /usr/local/include/boost/predef/compiler/kai.h
- /usr/local/include/boost/predef/compiler/llvm.h
- /usr/local/include/boost/predef/compiler/metaware.h
- /usr/local/include/boost/predef/compiler/metrowerks.h
- /usr/local/include/boost/predef/compiler/microtec.h
- /usr/local/include/boost/predef/compiler/mpw.h
- /usr/local/include/boost/predef/compiler/palm.h
- /usr/local/include/boost/predef/compiler/pgi.h
- /usr/local/include/boost/predef/compiler/sgi_mipspro.h
- /usr/local/include/boost/predef/compiler/sunpro.h
- /usr/local/include/boost/predef/compiler/tendra.h
- /usr/local/include/boost/predef/compiler/visualc.h
- /usr/local/include/boost/predef/compiler/watcom.h
- /usr/local/include/boost/predef/detail/_cassert.h
- /usr/local/include/boost/predef/detail/_exception.h
- /usr/local/include/boost/predef/detail/comp_detected.h
- /usr/local/include/boost/predef/detail/os_detected.h
- /usr/local/include/boost/predef/detail/platform_detected.h
- /usr/local/include/boost/predef/detail/test.h
- /usr/local/include/boost/predef/hardware.h
- /usr/local/include/boost/predef/hardware/simd.h
- /usr/local/include/boost/predef/hardware/simd/arm.h
- /usr/local/include/boost/predef/hardware/simd/arm/versions.h
- /usr/local/include/boost/predef/hardware/simd/ppc.h
- /usr/local/include/boost/predef/hardware/simd/ppc/versions.h
- /usr/local/include/boost/predef/hardware/simd/x86.h
- /usr/local/include/boost/predef/hardware/simd/x86/versions.h
- /usr/local/include/boost/predef/hardware/simd/x86_amd.h
- /usr/local/include/boost/predef/hardware/simd/x86_amd/versions.h
- /usr/local/include/boost/predef/language.h
- /usr/local/include/boost/predef/language/objc.h
- /usr/local/include/boost/predef/language/stdc.h
- /usr/local/include/boost/predef/language/stdcpp.h
- /usr/local/include/boost/predef/library.h
- /usr/local/include/boost/predef/library/c.h
- /usr/local/include/boost/predef/library/c/_prefix.h
- /usr/local/include/boost/predef/library/c/gnu.h
- /usr/local/include/boost/predef/library/c/uc.h
- /usr/local/include/boost/predef/library/c/vms.h
- /usr/local/include/boost/predef/library/c/zos.h
- /usr/local/include/boost/predef/library/std.h
- /usr/local/include/boost/predef/library/std/_prefix.h
- /usr/local/include/boost/predef/library/std/cxx.h
- /usr/local/include/boost/predef/library/std/dinkumware.h
- /usr/local/include/boost/predef/library/std/libcomo.h
- /usr/local/include/boost/predef/library/std/modena.h
- /usr/local/include/boost/predef/library/std/msl.h
- /usr/local/include/boost/predef/library/std/roguewave.h
- /usr/local/include/boost/predef/library/std/sgi.h
- /usr/local/include/boost/predef/library/std/stdcpp3.h
- /usr/local/include/boost/predef/library/std/stlport.h
- /usr/local/include/boost/predef/library/std/vacpp.h
- /usr/local/include/boost/predef/make.h
- /usr/local/include/boost/predef/os.h
- /usr/local/include/boost/predef/os/aix.h
- /usr/local/include/boost/predef/os/amigaos.h
- /usr/local/include/boost/predef/os/android.h
- /usr/local/include/boost/predef/os/beos.h
- /usr/local/include/boost/predef/os/bsd.h
- /usr/local/include/boost/predef/os/bsd/bsdi.h
- /usr/local/include/boost/predef/os/bsd/dragonfly.h
- /usr/local/include/boost/predef/os/bsd/free.h
- /usr/local/include/boost/predef/os/bsd/net.h
- /usr/local/include/boost/predef/os/bsd/open.h
- /usr/local/include/boost/predef/os/cygwin.h
- /usr/local/include/boost/predef/os/haiku.h
- /usr/local/include/boost/predef/os/hpux.h
- /usr/local/include/boost/predef/os/ios.h
- /usr/local/include/boost/predef/os/irix.h
- /usr/local/include/boost/predef/os/linux.h
- /usr/local/include/boost/predef/os/macos.h
- /usr/local/include/boost/predef/os/os400.h
- /usr/local/include/boost/predef/os/qnxnto.h
- /usr/local/include/boost/predef/os/solaris.h
- /usr/local/include/boost/predef/os/unix.h
- /usr/local/include/boost/predef/os/vms.h
- /usr/local/include/boost/predef/os/windows.h
- /usr/local/include/boost/predef/other.h
- /usr/local/include/boost/predef/other/endian.h
- /usr/local/include/boost/predef/platform.h
- /usr/local/include/boost/predef/platform/mingw.h
- /usr/local/include/boost/predef/platform/windows_desktop.h
- /usr/local/include/boost/predef/platform/windows_phone.h
- /usr/local/include/boost/predef/platform/windows_runtime.h
- /usr/local/include/boost/predef/platform/windows_store.h
- /usr/local/include/boost/predef/version.h
- /usr/local/include/boost/predef/version_number.h
- /usr/local/include/boost/preprocessor/arithmetic/add.hpp
- /usr/local/include/boost/preprocessor/arithmetic/dec.hpp
- /usr/local/include/boost/preprocessor/arithmetic/inc.hpp
- /usr/local/include/boost/preprocessor/arithmetic/sub.hpp
- /usr/local/include/boost/preprocessor/array/data.hpp
- /usr/local/include/boost/preprocessor/array/elem.hpp
- /usr/local/include/boost/preprocessor/array/size.hpp
- /usr/local/include/boost/preprocessor/cat.hpp
- /usr/local/include/boost/preprocessor/comma_if.hpp
- /usr/local/include/boost/preprocessor/comparison/not_equal.hpp
- /usr/local/include/boost/preprocessor/config/config.hpp
- /usr/local/include/boost/preprocessor/control/detail/dmc/while.hpp
- /usr/local/include/boost/preprocessor/control/detail/edg/while.hpp
- /usr/local/include/boost/preprocessor/control/detail/msvc/while.hpp
- /usr/local/include/boost/preprocessor/control/detail/while.hpp
- /usr/local/include/boost/preprocessor/control/expr_if.hpp
- /usr/local/include/boost/preprocessor/control/expr_iif.hpp
- /usr/local/include/boost/preprocessor/control/if.hpp
- /usr/local/include/boost/preprocessor/control/iif.hpp
- /usr/local/include/boost/preprocessor/control/while.hpp
- /usr/local/include/boost/preprocessor/debug/error.hpp
- /usr/local/include/boost/preprocessor/dec.hpp
- /usr/local/include/boost/preprocessor/detail/auto_rec.hpp
- /usr/local/include/boost/preprocessor/detail/check.hpp
- /usr/local/include/boost/preprocessor/detail/dmc/auto_rec.hpp
- /usr/local/include/boost/preprocessor/detail/is_binary.hpp
- /usr/local/include/boost/preprocessor/detail/split.hpp
- /usr/local/include/boost/preprocessor/empty.hpp
- /usr/local/include/boost/preprocessor/enum_shifted_params.hpp
- /usr/local/include/boost/preprocessor/expr_if.hpp
- /usr/local/include/boost/preprocessor/facilities/detail/is_empty.hpp
- /usr/local/include/boost/preprocessor/facilities/empty.hpp
- /usr/local/include/boost/preprocessor/facilities/expand.hpp
- /usr/local/include/boost/preprocessor/facilities/identity.hpp
- /usr/local/include/boost/preprocessor/facilities/is_1.hpp
- /usr/local/include/boost/preprocessor/facilities/is_empty.hpp
- /usr/local/include/boost/preprocessor/facilities/is_empty_variadic.hpp
- /usr/local/include/boost/preprocessor/facilities/overload.hpp
- /usr/local/include/boost/preprocessor/identity.hpp
- /usr/local/include/boost/preprocessor/inc.hpp
- /usr/local/include/boost/preprocessor/iterate.hpp
- /usr/local/include/boost/preprocessor/iteration/iterate.hpp
- /usr/local/include/boost/preprocessor/list/adt.hpp
- /usr/local/include/boost/preprocessor/list/detail/dmc/fold_left.hpp
- /usr/local/include/boost/preprocessor/list/detail/edg/fold_left.hpp
- /usr/local/include/boost/preprocessor/list/detail/edg/fold_right.hpp
- /usr/local/include/boost/preprocessor/list/detail/fold_left.hpp
- /usr/local/include/boost/preprocessor/list/detail/fold_right.hpp
- /usr/local/include/boost/preprocessor/list/fold_left.hpp
- /usr/local/include/boost/preprocessor/list/fold_right.hpp
- /usr/local/include/boost/preprocessor/list/for_each_i.hpp
- /usr/local/include/boost/preprocessor/list/reverse.hpp
- /usr/local/include/boost/preprocessor/logical/and.hpp
- /usr/local/include/boost/preprocessor/logical/bitand.hpp
- /usr/local/include/boost/preprocessor/logical/bool.hpp
- /usr/local/include/boost/preprocessor/logical/compl.hpp
- /usr/local/include/boost/preprocessor/punctuation/comma.hpp
- /usr/local/include/boost/preprocessor/punctuation/comma_if.hpp
- /usr/local/include/boost/preprocessor/punctuation/detail/is_begin_parens.hpp
- /usr/local/include/boost/preprocessor/punctuation/is_begin_parens.hpp
- /usr/local/include/boost/preprocessor/repeat.hpp
- /usr/local/include/boost/preprocessor/repetition/detail/dmc/for.hpp
- /usr/local/include/boost/preprocessor/repetition/detail/edg/for.hpp
- /usr/local/include/boost/preprocessor/repetition/detail/for.hpp
- /usr/local/include/boost/preprocessor/repetition/detail/msvc/for.hpp
- /usr/local/include/boost/preprocessor/repetition/enum_params.hpp
- /usr/local/include/boost/preprocessor/repetition/enum_shifted_params.hpp
- /usr/local/include/boost/preprocessor/repetition/enum_trailing_params.hpp
- /usr/local/include/boost/preprocessor/repetition/for.hpp
- /usr/local/include/boost/preprocessor/repetition/repeat.hpp
- /usr/local/include/boost/preprocessor/seq/detail/is_empty.hpp
- /usr/local/include/boost/preprocessor/seq/detail/split.hpp
- /usr/local/include/boost/preprocessor/seq/elem.hpp
- /usr/local/include/boost/preprocessor/seq/first_n.hpp
- /usr/local/include/boost/preprocessor/seq/fold_left.hpp
- /usr/local/include/boost/preprocessor/seq/rest_n.hpp
- /usr/local/include/boost/preprocessor/seq/seq.hpp
- /usr/local/include/boost/preprocessor/seq/size.hpp
- /usr/local/include/boost/preprocessor/seq/subseq.hpp
- /usr/local/include/boost/preprocessor/slot/detail/def.hpp
- /usr/local/include/boost/preprocessor/slot/slot.hpp
- /usr/local/include/boost/preprocessor/stringize.hpp
- /usr/local/include/boost/preprocessor/tuple/detail/is_single_return.hpp
- /usr/local/include/boost/preprocessor/tuple/eat.hpp
- /usr/local/include/boost/preprocessor/tuple/elem.hpp
- /usr/local/include/boost/preprocessor/tuple/rem.hpp
- /usr/local/include/boost/preprocessor/tuple/size.hpp
- /usr/local/include/boost/preprocessor/tuple/to_list.hpp
- /usr/local/include/boost/preprocessor/variadic/elem.hpp
- /usr/local/include/boost/preprocessor/variadic/size.hpp
- /usr/local/include/boost/range/config.hpp
- /usr/local/include/boost/range/const_iterator.hpp
- /usr/local/include/boost/range/detail/extract_optional_type.hpp
- /usr/local/include/boost/range/detail/msvc_has_iterator_workaround.hpp
- /usr/local/include/boost/range/mutable_iterator.hpp
- /usr/local/include/boost/range/range_fwd.hpp
- /usr/local/include/boost/shared_ptr.hpp
- /usr/local/include/boost/smart_ptr/bad_weak_ptr.hpp
- /usr/local/include/boost/smart_ptr/detail/lightweight_mutex.hpp
- /usr/local/include/boost/smart_ptr/detail/lwm_nop.hpp
- /usr/local/include/boost/smart_ptr/detail/lwm_pthreads.hpp
- /usr/local/include/boost/smart_ptr/detail/lwm_win32_cs.hpp
- /usr/local/include/boost/smart_ptr/detail/operator_bool.hpp
- /usr/local/include/boost/smart_ptr/detail/quick_allocator.hpp
- /usr/local/include/boost/smart_ptr/detail/shared_count.hpp
- /usr/local/include/boost/smart_ptr/detail/sp_convertible.hpp
- /usr/local/include/boost/smart_ptr/detail/sp_counted_base.hpp
- /usr/local/include/boost/smart_ptr/detail/sp_counted_base_acc_ia64.hpp
- /usr/local/include/boost/smart_ptr/detail/sp_counted_base_aix.hpp
- /usr/local/include/boost/smart_ptr/detail/sp_counted_base_clang.hpp
- /usr/local/include/boost/smart_ptr/detail/sp_counted_base_cw_ppc.hpp
- /usr/local/include/boost/smart_ptr/detail/sp_counted_base_gcc_ia64.hpp
- /usr/local/include/boost/smart_ptr/detail/sp_counted_base_gcc_mips.hpp
- /usr/local/include/boost/smart_ptr/detail/sp_counted_base_gcc_ppc.hpp
- /usr/local/include/boost/smart_ptr/detail/sp_counted_base_gcc_sparc.hpp
- /usr/local/include/boost/smart_ptr/detail/sp_counted_base_gcc_x86.hpp
- /usr/local/include/boost/smart_ptr/detail/sp_counted_base_nt.hpp
- /usr/local/include/boost/smart_ptr/detail/sp_counted_base_pt.hpp
- /usr/local/include/boost/smart_ptr/detail/sp_counted_base_snc_ps3.hpp
- /usr/local/include/boost/smart_ptr/detail/sp_counted_base_spin.hpp
- /usr/local/include/boost/smart_ptr/detail/sp_counted_base_std_atomic.hpp
- /usr/local/include/boost/smart_ptr/detail/sp_counted_base_sync.hpp
- /usr/local/include/boost/smart_ptr/detail/sp_counted_base_vacpp_ppc.hpp
- /usr/local/include/boost/smart_ptr/detail/sp_counted_base_w32.hpp
- /usr/local/include/boost/smart_ptr/detail/sp_counted_impl.hpp
- /usr/local/include/boost/smart_ptr/detail/sp_disable_deprecated.hpp
- /usr/local/include/boost/smart_ptr/detail/sp_has_sync.hpp
- /usr/local/include/boost/smart_ptr/detail/sp_interlocked.hpp
- /usr/local/include/boost/smart_ptr/detail/sp_noexcept.hpp
- /usr/local/include/boost/smart_ptr/detail/sp_nullptr_t.hpp
- /usr/local/include/boost/smart_ptr/detail/spinlock.hpp
- /usr/local/include/boost/smart_ptr/detail/spinlock_gcc_arm.hpp
- /usr/local/include/boost/smart_ptr/detail/spinlock_nt.hpp
- /usr/local/include/boost/smart_ptr/detail/spinlock_pool.hpp
- /usr/local/include/boost/smart_ptr/detail/spinlock_pt.hpp
- /usr/local/include/boost/smart_ptr/detail/spinlock_std_atomic.hpp
- /usr/local/include/boost/smart_ptr/detail/spinlock_sync.hpp
- /usr/local/include/boost/smart_ptr/detail/spinlock_w32.hpp
- /usr/local/include/boost/smart_ptr/detail/yield_k.hpp
- /usr/local/include/boost/smart_ptr/shared_ptr.hpp
- /usr/local/include/boost/static_assert.hpp
- /usr/local/include/boost/system/api_config.hpp
- /usr/local/include/boost/system/config.hpp
- /usr/local/include/boost/system/detail/error_code.ipp
- /usr/local/include/boost/system/detail/local_free_on_destruction.hpp
- /usr/local/include/boost/system/error_code.hpp
- /usr/local/include/boost/system/system_error.hpp
- /usr/local/include/boost/throw_exception.hpp
- /usr/local/include/boost/type_traits/add_const.hpp
- /usr/local/include/boost/type_traits/add_lvalue_reference.hpp
- /usr/local/include/boost/type_traits/add_pointer.hpp
- /usr/local/include/boost/type_traits/add_reference.hpp
- /usr/local/include/boost/type_traits/add_rvalue_reference.hpp
- /usr/local/include/boost/type_traits/alignment_of.hpp
- /usr/local/include/boost/type_traits/conditional.hpp
- /usr/local/include/boost/type_traits/decay.hpp
- /usr/local/include/boost/type_traits/declval.hpp
- /usr/local/include/boost/type_traits/detail/config.hpp
- /usr/local/include/boost/type_traits/detail/is_function_ptr_helper.hpp
- /usr/local/include/boost/type_traits/detail/is_function_ptr_tester.hpp
- /usr/local/include/boost/type_traits/detail/is_mem_fun_pointer_impl.hpp
- /usr/local/include/boost/type_traits/detail/is_mem_fun_pointer_tester.hpp
- /usr/local/include/boost/type_traits/detail/yes_no_type.hpp
- /usr/local/include/boost/type_traits/integral_constant.hpp
- /usr/local/include/boost/type_traits/intrinsics.hpp
- /usr/local/include/boost/type_traits/is_abstract.hpp
- /usr/local/include/boost/type_traits/is_arithmetic.hpp
- /usr/local/include/boost/type_traits/is_array.hpp
- /usr/local/include/boost/type_traits/is_class.hpp
- /usr/local/include/boost/type_traits/is_const.hpp
- /usr/local/include/boost/type_traits/is_convertible.hpp
- /usr/local/include/boost/type_traits/is_enum.hpp
- /usr/local/include/boost/type_traits/is_floating_point.hpp
- /usr/local/include/boost/type_traits/is_function.hpp
- /usr/local/include/boost/type_traits/is_integral.hpp
- /usr/local/include/boost/type_traits/is_lvalue_reference.hpp
- /usr/local/include/boost/type_traits/is_member_function_pointer.hpp
- /usr/local/include/boost/type_traits/is_member_pointer.hpp
- /usr/local/include/boost/type_traits/is_pod.hpp
- /usr/local/include/boost/type_traits/is_pointer.hpp
- /usr/local/include/boost/type_traits/is_polymorphic.hpp
- /usr/local/include/boost/type_traits/is_reference.hpp
- /usr/local/include/boost/type_traits/is_rvalue_reference.hpp
- /usr/local/include/boost/type_traits/is_same.hpp
- /usr/local/include/boost/type_traits/is_scalar.hpp
- /usr/local/include/boost/type_traits/is_union.hpp
- /usr/local/include/boost/type_traits/is_void.hpp
- /usr/local/include/boost/type_traits/is_volatile.hpp
- /usr/local/include/boost/type_traits/remove_bounds.hpp
- /usr/local/include/boost/type_traits/remove_const.hpp
- /usr/local/include/boost/type_traits/remove_cv.hpp
- /usr/local/include/boost/type_traits/remove_extent.hpp
- /usr/local/include/boost/type_traits/remove_pointer.hpp
- /usr/local/include/boost/type_traits/remove_reference.hpp
- /usr/local/include/boost/type_traits/type_with_alignment.hpp
- /usr/local/include/boost/utility/addressof.hpp
- /usr/local/include/boost/utility/enable_if.hpp
- /usr/local/include/boost/version.hpp
  /usr/local/include/curl/curl.h
  /usr/local/include/curl/curlver.h
  /usr/local/include/curl/easy.h

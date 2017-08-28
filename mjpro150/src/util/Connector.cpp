@@ -14,7 +14,10 @@
 #include <curlpp/Options.hpp>
 #include <curlpp/Exception.hpp>
 #include <curlpp/Infos.hpp>
-#include <boost/filesystem.hpp>
+#include <thread>
+#include <chrono>
+#include <stdio.h>
+#include <unistd.h>
 
 namespace Grasp {
 
@@ -27,7 +30,7 @@ Connector::~Connector() {
 }
 
 // Function that uploads a file to the server.
-bool Connector::Uploadfile(const char *name){
+bool Connector::UploadFile(const char *name){
 	bool flag = false;
 	try{
 		curlpp::Cleanup cleaner;
@@ -78,7 +81,7 @@ bool Connector::Uploadfile(const char *name){
 
 		// Close mystream and remove file.
 		myStream.close();
-		boost::filesystem::remove(name);
+		remove(name);
 	}
     catch ( curlpp::LogicError & e ) {
       std::cout << e.what() << std::endl;
@@ -87,6 +90,26 @@ bool Connector::Uploadfile(const char *name){
       std::cout << e.what() << std::endl;
     }
     return flag;
+}
+
+bool Connector::UploadFileToDropbox(const char * fileId, const char *name){
+	char newName[100];
+	strcpy(newName, DROPBOX_FOLDER);
+	strcat(newName, "points/");
+	strcat(newName, fileId);
+	strcat(newName, ".pcd");
+	int result = rename(name, newName);
+	if ( result == 0 )
+	    puts ( "File successfully uploaded to Dropbox." );
+	else
+	    perror( "Error Uploading file. Is dropbox path correct?" );
+	return true;
+}
+
+bool Connector::DownloadFileFromDropbox(const char *name){
+	bool flag = access( name, F_OK ) != -1;
+	std::this_thread::sleep_for(std::chrono::milliseconds(100));
+	return flag;
 }
 
 // Function that uploads a file to the server.
@@ -149,7 +172,7 @@ bool Connector::DownloadFile(const char *name){
 		else
 		{
 			// Delete file, as we couldn't download anything.
-			boost::filesystem::remove(fileName);
+			remove(fileName);
 			std::cout<<"Connector Download failed: "<<code<<", filename: "<<fileName<<std::endl;
 			return false;
 		}
@@ -181,7 +204,7 @@ bool Connector::DownloadFile(const char *name){
 			newOutStream.close();
 
 			// Delete temp file.
-			boost::filesystem::remove(fileName);
+			remove(fileName);
 		}
 	}
     catch ( curlpp::LogicError & e ) {

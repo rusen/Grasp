@@ -36,11 +36,11 @@ public:
 	int camSize[2] = {480, 640};
 	unsigned char depthBuffer[640*480*3];
 	char fileId [10]; // Unique file id.
-	char logFile [50]; // Log file
-	char pointFile [50]; // Point cloud data file (.pcd)
-	char rgbFile [50];  // RGB file (.png)
-	char resultFile[50]; // Grasp success/diagnostics file (.gd)
-	char trajectoryFile[50]; // Trajectory file (.trj)
+	char logFile [100]; // Log file
+	char pointFile [100]; // Point cloud data file (.pcd)
+	char rgbFile [100];  // RGB file (.png)
+	char resultFile[100]; // Grasp success/diagnostics file (.gd)
+	char trajectoryFile[100]; // Trajectory file (.trj)
 
 	// Simulator allocation
 	Simulate* Simulator = NULL;
@@ -50,6 +50,11 @@ public:
 
 	// Compute trajectory.
 	void ComputeTrajectory();
+
+	// Gets the trajectory from the data trajectory file,
+	// and assigns it as next trajectory.
+	// This function also performs linear interpolation.
+	void AssignNextTrajectory();
 
 	// Follow computed trajectory.
 	bool FollowTrajectory(const mjModel* m, mjData* d, approachType type);
@@ -61,6 +66,7 @@ private:
 	state graspState = initial;
 	bool startFlag = false;
 	bool finishFlag = false;
+	bool uploadFlag = false;
 	bool fastSim = false; // If true, we're in fast simulation mode -  no unnecessary work.
 
 	// Steps to perform approach.

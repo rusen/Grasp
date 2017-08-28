@@ -61,10 +61,9 @@
 
 #include <string>
 #include <stdio.h>
-
-#ifdef HAVE_OPENMP
-#include <omp.h>
-#endif
+#include <glm/gtc/type_ptr.hpp>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 
 //static unsigned countf = 0;
 //static const int prec = 5;
@@ -189,30 +188,36 @@ pcl::PointCloud<pcl::PointXYZRGBNormal> * KinectSimulator::intersect(const mjMod
     std::cout<<" CAM 2 POS: "<< newCamPos2[0]<<" "<< newCamPos2[1]<<" "<< newCamPos2[2]<<std::endl;
 
     // Create transformation vector for second camera.
-	Eigen::Matrix4d r, s, t, tOrg, p;
-	s << -1, 0, 0, 0,
+	glm::mat4 r, s, t, tOrg, p;
+	s = glm::mat4(-1, 0, 0, 0,
 		  0, 1, 0, 0,
 		  0, 0, 1, 0,
-		  0, 0, 0, 1;
-	r <<  normRight[0], normRight[1], normRight[2], 0,
-		  viewUp[0], 	viewUp[1], 	  viewUp[2], 0,
-		  normGaze[0],  normGaze[1],  normGaze[2], 0,
-			0, 0, 0, 1;
-	t << 1, 0, 0, -newCamPos2[0],
-		 0, 1, 0, -newCamPos2[1],
-		 0, 0, 1, -newCamPos2[2],
-		 0, 0, 0, 1;
-	tOrg << 1, 0, 0, -newCamPos[0],
-		 0, 1, 0, -newCamPos[1],
-		 0, 0, 1, -newCamPos[2],
-		 0, 0, 0, 1;
-	p << 1, 0, 0, 0,
+		  0, 0, 0, 1);
+	r = glm::mat4(normRight[0], viewUp[0], normGaze[0], 0,
+			normRight[1],	viewUp[1], normGaze[1], 0,
+			normRight[2], viewUp[2],  normGaze[2], 0,
+			0, 0, 0, 1);
+	t = glm::mat4(1, 0, 0, 0,
 		 0, 1, 0, 0,
 		 0, 0, 1, 0,
-		 0, 0, 1, 0;
+		 -newCamPos2[0], -newCamPos2[1], -newCamPos2[2], 1);
+	tOrg = glm::mat4(1, 0, 0, 0,
+		 0, 1, 0, 0,
+		 0, 0, 1, 0,
+		 -newCamPos[0], -newCamPos[1], -newCamPos[2], 1);
+	p = glm::mat4(1, 0, 0, 0,
+		 0, 1, 0, 0,
+		 0, 0, 1, 1,
+		 0, 0, 0, 0);
+//	glm::mat4 tempTM = glm::lookAt(newCamPos2, newCamPos2 + normGaze, glm::vec3(0, 0, 1));
 
 	// Create camera transformation matrix.
-	Eigen::Matrix4d TM = p * (s * (r * t));
+	glm::mat4 TM = p * (s * (r * t));
+//	const float *pSource = (const float*)glm::value_ptr(TM);
+//	std::cout<<pSource[0]<<" "<<pSource[1]<<" "<<pSource[2]<<" "<<pSource[3]<<std::endl;
+//	std::cout<<pSource[4]<<" "<<pSource[5]<<" "<<pSource[6]<<" "<<pSource[7]<<std::endl;
+//	std::cout<<pSource[8]<<" "<<pSource[9]<<" "<<pSource[10]<<" "<<pSource[11]<<std::endl;
+//	std::cout<<pSource[12]<<" "<<pSource[13]<<" "<<pSource[14]<<" "<<pSource[15]<<std::endl;
 
     vopt.geomgroup[0] = 0;
     vopt.geomgroup[1] = 1;
@@ -257,10 +262,11 @@ pcl::PointCloud<pcl::PointXYZRGBNormal> * KinectSimulator::intersect(const mjMod
 				tempP2 = newCamPos2 + temp;
 
 				// Compare two hit points!
-				Point diff(tempP2[0] - tempP[0], tempP2[1] - tempP[1],tempP2[2] - tempP[2]);
+				glm::vec3 diff(tempP2[0] - tempP[0], tempP2[1] - tempP[1],tempP2[2] - tempP[2]);
 				if(abs(diff)<0.0001) {
 
 				  // get pixel position of ray in right image
+//				  std::cout<<"Actual point:"<<tempP[0]<<" "<<tempP[1]<<" "<<tempP[2]<<std::endl;
 				  cv::Point2f left_pixel = camera_.project3dToPixel(tempP, TM);
 
 				  // quantize right_pixel
@@ -323,13 +329,13 @@ pcl::PointCloud<pcl::PointXYZRGBNormal> * KinectSimulator::intersect(const mjMod
     }
 
  // Convert into real world coordinates.
-    Eigen::Matrix4d T = s * (r * tOrg);
-    Eigen::Matrix4d invT = T.inverse();
+    glm::mat4 T = s * (r * tOrg);
+    glm::mat4 invT = glm::inverse(T);
 
 	for (int i = 0; i < pointCount; i++) {
-	  Eigen::Vector4d p(cloud->points[i].x, cloud->points[i].y, cloud->points[i].z, 1);
+	  glm::vec4 p(cloud->points[i].x, cloud->points[i].y, cloud->points[i].z, 1);
 	  p = invT * p;
-	  p = p / p(3);
+	  p = p / p[3];
 	  cloud->points[i].x = (float) p[0] + 0.5;
 	  cloud->points[i].y = (float) p[1];
 	  cloud->points[i].z = (float) p[2];

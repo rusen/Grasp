@@ -41,7 +41,6 @@
 #include "mujoco.h"
 #include <boost/shared_ptr.hpp>
 
-#include <sensor/objectMeshModel.h>
 #include <sensor/camera.h>
 #include <sensor/noise.h>
 
@@ -54,9 +53,9 @@
 #include <pcl/io/pcd_io.h>
 #include <pcl/features/normal_3d.h>
 
-inline double abs(Point p)
+inline double abs(glm::vec3 p)
 {
-  return std::sqrt(p.x()*p.x() + p.y()*p.y() + p.z()*p.z());
+  return std::sqrt(p[0]*p[0] + p[1]*p[1] + p[2]*p[2]);
 }
 
 inline double sq(float x)

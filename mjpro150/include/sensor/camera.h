@@ -122,16 +122,17 @@ namespace Grasp
     : info_(p_info) {}
     
     // two functions adopted from ros::image_geometry::PinholeCameraModel
-    cv::Point2d project3dToPixel(const glm::vec3 tempP, const Eigen::Matrix4d TM) const
+    cv::Point2d project3dToPixel(const glm::vec3 tempP, const glm::mat4 TM) const
       {
-    	Eigen::Matrix<double, 4, 1> p;
-    	p << tempP[0], tempP[1], tempP[2], 1;
+    	glm::vec4 p;
+    	p[0] = tempP[0], p[1] = tempP[1], p[2] = tempP[2], p[3] = 1;
 
     	// Convert p to camera coordinates.
     	p = TM * p;
 
     	// Make p homogenous
-    	p = p / p[3];
+ //   	std::cout<<"Converted point:"<<p[0]<<" "<<p[1]<<" "<<p[2]<<" "<<p[3]<<std::endl;
+    	p = p / p[2];
 
     	// Write back the output.
 		cv::Point2d uv_rect;

@@ -8,18 +8,11 @@
 #include "mujoco.h"
 #include <util/Connector.h>
 #include <planner/GraspPlanner.h>
-#include <Eigen/Geometry>
-#include <Eigen/Core>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/quaternion.hpp>
 #include <glm/gtx/quaternion.hpp>
-
 #include <cstdlib>
 #include <cerrno>
-#include <curlpp/cURLpp.hpp>
-#include <curlpp/Easy.hpp>
-#include <curlpp/Options.hpp>
-#include <curlpp/Exception.hpp>
 
 namespace Grasp {
 
@@ -34,9 +27,19 @@ GraspPlanner::GraspPlanner() {
 	fileId[0] = 0;
     strcat(fileId, "XXXXXX");
     mktemp(fileId);
-	char baseFolder[50];
+	char baseFolder[100];
 	baseFolder[0] = 0;
-	strcat(baseFolder, "./tmp/");
+	if (USING_DROPBOX)
+	{
+		strcat(baseFolder, DROPBOX_FOLDER);
+		strcat(baseFolder, "data/");
+	}
+	else
+		strcat(baseFolder, "./tmp/");
+
+	strcat(baseFolder, fileId);
+	strcat(baseFolder, "/");
+	boost::filesystem::create_directory(baseFolder);
 	strcat(baseFolder, fileId);
 	logFile [0] = pointFile [0] = rgbFile [0] = resultFile[0] = trajectoryFile[0] = 0; // Set to ""
 	strcat(logFile, baseFolder); strcat(pointFile, baseFolder); strcat(rgbFile, baseFolder); strcat(resultFile, baseFolder); strcat(trajectoryFile, baseFolder); // Set to ./tmp/
@@ -284,17 +287,27 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d){
 		}
 		break;
 	case planning:
-		// First, upload the pcd file to the web server.
-		Connector::DownloadFile("");
+		if (!startFlag){
+			// First, upload the pcd file to the web server.
+	//		success = Connector::UploadFile(pointFile);
+			success = Connector::UploadFileToDropbox(fileId, pointFile);
+			if (!success)
+			{
+				std::cout<< "Could not upload file " << fileId << std::endl;
+				break;
+			}
 
-		success = Connector::Uploadfile(pointFile);
-		if (!success)
-			break;
-
-		// Next, wait for the .trajectory file to be available.
-		Connector::DownloadFile(pointFile);
-		Connector::DownloadFile(trajectoryFile);
-		Connector::DownloadFile("");
+			startFlag = true;
+			success = false;
+			std::cout<< "Waiting for trajectories." << std::endl;
+		}
+		else
+		{
+			// Get trajectory data from server.
+			success = Connector::DownloadFileFromDropbox(trajectoryFile);
+			if (success)
+				std::cout<< "Obtained trajectories! Applying them one by one now." << std::endl;
+		}
 
 		// All good! Move on.
 		if (success)
@@ -337,7 +350,6 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d){
 	case done:
 		break;
 	}
-
 }
 
 } /* namespace Grasp */

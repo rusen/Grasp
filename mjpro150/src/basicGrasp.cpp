@@ -18,6 +18,7 @@
 #include <fstream>
 #include <math.h>       /* cos */
 #include <thread>         // std::thread
+#include <chrono>
 #include <planner/GraspPlanner.h>
 #include <sensor/camera.h>
 #include <record/savelog.h>
@@ -25,8 +26,6 @@
 #include <glm/gtc/quaternion.hpp>
 #include <glm/gtx/quaternion.hpp>
 #include <glm/gtc/matrix_transform.hpp>
-#include <Eigen/Geometry>
-#include <Eigen/Core>
 
 #define PI 3.14159265
 
