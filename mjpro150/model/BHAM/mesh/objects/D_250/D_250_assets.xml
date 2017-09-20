@@ -1,0 +1,21 @@
+<mujoco>
+    <asset>
+        <mesh name="D_250_1" file="objects/D_250/D_250_1.stl"/>
+        <mesh name="D_250_2" file="objects/D_250/D_250_2.stl"/>
+        <mesh name="D_250_3" file="objects/D_250/D_250_3.stl"/>
+        <mesh name="D_250_4" file="objects/D_250/D_250_4.stl"/>
+        <mesh name="D_250_5" file="objects/D_250/D_250_5.stl"/>
+        <mesh name="D_250_6" file="objects/D_250/D_250_6.stl"/>
+        <mesh name="D_250_7" file="objects/D_250/D_250_7.stl"/>
+        <mesh name="D_250_8" file="objects/D_250/D_250_8.stl"/>
+        <mesh name="D_250_9" file="objects/D_250/D_250_9.stl"/>
+        <mesh name="D_250_10" file="objects/D_250/D_250_10.stl"/>
+        <mesh name="D_250_11" file="objects/D_250/D_250_11.stl"/>
+        <mesh name="D_250_12" file="objects/D_250/D_250_12.stl"/>
+        <mesh name="D_250_13" file="objects/D_250/D_250_13.stl"/>
+        <mesh name="D_250_14" file="objects/D_250/D_250_14.stl"/>
+        <mesh name="D_250_15" file="objects/D_250/D_250_15.stl"/>
+        <mesh name="D_250_16" file="objects/D_250/D_250_16.stl"/>
+        <mesh name="D_250_visual" file="objects/D_250/D_250_full.stl"/>
+    </asset>
+</mujoco>

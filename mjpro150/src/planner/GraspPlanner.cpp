@@ -22,60 +22,54 @@ void copyArray(glm::vec3 d, double*s, int c)
 		d[i] = s[i];
 }
 
+// set one frame, from global frame counter
+void GraspPlanner::SetFrame(const mjModel* m, mjData * d)
+{
+    d->time = (mjtNum)data[0];
+    mju_f2n(d->qpos, data+1, m->nq);
+    mju_f2n(d->qvel, data+1+m->nq, m->nv);
+    mju_f2n(d->ctrl, data+1+m->nq+m->nv, m->nu);
+    mju_f2n(d->mocap_pos, data+1+m->nq+m->nv+m->nu, 3*m->nmocap);
+    mju_f2n(d->mocap_quat, data+1+m->nq+m->nv+m->nu+3*m->nmocap, 4*m->nmocap);
+    mju_f2n(d->sensordata, data+1+m->nq+m->nv+m->nu+7*m->nmocap, m->nsensordata);
+}
+
 GraspPlanner::GraspPlanner() {
+
 	// Create file paths.
 	fileId[0] = 0;
     strcat(fileId, "XXXXXX");
     mktemp(fileId);
-	char baseFolder[100];
+	char dropboxFolder[1000], baseFolder[1000];
+	dropboxFolder[0] = 0;
 	baseFolder[0] = 0;
-	if (USING_DROPBOX)
-	{
-		strcat(baseFolder, DROPBOX_FOLDER);
-		strcat(baseFolder, "data/");
-	}
-	else
-		strcat(baseFolder, "./tmp/");
-
+	strcat(dropboxFolder, DROPBOX_FOLDER);
+	strcat(dropboxFolder, "data/");
+	strcat(dropboxFolder, fileId);
+	strcat(dropboxFolder, "/");
+	strcat(baseFolder, "./tmp/");
+	strcat(baseFolder, "data/");
 	strcat(baseFolder, fileId);
 	strcat(baseFolder, "/");
-	boost::filesystem::create_directory(baseFolder);
+	boost::filesystem::create_directories(baseFolder);
+	boost::filesystem::create_directories(dropboxFolder);
+	strcat(dropboxFolder, fileId);
 	strcat(baseFolder, fileId);
-	logFile [0] = pointFile [0] = rgbFile [0] = resultFile[0] = trajectoryFile[0] = 0; // Set to ""
-	strcat(logFile, baseFolder); strcat(pointFile, baseFolder); strcat(rgbFile, baseFolder); strcat(resultFile, baseFolder); strcat(trajectoryFile, baseFolder); // Set to ./tmp/
-	strcat(logFile, ".log"); strcat(pointFile, ".pcd"); strcat(rgbFile, ".png"); strcat(resultFile, ".gb"); strcat(trajectoryFile, ".trj");
+	logFile [0] = debugLogFile[0] = pointFile [0] = rgbFile [0] = depthFile[0] = resultFile[0] = trajectoryFile[0] = 0; // Set to ""
+	strcat(logFile, baseFolder); strcat(debugLogFile, baseFolder); strcat(pointFile, dropboxFolder); strcat(rgbFile, baseFolder); strcat(depthFile, baseFolder); strcat(resultFile, baseFolder); strcat(trajectoryFile, dropboxFolder); // Set to ./tmp/
+	strcat(logFile, ".log"); strcat(debugLogFile, "_debug.log"); strcat(pointFile, ".pcd"); strcat(rgbFile, "_rgb.png"); strcat(depthFile, "_depth.png"); strcat(resultFile, ".gd"); strcat(trajectoryFile, ".trj");
 
     // Create and start kinect simulator.
 	CameraInfo camInfo;
     Simulator = new Simulate();
     Simulator->name = pointFile;
 
-	// Allocate space for trajectory arrays.
-	initialApproachPos = new glm::vec3[approachCounterLimit];
-	initialApproachQuat = new glm::quat[approachCounterLimit];
-	preApproachPos = new glm::vec3[approachCounterLimit];
-	preApproachQuat = new glm::quat[approachCounterLimit];
-	finalApproachPos = new glm::vec3[finalApproachCounterLimit];
-
-	// TODO:: Start from random initial position. This'll change!
-    srand (time(NULL));
-    glm::vec3 initPosition = glm::vec3(((double)(rand()%100) - 50)/200,
-    		((double)(rand()%100) - 50)/200, 0.75 + ((double)(rand()%100) - 50)/200);
-
-    // Set initial direction and pose.
-    initialApproachPos[0] = initPosition;
-    float num1 = (((float) (rand()%360)) / 360) * (2*3.1416);
-    float num2 = (((float) (rand()%360)) / 360) * (2*3.1416);
-    float num3 = (((float) (rand()%360)) / 360) * (2*3.1416);
-    initDir = glm::vec3(num1, num2, num3);
-    initialApproachQuat[0] = glm::quat(initDir);
-
     // Calculate a location and orientation for placing the depth cam.
+    std::srand(std::time(NULL));
     float radialR = (((float) (rand()%360))/360) * (2*3.1416);
-    glm::vec3 handPositionNoise(((float) (rand()%100) - 50)/400, ((float) (rand()%100) - 50)/400, ((float) (rand()%100) - 50)/400);
-    glm::vec3 gazePosition = {((float) (rand()%100) - 50)/500, ((float) (rand()%100) - 50)/500, -0.5};
-    glm::vec3 handPosition(cos(radialR) * 0.5, sin(radialR) * 0.5, 0.4);
-    handPosition += handPositionNoise;
+    glm::vec3 gazePosition = {((float) (rand()%100) - 50)/1000, ((float) (rand()%100) - 50)/1000, -0.35};
+    glm::vec3 handPosition(cos(radialR) * 0.5, sin(radialR) * 0.5, 0);
+    std::cout<<"Position of the hand:"<<handPosition[0]<<" "<<handPosition[1]<<" "<<handPosition[2]<<std::endl;
 
     // Calculate gaze dir.
     gazeDir = normalize(gazePosition - handPosition);
@@ -85,36 +79,25 @@ GraspPlanner::GraspPlanner() {
     rightDir = normalize(glm::cross(gazeDir, tempUp));
     upDir = normalize(glm::cross(rightDir, gazeDir));
 
-    // Calculate transformation matrix
-    glm::mat3 RM(rightDir[0], rightDir[1], rightDir[2],
-    			 gazeDir[0], gazeDir[1], gazeDir[2],
-				 upDir[0], upDir[1], upDir[2]);
-
     // Find camera pos.
-    cameraPos = handPosition + 0.2f * upDir;
-
-    // Fill in the endpoint of initial approach, and start point of pre-grasp approach.
-    glm::quat rotation3 = glm::toQuat(RM);
-    initialApproachPos[approachCounterLimit-1] = handPosition;
-    initialApproachQuat[approachCounterLimit-1] = glm::inverse(rotation3);
-    preApproachPos[0] = handPosition;
-    preApproachQuat[0] = initialApproachQuat[approachCounterLimit-1];
-
-	// TODO: For now, we specify the pre-grasp location. This will be obviously changed.
-	glm::vec3 finalPosition = glm::vec3(0.03, -0.11, 0.275);
-	finalDir = glm::vec3(0.85f, 0.0f, 0.0f);
-	preApproachPos[approachCounterLimit-1] = finalPosition;
-	preApproachQuat[approachCounterLimit-1] = glm::quat(finalDir);
-
-	// TODO: Specify pre-grasp to grasp points here as well.
-	finalApproachPos[0] = finalPosition;
-	finalApproachPos[finalApproachCounterLimit-1] = glm::vec3(0.03, -0.11, 0.20);
+    cameraPos = handPosition + 0.1f * upDir;
 }
 
 GraspPlanner::~GraspPlanner() {
-	delete initialApproachPos;
-	delete initialApproachQuat;
-	delete finalApproachPos;
+	delete Simulator;
+	char dropboxFolder[1000];
+	dropboxFolder[0] = 0;
+	strcat(dropboxFolder, DROPBOX_FOLDER);
+	strcat(dropboxFolder, "data/");
+	strcat(dropboxFolder, fileId);
+    if(boost::filesystem::exists(dropboxFolder))
+    {
+       boost::filesystem::remove_all(dropboxFolder);
+    }
+
+	if (finalApproach != NULL)
+		delete finalApproach;
+	fclose(trjFP);
 }
 
 glm::vec3 getPt( glm::vec3 n1 , glm::vec3 n2 , float perc )
@@ -123,160 +106,153 @@ glm::vec3 getPt( glm::vec3 n1 , glm::vec3 n2 , float perc )
     return n1 + ( diff * perc );
 }
 
-void GraspPlanner::ComputeTrajectory(){
-	// First, we need to interpolate positions.
-	// For now, we do not use any kinematics, so we will work with Bezier curves for a realistic path.
-	// Middle points in the bezier curve are assigned randomly.
+void GraspPlanner::ReadTrajectory(){
+	// Reads the next trajectory from the file, and sets path variable.
+	float extraGrip = 0.03;
+	int wpCount = 0;
+	float likelihood = 0;
+	int graspType = 0;
+	float wristPos[3];
+	float wristQuat[4];
+	float fingerPos[20];
 
-    float num1 = ((float) (rand()%100))/500 - 0.05f;
-    float num2 = ((float) (rand()%100))/500 - 0.05f;
-    float num3 = ((float) (rand()%100))/500 + 0.4f;
-    p1 = glm::vec3{num1, num2, num3};
-
-    num1 = ((float) (rand()%100))/500 - 0.05f;
-	num2 = ((float) (rand()%100))/500 - 0.05f;
-    num3 = ((float) (rand()%100))/500 + 0.4f;
-    p2 = glm::vec3{num1, num2, num3};
-
-	// We have the initial and end points of a trajectory.
-	// Now, we're off to interpolating.
-
-	glm::vec3 p0 = initialApproachPos[0];
-	glm::vec3 p3 = initialApproachPos[approachCounterLimit-1];
-
-	for( int itr = 1 ; itr < (approachCounterLimit-1) ; itr ++ )
+	fread(&likelihood, 4, 1, trjFP);
+	fread(&graspType, 4, 1, trjFP);
+	fread(&wpCount, 4, 1, trjFP);
+	finalApproach = new Path(wpCount+1);
+//	std::cout<<"Path has " << wpCount+1 << " waypoints."<<std::endl;
+	for (int i = 1; i< wpCount+1; i++)
 	{
-		float i = ((float)itr)/approachCounterLimit;
+		fread(wristPos, 4, 3, trjFP);
+		fread(wristQuat, 4, 4, trjFP);
+		fread(fingerPos, 4, 20, trjFP);
 
-	    // The Green Lines
-	    glm::vec3 a = getPt( p0 , p1 , i );
-	    glm::vec3 b = getPt( p1 , p2 , i );
-	    glm::vec3 c = getPt( p2 , p3 , i );
+		float addedVal = 0;
+		if (i == wpCount)
+			addedVal = extraGrip;
 
-	    // The Blue Line
-	    glm::vec3 m = getPt( a , b , i );
-	    glm::vec3 n = getPt( b , c , i );
+		// Read waypoints.
+		finalApproach->waypoints[i].pos[0] = wristPos[0] - 0.5, finalApproach->waypoints[i].pos[1] = wristPos[1], finalApproach->waypoints[i].pos[2] = wristPos[2];
+		finalApproach->waypoints[i].quat.x = wristQuat[0];
+		finalApproach->waypoints[i].quat.y = wristQuat[1];
+		finalApproach->waypoints[i].quat.z = wristQuat[2];
+		finalApproach->waypoints[i].quat.w = wristQuat[3];
 
-	    // The Black Dot
-	    glm::vec3 p = getPt( m , n , i );
-	    initialApproachPos[itr] = p;
+		for (int k = 0; k<20; k++)
+		{
+			if (!(k % 4))
+				finalApproach->waypoints[i].jointAngles[k] = fingerPos[k];
+			else if (k%4 == 2 || k%4 == 3)
+				finalApproach->waypoints[i].jointAngles[k] = fingerPos[k] + 0.087266 + addedVal;
+			else if (k < 4)
+			{
+				finalApproach->waypoints[i].jointAngles[k] = fingerPos[k] + 0.087266 + addedVal;
+			}
+			else if (k < 8)
+			{
+				finalApproach->waypoints[i].jointAngles[k] = fingerPos[k] + 0.087266 + addedVal;
+			}
+			else if (k < 12)
+			{
+				finalApproach->waypoints[i].jointAngles[k] = fingerPos[k] + addedVal;
+			}
+			else if (k < 16)
+			{
+				finalApproach->waypoints[i].jointAngles[k] = (fingerPos[k] - 0.087266) + addedVal;
+			}
+			else{
+				finalApproach->waypoints[i].jointAngles[k] = (fingerPos[k] - 0.1745) + addedVal;
+			}
+
+		}
 	}
 
-	p0 = preApproachPos[0];
-	p3 = preApproachPos[approachCounterLimit-1];
+	// Set the first waypoint as an initial approach from outside.
+	finalApproach->waypoints[0].pos[0] = 2 * finalApproach->waypoints[1].pos[0];
+	finalApproach->waypoints[0].pos[1] = 2 * finalApproach->waypoints[1].pos[1];
+	finalApproach->waypoints[0].pos[2] = 2 * (finalApproach->waypoints[1].pos[2] + 0.35) - 0.35;
+	finalApproach->waypoints[0].quat.x = finalApproach->waypoints[1].quat.x;
+	finalApproach->waypoints[0].quat.y = finalApproach->waypoints[1].quat.y;
+	finalApproach->waypoints[0].quat.z = finalApproach->waypoints[1].quat.z;
+	finalApproach->waypoints[0].quat.w = finalApproach->waypoints[1].quat.w;
+	for (int k = 0; k<20; k++)
+		finalApproach->waypoints[0].jointAngles[k] = 0;
 
-	for( int itr = 1 ; itr < (approachCounterLimit-1) ; itr ++ )
+	/*
+	// Start the initial point further away.
+	if (wpCount > 2)
 	{
-		float i = ((float)itr)/approachCounterLimit;
-
-	    // The Green Lines
-	    glm::vec3 a = getPt( p0 , p1 , i );
-	    glm::vec3 b = getPt( p1 , p2 , i );
-	    glm::vec3 c = getPt( p2 , p3 , i );
-
-	    // The Blue Line
-	    glm::vec3 m = getPt( a , b , i );
-	    glm::vec3 n = getPt( b , c , i );
-
-	    // The Black Dot
-	    glm::vec3 p = getPt( m , n , i );
-	    preApproachPos[itr] = p;
+		finalApproach->waypoints[0].pos[0] = 4*finalApproach->waypoints[0].pos[0] - 3*finalApproach->waypoints[1].pos[0];
+		finalApproach->waypoints[0].pos[1] = 4*finalApproach->waypoints[0].pos[1] - 3*finalApproach->waypoints[1].pos[1];
+		finalApproach->waypoints[0].pos[2] = 4*finalApproach->waypoints[0].pos[2] - 3*finalApproach->waypoints[1].pos[2];
 	}
-
-	// Secondly, we will interpolate the rotations.
-	for (int i = 0; i<approachCounterLimit; i++){
-		initialApproachQuat[i] = glm::slerp(initialApproachQuat[0],
-				initialApproachQuat[approachCounterLimit-1], (float)i/((float)approachCounterLimit-1));
-		preApproachQuat[i] = glm::slerp(preApproachQuat[0],
-				preApproachQuat[approachCounterLimit-1], (float)i/((float)approachCounterLimit-1));
-	}
-
-	// TODO: Final approach is vastly simplified, and this will need to change.
-	for (int i = 1; i<(finalApproachCounterLimit-1); i++){
-		float ratio1 = ((float) i)/((float) (finalApproachCounterLimit-1));
-		float ratio2 = ((float) (finalApproachCounterLimit - (i + 1)))/((float) (finalApproachCounterLimit-1));
-		finalApproachPos[i] = finalApproachPos[0]*ratio2 + finalApproachPos[finalApproachCounterLimit-1]*ratio1;
-	}
+	*/
 }
 
-bool GraspPlanner::FollowTrajectory(const mjModel* m, mjData* d, approachType type){
+bool GraspPlanner::FollowTrajectory(const mjModel* m, mjData* d, float yOffset){
 
-	// Set new positions for the hand.
-	if (type == initialApproach){
-		controller.SetPose(m, d, initialApproachPos[counter], initialApproachQuat[counter]);
-	}
-	else if (type == preApproach)
+	// Set pose of the hand.
+	Waypoint wp = finalApproach->Interpolate(counter);
+
+	/*
+	if (counter == 0 || counter == finalApproach->steps-1)
 	{
-		controller.SetPose(m, d, preApproachPos[counter], preApproachQuat[counter]);
+		std::cout<<" ****************************************** "<<std::endl;
+		for (int k = 0; k<finalApproach->getWaypointCount(); k++)
+		finalApproach->waypoints[k].print();
+		wp.print();
+		std::cout<<" ****************************************** "<<std::endl;
 	}
-	else
-	{
-		d->mocap_pos[0] = finalApproachPos[counter][0];
-		d->mocap_pos[1] = finalApproachPos[counter][1];
-		d->mocap_pos[2] = finalApproachPos[counter][2];
-	}
+*/
+
+	// Add y offset, if requested
+	wp.pos[1] += yOffset;
+
+	// Set hand position.
+	controller.SetPose(m, d, wp.pos, wp.quat, wp.jointAngles);
 
 	// Increase counter for moving.
 	counter++;
-	int limit = 0;
-	if (type == initialApproach || type == preApproach)
-		limit = approachCounterLimit;
-	else
-		limit = finalApproachCounterLimit;
 
 	// If total number of steps have been performed, we move on.
-	if (counter>=limit)
+	if (counter>=finalApproach->steps)
 		return true;
 	else return false;
 
 }
 
+state GraspPlanner::getGraspState() const {
+	return graspState;
+}
+
+void GraspPlanner::setGraspState(state graspState = collectingData) {
+	this->graspState = graspState;
+}
+
 // Main function that plans a grasp from initial position to the final trajectory.
 // It's a state driven function since it is called in every simulation step.
-void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d){
-	char ext[] = ".pcd";
-	char extTr[] = ".trajectory";
-	char extG[] = ".graspdata";
-	char extNext[] = "";
+void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos, mjtNum * stableQvel, mjtNum * stableCtrl, mjvScene *scn, mjrContext *con){
+
 	bool success = false;
 	switch (graspState)
 	{
-	case initial:
-		// Set initial position of the hand.
-		if (!startFlag)
-		{
-			startFlag = true;
-			controller.SetPose(m, d, initialApproachPos[0], initialApproachQuat[0]);
-		}
-		success = controller.Grasp(m, d, initialGrasp);
-		if (success){
-			ComputeTrajectory();
-			startFlag = false;
-			graspState = atDataApproach;
-		}
-		break;
-	case atDataApproach:
-		success = FollowTrajectory(m, d, initialApproach);
-		if (success)
-		{
-			graspState = collectingData;
-			counter = 0;
-		}
-		break;
 	case collectingData:
-		if (counter < 300)
-		{
-			counter++;
-			break;
-		}
-		else
-			counter = 0;
 
 		// Data collection from the kinect camera. We start a new thread with the camera acquisition function, and wait for it to finish.
 		if (!startFlag)
 		{
 			startFlag = true;
-			CollectData(Simulator, m, d, depthBuffer, cameraPos, gazeDir, camSize, &finishFlag);
+			CollectData(Simulator, m, d, scn, con, rgbBuffer, depthBuffer, cameraPos, gazeDir, camSize, minPointZ, &finishFlag);
+
+			// Upload RGB and depth images to the cloud.
+			boost::filesystem::rename("./tmp/tempRGB.png", rgbFile);
+			boost::filesystem::rename("./tmp/tempDepth.png", depthFile);
+			bool uploadSuccess = Connector::UploadFile(rgbFile);
+			uploadSuccess = uploadSuccess && Connector::UploadFile(depthFile);
+			if (!uploadSuccess)
+			{
+				std::cout<<"Could not upload "<<rgbFile<<" or "<<depthFile<<" to the main server."<<std::endl;
+			}
 		}
 		// Processing done, move on.
 		if (finishFlag)
@@ -288,9 +264,18 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d){
 		break;
 	case planning:
 		if (!startFlag){
-			// First, upload the pcd file to the web server.
-	//		success = Connector::UploadFile(pointFile);
+			// For logging purposes, upload RGB and depth images,
+			// as well as the point cloud, to the log server.
+			// Upload trajectory file to the main server.
+			bool uploadSuccess = Connector::UploadFile(pointFile);
+			if (!uploadSuccess)
+			{
+				std::cout<<"Could not upload "<<pointFile<<" to the main server."<<std::endl;
+			}
+
+			// First, upload the pcd file to the web server (where we expect it to be deleted).
 			success = Connector::UploadFileToDropbox(fileId, pointFile);
+
 			if (!success)
 			{
 				std::cout<< "Could not upload file " << fileId << std::endl;
@@ -306,50 +291,153 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d){
 			// Get trajectory data from server.
 			success = Connector::DownloadFileFromDropbox(trajectoryFile);
 			if (success)
-				std::cout<< "Obtained trajectories! Applying them one by one now." << std::endl;
+			{
+				// Upload trajectory file to the main server.
+				bool uploadSuccess = Connector::UploadFile(trajectoryFile);
+				if (!uploadSuccess)
+				{
+					std::cout<<"Could not upload "<<trajectoryFile<<" file to the main server."<<std::endl;
+				}
+
+				trjFP = fopen(trajectoryFile, "rb");
+				fread(&numberOfGrasps, 4, 1, trjFP);
+				std::cout<< "Number of grasps:" << numberOfGrasps << std::endl;
+			}
 		}
 
 		// All good! Move on.
 		if (success)
-	    	graspState = approaching;
-		break;
-	case approaching:
-		success = FollowTrajectory(m, d, preApproach);
-			if (success)
-			{
-				graspState = atPreGraspLocation;
-				counter = 0;
-			}
-		break;
-	case atPreGraspLocation: // A good point to put a pause and wait for user input.
-		graspState = atFinalApproach;
-		counter = 0;
-		break;
-	case atFinalApproach:
-		success = FollowTrajectory(m, d, finalApproach);
-		if (success){
-			graspState = readyToGrasp;
-			counter = 0;
+		{
+			startFlag = false;
+			std::cout<<"Moving on to grasping."<<std::endl;
+
+			// Switch to grasping state.
+	    	graspState = pregrasp;
 		}
 		break;
-	case readyToGrasp:
-		graspState = grasping;
+	case pregrasp:
+
+		// Read trajectory
+		ReadTrajectory();
+
+		// If enough grasps have been performed, exit.
+		if (graspCounter >= numberOfGrasps)
+		{
+			graspState = done;
+			break;
+		}
+		graspCounter++;
+		graspState = checkingCollision;
 		counter = 0;
+		finishFlag = false;
+		break;
+	case checkingCollision:
+		// Check a number of viewpoints.
+		if (collisionCounter < collisionPoints){
+			if (!collisionSet)
+			{
+				counter = round(((float) collisionCounter / float(collisionPoints-1)) * (float)(finalApproach->steps));
+				FollowTrajectory(m, d, yOffset);
+				collisionSet = true;
+			}
+			else
+			{
+				collisionSet = false; // toogle between follow trajectory and collision check in current state
+				for (int i = 0; i<m->nconmax; i++)
+				{
+					// Check for hand-table contact.
+					if ((d->contact[i].geom1 == 42 || d->contact[i].geom2 == 42) &&
+						((d->contact[i].geom1 < 42 && d->contact[i].geom1 > 0) ||
+						(d->contact[i].geom2 < 42 && d->contact[i].geom2 > 0)))
+					{
+						// Collision detected, abort!
+						collisionCounter = 0;
+						counter = 0;
+						graspState = reset;
+						hasCollided = true;
+						break;
+					}
+				}
+
+				// If no collision, move on.
+				if (!hasCollided)
+				{
+					collisionCounter++;
+				}
+			}
+		}
+		else
+		{
+			collisionCounter = 0;
+			counter = 0;
+			collisionSet = false;
+			graspState = reset;
+		}
 		break;
 	case grasping:
-		success = controller.Grasp(m, d, finalGrasp);
-		if (success)
-			graspState = lifting;
-			break;
+		success = FollowTrajectory(m, d, 0);
+
+		// If grasp complete, move on to lift the object.
+		if (success){
+			counter = 0;
+			graspState = lifting; //lifting
+		}
+		break;
 	case lifting:
 		d->mocap_pos[2] += 0.001;
 		counter++;
-		if (counter > 500)
-			graspState = done;
+		if (counter > 1000){
+			counter = 0;
+			graspState = stand;
+		}
+		break;
+	case stand:
+		counter++;
+		if (counter > 800){
+			counter = 0;
+			// If the total number of grasps has been reached, move on to the next phase. Otherwise, perform next grasp.
+			graspState = reset;
+		}
+		break;
+	case reset:
+		if (counter < 1)
+		{
+			// Reset everything
+			for (int i = 0; i<m->nq; i++)
+				d->qpos[i] = stableQpos[i];
+			for (int i = 0; i<m->nv; i++)
+				d->qvel[i] = stableQvel[i];
+			for (int i = 0; i<m->nu; i++)
+				d->ctrl[i] = stableCtrl[i];
+			counter++;
+			mj_forward(m, d);
+		}
+		else
+		{
+			if (prevState  == checkingCollision && hasCollided)
+			{
+	//			std::cout<<"Collision! Moving on to the next grasp here."<<std::endl;
+				graspState = pregrasp;
+			}
+			else if (prevState == stand)
+			{
+	//			std::cout<<"Successful grasp! Moving on to the next grasp."<<std::endl;
+				graspState = pregrasp;
+			}
+			else
+			{
+		//		std::cout<<"Coming from "<<prevState<<". No collision in the checks. Perform grasp."<<std::endl;
+				graspState = grasping;
+			}
+			counter = 0;
+			hasCollided = false;
+		}
 		break;
 	case done:
 		break;
 	}
+	if (graspState != reset)
+		prevState = graspState;
 }
 
 } /* namespace Grasp */

@@ -1,0 +1,13 @@
+<mujoco>
+    <asset>
+        <mesh name="D_215_1" file="objects/D_215/D_215_1.stl"/>
+        <mesh name="D_215_2" file="objects/D_215/D_215_2.stl"/>
+        <mesh name="D_215_3" file="objects/D_215/D_215_3.stl"/>
+        <mesh name="D_215_4" file="objects/D_215/D_215_4.stl"/>
+        <mesh name="D_215_5" file="objects/D_215/D_215_5.stl"/>
+        <mesh name="D_215_6" file="objects/D_215/D_215_6.stl"/>
+        <mesh name="D_215_7" file="objects/D_215/D_215_7.stl"/>
+        <mesh name="D_215_8" file="objects/D_215/D_215_8.stl"/>
+        <mesh name="D_215_visual" file="objects/D_215/D_215_full.stl"/>
+    </asset>
+</mujoco>

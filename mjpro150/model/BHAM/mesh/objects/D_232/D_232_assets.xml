@@ -1,0 +1,37 @@
+<mujoco>
+    <asset>
+        <mesh name="D_232_1" file="objects/D_232/D_232_1.stl"/>
+        <mesh name="D_232_2" file="objects/D_232/D_232_2.stl"/>
+        <mesh name="D_232_3" file="objects/D_232/D_232_3.stl"/>
+        <mesh name="D_232_4" file="objects/D_232/D_232_4.stl"/>
+        <mesh name="D_232_5" file="objects/D_232/D_232_5.stl"/>
+        <mesh name="D_232_6" file="objects/D_232/D_232_6.stl"/>
+        <mesh name="D_232_7" file="objects/D_232/D_232_7.stl"/>
+        <mesh name="D_232_8" file="objects/D_232/D_232_8.stl"/>
+        <mesh name="D_232_9" file="objects/D_232/D_232_9.stl"/>
+        <mesh name="D_232_10" file="objects/D_232/D_232_10.stl"/>
+        <mesh name="D_232_11" file="objects/D_232/D_232_11.stl"/>
+        <mesh name="D_232_12" file="objects/D_232/D_232_12.stl"/>
+        <mesh name="D_232_13" file="objects/D_232/D_232_13.stl"/>
+        <mesh name="D_232_14" file="objects/D_232/D_232_14.stl"/>
+        <mesh name="D_232_15" file="objects/D_232/D_232_15.stl"/>
+        <mesh name="D_232_16" file="objects/D_232/D_232_16.stl"/>
+        <mesh name="D_232_17" file="objects/D_232/D_232_17.stl"/>
+        <mesh name="D_232_18" file="objects/D_232/D_232_18.stl"/>
+        <mesh name="D_232_19" file="objects/D_232/D_232_19.stl"/>
+        <mesh name="D_232_20" file="objects/D_232/D_232_20.stl"/>
+        <mesh name="D_232_21" file="objects/D_232/D_232_21.stl"/>
+        <mesh name="D_232_22" file="objects/D_232/D_232_22.stl"/>
+        <mesh name="D_232_23" file="objects/D_232/D_232_23.stl"/>
+        <mesh name="D_232_24" file="objects/D_232/D_232_24.stl"/>
+        <mesh name="D_232_25" file="objects/D_232/D_232_25.stl"/>
+        <mesh name="D_232_26" file="objects/D_232/D_232_26.stl"/>
+        <mesh name="D_232_27" file="objects/D_232/D_232_27.stl"/>
+        <mesh name="D_232_28" file="objects/D_232/D_232_28.stl"/>
+        <mesh name="D_232_29" file="objects/D_232/D_232_29.stl"/>
+        <mesh name="D_232_30" file="objects/D_232/D_232_30.stl"/>
+        <mesh name="D_232_31" file="objects/D_232/D_232_31.stl"/>
+        <mesh name="D_232_32" file="objects/D_232/D_232_32.stl"/>
+        <mesh name="D_232_visual" file="objects/D_232/D_232_full.stl"/>
+    </asset>
+</mujoco>

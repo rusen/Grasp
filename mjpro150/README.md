@@ -20,9 +20,7 @@ Requirements
 The following libraries are required to compile the code:
 
 * OpenCV (image I/O, filtering)
-* CGAL (Fast Intersection Queries)
 * Eigen (Linear Algebra)
-* assimp (Mesh I/O)
 * noise (Generation of Different Noise Types)
 
 The following libraries are optional:

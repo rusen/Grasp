@@ -1,0 +1,12 @@
+<mujoco>
+    <asset>
+        <mesh name="D_116_1" file="objects/D_116/D_116_1.stl"/>
+        <mesh name="D_116_2" file="objects/D_116/D_116_2.stl"/>
+        <mesh name="D_116_3" file="objects/D_116/D_116_3.stl"/>
+        <mesh name="D_116_4" file="objects/D_116/D_116_4.stl"/>
+        <mesh name="D_116_5" file="objects/D_116/D_116_5.stl"/>
+        <mesh name="D_116_6" file="objects/D_116/D_116_6.stl"/>
+        <mesh name="D_116_7" file="objects/D_116/D_116_7.stl"/>
+        <mesh name="D_116_visual" file="objects/D_116/D_116_full.stl"/>
+    </asset>
+</mujoco>

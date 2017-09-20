@@ -1,0 +1,14 @@
+<mujoco>
+    <asset>
+        <mesh name="D_103_1" file="objects/D_103/D_103_1.stl"/>
+        <mesh name="D_103_2" file="objects/D_103/D_103_2.stl"/>
+        <mesh name="D_103_3" file="objects/D_103/D_103_3.stl"/>
+        <mesh name="D_103_4" file="objects/D_103/D_103_4.stl"/>
+        <mesh name="D_103_5" file="objects/D_103/D_103_5.stl"/>
+        <mesh name="D_103_6" file="objects/D_103/D_103_6.stl"/>
+        <mesh name="D_103_7" file="objects/D_103/D_103_7.stl"/>
+        <mesh name="D_103_8" file="objects/D_103/D_103_8.stl"/>
+        <mesh name="D_103_9" file="objects/D_103/D_103_9.stl"/>
+        <mesh name="D_103_visual" file="objects/D_103/D_103_full.stl"/>
+    </asset>
+</mujoco>

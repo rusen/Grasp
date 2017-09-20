@@ -1,0 +1,34 @@
+<mujoco>
+    <asset>
+        <mesh name="D_37_1" file="objects/D_37/D_37_1.stl"/>
+        <mesh name="D_37_2" file="objects/D_37/D_37_2.stl"/>
+        <mesh name="D_37_3" file="objects/D_37/D_37_3.stl"/>
+        <mesh name="D_37_4" file="objects/D_37/D_37_4.stl"/>
+        <mesh name="D_37_5" file="objects/D_37/D_37_5.stl"/>
+        <mesh name="D_37_6" file="objects/D_37/D_37_6.stl"/>
+        <mesh name="D_37_7" file="objects/D_37/D_37_7.stl"/>
+        <mesh name="D_37_8" file="objects/D_37/D_37_8.stl"/>
+        <mesh name="D_37_9" file="objects/D_37/D_37_9.stl"/>
+        <mesh name="D_37_10" file="objects/D_37/D_37_10.stl"/>
+        <mesh name="D_37_11" file="objects/D_37/D_37_11.stl"/>
+        <mesh name="D_37_12" file="objects/D_37/D_37_12.stl"/>
+        <mesh name="D_37_13" file="objects/D_37/D_37_13.stl"/>
+        <mesh name="D_37_14" file="objects/D_37/D_37_14.stl"/>
+        <mesh name="D_37_15" file="objects/D_37/D_37_15.stl"/>
+        <mesh name="D_37_16" file="objects/D_37/D_37_16.stl"/>
+        <mesh name="D_37_17" file="objects/D_37/D_37_17.stl"/>
+        <mesh name="D_37_18" file="objects/D_37/D_37_18.stl"/>
+        <mesh name="D_37_19" file="objects/D_37/D_37_19.stl"/>
+        <mesh name="D_37_20" file="objects/D_37/D_37_20.stl"/>
+        <mesh name="D_37_21" file="objects/D_37/D_37_21.stl"/>
+        <mesh name="D_37_22" file="objects/D_37/D_37_22.stl"/>
+        <mesh name="D_37_23" file="objects/D_37/D_37_23.stl"/>
+        <mesh name="D_37_24" file="objects/D_37/D_37_24.stl"/>
+        <mesh name="D_37_25" file="objects/D_37/D_37_25.stl"/>
+        <mesh name="D_37_26" file="objects/D_37/D_37_26.stl"/>
+        <mesh name="D_37_27" file="objects/D_37/D_37_27.stl"/>
+        <mesh name="D_37_28" file="objects/D_37/D_37_28.stl"/>
+        <mesh name="D_37_29" file="objects/D_37/D_37_29.stl"/>
+        <mesh name="D_37_visual" file="objects/D_37/D_37_full.stl"/>
+    </asset>
+</mujoco>

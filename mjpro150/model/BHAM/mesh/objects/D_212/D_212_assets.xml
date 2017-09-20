@@ -1,0 +1,35 @@
+<mujoco>
+    <asset>
+        <mesh name="D_212_1" file="objects/D_212/D_212_1.stl"/>
+        <mesh name="D_212_2" file="objects/D_212/D_212_2.stl"/>
+        <mesh name="D_212_3" file="objects/D_212/D_212_3.stl"/>
+        <mesh name="D_212_4" file="objects/D_212/D_212_4.stl"/>
+        <mesh name="D_212_5" file="objects/D_212/D_212_5.stl"/>
+        <mesh name="D_212_6" file="objects/D_212/D_212_6.stl"/>
+        <mesh name="D_212_7" file="objects/D_212/D_212_7.stl"/>
+        <mesh name="D_212_8" file="objects/D_212/D_212_8.stl"/>
+        <mesh name="D_212_9" file="objects/D_212/D_212_9.stl"/>
+        <mesh name="D_212_10" file="objects/D_212/D_212_10.stl"/>
+        <mesh name="D_212_11" file="objects/D_212/D_212_11.stl"/>
+        <mesh name="D_212_12" file="objects/D_212/D_212_12.stl"/>
+        <mesh name="D_212_13" file="objects/D_212/D_212_13.stl"/>
+        <mesh name="D_212_14" file="objects/D_212/D_212_14.stl"/>
+        <mesh name="D_212_15" file="objects/D_212/D_212_15.stl"/>
+        <mesh name="D_212_16" file="objects/D_212/D_212_16.stl"/>
+        <mesh name="D_212_17" file="objects/D_212/D_212_17.stl"/>
+        <mesh name="D_212_18" file="objects/D_212/D_212_18.stl"/>
+        <mesh name="D_212_19" file="objects/D_212/D_212_19.stl"/>
+        <mesh name="D_212_20" file="objects/D_212/D_212_20.stl"/>
+        <mesh name="D_212_21" file="objects/D_212/D_212_21.stl"/>
+        <mesh name="D_212_22" file="objects/D_212/D_212_22.stl"/>
+        <mesh name="D_212_23" file="objects/D_212/D_212_23.stl"/>
+        <mesh name="D_212_24" file="objects/D_212/D_212_24.stl"/>
+        <mesh name="D_212_25" file="objects/D_212/D_212_25.stl"/>
+        <mesh name="D_212_26" file="objects/D_212/D_212_26.stl"/>
+        <mesh name="D_212_27" file="objects/D_212/D_212_27.stl"/>
+        <mesh name="D_212_28" file="objects/D_212/D_212_28.stl"/>
+        <mesh name="D_212_29" file="objects/D_212/D_212_29.stl"/>
+        <mesh name="D_212_30" file="objects/D_212/D_212_30.stl"/>
+        <mesh name="D_212_visual" file="objects/D_212/D_212_full.stl"/>
+    </asset>
+</mujoco>

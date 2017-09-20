@@ -1,0 +1,19 @@
+<mujoco>
+    <asset>
+        <mesh name="D_61_1" file="objects/D_61/D_61_1.stl"/>
+        <mesh name="D_61_2" file="objects/D_61/D_61_2.stl"/>
+        <mesh name="D_61_3" file="objects/D_61/D_61_3.stl"/>
+        <mesh name="D_61_4" file="objects/D_61/D_61_4.stl"/>
+        <mesh name="D_61_5" file="objects/D_61/D_61_5.stl"/>
+        <mesh name="D_61_6" file="objects/D_61/D_61_6.stl"/>
+        <mesh name="D_61_7" file="objects/D_61/D_61_7.stl"/>
+        <mesh name="D_61_8" file="objects/D_61/D_61_8.stl"/>
+        <mesh name="D_61_9" file="objects/D_61/D_61_9.stl"/>
+        <mesh name="D_61_10" file="objects/D_61/D_61_10.stl"/>
+        <mesh name="D_61_11" file="objects/D_61/D_61_11.stl"/>
+        <mesh name="D_61_12" file="objects/D_61/D_61_12.stl"/>
+        <mesh name="D_61_13" file="objects/D_61/D_61_13.stl"/>
+        <mesh name="D_61_14" file="objects/D_61/D_61_14.stl"/>
+        <mesh name="D_61_visual" file="objects/D_61/D_61_full.stl"/>
+    </asset>
+</mujoco>

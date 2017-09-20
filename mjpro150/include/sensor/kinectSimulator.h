@@ -98,9 +98,13 @@ namespace Grasp
     uchar getBG ()const{return background_;}
 
     pcl::PointCloud<pcl::PointXYZRGBNormal> * intersect(const mjModel* m, mjData* d,//tf::Transform &p_transform,
-		   cv::Mat &depth_map,
+    	   mjvScene *scn,
+		   mjrContext *con,
+    	   cv::Mat &rgb_map,
+    	   cv::Mat &depth_map,
 		   glm::vec3 newCamPos,
-		   glm::vec3 newCamGaze);
+		   glm::vec3 newCamGaze,
+		   float minPointZ);
 
     KinectSimulator(const CameraInfo &p_camera_info);
     ~KinectSimulator();

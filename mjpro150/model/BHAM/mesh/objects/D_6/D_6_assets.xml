@@ -1,0 +1,9 @@
+<mujoco>
+    <asset>
+        <mesh name="D_6_1" file="objects/D_6/D_6_1.stl"/>
+        <mesh name="D_6_2" file="objects/D_6/D_6_2.stl"/>
+        <mesh name="D_6_3" file="objects/D_6/D_6_3.stl"/>
+        <mesh name="D_6_4" file="objects/D_6/D_6_4.stl"/>
+        <mesh name="D_6_visual" file="objects/D_6/D_6_full.stl"/>
+    </asset>
+</mujoco>

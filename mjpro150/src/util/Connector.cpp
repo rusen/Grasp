@@ -50,7 +50,7 @@ bool Connector::UploadFile(const char *name){
 		headers.push_back(buf);
 
 		// Set up request options.
-		char remotePath[100];
+		char remotePath[1000];
 		remotePath[0] = 0;
 		strcat(remotePath, SERVER_ADDRESS);
 
@@ -81,7 +81,7 @@ bool Connector::UploadFile(const char *name){
 
 		// Close mystream and remove file.
 		myStream.close();
-		remove(name);
+//		remove(name);
 	}
     catch ( curlpp::LogicError & e ) {
       std::cout << e.what() << std::endl;

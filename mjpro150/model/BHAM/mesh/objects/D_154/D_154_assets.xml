@@ -1,0 +1,14 @@
+<mujoco>
+    <asset>
+        <mesh name="D_154_1" file="objects/D_154/D_154_1.stl"/>
+        <mesh name="D_154_2" file="objects/D_154/D_154_2.stl"/>
+        <mesh name="D_154_3" file="objects/D_154/D_154_3.stl"/>
+        <mesh name="D_154_4" file="objects/D_154/D_154_4.stl"/>
+        <mesh name="D_154_5" file="objects/D_154/D_154_5.stl"/>
+        <mesh name="D_154_6" file="objects/D_154/D_154_6.stl"/>
+        <mesh name="D_154_7" file="objects/D_154/D_154_7.stl"/>
+        <mesh name="D_154_8" file="objects/D_154/D_154_8.stl"/>
+        <mesh name="D_154_9" file="objects/D_154/D_154_9.stl"/>
+        <mesh name="D_154_visual" file="objects/D_154/D_154_full.stl"/>
+    </asset>
+</mujoco>

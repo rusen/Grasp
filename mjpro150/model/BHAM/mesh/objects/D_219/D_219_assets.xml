@@ -1,0 +1,36 @@
+<mujoco>
+    <asset>
+        <mesh name="D_219_1" file="objects/D_219/D_219_1.stl"/>
+        <mesh name="D_219_2" file="objects/D_219/D_219_2.stl"/>
+        <mesh name="D_219_3" file="objects/D_219/D_219_3.stl"/>
+        <mesh name="D_219_4" file="objects/D_219/D_219_4.stl"/>
+        <mesh name="D_219_5" file="objects/D_219/D_219_5.stl"/>
+        <mesh name="D_219_6" file="objects/D_219/D_219_6.stl"/>
+        <mesh name="D_219_7" file="objects/D_219/D_219_7.stl"/>
+        <mesh name="D_219_8" file="objects/D_219/D_219_8.stl"/>
+        <mesh name="D_219_9" file="objects/D_219/D_219_9.stl"/>
+        <mesh name="D_219_10" file="objects/D_219/D_219_10.stl"/>
+        <mesh name="D_219_11" file="objects/D_219/D_219_11.stl"/>
+        <mesh name="D_219_12" file="objects/D_219/D_219_12.stl"/>
+        <mesh name="D_219_13" file="objects/D_219/D_219_13.stl"/>
+        <mesh name="D_219_14" file="objects/D_219/D_219_14.stl"/>
+        <mesh name="D_219_15" file="objects/D_219/D_219_15.stl"/>
+        <mesh name="D_219_16" file="objects/D_219/D_219_16.stl"/>
+        <mesh name="D_219_17" file="objects/D_219/D_219_17.stl"/>
+        <mesh name="D_219_18" file="objects/D_219/D_219_18.stl"/>
+        <mesh name="D_219_19" file="objects/D_219/D_219_19.stl"/>
+        <mesh name="D_219_20" file="objects/D_219/D_219_20.stl"/>
+        <mesh name="D_219_21" file="objects/D_219/D_219_21.stl"/>
+        <mesh name="D_219_22" file="objects/D_219/D_219_22.stl"/>
+        <mesh name="D_219_23" file="objects/D_219/D_219_23.stl"/>
+        <mesh name="D_219_24" file="objects/D_219/D_219_24.stl"/>
+        <mesh name="D_219_25" file="objects/D_219/D_219_25.stl"/>
+        <mesh name="D_219_26" file="objects/D_219/D_219_26.stl"/>
+        <mesh name="D_219_27" file="objects/D_219/D_219_27.stl"/>
+        <mesh name="D_219_28" file="objects/D_219/D_219_28.stl"/>
+        <mesh name="D_219_29" file="objects/D_219/D_219_29.stl"/>
+        <mesh name="D_219_30" file="objects/D_219/D_219_30.stl"/>
+        <mesh name="D_219_31" file="objects/D_219/D_219_31.stl"/>
+        <mesh name="D_219_visual" file="objects/D_219/D_219_full.stl"/>
+    </asset>
+</mujoco>

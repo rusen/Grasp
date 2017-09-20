@@ -1,0 +1,18 @@
+<mujoco>
+    <asset>
+        <mesh name="D_252_1" file="objects/D_252/D_252_1.stl"/>
+        <mesh name="D_252_2" file="objects/D_252/D_252_2.stl"/>
+        <mesh name="D_252_3" file="objects/D_252/D_252_3.stl"/>
+        <mesh name="D_252_4" file="objects/D_252/D_252_4.stl"/>
+        <mesh name="D_252_5" file="objects/D_252/D_252_5.stl"/>
+        <mesh name="D_252_6" file="objects/D_252/D_252_6.stl"/>
+        <mesh name="D_252_7" file="objects/D_252/D_252_7.stl"/>
+        <mesh name="D_252_8" file="objects/D_252/D_252_8.stl"/>
+        <mesh name="D_252_9" file="objects/D_252/D_252_9.stl"/>
+        <mesh name="D_252_10" file="objects/D_252/D_252_10.stl"/>
+        <mesh name="D_252_11" file="objects/D_252/D_252_11.stl"/>
+        <mesh name="D_252_12" file="objects/D_252/D_252_12.stl"/>
+        <mesh name="D_252_13" file="objects/D_252/D_252_13.stl"/>
+        <mesh name="D_252_visual" file="objects/D_252/D_252_full.stl"/>
+    </asset>
+</mujoco>

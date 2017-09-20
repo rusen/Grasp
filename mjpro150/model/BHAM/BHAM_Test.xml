@@ -17,62 +17,9 @@
 ====================================================== -->
 <mujoco model="BHAM">
 	<include file="include_BHAM.xml"/>
+	<include file="include_table.xml"/>
+	<include file="include_light.xml"/>
 	<include file="include_assets.xml"/>
-
-    <worldbody>
-		<geom type="plane" material="MatPlane" pos=".6 0 0.1" zaxis="-1 0 1" size=".1 .5 .025"/>
-		<geom type="plane" material="MatPlane" pos="-.6 0 0.1" zaxis="1 0 1" size=".1 .5 .025"/>
-		<geom type="plane" material="MatPlane" pos="0 .6 0.1" zaxis="0 -1 1" size=".5 .1 .025"/>
-		<geom type="plane" material="MatPlane" pos="0 -.6 0.1" zaxis="0 1 1" size=".5 .1 .025"/>
-
-        <body name="mug" pos="0 0 0.1">
-        	<geom type="mesh" group="1" mesh="mug0" size="0.04 0.04 0.04" density="1000" material="MatSquare" condim="6" friction="0.6 0.005 0.001" solimp="0.99 0.999 0.01" solref="0.04 1.0"/>
-        	<geom type="mesh" group="1" mesh="mug1" size="0.04 0.04 0.04" density="1000" material="MatSquare" condim="6" friction="0.6 0.005 0.001" solimp="0.99 0.999 0.01" solref="0.04 1.0"/>
-        	<geom type="mesh" group="1" mesh="mug2" size="0.04 0.04 0.04" density="1000" material="MatSquare" condim="6" friction="0.6 0.005 0.001" solimp="0.99 0.999 0.01" solref="0.04 1.0"/>
-        	<geom type="mesh" group="1" mesh="mug3" size="0.04 0.04 0.04" density="1000" material="MatSquare" condim="6" friction="0.6 0.005 0.001" solimp="0.99 0.999 0.01" solref="0.04 1.0"/>
-        	<geom type="mesh" group="1" mesh="mug4" size="0.04 0.04 0.04" density="1000" material="MatSquare" condim="6" friction="0.6 0.005 0.001" solimp="0.99 0.999 0.01" solref="0.04 1.0"/>
-        	<geom type="mesh" group="1" mesh="mug5" size="0.04 0.04 0.04" density="1000" material="MatSquare" condim="6" friction="0.6 0.005 0.001" solimp="0.99 0.999 0.01" solref="0.04 1.0"/>
-        	<geom type="mesh" group="1" mesh="mug6" size="0.04 0.04 0.04" density="1000" material="MatSquare" condim="6" friction="0.6 0.005 0.001" solimp="0.99 0.999 0.01" solref="0.04 1.0"/>
-        	<geom type="mesh" group="1" mesh="mug7" size="0.04 0.04 0.04" density="1000" material="MatSquare" condim="6" friction="0.6 0.005 0.001" solimp="0.99 0.999 0.01" solref="0.04 1.0"/>
-        	<geom type="mesh" group="1" mesh="mug8" size="0.04 0.04 0.04" density="1000" material="MatSquare" condim="6" friction="0.6 0.005 0.001" solimp="0.99 0.999 0.01" solref="0.04 1.0"/>
-        	<geom type="mesh" group="1" mesh="mug9" size="0.04 0.04 0.04" density="1000" material="MatSquare" condim="6" friction="0.6 0.005 0.001" solimp="0.99 0.999 0.01" solref="0.04 1.0"/>
-        	<geom type="mesh" group="1" mesh="mug10" size="0.04 0.04 0.04" density="1000" material="MatSquare" condim="6" friction="0.6 0.005 0.001" solimp="0.99 0.999 0.01" solref="0.04 1.0"/>
-        	<geom type="mesh" group="1" mesh="mug11" size="0.04 0.04 0.04" density="1000" material="MatSquare" condim="6" friction="0.6 0.005 0.001" solimp="0.99 0.999 0.01" solref="0.04 1.0"/>
-        	<geom type="mesh" group="1" mesh="mug12" size="0.04 0.04 0.04" density="1000" material="MatSquare" condim="6" friction="0.6 0.005 0.001" solimp="0.99 0.999 0.01" solref="0.04 1.0"/>
-        	<geom type="mesh" group="1" mesh="mug13" size="0.04 0.04 0.04" density="1000" material="MatSquare" condim="6" friction="0.6 0.005 0.001" solimp="0.99 0.999 0.01" solref="0.04 1.0"/>
-        	<geom type="mesh" group="1" mesh="mug14" size="0.04 0.04 0.04" density="1000" material="MatSquare" condim="6" friction="0.6 0.005 0.001" solimp="0.99 0.999 0.01" solref="0.04 1.0"/>
-        	<geom type="mesh" group="1" mesh="mug15" size="0.04 0.04 0.04" density="1000" material="MatSquare" condim="6" friction="0.6 0.005 0.001" solimp="0.99 0.999 0.01" solref="0.04 1.0"/>
-        	<geom type="mesh" group="1" mesh="mug16" size="0.04 0.04 0.04" density="1000" material="MatSquare" condim="6" friction="0.6 0.005 0.001" solimp="0.99 0.999 0.01" solref="0.04 1.0"/>
-        	<geom type="mesh" group="1" mesh="mug17" size="0.04 0.04 0.04" density="1000" material="MatSquare" condim="6" friction="0.6 0.005 0.001" solimp="0.99 0.999 0.01" solref="0.04 1.0"/>
-        	<geom type="mesh" group="1" mesh="mug18" size="0.04 0.04 0.04" density="1000" material="MatSquare" condim="6" friction="0.6 0.005 0.001" solimp="0.99 0.999 0.01" solref="0.04 1.0"/>
-        	<geom type="mesh" group="1" mesh="mug19" size="0.04 0.04 0.04" density="1000" material="MatSquare" condim="6" friction="0.6 0.005 0.001" solimp="0.99 0.999 0.01" solref="0.04 1.0"/>
-        	<geom type="mesh" group="1" mesh="mug20" size="0.04 0.04 0.04" density="1000" material="MatSquare" condim="6" friction="0.6 0.005 0.001" solimp="0.99 0.999 0.01" solref="0.04 1.0"/>
-        	<joint class="free"/>
- 		</body>
-    </worldbody>
-    
-    <asset>
-		<mesh name="mug0" 	file="Coffee MugBinary_ACD.stl"/>
-		<mesh name="mug1" 	file="Coffee MugBinary_ACD.001.stl"/>
-		<mesh name="mug2" 	file="Coffee MugBinary_ACD.002.stl"/>
-		<mesh name="mug3" 	file="Coffee MugBinary_ACD.003.stl"/>
-		<mesh name="mug4" 	file="Coffee MugBinary_ACD.004.stl"/>
-		<mesh name="mug5" 	file="Coffee MugBinary_ACD.005.stl"/>
-		<mesh name="mug6" 	file="Coffee MugBinary_ACD.006.stl"/>
-		<mesh name="mug7" 	file="Coffee MugBinary_ACD.007.stl"/>
-		<mesh name="mug8" 	file="Coffee MugBinary_ACD.008.stl"/>
-		<mesh name="mug9" 	file="Coffee MugBinary_ACD.009.stl"/>
-		<mesh name="mug10" 	file="Coffee MugBinary_ACD.010.stl"/>
-		<mesh name="mug11" 	file="Coffee MugBinary_ACD.011.stl"/>
-		<mesh name="mug12" 	file="Coffee MugBinary_ACD.012.stl"/>
-		<mesh name="mug13" 	file="Coffee MugBinary_ACD.013.stl"/>
-		<mesh name="mug14" 	file="Coffee MugBinary_ACD.014.stl"/>
-		<mesh name="mug15" 	file="Coffee MugBinary_ACD.015.stl"/>
-		<mesh name="mug16" 	file="Coffee MugBinary_ACD.016.stl"/>
-		<mesh name="mug17" 	file="Coffee MugBinary_ACD.017.stl"/>
-		<mesh name="mug18" 	file="Coffee MugBinary_ACD.018.stl"/>
-		<mesh name="mug19" 	file="Coffee MugBinary_ACD.019.stl"/>
-		<mesh name="mug20" 	file="Coffee MugBinary_ACD.020.stl"/>
-	</asset>
-    
+	<include file="include_object_assets.xml"/>
+	<include file="include_object.xml"/>
 </mujoco>

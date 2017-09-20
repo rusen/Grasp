@@ -1,0 +1,23 @@
+<mujoco>
+    <asset>
+        <mesh name="D_129_1" file="objects/D_129/D_129_1.stl"/>
+        <mesh name="D_129_2" file="objects/D_129/D_129_2.stl"/>
+        <mesh name="D_129_3" file="objects/D_129/D_129_3.stl"/>
+        <mesh name="D_129_4" file="objects/D_129/D_129_4.stl"/>
+        <mesh name="D_129_5" file="objects/D_129/D_129_5.stl"/>
+        <mesh name="D_129_6" file="objects/D_129/D_129_6.stl"/>
+        <mesh name="D_129_7" file="objects/D_129/D_129_7.stl"/>
+        <mesh name="D_129_8" file="objects/D_129/D_129_8.stl"/>
+        <mesh name="D_129_9" file="objects/D_129/D_129_9.stl"/>
+        <mesh name="D_129_10" file="objects/D_129/D_129_10.stl"/>
+        <mesh name="D_129_11" file="objects/D_129/D_129_11.stl"/>
+        <mesh name="D_129_12" file="objects/D_129/D_129_12.stl"/>
+        <mesh name="D_129_13" file="objects/D_129/D_129_13.stl"/>
+        <mesh name="D_129_14" file="objects/D_129/D_129_14.stl"/>
+        <mesh name="D_129_15" file="objects/D_129/D_129_15.stl"/>
+        <mesh name="D_129_16" file="objects/D_129/D_129_16.stl"/>
+        <mesh name="D_129_17" file="objects/D_129/D_129_17.stl"/>
+        <mesh name="D_129_18" file="objects/D_129/D_129_18.stl"/>
+        <mesh name="D_129_visual" file="objects/D_129/D_129_full.stl"/>
+    </asset>
+</mujoco>

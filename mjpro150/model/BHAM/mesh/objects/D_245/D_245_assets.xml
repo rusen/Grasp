@@ -1,0 +1,28 @@
+<mujoco>
+    <asset>
+        <mesh name="D_245_1" file="objects/D_245/D_245_1.stl"/>
+        <mesh name="D_245_2" file="objects/D_245/D_245_2.stl"/>
+        <mesh name="D_245_3" file="objects/D_245/D_245_3.stl"/>
+        <mesh name="D_245_4" file="objects/D_245/D_245_4.stl"/>
+        <mesh name="D_245_5" file="objects/D_245/D_245_5.stl"/>
+        <mesh name="D_245_6" file="objects/D_245/D_245_6.stl"/>
+        <mesh name="D_245_7" file="objects/D_245/D_245_7.stl"/>
+        <mesh name="D_245_8" file="objects/D_245/D_245_8.stl"/>
+        <mesh name="D_245_9" file="objects/D_245/D_245_9.stl"/>
+        <mesh name="D_245_10" file="objects/D_245/D_245_10.stl"/>
+        <mesh name="D_245_11" file="objects/D_245/D_245_11.stl"/>
+        <mesh name="D_245_12" file="objects/D_245/D_245_12.stl"/>
+        <mesh name="D_245_13" file="objects/D_245/D_245_13.stl"/>
+        <mesh name="D_245_14" file="objects/D_245/D_245_14.stl"/>
+        <mesh name="D_245_15" file="objects/D_245/D_245_15.stl"/>
+        <mesh name="D_245_16" file="objects/D_245/D_245_16.stl"/>
+        <mesh name="D_245_17" file="objects/D_245/D_245_17.stl"/>
+        <mesh name="D_245_18" file="objects/D_245/D_245_18.stl"/>
+        <mesh name="D_245_19" file="objects/D_245/D_245_19.stl"/>
+        <mesh name="D_245_20" file="objects/D_245/D_245_20.stl"/>
+        <mesh name="D_245_21" file="objects/D_245/D_245_21.stl"/>
+        <mesh name="D_245_22" file="objects/D_245/D_245_22.stl"/>
+        <mesh name="D_245_23" file="objects/D_245/D_245_23.stl"/>
+        <mesh name="D_245_visual" file="objects/D_245/D_245_full.stl"/>
+    </asset>
+</mujoco>

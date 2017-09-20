@@ -1,0 +1,37 @@
+<mujoco>
+    <asset>
+        <mesh name="D_167_1" file="objects/D_167/D_167_1.stl"/>
+        <mesh name="D_167_2" file="objects/D_167/D_167_2.stl"/>
+        <mesh name="D_167_3" file="objects/D_167/D_167_3.stl"/>
+        <mesh name="D_167_4" file="objects/D_167/D_167_4.stl"/>
+        <mesh name="D_167_5" file="objects/D_167/D_167_5.stl"/>
+        <mesh name="D_167_6" file="objects/D_167/D_167_6.stl"/>
+        <mesh name="D_167_7" file="objects/D_167/D_167_7.stl"/>
+        <mesh name="D_167_8" file="objects/D_167/D_167_8.stl"/>
+        <mesh name="D_167_9" file="objects/D_167/D_167_9.stl"/>
+        <mesh name="D_167_10" file="objects/D_167/D_167_10.stl"/>
+        <mesh name="D_167_11" file="objects/D_167/D_167_11.stl"/>
+        <mesh name="D_167_12" file="objects/D_167/D_167_12.stl"/>
+        <mesh name="D_167_13" file="objects/D_167/D_167_13.stl"/>
+        <mesh name="D_167_14" file="objects/D_167/D_167_14.stl"/>
+        <mesh name="D_167_15" file="objects/D_167/D_167_15.stl"/>
+        <mesh name="D_167_16" file="objects/D_167/D_167_16.stl"/>
+        <mesh name="D_167_17" file="objects/D_167/D_167_17.stl"/>
+        <mesh name="D_167_18" file="objects/D_167/D_167_18.stl"/>
+        <mesh name="D_167_19" file="objects/D_167/D_167_19.stl"/>
+        <mesh name="D_167_20" file="objects/D_167/D_167_20.stl"/>
+        <mesh name="D_167_21" file="objects/D_167/D_167_21.stl"/>
+        <mesh name="D_167_22" file="objects/D_167/D_167_22.stl"/>
+        <mesh name="D_167_23" file="objects/D_167/D_167_23.stl"/>
+        <mesh name="D_167_24" file="objects/D_167/D_167_24.stl"/>
+        <mesh name="D_167_25" file="objects/D_167/D_167_25.stl"/>
+        <mesh name="D_167_26" file="objects/D_167/D_167_26.stl"/>
+        <mesh name="D_167_27" file="objects/D_167/D_167_27.stl"/>
+        <mesh name="D_167_28" file="objects/D_167/D_167_28.stl"/>
+        <mesh name="D_167_29" file="objects/D_167/D_167_29.stl"/>
+        <mesh name="D_167_30" file="objects/D_167/D_167_30.stl"/>
+        <mesh name="D_167_31" file="objects/D_167/D_167_31.stl"/>
+        <mesh name="D_167_32" file="objects/D_167/D_167_32.stl"/>
+        <mesh name="D_167_visual" file="objects/D_167/D_167_full.stl"/>
+    </asset>
+</mujoco>

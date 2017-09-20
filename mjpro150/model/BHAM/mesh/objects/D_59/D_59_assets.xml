@@ -1,0 +1,20 @@
+<mujoco>
+    <asset>
+        <mesh name="D_59_1" file="objects/D_59/D_59_1.stl"/>
+        <mesh name="D_59_2" file="objects/D_59/D_59_2.stl"/>
+        <mesh name="D_59_3" file="objects/D_59/D_59_3.stl"/>
+        <mesh name="D_59_4" file="objects/D_59/D_59_4.stl"/>
+        <mesh name="D_59_5" file="objects/D_59/D_59_5.stl"/>
+        <mesh name="D_59_6" file="objects/D_59/D_59_6.stl"/>
+        <mesh name="D_59_7" file="objects/D_59/D_59_7.stl"/>
+        <mesh name="D_59_8" file="objects/D_59/D_59_8.stl"/>
+        <mesh name="D_59_9" file="objects/D_59/D_59_9.stl"/>
+        <mesh name="D_59_10" file="objects/D_59/D_59_10.stl"/>
+        <mesh name="D_59_11" file="objects/D_59/D_59_11.stl"/>
+        <mesh name="D_59_12" file="objects/D_59/D_59_12.stl"/>
+        <mesh name="D_59_13" file="objects/D_59/D_59_13.stl"/>
+        <mesh name="D_59_14" file="objects/D_59/D_59_14.stl"/>
+        <mesh name="D_59_15" file="objects/D_59/D_59_15.stl"/>
+        <mesh name="D_59_visual" file="objects/D_59/D_59_full.stl"/>
+    </asset>
+</mujoco>

@@ -1,0 +1,39 @@
+<mujoco>
+    <asset>
+        <mesh name="D_220_1" file="objects/D_220/D_220_1.stl"/>
+        <mesh name="D_220_2" file="objects/D_220/D_220_2.stl"/>
+        <mesh name="D_220_3" file="objects/D_220/D_220_3.stl"/>
+        <mesh name="D_220_4" file="objects/D_220/D_220_4.stl"/>
+        <mesh name="D_220_5" file="objects/D_220/D_220_5.stl"/>
+        <mesh name="D_220_6" file="objects/D_220/D_220_6.stl"/>
+        <mesh name="D_220_7" file="objects/D_220/D_220_7.stl"/>
+        <mesh name="D_220_8" file="objects/D_220/D_220_8.stl"/>
+        <mesh name="D_220_9" file="objects/D_220/D_220_9.stl"/>
+        <mesh name="D_220_10" file="objects/D_220/D_220_10.stl"/>
+        <mesh name="D_220_11" file="objects/D_220/D_220_11.stl"/>
+        <mesh name="D_220_12" file="objects/D_220/D_220_12.stl"/>
+        <mesh name="D_220_13" file="objects/D_220/D_220_13.stl"/>
+        <mesh name="D_220_14" file="objects/D_220/D_220_14.stl"/>
+        <mesh name="D_220_15" file="objects/D_220/D_220_15.stl"/>
+        <mesh name="D_220_16" file="objects/D_220/D_220_16.stl"/>
+        <mesh name="D_220_17" file="objects/D_220/D_220_17.stl"/>
+        <mesh name="D_220_18" file="objects/D_220/D_220_18.stl"/>
+        <mesh name="D_220_19" file="objects/D_220/D_220_19.stl"/>
+        <mesh name="D_220_20" file="objects/D_220/D_220_20.stl"/>
+        <mesh name="D_220_21" file="objects/D_220/D_220_21.stl"/>
+        <mesh name="D_220_22" file="objects/D_220/D_220_22.stl"/>
+        <mesh name="D_220_23" file="objects/D_220/D_220_23.stl"/>
+        <mesh name="D_220_24" file="objects/D_220/D_220_24.stl"/>
+        <mesh name="D_220_25" file="objects/D_220/D_220_25.stl"/>
+        <mesh name="D_220_26" file="objects/D_220/D_220_26.stl"/>
+        <mesh name="D_220_27" file="objects/D_220/D_220_27.stl"/>
+        <mesh name="D_220_28" file="objects/D_220/D_220_28.stl"/>
+        <mesh name="D_220_29" file="objects/D_220/D_220_29.stl"/>
+        <mesh name="D_220_30" file="objects/D_220/D_220_30.stl"/>
+        <mesh name="D_220_31" file="objects/D_220/D_220_31.stl"/>
+        <mesh name="D_220_32" file="objects/D_220/D_220_32.stl"/>
+        <mesh name="D_220_33" file="objects/D_220/D_220_33.stl"/>
+        <mesh name="D_220_34" file="objects/D_220/D_220_34.stl"/>
+        <mesh name="D_220_visual" file="objects/D_220/D_220_full.stl"/>
+    </asset>
+</mujoco>

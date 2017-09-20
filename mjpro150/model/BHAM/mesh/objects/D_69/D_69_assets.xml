@@ -1,0 +1,27 @@
+<mujoco>
+    <asset>
+        <mesh name="D_69_1" file="objects/D_69/D_69_1.stl"/>
+        <mesh name="D_69_2" file="objects/D_69/D_69_2.stl"/>
+        <mesh name="D_69_3" file="objects/D_69/D_69_3.stl"/>
+        <mesh name="D_69_4" file="objects/D_69/D_69_4.stl"/>
+        <mesh name="D_69_5" file="objects/D_69/D_69_5.stl"/>
+        <mesh name="D_69_6" file="objects/D_69/D_69_6.stl"/>
+        <mesh name="D_69_7" file="objects/D_69/D_69_7.stl"/>
+        <mesh name="D_69_8" file="objects/D_69/D_69_8.stl"/>
+        <mesh name="D_69_9" file="objects/D_69/D_69_9.stl"/>
+        <mesh name="D_69_10" file="objects/D_69/D_69_10.stl"/>
+        <mesh name="D_69_11" file="objects/D_69/D_69_11.stl"/>
+        <mesh name="D_69_12" file="objects/D_69/D_69_12.stl"/>
+        <mesh name="D_69_13" file="objects/D_69/D_69_13.stl"/>
+        <mesh name="D_69_14" file="objects/D_69/D_69_14.stl"/>
+        <mesh name="D_69_15" file="objects/D_69/D_69_15.stl"/>
+        <mesh name="D_69_16" file="objects/D_69/D_69_16.stl"/>
+        <mesh name="D_69_17" file="objects/D_69/D_69_17.stl"/>
+        <mesh name="D_69_18" file="objects/D_69/D_69_18.stl"/>
+        <mesh name="D_69_19" file="objects/D_69/D_69_19.stl"/>
+        <mesh name="D_69_20" file="objects/D_69/D_69_20.stl"/>
+        <mesh name="D_69_21" file="objects/D_69/D_69_21.stl"/>
+        <mesh name="D_69_22" file="objects/D_69/D_69_22.stl"/>
+        <mesh name="D_69_visual" file="objects/D_69/D_69_full.stl"/>
+    </asset>
+</mujoco>

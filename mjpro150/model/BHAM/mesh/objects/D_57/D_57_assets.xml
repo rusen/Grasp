@@ -1,0 +1,26 @@
+<mujoco>
+    <asset>
+        <mesh name="D_57_1" file="objects/D_57/D_57_1.stl"/>
+        <mesh name="D_57_2" file="objects/D_57/D_57_2.stl"/>
+        <mesh name="D_57_3" file="objects/D_57/D_57_3.stl"/>
+        <mesh name="D_57_4" file="objects/D_57/D_57_4.stl"/>
+        <mesh name="D_57_5" file="objects/D_57/D_57_5.stl"/>
+        <mesh name="D_57_6" file="objects/D_57/D_57_6.stl"/>
+        <mesh name="D_57_7" file="objects/D_57/D_57_7.stl"/>
+        <mesh name="D_57_8" file="objects/D_57/D_57_8.stl"/>
+        <mesh name="D_57_9" file="objects/D_57/D_57_9.stl"/>
+        <mesh name="D_57_10" file="objects/D_57/D_57_10.stl"/>
+        <mesh name="D_57_11" file="objects/D_57/D_57_11.stl"/>
+        <mesh name="D_57_12" file="objects/D_57/D_57_12.stl"/>
+        <mesh name="D_57_13" file="objects/D_57/D_57_13.stl"/>
+        <mesh name="D_57_14" file="objects/D_57/D_57_14.stl"/>
+        <mesh name="D_57_15" file="objects/D_57/D_57_15.stl"/>
+        <mesh name="D_57_16" file="objects/D_57/D_57_16.stl"/>
+        <mesh name="D_57_17" file="objects/D_57/D_57_17.stl"/>
+        <mesh name="D_57_18" file="objects/D_57/D_57_18.stl"/>
+        <mesh name="D_57_19" file="objects/D_57/D_57_19.stl"/>
+        <mesh name="D_57_20" file="objects/D_57/D_57_20.stl"/>
+        <mesh name="D_57_21" file="objects/D_57/D_57_21.stl"/>
+        <mesh name="D_57_visual" file="objects/D_57/D_57_full.stl"/>
+    </asset>
+</mujoco>

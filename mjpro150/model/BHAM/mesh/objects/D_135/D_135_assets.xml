@@ -1,0 +1,28 @@
+<mujoco>
+    <asset>
+        <mesh name="D_135_1" file="objects/D_135/D_135_1.stl"/>
+        <mesh name="D_135_2" file="objects/D_135/D_135_2.stl"/>
+        <mesh name="D_135_3" file="objects/D_135/D_135_3.stl"/>
+        <mesh name="D_135_4" file="objects/D_135/D_135_4.stl"/>
+        <mesh name="D_135_5" file="objects/D_135/D_135_5.stl"/>
+        <mesh name="D_135_6" file="objects/D_135/D_135_6.stl"/>
+        <mesh name="D_135_7" file="objects/D_135/D_135_7.stl"/>
+        <mesh name="D_135_8" file="objects/D_135/D_135_8.stl"/>
+        <mesh name="D_135_9" file="objects/D_135/D_135_9.stl"/>
+        <mesh name="D_135_10" file="objects/D_135/D_135_10.stl"/>
+        <mesh name="D_135_11" file="objects/D_135/D_135_11.stl"/>
+        <mesh name="D_135_12" file="objects/D_135/D_135_12.stl"/>
+        <mesh name="D_135_13" file="objects/D_135/D_135_13.stl"/>
+        <mesh name="D_135_14" file="objects/D_135/D_135_14.stl"/>
+        <mesh name="D_135_15" file="objects/D_135/D_135_15.stl"/>
+        <mesh name="D_135_16" file="objects/D_135/D_135_16.stl"/>
+        <mesh name="D_135_17" file="objects/D_135/D_135_17.stl"/>
+        <mesh name="D_135_18" file="objects/D_135/D_135_18.stl"/>
+        <mesh name="D_135_19" file="objects/D_135/D_135_19.stl"/>
+        <mesh name="D_135_20" file="objects/D_135/D_135_20.stl"/>
+        <mesh name="D_135_21" file="objects/D_135/D_135_21.stl"/>
+        <mesh name="D_135_22" file="objects/D_135/D_135_22.stl"/>
+        <mesh name="D_135_23" file="objects/D_135/D_135_23.stl"/>
+        <mesh name="D_135_visual" file="objects/D_135/D_135_full.stl"/>
+    </asset>
+</mujoco>

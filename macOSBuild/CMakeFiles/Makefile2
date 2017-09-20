@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /Users/rusi/git/Grasp/macOSBuild
 CMakeFiles/playlog.dir/all: CMakeFiles/Project.dir/all
 	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/depend
 	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/rusi/git/Grasp/macOSBuild/CMakeFiles --progress-num=16,17,18,19,20,21,22,23,24,25,26,27 "Built target playlog"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/rusi/git/Grasp/macOSBuild/CMakeFiles --progress-num=19,20,21,22,23,24,25,26,27,28,29,30,31,32,33 "Built target playlog"
 .PHONY : CMakeFiles/playlog.dir/all
 
 # Include target in all.
@@ -76,7 +76,7 @@ all: CMakeFiles/playlog.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/playlog.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/rusi/git/Grasp/macOSBuild/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/rusi/git/Grasp/macOSBuild/CMakeFiles 18
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/playlog.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/rusi/git/Grasp/macOSBuild/CMakeFiles 0
 .PHONY : CMakeFiles/playlog.dir/rule
@@ -103,7 +103,7 @@ clean: CMakeFiles/playlog.dir/clean
 CMakeFiles/basicGrasp.dir/all: CMakeFiles/Project.dir/all
 	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/depend
 	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/rusi/git/Grasp/macOSBuild/CMakeFiles --progress-num=4,5,6,7,8,9,10,11,12,13,14,15 "Built target basicGrasp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/rusi/git/Grasp/macOSBuild/CMakeFiles --progress-num=4,5,6,7,8,9,10,11,12,13,14,15,16,17,18 "Built target basicGrasp"
 .PHONY : CMakeFiles/basicGrasp.dir/all
 
 # Include target in all.
@@ -113,7 +113,7 @@ all: CMakeFiles/basicGrasp.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/basicGrasp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/rusi/git/Grasp/macOSBuild/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/rusi/git/Grasp/macOSBuild/CMakeFiles 18
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/basicGrasp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/rusi/git/Grasp/macOSBuild/CMakeFiles 0
 .PHONY : CMakeFiles/basicGrasp.dir/rule

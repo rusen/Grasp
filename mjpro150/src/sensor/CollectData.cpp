@@ -13,10 +13,9 @@
 
 namespace Grasp{
 
-void CollectData(Simulate* Simulator, const mjModel* m, mjData* d, unsigned char* depthBuffer,
-		glm::vec3 cameraPos, glm::vec3 gazeDir, int * camSize, bool*finishFlag)
+void CollectData(Simulate* Simulator, const mjModel* m, mjData* d,  mjvScene *scn, mjrContext *con, unsigned char* rgbBuffer, unsigned char* depthBuffer,
+		glm::vec3 cameraPos, glm::vec3 gazeDir, int * camSize, float minPointZ, bool*finishFlag)
 {
-	std::cout<<"Entered data collection"<<std::endl;
 	std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
 
 	// up vector
@@ -24,7 +23,7 @@ void CollectData(Simulate* Simulator, const mjModel* m, mjData* d, unsigned char
 	int startIdx = (m->nbody-1);
 
 	// Get image from kinect camera.
-	Simulator->simulateMeasurement(m, d, cameraPos, gazeDir);
+	Simulator->simulateMeasurement(m, d, scn, con, cameraPos, gazeDir, minPointZ);
     pcl::PCDWriter().write(Simulator->name, *(Simulator->cloud), true);
 
 	int rows = Simulator->scaled_im_.rows;
@@ -35,11 +34,15 @@ void CollectData(Simulate* Simulator, const mjModel* m, mjData* d, unsigned char
 		for( int colId=0; colId<cols; colId++ )
 		{
 			// Find where to get the data and where to write it.
-			int offset = (rowId)*(cols) + colId;
+			int offset = (rowId)*(cols) + ((cols - 1) - colId);
 
 			// assign rgb
 			depthBuffer[offset * 3] = depthBuffer[offset * 3 + 1] = depthBuffer[offset * 3 + 2] =
 					Simulator->scaled_im_.at<unsigned char>(rowId, colId); //input[offset];
+
+			rgbBuffer[offset * 3] = Simulator->rgbIm.data[offset * 3];
+			rgbBuffer[offset * 3 + 1] = Simulator->rgbIm.data[offset * 3 + 1];
+			rgbBuffer[offset * 3 + 2] = Simulator->rgbIm.data[offset * 3 + 2];
 		}
 	}
 	*finishFlag = true;

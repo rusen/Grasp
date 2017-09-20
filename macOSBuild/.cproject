@@ -375,7 +375,6 @@
 				<pathentry kind="mac" name="__GLIBCXX_BITSIZE_INT_N_0" path="" value="128"/>
 				<pathentry kind="mac" name="__cplusplus" path="" value="199711L"/>
 				<pathentry include="/Users/rusi/git/Grasp/mjpro150/include" kind="inc" path="" system="true"/>
-				<pathentry include="/usr/local/include/eigen3" kind="inc" path="" system="true"/>
 				<pathentry include="/usr/local/Cellar/vtk/8.0.0/include/vtk-8.0" kind="inc" path="" system="true"/>
 				<pathentry include="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks" kind="inc" path="" system="true"/>
 				<pathentry include="/usr/local/include" kind="inc" path="" system="true"/>
@@ -383,6 +382,7 @@
 				<pathentry include="/usr/local/opt/szip/include" kind="inc" path="" system="true"/>
 				<pathentry include="/usr/include/libxml2" kind="inc" path="" system="true"/>
 				<pathentry include="/usr/local/include/pcl-1.8" kind="inc" path="" system="true"/>
+				<pathentry include="/usr/local/include/eigen3" kind="inc" path="" system="true"/>
 				<pathentry include="/usr/local/opt/openni/include/ni" kind="inc" path="" system="true"/>
 				<pathentry include="/usr/local/include/ni2" kind="inc" path="" system="true"/>
 				<pathentry include="/usr/local/include/opencv" kind="inc" path="" system="true"/>

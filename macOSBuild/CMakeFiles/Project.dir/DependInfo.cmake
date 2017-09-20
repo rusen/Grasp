@@ -30,7 +30,6 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/Users/rusi/git/Grasp/mjpro150/include"
-  "/usr/local/include/eigen3"
   "/usr/local/Cellar/vtk/8.0.0/include/vtk-8.0"
   "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7"
   "/usr/local/include"
@@ -38,6 +37,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/usr/local/opt/szip/include"
   "/usr/include/libxml2"
   "/usr/local/include/pcl-1.8"
+  "/usr/local/include/eigen3"
   "/usr/local/opt/openni/include/ni"
   "/usr/local/include/ni2"
   "/usr/local/include/opencv"

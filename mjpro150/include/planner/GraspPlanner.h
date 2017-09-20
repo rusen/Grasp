@@ -17,30 +17,47 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/quaternion.hpp>
 #include <glm/gtx/quaternion.hpp>
+#include "util/Path.h"
 #include <stdio.h>      /* printf, NULL */
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>       /* time */
 #include <iostream>
 #include <algorithm>    // std::copy
 #include <vector>
+#include <thread>
 
 namespace Grasp {
 
-enum state { initial, atDataApproach, collectingData, planning, approaching, atPreGraspLocation, atFinalApproach, readyToGrasp, grasping, lifting, done };
+enum state { collectingData, planning, pregrasp, checkingCollision, grasping, lifting, stand, reset, done };
 enum handType {MPL};
-enum approachType {initialApproach, preApproach, finalApproach};
 
 class GraspPlanner {
 public:
 
 	int camSize[2] = {480, 640};
+	unsigned char rgbBuffer[640*480*3];
 	unsigned char depthBuffer[640*480*3];
-	char fileId [10]; // Unique file id.
-	char logFile [100]; // Log file
-	char pointFile [100]; // Point cloud data file (.pcd)
-	char rgbFile [100];  // RGB file (.png)
-	char resultFile[100]; // Grasp success/diagnostics file (.gd)
-	char trajectoryFile[100]; // Trajectory file (.trj)
+	float minPointZ = -100; // minimum Z coordinate of allowed points in the point cloud
+	std::vector<std::vector<float>> convHullPoints;
+	float yOffset = 2; // For collision detection, we try hand positions on a separate part of the table, separated by a y offset.
+	char fileId [10]; // Unique file id
+	char logFile [1000]; // Log file
+	char debugLogFile [1000]; // Log file
+	char modelFile [1000]; // Model file (binary)
+	char pointFile [1000]; // Point cloud data file (.pcd)
+	char rgbFile [1000];  // RGB file (.png)
+	char depthFile [1000];  // RGB file (.png)
+	char resultFile[1000]; // Grasp success/diagnostics file (.gd)
+	char trajectoryFile[1000]; // Trajectory file (.trj)
+	FILE * trjFP = NULL;
+	int numberOfGrasps = 0;
+	int collisionPoints = 100, collisionCounter = 0;
+	bool collisionSet = false, collisionRun = true, hasCollided = false;
+	float* data = NULL;
+
+	// Steps to perform approach.
+	int counter = 0;
+	int graspCounter = 0;
 
 	// Simulator allocation
 	Simulate* Simulator = NULL;
@@ -48,50 +65,48 @@ public:
 	GraspPlanner();
 	virtual ~GraspPlanner();
 
+	// Reset simulation to initial configuration
+	void SetFrame(const mjModel* m, mjData* d);
+
 	// Compute trajectory.
 	void ComputeTrajectory();
 
 	// Gets the trajectory from the data trajectory file,
 	// and assigns it as next trajectory.
-	// This function also performs linear interpolation.
-	void AssignNextTrajectory();
+	void ReadTrajectory();
+
+	// CheckCollision checks the collision of
+	// the next trajectory with the table.
+	// Returns true if grasp succeeds ( no collision), returns false if fails.
+	bool CheckCollision();
 
 	// Follow computed trajectory.
-	bool FollowTrajectory(const mjModel* m, mjData* d, approachType type);
+	bool FollowTrajectory(const mjModel* m, mjData* d, float yOffset);
 
 	// Perform grasp.
-	void PerformGrasp(const mjModel* m, mjData* d);
+	void PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos, mjtNum * stableQvel, mjtNum * stableCtrl, mjvScene *scn, mjrContext *con);
+
+	state getGraspState() const;
+	void setGraspState(state graspState);
 
 private:
-	state graspState = initial;
+	state graspState = collectingData; //initial for full scenario
+	state prevState = collectingData; // Previous state
 	bool startFlag = false;
 	bool finishFlag = false;
 	bool uploadFlag = false;
-	bool fastSim = false; // If true, we're in fast simulation mode -  no unnecessary work.
+	std::thread * dataThread = NULL;
 
-	// Steps to perform approach.
-	int counter = 0;
-	int approachCounterLimit = 1000;
-	int finalApproachCounterLimit = 500;
+	// Approach waypoints.
+	Waypoint capturePos; // Position of the wrist in capture mode.
+	Path *finalApproach = NULL; // Path to the final approach.
 
-	// Allocate space for trajectories.
-	glm::vec3 *initialApproachPos = NULL;
-	glm::quat *initialApproachQuat = NULL;
-	glm::vec3 *preApproachPos = NULL;
-	glm::quat *preApproachQuat = NULL;
-	glm::vec3 *finalApproachPos = NULL;
-	glm::quat *finalApproachQuat = NULL;
-
-	// Info for bezier curve.
-	glm::vec3 initDir, finalDir;
-	glm::vec3 p1, p2;
+	// Info for camera capture.
 	glm::vec3 cameraPos, gazeDir;
 
 	// Hand controller allocation.
 	DLRHandController controller;
-
 };
-
 
 } /* namespace Grasp */
 

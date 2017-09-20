@@ -1,0 +1,10 @@
+<mujoco>
+    <asset>
+        <mesh name="D_244_1" file="objects/D_244/D_244_1.stl"/>
+        <mesh name="D_244_2" file="objects/D_244/D_244_2.stl"/>
+        <mesh name="D_244_3" file="objects/D_244/D_244_3.stl"/>
+        <mesh name="D_244_4" file="objects/D_244/D_244_4.stl"/>
+        <mesh name="D_244_5" file="objects/D_244/D_244_5.stl"/>
+        <mesh name="D_244_visual" file="objects/D_244/D_244_full.stl"/>
+    </asset>
+</mujoco>

@@ -24,10 +24,7 @@ public:
 	virtual ~HandControllerInterface();
 
 	// Set pose of the hand
-	virtual void SetPose(const mjModel* m, mjData* d, glm::vec3 pos, glm::quat q)=0;
-
-	// Grip function
-	virtual bool Grasp(const mjModel* m, mjData* d, graspType type)=0;
+	virtual void SetPose(const mjModel* m, mjData* d, glm::vec3 pos, glm::quat q, float* jointAngles)=0;
 
 	// Getters/setters
 	int getState() const;

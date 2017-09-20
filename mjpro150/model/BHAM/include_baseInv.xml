@@ -1,0 +1,32 @@
+<mujoco>
+    <worldbody>
+    	<body name="base" pos="0 0 0">
+			<geom condim="4" rgba="0 0 0 0" solimp="0.9 0.95 0.001" solref="0.008 1.0" type="box" pos="0 0 -0.35" margin="0.001" size="5 5 .05"/>
+    	</body>
+    </worldbody>
+    
+    <contact>  
+        <exclude body1="mocap" body2="base"/>
+        <exclude body1="palm" body2="base"/>
+        <exclude body1="thumb0" body2="base"/>
+        <exclude body1="thumb1" body2="base"/>
+        <exclude body1="thumb2" body2="base"/>
+        <exclude body1="thumb3" body2="base"/>
+        <exclude body1="little0" body2="base"/>
+        <exclude body1="little1" body2="base"/>
+        <exclude body1="little2" body2="base"/>
+        <exclude body1="little3" body2="base"/>
+        <exclude body1="fore0" body2="base"/>
+        <exclude body1="fore1" body2="base"/>
+        <exclude body1="fore2" body2="base"/>
+        <exclude body1="fore3" body2="base"/>
+        <exclude body1="middle0" body2="base"/>
+        <exclude body1="middle1" body2="base"/>
+        <exclude body1="middle2" body2="base"/>
+        <exclude body1="middle3" body2="base"/>
+        <exclude body1="ring0" body2="base"/>
+        <exclude body1="ring1" body2="base"/>
+        <exclude body1="ring2" body2="base"/>
+        <exclude body1="ring3" body2="base"/>
+    </contact>
+</mujoco>

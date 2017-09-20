@@ -17,11 +17,12 @@
 #include <iostream>
 #include <fstream>
 #include <math.h>       /* cos */
-#include <thread>         // std::thread
 #include <chrono>
 #include <planner/GraspPlanner.h>
 #include <sensor/camera.h>
 #include <record/savelog.h>
+#include <util/util.h>
+#include <util/Connector.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/quaternion.hpp>
 #include <glm/gtx/quaternion.hpp>
@@ -32,7 +33,7 @@
 // MuJoCo data structures
 mjModel* m = NULL;                  // MuJoCo model
 mjData* d = NULL;                   // MuJoCo data
-mjvCamera cam;                      // abstract camera
+mjvCamera cam, wristCam;                      // abstract camera
 mjvOption opt;                      // visualization options
 mjvScene scn;                       // abstract scene
 mjrContext con;                     // custom GPU context
@@ -43,7 +44,18 @@ bool button_middle = false;
 bool button_right =  false;
 double lastx = 0;
 double lasty = 0;
+
+// Dataset related variables.
+int objectCount = 256;
+int baseIds[1000];
+bool utensilFlag = false;
 bool pauseFlag = true;
+bool findStableFlag = true;
+bool stableFlag = false;
+int counter = 0;
+mjtNum *lastQpos, *stableQpos = NULL, *stableQvel = NULL, *stableCtrl = NULL;
+double stableError = 0.000005;
+int stableCounter = 0, stableIterations = 5000;
 
 // Get the path to the dot pattern
 std::string dotPath = "./kinect-pattern_3x3.png";
@@ -58,7 +70,7 @@ unsigned char glBuffer[2400*4000*3];
 unsigned char addonBuffer[2400*4000];
 
 // Data output stuff
-FILE * outFile = NULL;
+FILE * outFile = NULL, *outGraspDataFile = NULL;
 int skipSteps = 5, ctr = 0;
 
 // Joint info debugging data.
@@ -99,41 +111,6 @@ void print(glm::vec3 a){
 	std::cout<<a[0]<<" "<<a[1]<<" "<<a[2]<<std::endl;
 	return;
 }
-
-
-glm::mat4 getTM(glm::vec3 gaze, glm::vec3 pos, bool usePerspective){
-	// Obtain handedness and up vectors.
-	glm::vec3 r = glm::normalize(glm::cross(gaze, glm::vec3(0,0,1)));
-	glm::vec3 u = glm::normalize(glm::cross(r, gaze));
-
-    // Create transformation vector for second camera.
-	glm::mat4 s(-1, 0, 0, 0,
-		  0, 1, 0, 0,
-		  0, 0, 1, 0,
-		  0, 0, 0, 1);
-	glm::mat4 rot(r[0], r[1], r[2], 0,
-			    u[0], 	u[1], 	  u[2], 0,
-			    gaze[0],  gaze[1],  gaze[2], 0,
-				0, 0, 0, 1);
-	glm::mat4 t(1, 0, 0, -pos[0],
-				0, 1, 0, -pos[1],
-				0, 0, 1, -pos[2],
-				0, 0, 0, 1);
-	glm::mat4 p( 1, 0, 0, 0,
-				 0, 1, 0, 0,
-				 0, 0, 1, 0,
-				 0, 0, 1, 0);
-
-	glm::mat4 TM;
-	// Create camera transformation matrix.
-	if (usePerspective)
-		TM = p * (s * (rot * t));
-	else
-		TM = s * (rot * t);
-
-	return TM;
-}
-
 
 // mouse move callback
 void mouse_move(GLFWwindow* window, double xpos, double ypos)
@@ -176,14 +153,95 @@ void scroll(GLFWwindow* window, double xoffset, double yoffset)
     mjv_moveCamera(m, mjMOUSE_ZOOM, 0, -0.05*yoffset, &scn, &cam);
 }
 
+void copyArray(mjtNum *src, mjtNum *dest, int no){
+	for (int i = 0; i< no; i++)
+		dest[i] = src[i];
+}
+
 void graspObject(const mjModel* m, mjData* d){
+
 	if (!pauseFlag)
-		planner.PerformGrasp(m, d);
+	{
+		// Find stable position and preserve it.
+		if (findStableFlag)
+		{
+			// Get total displacement
+			double err = 0;
+			for (int i = 0; i<m->nq; i++)
+				err += fabs((d->qpos[i]) - lastQpos[i]);
+
+			// If stable, move on.
+			if (err < stableError || stableCounter >= stableIterations)
+			{
+				// Get stable data.
+				copyArray(d->qpos, stableQpos, m->nq);
+				copyArray(d->qvel, stableQvel, m->nv);
+				copyArray(d->ctrl, stableCtrl, m->nu);
+				stableFlag = true;
+				findStableFlag = false;
+
+				// Print data.
+				std::cout<<"QPOS STABLE"<<std::endl;
+				for (int i = 0; i<m->nq; i++)
+				{
+					std::cout<<d->qpos[i]<<" ";
+				}
+				std::cout<<std::endl;
+			}
+
+			// Get last data
+			copyArray(d->qpos, lastQpos, m->nq);
+			stableCounter++;
+		}
+
+		// When beginning a new grasp, save data.
+     	if (planner.getGraspState() == Grasp::grasping && planner.counter == 0)
+     	{
+     		fprintf(outGraspDataFile, "#Time:%lf# Starting grasp %d.\n", d->time, planner.graspCounter);
+     		std::cout<<"#Time:"<<d->time<<"# Starting grasp "<<planner.graspCounter<<"."<<std::endl;
+     	}
+
+		// If we're at the end of a stand state, save log data.
+     	if (planner.getGraspState() == Grasp::stand && planner.counter == 799)
+     	{
+     		// Calculate grasp success
+     		bool graspSuccess = d->qpos[29] > 0;
+
+     		mjtNum stablePos[4], lastPos[4], tmpQuat[4], tmpQuat2[4], vec[3] = {0, 0, 1}, res[3], res2[3];
+     		stablePos[0] = stableQpos[30];
+     		stablePos[1] = stableQpos[31];
+     		stablePos[2] = stableQpos[32];
+     		stablePos[3] = stableQpos[33];
+     		lastPos[0] = d->qpos[30];
+     		lastPos[1] = d->qpos[31];
+     		lastPos[2] = d->qpos[32];
+     		lastPos[3] = d->qpos[33];
+
+     		// Find difference quaternion
+     		mju_negQuat(tmpQuat, stablePos);
+     		mju_mulQuat(tmpQuat2, tmpQuat, lastPos);
+     		mju_rotVecQuat(res, vec, tmpQuat2);
+
+     		// Get angle between two vectors.
+     		double angle = acos(mju_dot3(res, vec)) / PI; // scaled to 0-1.
+     		float stability = 1 - angle;
+     		if (stability<0 || !graspSuccess)
+     			stability = 0;
+     		fprintf(outGraspDataFile, "#Time:%lf# Finished grasp %d. Grasp success: %d. Grasp stability: %f.\n", d->time, planner.graspCounter, (int)graspSuccess, stability);
+     		std::cout<<"#Time:"<<d->time<<"# Finished grasp "<<planner.graspCounter<<". Grasp success: "<<graspSuccess<<". Grasp stability: "<<stability<<std::endl;
+     	}
+
+		// Perform grasping loop.
+		if (stableFlag)
+		{
+			// Perform grasp loop
+			planner.PerformGrasp(m, d, stableQpos, stableQvel, stableCtrl, &scn, &con);
+		}
+	}
 }
 
 void render(GLFWwindow* window, const mjModel* m, mjData* d)
 {
-
     // past data for FPS calculation
     static double lastrendertm = 0;
 
@@ -198,20 +256,26 @@ void render(GLFWwindow* window, const mjModel* m, mjData* d)
 		planner.camSize[0]
 	};
 
-	// Render the scene.
+	mjrRect bottomleft = {
+		rect.left,
+		rect.bottom,
+		planner.camSize[1],
+		planner.camSize[0]
+	};
+
+	// Render the depth buffer.
 	mjr_drawPixels(planner.depthBuffer, NULL, bottomright, &con);
+
+	// Render the rgb buffer.
+	mjr_drawPixels(planner.rgbBuffer, NULL, bottomleft, &con);
 
 	// Fill in relevant pixels with point cloud data.
 	if (planner.Simulator->cloud != nullptr){
+
 		glBegin(GL_POINTS);
 		for (int i = 0; i < planner.Simulator->cloud->height * planner.Simulator->cloud->width; i++) {
 		  if (planner.Simulator->cloud->points[i].r > 0)
 		  {
-			  /*
-			  glVertex3f(planner.Simulator->cloud->points[i].y, //.x
-					  planner.Simulator->cloud->points[i].x - 0.5, //.y
-					  planner.Simulator->cloud->points[i].z);
-					  */
 			  glVertex3f(planner.Simulator->cloud->points[i].x - 0.5, //.x
 			  					  planner.Simulator->cloud->points[i].y, //.y
 			  					  planner.Simulator->cloud->points[i].z);
@@ -219,51 +283,7 @@ void render(GLFWwindow* window, const mjModel* m, mjData* d)
 		}
 		glEnd();
 
-		/*
-
-		glBegin(GL_LINES);
-		for (int i = 0; i < planner.Simulator->cloud->height * planner.Simulator->cloud->width; i++) {
-			  glVertex3f(planner.Simulator->cloud->points[i].x,
-					  planner.Simulator->cloud->points[i].y,
-					  planner.Simulator->cloud->points[i].z);
-
-			  glVertex3f(planner.Simulator->cloud->points[i].x + planner.Simulator->cloud->points[i].normal_x*0.01,
-					  planner.Simulator->cloud->points[i].y + planner.Simulator->cloud->points[i].normal_y*0.01,
-					  planner.Simulator->cloud->points[i].z + planner.Simulator->cloud->points[i].normal_z*0.01);
-		}
-		glEnd();
-	*/
 	}
-
-	// Here, we save data. Skip steps if needed.
-	if (skipSteps > 0 && ctr < skipSteps)
-	{
-		ctr++;
-		return;
-	}
-
-	savelog(m, d, outFile);
-	ctr = 0;
-
-	/*
-	// Highlight the joint information here.
-	glColor3f(1.0f, 0.0f, 0.0f);
-	glBegin(GL_POINTS);
-	for (int i = 0; i < 20; i++) {
-	  glVertex3f(jointArr[i][0], jointArr[i][1], jointArr[i][2]);
-	}
-	glEnd();
-
-	glLineWidth(2.5);
-	glColor3f(1.0, 0.0, 0.0);
-	glBegin(GL_LINES);
-	for (int i = 0; i < 20; i++) {
-		glVertex3f(jointArr[i][0], jointArr[i][1], jointArr[i][2]);
-		glVertex3f(jointArr[i][0] + (jointArr[i][3]/10), jointArr[i][1] + (jointArr[i][4]/10), jointArr[i][2] + (jointArr[i][5]/10));
-	}
-	glEnd();
-	*/
-
 
 }
 
@@ -284,20 +304,170 @@ int main(int argc, const char** argv)
     mj_activate("mjkey_macos.txt");
 	#endif
 
+    // Redirect cout to file.
+    std::ofstream out(planner.debugLogFile);
+    std::streambuf *coutbuf = std::cout.rdbuf(); //save old buf
+    std::cout.rdbuf(out.rdbuf()); //redirect std::cout to out.txt!
+    outGraspDataFile = fopen(planner.resultFile, "w");
+
+    // Get random object, and relevant asset/object files.
+    srand(time(NULL));
+    int objectId = rand()%objectCount + 1;
+    std::cout<<"SELECTED OBJECT:"<<objectId<<std::endl;
+    int baseId = rand()%13 + 1;
+
+    // Manage file names
+    char convexHullFile[1000], baseIdFile[1000], oldAssetFile[1000], oldBaseAssetFile[1000], newAssetFile[1000],
+	newBaseAssetFile[1000], oldObjectFile[1000], oldBaseFile[1000], newObjectFile[1000], newBaseFile[1000],
+	tmp[1000], lightFile[1000], tableFile[1000];
+
+    // Copy light and table files.
+    strcpy(tmp, argv[1]);
+    strcat(tmp, "/include_lightOrg.xml");
+    strcpy(lightFile, argv[1]);
+    strcat(lightFile, "/include_light.xml");
+    boost::filesystem::copy_file(tmp, lightFile, boost::filesystem::copy_option::overwrite_if_exists);
+    strcpy(tmp, argv[1]);
+    strcat(tmp, "/include_tableOrg.xml");
+    strcpy(tableFile, argv[1]);
+    strcat(tableFile, "/include_table.xml");
+    boost::filesystem::copy_file(tmp, tableFile, boost::filesystem::copy_option::overwrite_if_exists);
+
+    // Create rest of the files.
+    strcpy(convexHullFile, argv[1]);
+    strcat(convexHullFile, "/convhull.txt");
+    strcpy(baseIdFile, argv[1]);
+    strcat(baseIdFile, "/baseIds.txt");
+
+    strcpy(oldAssetFile, argv[1]);
+    strcat(oldAssetFile, "/include_object_assets.xml");
+    strcpy(oldBaseAssetFile, argv[1]);
+    strcat(oldBaseAssetFile, "/include_base_assets.xml");
+
+    strcpy(newAssetFile, argv[1]);
+    strcat(newAssetFile, "/mesh/objects/");
+    sprintf(tmp, "D_%d/D_%d_assets.xml", objectId, objectId);
+    strcat(newAssetFile, tmp);
+
+    strcpy(newBaseAssetFile, argv[1]);
+    strcat(newBaseAssetFile, "/mesh/bases/");
+    sprintf(tmp, "D_%d/D_%d_assets.xml", baseId, baseId);
+    strcat(newBaseAssetFile, tmp);
+
+    strcpy(oldObjectFile, argv[1]);
+    strcat(oldObjectFile, "/include_object.xml");
+    strcpy(oldBaseFile, argv[1]);
+    strcat(oldBaseFile, "/include_base.xml");
+
+    strcpy(newObjectFile, argv[1]);
+    strcat(newObjectFile, "/mesh/objects/");
+    sprintf(tmp, "D_%d/D_%d_object.xml", objectId, objectId);
+    strcat(newObjectFile, tmp);
+
+    strcpy(newBaseFile, argv[1]);
+    strcat(newBaseFile, "/mesh/bases/");
+    sprintf(tmp, "D_%d/D_%d_base.xml", baseId, baseId);
+    strcat(newBaseFile, tmp);
+
+    // Read base ids.
+    FILE * fid = fopen(baseIdFile, "r");
+    for (int i = 0; i<objectCount; i++)
+    	fscanf(fid, "%d\n", &(baseIds[i]));
+
+    // Create model name.
+    char modelStr[1000];
+    strcpy(modelStr, argv[1]);
+    // If utensil, place in a base consisting of a cup.
+    if (baseIds[objectId - 1] == 1)
+    {
+    	utensilFlag = true;
+    	planner.minPointZ = -0.255; // Table is at -0.35, each base is about 9 cms.
+        boost::filesystem::copy_file(newBaseFile, oldBaseFile, boost::filesystem::copy_option::overwrite_if_exists);
+        boost::filesystem::copy_file(newBaseAssetFile, oldBaseAssetFile, boost::filesystem::copy_option::overwrite_if_exists);
+    	strcat(modelStr, "/BHAM_Test_Base.xml");
+    }
+
+    // If a plate, bowl or a pan, place on an invisible base. There's no collision between the base and the hand.
+    else if (baseIds[objectId - 1] == 2) {
+    	strcat(modelStr, "/BHAM_Test_BaseInv.xml");
+    }
+    else strcat(modelStr, "/BHAM_Test.xml");
+
+    // Copy files.
+    boost::filesystem::copy_file(newAssetFile, oldAssetFile, boost::filesystem::copy_option::overwrite_if_exists);
+    boost::filesystem::copy_file(newObjectFile, oldObjectFile, boost::filesystem::copy_option::overwrite_if_exists);
+
+    // Modify the xml files with random parameters.
+    Grasp::ModifyXMLs(argv[1], objectId, baseId);
+
+    // Before we move on to grasping loop, we save all the model files to the cloud.
+    char tmpStr[1000];
+    strcpy(tmpStr, "./tmp/");
+    strcat(tmpStr, planner.fileId);
+    strcat(tmpStr, "_include_light.xml");
+    boost::filesystem::copy_file(lightFile, tmpStr, boost::filesystem::copy_option::overwrite_if_exists);
+    Grasp::Connector::UploadFile(tmpStr);
+    strcpy(tmpStr, "./tmp/");
+    strcat(tmpStr, planner.fileId);
+    strcat(tmpStr, "_include_table.xml");
+    boost::filesystem::copy_file(tableFile, tmpStr, boost::filesystem::copy_option::overwrite_if_exists);
+    Grasp::Connector::UploadFile(tmpStr);
+    strcpy(tmpStr, "./tmp/");
+    strcat(tmpStr, planner.fileId);
+    strcat(tmpStr, "_include_object.xml");
+    boost::filesystem::copy_file(oldObjectFile, tmpStr, boost::filesystem::copy_option::overwrite_if_exists);
+    Grasp::Connector::UploadFile(tmpStr);
+    strcpy(tmpStr, "./tmp/");
+    strcat(tmpStr, planner.fileId);
+    strcat(tmpStr, "_include_base.xml");
+    boost::filesystem::copy_file(oldBaseFile, tmpStr, boost::filesystem::copy_option::overwrite_if_exists);
+    Grasp::Connector::UploadFile(tmpStr);
+    strcpy(tmpStr, "./tmp/");
+    strcat(tmpStr, planner.fileId);
+    strcat(tmpStr, "_include_object_assets.xml");
+    boost::filesystem::copy_file(oldAssetFile, tmpStr, boost::filesystem::copy_option::overwrite_if_exists);
+    Grasp::Connector::UploadFile(tmpStr);
+    strcpy(tmpStr, "./tmp/");
+    strcat(tmpStr, planner.fileId);
+    strcat(tmpStr, "_include_base_assets.xml");
+    boost::filesystem::copy_file(oldBaseAssetFile, tmpStr, boost::filesystem::copy_option::overwrite_if_exists);
+    Grasp::Connector::UploadFile(tmpStr);
+
     // install control callback
     mjcb_control = graspObject;
 
+    // Read convex hull points into an array.
+    float tempBuffer[3];
+    FILE * chBuf = fopen(convexHullFile, "r");
+    while(true){
+    	std::vector<float> tmpVec;
+    	int no = fscanf(chBuf, "%f %f %f", tempBuffer, tempBuffer+1, tempBuffer+2);
+
+    	if (no != 3)
+    		break;
+
+    	// Add the positions to the vector.
+    	tmpVec.push_back(tempBuffer[0]);
+    	tmpVec.push_back(tempBuffer[1]);
+    	tmpVec.push_back(tempBuffer[2]);
+
+    	// Add the vector to the list.
+    	planner.convHullPoints.push_back(tmpVec);
+    }
+    fclose(chBuf);
+
     // load and compile model
     char error[1000] = "Could not load binary model";
-    if( strlen(argv[1])>4 && !strcmp(argv[1]+strlen(argv[1])-4, ".mjb") )
-        m = mj_loadModel(argv[1], 0);
+    if( strlen(modelStr)>4 && !strcmp(modelStr+strlen(modelStr)-4, ".mjb") )
+        m = mj_loadModel(modelStr, 0);
     else
-        m = mj_loadXML(argv[1], 0, error, 1000);
+        m = mj_loadXML(modelStr, 0, error, 1000);
     if( !m )
         mju_error_s("Load model error: %s", error);
 
     // make data
     d = mj_makeData(m);
+    lastQpos = new mjtNum[m->nq], stableQpos = new mjtNum[m->nq], stableQvel = new mjtNum[m->nv], stableCtrl = new mjtNum[m->nu];
 
     // init GLFW
     if( !glfwInit() )
@@ -310,7 +480,19 @@ int main(int argc, const char** argv)
 
     // initialize visualization data structures
     mjv_defaultCamera(&cam);
+    mjv_defaultCamera(&wristCam);
     mjv_defaultOption(&opt);
+	opt.geomgroup[0] = 1;
+	opt.geomgroup[1] = 1;
+	opt.geomgroup[2] = 1;
+	opt.geomgroup[3] = 0;
+	opt.geomgroup[4] = 0;
+    for (int i = 0; i<18; i++)
+    {
+    	if (i != 17)
+    		opt.flags[i] = 0;
+    }
+
     mjr_defaultContext(&con);
     mjv_makeScene(&scn, 1000);                   // space for 1000 objects
     mjr_makeContext(m, &con, mjFONTSCALE_100);   // model-specific context
@@ -321,8 +503,8 @@ int main(int argc, const char** argv)
     glfwSetMouseButtonCallback(window, mouse_button);
     glfwSetScrollCallback(window, scroll);
 
-    // Create random file name.
-	boost::filesystem::create_directory("./tmp/"); // Create temp dir
+    // Filename operations, srand
+	boost::filesystem::create_directories("./tmp/"); // Create temp dir
     std::srand(std::time(NULL));
 
     // Open out file.
@@ -342,17 +524,47 @@ int main(int argc, const char** argv)
     // Enlarge the points
     glPointSize(5);
 
+    // Save the first log, and read it from the file into an array.
+    // We'll use the array to reset the simulation.
+    int recsz = 1 + m->nq + m->nv + m->nu + 7*m->nmocap + m->nsensordata;
+    planner.data = new float[recsz];
+	savelog(m, d, planner.data, outFile);
+
     // run main loop, target real-time simulation and 60 fps rendering
     while( !glfwWindowShouldClose(window) )
     {
+
+     	if (planner.getGraspState() == Grasp::done)
+     		break;
+
         // advance interactive simulation for 1/60 sec
         //  Assuming MuJoCo can simulate faster than real-time, which it usually can,
         //  this loop will finish on time for the next frame to be rendered at 60 fps.
         //  Otherwise add a cpu timer and exit this loop when it is time to render.
         mjtNum simstart = d->time;
-        while( d->time - simstart < 1.0/60.0 ){
-            mj_step(m, d);
-    }
+        if (!pauseFlag){
+			while( d->time - simstart < 1.0/60.0 )
+			{
+				if (planner.getGraspState() == Grasp::grasping ||
+						planner.getGraspState() == Grasp::lifting ||
+						planner.getGraspState() == Grasp::stand)
+				{
+					// Here, we save data. Skip steps if needed.
+					if (skipSteps > 0 && ctr < skipSteps)
+					{
+						ctr++;
+					}
+					else{
+						int recsz = 1 + m->nq + m->nv + m->nu + 7*m->nmocap + m->nsensordata;
+						float buffer[recsz];
+						savelog(m, d, buffer, outFile);
+						ctr = 0;
+					}
+				}
+
+				mj_step(m, d);
+			}
+        }
 
         // get framebuffer viewport
         mjrRect viewport = {0, 0, 0, 0};
@@ -360,7 +572,9 @@ int main(int argc, const char** argv)
 
         // update scene and render
         mjv_updateScene(m, d, &opt, NULL, &cam, mjCAT_ALL, &scn);
+        glEnable(GL_CULL_FACE);
         mjr_render(viewport, &scn, &con);
+        glDisable(GL_CULL_FACE);
     	render(window, m, d);
 
         // swap OpenGL buffers (blocking call due to v-sync)
@@ -370,6 +584,22 @@ int main(int argc, const char** argv)
         glfwPollEvents();
     }
 
+    // Close record file
+    fclose(outFile);
+    fclose(outGraspDataFile);
+    std::cout.rdbuf(coutbuf); //reset to standard output again
+
+    // Save log file, grasp data and debug_log
+    Grasp::Connector::UploadFile(planner.logFile);
+    Grasp::Connector::UploadFile(planner.debugLogFile);
+    Grasp::Connector::UploadFile(planner.resultFile);
+
+    // delete tmp folder
+    if(boost::filesystem::exists("./tmp"))
+    {
+       boost::filesystem::remove_all("./tmp");
+    }
+
     // close GLFW, free visualization storage
     glfwTerminate();
     mjv_freeScene(&scn);
@@ -377,11 +607,13 @@ int main(int argc, const char** argv)
 
     // free MuJoCo model and data, deactivate
     mj_deleteData(d);
+	delete[] planner.data;
+	delete[] lastQpos;
+	delete [] stableQpos;
+	delete [] stableQvel;
+	delete [] stableCtrl;
     mj_deleteModel(m);
     mj_deactivate();
-
-    // Close record file
-    fclose(outFile);
 
     return 1;
 }

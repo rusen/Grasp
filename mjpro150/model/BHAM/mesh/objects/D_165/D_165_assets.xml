@@ -1,0 +1,27 @@
+<mujoco>
+    <asset>
+        <mesh name="D_165_1" file="objects/D_165/D_165_1.stl"/>
+        <mesh name="D_165_2" file="objects/D_165/D_165_2.stl"/>
+        <mesh name="D_165_3" file="objects/D_165/D_165_3.stl"/>
+        <mesh name="D_165_4" file="objects/D_165/D_165_4.stl"/>
+        <mesh name="D_165_5" file="objects/D_165/D_165_5.stl"/>
+        <mesh name="D_165_6" file="objects/D_165/D_165_6.stl"/>
+        <mesh name="D_165_7" file="objects/D_165/D_165_7.stl"/>
+        <mesh name="D_165_8" file="objects/D_165/D_165_8.stl"/>
+        <mesh name="D_165_9" file="objects/D_165/D_165_9.stl"/>
+        <mesh name="D_165_10" file="objects/D_165/D_165_10.stl"/>
+        <mesh name="D_165_11" file="objects/D_165/D_165_11.stl"/>
+        <mesh name="D_165_12" file="objects/D_165/D_165_12.stl"/>
+        <mesh name="D_165_13" file="objects/D_165/D_165_13.stl"/>
+        <mesh name="D_165_14" file="objects/D_165/D_165_14.stl"/>
+        <mesh name="D_165_15" file="objects/D_165/D_165_15.stl"/>
+        <mesh name="D_165_16" file="objects/D_165/D_165_16.stl"/>
+        <mesh name="D_165_17" file="objects/D_165/D_165_17.stl"/>
+        <mesh name="D_165_18" file="objects/D_165/D_165_18.stl"/>
+        <mesh name="D_165_19" file="objects/D_165/D_165_19.stl"/>
+        <mesh name="D_165_20" file="objects/D_165/D_165_20.stl"/>
+        <mesh name="D_165_21" file="objects/D_165/D_165_21.stl"/>
+        <mesh name="D_165_22" file="objects/D_165/D_165_22.stl"/>
+        <mesh name="D_165_visual" file="objects/D_165/D_165_full.stl"/>
+    </asset>
+</mujoco>

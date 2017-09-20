@@ -1,0 +1,20 @@
+<mujoco>
+    <asset>
+        <mesh name="D_191_1" file="objects/D_191/D_191_1.stl"/>
+        <mesh name="D_191_2" file="objects/D_191/D_191_2.stl"/>
+        <mesh name="D_191_3" file="objects/D_191/D_191_3.stl"/>
+        <mesh name="D_191_4" file="objects/D_191/D_191_4.stl"/>
+        <mesh name="D_191_5" file="objects/D_191/D_191_5.stl"/>
+        <mesh name="D_191_6" file="objects/D_191/D_191_6.stl"/>
+        <mesh name="D_191_7" file="objects/D_191/D_191_7.stl"/>
+        <mesh name="D_191_8" file="objects/D_191/D_191_8.stl"/>
+        <mesh name="D_191_9" file="objects/D_191/D_191_9.stl"/>
+        <mesh name="D_191_10" file="objects/D_191/D_191_10.stl"/>
+        <mesh name="D_191_11" file="objects/D_191/D_191_11.stl"/>
+        <mesh name="D_191_12" file="objects/D_191/D_191_12.stl"/>
+        <mesh name="D_191_13" file="objects/D_191/D_191_13.stl"/>
+        <mesh name="D_191_14" file="objects/D_191/D_191_14.stl"/>
+        <mesh name="D_191_15" file="objects/D_191/D_191_15.stl"/>
+        <mesh name="D_191_visual" file="objects/D_191/D_191_full.stl"/>
+    </asset>
+</mujoco>

@@ -68,6 +68,7 @@ namespace Grasp {
 
 		depth_im_ = cv::Mat(h, w, CV_32FC1);
 		scaled_im_ = cv::Mat(h, w, CV_32FC1);
+		rgbIm = cv::Mat(h, w, CV_8UC3);
 
 		object_model_ = new KinectSimulator(cam_info);
 
@@ -81,16 +82,21 @@ namespace Grasp {
     	  delete cloud;
     }
 
-    void simulateMeasurement(const mjModel* m, mjData* d, glm::vec3 newCamPos, glm::vec3 newCamGaze) {
+    void simulateMeasurement(const mjModel* m, mjData* d,  mjvScene *scn, mjrContext *con, glm::vec3 newCamPos, glm::vec3 newCamGaze, float minPointZ) {
       countf++;
 
       // simulate measurement of object and store in image, point cloud and labeled image
       cv::Mat p_result;
-      cloud = object_model_->intersect(m, d, depth_im_, newCamPos, newCamGaze);
+      cloud = object_model_->intersect(m, d, scn, con, rgbIm, depth_im_, newCamPos, newCamGaze, minPointZ);
       
       // store on disk
   	  std::stringstream lD;
   	  convertScaleAbs(depth_im_, scaled_im_, 255.0f);
+
+      // Save depth map on a file.
+      cv::Mat outDepth;
+      cv::flip(scaled_im_, outDepth, -1);
+      cv::imwrite( "./tmp/tempDepth.png", outDepth );
 
   	  // Calculate surface normals as well!
   	  int pointCount = cloud->size();
@@ -126,11 +132,13 @@ namespace Grasp {
   	  ptr.reset();
   	  tree.reset();
   	  cloud_normals.reset();
+
     }
 
     KinectSimulator *object_model_;
     CameraInfo cam_info;
     cv::Mat depth_im_, scaled_im_, labels_;
+    cv::Mat rgbIm;
     std::string out_path_;
     pcl::PointCloud<pcl::PointXYZRGBNormal> *cloud;
 	pcl::NormalEstimation<pcl::PointXYZ, pcl::Normal> ne;
@@ -140,7 +148,7 @@ namespace Grasp {
   };
 
   // Function to collect data from simulated Kinect camera.
-  void CollectData(Simulate* Simulator, const mjModel* m, mjData* d, unsigned char* depthBuffer, glm::vec3 cameraPos, glm::vec3 gazeDir, int * camSize, bool*finishFlag);
+  void CollectData(Simulate* Simulator, const mjModel* m, mjData* d, mjvScene *scn, mjrContext *con, unsigned char* rgbBuffer, unsigned char* depthBuffer, glm::vec3 cameraPos, glm::vec3 gazeDir, int * camSize, float minPointZ, bool*finishFlag);
 
 } //namespace Grasp
 #endif // SIMULATE_H

@@ -1,0 +1,16 @@
+<mujoco>
+    <asset>
+        <mesh name="D_11_1" file="objects/D_11/D_11_1.stl"/>
+        <mesh name="D_11_2" file="objects/D_11/D_11_2.stl"/>
+        <mesh name="D_11_3" file="objects/D_11/D_11_3.stl"/>
+        <mesh name="D_11_4" file="objects/D_11/D_11_4.stl"/>
+        <mesh name="D_11_5" file="objects/D_11/D_11_5.stl"/>
+        <mesh name="D_11_6" file="objects/D_11/D_11_6.stl"/>
+        <mesh name="D_11_7" file="objects/D_11/D_11_7.stl"/>
+        <mesh name="D_11_8" file="objects/D_11/D_11_8.stl"/>
+        <mesh name="D_11_9" file="objects/D_11/D_11_9.stl"/>
+        <mesh name="D_11_10" file="objects/D_11/D_11_10.stl"/>
+        <mesh name="D_11_11" file="objects/D_11/D_11_11.stl"/>
+        <mesh name="D_11_visual" file="objects/D_11/D_11_full.stl"/>
+    </asset>
+</mujoco>

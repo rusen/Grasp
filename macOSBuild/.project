@@ -197,6 +197,21 @@
 			<location>/Users/rusi/git/Grasp/mjpro150/src/util/Connector.cpp</location>
 		</link>
 		<link>
+			<name>[Targets]/[exe] playlog/Source Files/ModifyXMLs.cpp</name>
+			<type>1</type>
+			<location>/Users/rusi/git/Grasp/mjpro150/src/util/ModifyXMLs.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] playlog/Source Files/Path.cpp</name>
+			<type>1</type>
+			<location>/Users/rusi/git/Grasp/mjpro150/src/util/Path.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] playlog/Source Files/Waypoint.cpp</name>
+			<type>1</type>
+			<location>/Users/rusi/git/Grasp/mjpro150/src/util/Waypoint.cpp</location>
+		</link>
+		<link>
 			<name>[Targets]/[exe] playlog/Header Files</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
@@ -290,6 +305,21 @@
 			<name>[Targets]/[exe] basicGrasp/Source Files/Connector.cpp</name>
 			<type>1</type>
 			<location>/Users/rusi/git/Grasp/mjpro150/src/util/Connector.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] basicGrasp/Source Files/ModifyXMLs.cpp</name>
+			<type>1</type>
+			<location>/Users/rusi/git/Grasp/mjpro150/src/util/ModifyXMLs.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] basicGrasp/Source Files/Path.cpp</name>
+			<type>1</type>
+			<location>/Users/rusi/git/Grasp/mjpro150/src/util/Path.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] basicGrasp/Source Files/Waypoint.cpp</name>
+			<type>1</type>
+			<location>/Users/rusi/git/Grasp/mjpro150/src/util/Waypoint.cpp</location>
 		</link>
 		<link>
 			<name>[Targets]/[exe] basicGrasp/Header Files</name>

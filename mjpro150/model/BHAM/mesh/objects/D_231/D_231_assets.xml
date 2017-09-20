@@ -1,0 +1,10 @@
+<mujoco>
+    <asset>
+        <mesh name="D_231_1" file="objects/D_231/D_231_1.stl"/>
+        <mesh name="D_231_2" file="objects/D_231/D_231_2.stl"/>
+        <mesh name="D_231_3" file="objects/D_231/D_231_3.stl"/>
+        <mesh name="D_231_4" file="objects/D_231/D_231_4.stl"/>
+        <mesh name="D_231_5" file="objects/D_231/D_231_5.stl"/>
+        <mesh name="D_231_visual" file="objects/D_231/D_231_full.stl"/>
+    </asset>
+</mujoco>

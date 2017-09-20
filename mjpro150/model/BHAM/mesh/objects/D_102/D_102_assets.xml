@@ -1,0 +1,27 @@
+<mujoco>
+    <asset>
+        <mesh name="D_102_1" file="objects/D_102/D_102_1.stl"/>
+        <mesh name="D_102_2" file="objects/D_102/D_102_2.stl"/>
+        <mesh name="D_102_3" file="objects/D_102/D_102_3.stl"/>
+        <mesh name="D_102_4" file="objects/D_102/D_102_4.stl"/>
+        <mesh name="D_102_5" file="objects/D_102/D_102_5.stl"/>
+        <mesh name="D_102_6" file="objects/D_102/D_102_6.stl"/>
+        <mesh name="D_102_7" file="objects/D_102/D_102_7.stl"/>
+        <mesh name="D_102_8" file="objects/D_102/D_102_8.stl"/>
+        <mesh name="D_102_9" file="objects/D_102/D_102_9.stl"/>
+        <mesh name="D_102_10" file="objects/D_102/D_102_10.stl"/>
+        <mesh name="D_102_11" file="objects/D_102/D_102_11.stl"/>
+        <mesh name="D_102_12" file="objects/D_102/D_102_12.stl"/>
+        <mesh name="D_102_13" file="objects/D_102/D_102_13.stl"/>
+        <mesh name="D_102_14" file="objects/D_102/D_102_14.stl"/>
+        <mesh name="D_102_15" file="objects/D_102/D_102_15.stl"/>
+        <mesh name="D_102_16" file="objects/D_102/D_102_16.stl"/>
+        <mesh name="D_102_17" file="objects/D_102/D_102_17.stl"/>
+        <mesh name="D_102_18" file="objects/D_102/D_102_18.stl"/>
+        <mesh name="D_102_19" file="objects/D_102/D_102_19.stl"/>
+        <mesh name="D_102_20" file="objects/D_102/D_102_20.stl"/>
+        <mesh name="D_102_21" file="objects/D_102/D_102_21.stl"/>
+        <mesh name="D_102_22" file="objects/D_102/D_102_22.stl"/>
+        <mesh name="D_102_visual" file="objects/D_102/D_102_full.stl"/>
+    </asset>
+</mujoco>

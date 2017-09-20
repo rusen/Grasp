@@ -1,0 +1,22 @@
+<mujoco>
+    <asset>
+        <mesh name="D_249_1" file="objects/D_249/D_249_1.stl"/>
+        <mesh name="D_249_2" file="objects/D_249/D_249_2.stl"/>
+        <mesh name="D_249_3" file="objects/D_249/D_249_3.stl"/>
+        <mesh name="D_249_4" file="objects/D_249/D_249_4.stl"/>
+        <mesh name="D_249_5" file="objects/D_249/D_249_5.stl"/>
+        <mesh name="D_249_6" file="objects/D_249/D_249_6.stl"/>
+        <mesh name="D_249_7" file="objects/D_249/D_249_7.stl"/>
+        <mesh name="D_249_8" file="objects/D_249/D_249_8.stl"/>
+        <mesh name="D_249_9" file="objects/D_249/D_249_9.stl"/>
+        <mesh name="D_249_10" file="objects/D_249/D_249_10.stl"/>
+        <mesh name="D_249_11" file="objects/D_249/D_249_11.stl"/>
+        <mesh name="D_249_12" file="objects/D_249/D_249_12.stl"/>
+        <mesh name="D_249_13" file="objects/D_249/D_249_13.stl"/>
+        <mesh name="D_249_14" file="objects/D_249/D_249_14.stl"/>
+        <mesh name="D_249_15" file="objects/D_249/D_249_15.stl"/>
+        <mesh name="D_249_16" file="objects/D_249/D_249_16.stl"/>
+        <mesh name="D_249_17" file="objects/D_249/D_249_17.stl"/>
+        <mesh name="D_249_visual" file="objects/D_249/D_249_full.stl"/>
+    </asset>
+</mujoco>

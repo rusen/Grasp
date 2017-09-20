@@ -1,0 +1,34 @@
+<mujoco>
+    <asset>
+        <mesh name="D_43_1" file="objects/D_43/D_43_1.stl"/>
+        <mesh name="D_43_2" file="objects/D_43/D_43_2.stl"/>
+        <mesh name="D_43_3" file="objects/D_43/D_43_3.stl"/>
+        <mesh name="D_43_4" file="objects/D_43/D_43_4.stl"/>
+        <mesh name="D_43_5" file="objects/D_43/D_43_5.stl"/>
+        <mesh name="D_43_6" file="objects/D_43/D_43_6.stl"/>
+        <mesh name="D_43_7" file="objects/D_43/D_43_7.stl"/>
+        <mesh name="D_43_8" file="objects/D_43/D_43_8.stl"/>
+        <mesh name="D_43_9" file="objects/D_43/D_43_9.stl"/>
+        <mesh name="D_43_10" file="objects/D_43/D_43_10.stl"/>
+        <mesh name="D_43_11" file="objects/D_43/D_43_11.stl"/>
+        <mesh name="D_43_12" file="objects/D_43/D_43_12.stl"/>
+        <mesh name="D_43_13" file="objects/D_43/D_43_13.stl"/>
+        <mesh name="D_43_14" file="objects/D_43/D_43_14.stl"/>
+        <mesh name="D_43_15" file="objects/D_43/D_43_15.stl"/>
+        <mesh name="D_43_16" file="objects/D_43/D_43_16.stl"/>
+        <mesh name="D_43_17" file="objects/D_43/D_43_17.stl"/>
+        <mesh name="D_43_18" file="objects/D_43/D_43_18.stl"/>
+        <mesh name="D_43_19" file="objects/D_43/D_43_19.stl"/>
+        <mesh name="D_43_20" file="objects/D_43/D_43_20.stl"/>
+        <mesh name="D_43_21" file="objects/D_43/D_43_21.stl"/>
+        <mesh name="D_43_22" file="objects/D_43/D_43_22.stl"/>
+        <mesh name="D_43_23" file="objects/D_43/D_43_23.stl"/>
+        <mesh name="D_43_24" file="objects/D_43/D_43_24.stl"/>
+        <mesh name="D_43_25" file="objects/D_43/D_43_25.stl"/>
+        <mesh name="D_43_26" file="objects/D_43/D_43_26.stl"/>
+        <mesh name="D_43_27" file="objects/D_43/D_43_27.stl"/>
+        <mesh name="D_43_28" file="objects/D_43/D_43_28.stl"/>
+        <mesh name="D_43_29" file="objects/D_43/D_43_29.stl"/>
+        <mesh name="D_43_visual" file="objects/D_43/D_43_full.stl"/>
+    </asset>
+</mujoco>

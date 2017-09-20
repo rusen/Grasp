@@ -1,0 +1,42 @@
+<mujoco>
+    <asset>
+        <mesh name="D_207_1" file="objects/D_207/D_207_1.stl"/>
+        <mesh name="D_207_2" file="objects/D_207/D_207_2.stl"/>
+        <mesh name="D_207_3" file="objects/D_207/D_207_3.stl"/>
+        <mesh name="D_207_4" file="objects/D_207/D_207_4.stl"/>
+        <mesh name="D_207_5" file="objects/D_207/D_207_5.stl"/>
+        <mesh name="D_207_6" file="objects/D_207/D_207_6.stl"/>
+        <mesh name="D_207_7" file="objects/D_207/D_207_7.stl"/>
+        <mesh name="D_207_8" file="objects/D_207/D_207_8.stl"/>
+        <mesh name="D_207_9" file="objects/D_207/D_207_9.stl"/>
+        <mesh name="D_207_10" file="objects/D_207/D_207_10.stl"/>
+        <mesh name="D_207_11" file="objects/D_207/D_207_11.stl"/>
+        <mesh name="D_207_12" file="objects/D_207/D_207_12.stl"/>
+        <mesh name="D_207_13" file="objects/D_207/D_207_13.stl"/>
+        <mesh name="D_207_14" file="objects/D_207/D_207_14.stl"/>
+        <mesh name="D_207_15" file="objects/D_207/D_207_15.stl"/>
+        <mesh name="D_207_16" file="objects/D_207/D_207_16.stl"/>
+        <mesh name="D_207_17" file="objects/D_207/D_207_17.stl"/>
+        <mesh name="D_207_18" file="objects/D_207/D_207_18.stl"/>
+        <mesh name="D_207_19" file="objects/D_207/D_207_19.stl"/>
+        <mesh name="D_207_20" file="objects/D_207/D_207_20.stl"/>
+        <mesh name="D_207_21" file="objects/D_207/D_207_21.stl"/>
+        <mesh name="D_207_22" file="objects/D_207/D_207_22.stl"/>
+        <mesh name="D_207_23" file="objects/D_207/D_207_23.stl"/>
+        <mesh name="D_207_24" file="objects/D_207/D_207_24.stl"/>
+        <mesh name="D_207_25" file="objects/D_207/D_207_25.stl"/>
+        <mesh name="D_207_26" file="objects/D_207/D_207_26.stl"/>
+        <mesh name="D_207_27" file="objects/D_207/D_207_27.stl"/>
+        <mesh name="D_207_28" file="objects/D_207/D_207_28.stl"/>
+        <mesh name="D_207_29" file="objects/D_207/D_207_29.stl"/>
+        <mesh name="D_207_30" file="objects/D_207/D_207_30.stl"/>
+        <mesh name="D_207_31" file="objects/D_207/D_207_31.stl"/>
+        <mesh name="D_207_32" file="objects/D_207/D_207_32.stl"/>
+        <mesh name="D_207_33" file="objects/D_207/D_207_33.stl"/>
+        <mesh name="D_207_34" file="objects/D_207/D_207_34.stl"/>
+        <mesh name="D_207_35" file="objects/D_207/D_207_35.stl"/>
+        <mesh name="D_207_36" file="objects/D_207/D_207_36.stl"/>
+        <mesh name="D_207_37" file="objects/D_207/D_207_37.stl"/>
+        <mesh name="D_207_visual" file="objects/D_207/D_207_full.stl"/>
+    </asset>
+</mujoco>

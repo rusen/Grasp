@@ -21,53 +21,27 @@ DLRHandController::~DLRHandController() {
 
 }
 
-void DLRHandController::SetPose(const mjModel* m, mjData* d, glm::vec3 pos, glm::quat q){
+void DLRHandController::SetPose(const mjModel* m, mjData* d, glm::vec3 pos, glm::quat q, float* jointAngles){
+
+	q = q * glm::quat(glm::vec3(-1.5708, 0, -0.7854));
+
 	// Assign position
 	d->mocap_pos[0] = pos[0];
 	d->mocap_pos[1] = pos[1];
 	d->mocap_pos[2] = pos[2];
 
-	// Assign orientation
-	d->mocap_quat[0] = q[2];
-	d->mocap_quat[1] = -q[1];
-	d->mocap_quat[2] = q[0];
-	d->mocap_quat[3] = q[3];
+//	std::cout<<d->mocap_quat[0]<<d->mocap_quat[1]<<d->mocap_quat[2]<<d->mocap_quat[3]<<std::endl;
 
-}
-
-bool DLRHandController::Grasp(const mjModel* m, mjData* d, graspType type){
-
-	// Decide which joint modifications to use.
-	double * curPoses = NULL;
-	switch (type)
-	{
-		case initialGrasp:
-			curPoses = initialPoses;
-			break;
-		case finalGrasp:
-			curPoses = finalPoses;
-			break;
-	}
+	d->mocap_quat[0] = q.w;
+	d->mocap_quat[1] = q.x;
+	d->mocap_quat[2] = q.y;
+	d->mocap_quat[3] = q.z;
 
 	// Move joints to initial positions.
 	for (int i = 0; i < jointCount; i++)
 	{
-		if (std::abs(curPoses[i]) > 0.001)
-		{
-			d->ctrl[i] += curPoses[i]/counterLimit;
-		}
+		d->ctrl[i] = jointAngles[i];
 	}
-
-	// Increase counter and finish operation if needed.
-	counter++;
-	if (counter > counterLimit)
-	{
-		counter = 0;
-		return true;
-	}
-	else
-		return false;
 }
-
 
 }

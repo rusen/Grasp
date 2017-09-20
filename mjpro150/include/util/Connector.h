@@ -10,7 +10,6 @@
 
 #define SERVER_ADDRESS "http://52.14.167.90:8000/"
 #define DROPBOX_FOLDER "/Users/rusi/TestDropbox/Dropbox/"
-#define USING_DROPBOX true
 
 namespace Grasp {
 

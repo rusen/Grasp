@@ -1,0 +1,34 @@
+<mujoco>
+    <asset>
+        <mesh name="D_203_1" file="objects/D_203/D_203_1.stl"/>
+        <mesh name="D_203_2" file="objects/D_203/D_203_2.stl"/>
+        <mesh name="D_203_3" file="objects/D_203/D_203_3.stl"/>
+        <mesh name="D_203_4" file="objects/D_203/D_203_4.stl"/>
+        <mesh name="D_203_5" file="objects/D_203/D_203_5.stl"/>
+        <mesh name="D_203_6" file="objects/D_203/D_203_6.stl"/>
+        <mesh name="D_203_7" file="objects/D_203/D_203_7.stl"/>
+        <mesh name="D_203_8" file="objects/D_203/D_203_8.stl"/>
+        <mesh name="D_203_9" file="objects/D_203/D_203_9.stl"/>
+        <mesh name="D_203_10" file="objects/D_203/D_203_10.stl"/>
+        <mesh name="D_203_11" file="objects/D_203/D_203_11.stl"/>
+        <mesh name="D_203_12" file="objects/D_203/D_203_12.stl"/>
+        <mesh name="D_203_13" file="objects/D_203/D_203_13.stl"/>
+        <mesh name="D_203_14" file="objects/D_203/D_203_14.stl"/>
+        <mesh name="D_203_15" file="objects/D_203/D_203_15.stl"/>
+        <mesh name="D_203_16" file="objects/D_203/D_203_16.stl"/>
+        <mesh name="D_203_17" file="objects/D_203/D_203_17.stl"/>
+        <mesh name="D_203_18" file="objects/D_203/D_203_18.stl"/>
+        <mesh name="D_203_19" file="objects/D_203/D_203_19.stl"/>
+        <mesh name="D_203_20" file="objects/D_203/D_203_20.stl"/>
+        <mesh name="D_203_21" file="objects/D_203/D_203_21.stl"/>
+        <mesh name="D_203_22" file="objects/D_203/D_203_22.stl"/>
+        <mesh name="D_203_23" file="objects/D_203/D_203_23.stl"/>
+        <mesh name="D_203_24" file="objects/D_203/D_203_24.stl"/>
+        <mesh name="D_203_25" file="objects/D_203/D_203_25.stl"/>
+        <mesh name="D_203_26" file="objects/D_203/D_203_26.stl"/>
+        <mesh name="D_203_27" file="objects/D_203/D_203_27.stl"/>
+        <mesh name="D_203_28" file="objects/D_203/D_203_28.stl"/>
+        <mesh name="D_203_29" file="objects/D_203/D_203_29.stl"/>
+        <mesh name="D_203_visual" file="objects/D_203/D_203_full.stl"/>
+    </asset>
+</mujoco>

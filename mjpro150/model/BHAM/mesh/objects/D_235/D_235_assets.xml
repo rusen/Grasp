@@ -1,0 +1,35 @@
+<mujoco>
+    <asset>
+        <mesh name="D_235_1" file="objects/D_235/D_235_1.stl"/>
+        <mesh name="D_235_2" file="objects/D_235/D_235_2.stl"/>
+        <mesh name="D_235_3" file="objects/D_235/D_235_3.stl"/>
+        <mesh name="D_235_4" file="objects/D_235/D_235_4.stl"/>
+        <mesh name="D_235_5" file="objects/D_235/D_235_5.stl"/>
+        <mesh name="D_235_6" file="objects/D_235/D_235_6.stl"/>
+        <mesh name="D_235_7" file="objects/D_235/D_235_7.stl"/>
+        <mesh name="D_235_8" file="objects/D_235/D_235_8.stl"/>
+        <mesh name="D_235_9" file="objects/D_235/D_235_9.stl"/>
+        <mesh name="D_235_10" file="objects/D_235/D_235_10.stl"/>
+        <mesh name="D_235_11" file="objects/D_235/D_235_11.stl"/>
+        <mesh name="D_235_12" file="objects/D_235/D_235_12.stl"/>
+        <mesh name="D_235_13" file="objects/D_235/D_235_13.stl"/>
+        <mesh name="D_235_14" file="objects/D_235/D_235_14.stl"/>
+        <mesh name="D_235_15" file="objects/D_235/D_235_15.stl"/>
+        <mesh name="D_235_16" file="objects/D_235/D_235_16.stl"/>
+        <mesh name="D_235_17" file="objects/D_235/D_235_17.stl"/>
+        <mesh name="D_235_18" file="objects/D_235/D_235_18.stl"/>
+        <mesh name="D_235_19" file="objects/D_235/D_235_19.stl"/>
+        <mesh name="D_235_20" file="objects/D_235/D_235_20.stl"/>
+        <mesh name="D_235_21" file="objects/D_235/D_235_21.stl"/>
+        <mesh name="D_235_22" file="objects/D_235/D_235_22.stl"/>
+        <mesh name="D_235_23" file="objects/D_235/D_235_23.stl"/>
+        <mesh name="D_235_24" file="objects/D_235/D_235_24.stl"/>
+        <mesh name="D_235_25" file="objects/D_235/D_235_25.stl"/>
+        <mesh name="D_235_26" file="objects/D_235/D_235_26.stl"/>
+        <mesh name="D_235_27" file="objects/D_235/D_235_27.stl"/>
+        <mesh name="D_235_28" file="objects/D_235/D_235_28.stl"/>
+        <mesh name="D_235_29" file="objects/D_235/D_235_29.stl"/>
+        <mesh name="D_235_30" file="objects/D_235/D_235_30.stl"/>
+        <mesh name="D_235_visual" file="objects/D_235/D_235_full.stl"/>
+    </asset>
+</mujoco>

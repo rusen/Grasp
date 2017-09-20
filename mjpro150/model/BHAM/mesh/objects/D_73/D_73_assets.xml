@@ -1,0 +1,26 @@
+<mujoco>
+    <asset>
+        <mesh name="D_73_1" file="objects/D_73/D_73_1.stl"/>
+        <mesh name="D_73_2" file="objects/D_73/D_73_2.stl"/>
+        <mesh name="D_73_3" file="objects/D_73/D_73_3.stl"/>
+        <mesh name="D_73_4" file="objects/D_73/D_73_4.stl"/>
+        <mesh name="D_73_5" file="objects/D_73/D_73_5.stl"/>
+        <mesh name="D_73_6" file="objects/D_73/D_73_6.stl"/>
+        <mesh name="D_73_7" file="objects/D_73/D_73_7.stl"/>
+        <mesh name="D_73_8" file="objects/D_73/D_73_8.stl"/>
+        <mesh name="D_73_9" file="objects/D_73/D_73_9.stl"/>
+        <mesh name="D_73_10" file="objects/D_73/D_73_10.stl"/>
+        <mesh name="D_73_11" file="objects/D_73/D_73_11.stl"/>
+        <mesh name="D_73_12" file="objects/D_73/D_73_12.stl"/>
+        <mesh name="D_73_13" file="objects/D_73/D_73_13.stl"/>
+        <mesh name="D_73_14" file="objects/D_73/D_73_14.stl"/>
+        <mesh name="D_73_15" file="objects/D_73/D_73_15.stl"/>
+        <mesh name="D_73_16" file="objects/D_73/D_73_16.stl"/>
+        <mesh name="D_73_17" file="objects/D_73/D_73_17.stl"/>
+        <mesh name="D_73_18" file="objects/D_73/D_73_18.stl"/>
+        <mesh name="D_73_19" file="objects/D_73/D_73_19.stl"/>
+        <mesh name="D_73_20" file="objects/D_73/D_73_20.stl"/>
+        <mesh name="D_73_21" file="objects/D_73/D_73_21.stl"/>
+        <mesh name="D_73_visual" file="objects/D_73/D_73_full.stl"/>
+    </asset>
+</mujoco>

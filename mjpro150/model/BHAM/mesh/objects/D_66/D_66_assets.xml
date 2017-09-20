@@ -1,0 +1,22 @@
+<mujoco>
+    <asset>
+        <mesh name="D_66_1" file="objects/D_66/D_66_1.stl"/>
+        <mesh name="D_66_2" file="objects/D_66/D_66_2.stl"/>
+        <mesh name="D_66_3" file="objects/D_66/D_66_3.stl"/>
+        <mesh name="D_66_4" file="objects/D_66/D_66_4.stl"/>
+        <mesh name="D_66_5" file="objects/D_66/D_66_5.stl"/>
+        <mesh name="D_66_6" file="objects/D_66/D_66_6.stl"/>
+        <mesh name="D_66_7" file="objects/D_66/D_66_7.stl"/>
+        <mesh name="D_66_8" file="objects/D_66/D_66_8.stl"/>
+        <mesh name="D_66_9" file="objects/D_66/D_66_9.stl"/>
+        <mesh name="D_66_10" file="objects/D_66/D_66_10.stl"/>
+        <mesh name="D_66_11" file="objects/D_66/D_66_11.stl"/>
+        <mesh name="D_66_12" file="objects/D_66/D_66_12.stl"/>
+        <mesh name="D_66_13" file="objects/D_66/D_66_13.stl"/>
+        <mesh name="D_66_14" file="objects/D_66/D_66_14.stl"/>
+        <mesh name="D_66_15" file="objects/D_66/D_66_15.stl"/>
+        <mesh name="D_66_16" file="objects/D_66/D_66_16.stl"/>
+        <mesh name="D_66_17" file="objects/D_66/D_66_17.stl"/>
+        <mesh name="D_66_visual" file="objects/D_66/D_66_full.stl"/>
+    </asset>
+</mujoco>

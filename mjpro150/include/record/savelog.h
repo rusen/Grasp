@@ -8,6 +8,6 @@
 void writeHeader(const mjModel* m, mjData* d, FILE * fp);
 
 // The function that saves simulation data.
-void savelog(const mjModel *m, mjData *d, FILE *out);
+void savelog(const mjModel *m, mjData *d, float * data, FILE *out);
 
 #endif /* INCLUDE_SAVELOG_H_ */

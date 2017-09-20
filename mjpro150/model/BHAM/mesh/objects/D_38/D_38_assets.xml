@@ -1,0 +1,39 @@
+<mujoco>
+    <asset>
+        <mesh name="D_38_1" file="objects/D_38/D_38_1.stl"/>
+        <mesh name="D_38_2" file="objects/D_38/D_38_2.stl"/>
+        <mesh name="D_38_3" file="objects/D_38/D_38_3.stl"/>
+        <mesh name="D_38_4" file="objects/D_38/D_38_4.stl"/>
+        <mesh name="D_38_5" file="objects/D_38/D_38_5.stl"/>
+        <mesh name="D_38_6" file="objects/D_38/D_38_6.stl"/>
+        <mesh name="D_38_7" file="objects/D_38/D_38_7.stl"/>
+        <mesh name="D_38_8" file="objects/D_38/D_38_8.stl"/>
+        <mesh name="D_38_9" file="objects/D_38/D_38_9.stl"/>
+        <mesh name="D_38_10" file="objects/D_38/D_38_10.stl"/>
+        <mesh name="D_38_11" file="objects/D_38/D_38_11.stl"/>
+        <mesh name="D_38_12" file="objects/D_38/D_38_12.stl"/>
+        <mesh name="D_38_13" file="objects/D_38/D_38_13.stl"/>
+        <mesh name="D_38_14" file="objects/D_38/D_38_14.stl"/>
+        <mesh name="D_38_15" file="objects/D_38/D_38_15.stl"/>
+        <mesh name="D_38_16" file="objects/D_38/D_38_16.stl"/>
+        <mesh name="D_38_17" file="objects/D_38/D_38_17.stl"/>
+        <mesh name="D_38_18" file="objects/D_38/D_38_18.stl"/>
+        <mesh name="D_38_19" file="objects/D_38/D_38_19.stl"/>
+        <mesh name="D_38_20" file="objects/D_38/D_38_20.stl"/>
+        <mesh name="D_38_21" file="objects/D_38/D_38_21.stl"/>
+        <mesh name="D_38_22" file="objects/D_38/D_38_22.stl"/>
+        <mesh name="D_38_23" file="objects/D_38/D_38_23.stl"/>
+        <mesh name="D_38_24" file="objects/D_38/D_38_24.stl"/>
+        <mesh name="D_38_25" file="objects/D_38/D_38_25.stl"/>
+        <mesh name="D_38_26" file="objects/D_38/D_38_26.stl"/>
+        <mesh name="D_38_27" file="objects/D_38/D_38_27.stl"/>
+        <mesh name="D_38_28" file="objects/D_38/D_38_28.stl"/>
+        <mesh name="D_38_29" file="objects/D_38/D_38_29.stl"/>
+        <mesh name="D_38_30" file="objects/D_38/D_38_30.stl"/>
+        <mesh name="D_38_31" file="objects/D_38/D_38_31.stl"/>
+        <mesh name="D_38_32" file="objects/D_38/D_38_32.stl"/>
+        <mesh name="D_38_33" file="objects/D_38/D_38_33.stl"/>
+        <mesh name="D_38_34" file="objects/D_38/D_38_34.stl"/>
+        <mesh name="D_38_visual" file="objects/D_38/D_38_full.stl"/>
+    </asset>
+</mujoco>

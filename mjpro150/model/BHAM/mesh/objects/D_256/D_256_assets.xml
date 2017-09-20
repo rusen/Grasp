@@ -1,0 +1,14 @@
+<mujoco>
+    <asset>
+        <mesh name="D_256_1" file="objects/D_256/D_256_1.stl"/>
+        <mesh name="D_256_2" file="objects/D_256/D_256_2.stl"/>
+        <mesh name="D_256_3" file="objects/D_256/D_256_3.stl"/>
+        <mesh name="D_256_4" file="objects/D_256/D_256_4.stl"/>
+        <mesh name="D_256_5" file="objects/D_256/D_256_5.stl"/>
+        <mesh name="D_256_6" file="objects/D_256/D_256_6.stl"/>
+        <mesh name="D_256_7" file="objects/D_256/D_256_7.stl"/>
+        <mesh name="D_256_8" file="objects/D_256/D_256_8.stl"/>
+        <mesh name="D_256_9" file="objects/D_256/D_256_9.stl"/>
+        <mesh name="D_256_visual" file="objects/D_256/D_256_full.stl"/>
+    </asset>
+</mujoco>

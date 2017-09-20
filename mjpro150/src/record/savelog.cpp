@@ -1,11 +1,10 @@
 #include "record/savelog.h"
 
-void savelog(const mjModel *m, mjData *d, FILE *out){
+void savelog(const mjModel *m, mjData *d, float * data, FILE *out){
 	// Print out relevant data to re-create the simulation later.
     int recsz = 1 + m->nq + m->nv + m->nu + 7*m->nmocap + m->nsensordata;
 
     // Create data.
-    float data[recsz];
     data[0] = (float) d->time;
     mju_n2f(data+1, d->qpos, m->nq);
     mju_n2f(data+1+m->nq, d->qvel, m->nv);

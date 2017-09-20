@@ -53,6 +53,7 @@
 
 #include <opencv2/opencv.hpp>
 #include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
 
 #include <sensor/camera.h>
 #include <sensor/gaussian.h>
@@ -64,6 +65,9 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
+
+#include <Eigen/Geometry>
+#define PI 3.14159265
 
 //static unsigned countf = 0;
 //static const int prec = 5;
@@ -123,15 +127,15 @@ namespace Grasp {
       {
 	//Gaussian Noise
 	float mean = 0.0;
-	float std  = 0.15;
+	float std  = 0.075;
 	noise_gen_ = new GaussianNoise( camera_.getWidth(), camera_.getHeight(), mean, std);
       } else if (noise_type_==Grasp::PERLIN)
       {
-	float scale = 0.4;
+	float scale = 0.2;
 	noise_gen_ = new PerlinNoise( camera_.getWidth(), camera_.getHeight(), scale);
       } else if (noise_type_==Grasp::SIMPLEX)
       {
-	float scale = 0.5;
+	float scale = 0.25;
 	noise_gen_ = new SimplexNoise( camera_.getWidth(), camera_.getHeight(), scale);
       }
   }
@@ -145,9 +149,13 @@ namespace Grasp {
   
   // Function that intersects rays with the object model at current state.
 pcl::PointCloud<pcl::PointXYZRGBNormal> * KinectSimulator::intersect(const mjModel* m, mjData* d,
+			      mjvScene *scn,
+				  mjrContext *con,
+				  cv::Mat &rgb_map,
 				  cv::Mat &depth_map,
 				  glm::vec3 newCamPos,
-				  glm::vec3 newCamGaze)
+				  glm::vec3 newCamGaze,
+				  float minPointZ)
   {
 
     // allocate memory for depth map
@@ -169,9 +177,12 @@ pcl::PointCloud<pcl::PointXYZRGBNormal> * KinectSimulator::intersect(const mjMod
     normRight = normalize(glm::cross(normGaze, tempUp));
 
     // Get location of the second cam.
-    glm::vec3 newCamPos2(0,0,0), temp, tempP, tempP2;
+    glm::vec3 newCamPos2(0,0,0), rgbCamPos, temp, temp2, tempP, tempP2;
     temp = normRight * (float) camera_.getTx();
+    temp2 = normRight * (float) camera_.getColourTx();
     newCamPos2 = newCamPos + temp;
+    rgbCamPos = newCamPos + temp2;
+    glm::vec3 rgbCamLookAt = rgbCamPos + normGaze;
 
     // Finally, get view-up vector.
     glm::vec3 viewUp;
@@ -179,13 +190,69 @@ pcl::PointCloud<pcl::PointXYZRGBNormal> * KinectSimulator::intersect(const mjMod
     mjvOption vopt;
     mjv_defaultOption(&vopt);
 
+    // Get RGB image.
+    mjvCamera rgbCam;
+    mjv_defaultCamera(&rgbCam);
+    rgbCam.lookat[0] = rgbCamLookAt[0], rgbCam.lookat[1] = rgbCamLookAt[1], rgbCam.lookat[2] = rgbCamLookAt[2];
+    rgbCam.distance = 1;
+    float valx = normGaze[0];
+    float valy = normGaze[1];
+    float l = sqrt(valx*valx + valy*valy);
+    valx /= l;
+    valy /= l;
+    if (valy > 0)
+    {
+    	rgbCam.azimuth = (acos(valx) * 180) / PI;
+    }else
+    {
+    	rgbCam.azimuth = -(acos(valx) * 180) / PI;
+    }
+
+    rgbCam.elevation = (asin(normGaze[2]) * 180.0) / PI;
+    std::cout<<"RGB Azimuth Elevation Distance:"<<rgbCam.azimuth<<" "<<rgbCam.elevation<<" "<<rgbCam.distance<<std::endl;
+    std::cout<<"RGB Lookat:"<<rgbCamLookAt[0]<<" "<<rgbCamLookAt[1]<<" "<<rgbCamLookAt[2]<<std::endl;
+
+    mjrRect viewport = {0, 0, 640, 480};
+
+    // Set visualization options.
+    mjvOption opt;
+    mjv_defaultOption(&opt);
+	opt.geomgroup[0] = 1;
+	opt.geomgroup[1] = 0;
+	opt.geomgroup[2] = 1;
+	opt.geomgroup[3] = 0;
+	opt.geomgroup[4] = 0;
+    for (int i = 0; i<18; i++)
+    {
+    	if (i != 17)
+    		opt.flags[i] = 0;
+    }
+    // Render scene!
+    mjv_updateScene(m, d, &opt, NULL, &rgbCam, mjCAT_ALL, scn);
+    mjr_render(viewport, scn, con);
+	unsigned char rgbBuffer[640*480*3];
+
+    // Read image.
+	mjr_readPixels(rgbBuffer, NULL, viewport, con);
+    for (int p = 0; p<640*480*3; p++)
+    {
+    	rgb_map.data[p] = rgbBuffer[p];
+    }
+
+    // Flip for opencv
+    cv::Mat out;
+    cv::flip(rgb_map, out, 0);
+    cv::imwrite( "./tmp/tempRGB.png", out );
+
     // Print the vectors.
-    std::cout<<" CAM POS: "<< newCamPos[0]<<" "<< newCamPos[1]<<" "<< newCamPos[2]<<std::endl;
-    std::cout<<" CAM GAZE: "<< normGaze[0]<<" "<< normGaze[1]<<" "<< normGaze[2]<<std::endl;
-    std::cout<<" CAM VIEWPORT: "<< viewportCenter[0]<<" "<< viewportCenter[1]<<" "<< viewportCenter[2]<<std::endl;
-    std::cout<<" CAM RIGHT: "<< normRight[0]<<" "<< normRight[1]<<" "<< normRight[2]<<std::endl;
-    std::cout<<" CAM UP: "<< viewUp[0]<<" "<< viewUp[1]<<" "<< viewUp[2]<<std::endl;
-    std::cout<<" CAM 2 POS: "<< newCamPos2[0]<<" "<< newCamPos2[1]<<" "<< newCamPos2[2]<<std::endl;
+    std::cout<<"CAM POS: "<< newCamPos[0]<<" "<< newCamPos[1]<<" "<< newCamPos[2]<<std::endl;
+    std::cout<<"RGB CAM POS: "<< rgbCamPos[0]<<" "<< rgbCamPos[1]<<" "<< rgbCamPos[2]<<std::endl;
+    std::cout<<"RGB CAM LOOKAT: "<< rgbCamLookAt[0]<<" "<< rgbCamLookAt[1]<<" "<< rgbCamLookAt[2]<<std::endl;
+    std::cout<<"CAM GAZE: "<< normGaze[0]<<" "<< normGaze[1]<<" "<< normGaze[2]<<std::endl;
+    std::cout<<"CAM VIEWPORT: "<< viewportCenter[0]<<" "<< viewportCenter[1]<<" "<< viewportCenter[2]<<std::endl;
+    std::cout<<"CAM RIGHT: "<< normRight[0]<<" "<< normRight[1]<<" "<< normRight[2]<<std::endl;
+    std::cout<<"CAM UP: "<< viewUp[0]<<" "<< viewUp[1]<<" "<< viewUp[2]<<std::endl;
+    std::cout<<"CAM 2 POS: "<< newCamPos2[0]<<" "<< newCamPos2[1]<<" "<< newCamPos2[2]<<std::endl;
 
     // Create transformation vector for second camera.
 	glm::mat4 r, s, t, tOrg, p;
@@ -209,16 +276,9 @@ pcl::PointCloud<pcl::PointXYZRGBNormal> * KinectSimulator::intersect(const mjMod
 		 0, 1, 0, 0,
 		 0, 0, 1, 1,
 		 0, 0, 0, 0);
-//	glm::mat4 tempTM = glm::lookAt(newCamPos2, newCamPos2 + normGaze, glm::vec3(0, 0, 1));
 
 	// Create camera transformation matrix.
 	glm::mat4 TM = p * (s * (r * t));
-//	const float *pSource = (const float*)glm::value_ptr(TM);
-//	std::cout<<pSource[0]<<" "<<pSource[1]<<" "<<pSource[2]<<" "<<pSource[3]<<std::endl;
-//	std::cout<<pSource[4]<<" "<<pSource[5]<<" "<<pSource[6]<<" "<<pSource[7]<<std::endl;
-//	std::cout<<pSource[8]<<" "<<pSource[9]<<" "<<pSource[10]<<" "<<pSource[11]<<std::endl;
-//	std::cout<<pSource[12]<<" "<<pSource[13]<<" "<<pSource[14]<<" "<<pSource[15]<<std::endl;
-
     vopt.geomgroup[0] = 0;
     vopt.geomgroup[1] = 1;
     vopt.geomgroup[2] = 0;
@@ -236,7 +296,7 @@ pcl::PointCloud<pcl::PointXYZRGBNormal> * KinectSimulator::intersect(const mjMod
     	double t2[3] = {rayDir[0], rayDir[1], rayDir[2]};
 
 		// compute ray from pixel and camera configuration
-		double distance  = mj_ray (m, d, t1, t2, vopt.geomgroup, mjVIS_CONVEXHULL, -1, &geomId);
+ 		double distance  = mj_ray (m, d, t1, t2, vopt.geomgroup, mjVIS_CONVEXHULL, -1, &geomId);
 
 		if (distance != -1){
 
@@ -291,7 +351,7 @@ pcl::PointCloud<pcl::PointXYZRGBNormal> * KinectSimulator::intersect(const mjMod
     filterDisp(disp, out_disp);
 
     // Allocate space for cloud.
-    pcl::PointCloud<pcl::PointXYZRGBNormal> *cloud = new pcl::PointCloud<pcl::PointXYZRGBNormal>(pointCount, 1);
+    pcl::PointCloud<pcl::PointXYZRGBNormal> *tempCloud = new pcl::PointCloud<pcl::PointXYZRGBNormal>(pointCount, 1);
 
     // Reset point counter.
     pointCount = 0;
@@ -313,14 +373,13 @@ pcl::PointCloud<pcl::PointXYZRGBNormal> * KinectSimulator::intersect(const mjMod
 	  new_p.y = (new_p.z/ camera_.getFy()) * (r - camera_.getCy());
 
 	  // Set x-y-z coordinates of points.
-	  cloud->points[pointCount].x = new_p.x;
-	  cloud->points[pointCount].y = new_p.y;
-	  cloud->points[pointCount].z = new_p.z;
-
+	  tempCloud->points[pointCount].x = new_p.x;
+	  tempCloud->points[pointCount].y = new_p.y;
+	  tempCloud->points[pointCount].z = new_p.z;
 	  // Assign colours to these poins.
-  	  cloud->points[pointCount].r = 127;
-  	  cloud->points[pointCount].g = 127;
-  	  cloud->points[pointCount].b = 127;
+	  tempCloud->points[pointCount].r = 127;
+	  tempCloud->points[pointCount].g = 127;
+	  tempCloud->points[pointCount].b = 127;
 	  pointCount++;
 
 	  depth_map_i[(int)c] = new_p.z;
@@ -328,19 +387,44 @@ pcl::PointCloud<pcl::PointXYZRGBNormal> * KinectSimulator::intersect(const mjMod
       }
     }
 
- // Convert into real world coordinates.
+    // Convert into real world coordinates.
+    int lastPointCount = 0;
     glm::mat4 T = s * (r * tOrg);
     glm::mat4 invT = glm::inverse(T);
 
 	for (int i = 0; i < pointCount; i++) {
-	  glm::vec4 p(cloud->points[i].x, cloud->points[i].y, cloud->points[i].z, 1);
+	  glm::vec4 p(tempCloud->points[i].x, tempCloud->points[i].y, tempCloud->points[i].z, 1);
 	  p = invT * p;
 	  p = p / p[3];
-	  cloud->points[i].x = (float) p[0] + 0.5;
-	  cloud->points[i].y = (float) p[1];
-	  cloud->points[i].z = (float) p[2];
+	  tempCloud->points[i].x = (float) p[0] + 0.5;
+	  tempCloud->points[i].y = (float) p[1];
+	  tempCloud->points[i].z = (float) p[2];
+
+	  // If the point is below the minimum plane, remove it from the point cloud.
+	  if (tempCloud->points[i].z >= minPointZ)
+		  lastPointCount++;
 	}
 
+	// Finally, save good points onto a list.
+    pcl::PointCloud<pcl::PointXYZRGBNormal> *cloud = new pcl::PointCloud<pcl::PointXYZRGBNormal>(lastPointCount, 1);
+    lastPointCount = 0;
+    for (int i = 0; i<pointCount; i++)
+    {
+    	if (tempCloud->points[i].z >= minPointZ)
+    	{
+    		  cloud->points[lastPointCount].x = tempCloud->points[i].x;
+    		  cloud->points[lastPointCount].y = tempCloud->points[i].y;
+    		  cloud->points[lastPointCount].z = tempCloud->points[i].z;
+    		  // Assign colours to these poins.
+    		  cloud->points[lastPointCount].r = 127;
+    		  cloud->points[lastPointCount].g = 127;
+    		  cloud->points[lastPointCount].b = 127;
+    		  lastPointCount++;
+    	}
+    }
+    delete tempCloud;
+
+    // Return new point cloud.
 	return cloud;
   }
 

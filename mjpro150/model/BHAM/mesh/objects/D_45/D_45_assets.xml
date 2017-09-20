@@ -1,0 +1,34 @@
+<mujoco>
+    <asset>
+        <mesh name="D_45_1" file="objects/D_45/D_45_1.stl"/>
+        <mesh name="D_45_2" file="objects/D_45/D_45_2.stl"/>
+        <mesh name="D_45_3" file="objects/D_45/D_45_3.stl"/>
+        <mesh name="D_45_4" file="objects/D_45/D_45_4.stl"/>
+        <mesh name="D_45_5" file="objects/D_45/D_45_5.stl"/>
+        <mesh name="D_45_6" file="objects/D_45/D_45_6.stl"/>
+        <mesh name="D_45_7" file="objects/D_45/D_45_7.stl"/>
+        <mesh name="D_45_8" file="objects/D_45/D_45_8.stl"/>
+        <mesh name="D_45_9" file="objects/D_45/D_45_9.stl"/>
+        <mesh name="D_45_10" file="objects/D_45/D_45_10.stl"/>
+        <mesh name="D_45_11" file="objects/D_45/D_45_11.stl"/>
+        <mesh name="D_45_12" file="objects/D_45/D_45_12.stl"/>
+        <mesh name="D_45_13" file="objects/D_45/D_45_13.stl"/>
+        <mesh name="D_45_14" file="objects/D_45/D_45_14.stl"/>
+        <mesh name="D_45_15" file="objects/D_45/D_45_15.stl"/>
+        <mesh name="D_45_16" file="objects/D_45/D_45_16.stl"/>
+        <mesh name="D_45_17" file="objects/D_45/D_45_17.stl"/>
+        <mesh name="D_45_18" file="objects/D_45/D_45_18.stl"/>
+        <mesh name="D_45_19" file="objects/D_45/D_45_19.stl"/>
+        <mesh name="D_45_20" file="objects/D_45/D_45_20.stl"/>
+        <mesh name="D_45_21" file="objects/D_45/D_45_21.stl"/>
+        <mesh name="D_45_22" file="objects/D_45/D_45_22.stl"/>
+        <mesh name="D_45_23" file="objects/D_45/D_45_23.stl"/>
+        <mesh name="D_45_24" file="objects/D_45/D_45_24.stl"/>
+        <mesh name="D_45_25" file="objects/D_45/D_45_25.stl"/>
+        <mesh name="D_45_26" file="objects/D_45/D_45_26.stl"/>
+        <mesh name="D_45_27" file="objects/D_45/D_45_27.stl"/>
+        <mesh name="D_45_28" file="objects/D_45/D_45_28.stl"/>
+        <mesh name="D_45_29" file="objects/D_45/D_45_29.stl"/>
+        <mesh name="D_45_visual" file="objects/D_45/D_45_full.stl"/>
+    </asset>
+</mujoco>

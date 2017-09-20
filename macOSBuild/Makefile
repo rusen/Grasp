@@ -365,6 +365,60 @@ src/util/Connector.s:
 	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/util/Connector.s
 .PHONY : src/util/Connector.s
 
+# target to build an object file
+src/util/ModifyXMLs.o:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/util/ModifyXMLs.o
+	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/util/ModifyXMLs.o
+.PHONY : src/util/ModifyXMLs.o
+
+# target to preprocess a source file
+src/util/ModifyXMLs.i:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/util/ModifyXMLs.i
+	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/util/ModifyXMLs.i
+.PHONY : src/util/ModifyXMLs.i
+
+# target to generate assembly for a file
+src/util/ModifyXMLs.s:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/util/ModifyXMLs.s
+	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/util/ModifyXMLs.s
+.PHONY : src/util/ModifyXMLs.s
+
+# target to build an object file
+src/util/Path.o:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/util/Path.o
+	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/util/Path.o
+.PHONY : src/util/Path.o
+
+# target to preprocess a source file
+src/util/Path.i:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/util/Path.i
+	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/util/Path.i
+.PHONY : src/util/Path.i
+
+# target to generate assembly for a file
+src/util/Path.s:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/util/Path.s
+	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/util/Path.s
+.PHONY : src/util/Path.s
+
+# target to build an object file
+src/util/Waypoint.o:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/util/Waypoint.o
+	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/util/Waypoint.o
+.PHONY : src/util/Waypoint.o
+
+# target to preprocess a source file
+src/util/Waypoint.i:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/util/Waypoint.i
+	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/util/Waypoint.i
+.PHONY : src/util/Waypoint.i
+
+# target to generate assembly for a file
+src/util/Waypoint.s:
+	$(MAKE) -f CMakeFiles/playlog.dir/build.make CMakeFiles/playlog.dir/src/util/Waypoint.s
+	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/util/Waypoint.s
+.PHONY : src/util/Waypoint.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -412,6 +466,15 @@ help:
 	@echo "... src/util/Connector.o"
 	@echo "... src/util/Connector.i"
 	@echo "... src/util/Connector.s"
+	@echo "... src/util/ModifyXMLs.o"
+	@echo "... src/util/ModifyXMLs.i"
+	@echo "... src/util/ModifyXMLs.s"
+	@echo "... src/util/Path.o"
+	@echo "... src/util/Path.i"
+	@echo "... src/util/Path.s"
+	@echo "... src/util/Waypoint.o"
+	@echo "... src/util/Waypoint.i"
+	@echo "... src/util/Waypoint.s"
 .PHONY : help
 
 

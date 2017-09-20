@@ -1,0 +1,31 @@
+<mujoco>
+    <asset>
+        <mesh name="D_206_1" file="objects/D_206/D_206_1.stl"/>
+        <mesh name="D_206_2" file="objects/D_206/D_206_2.stl"/>
+        <mesh name="D_206_3" file="objects/D_206/D_206_3.stl"/>
+        <mesh name="D_206_4" file="objects/D_206/D_206_4.stl"/>
+        <mesh name="D_206_5" file="objects/D_206/D_206_5.stl"/>
+        <mesh name="D_206_6" file="objects/D_206/D_206_6.stl"/>
+        <mesh name="D_206_7" file="objects/D_206/D_206_7.stl"/>
+        <mesh name="D_206_8" file="objects/D_206/D_206_8.stl"/>
+        <mesh name="D_206_9" file="objects/D_206/D_206_9.stl"/>
+        <mesh name="D_206_10" file="objects/D_206/D_206_10.stl"/>
+        <mesh name="D_206_11" file="objects/D_206/D_206_11.stl"/>
+        <mesh name="D_206_12" file="objects/D_206/D_206_12.stl"/>
+        <mesh name="D_206_13" file="objects/D_206/D_206_13.stl"/>
+        <mesh name="D_206_14" file="objects/D_206/D_206_14.stl"/>
+        <mesh name="D_206_15" file="objects/D_206/D_206_15.stl"/>
+        <mesh name="D_206_16" file="objects/D_206/D_206_16.stl"/>
+        <mesh name="D_206_17" file="objects/D_206/D_206_17.stl"/>
+        <mesh name="D_206_18" file="objects/D_206/D_206_18.stl"/>
+        <mesh name="D_206_19" file="objects/D_206/D_206_19.stl"/>
+        <mesh name="D_206_20" file="objects/D_206/D_206_20.stl"/>
+        <mesh name="D_206_21" file="objects/D_206/D_206_21.stl"/>
+        <mesh name="D_206_22" file="objects/D_206/D_206_22.stl"/>
+        <mesh name="D_206_23" file="objects/D_206/D_206_23.stl"/>
+        <mesh name="D_206_24" file="objects/D_206/D_206_24.stl"/>
+        <mesh name="D_206_25" file="objects/D_206/D_206_25.stl"/>
+        <mesh name="D_206_26" file="objects/D_206/D_206_26.stl"/>
+        <mesh name="D_206_visual" file="objects/D_206/D_206_full.stl"/>
+    </asset>
+</mujoco>

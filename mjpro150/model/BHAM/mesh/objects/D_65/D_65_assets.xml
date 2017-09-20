@@ -1,0 +1,18 @@
+<mujoco>
+    <asset>
+        <mesh name="D_65_1" file="objects/D_65/D_65_1.stl"/>
+        <mesh name="D_65_2" file="objects/D_65/D_65_2.stl"/>
+        <mesh name="D_65_3" file="objects/D_65/D_65_3.stl"/>
+        <mesh name="D_65_4" file="objects/D_65/D_65_4.stl"/>
+        <mesh name="D_65_5" file="objects/D_65/D_65_5.stl"/>
+        <mesh name="D_65_6" file="objects/D_65/D_65_6.stl"/>
+        <mesh name="D_65_7" file="objects/D_65/D_65_7.stl"/>
+        <mesh name="D_65_8" file="objects/D_65/D_65_8.stl"/>
+        <mesh name="D_65_9" file="objects/D_65/D_65_9.stl"/>
+        <mesh name="D_65_10" file="objects/D_65/D_65_10.stl"/>
+        <mesh name="D_65_11" file="objects/D_65/D_65_11.stl"/>
+        <mesh name="D_65_12" file="objects/D_65/D_65_12.stl"/>
+        <mesh name="D_65_13" file="objects/D_65/D_65_13.stl"/>
+        <mesh name="D_65_visual" file="objects/D_65/D_65_full.stl"/>
+    </asset>
+</mujoco>

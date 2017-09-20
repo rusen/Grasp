@@ -1,0 +1,20 @@
+<mujoco>
+    <asset>
+        <mesh name="D_64_1" file="objects/D_64/D_64_1.stl"/>
+        <mesh name="D_64_2" file="objects/D_64/D_64_2.stl"/>
+        <mesh name="D_64_3" file="objects/D_64/D_64_3.stl"/>
+        <mesh name="D_64_4" file="objects/D_64/D_64_4.stl"/>
+        <mesh name="D_64_5" file="objects/D_64/D_64_5.stl"/>
+        <mesh name="D_64_6" file="objects/D_64/D_64_6.stl"/>
+        <mesh name="D_64_7" file="objects/D_64/D_64_7.stl"/>
+        <mesh name="D_64_8" file="objects/D_64/D_64_8.stl"/>
+        <mesh name="D_64_9" file="objects/D_64/D_64_9.stl"/>
+        <mesh name="D_64_10" file="objects/D_64/D_64_10.stl"/>
+        <mesh name="D_64_11" file="objects/D_64/D_64_11.stl"/>
+        <mesh name="D_64_12" file="objects/D_64/D_64_12.stl"/>
+        <mesh name="D_64_13" file="objects/D_64/D_64_13.stl"/>
+        <mesh name="D_64_14" file="objects/D_64/D_64_14.stl"/>
+        <mesh name="D_64_15" file="objects/D_64/D_64_15.stl"/>
+        <mesh name="D_64_visual" file="objects/D_64/D_64_full.stl"/>
+    </asset>
+</mujoco>

@@ -1,0 +1,34 @@
+<mujoco>
+    <asset>
+        <mesh name="D_6_1" file="bases/D_6/D_6_1.stl"/>
+        <mesh name="D_6_2" file="bases/D_6/D_6_2.stl"/>
+        <mesh name="D_6_3" file="bases/D_6/D_6_3.stl"/>
+        <mesh name="D_6_4" file="bases/D_6/D_6_4.stl"/>
+        <mesh name="D_6_5" file="bases/D_6/D_6_5.stl"/>
+        <mesh name="D_6_6" file="bases/D_6/D_6_6.stl"/>
+        <mesh name="D_6_7" file="bases/D_6/D_6_7.stl"/>
+        <mesh name="D_6_8" file="bases/D_6/D_6_8.stl"/>
+        <mesh name="D_6_9" file="bases/D_6/D_6_9.stl"/>
+        <mesh name="D_6_10" file="bases/D_6/D_6_10.stl"/>
+        <mesh name="D_6_11" file="bases/D_6/D_6_11.stl"/>
+        <mesh name="D_6_12" file="bases/D_6/D_6_12.stl"/>
+        <mesh name="D_6_13" file="bases/D_6/D_6_13.stl"/>
+        <mesh name="D_6_14" file="bases/D_6/D_6_14.stl"/>
+        <mesh name="D_6_15" file="bases/D_6/D_6_15.stl"/>
+        <mesh name="D_6_16" file="bases/D_6/D_6_16.stl"/>
+        <mesh name="D_6_17" file="bases/D_6/D_6_17.stl"/>
+        <mesh name="D_6_18" file="bases/D_6/D_6_18.stl"/>
+        <mesh name="D_6_19" file="bases/D_6/D_6_19.stl"/>
+        <mesh name="D_6_20" file="bases/D_6/D_6_20.stl"/>
+        <mesh name="D_6_21" file="bases/D_6/D_6_21.stl"/>
+        <mesh name="D_6_22" file="bases/D_6/D_6_22.stl"/>
+        <mesh name="D_6_23" file="bases/D_6/D_6_23.stl"/>
+        <mesh name="D_6_24" file="bases/D_6/D_6_24.stl"/>
+        <mesh name="D_6_25" file="bases/D_6/D_6_25.stl"/>
+        <mesh name="D_6_26" file="bases/D_6/D_6_26.stl"/>
+        <mesh name="D_6_27" file="bases/D_6/D_6_27.stl"/>
+        <mesh name="D_6_28" file="bases/D_6/D_6_28.stl"/>
+        <mesh name="D_6_29" file="bases/D_6/D_6_29.stl"/>
+        <mesh name="D_6_visual" file="bases/D_6/D_6_full.stl"/>
+    </asset>
+</mujoco>

@@ -436,3 +436,3830 @@ Error reading Attributes.
 Element 'include', line 19, column 5
 
 
+Tue Aug 29 17:09:43 2017
+WARNING: Unknown warning type Time = 0.9060.
+
+Tue Aug 29 19:16:39 2017
+WARNING: Unknown warning type Time = 0.7680.
+
+Tue Aug 29 19:18:56 2017
+WARNING: Unknown warning type Time = 6.4660.
+
+Tue Aug 29 19:34:47 2017
+WARNING: Unknown warning type Time = 1.6420.
+
+Tue Aug 29 19:36:50 2017
+WARNING: Unknown warning type Time = 1.1000.
+
+Tue Aug 29 19:52:17 2017
+WARNING: Unknown warning type Time = 1.2760.
+
+Tue Aug 29 19:56:44 2017
+WARNING: Unknown warning type Time = 1.7540.
+
+Tue Aug 29 20:11:26 2017
+WARNING: Unknown warning type Time = 1.0020.
+
+Tue Aug 29 20:22:59 2017
+WARNING: Unknown warning type Time = 0.8020.
+
+Tue Aug 29 20:26:18 2017
+WARNING: Unknown warning type Time = 3.1040.
+
+Tue Aug 29 20:29:14 2017
+WARNING: Unknown warning type Time = 1.0820.
+
+Tue Aug 29 20:37:24 2017
+WARNING: Unknown warning type Time = 0.9220.
+
+Tue Aug 29 20:40:59 2017
+WARNING: Unknown warning type Time = 0.8020.
+
+Tue Aug 29 20:43:02 2017
+WARNING: Unknown warning type Time = 0.8620.
+
+Tue Aug 29 20:46:37 2017
+WARNING: Unknown warning type Time = 1.2080.
+
+Tue Aug 29 20:50:35 2017
+WARNING: Unknown warning type Time = 2.3280.
+
+Tue Aug 29 21:08:15 2017
+WARNING: Unknown warning type Time = 1.1020.
+
+Tue Aug 29 21:10:03 2017
+WARNING: Unknown warning type Time = 1.0700.
+
+Tue Aug 29 21:21:45 2017
+WARNING: Unknown warning type Time = 0.9120.
+
+Tue Aug 29 21:25:36 2017
+WARNING: Unknown warning type Time = 1.2460.
+
+Tue Aug 29 21:27:50 2017
+WARNING: Unknown warning type Time = 1.0020.
+
+Tue Aug 29 21:31:16 2017
+WARNING: Unknown warning type Time = 36.2640.
+
+Fri Sep  1 14:20:05 2017
+WARNING: Unknown warning type Time = 0.0020.
+
+Fri Sep  1 14:20:39 2017
+WARNING: Unknown warning type Time = 0.0020.
+
+Fri Sep  1 14:56:23 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 14:56:23 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 0.0000.
+
+Fri Sep  1 14:56:27 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 14:56:27 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 14:56:28 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 14:56:28 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 14:56:29 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 14:56:29 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 14:56:30 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 14:56:30 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 14:56:31 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 14:56:31 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 14:56:32 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 14:56:32 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 14:56:33 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 14:56:33 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 14:56:33 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 14:56:34 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 14:56:34 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 14:56:35 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 14:56:35 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 14:56:36 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 14:56:36 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 14:56:37 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 14:56:37 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 14:56:38 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 14:56:38 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 14:56:39 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 14:56:39 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 19:07:01 2017
+ERROR: Load model error: XML Error: attribute 'pos' has too much data
+Element 'body', line 23, column 9
+
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 1440.1240.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 1440.1260.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:03 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Fri Sep  1 21:52:04 2017
+WARNING: Unknown warning type Time = 0.0000.
+
+Sun Sep  3 23:24:22 2017
+ERROR: Load model error: XML Error: Schema violation: unrecognized element
+
+Element 'asset', line 54, column 9
+
+
+Mon Sep  4 13:10:00 2017
+ERROR: Load model error: XML Error: Schema violation: unrecognized element
+
+Element 'body', line 2, column 5
+
+
+Mon Sep  4 13:12:12 2017
+ERROR: Load model error: XML Error: Schema violation: unrecognized element
+
+Element 'body', line 23, column 9
+
+
+Mon Sep  4 13:12:35 2017
+ERROR: Load model error: XML parse error at line 81, column 1:
+Error reading end tag.
+
+
+Tue Sep  5 10:34:34 2017
+ERROR: Load model error: Error: mesh 'D_354_1' not found in geom 49
+Object name = , id = 49, line = 4, column = 13
+
+Tue Sep  5 10:35:04 2017
+ERROR: Load model error: Error: mesh 'D_164_1' not found in geom 49
+Object name = , id = 49, line = 4, column = 13
+
+Tue Sep  5 11:00:30 2017
+ERROR: Load model error: Error: mesh 'D_346_1' not found in geom 49
+Object name = , id = 49, line = 4, column = 13
+
+Tue Sep  5 14:24:34 2017
+WARNING: Pre-allocated contact buffer is full. Increase nconmax above 150. Time = 0.2680.
+
+Tue Sep  5 14:24:34 2017
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 1000. Time = 0.2680.
+
+Wed Sep  6 11:33:19 2017
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 1000. Time = 193.8340.
+
+Wed Sep  6 13:00:23 2017
+ERROR: Load model error: XML Error: Include error: 'XML parse error at line 4, column 151:
+Error reading Attributes.
+'
+Element 'include', line 22, column 5
+
+
+Wed Sep  6 15:02:07 2017
+ERROR: Load model error: XML Error: Include error: 'XML parse error at line 123, column 55:
+Error parsing Element.
+'
+Element 'include', line 19, column 5
+
+
+Wed Sep  6 15:03:17 2017
+ERROR: Load model error: XML Error: Include error: 'XML parse error at line 123, column 55:
+Error parsing Element.
+'
+Element 'include', line 19, column 5
+
+
+Wed Sep  6 16:20:49 2017
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 1000. Time = 0.2690.
+
+Wed Sep  6 16:24:20 2017
+ERROR: Load model error: Error: plane and hfield only allowed in worldbody: geom '' (id = 5)
+Object name = , id = 5, line = 123, column = 13
+
+Wed Sep  6 16:59:13 2017
+ERROR: Load model error: Error: body 'table' not found in bodypair 5
+Object name = , id = 5, line = 115, column = 9
+
+Thu Sep  7 11:07:15 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 30. The simulation is unstable. Time = 689.1425.
+
+Thu Sep  7 14:43:19 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 15.2650.
+
+Thu Sep  7 16:41:11 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 29. The simulation is unstable. Time = 2.7400.
+
+Thu Sep  7 16:48:41 2017
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 1000. Time = 2.5955.
+
+Thu Sep  7 17:16:31 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 40.9455.
+
+Thu Sep  7 18:09:58 2017
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 3.4720.
+
+Thu Sep  7 18:26:49 2017
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 214.1820.
+
+Thu Sep  7 18:27:06 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 248.2500.
+
+Thu Sep  7 18:27:48 2017
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 95.3680.
+
+Thu Sep  7 18:36:15 2017
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 37.1000.
+
+Thu Sep  7 18:42:51 2017
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 17.7860.
+
+Thu Sep  7 18:44:16 2017
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 6.5260.
+
+Fri Sep  8 15:14:09 2017
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 5.0200.
+
+Fri Sep  8 15:48:41 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 197.7940.
+
+Fri Sep  8 19:16:47 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 74.7200.
+
+Fri Sep  8 21:37:55 2017
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 1.4020.
+
+Sun Sep 10 12:13:08 2017
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.2680.
+
+Sun Sep 10 12:22:17 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 3.3180.
+
+Sun Sep 10 15:10:55 2017
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 599.4060.
+
+Mon Sep 11 00:40:54 2017
+ERROR: Load model error: Error: mesh 'D_5_1' not found in geom 85
+Object name = , id = 85, line = 4, column = 13
+
+Mon Sep 11 00:47:02 2017
+ERROR: Load model error: Error: mesh 'D_12_1' not found in geom 104
+Object name = , id = 104, line = 4, column = 13
+
+Mon Sep 11 00:56:28 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 483.0500.
+
+Mon Sep 11 03:56:33 2017
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 12.7800.
+
+Mon Sep 11 11:05:18 2017
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 62.5640.
+
+Mon Sep 11 12:24:53 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 29. The simulation is unstable. Time = 1.3080.
+
+Mon Sep 11 23:47:34 2017
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 67.6720.
+
+Mon Sep 11 23:47:35 2017
+WARNING: Pre-allocated contact buffer is full. Increase nconmax above 100. Time = 67.7700.
+
+Tue Sep 12 00:06:05 2017
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 1.3360.
+
+Tue Sep 12 00:06:05 2017
+WARNING: Pre-allocated contact buffer is full. Increase nconmax above 100. Time = 1.3420.
+
+Tue Sep 12 00:06:07 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 2.7380.
+
+Tue Sep 12 00:39:11 2017
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 93.4840.
+
+Tue Sep 12 11:00:22 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 27. The simulation is unstable. Time = 353.2680.
+
+Tue Sep 12 14:16:08 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 449.2700.
+
+Tue Sep 12 14:35:47 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 91.5140.
+
+Tue Sep 12 21:58:00 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 2.2980.
+
+Tue Sep 12 22:08:24 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 255.5600.
+
+Tue Sep 12 23:23:17 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 2.6040.
+
+Wed Sep 13 13:16:21 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 4.5340.
+
+Wed Sep 13 14:26:32 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 1.4620.
+
+Wed Sep 13 16:19:29 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 1.9440.
+
+Wed Sep 13 22:42:15 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 5.9720.
+
+Wed Sep 13 22:43:19 2017
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 1000. Time = 0.1200.
+
+Thu Sep 14 13:17:56 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 29. The simulation is unstable. Time = 3.7800.
+
+Thu Sep 14 13:27:37 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 173.5660.
+
+Thu Sep 14 14:27:45 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 1.7700.
+
+Thu Sep 14 16:35:40 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 29. The simulation is unstable. Time = 2.7380.
+
+Sat Sep 16 15:44:44 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 1491.5980.
+
+Sat Sep 16 16:23:10 2017
+ERROR: Load model error: XML Error: Include error: 'XML parse error at line 0, column 0:
+Error reading Element value.
+'
+Element 'include', line 22, column 5
+
+
+Sat Sep 16 16:23:32 2017
+ERROR: Load model error: XML Error: Include error: 'XML parse error at line 0, column 0:
+Error reading Element value.
+'
+Element 'include', line 22, column 5
+
+
+Sat Sep 16 16:38:55 2017
+ERROR: Load model error: Error: plane and hfield only allowed in worldbody: geom '' (id = 42)
+Object name = , id = 42, line = 293, column = 13
+
+Sat Sep 16 17:26:07 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 10.9700.
+
+Sat Sep 16 17:26:55 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 4.8120.
+
+Sat Sep 16 17:39:17 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 27. The simulation is unstable. Time = 4.8720.
+
+Sat Sep 16 18:07:38 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 2.3420.
+
+Sat Sep 16 23:18:31 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 4.8300.
+
+Sat Sep 16 23:23:34 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 29. The simulation is unstable. Time = 1.8380.
+
+Sat Sep 16 23:24:43 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 8.4500.
+
+Sun Sep 17 11:22:34 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 2.0860.
+
+Sun Sep 17 11:34:19 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 3.6520.
+
+Sun Sep 17 11:38:31 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 3.0840.
+
+Sun Sep 17 12:13:05 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 293.1780.
+
+Sun Sep 17 12:41:47 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 29. The simulation is unstable. Time = 3.1980.
+
+Sun Sep 17 17:22:18 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 12.2640.
+
+Sun Sep 17 18:08:03 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 27. The simulation is unstable. Time = 123.3440.
+
+Sun Sep 17 18:10:43 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 2.4040.
+
+Sun Sep 17 18:15:11 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 15.8420.
+
+Sun Sep 17 19:05:13 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 29. The simulation is unstable. Time = 1.9220.
+
+Sun Sep 17 19:16:44 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 29. The simulation is unstable. Time = 4.3400.
+
+Sun Sep 17 22:05:33 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 30. The simulation is unstable. Time = 1.7840.
+
+Sun Sep 17 22:24:35 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 30. The simulation is unstable. Time = 3.2600.
+
+Mon Sep 18 10:03:37 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 29. The simulation is unstable. Time = 2.5740.
+
+Mon Sep 18 10:13:13 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 1.6720.
+
+Mon Sep 18 10:41:11 2017
+ERROR: Load model error: XML Error: Schema violation: unrecognized attribute: 'density'
+
+Element 'body', line 3, column 9
+
+
+Mon Sep 18 12:56:55 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 47.5420.
+
+Mon Sep 18 14:10:15 2017
+ERROR: Load model error: XML Error: Include error: 'XML parse error at line 9, column 30:
+Error reading Attributes.
+'
+Element 'include', line 23, column 5
+
+
+Tue Sep 19 12:35:24 2017
+WARNING: Inertia matrix is too close to singular at DOF 30. Check model. Time = 0.0000.
+
+Tue Sep 19 12:35:24 2017
+WARNING: Nan, Inf or huge value in QPOS at DOF 0. The simulation is unstable. Time = 0.0020.
+
+Tue Sep 19 12:35:24 2017
+WARNING: Inertia matrix is too close to singular at DOF 30. Check model. Time = 0.0000.
+
+Tue Sep 19 12:35:24 2017
+WARNING: Nan, Inf or huge value in QPOS at DOF 0. The simulation is unstable. Time = 0.0020.
+
+Tue Sep 19 12:35:24 2017
+WARNING: Inertia matrix is too close to singular at DOF 30. Check model. Time = 0.0000.
+
+Tue Sep 19 12:35:24 2017
+WARNING: Nan, Inf or huge value in QPOS at DOF 0. The simulation is unstable. Time = 0.0020.
+
+Tue Sep 19 12:35:25 2017
+WARNING: Inertia matrix is too close to singular at DOF 30. Check model. Time = 0.0000.
+
+Tue Sep 19 12:35:25 2017
+WARNING: Nan, Inf or huge value in QPOS at DOF 0. The simulation is unstable. Time = 0.0020.
+
+Tue Sep 19 12:35:25 2017
+WARNING: Inertia matrix is too close to singular at DOF 30. Check model. Time = 0.0000.
+
+Tue Sep 19 12:35:25 2017
+WARNING: Nan, Inf or huge value in QPOS at DOF 0. The simulation is unstable. Time = 0.0020.
+
+Tue Sep 19 12:35:25 2017
+WARNING: Inertia matrix is too close to singular at DOF 30. Check model. Time = 0.0000.
+
+Tue Sep 19 12:35:25 2017
+WARNING: Nan, Inf or huge value in QPOS at DOF 0. The simulation is unstable. Time = 0.0020.
+
+Tue Sep 19 12:35:25 2017
+WARNING: Inertia matrix is too close to singular at DOF 30. Check model. Time = 0.0000.
+
+Tue Sep 19 12:35:25 2017
+WARNING: Nan, Inf or huge value in QPOS at DOF 0. The simulation is unstable. Time = 0.0020.
+
+Tue Sep 19 12:35:25 2017
+WARNING: Inertia matrix is too close to singular at DOF 30. Check model. Time = 0.0000.
+
+Tue Sep 19 12:35:25 2017
+WARNING: Nan, Inf or huge value in QPOS at DOF 0. The simulation is unstable. Time = 0.0020.
+
+Tue Sep 19 12:35:30 2017
+WARNING: Inertia matrix is too close to singular at DOF 30. Check model. Time = 0.0000.
+
+Tue Sep 19 12:35:30 2017
+WARNING: Nan, Inf or huge value in QPOS at DOF 0. The simulation is unstable. Time = 0.0020.
+
+Tue Sep 19 12:35:30 2017
+WARNING: Inertia matrix is too close to singular at DOF 30. Check model. Time = 0.0000.
+
+Tue Sep 19 12:35:30 2017
+WARNING: Nan, Inf or huge value in QPOS at DOF 0. The simulation is unstable. Time = 0.0020.
+
+Tue Sep 19 12:35:31 2017
+WARNING: Inertia matrix is too close to singular at DOF 30. Check model. Time = 0.0000.
+
+Tue Sep 19 12:35:31 2017
+WARNING: Nan, Inf or huge value in QPOS at DOF 0. The simulation is unstable. Time = 0.0020.
+
+Tue Sep 19 12:35:31 2017
+WARNING: Inertia matrix is too close to singular at DOF 30. Check model. Time = 0.0000.
+
+Tue Sep 19 12:35:31 2017
+WARNING: Nan, Inf or huge value in QPOS at DOF 0. The simulation is unstable. Time = 0.0020.
+
+Tue Sep 19 12:35:31 2017
+WARNING: Inertia matrix is too close to singular at DOF 30. Check model. Time = 0.0000.
+
+Tue Sep 19 12:35:31 2017
+WARNING: Nan, Inf or huge value in QPOS at DOF 0. The simulation is unstable. Time = 0.0020.
+
+Tue Sep 19 12:35:31 2017
+WARNING: Inertia matrix is too close to singular at DOF 30. Check model. Time = 0.0000.
+
+Tue Sep 19 12:35:31 2017
+WARNING: Nan, Inf or huge value in QPOS at DOF 0. The simulation is unstable. Time = 0.0020.
+
+Tue Sep 19 12:35:31 2017
+WARNING: Inertia matrix is too close to singular at DOF 30. Check model. Time = 0.0000.
+
+Tue Sep 19 12:35:31 2017
+WARNING: Nan, Inf or huge value in QPOS at DOF 0. The simulation is unstable. Time = 0.0020.
+
+Tue Sep 19 12:35:31 2017
+WARNING: Inertia matrix is too close to singular at DOF 30. Check model. Time = 0.0000.
+
+Tue Sep 19 12:35:31 2017
+WARNING: Nan, Inf or huge value in QPOS at DOF 0. The simulation is unstable. Time = 0.0020.
+
+Tue Sep 19 12:35:31 2017
+WARNING: Inertia matrix is too close to singular at DOF 30. Check model. Time = 0.0000.
+
+Tue Sep 19 12:35:31 2017
+WARNING: Nan, Inf or huge value in QPOS at DOF 0. The simulation is unstable. Time = 0.0020.
+
+Tue Sep 19 12:35:31 2017
+WARNING: Inertia matrix is too close to singular at DOF 30. Check model. Time = 0.0000.
+
+Tue Sep 19 12:35:31 2017
+WARNING: Nan, Inf or huge value in QPOS at DOF 0. The simulation is unstable. Time = 0.0020.
+
+Tue Sep 19 12:35:32 2017
+WARNING: Inertia matrix is too close to singular at DOF 30. Check model. Time = 0.0000.
+
+Tue Sep 19 12:35:32 2017
+WARNING: Nan, Inf or huge value in QPOS at DOF 0. The simulation is unstable. Time = 0.0020.
+
+Tue Sep 19 12:35:32 2017
+WARNING: Inertia matrix is too close to singular at DOF 30. Check model. Time = 0.0000.
+
+Tue Sep 19 12:35:32 2017
+WARNING: Nan, Inf or huge value in QPOS at DOF 0. The simulation is unstable. Time = 0.0020.
+
+Tue Sep 19 12:35:32 2017
+WARNING: Inertia matrix is too close to singular at DOF 30. Check model. Time = 0.0000.
+
+Tue Sep 19 12:35:32 2017
+WARNING: Nan, Inf or huge value in QPOS at DOF 0. The simulation is unstable. Time = 0.0020.
+
+Tue Sep 19 12:35:32 2017
+WARNING: Inertia matrix is too close to singular at DOF 30. Check model. Time = 0.0000.
+
+Tue Sep 19 12:35:32 2017
+WARNING: Nan, Inf or huge value in QPOS at DOF 0. The simulation is unstable. Time = 0.0020.
+
+Tue Sep 19 12:53:04 2017
+ERROR: Load model error: Error: eigenvalue of mesh inertia too small: D_80_visual
+Object name = D_80_visual, id = 88, line = 51, column = 9
+
+Tue Sep 19 17:47:14 2017
+ERROR: Load model error: XML Error: attribute 'pos' does not have enough data
+Element 'light', line 3, column 9
+
+
+Tue Sep 19 17:49:39 2017
+ERROR: Load model error: XML Error: attribute 'pos' does not have enough data
+Element 'light', line 3, column 9
+
+
+Tue Sep 19 18:00:21 2017
+ERROR: Load model error: XML Error: attribute 'pos' does not have enough data
+Element 'light', line 3, column 9
+
+
+Tue Sep 19 18:03:55 2017
+ERROR: Load model error: XML Error: attribute 'pos' does not have enough data
+Element 'light', line 3, column 9
+
+
+Tue Sep 19 18:18:31 2017
+ERROR: Load model error: XML Error: Include error: 'XML parse error at line 0, column 0:
+Error reading Element value.
+'
+Element 'include', line 20, column 5
+
+
+Tue Sep 19 18:23:36 2017
+ERROR: Load model error: XML Error: Include error: 'XML parse error at line 0, column 0:
+Error reading Element value.
+'
+Element 'include', line 20, column 5
+
+
+Tue Sep 19 18:23:59 2017
+ERROR: Load model error: XML Error: attribute 'pos' does not have enough data
+Element 'light', line 3, column 9
+
+
+Tue Sep 19 18:24:05 2017
+ERROR: Load model error: XML Error: attribute 'pos' does not have enough data
+Element 'light', line 3, column 9
+
+
+Tue Sep 19 18:24:12 2017
+ERROR: Load model error: XML Error: attribute 'pos' does not have enough data
+Element 'light', line 3, column 9
+
+
+Tue Sep 19 18:24:22 2017
+ERROR: Load model error: XML Error: attribute 'pos' does not have enough data
+Element 'light', line 3, column 9
+
+
+Tue Sep 19 18:24:26 2017
+ERROR: Load model error: XML Error: attribute 'pos' does not have enough data
+Element 'light', line 3, column 9
+
+
+Tue Sep 19 18:24:30 2017
+ERROR: Load model error: XML Error: Include error: 'XML parse error at line 0, column 0:
+Error reading Element value.
+'
+Element 'include', line 20, column 5
+
+
+Tue Sep 19 18:24:33 2017
+ERROR: Load model error: XML Error: attribute 'pos' does not have enough data
+Element 'light', line 3, column 9
+
+
+Tue Sep 19 18:24:36 2017
+ERROR: Load model error: XML Error: attribute 'pos' does not have enough data
+Element 'light', line 3, column 9
+
+
+Tue Sep 19 18:24:41 2017
+ERROR: Load model error: XML Error: attribute 'pos' does not have enough data
+Element 'light', line 3, column 9
+
+
+Tue Sep 19 18:25:07 2017
+ERROR: Load model error: XML Error: Include error: 'XML parse error at line 0, column 0:
+Error reading Element value.
+'
+Element 'include', line 20, column 5
+
+
+Tue Sep 19 18:25:34 2017
+ERROR: Load model error: XML Error: Include error: 'XML parse error at line 0, column 0:
+Error reading Element value.
+'
+Element 'include', line 20, column 5
+
+
+Tue Sep 19 18:26:36 2017
+ERROR: Load model error: XML Error: Include error: 'XML parse error at line 0, column 0:
+Error reading Element value.
+'
+Element 'include', line 20, column 5
+
+
+Tue Sep 19 18:26:50 2017
+ERROR: Load model error: XML Error: Include error: 'XML parse error at line 0, column 0:
+Error reading Element value.
+'
+Element 'include', line 20, column 5
+
+
+Tue Sep 19 18:27:01 2017
+ERROR: Load model error: XML Error: Include error: 'XML parse error at line 0, column 0:
+Error reading Element value.
+'
+Element 'include', line 20, column 5
+
+
+Tue Sep 19 18:27:10 2017
+ERROR: Load model error: XML Error: attribute 'pos' does not have enough data
+Element 'light', line 3, column 9
+
+
+Tue Sep 19 18:30:26 2017
+ERROR: Load model error: XML Error: Include error: 'XML parse error at line 0, column 0:
+Error reading Element value.
+'
+Element 'include', line 20, column 5
+
+
+Tue Sep 19 18:31:32 2017
+ERROR: Load model error: XML Error: Include error: 'XML parse error at line 0, column 0:
+Error reading Element value.
+'
+Element 'include', line 20, column 5
+
+
+Tue Sep 19 18:33:52 2017
+ERROR: Load model error: XML Error: attribute 'pos' does not have enough data
+Element 'light', line 3, column 9
+
+
+Tue Sep 19 18:34:33 2017
+ERROR: Load model error: XML Error: attribute 'pos' does not have enough data
+Element 'light', line 3, column 9
+
+
+Tue Sep 19 18:41:14 2017
+ERROR: Load model error: XML Error: Include error: 'XML parse error at line 0, column 0:
+Error reading Element value.
+'
+Element 'include', line 20, column 5
+
+
+Tue Sep 19 18:41:35 2017
+ERROR: Load model error: XML Error: Include error: 'XML parse error at line 0, column 0:
+Error reading Element value.
+'
+Element 'include', line 20, column 5
+
+
+Tue Sep 19 18:41:41 2017
+ERROR: Load model error: XML Error: attribute 'pos' has too much data
+Element 'light', line 3, column 9
+
+
+Tue Sep 19 18:44:01 2017
+ERROR: Load model error: XML Error: attribute 'pos' has too much data
+Element 'light', line 3, column 9
+
+
+Tue Sep 19 18:49:11 2017
+ERROR: Load model error: XML Error: attribute 'dir' does not have enough data
+Element 'light', line 3, column 9
+
+
+Tue Sep 19 18:50:26 2017
+ERROR: Load model error: XML Error: attribute 'diffuse' has too much data
+Element 'light', line 3, column 9
+
+
+Tue Sep 19 18:50:47 2017
+ERROR: Load model error: XML Error: attribute 'rgba' does not have enough data
+Element 'geom', line 4, column 13
+
+
+Tue Sep 19 18:50:56 2017
+ERROR: Load model error: XML Error: attribute 'diffuse' has too much data
+Element 'light', line 3, column 9
+
+
+Tue Sep 19 18:51:11 2017
+ERROR: Load model error: XML Error: attribute 'rgba' does not have enough data
+Element 'geom', line 4, column 13
+
+
+Tue Sep 19 22:58:33 2017
+ERROR: Load model error: XML Error: Include error: 'XML parse error at line 3, column 150:
+Error reading Attributes.
+'
+Element 'include', line 21, column 5
+
+
+Tue Sep 19 23:59:17 2017
+ERROR: Load model error: Error: eigenvalue of mesh inertia too small: D_13_1
+Object name = D_13_1, id = 40, line = 3, column = 9
+

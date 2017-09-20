@@ -1,0 +1,43 @@
+<mujoco>
+    <asset>
+        <mesh name="D_92_1" file="objects/D_92/D_92_1.stl"/>
+        <mesh name="D_92_2" file="objects/D_92/D_92_2.stl"/>
+        <mesh name="D_92_3" file="objects/D_92/D_92_3.stl"/>
+        <mesh name="D_92_4" file="objects/D_92/D_92_4.stl"/>
+        <mesh name="D_92_5" file="objects/D_92/D_92_5.stl"/>
+        <mesh name="D_92_6" file="objects/D_92/D_92_6.stl"/>
+        <mesh name="D_92_7" file="objects/D_92/D_92_7.stl"/>
+        <mesh name="D_92_8" file="objects/D_92/D_92_8.stl"/>
+        <mesh name="D_92_9" file="objects/D_92/D_92_9.stl"/>
+        <mesh name="D_92_10" file="objects/D_92/D_92_10.stl"/>
+        <mesh name="D_92_11" file="objects/D_92/D_92_11.stl"/>
+        <mesh name="D_92_12" file="objects/D_92/D_92_12.stl"/>
+        <mesh name="D_92_13" file="objects/D_92/D_92_13.stl"/>
+        <mesh name="D_92_14" file="objects/D_92/D_92_14.stl"/>
+        <mesh name="D_92_15" file="objects/D_92/D_92_15.stl"/>
+        <mesh name="D_92_16" file="objects/D_92/D_92_16.stl"/>
+        <mesh name="D_92_17" file="objects/D_92/D_92_17.stl"/>
+        <mesh name="D_92_18" file="objects/D_92/D_92_18.stl"/>
+        <mesh name="D_92_19" file="objects/D_92/D_92_19.stl"/>
+        <mesh name="D_92_20" file="objects/D_92/D_92_20.stl"/>
+        <mesh name="D_92_21" file="objects/D_92/D_92_21.stl"/>
+        <mesh name="D_92_22" file="objects/D_92/D_92_22.stl"/>
+        <mesh name="D_92_23" file="objects/D_92/D_92_23.stl"/>
+        <mesh name="D_92_24" file="objects/D_92/D_92_24.stl"/>
+        <mesh name="D_92_25" file="objects/D_92/D_92_25.stl"/>
+        <mesh name="D_92_26" file="objects/D_92/D_92_26.stl"/>
+        <mesh name="D_92_27" file="objects/D_92/D_92_27.stl"/>
+        <mesh name="D_92_28" file="objects/D_92/D_92_28.stl"/>
+        <mesh name="D_92_29" file="objects/D_92/D_92_29.stl"/>
+        <mesh name="D_92_30" file="objects/D_92/D_92_30.stl"/>
+        <mesh name="D_92_31" file="objects/D_92/D_92_31.stl"/>
+        <mesh name="D_92_32" file="objects/D_92/D_92_32.stl"/>
+        <mesh name="D_92_33" file="objects/D_92/D_92_33.stl"/>
+        <mesh name="D_92_34" file="objects/D_92/D_92_34.stl"/>
+        <mesh name="D_92_35" file="objects/D_92/D_92_35.stl"/>
+        <mesh name="D_92_36" file="objects/D_92/D_92_36.stl"/>
+        <mesh name="D_92_37" file="objects/D_92/D_92_37.stl"/>
+        <mesh name="D_92_38" file="objects/D_92/D_92_38.stl"/>
+        <mesh name="D_92_visual" file="objects/D_92/D_92_full.stl"/>
+    </asset>
+</mujoco>

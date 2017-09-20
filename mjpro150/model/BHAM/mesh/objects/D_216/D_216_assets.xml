@@ -1,0 +1,43 @@
+<mujoco>
+    <asset>
+        <mesh name="D_216_1" file="objects/D_216/D_216_1.stl"/>
+        <mesh name="D_216_2" file="objects/D_216/D_216_2.stl"/>
+        <mesh name="D_216_3" file="objects/D_216/D_216_3.stl"/>
+        <mesh name="D_216_4" file="objects/D_216/D_216_4.stl"/>
+        <mesh name="D_216_5" file="objects/D_216/D_216_5.stl"/>
+        <mesh name="D_216_6" file="objects/D_216/D_216_6.stl"/>
+        <mesh name="D_216_7" file="objects/D_216/D_216_7.stl"/>
+        <mesh name="D_216_8" file="objects/D_216/D_216_8.stl"/>
+        <mesh name="D_216_9" file="objects/D_216/D_216_9.stl"/>
+        <mesh name="D_216_10" file="objects/D_216/D_216_10.stl"/>
+        <mesh name="D_216_11" file="objects/D_216/D_216_11.stl"/>
+        <mesh name="D_216_12" file="objects/D_216/D_216_12.stl"/>
+        <mesh name="D_216_13" file="objects/D_216/D_216_13.stl"/>
+        <mesh name="D_216_14" file="objects/D_216/D_216_14.stl"/>
+        <mesh name="D_216_15" file="objects/D_216/D_216_15.stl"/>
+        <mesh name="D_216_16" file="objects/D_216/D_216_16.stl"/>
+        <mesh name="D_216_17" file="objects/D_216/D_216_17.stl"/>
+        <mesh name="D_216_18" file="objects/D_216/D_216_18.stl"/>
+        <mesh name="D_216_19" file="objects/D_216/D_216_19.stl"/>
+        <mesh name="D_216_20" file="objects/D_216/D_216_20.stl"/>
+        <mesh name="D_216_21" file="objects/D_216/D_216_21.stl"/>
+        <mesh name="D_216_22" file="objects/D_216/D_216_22.stl"/>
+        <mesh name="D_216_23" file="objects/D_216/D_216_23.stl"/>
+        <mesh name="D_216_24" file="objects/D_216/D_216_24.stl"/>
+        <mesh name="D_216_25" file="objects/D_216/D_216_25.stl"/>
+        <mesh name="D_216_26" file="objects/D_216/D_216_26.stl"/>
+        <mesh name="D_216_27" file="objects/D_216/D_216_27.stl"/>
+        <mesh name="D_216_28" file="objects/D_216/D_216_28.stl"/>
+        <mesh name="D_216_29" file="objects/D_216/D_216_29.stl"/>
+        <mesh name="D_216_30" file="objects/D_216/D_216_30.stl"/>
+        <mesh name="D_216_31" file="objects/D_216/D_216_31.stl"/>
+        <mesh name="D_216_32" file="objects/D_216/D_216_32.stl"/>
+        <mesh name="D_216_33" file="objects/D_216/D_216_33.stl"/>
+        <mesh name="D_216_34" file="objects/D_216/D_216_34.stl"/>
+        <mesh name="D_216_35" file="objects/D_216/D_216_35.stl"/>
+        <mesh name="D_216_36" file="objects/D_216/D_216_36.stl"/>
+        <mesh name="D_216_37" file="objects/D_216/D_216_37.stl"/>
+        <mesh name="D_216_38" file="objects/D_216/D_216_38.stl"/>
+        <mesh name="D_216_visual" file="objects/D_216/D_216_full.stl"/>
+    </asset>
+</mujoco>

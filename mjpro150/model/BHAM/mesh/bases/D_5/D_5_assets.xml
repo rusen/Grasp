@@ -1,0 +1,37 @@
+<mujoco>
+    <asset>
+        <mesh name="D_5_1" file="bases/D_5/D_5_1.stl"/>
+        <mesh name="D_5_2" file="bases/D_5/D_5_2.stl"/>
+        <mesh name="D_5_3" file="bases/D_5/D_5_3.stl"/>
+        <mesh name="D_5_4" file="bases/D_5/D_5_4.stl"/>
+        <mesh name="D_5_5" file="bases/D_5/D_5_5.stl"/>
+        <mesh name="D_5_6" file="bases/D_5/D_5_6.stl"/>
+        <mesh name="D_5_7" file="bases/D_5/D_5_7.stl"/>
+        <mesh name="D_5_8" file="bases/D_5/D_5_8.stl"/>
+        <mesh name="D_5_9" file="bases/D_5/D_5_9.stl"/>
+        <mesh name="D_5_10" file="bases/D_5/D_5_10.stl"/>
+        <mesh name="D_5_11" file="bases/D_5/D_5_11.stl"/>
+        <mesh name="D_5_12" file="bases/D_5/D_5_12.stl"/>
+        <mesh name="D_5_13" file="bases/D_5/D_5_13.stl"/>
+        <mesh name="D_5_14" file="bases/D_5/D_5_14.stl"/>
+        <mesh name="D_5_15" file="bases/D_5/D_5_15.stl"/>
+        <mesh name="D_5_16" file="bases/D_5/D_5_16.stl"/>
+        <mesh name="D_5_17" file="bases/D_5/D_5_17.stl"/>
+        <mesh name="D_5_18" file="bases/D_5/D_5_18.stl"/>
+        <mesh name="D_5_19" file="bases/D_5/D_5_19.stl"/>
+        <mesh name="D_5_20" file="bases/D_5/D_5_20.stl"/>
+        <mesh name="D_5_21" file="bases/D_5/D_5_21.stl"/>
+        <mesh name="D_5_22" file="bases/D_5/D_5_22.stl"/>
+        <mesh name="D_5_23" file="bases/D_5/D_5_23.stl"/>
+        <mesh name="D_5_24" file="bases/D_5/D_5_24.stl"/>
+        <mesh name="D_5_25" file="bases/D_5/D_5_25.stl"/>
+        <mesh name="D_5_26" file="bases/D_5/D_5_26.stl"/>
+        <mesh name="D_5_27" file="bases/D_5/D_5_27.stl"/>
+        <mesh name="D_5_28" file="bases/D_5/D_5_28.stl"/>
+        <mesh name="D_5_29" file="bases/D_5/D_5_29.stl"/>
+        <mesh name="D_5_30" file="bases/D_5/D_5_30.stl"/>
+        <mesh name="D_5_31" file="bases/D_5/D_5_31.stl"/>
+        <mesh name="D_5_32" file="bases/D_5/D_5_32.stl"/>
+        <mesh name="D_5_visual" file="bases/D_5/D_5_full.stl"/>
+    </asset>
+</mujoco>

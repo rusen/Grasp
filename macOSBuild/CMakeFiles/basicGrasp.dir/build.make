@@ -321,6 +321,78 @@ CMakeFiles/basicGrasp.dir/src/util/Connector.o.provides: CMakeFiles/basicGrasp.d
 CMakeFiles/basicGrasp.dir/src/util/Connector.o.provides.build: CMakeFiles/basicGrasp.dir/src/util/Connector.o
 
 
+CMakeFiles/basicGrasp.dir/src/util/ModifyXMLs.o: CMakeFiles/basicGrasp.dir/flags.make
+CMakeFiles/basicGrasp.dir/src/util/ModifyXMLs.o: /Users/rusi/git/Grasp/mjpro150/src/util/ModifyXMLs.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rusi/git/Grasp/macOSBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/basicGrasp.dir/src/util/ModifyXMLs.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/basicGrasp.dir/src/util/ModifyXMLs.o -c /Users/rusi/git/Grasp/mjpro150/src/util/ModifyXMLs.cpp
+
+CMakeFiles/basicGrasp.dir/src/util/ModifyXMLs.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/basicGrasp.dir/src/util/ModifyXMLs.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/rusi/git/Grasp/mjpro150/src/util/ModifyXMLs.cpp > CMakeFiles/basicGrasp.dir/src/util/ModifyXMLs.i
+
+CMakeFiles/basicGrasp.dir/src/util/ModifyXMLs.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/basicGrasp.dir/src/util/ModifyXMLs.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/rusi/git/Grasp/mjpro150/src/util/ModifyXMLs.cpp -o CMakeFiles/basicGrasp.dir/src/util/ModifyXMLs.s
+
+CMakeFiles/basicGrasp.dir/src/util/ModifyXMLs.o.requires:
+
+.PHONY : CMakeFiles/basicGrasp.dir/src/util/ModifyXMLs.o.requires
+
+CMakeFiles/basicGrasp.dir/src/util/ModifyXMLs.o.provides: CMakeFiles/basicGrasp.dir/src/util/ModifyXMLs.o.requires
+	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/util/ModifyXMLs.o.provides.build
+.PHONY : CMakeFiles/basicGrasp.dir/src/util/ModifyXMLs.o.provides
+
+CMakeFiles/basicGrasp.dir/src/util/ModifyXMLs.o.provides.build: CMakeFiles/basicGrasp.dir/src/util/ModifyXMLs.o
+
+
+CMakeFiles/basicGrasp.dir/src/util/Path.o: CMakeFiles/basicGrasp.dir/flags.make
+CMakeFiles/basicGrasp.dir/src/util/Path.o: /Users/rusi/git/Grasp/mjpro150/src/util/Path.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rusi/git/Grasp/macOSBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/basicGrasp.dir/src/util/Path.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/basicGrasp.dir/src/util/Path.o -c /Users/rusi/git/Grasp/mjpro150/src/util/Path.cpp
+
+CMakeFiles/basicGrasp.dir/src/util/Path.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/basicGrasp.dir/src/util/Path.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/rusi/git/Grasp/mjpro150/src/util/Path.cpp > CMakeFiles/basicGrasp.dir/src/util/Path.i
+
+CMakeFiles/basicGrasp.dir/src/util/Path.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/basicGrasp.dir/src/util/Path.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/rusi/git/Grasp/mjpro150/src/util/Path.cpp -o CMakeFiles/basicGrasp.dir/src/util/Path.s
+
+CMakeFiles/basicGrasp.dir/src/util/Path.o.requires:
+
+.PHONY : CMakeFiles/basicGrasp.dir/src/util/Path.o.requires
+
+CMakeFiles/basicGrasp.dir/src/util/Path.o.provides: CMakeFiles/basicGrasp.dir/src/util/Path.o.requires
+	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/util/Path.o.provides.build
+.PHONY : CMakeFiles/basicGrasp.dir/src/util/Path.o.provides
+
+CMakeFiles/basicGrasp.dir/src/util/Path.o.provides.build: CMakeFiles/basicGrasp.dir/src/util/Path.o
+
+
+CMakeFiles/basicGrasp.dir/src/util/Waypoint.o: CMakeFiles/basicGrasp.dir/flags.make
+CMakeFiles/basicGrasp.dir/src/util/Waypoint.o: /Users/rusi/git/Grasp/mjpro150/src/util/Waypoint.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rusi/git/Grasp/macOSBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/basicGrasp.dir/src/util/Waypoint.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/basicGrasp.dir/src/util/Waypoint.o -c /Users/rusi/git/Grasp/mjpro150/src/util/Waypoint.cpp
+
+CMakeFiles/basicGrasp.dir/src/util/Waypoint.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/basicGrasp.dir/src/util/Waypoint.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/rusi/git/Grasp/mjpro150/src/util/Waypoint.cpp > CMakeFiles/basicGrasp.dir/src/util/Waypoint.i
+
+CMakeFiles/basicGrasp.dir/src/util/Waypoint.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/basicGrasp.dir/src/util/Waypoint.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/rusi/git/Grasp/mjpro150/src/util/Waypoint.cpp -o CMakeFiles/basicGrasp.dir/src/util/Waypoint.s
+
+CMakeFiles/basicGrasp.dir/src/util/Waypoint.o.requires:
+
+.PHONY : CMakeFiles/basicGrasp.dir/src/util/Waypoint.o.requires
+
+CMakeFiles/basicGrasp.dir/src/util/Waypoint.o.provides: CMakeFiles/basicGrasp.dir/src/util/Waypoint.o.requires
+	$(MAKE) -f CMakeFiles/basicGrasp.dir/build.make CMakeFiles/basicGrasp.dir/src/util/Waypoint.o.provides.build
+.PHONY : CMakeFiles/basicGrasp.dir/src/util/Waypoint.o.provides
+
+CMakeFiles/basicGrasp.dir/src/util/Waypoint.o.provides.build: CMakeFiles/basicGrasp.dir/src/util/Waypoint.o
+
+
 # Object files for target basicGrasp
 basicGrasp_OBJECTS = \
 "CMakeFiles/basicGrasp.dir/src/basicGrasp.o" \
@@ -333,7 +405,10 @@ basicGrasp_OBJECTS = \
 "CMakeFiles/basicGrasp.dir/src/sensor/CollectData.o" \
 "CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o" \
 "CMakeFiles/basicGrasp.dir/src/sensor/noiseutils.o" \
-"CMakeFiles/basicGrasp.dir/src/util/Connector.o"
+"CMakeFiles/basicGrasp.dir/src/util/Connector.o" \
+"CMakeFiles/basicGrasp.dir/src/util/ModifyXMLs.o" \
+"CMakeFiles/basicGrasp.dir/src/util/Path.o" \
+"CMakeFiles/basicGrasp.dir/src/util/Waypoint.o"
 
 # External object files for target basicGrasp
 basicGrasp_EXTERNAL_OBJECTS =
@@ -349,6 +424,9 @@ basicGrasp_EXTERNAL_OBJECTS =
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: CMakeFiles/basicGrasp.dir/src/sensor/noiseutils.o
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: CMakeFiles/basicGrasp.dir/src/util/Connector.o
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: CMakeFiles/basicGrasp.dir/src/util/ModifyXMLs.o
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: CMakeFiles/basicGrasp.dir/src/util/Path.o
+/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: CMakeFiles/basicGrasp.dir/src/util/Waypoint.o
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: CMakeFiles/basicGrasp.dir/build.make
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /Users/rusi/git/Grasp/mjpro150/lib/libProject.a
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libopencv_highgui.2.4.13.dylib
@@ -528,10 +606,9 @@ basicGrasp_EXTERNAL_OBJECTS =
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libpcl_search.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/lib/libz.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libnetcdf.dylib
-/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libCGAL.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: /usr/local/lib/libnoise.dylib
 /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp: CMakeFiles/basicGrasp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/rusi/git/Grasp/macOSBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/rusi/git/Grasp/macOSBuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable /Users/rusi/git/Grasp/mjpro150/bin/basicGrasp"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/basicGrasp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -550,6 +627,9 @@ CMakeFiles/basicGrasp.dir/requires: CMakeFiles/basicGrasp.dir/src/sensor/Collect
 CMakeFiles/basicGrasp.dir/requires: CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o.requires
 CMakeFiles/basicGrasp.dir/requires: CMakeFiles/basicGrasp.dir/src/sensor/noiseutils.o.requires
 CMakeFiles/basicGrasp.dir/requires: CMakeFiles/basicGrasp.dir/src/util/Connector.o.requires
+CMakeFiles/basicGrasp.dir/requires: CMakeFiles/basicGrasp.dir/src/util/ModifyXMLs.o.requires
+CMakeFiles/basicGrasp.dir/requires: CMakeFiles/basicGrasp.dir/src/util/Path.o.requires
+CMakeFiles/basicGrasp.dir/requires: CMakeFiles/basicGrasp.dir/src/util/Waypoint.o.requires
 
 .PHONY : CMakeFiles/basicGrasp.dir/requires
 

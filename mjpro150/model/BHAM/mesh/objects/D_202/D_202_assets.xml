@@ -1,0 +1,14 @@
+<mujoco>
+    <asset>
+        <mesh name="D_202_1" file="objects/D_202/D_202_1.stl"/>
+        <mesh name="D_202_2" file="objects/D_202/D_202_2.stl"/>
+        <mesh name="D_202_3" file="objects/D_202/D_202_3.stl"/>
+        <mesh name="D_202_4" file="objects/D_202/D_202_4.stl"/>
+        <mesh name="D_202_5" file="objects/D_202/D_202_5.stl"/>
+        <mesh name="D_202_6" file="objects/D_202/D_202_6.stl"/>
+        <mesh name="D_202_7" file="objects/D_202/D_202_7.stl"/>
+        <mesh name="D_202_8" file="objects/D_202/D_202_8.stl"/>
+        <mesh name="D_202_9" file="objects/D_202/D_202_9.stl"/>
+        <mesh name="D_202_visual" file="objects/D_202/D_202_full.stl"/>
+    </asset>
+</mujoco>

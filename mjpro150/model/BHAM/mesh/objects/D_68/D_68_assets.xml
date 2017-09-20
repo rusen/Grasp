@@ -1,0 +1,34 @@
+<mujoco>
+    <asset>
+        <mesh name="D_68_1" file="objects/D_68/D_68_1.stl"/>
+        <mesh name="D_68_2" file="objects/D_68/D_68_2.stl"/>
+        <mesh name="D_68_3" file="objects/D_68/D_68_3.stl"/>
+        <mesh name="D_68_4" file="objects/D_68/D_68_4.stl"/>
+        <mesh name="D_68_5" file="objects/D_68/D_68_5.stl"/>
+        <mesh name="D_68_6" file="objects/D_68/D_68_6.stl"/>
+        <mesh name="D_68_7" file="objects/D_68/D_68_7.stl"/>
+        <mesh name="D_68_8" file="objects/D_68/D_68_8.stl"/>
+        <mesh name="D_68_9" file="objects/D_68/D_68_9.stl"/>
+        <mesh name="D_68_10" file="objects/D_68/D_68_10.stl"/>
+        <mesh name="D_68_11" file="objects/D_68/D_68_11.stl"/>
+        <mesh name="D_68_12" file="objects/D_68/D_68_12.stl"/>
+        <mesh name="D_68_13" file="objects/D_68/D_68_13.stl"/>
+        <mesh name="D_68_14" file="objects/D_68/D_68_14.stl"/>
+        <mesh name="D_68_15" file="objects/D_68/D_68_15.stl"/>
+        <mesh name="D_68_16" file="objects/D_68/D_68_16.stl"/>
+        <mesh name="D_68_17" file="objects/D_68/D_68_17.stl"/>
+        <mesh name="D_68_18" file="objects/D_68/D_68_18.stl"/>
+        <mesh name="D_68_19" file="objects/D_68/D_68_19.stl"/>
+        <mesh name="D_68_20" file="objects/D_68/D_68_20.stl"/>
+        <mesh name="D_68_21" file="objects/D_68/D_68_21.stl"/>
+        <mesh name="D_68_22" file="objects/D_68/D_68_22.stl"/>
+        <mesh name="D_68_23" file="objects/D_68/D_68_23.stl"/>
+        <mesh name="D_68_24" file="objects/D_68/D_68_24.stl"/>
+        <mesh name="D_68_25" file="objects/D_68/D_68_25.stl"/>
+        <mesh name="D_68_26" file="objects/D_68/D_68_26.stl"/>
+        <mesh name="D_68_27" file="objects/D_68/D_68_27.stl"/>
+        <mesh name="D_68_28" file="objects/D_68/D_68_28.stl"/>
+        <mesh name="D_68_29" file="objects/D_68/D_68_29.stl"/>
+        <mesh name="D_68_visual" file="objects/D_68/D_68_full.stl"/>
+    </asset>
+</mujoco>

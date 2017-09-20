@@ -22,10 +22,7 @@ public:
 	void ComputeTrajectory();
 
 	// Set the pose of the hand.
-	void SetPose(const mjModel* m, mjData* d, glm::vec3 pos, glm::quat q);
-
-	// Set Initial pose of the hand.
-	bool Grasp(const mjModel* m, mjData* d, graspType type);
+	void SetPose(const mjModel* m, mjData* d, glm::vec3 pos, glm::quat q, float* jointAngles);
 
 protected:
 

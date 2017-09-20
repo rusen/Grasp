@@ -1,0 +1,7 @@
+<mujoco>
+    <asset>
+        <mesh name="D_175_1" file="objects/D_175/D_175_1.stl"/>
+        <mesh name="D_175_2" file="objects/D_175/D_175_2.stl"/>
+        <mesh name="D_175_visual" file="objects/D_175/D_175_full.stl"/>
+    </asset>
+</mujoco>

@@ -1,0 +1,22 @@
+<mujoco>
+    <asset>
+        <mesh name="D_58_1" file="objects/D_58/D_58_1.stl"/>
+        <mesh name="D_58_2" file="objects/D_58/D_58_2.stl"/>
+        <mesh name="D_58_3" file="objects/D_58/D_58_3.stl"/>
+        <mesh name="D_58_4" file="objects/D_58/D_58_4.stl"/>
+        <mesh name="D_58_5" file="objects/D_58/D_58_5.stl"/>
+        <mesh name="D_58_6" file="objects/D_58/D_58_6.stl"/>
+        <mesh name="D_58_7" file="objects/D_58/D_58_7.stl"/>
+        <mesh name="D_58_8" file="objects/D_58/D_58_8.stl"/>
+        <mesh name="D_58_9" file="objects/D_58/D_58_9.stl"/>
+        <mesh name="D_58_10" file="objects/D_58/D_58_10.stl"/>
+        <mesh name="D_58_11" file="objects/D_58/D_58_11.stl"/>
+        <mesh name="D_58_12" file="objects/D_58/D_58_12.stl"/>
+        <mesh name="D_58_13" file="objects/D_58/D_58_13.stl"/>
+        <mesh name="D_58_14" file="objects/D_58/D_58_14.stl"/>
+        <mesh name="D_58_15" file="objects/D_58/D_58_15.stl"/>
+        <mesh name="D_58_16" file="objects/D_58/D_58_16.stl"/>
+        <mesh name="D_58_17" file="objects/D_58/D_58_17.stl"/>
+        <mesh name="D_58_visual" file="objects/D_58/D_58_full.stl"/>
+    </asset>
+</mujoco>

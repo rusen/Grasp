@@ -10,6 +10,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/basicGrasp.dir/src/sensor/kinectSimulator.o"
   "CMakeFiles/basicGrasp.dir/src/sensor/noiseutils.o"
   "CMakeFiles/basicGrasp.dir/src/util/Connector.o"
+  "CMakeFiles/basicGrasp.dir/src/util/ModifyXMLs.o"
+  "CMakeFiles/basicGrasp.dir/src/util/Path.o"
+  "CMakeFiles/basicGrasp.dir/src/util/Waypoint.o"
   "/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp.pdb"
   "/Users/rusi/git/Grasp/mjpro150/bin/basicGrasp"
 )

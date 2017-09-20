@@ -1,0 +1,14 @@
+<mujoco>
+    <asset>
+        <mesh name="D_189_1" file="objects/D_189/D_189_1.stl"/>
+        <mesh name="D_189_2" file="objects/D_189/D_189_2.stl"/>
+        <mesh name="D_189_3" file="objects/D_189/D_189_3.stl"/>
+        <mesh name="D_189_4" file="objects/D_189/D_189_4.stl"/>
+        <mesh name="D_189_5" file="objects/D_189/D_189_5.stl"/>
+        <mesh name="D_189_6" file="objects/D_189/D_189_6.stl"/>
+        <mesh name="D_189_7" file="objects/D_189/D_189_7.stl"/>
+        <mesh name="D_189_8" file="objects/D_189/D_189_8.stl"/>
+        <mesh name="D_189_9" file="objects/D_189/D_189_9.stl"/>
+        <mesh name="D_189_visual" file="objects/D_189/D_189_full.stl"/>
+    </asset>
+</mujoco>

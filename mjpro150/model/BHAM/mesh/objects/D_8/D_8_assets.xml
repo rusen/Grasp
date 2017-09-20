@@ -1,0 +1,8 @@
+<mujoco>
+    <asset>
+        <mesh name="D_8_1" file="objects/D_8/D_8_1.stl"/>
+        <mesh name="D_8_2" file="objects/D_8/D_8_2.stl"/>
+        <mesh name="D_8_3" file="objects/D_8/D_8_3.stl"/>
+        <mesh name="D_8_visual" file="objects/D_8/D_8_full.stl"/>
+    </asset>
+</mujoco>
