@@ -55,6 +55,7 @@ bool stableFlag = false;
 int counter = 0;
 mjtNum *lastQpos, *stableQpos = NULL, *stableQvel = NULL, *stableCtrl = NULL;
 double stableError = 0.000005;
+mjtNum lastPose[4], lastPos[3]; // For keeping track of pose after object is gripped.
 int stableCounter = 0, stableIterations = 5000;
 
 // Get the path to the dot pattern
@@ -201,34 +202,62 @@ void graspObject(const mjModel* m, mjData* d){
      		std::cout<<"#Time:"<<d->time<<"# Starting grasp "<<planner.graspCounter<<"."<<std::endl;
      	}
 
+     	if (planner.getGraspState() == Grasp::lifting && planner.counter == 0)
+     	{
+     		// Find stability info with respect to the global frame.
+     		mjtNum stablePose[4], stablePos[3], tmpQuat[4], tmpQuat2[4], vec[3] = {0, 0, 1}, res[3], res2[3];
+     		stablePos[0] = stableQpos[27];
+     		stablePos[1] = stableQpos[28];
+     		stablePos[2] = stableQpos[29];
+     		stablePose[0] = stableQpos[30];
+     		stablePose[1] = stableQpos[31];
+     		stablePose[2] = stableQpos[32];
+     		stablePose[3] = stableQpos[33];
+     		lastPos[0] = d->qpos[27];
+     		lastPos[1] = d->qpos[28];
+     		lastPos[2] = d->qpos[29];
+     		lastPose[0] = d->qpos[30];
+     		lastPose[1] = d->qpos[31];
+     		lastPose[2] = d->qpos[32];
+     		lastPose[3] = d->qpos[33];
+
+     		// Find difference quaternion
+     		mju_negQuat(tmpQuat, stablePose);
+     		mju_mulQuat(tmpQuat2, tmpQuat, lastPose);
+     		mju_rotVecQuat(res, vec, tmpQuat2);
+
+     		// Get angle between two vectors.
+     		float angle = acos(mju_dot3(res, vec)) / PI; // scaled to 0-1.
+     		float distance = sqrt(pow(lastPos[0] - stablePos[0],2) + pow(lastPos[1] - stablePos[1],2) + pow(lastPos[2] - stablePos[2],2));
+     		fprintf(outGraspDataFile, "#Time:%lf# Grasp %d has %f shift and %f rotation.\n", d->time, planner.graspCounter, distance, angle);
+     		std::cout<<"#Time:"<<d->time<<"# Grasp "<<planner.graspCounter<<" has "<<distance<<" shift and "<<angle<<" rotation."<<std::endl;
+     	}
+
 		// If we're at the end of a stand state, save log data.
-     	if (planner.getGraspState() == Grasp::stand && planner.counter == 799)
+     	if (planner.getGraspState() == Grasp::stand && planner.counter == 800)
      	{
      		// Calculate grasp success
      		bool graspSuccess = d->qpos[29] > 0;
 
-     		mjtNum stablePos[4], lastPos[4], tmpQuat[4], tmpQuat2[4], vec[3] = {0, 0, 1}, res[3], res2[3];
-     		stablePos[0] = stableQpos[30];
-     		stablePos[1] = stableQpos[31];
-     		stablePos[2] = stableQpos[32];
-     		stablePos[3] = stableQpos[33];
-     		lastPos[0] = d->qpos[30];
-     		lastPos[1] = d->qpos[31];
-     		lastPos[2] = d->qpos[32];
-     		lastPos[3] = d->qpos[33];
+     		mjtNum finalPose[4], finalPos[3], tmpQuat[4], tmpQuat2[4], vec[3] = {0, 0, 1}, res[3], res2[3];
+     		finalPos[0] = d->qpos[27];
+     		finalPos[1] = d->qpos[28];
+     		finalPos[2] = d->qpos[29] - 1;
+     		finalPose[0] = d->qpos[30];
+     		finalPose[1] = d->qpos[31];
+     		finalPose[2] = d->qpos[32];
+     		finalPose[3] = d->qpos[33];
 
      		// Find difference quaternion
-     		mju_negQuat(tmpQuat, stablePos);
-     		mju_mulQuat(tmpQuat2, tmpQuat, lastPos);
+     		mju_negQuat(tmpQuat, lastPose);
+     		mju_mulQuat(tmpQuat2, tmpQuat, finalPose);
      		mju_rotVecQuat(res, vec, tmpQuat2);
 
      		// Get angle between two vectors.
-     		double angle = acos(mju_dot3(res, vec)) / PI; // scaled to 0-1.
-     		float stability = 1 - angle;
-     		if (stability<0 || !graspSuccess)
-     			stability = 0;
-     		fprintf(outGraspDataFile, "#Time:%lf# Finished grasp %d. Grasp success: %d. Grasp stability: %f.\n", d->time, planner.graspCounter, (int)graspSuccess, stability);
-     		std::cout<<"#Time:"<<d->time<<"# Finished grasp "<<planner.graspCounter<<". Grasp success: "<<graspSuccess<<". Grasp stability: "<<stability<<std::endl;
+     		float angle = acos(mju_dot3(res, vec)) / PI; // scaled to 0-1.
+     		float distance = sqrt(pow(finalPos[0] - lastPos[0],2) + pow(finalPos[1] - lastPos[1],2) + pow(finalPos[2] - lastPos[2],2));
+     		fprintf(outGraspDataFile, "#Time:%lf# Finished grasp %d. Grasp success: %d. Grasp shift: %f. In-hand rotation: %f.\n", d->time, planner.graspCounter, (int)graspSuccess, distance, angle);
+     		std::cout<<"#Time:"<<d->time<<"# Finished grasp "<<planner.graspCounter<<". Grasp success: "<<graspSuccess<<". Grasp shift: "<<distance<<". In-hand rotation: "<<angle<<"."<<std::endl;
      	}
 
 		// Perform grasping loop.
@@ -530,6 +559,9 @@ int main(int argc, const char** argv)
     planner.data = new float[recsz];
 	savelog(m, d, planner.data, outFile);
 
+	// Unset pause flag.
+	pauseFlag = false;
+
     // run main loop, target real-time simulation and 60 fps rendering
     while( !glfwWindowShouldClose(window) )
     {
@@ -542,29 +574,27 @@ int main(int argc, const char** argv)
         //  this loop will finish on time for the next frame to be rendered at 60 fps.
         //  Otherwise add a cpu timer and exit this loop when it is time to render.
         mjtNum simstart = d->time;
-        if (!pauseFlag){
-			while( d->time - simstart < 1.0/60.0 )
+		while( d->time - simstart < 1.0/60.0 )
+		{
+			if (planner.getGraspState() == Grasp::grasping ||
+					planner.getGraspState() == Grasp::lifting ||
+					planner.getGraspState() == Grasp::stand)
 			{
-				if (planner.getGraspState() == Grasp::grasping ||
-						planner.getGraspState() == Grasp::lifting ||
-						planner.getGraspState() == Grasp::stand)
+				// Here, we save data. Skip steps if needed.
+				if (skipSteps > 0 && ctr < skipSteps)
 				{
-					// Here, we save data. Skip steps if needed.
-					if (skipSteps > 0 && ctr < skipSteps)
-					{
-						ctr++;
-					}
-					else{
-						int recsz = 1 + m->nq + m->nv + m->nu + 7*m->nmocap + m->nsensordata;
-						float buffer[recsz];
-						savelog(m, d, buffer, outFile);
-						ctr = 0;
-					}
+					ctr++;
 				}
-
-				mj_step(m, d);
+				else{
+					int recsz = 1 + m->nq + m->nv + m->nu + 7*m->nmocap + m->nsensordata;
+					float buffer[recsz];
+					savelog(m, d, buffer, outFile);
+					ctr = 0;
+				}
 			}
-        }
+
+			mj_step(m, d);
+		}
 
         // get framebuffer viewport
         mjrRect viewport = {0, 0, 0, 0};
@@ -572,9 +602,7 @@ int main(int argc, const char** argv)
 
         // update scene and render
         mjv_updateScene(m, d, &opt, NULL, &cam, mjCAT_ALL, &scn);
-        glEnable(GL_CULL_FACE);
         mjr_render(viewport, &scn, &con);
-        glDisable(GL_CULL_FACE);
     	render(window, m, d);
 
         // swap OpenGL buffers (blocking call due to v-sync)
@@ -590,7 +618,7 @@ int main(int argc, const char** argv)
     std::cout.rdbuf(coutbuf); //reset to standard output again
 
     // Save log file, grasp data and debug_log
-    Grasp::Connector::UploadFile(planner.logFile);
+//    Grasp::Connector::UploadFile(planner.logFile);
     Grasp::Connector::UploadFile(planner.debugLogFile);
     Grasp::Connector::UploadFile(planner.resultFile);
 
