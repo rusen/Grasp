@@ -63,7 +63,7 @@ bool visualFlag = true;
 std::string dotPath = "./kinect-pattern_3x3.png";
 
 // Grasp planner.
-Grasp::GraspPlanner planner;
+Grasp::GraspPlanner *planner;
 
 // Camera stuff
 glm::vec3 camDirection, camPosition;
@@ -197,13 +197,13 @@ void graspObject(const mjModel* m, mjData* d){
 		}
 
 		// When beginning a new grasp, save data.
-     	if (planner.getGraspState() == Grasp::grasping && planner.counter == 0)
+     	if (planner->getGraspState() == Grasp::grasping && planner->counter == 0)
      	{
-     		fprintf(outGraspDataFile, "#Time:%lf# Starting grasp %d.\n", d->time, planner.graspCounter);
-     		std::cout<<"#Time:"<<d->time<<"# Starting grasp "<<planner.graspCounter<<"."<<std::endl;
+     		fprintf(outGraspDataFile, "#Time:%lf# Starting grasp %d.\n", d->time, planner->graspCounter);
+     		std::cout<<"#Time:"<<d->time<<"# Starting grasp "<<planner->graspCounter<<"."<<std::endl;
      	}
 
-     	if (planner.getGraspState() == Grasp::lifting && planner.counter == 0)
+     	if (planner->getGraspState() == Grasp::lifting && planner->counter == 0)
      	{
      		// Find stability info with respect to the global frame.
      		mjtNum stablePose[4], stablePos[3], tmpQuat[4], tmpQuat2[4], vec[3] = {0, 0, 1}, res[3], res2[3];
@@ -230,12 +230,12 @@ void graspObject(const mjModel* m, mjData* d){
      		// Get angle between two vectors.
      		float angle = acos(mju_dot3(res, vec)) / PI; // scaled to 0-1.
      		float distance = sqrt(pow(lastPos[0] - stablePos[0],2) + pow(lastPos[1] - stablePos[1],2) + pow(lastPos[2] - stablePos[2],2));
-     		fprintf(outGraspDataFile, "#Time:%lf# Grasp %d has %f shift and %f rotation.\n", d->time, planner.graspCounter, distance, angle);
-     		std::cout<<"#Time:"<<d->time<<"# Grasp "<<planner.graspCounter<<" has "<<distance<<" shift and "<<angle<<" rotation."<<std::endl;
+     		fprintf(outGraspDataFile, "#Time:%lf# Grasp %d has %f shift and %f rotation.\n", d->time, planner->graspCounter, distance, angle);
+     		std::cout<<"#Time:"<<d->time<<"# Grasp "<<planner->graspCounter<<" has "<<distance<<" shift and "<<angle<<" rotation."<<std::endl;
      	}
 
 		// If we're at the end of a stand state, save log data.
-     	if (planner.getGraspState() == Grasp::stand && planner.counter == 800)
+     	if (planner->getGraspState() == Grasp::stand && planner->counter == 800)
      	{
      		// Calculate grasp success
      		bool graspSuccess = d->qpos[29] > 0;
@@ -257,15 +257,15 @@ void graspObject(const mjModel* m, mjData* d){
      		// Get angle between two vectors.
      		float angle = acos(mju_dot3(res, vec)) / PI; // scaled to 0-1.
      		float distance = sqrt(pow(finalPos[0] - lastPos[0],2) + pow(finalPos[1] - lastPos[1],2) + pow(finalPos[2] - lastPos[2],2));
-     		fprintf(outGraspDataFile, "#Time:%lf# Finished grasp %d. Grasp success: %d. Grasp shift: %f. In-hand rotation: %f.\n", d->time, planner.graspCounter, (int)graspSuccess, distance, angle);
-     		std::cout<<"#Time:"<<d->time<<"# Finished grasp "<<planner.graspCounter<<". Grasp success: "<<graspSuccess<<". Grasp shift: "<<distance<<". In-hand rotation: "<<angle<<"."<<std::endl;
+     		fprintf(outGraspDataFile, "#Time:%lf# Finished grasp %d. Grasp success: %d. Grasp shift: %f. In-hand rotation: %f.\n", d->time, planner->graspCounter, (int)graspSuccess, distance, angle);
+     		std::cout<<"#Time:"<<d->time<<"# Finished grasp "<<planner->graspCounter<<". Grasp success: "<<graspSuccess<<". Grasp shift: "<<distance<<". In-hand rotation: "<<angle<<"."<<std::endl;
      	}
 
 		// Perform grasping loop.
 		if (stableFlag)
 		{
 			// Perform grasp loop
-			planner.PerformGrasp(m, d, stableQpos, stableQvel, stableCtrl, &scn, &con);
+			planner->PerformGrasp(m, d, stableQpos, stableQvel, stableCtrl, &scn, &con);
 		}
 	}
 }
@@ -280,35 +280,35 @@ void render(GLFWwindow* window, const mjModel* m, mjData* d)
     glfwGetFramebufferSize(window, &rect.width, &rect.height);
 
 	mjrRect bottomright = {
-		rect.left+rect.width-planner.camSize[1],
+		rect.left+rect.width-planner->camSize[1],
 		rect.bottom,
-		planner.camSize[1],
-		planner.camSize[0]
+		planner->camSize[1],
+		planner->camSize[0]
 	};
 
 	mjrRect bottomleft = {
 		rect.left,
 		rect.bottom,
-		planner.camSize[1],
-		planner.camSize[0]
+		planner->camSize[1],
+		planner->camSize[0]
 	};
 
 	// Render the depth buffer.
-	mjr_drawPixels(planner.depthBuffer, NULL, bottomright, &con);
+	mjr_drawPixels(planner->depthBuffer, NULL, bottomright, &con);
 
 	// Render the rgb buffer.
-	mjr_drawPixels(planner.rgbBuffer, NULL, bottomleft, &con);
+	mjr_drawPixels(planner->rgbBuffer, NULL, bottomleft, &con);
 
 	// Fill in relevant pixels with point cloud data.
-	if (planner.Simulator->cloud != nullptr){
+	if (planner->Simulator->cloud != nullptr){
 
 		glBegin(GL_POINTS);
-		for (int i = 0; i < planner.Simulator->cloud->height * planner.Simulator->cloud->width; i++) {
-		  if (planner.Simulator->cloud->points[i].r > 0)
+		for (int i = 0; i < planner->Simulator->cloud->height * planner->Simulator->cloud->width; i++) {
+		  if (planner->Simulator->cloud->points[i].r > 0)
 		  {
-			  glVertex3f(planner.Simulator->cloud->points[i].x - 0.5, //.x
-			  					  planner.Simulator->cloud->points[i].y, //.y
-			  					  planner.Simulator->cloud->points[i].z);
+			  glVertex3f(planner->Simulator->cloud->points[i].x - 0.5, //.x
+			  					  planner->Simulator->cloud->points[i].y, //.y
+			  					  planner->Simulator->cloud->points[i].z);
 		  }
 		}
 		glEnd();
@@ -321,9 +321,9 @@ void render(GLFWwindow* window, const mjModel* m, mjData* d)
 int main(int argc, const char** argv)
 {
     // check command-line arguments
-    if( argc!=3 )
+    if( argc!=4 )
     {
-        printf(" USAGE:  basic ModelFolder <visualOn/visualOff>\n");
+        printf(" USAGE:  basic ModelFolder dropboxFolder <visualOn/visualOff>\n");
         return 0;
     }
 
@@ -335,17 +335,20 @@ int main(int argc, const char** argv)
 	#endif
 
     // Set visual flag based on input.
-    if (!strcmp(argv[2], "visualOn"))
+    if (!strcmp(argv[3], "visualOn"))
     	visualFlag = true;
     else
     	visualFlag = false;
 
+    // Allocate planner
+    planner = new Grasp::GraspPlanner(argv[2]);
+
     // Redirect cout to file.
-    std::ofstream out(planner.debugLogFile);
+    std::ofstream out(planner->debugLogFile);
     std::streambuf *coutbuf = std::cout.rdbuf(); //save old buf
     std::cout.rdbuf(out.rdbuf()); //redirect std::cout to out.txt!
     std::cerr.rdbuf(out.rdbuf()); //redirect std::err to out.txt!
-    outGraspDataFile = fopen(planner.resultFile, "w");
+    outGraspDataFile = fopen(planner->resultFile, "w");
 
     // Get random object, and relevant asset/object files.
     srand(time(NULL));
@@ -418,7 +421,7 @@ int main(int argc, const char** argv)
     if (baseIds[objectId - 1] == 1)
     {
     	utensilFlag = true;
-    	planner.minPointZ = -0.255; // Table is at -0.35, each base is about 9 cms.
+    	planner->minPointZ = -0.255; // Table is at -0.35, each base is about 9 cms.
         boost::filesystem::copy_file(newBaseFile, oldBaseFile, boost::filesystem::copy_option::overwrite_if_exists);
         boost::filesystem::copy_file(newBaseAssetFile, oldBaseAssetFile, boost::filesystem::copy_option::overwrite_if_exists);
     	strcat(modelStr, "/BHAM_Test_Base.xml");
@@ -440,32 +443,32 @@ int main(int argc, const char** argv)
     // Before we move on to grasping loop, we save all the model files to the cloud.
     char tmpStr[1000];
     strcpy(tmpStr, "./tmp/");
-    strcat(tmpStr, planner.fileId);
+    strcat(tmpStr, planner->fileId);
     strcat(tmpStr, "_include_light.xml");
     boost::filesystem::copy_file(lightFile, tmpStr, boost::filesystem::copy_option::overwrite_if_exists);
     Grasp::Connector::UploadFile(tmpStr);
     strcpy(tmpStr, "./tmp/");
-    strcat(tmpStr, planner.fileId);
+    strcat(tmpStr, planner->fileId);
     strcat(tmpStr, "_include_table.xml");
     boost::filesystem::copy_file(tableFile, tmpStr, boost::filesystem::copy_option::overwrite_if_exists);
     Grasp::Connector::UploadFile(tmpStr);
     strcpy(tmpStr, "./tmp/");
-    strcat(tmpStr, planner.fileId);
+    strcat(tmpStr, planner->fileId);
     strcat(tmpStr, "_include_object.xml");
     boost::filesystem::copy_file(oldObjectFile, tmpStr, boost::filesystem::copy_option::overwrite_if_exists);
     Grasp::Connector::UploadFile(tmpStr);
     strcpy(tmpStr, "./tmp/");
-    strcat(tmpStr, planner.fileId);
+    strcat(tmpStr, planner->fileId);
     strcat(tmpStr, "_include_base.xml");
     boost::filesystem::copy_file(oldBaseFile, tmpStr, boost::filesystem::copy_option::overwrite_if_exists);
     Grasp::Connector::UploadFile(tmpStr);
     strcpy(tmpStr, "./tmp/");
-    strcat(tmpStr, planner.fileId);
+    strcat(tmpStr, planner->fileId);
     strcat(tmpStr, "_include_object_assets.xml");
     boost::filesystem::copy_file(oldAssetFile, tmpStr, boost::filesystem::copy_option::overwrite_if_exists);
     Grasp::Connector::UploadFile(tmpStr);
     strcpy(tmpStr, "./tmp/");
-    strcat(tmpStr, planner.fileId);
+    strcat(tmpStr, planner->fileId);
     strcat(tmpStr, "_include_base_assets.xml");
     boost::filesystem::copy_file(oldBaseAssetFile, tmpStr, boost::filesystem::copy_option::overwrite_if_exists);
     Grasp::Connector::UploadFile(tmpStr);
@@ -538,8 +541,8 @@ int main(int argc, const char** argv)
     std::srand(std::time(NULL));
 
     // Open out file.
-    outFile = fopen(planner.logFile, "wb");
-    std::cout<<planner.logFile<<" opened!"<<std::endl;
+    outFile = fopen(planner->logFile, "wb");
+    std::cout<<planner->logFile<<" opened!"<<std::endl;
 
 	// Print header.
     writeHeader(m, d, outFile);
@@ -554,8 +557,8 @@ int main(int argc, const char** argv)
     // Save the first log, and read it from the file into an array.
     // We'll use the array to reset the simulation.
     int recsz = 1 + m->nq + m->nv + m->nu + 7*m->nmocap + m->nsensordata;
-    planner.data = new float[recsz];
-	savelog(m, d, planner.data, outFile);
+    planner->data = new float[recsz];
+	savelog(m, d, planner->data, outFile);
 
 	// Unset pause flag.
 	pauseFlag = false;
@@ -569,7 +572,7 @@ int main(int argc, const char** argv)
 				break;
 
 		// All grasps done? Break.
-		if (planner.getGraspState() == Grasp::done)
+		if (planner->getGraspState() == Grasp::done)
 			break;
 
 		// advance interactive simulation for 1/60 sec
@@ -579,9 +582,9 @@ int main(int argc, const char** argv)
 		mjtNum simstart = d->time;
 		while( d->time - simstart < 1.0/60.0 )
 		{
-			if (planner.getGraspState() == Grasp::grasping ||
-					planner.getGraspState() == Grasp::lifting ||
-					planner.getGraspState() == Grasp::stand)
+			if (planner->getGraspState() == Grasp::grasping ||
+					planner->getGraspState() == Grasp::lifting ||
+					planner->getGraspState() == Grasp::stand)
 			{
 				// Here, we save data. Skip steps if needed.
 				if (skipSteps > 0 && ctr < skipSteps)
@@ -625,9 +628,9 @@ int main(int argc, const char** argv)
     std::cout.rdbuf(coutbuf); //reset to standard output again
 
     // Save log file, grasp data and debug_log
-//    Grasp::Connector::UploadFile(planner.logFile);
-    Grasp::Connector::UploadFile(planner.debugLogFile);
-    Grasp::Connector::UploadFile(planner.resultFile);
+//    Grasp::Connector::UploadFile(planner->logFile);
+    Grasp::Connector::UploadFile(planner->debugLogFile);
+    Grasp::Connector::UploadFile(planner->resultFile);
 
     // delete tmp folder
     if(boost::filesystem::exists("./tmp"))
@@ -643,7 +646,8 @@ int main(int argc, const char** argv)
 
     // free MuJoCo model and data, deactivate
     mj_deleteData(d);
-	delete[] planner.data;
+	delete[] planner->data;
+	delete planner;
 	delete[] lastQpos;
 	delete [] stableQpos;
 	delete [] stableQvel;

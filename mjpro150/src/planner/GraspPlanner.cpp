@@ -34,29 +34,28 @@ void GraspPlanner::SetFrame(const mjModel* m, mjData * d)
     mju_f2n(d->sensordata, data+1+m->nq+m->nv+m->nu+7*m->nmocap, m->nsensordata);
 }
 
-GraspPlanner::GraspPlanner() {
+GraspPlanner::GraspPlanner(const char * dropboxBase) {
 
 	// Create file paths.
 	fileId[0] = 0;
     strcat(fileId, "XXXXXX");
     mktemp(fileId);
-	char dropboxFolder[1000], baseFolder[1000];
-	dropboxFolder[0] = 0;
-	baseFolder[0] = 0;
-	strcat(dropboxFolder, DROPBOX_FOLDER);
-	strcat(dropboxFolder, "data/");
-	strcat(dropboxFolder, fileId);
-	strcat(dropboxFolder, "/");
-	strcat(baseFolder, "./tmp/");
+	char prefix[1000], baseFolder[1000];
+	strcpy(dropboxFolder, dropboxBase);
+	strcpy(prefix, dropboxBase);
+	strcat(prefix, "/data/");
+	strcat(prefix, fileId);
+	strcat(prefix, "/");
+	strcpy(baseFolder, "./tmp/");
 	strcat(baseFolder, "data/");
 	strcat(baseFolder, fileId);
 	strcat(baseFolder, "/");
 	boost::filesystem::create_directories(baseFolder);
-	boost::filesystem::create_directories(dropboxFolder);
-	strcat(dropboxFolder, fileId);
+	boost::filesystem::create_directories(prefix);
+	strcat(prefix, fileId);
 	strcat(baseFolder, fileId);
 	logFile [0] = debugLogFile[0] = pointFile [0] = rgbFile [0] = depthFile[0] = resultFile[0] = trajectoryFile[0] = 0; // Set to ""
-	strcat(logFile, baseFolder); strcat(debugLogFile, baseFolder); strcat(pointFile, dropboxFolder); strcat(rgbFile, baseFolder); strcat(depthFile, baseFolder); strcat(resultFile, baseFolder); strcat(trajectoryFile, dropboxFolder); // Set to ./tmp/
+	strcat(logFile, baseFolder); strcat(debugLogFile, baseFolder); strcat(pointFile, baseFolder); strcat(rgbFile, baseFolder); strcat(depthFile, baseFolder); strcat(resultFile, baseFolder); strcat(trajectoryFile, prefix); // Set to ./tmp/
 	strcat(logFile, ".log"); strcat(debugLogFile, "_debug.log"); strcat(pointFile, ".pcd"); strcat(rgbFile, "_rgb.png"); strcat(depthFile, "_depth.png"); strcat(resultFile, ".gd"); strcat(trajectoryFile, ".trj");
 
     // Create and start kinect simulator.
@@ -85,14 +84,14 @@ GraspPlanner::GraspPlanner() {
 
 GraspPlanner::~GraspPlanner() {
 	delete Simulator;
-	char dropboxFolder[1000];
-	dropboxFolder[0] = 0;
-	strcat(dropboxFolder, DROPBOX_FOLDER);
-	strcat(dropboxFolder, "data/");
-	strcat(dropboxFolder, fileId);
-    if(boost::filesystem::exists(dropboxFolder))
+	char prefix[1000];
+	strcpy(prefix, dropboxFolder);
+	strcat(prefix, "/data/");
+	strcat(prefix, fileId);
+
+    if(boost::filesystem::exists(prefix))
     {
-       boost::filesystem::remove_all(dropboxFolder);
+       boost::filesystem::remove_all(prefix);
     }
 
 	if (finalApproach != NULL)
@@ -274,7 +273,7 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 			}
 
 			// First, upload the pcd file to the web server (where we expect it to be deleted).
-			success = Connector::UploadFileToDropbox(fileId, pointFile);
+			success = Connector::UploadFileToDropbox(fileId, pointFile, dropboxFolder);
 
 			if (!success)
 			{

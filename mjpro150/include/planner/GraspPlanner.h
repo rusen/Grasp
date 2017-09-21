@@ -49,6 +49,7 @@ public:
 	char depthFile [1000];  // RGB file (.png)
 	char resultFile[1000]; // Grasp success/diagnostics file (.gd)
 	char trajectoryFile[1000]; // Trajectory file (.trj)
+	char dropboxFolder[1000]; // Dropbox folder for this run
 	FILE * trjFP = NULL;
 	int numberOfGrasps = 0;
 	int collisionPoints = 50, collisionCounter = 0;
@@ -62,7 +63,7 @@ public:
 	// Simulator allocation
 	Simulate* Simulator = NULL;
 
-	GraspPlanner();
+	GraspPlanner(const char * dropboxFolder);
 	virtual ~GraspPlanner();
 
 	// Reset simulation to initial configuration

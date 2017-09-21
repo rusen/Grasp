@@ -92,10 +92,10 @@ bool Connector::UploadFile(const char *name){
     return flag;
 }
 
-bool Connector::UploadFileToDropbox(const char * fileId, const char *name){
+bool Connector::UploadFileToDropbox(const char * fileId, const char *name, const char * dropboxFolder){
 	char newName[100];
-	strcpy(newName, DROPBOX_FOLDER);
-	strcat(newName, "points/");
+	strcpy(newName, dropboxFolder);
+	strcat(newName, "/points/");
 	strcat(newName, fileId);
 	strcat(newName, ".pcd");
 	int result = rename(name, newName);
@@ -108,7 +108,7 @@ bool Connector::UploadFileToDropbox(const char * fileId, const char *name){
 
 bool Connector::DownloadFileFromDropbox(const char *name){
 	bool flag = access( name, F_OK ) != -1;
-	std::this_thread::sleep_for(std::chrono::milliseconds(100));
+	std::this_thread::sleep_for(std::chrono::seconds(1));
 	return flag;
 }
 

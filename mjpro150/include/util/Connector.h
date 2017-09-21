@@ -9,7 +9,6 @@
 #define UTIL_CONNECTOR_H_
 
 #define SERVER_ADDRESS "http://52.14.167.90:8000/"
-#define DROPBOX_FOLDER "/Users/rusi/TestDropbox/Dropbox/"
 
 namespace Grasp {
 
@@ -23,7 +22,7 @@ public:
 	static bool UploadFile(const char *name);
 
 	// Workaround solution to communicate with Sulley.
-	static bool UploadFileToDropbox(const char * fileId, const char *name);
+	static bool UploadFileToDropbox(const char * fileId, const char *name, const char * dropbox);
 
 	// Function to get files from server. (Unblocking)
 	// If you wish to have next set of points, name field should be "".
