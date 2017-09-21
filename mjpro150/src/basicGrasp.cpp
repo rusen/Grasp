@@ -57,6 +57,7 @@ mjtNum *lastQpos, *stableQpos = NULL, *stableQvel = NULL, *stableCtrl = NULL;
 double stableError = 0.000005;
 mjtNum lastPose[4], lastPos[3]; // For keeping track of pose after object is gripped.
 int stableCounter = 0, stableIterations = 5000;
+bool visualFlag = true;
 
 // Get the path to the dot pattern
 std::string dotPath = "./kinect-pattern_3x3.png";
@@ -320,9 +321,9 @@ void render(GLFWwindow* window, const mjModel* m, mjData* d)
 int main(int argc, const char** argv)
 {
     // check command-line arguments
-    if( argc!=2 )
+    if( argc!=3 )
     {
-        printf(" USAGE:  basic mujocoModel.xml\n");
+        printf(" USAGE:  basic ModelFolder <visualOn/visualOff>\n");
         return 0;
     }
 
@@ -333,10 +334,17 @@ int main(int argc, const char** argv)
     mj_activate("mjkey_macos.txt");
 	#endif
 
+    // Set visual flag based on input.
+    if (!strcmp(argv[2], "visualOn"))
+    	visualFlag = true;
+    else
+    	visualFlag = false;
+
     // Redirect cout to file.
     std::ofstream out(planner.debugLogFile);
     std::streambuf *coutbuf = std::cout.rdbuf(); //save old buf
     std::cout.rdbuf(out.rdbuf()); //redirect std::cout to out.txt!
+    std::cerr.rdbuf(out.rdbuf()); //redirect std::err to out.txt!
     outGraspDataFile = fopen(planner.resultFile, "w");
 
     // Get random object, and relevant asset/object files.
@@ -465,26 +473,6 @@ int main(int argc, const char** argv)
     // install control callback
     mjcb_control = graspObject;
 
-    // Read convex hull points into an array.
-    float tempBuffer[3];
-    FILE * chBuf = fopen(convexHullFile, "r");
-    while(true){
-    	std::vector<float> tmpVec;
-    	int no = fscanf(chBuf, "%f %f %f", tempBuffer, tempBuffer+1, tempBuffer+2);
-
-    	if (no != 3)
-    		break;
-
-    	// Add the positions to the vector.
-    	tmpVec.push_back(tempBuffer[0]);
-    	tmpVec.push_back(tempBuffer[1]);
-    	tmpVec.push_back(tempBuffer[2]);
-
-    	// Add the vector to the list.
-    	planner.convHullPoints.push_back(tmpVec);
-    }
-    fclose(chBuf);
-
     // load and compile model
     char error[1000] = "Could not load binary model";
     if( strlen(modelStr)>4 && !strcmp(modelStr+strlen(modelStr)-4, ".mjb") )
@@ -498,14 +486,21 @@ int main(int argc, const char** argv)
     d = mj_makeData(m);
     lastQpos = new mjtNum[m->nq], stableQpos = new mjtNum[m->nq], stableQvel = new mjtNum[m->nv], stableCtrl = new mjtNum[m->nu];
 
-    // init GLFW
-    if( !glfwInit() )
-        mju_error("Could not initialize GLFW");
+    GLFWwindow* window = NULL;
+	// init GLFW
+	if( !glfwInit() )
+		mju_error("Could not initialize GLFW");
 
-    // create window, make OpenGL context current, request v-sync
-    GLFWwindow* window = glfwCreateWindow(1200, 900, "Demo", NULL, NULL);
-    glfwMakeContextCurrent(window);
-    glfwSwapInterval(1);
+	// create window, make OpenGL context current, request v-sync
+	if (!visualFlag)
+	{
+		glfwWindowHint(GLFW_AUTO_ICONIFY, GLFW_FALSE);
+		glfwWindowHint(GLFW_FOCUSED, GLFW_FALSE);
+		glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE);
+	}
+	window = glfwCreateWindow(1200, 900, "Demo", NULL, NULL);
+	glfwMakeContextCurrent(window);
+	glfwSwapInterval(1);
 
     // initialize visualization data structures
     mjv_defaultCamera(&cam);
@@ -526,11 +521,17 @@ int main(int argc, const char** argv)
     mjv_makeScene(&scn, 1000);                   // space for 1000 objects
     mjr_makeContext(m, &con, mjFONTSCALE_100);   // model-specific context
 
-    // install GLFW mouse and keyboard callbacks
-    glfwSetKeyCallback(window, keyboard);
-    glfwSetCursorPosCallback(window, mouse_move);
-    glfwSetMouseButtonCallback(window, mouse_button);
-    glfwSetScrollCallback(window, scroll);
+    if (visualFlag)
+    {
+		// install GLFW mouse and keyboard callbacks
+		glfwSetKeyCallback(window, keyboard);
+		glfwSetCursorPosCallback(window, mouse_move);
+		glfwSetMouseButtonCallback(window, mouse_button);
+		glfwSetScrollCallback(window, scroll);
+
+	    // Enlarge the points
+	    glPointSize(5);
+    }
 
     // Filename operations, srand
 	boost::filesystem::create_directories("./tmp/"); // Create temp dir
@@ -550,9 +551,6 @@ int main(int argc, const char** argv)
         std::fwrite(&c, 1, 1, outFile);
     }
 
-    // Enlarge the points
-    glPointSize(5);
-
     // Save the first log, and read it from the file into an array.
     // We'll use the array to reset the simulation.
     int recsz = 1 + m->nq + m->nv + m->nu + 7*m->nmocap + m->nsensordata;
@@ -563,17 +561,22 @@ int main(int argc, const char** argv)
 	pauseFlag = false;
 
     // run main loop, target real-time simulation and 60 fps rendering
-    while( !glfwWindowShouldClose(window) )
-    {
+	while( true )
+	{
+		// If stop requested, we stop simulation.
+		if (visualFlag)
+			if (glfwWindowShouldClose(window))
+				break;
 
-     	if (planner.getGraspState() == Grasp::done)
-     		break;
+		// All grasps done? Break.
+		if (planner.getGraspState() == Grasp::done)
+			break;
 
-        // advance interactive simulation for 1/60 sec
-        //  Assuming MuJoCo can simulate faster than real-time, which it usually can,
-        //  this loop will finish on time for the next frame to be rendered at 60 fps.
-        //  Otherwise add a cpu timer and exit this loop when it is time to render.
-        mjtNum simstart = d->time;
+		// advance interactive simulation for 1/60 sec
+		//  Assuming MuJoCo can simulate faster than real-time, which it usually can,
+		//  this loop will finish on time for the next frame to be rendered at 60 fps.
+		//  Otherwise add a cpu timer and exit this loop when it is time to render.
+		mjtNum simstart = d->time;
 		while( d->time - simstart < 1.0/60.0 )
 		{
 			if (planner.getGraspState() == Grasp::grasping ||
@@ -596,21 +599,25 @@ int main(int argc, const char** argv)
 			mj_step(m, d);
 		}
 
-        // get framebuffer viewport
-        mjrRect viewport = {0, 0, 0, 0};
-        glfwGetFramebufferSize(window, &viewport.width, &viewport.height);
+		// render the scene.
+		if (visualFlag)
+		{
+			// get framebuffer viewport
+			mjrRect viewport = {0, 0, 0, 0};
+			glfwGetFramebufferSize(window, &viewport.width, &viewport.height);
 
-        // update scene and render
-        mjv_updateScene(m, d, &opt, NULL, &cam, mjCAT_ALL, &scn);
-        mjr_render(viewport, &scn, &con);
-    	render(window, m, d);
+			// update scene and render
+			mjv_updateScene(m, d, &opt, NULL, &cam, mjCAT_ALL, &scn);
+			mjr_render(viewport, &scn, &con);
+			render(window, m, d);
 
-        // swap OpenGL buffers (blocking call due to v-sync)
-        glfwSwapBuffers(window);
+			// swap OpenGL buffers (blocking call due to v-sync)
+			glfwSwapBuffers(window);
 
-        // process pending GUI events, call GLFW callbacks
-        glfwPollEvents();
-    }
+			// process pending GUI events, call GLFW callbacks
+			glfwPollEvents();
+		}
+	}
 
     // Close record file
     fclose(outFile);
@@ -629,7 +636,8 @@ int main(int argc, const char** argv)
     }
 
     // close GLFW, free visualization storage
-    glfwTerminate();
+    if (visualFlag)
+    	glfwTerminate();
     mjv_freeScene(&scn);
     mjr_freeContext(&con);
 

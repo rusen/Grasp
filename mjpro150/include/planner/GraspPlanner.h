@@ -51,7 +51,7 @@ public:
 	char trajectoryFile[1000]; // Trajectory file (.trj)
 	FILE * trjFP = NULL;
 	int numberOfGrasps = 0;
-	int collisionPoints = 100, collisionCounter = 0;
+	int collisionPoints = 50, collisionCounter = 0;
 	bool collisionSet = false, collisionRun = true, hasCollided = false;
 	float* data = NULL;
 

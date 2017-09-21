@@ -7,9 +7,9 @@ message("Starteda")
 
 # Add compile options here.
 if (APPLE)
-	add_compile_options(-O0 -g3 -I${PROJECT_SOURCE_DIR}/include -frounding-math)
+	add_compile_options(-O3 -I${PROJECT_SOURCE_DIR}/include -frounding-math)
 elseif (UNIX)
-	add_compile_options(-O0 -g3 -fopenmp -I${PROJECT_SOURCE_DIR}/include -mavx -frounding-math)
+	add_compile_options(-O3 -fopenmp -I${PROJECT_SOURCE_DIR}/include -mavx -frounding-math)
 	set(OpenCV_DIR "${PROJECT_SOURCE_DIR}/lib/unix/opencv-3.2.0/release")
 endif ()
 
