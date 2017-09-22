@@ -42,9 +42,10 @@ public:
 	std::vector<std::vector<float>> convHullPoints;
 	float yOffset = 2; // For collision detection, we try hand positions on a separate part of the table, separated by a y offset.
 	char fileId [10]; // Unique file id
+	char baseFolder [1000]; // Log file
 	char logFile [1000]; // Log file
 	char debugLogFile [1000]; // Log file
-	char modelFile [1000]; // Model file (binary)
+	char modelPrefix [1000]; // Model file prefix
 	char pointFile [1000]; // Point cloud data file (.pcd)
 	char rgbFile [1000];  // RGB file (.png)
 	char depthFile [1000];  // RGB file (.png)
@@ -60,6 +61,9 @@ public:
 	// Upload and timeout time
 	time_t uploadTime = 0;
 	time_t trajectoryTimeout = 600; // seconds. If trajectory doesn't arrive within this timeframe, operation aborted.
+
+	// Random seed (for srand)
+	time_t randSeed = 0;
 
 	// Steps to perform approach.
 	int counter = 0;

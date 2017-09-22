@@ -155,7 +155,8 @@ pcl::PointCloud<pcl::PointXYZRGBNormal> * KinectSimulator::intersect(const mjMod
 				  cv::Mat &depth_map,
 				  glm::vec3 newCamPos,
 				  glm::vec3 newCamGaze,
-				  float minPointZ)
+				  float minPointZ,
+				  char * rgbFile)
   {
 
     // allocate memory for depth map
@@ -242,7 +243,7 @@ pcl::PointCloud<pcl::PointXYZRGBNormal> * KinectSimulator::intersect(const mjMod
     // Flip for opencv
     cv::Mat out;
     cv::flip(rgb_map, out, 0);
-    cv::imwrite( "./tmp/tempRGB.png", out );
+    cv::imwrite( rgbFile, out );
 
     // Print the vectors.
     std::cout<<"CAM POS: "<< newCamPos[0]<<" "<< newCamPos[1]<<" "<< newCamPos[2]<<std::endl;

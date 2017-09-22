@@ -59,7 +59,6 @@ namespace Grasp {
   public:
   
   Simulate()
-    : out_path_("/tmp/") 
       {
 
 		// allocate memory for depth image
@@ -72,7 +71,6 @@ namespace Grasp {
 
 		object_model_ = new KinectSimulator(cam_info);
 
-		name = NULL;
 		cloud = nullptr;
       }
 
@@ -87,7 +85,7 @@ namespace Grasp {
 
       // simulate measurement of object and store in image, point cloud and labeled image
       cv::Mat p_result;
-      cloud = object_model_->intersect(m, d, scn, con, rgbIm, depth_im_, newCamPos, newCamGaze, minPointZ);
+      cloud = object_model_->intersect(m, d, scn, con, rgbIm, depth_im_, newCamPos, newCamGaze, minPointZ, rgbFile);
       
       // store on disk
   	  std::stringstream lD;
@@ -96,7 +94,7 @@ namespace Grasp {
       // Save depth map on a file.
       cv::Mat outDepth;
       cv::flip(scaled_im_, outDepth, -1);
-      cv::imwrite( "./tmp/tempDepth.png", outDepth );
+      cv::imwrite( depthFile, outDepth );
 
   	  // Calculate surface normals as well!
   	  int pointCount = cloud->size();
@@ -139,11 +137,10 @@ namespace Grasp {
     CameraInfo cam_info;
     cv::Mat depth_im_, scaled_im_, labels_;
     cv::Mat rgbIm;
-    std::string out_path_;
     pcl::PointCloud<pcl::PointXYZRGBNormal> *cloud;
 	pcl::NormalEstimation<pcl::PointXYZ, pcl::Normal> ne;
 	pcl::PointCloud<pcl::Normal>::Ptr normals;
-	char * name;
+	char cloudFile[1000], rgbFile[1000], depthFile[1000];
 
   };
 

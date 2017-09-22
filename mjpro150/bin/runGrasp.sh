@@ -1,5 +1,31 @@
 #!/bin/bash
-while true
-do
-	./basicGrasp ../model/BHAM /Users/rusi/TestDropbox/Dropbox visualOff
-done
+
+task(){
+   PORT=$(((RANDOM<<15)|RANDOM))
+   ./basicGrasp ../model/BHAM /Users/rusi/TestDropbox/Dropbox visualOff $PORT
+}
+
+open_sem(){
+    mkfifo pipe-$$
+    exec 3<>pipe-$$
+    rm pipe-$$
+    local i=$1
+    for((;i>0;i--)); do
+        printf %s 000 >&3
+    done
+}
+run_with_lock(){
+    local x
+    read -u 3 -n 3 x && ((0==x)) || exit $x
+    (
+    "$@" 
+    printf '%.3d' $? >&3
+    )&
+}
+
+N=4
+open_sem $N
+while true; do
+    run_with_lock task
+done 
+wait

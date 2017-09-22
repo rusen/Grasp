@@ -104,7 +104,8 @@ namespace Grasp
     	   cv::Mat &depth_map,
 		   glm::vec3 newCamPos,
 		   glm::vec3 newCamGaze,
-		   float minPointZ);
+		   float minPointZ,
+		   char * rgbFile);
 
     KinectSimulator(const CameraInfo &p_camera_info);
     ~KinectSimulator();

@@ -24,7 +24,10 @@ void CollectData(Simulate* Simulator, const mjModel* m, mjData* d,  mjvScene *sc
 
 	// Get image from kinect camera.
 	Simulator->simulateMeasurement(m, d, scn, con, cameraPos, gazeDir, minPointZ);
-    pcl::PCDWriter().write(Simulator->name, *(Simulator->cloud), true);
+	if (Simulator->cloud->size() > 0)
+		pcl::PCDWriter().write(Simulator->cloudFile, *(Simulator->cloud), true);
+	else
+		return;
 
 	int rows = Simulator->scaled_im_.rows;
 	int cols = Simulator->scaled_im_.cols;

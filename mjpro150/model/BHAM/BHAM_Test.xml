@@ -18,8 +18,10 @@
 <mujoco model="BHAM">
 	<include file="include_BHAM.xml"/>
 	<include file="include_table.xml"/>
-	<include file="include_light.xml"/>
+	<include file="include_light.xml"/> 
 	<include file="include_assets.xml"/>
 	<include file="include_object_assets.xml"/>
 	<include file="include_object.xml"/>
+	<include file="include_base.xml"/>
+	<include file="include_base_assets.xml"/>
 </mujoco>

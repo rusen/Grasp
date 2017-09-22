@@ -40,7 +40,7 @@ GraspPlanner::GraspPlanner(const char * dropboxBase) {
 	fileId[0] = 0;
     strcat(fileId, "XXXXXX");
     mktemp(fileId);
-	char prefix[1000], baseFolder[1000];
+	char prefix[1000];
 	strcpy(dropboxFolder, dropboxBase);
 	strcpy(prefix, dropboxBase);
 	strcat(prefix, "/data/");
@@ -50,24 +50,28 @@ GraspPlanner::GraspPlanner(const char * dropboxBase) {
 	strcat(baseFolder, "data/");
 	strcat(baseFolder, fileId);
 	strcat(baseFolder, "/");
+	char localPrefix[1000];
+	strcpy(localPrefix, baseFolder);
 	boost::filesystem::create_directories(baseFolder);
 	boost::filesystem::create_directories(prefix);
 	strcat(prefix, fileId);
-	strcat(baseFolder, fileId);
+	strcat(localPrefix, fileId);
 	logFile [0] = debugLogFile[0] = pointFile [0] = rgbFile [0] = depthFile[0] = resultFile[0] = trajectoryFile[0] = 0; // Set to ""
-	strcat(logFile, baseFolder); strcat(debugLogFile, baseFolder); strcat(pointFile, baseFolder); strcat(rgbFile, baseFolder); strcat(depthFile, baseFolder); strcat(resultFile, baseFolder); strcat(trajectoryFile, prefix); // Set to ./tmp/
+	strcat(logFile, localPrefix); strcat(debugLogFile, localPrefix); strcat(pointFile, localPrefix); strcat(rgbFile, localPrefix); strcat(depthFile, localPrefix); strcat(resultFile, localPrefix); strcat(trajectoryFile, prefix);
 	strcat(logFile, ".log"); strcat(debugLogFile, "_debug.log"); strcat(pointFile, ".pcd"); strcat(rgbFile, "_rgb.png"); strcat(depthFile, "_depth.png"); strcat(resultFile, ".gd"); strcat(trajectoryFile, ".trj");
 
     // Create and start kinect simulator.
 	CameraInfo camInfo;
     Simulator = new Simulate();
-    Simulator->name = pointFile;
+    strcpy(Simulator->cloudFile,pointFile);
+    strcpy(Simulator->rgbFile,rgbFile);
+    strcpy(Simulator->depthFile,depthFile);
 
     // Calculate a location and orientation for placing the depth cam.
-    std::srand(std::time(NULL));
-    float radialR = (((float) (rand()%360))/360) * (2*3.1416);
-    glm::vec3 gazePosition = {((float) (rand()%100) - 50)/1000, ((float) (rand()%100) - 50)/1000, -0.35};
-    glm::vec3 handPosition(cos(radialR) * 0.5, sin(radialR) * 0.5, 0);
+//    srand(randSeed);
+    float radialR = (((float) (rand()%360))/360.0f) * (2*3.1416);
+    glm::vec3 gazePosition = {((float) (rand()%100) - 50)/1000.0f, ((float) (rand()%100) - 50)/1000.0f, -0.35};
+    glm::vec3 handPosition(cos(radialR) * (0.5 + ((float) (rand()%100) - 50)/1000.0f), sin(radialR) * (0.5 + ((float) (rand()%100) - 50)/1000.0f), ((float) (rand()%100) - 50)/1000.0f);
     std::cout<<"Position of the hand:"<<handPosition[0]<<" "<<handPosition[1]<<" "<<handPosition[2]<<std::endl;
 
     // Calculate gaze dir.
@@ -79,7 +83,7 @@ GraspPlanner::GraspPlanner(const char * dropboxBase) {
     upDir = normalize(glm::cross(rightDir, gazeDir));
 
     // Find camera pos.
-    cameraPos = handPosition + 0.1f * upDir;
+    cameraPos = handPosition + 0.1f * upDir - 0.0135f * rightDir;
 }
 
 GraspPlanner::~GraspPlanner() {
@@ -176,33 +180,12 @@ void GraspPlanner::ReadTrajectory(){
 	finalApproach->waypoints[0].quat.w = finalApproach->waypoints[1].quat.w;
 	for (int k = 0; k<20; k++)
 		finalApproach->waypoints[0].jointAngles[k] = 0;
-
-	/*
-	// Start the initial point further away.
-	if (wpCount > 2)
-	{
-		finalApproach->waypoints[0].pos[0] = 4*finalApproach->waypoints[0].pos[0] - 3*finalApproach->waypoints[1].pos[0];
-		finalApproach->waypoints[0].pos[1] = 4*finalApproach->waypoints[0].pos[1] - 3*finalApproach->waypoints[1].pos[1];
-		finalApproach->waypoints[0].pos[2] = 4*finalApproach->waypoints[0].pos[2] - 3*finalApproach->waypoints[1].pos[2];
-	}
-	*/
 }
 
 bool GraspPlanner::FollowTrajectory(const mjModel* m, mjData* d, float yOffset){
 
 	// Set pose of the hand.
 	Waypoint wp = finalApproach->Interpolate(counter);
-
-	/*
-	if (counter == 0 || counter == finalApproach->steps-1)
-	{
-		std::cout<<" ****************************************** "<<std::endl;
-		for (int k = 0; k<finalApproach->getWaypointCount(); k++)
-		finalApproach->waypoints[k].print();
-		wp.print();
-		std::cout<<" ****************************************** "<<std::endl;
-	}
-*/
 
 	// Add y offset, if requested
 	wp.pos[1] += yOffset;
@@ -242,15 +225,10 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 		{
 			startFlag = true;
 			CollectData(Simulator, m, d, scn, con, rgbBuffer, depthBuffer, cameraPos, gazeDir, camSize, minPointZ, &finishFlag);
-
-			// Upload RGB and depth images to the cloud.
-			boost::filesystem::rename("./tmp/tempRGB.png", rgbFile);
-			boost::filesystem::rename("./tmp/tempDepth.png", depthFile);
-			bool uploadSuccess = Connector::UploadFile(rgbFile);
-			uploadSuccess = uploadSuccess && Connector::UploadFile(depthFile);
-			if (!uploadSuccess)
+			if (!boost::filesystem::exists(Simulator->cloudFile))
 			{
-				std::cout<<"Could not upload "<<rgbFile<<" or "<<depthFile<<" to the main server."<<std::endl;
+				graspState = done;
+				break;
 			}
 		}
 		// Processing done, move on.
@@ -270,15 +248,6 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 				// Point cloud empty or number of points too small. Next!
 				graspState = done;
 				break;
-			}
-
-			// For logging purposes, upload RGB and depth images,
-			// as well as the point cloud, to the log server.
-			// Upload trajectory file to the main server.
-			bool uploadSuccess = Connector::UploadFile(pointFile);
-			if (!uploadSuccess)
-			{
-				std::cout<<"Could not upload "<<pointFile<<" to the main server."<<std::endl;
 			}
 
 			// First, upload the pcd file to the web server (where we expect it to be deleted).
@@ -302,13 +271,6 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 			success = Connector::DownloadFileFromDropbox(trajectoryFile);
 			if (success)
 			{
-				// Upload trajectory file to the main server.
-				bool uploadSuccess = Connector::UploadFile(trajectoryFile);
-				if (!uploadSuccess)
-				{
-					std::cout<<"Could not upload "<<trajectoryFile<<" file to the main server."<<std::endl;
-				}
-
 				trjFP = fopen(trajectoryFile, "rb");
 				fread(&numberOfGrasps, 4, 1, trjFP);
 				std::cout<< "Number of grasps:" << numberOfGrasps << std::endl;

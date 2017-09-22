@@ -1,0 +1,5 @@
+<mujoco>
+	<worldbody>
+        <light directional="false" diffuse="0.686581 0.686581 0.686581" pos="-0.306023 -0.328736 1.429600" dir="-0.210795 0.176800 -1.000000" cutoff="60" ambient="0.2 0.2 0.2" specular="0.187410 0.187410 0.187410"/>
+    </worldbody>
+</mujoco>

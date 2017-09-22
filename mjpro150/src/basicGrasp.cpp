@@ -320,12 +320,28 @@ void render(GLFWwindow* window, const mjModel* m, mjData* d)
 // main function
 int main(int argc, const char** argv)
 {
+	unsigned int tmpNo;
+    // Allocate planner
+	time_t randSeed = time(NULL);
+
     // check command-line arguments
-    if( argc!=4 )
+    if( argc < 4 )
     {
-        printf(" USAGE:  basic ModelFolder dropboxFolder <visualOn/visualOff>\n");
+        printf(" USAGE:  basic ModelFolder dropboxFolder <visualOn/visualOff> (RandomInt)\n");
         return 0;
     }
+
+    // If random seed provided, use it
+    if (argc>4)
+    {
+    	sscanf(argv[4], "%ud", &tmpNo);
+    	randSeed = randSeed + (time_t) tmpNo;
+    }
+    srand(randSeed);
+
+    // Allocate planner
+    planner = new Grasp::GraspPlanner(argv[2]);
+    planner->randSeed = randSeed;
 
 	#ifdef __unix__
     // activate software
@@ -340,9 +356,6 @@ int main(int argc, const char** argv)
     else
     	visualFlag = false;
 
-    // Allocate planner
-    planner = new Grasp::GraspPlanner(argv[2]);
-
     // Redirect cout to file.
     std::ofstream out(planner->debugLogFile);
     std::streambuf *coutbuf = std::cout.rdbuf(); //save old buf
@@ -351,136 +364,21 @@ int main(int argc, const char** argv)
     outGraspDataFile = fopen(planner->resultFile, "w");
 
     // Get random object, and relevant asset/object files.
-    srand(time(NULL));
     int objectId = rand()%objectCount + 1;
     int baseId = rand()%13 + 1;
 
-    // Manage file names
-    char convexHullFile[1000], baseIdFile[1000], oldAssetFile[1000], oldBaseAssetFile[1000], newAssetFile[1000],
-	newBaseAssetFile[1000], oldObjectFile[1000], oldBaseFile[1000], newObjectFile[1000], newBaseFile[1000],
-	tmp[1000], lightFile[1000], tableFile[1000];
-
-    // Copy light and table files.
-    strcpy(tmp, argv[1]);
-    strcat(tmp, "/include_lightOrg.xml");
-    strcpy(lightFile, argv[1]);
-    strcat(lightFile, "/include_light.xml");
-    boost::filesystem::copy_file(tmp, lightFile, boost::filesystem::copy_option::overwrite_if_exists);
-    strcpy(tmp, argv[1]);
-    strcat(tmp, "/include_tableOrg.xml");
-    strcpy(tableFile, argv[1]);
-    strcat(tableFile, "/include_table.xml");
-    boost::filesystem::copy_file(tmp, tableFile, boost::filesystem::copy_option::overwrite_if_exists);
-
-    // Create rest of the files.
-    strcpy(convexHullFile, argv[1]);
-    strcat(convexHullFile, "/convhull.txt");
-    strcpy(baseIdFile, argv[1]);
-    strcat(baseIdFile, "/baseIds.txt");
-
-    strcpy(oldAssetFile, argv[1]);
-    strcat(oldAssetFile, "/include_object_assets.xml");
-    strcpy(oldBaseAssetFile, argv[1]);
-    strcat(oldBaseAssetFile, "/include_base_assets.xml");
-
-    strcpy(newAssetFile, argv[1]);
-    strcat(newAssetFile, "/mesh/objects/");
-    sprintf(tmp, "D_%d/D_%d_assets.xml", objectId, objectId);
-    strcat(newAssetFile, tmp);
-
-    strcpy(newBaseAssetFile, argv[1]);
-    strcat(newBaseAssetFile, "/mesh/bases/");
-    sprintf(tmp, "D_%d/D_%d_assets.xml", baseId, baseId);
-    strcat(newBaseAssetFile, tmp);
-
-    strcpy(oldObjectFile, argv[1]);
-    strcat(oldObjectFile, "/include_object.xml");
-    strcpy(oldBaseFile, argv[1]);
-    strcat(oldBaseFile, "/include_base.xml");
-
-    strcpy(newObjectFile, argv[1]);
-    strcat(newObjectFile, "/mesh/objects/");
-    sprintf(tmp, "D_%d/D_%d_object.xml", objectId, objectId);
-    strcat(newObjectFile, tmp);
-
-    strcpy(newBaseFile, argv[1]);
-    strcat(newBaseFile, "/mesh/bases/");
-    sprintf(tmp, "D_%d/D_%d_base.xml", baseId, baseId);
-    strcat(newBaseFile, tmp);
-
-    // Read base ids.
-    FILE * fid = fopen(baseIdFile, "r");
-    for (int i = 0; i<objectCount; i++)
-    	fscanf(fid, "%d\n", &(baseIds[i]));
-
-    // Create model name.
-    char modelStr[1000];
-    strcpy(modelStr, argv[1]);
-    // If utensil, place in a base consisting of a cup.
-    if (baseIds[objectId - 1] == 1)
-    {
-    	utensilFlag = true;
-    	planner->minPointZ = -0.255; // Table is at -0.35, each base is about 9 cms.
-        boost::filesystem::copy_file(newBaseFile, oldBaseFile, boost::filesystem::copy_option::overwrite_if_exists);
-        boost::filesystem::copy_file(newBaseAssetFile, oldBaseAssetFile, boost::filesystem::copy_option::overwrite_if_exists);
-    	strcat(modelStr, "/BHAM_Test_Base.xml");
-    }
-
-    // If a plate, bowl or a pan, place on an invisible base. There's no collision between the base and the hand.
-    else if (baseIds[objectId - 1] == 2) {
-    	strcat(modelStr, "/BHAM_Test_BaseInv.xml");
-    }
-    else strcat(modelStr, "/BHAM_Test.xml");
-
-    // Copy files.
-    boost::filesystem::copy_file(newAssetFile, oldAssetFile, boost::filesystem::copy_option::overwrite_if_exists);
-    boost::filesystem::copy_file(newObjectFile, oldObjectFile, boost::filesystem::copy_option::overwrite_if_exists);
-
     // Modify the xml files with random parameters.
-    Grasp::ModifyXMLs(argv[1], objectId, baseId);
-
-    // Before we move on to grasping loop, we save all the model files to the cloud.
-    char tmpStr[1000];
-    strcpy(tmpStr, "./tmp/");
-    strcat(tmpStr, planner->fileId);
-    strcat(tmpStr, "_include_light.xml");
-    boost::filesystem::copy_file(lightFile, tmpStr, boost::filesystem::copy_option::overwrite_if_exists);
-    Grasp::Connector::UploadFile(tmpStr);
-    strcpy(tmpStr, "./tmp/");
-    strcat(tmpStr, planner->fileId);
-    strcat(tmpStr, "_include_table.xml");
-    boost::filesystem::copy_file(tableFile, tmpStr, boost::filesystem::copy_option::overwrite_if_exists);
-    Grasp::Connector::UploadFile(tmpStr);
-    strcpy(tmpStr, "./tmp/");
-    strcat(tmpStr, planner->fileId);
-    strcat(tmpStr, "_include_object.xml");
-    boost::filesystem::copy_file(oldObjectFile, tmpStr, boost::filesystem::copy_option::overwrite_if_exists);
-    Grasp::Connector::UploadFile(tmpStr);
-    strcpy(tmpStr, "./tmp/");
-    strcat(tmpStr, planner->fileId);
-    strcat(tmpStr, "_include_base.xml");
-    boost::filesystem::copy_file(oldBaseFile, tmpStr, boost::filesystem::copy_option::overwrite_if_exists);
-    Grasp::Connector::UploadFile(tmpStr);
-    strcpy(tmpStr, "./tmp/");
-    strcat(tmpStr, planner->fileId);
-    strcat(tmpStr, "_include_object_assets.xml");
-    boost::filesystem::copy_file(oldAssetFile, tmpStr, boost::filesystem::copy_option::overwrite_if_exists);
-    Grasp::Connector::UploadFile(tmpStr);
-    strcpy(tmpStr, "./tmp/");
-    strcat(tmpStr, planner->fileId);
-    strcat(tmpStr, "_include_base_assets.xml");
-    boost::filesystem::copy_file(oldBaseAssetFile, tmpStr, boost::filesystem::copy_option::overwrite_if_exists);
-    Grasp::Connector::UploadFile(tmpStr);
+    std::string modelPath = Grasp::CreateXMLs(argv[1], planner, objectId, baseId);
 
     // install control callback
     mjcb_control = graspObject;
 
     // load and compile model
     char error[1000] = "Could not load binary model";
-    if( strlen(modelStr)>4 && !strcmp(modelStr+strlen(modelStr)-4, ".mjb") )
-        m = mj_loadModel(modelStr, 0);
+    if( strlen(modelPath.c_str())>4 && !strcmp(modelPath.c_str()+strlen(modelPath.c_str())-4, ".mjb") )
+        m = mj_loadModel(modelPath.c_str(), 0);
     else
-        m = mj_loadXML(modelStr, 0, error, 1000);
+        m = mj_loadXML(modelPath.c_str(), 0, error, 1000);
     if( !m )
         mju_error_s("Load model error: %s", error);
 
@@ -535,9 +433,10 @@ int main(int argc, const char** argv)
 	    glPointSize(5);
     }
 
-    // Filename operations, srand
-	boost::filesystem::create_directories("./tmp/"); // Create temp dir
-    std::srand(std::time(NULL));
+    // Filename operations
+    if (!boost::filesystem::is_directory("./tmp"))
+    	boost::filesystem::create_directories("./tmp"); // Create temp dir
+ //   srand(randSeed);
 
     // Open out file.
     outFile = fopen(planner->logFile, "wb");
@@ -626,16 +525,8 @@ int main(int argc, const char** argv)
     fclose(outGraspDataFile);
     std::cout.rdbuf(coutbuf); //reset to standard output again
 
-    // Save log file, grasp data and debug_log
-//    Grasp::Connector::UploadFile(planner->logFile);
-    Grasp::Connector::UploadFile(planner->debugLogFile);
-    Grasp::Connector::UploadFile(planner->resultFile);
-
-    // delete tmp folder
-    if(boost::filesystem::exists("./tmp"))
-    {
-       boost::filesystem::remove_all("./tmp");
-    }
+    // Upload the data.
+    UploadFiles(argv[1], planner, objectId, baseId);
 
     // close GLFW, free visualization storage
     if (visualFlag)
@@ -654,6 +545,6 @@ int main(int argc, const char** argv)
     mj_deleteModel(m);
     mj_deactivate();
 
-    return 1;
+    return 0;
 }
 

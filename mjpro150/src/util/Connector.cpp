@@ -8,6 +8,7 @@
 #include "util/Connector.h"
 #include <cstdlib>
 #include <cerrno>
+#include <iostream>
 #include <fstream>
 #include <boost/filesystem.hpp>
 #include <curlpp/cURLpp.hpp>
@@ -113,11 +114,8 @@ bool Connector::UploadFileToDropbox(const char * fileId, const char *name, const
 	strcat(newName, "/points/");
 	strcat(newName, fileId);
 	strcat(newName, ".pcd");
-	int result = rename(name, newName);
-	if ( result == 0 )
-	    puts ( "File successfully uploaded to Dropbox." );
-	else
-	    perror( "Error Uploading file. Is dropbox path correct?" );
+	boost::filesystem::copy_file(name, newName);
+	std::cout<<"File successfully uploaded to Dropbox."<<std::endl;
 	return true;
 }
 
@@ -127,7 +125,7 @@ bool Connector::DownloadFileFromDropbox(const char *name){
 	return flag;
 }
 
-// Function that uploads a file to the server.
+// Function that downloads a file from the server
 bool Connector::DownloadFile(const char *name){
 
 	 // Next flag is set to 1 if the name field is emtpy.

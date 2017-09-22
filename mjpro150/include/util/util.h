@@ -8,8 +8,12 @@
 #ifndef INCLUDE_UTIL_UTIL_H_
 #define INCLUDE_UTIL_UTIL_H_
 
+#include <planner/GraspPlanner.h>
+#include <string>
+
 namespace Grasp{
-void ModifyXMLs(const char * base, int objectId, int baseId);
+std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, int baseId);
+void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int baseId);
 }
 
 #endif /* INCLUDE_UTIL_UTIL_H_ */

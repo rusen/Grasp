@@ -1,0 +1,30 @@
+<mujoco>
+    <worldbody>
+        <body name="object" pos="0 0 0" euler="0 0 1.072014">
+            <geom type="mesh" group="1" mesh="D_101_1" condim="6" density="111" friction="0.546036 0.005 0.0001" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_101_2" condim="6" density="111" friction="0.546036 0.005 0.0001" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_101_3" condim="6" density="111" friction="0.546036 0.005 0.0001" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_101_4" condim="6" density="111" friction="0.546036 0.005 0.0001" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_101_5" condim="6" density="111" friction="0.546036 0.005 0.0001" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_101_6" condim="6" density="111" friction="0.546036 0.005 0.0001" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_101_7" condim="6" density="111" friction="0.546036 0.005 0.0001" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_101_8" condim="6" density="111" friction="0.546036 0.005 0.0001" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_101_9" condim="6" density="111" friction="0.546036 0.005 0.0001" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_101_10" condim="6" density="111" friction="0.546036 0.005 0.0001" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_101_11" condim="6" density="111" friction="0.546036 0.005 0.0001" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_101_12" condim="6" density="111" friction="0.546036 0.005 0.0001" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_101_13" condim="6" density="111" friction="0.546036 0.005 0.0001" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_101_14" condim="6" density="111" friction="0.546036 0.005 0.0001" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_101_15" condim="6" density="111" friction="0.546036 0.005 0.0001" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_101_16" condim="6" density="111" friction="0.546036 0.005 0.0001" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_101_17" condim="6" density="111" friction="0.546036 0.005 0.0001" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_101_18" condim="6" density="111" friction="0.546036 0.005 0.0001" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_101_19" condim="6" density="111" friction="0.546036 0.005 0.0001" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_101_20" condim="6" density="111" friction="0.546036 0.005 0.0001" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_101_21" condim="6" density="111" friction="0.546036 0.005 0.0001" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_101_22" condim="6" density="111" friction="0.546036 0.005 0.0001" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group ="2" mass="0" contype="0" rgba="0.956863 0.596078 0.341176 1" conaffinity="0" mesh="D_101_visual"/>
+            <joint class="free"/>
+        </body>
+    </worldbody>
+</mujoco>

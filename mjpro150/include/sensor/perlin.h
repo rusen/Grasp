@@ -28,8 +28,6 @@ namespace Grasp
 	heightMapBuilder_.SetDestSize (width_, height_);
 	heightMapBuilder_.SetBounds (2.0, 6.0, -1, 1);
 
-	
-
       };
     
     void generateNoiseField( cv::Mat &noise_field)

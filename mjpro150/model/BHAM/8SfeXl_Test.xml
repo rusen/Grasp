@@ -1,0 +1,10 @@
+<mujoco model="BHAM">
+    <include file="include_BHAM.xml"/>
+    <include file="include_assets.xml"/>
+    <include file="8SfeXl_include_light.xml"/>
+    <include file="8SfeXl_include_table.xml"/>
+    <include file="8SfeXl_include_object.xml"/>
+    <include file="8SfeXl_include_object_assets.xml"/>
+    <include file="8SfeXl_include_base.xml"/>
+    <include file="8SfeXl_include_base_assets.xml"/>
+</mujoco>
