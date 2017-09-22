@@ -263,6 +263,19 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 		break;
 	case planning:
 		if (!startFlag){
+
+			// Not enough points?
+			if (Simulator->cloud->size() < minPointCount)
+			{
+				// Point cloud empty or number of points too small. Next!
+				graspState = done;
+				break;
+			}
+			else
+			{
+				std::cout<<"Point cloud size:"<<Simulator->cloud->size()<<std::endl;
+			}
+
 			// For logging purposes, upload RGB and depth images,
 			// as well as the point cloud, to the log server.
 			// Upload trajectory file to the main server.

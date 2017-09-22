@@ -38,6 +38,7 @@ public:
 	unsigned char rgbBuffer[640*480*3];
 	unsigned char depthBuffer[640*480*3];
 	float minPointZ = -100; // minimum Z coordinate of allowed points in the point cloud
+	int minPointCount = 50;
 	std::vector<std::vector<float>> convHullPoints;
 	float yOffset = 2; // For collision detection, we try hand positions on a separate part of the table, separated by a y offset.
 	char fileId [10]; // Unique file id

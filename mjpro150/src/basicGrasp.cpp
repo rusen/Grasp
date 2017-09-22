@@ -303,7 +303,7 @@ void render(GLFWwindow* window, const mjModel* m, mjData* d)
 	if (planner->Simulator->cloud != nullptr){
 
 		glBegin(GL_POINTS);
-		for (int i = 0; i < planner->Simulator->cloud->height * planner->Simulator->cloud->width; i++) {
+		for (int i = 0; i < planner->Simulator->cloud->size(); i++) {
 		  if (planner->Simulator->cloud->points[i].r > 0)
 		  {
 			  glVertex3f(planner->Simulator->cloud->points[i].x - 0.5, //.x
