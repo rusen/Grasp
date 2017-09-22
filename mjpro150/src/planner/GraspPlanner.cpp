@@ -271,10 +271,6 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 				graspState = done;
 				break;
 			}
-			else
-			{
-				std::cout<<"Point cloud size:"<<Simulator->cloud->size()<<std::endl;
-			}
 
 			// For logging purposes, upload RGB and depth images,
 			// as well as the point cloud, to the log server.
@@ -320,7 +316,6 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 			else
 			{
 				time_t timePassed = time(NULL) - uploadTime;
-				std::cout<<"Time passed:"<<timePassed<<std::endl;
 				if (timePassed > trajectoryTimeout)
 				{
 					graspState = done;
