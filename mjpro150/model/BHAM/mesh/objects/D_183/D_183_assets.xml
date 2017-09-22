@@ -87,13 +87,6 @@
         <mesh name="D_183_85" file="objects/D_183/D_183_85.stl"/>
         <mesh name="D_183_86" file="objects/D_183/D_183_86.stl"/>
         <mesh name="D_183_87" file="objects/D_183/D_183_87.stl"/>
-        <mesh name="D_183_88" file="objects/D_183/D_183_88.stl"/>
-        <mesh name="D_183_89" file="objects/D_183/D_183_89.stl"/>
-        <mesh name="D_183_90" file="objects/D_183/D_183_90.stl"/>
-        <mesh name="D_183_91" file="objects/D_183/D_183_91.stl"/>
-        <mesh name="D_183_92" file="objects/D_183/D_183_92.stl"/>
-        <mesh name="D_183_93" file="objects/D_183/D_183_93.stl"/>
-        <mesh name="D_183_94" file="objects/D_183/D_183_94.stl"/>
         <mesh name="D_183_visual" file="objects/D_183/D_183_full.stl"/>
     </asset>
 </mujoco>

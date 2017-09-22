@@ -57,34 +57,6 @@
         <mesh name="D_28_55" file="objects/D_28/D_28_55.stl"/>
         <mesh name="D_28_56" file="objects/D_28/D_28_56.stl"/>
         <mesh name="D_28_57" file="objects/D_28/D_28_57.stl"/>
-        <mesh name="D_28_58" file="objects/D_28/D_28_58.stl"/>
-        <mesh name="D_28_59" file="objects/D_28/D_28_59.stl"/>
-        <mesh name="D_28_60" file="objects/D_28/D_28_60.stl"/>
-        <mesh name="D_28_61" file="objects/D_28/D_28_61.stl"/>
-        <mesh name="D_28_62" file="objects/D_28/D_28_62.stl"/>
-        <mesh name="D_28_63" file="objects/D_28/D_28_63.stl"/>
-        <mesh name="D_28_64" file="objects/D_28/D_28_64.stl"/>
-        <mesh name="D_28_65" file="objects/D_28/D_28_65.stl"/>
-        <mesh name="D_28_66" file="objects/D_28/D_28_66.stl"/>
-        <mesh name="D_28_67" file="objects/D_28/D_28_67.stl"/>
-        <mesh name="D_28_68" file="objects/D_28/D_28_68.stl"/>
-        <mesh name="D_28_69" file="objects/D_28/D_28_69.stl"/>
-        <mesh name="D_28_70" file="objects/D_28/D_28_70.stl"/>
-        <mesh name="D_28_71" file="objects/D_28/D_28_71.stl"/>
-        <mesh name="D_28_72" file="objects/D_28/D_28_72.stl"/>
-        <mesh name="D_28_73" file="objects/D_28/D_28_73.stl"/>
-        <mesh name="D_28_74" file="objects/D_28/D_28_74.stl"/>
-        <mesh name="D_28_75" file="objects/D_28/D_28_75.stl"/>
-        <mesh name="D_28_76" file="objects/D_28/D_28_76.stl"/>
-        <mesh name="D_28_77" file="objects/D_28/D_28_77.stl"/>
-        <mesh name="D_28_78" file="objects/D_28/D_28_78.stl"/>
-        <mesh name="D_28_79" file="objects/D_28/D_28_79.stl"/>
-        <mesh name="D_28_80" file="objects/D_28/D_28_80.stl"/>
-        <mesh name="D_28_81" file="objects/D_28/D_28_81.stl"/>
-        <mesh name="D_28_82" file="objects/D_28/D_28_82.stl"/>
-        <mesh name="D_28_83" file="objects/D_28/D_28_83.stl"/>
-        <mesh name="D_28_84" file="objects/D_28/D_28_84.stl"/>
-        <mesh name="D_28_85" file="objects/D_28/D_28_85.stl"/>
         <mesh name="D_28_visual" file="objects/D_28/D_28_full.stl"/>
     </asset>
 </mujoco>

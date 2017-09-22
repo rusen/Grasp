@@ -54,6 +54,8 @@
         <mesh name="D_140_52" file="objects/D_140/D_140_52.stl"/>
         <mesh name="D_140_53" file="objects/D_140/D_140_53.stl"/>
         <mesh name="D_140_54" file="objects/D_140/D_140_54.stl"/>
+        <mesh name="D_140_55" file="objects/D_140/D_140_55.stl"/>
+        <mesh name="D_140_56" file="objects/D_140/D_140_56.stl"/>
         <mesh name="D_140_visual" file="objects/D_140/D_140_full.stl"/>
     </asset>
 </mujoco>

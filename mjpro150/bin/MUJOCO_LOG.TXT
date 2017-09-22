@@ -43,3 +43,19 @@ WARNING: Logfile and model contain different model names
 Tue Sep 19 16:26:05 2017
 WARNING: Logfile and model contain different model names
 
+Thu Sep 21 16:31:36 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 1355.9580.
+
+Thu Sep 21 16:43:50 2017
+ERROR: Load model error: Error: eigenvalue of mesh inertia too small: D_13_1
+Object name = D_13_1, id = 40, line = 3, column = 9
+
+Thu Sep 21 18:00:44 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 277.2620.
+
+Fri Sep 22 00:14:28 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 870.2320.
+
+Fri Sep 22 01:12:28 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 376.2800.
+

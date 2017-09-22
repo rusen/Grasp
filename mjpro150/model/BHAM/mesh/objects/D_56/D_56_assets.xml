@@ -21,14 +21,6 @@
         <mesh name="D_56_19" file="objects/D_56/D_56_19.stl"/>
         <mesh name="D_56_20" file="objects/D_56/D_56_20.stl"/>
         <mesh name="D_56_21" file="objects/D_56/D_56_21.stl"/>
-        <mesh name="D_56_22" file="objects/D_56/D_56_22.stl"/>
-        <mesh name="D_56_23" file="objects/D_56/D_56_23.stl"/>
-        <mesh name="D_56_24" file="objects/D_56/D_56_24.stl"/>
-        <mesh name="D_56_25" file="objects/D_56/D_56_25.stl"/>
-        <mesh name="D_56_26" file="objects/D_56/D_56_26.stl"/>
-        <mesh name="D_56_27" file="objects/D_56/D_56_27.stl"/>
-        <mesh name="D_56_28" file="objects/D_56/D_56_28.stl"/>
-        <mesh name="D_56_29" file="objects/D_56/D_56_29.stl"/>
         <mesh name="D_56_visual" file="objects/D_56/D_56_full.stl"/>
     </asset>
 </mujoco>

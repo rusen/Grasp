@@ -29,6 +29,11 @@
         <mesh name="D_37_27" file="objects/D_37/D_37_27.stl"/>
         <mesh name="D_37_28" file="objects/D_37/D_37_28.stl"/>
         <mesh name="D_37_29" file="objects/D_37/D_37_29.stl"/>
+        <mesh name="D_37_30" file="objects/D_37/D_37_30.stl"/>
+        <mesh name="D_37_31" file="objects/D_37/D_37_31.stl"/>
+        <mesh name="D_37_32" file="objects/D_37/D_37_32.stl"/>
+        <mesh name="D_37_33" file="objects/D_37/D_37_33.stl"/>
+        <mesh name="D_37_34" file="objects/D_37/D_37_34.stl"/>
         <mesh name="D_37_visual" file="objects/D_37/D_37_full.stl"/>
     </asset>
 </mujoco>

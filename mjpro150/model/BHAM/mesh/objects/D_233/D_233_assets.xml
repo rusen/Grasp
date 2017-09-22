@@ -44,10 +44,6 @@
         <mesh name="D_233_42" file="objects/D_233/D_233_42.stl"/>
         <mesh name="D_233_43" file="objects/D_233/D_233_43.stl"/>
         <mesh name="D_233_44" file="objects/D_233/D_233_44.stl"/>
-        <mesh name="D_233_45" file="objects/D_233/D_233_45.stl"/>
-        <mesh name="D_233_46" file="objects/D_233/D_233_46.stl"/>
-        <mesh name="D_233_47" file="objects/D_233/D_233_47.stl"/>
-        <mesh name="D_233_48" file="objects/D_233/D_233_48.stl"/>
         <mesh name="D_233_visual" file="objects/D_233/D_233_full.stl"/>
     </asset>
 </mujoco>

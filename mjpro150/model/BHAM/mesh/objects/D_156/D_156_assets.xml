@@ -65,6 +65,22 @@
         <mesh name="D_156_63" file="objects/D_156/D_156_63.stl"/>
         <mesh name="D_156_64" file="objects/D_156/D_156_64.stl"/>
         <mesh name="D_156_65" file="objects/D_156/D_156_65.stl"/>
+        <mesh name="D_156_66" file="objects/D_156/D_156_66.stl"/>
+        <mesh name="D_156_67" file="objects/D_156/D_156_67.stl"/>
+        <mesh name="D_156_68" file="objects/D_156/D_156_68.stl"/>
+        <mesh name="D_156_69" file="objects/D_156/D_156_69.stl"/>
+        <mesh name="D_156_70" file="objects/D_156/D_156_70.stl"/>
+        <mesh name="D_156_71" file="objects/D_156/D_156_71.stl"/>
+        <mesh name="D_156_72" file="objects/D_156/D_156_72.stl"/>
+        <mesh name="D_156_73" file="objects/D_156/D_156_73.stl"/>
+        <mesh name="D_156_74" file="objects/D_156/D_156_74.stl"/>
+        <mesh name="D_156_75" file="objects/D_156/D_156_75.stl"/>
+        <mesh name="D_156_76" file="objects/D_156/D_156_76.stl"/>
+        <mesh name="D_156_77" file="objects/D_156/D_156_77.stl"/>
+        <mesh name="D_156_78" file="objects/D_156/D_156_78.stl"/>
+        <mesh name="D_156_79" file="objects/D_156/D_156_79.stl"/>
+        <mesh name="D_156_80" file="objects/D_156/D_156_80.stl"/>
+        <mesh name="D_156_81" file="objects/D_156/D_156_81.stl"/>
         <mesh name="D_156_visual" file="objects/D_156/D_156_full.stl"/>
     </asset>
 </mujoco>

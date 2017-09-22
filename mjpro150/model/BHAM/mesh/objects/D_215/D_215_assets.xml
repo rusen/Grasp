@@ -8,6 +8,36 @@
         <mesh name="D_215_6" file="objects/D_215/D_215_6.stl"/>
         <mesh name="D_215_7" file="objects/D_215/D_215_7.stl"/>
         <mesh name="D_215_8" file="objects/D_215/D_215_8.stl"/>
+        <mesh name="D_215_9" file="objects/D_215/D_215_9.stl"/>
+        <mesh name="D_215_10" file="objects/D_215/D_215_10.stl"/>
+        <mesh name="D_215_11" file="objects/D_215/D_215_11.stl"/>
+        <mesh name="D_215_12" file="objects/D_215/D_215_12.stl"/>
+        <mesh name="D_215_13" file="objects/D_215/D_215_13.stl"/>
+        <mesh name="D_215_14" file="objects/D_215/D_215_14.stl"/>
+        <mesh name="D_215_15" file="objects/D_215/D_215_15.stl"/>
+        <mesh name="D_215_16" file="objects/D_215/D_215_16.stl"/>
+        <mesh name="D_215_17" file="objects/D_215/D_215_17.stl"/>
+        <mesh name="D_215_18" file="objects/D_215/D_215_18.stl"/>
+        <mesh name="D_215_19" file="objects/D_215/D_215_19.stl"/>
+        <mesh name="D_215_20" file="objects/D_215/D_215_20.stl"/>
+        <mesh name="D_215_21" file="objects/D_215/D_215_21.stl"/>
+        <mesh name="D_215_22" file="objects/D_215/D_215_22.stl"/>
+        <mesh name="D_215_23" file="objects/D_215/D_215_23.stl"/>
+        <mesh name="D_215_24" file="objects/D_215/D_215_24.stl"/>
+        <mesh name="D_215_25" file="objects/D_215/D_215_25.stl"/>
+        <mesh name="D_215_26" file="objects/D_215/D_215_26.stl"/>
+        <mesh name="D_215_27" file="objects/D_215/D_215_27.stl"/>
+        <mesh name="D_215_28" file="objects/D_215/D_215_28.stl"/>
+        <mesh name="D_215_29" file="objects/D_215/D_215_29.stl"/>
+        <mesh name="D_215_30" file="objects/D_215/D_215_30.stl"/>
+        <mesh name="D_215_31" file="objects/D_215/D_215_31.stl"/>
+        <mesh name="D_215_32" file="objects/D_215/D_215_32.stl"/>
+        <mesh name="D_215_33" file="objects/D_215/D_215_33.stl"/>
+        <mesh name="D_215_34" file="objects/D_215/D_215_34.stl"/>
+        <mesh name="D_215_35" file="objects/D_215/D_215_35.stl"/>
+        <mesh name="D_215_36" file="objects/D_215/D_215_36.stl"/>
+        <mesh name="D_215_37" file="objects/D_215/D_215_37.stl"/>
+        <mesh name="D_215_38" file="objects/D_215/D_215_38.stl"/>
         <mesh name="D_215_visual" file="objects/D_215/D_215_full.stl"/>
     </asset>
 </mujoco>

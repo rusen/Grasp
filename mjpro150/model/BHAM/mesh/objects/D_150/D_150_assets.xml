@@ -40,6 +40,38 @@
         <mesh name="D_150_38" file="objects/D_150/D_150_38.stl"/>
         <mesh name="D_150_39" file="objects/D_150/D_150_39.stl"/>
         <mesh name="D_150_40" file="objects/D_150/D_150_40.stl"/>
+        <mesh name="D_150_41" file="objects/D_150/D_150_41.stl"/>
+        <mesh name="D_150_42" file="objects/D_150/D_150_42.stl"/>
+        <mesh name="D_150_43" file="objects/D_150/D_150_43.stl"/>
+        <mesh name="D_150_44" file="objects/D_150/D_150_44.stl"/>
+        <mesh name="D_150_45" file="objects/D_150/D_150_45.stl"/>
+        <mesh name="D_150_46" file="objects/D_150/D_150_46.stl"/>
+        <mesh name="D_150_47" file="objects/D_150/D_150_47.stl"/>
+        <mesh name="D_150_48" file="objects/D_150/D_150_48.stl"/>
+        <mesh name="D_150_49" file="objects/D_150/D_150_49.stl"/>
+        <mesh name="D_150_50" file="objects/D_150/D_150_50.stl"/>
+        <mesh name="D_150_51" file="objects/D_150/D_150_51.stl"/>
+        <mesh name="D_150_52" file="objects/D_150/D_150_52.stl"/>
+        <mesh name="D_150_53" file="objects/D_150/D_150_53.stl"/>
+        <mesh name="D_150_54" file="objects/D_150/D_150_54.stl"/>
+        <mesh name="D_150_55" file="objects/D_150/D_150_55.stl"/>
+        <mesh name="D_150_56" file="objects/D_150/D_150_56.stl"/>
+        <mesh name="D_150_57" file="objects/D_150/D_150_57.stl"/>
+        <mesh name="D_150_58" file="objects/D_150/D_150_58.stl"/>
+        <mesh name="D_150_59" file="objects/D_150/D_150_59.stl"/>
+        <mesh name="D_150_60" file="objects/D_150/D_150_60.stl"/>
+        <mesh name="D_150_61" file="objects/D_150/D_150_61.stl"/>
+        <mesh name="D_150_62" file="objects/D_150/D_150_62.stl"/>
+        <mesh name="D_150_63" file="objects/D_150/D_150_63.stl"/>
+        <mesh name="D_150_64" file="objects/D_150/D_150_64.stl"/>
+        <mesh name="D_150_65" file="objects/D_150/D_150_65.stl"/>
+        <mesh name="D_150_66" file="objects/D_150/D_150_66.stl"/>
+        <mesh name="D_150_67" file="objects/D_150/D_150_67.stl"/>
+        <mesh name="D_150_68" file="objects/D_150/D_150_68.stl"/>
+        <mesh name="D_150_69" file="objects/D_150/D_150_69.stl"/>
+        <mesh name="D_150_70" file="objects/D_150/D_150_70.stl"/>
+        <mesh name="D_150_71" file="objects/D_150/D_150_71.stl"/>
+        <mesh name="D_150_72" file="objects/D_150/D_150_72.stl"/>
         <mesh name="D_150_visual" file="objects/D_150/D_150_full.stl"/>
     </asset>
 </mujoco>

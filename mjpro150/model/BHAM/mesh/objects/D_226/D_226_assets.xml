@@ -65,28 +65,6 @@
         <mesh name="D_226_63" file="objects/D_226/D_226_63.stl"/>
         <mesh name="D_226_64" file="objects/D_226/D_226_64.stl"/>
         <mesh name="D_226_65" file="objects/D_226/D_226_65.stl"/>
-        <mesh name="D_226_66" file="objects/D_226/D_226_66.stl"/>
-        <mesh name="D_226_67" file="objects/D_226/D_226_67.stl"/>
-        <mesh name="D_226_68" file="objects/D_226/D_226_68.stl"/>
-        <mesh name="D_226_69" file="objects/D_226/D_226_69.stl"/>
-        <mesh name="D_226_70" file="objects/D_226/D_226_70.stl"/>
-        <mesh name="D_226_71" file="objects/D_226/D_226_71.stl"/>
-        <mesh name="D_226_72" file="objects/D_226/D_226_72.stl"/>
-        <mesh name="D_226_73" file="objects/D_226/D_226_73.stl"/>
-        <mesh name="D_226_74" file="objects/D_226/D_226_74.stl"/>
-        <mesh name="D_226_75" file="objects/D_226/D_226_75.stl"/>
-        <mesh name="D_226_76" file="objects/D_226/D_226_76.stl"/>
-        <mesh name="D_226_77" file="objects/D_226/D_226_77.stl"/>
-        <mesh name="D_226_78" file="objects/D_226/D_226_78.stl"/>
-        <mesh name="D_226_79" file="objects/D_226/D_226_79.stl"/>
-        <mesh name="D_226_80" file="objects/D_226/D_226_80.stl"/>
-        <mesh name="D_226_81" file="objects/D_226/D_226_81.stl"/>
-        <mesh name="D_226_82" file="objects/D_226/D_226_82.stl"/>
-        <mesh name="D_226_83" file="objects/D_226/D_226_83.stl"/>
-        <mesh name="D_226_84" file="objects/D_226/D_226_84.stl"/>
-        <mesh name="D_226_85" file="objects/D_226/D_226_85.stl"/>
-        <mesh name="D_226_86" file="objects/D_226/D_226_86.stl"/>
-        <mesh name="D_226_87" file="objects/D_226/D_226_87.stl"/>
         <mesh name="D_226_visual" file="objects/D_226/D_226_full.stl"/>
     </asset>
 </mujoco>

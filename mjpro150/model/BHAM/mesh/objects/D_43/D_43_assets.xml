@@ -29,6 +29,9 @@
         <mesh name="D_43_27" file="objects/D_43/D_43_27.stl"/>
         <mesh name="D_43_28" file="objects/D_43/D_43_28.stl"/>
         <mesh name="D_43_29" file="objects/D_43/D_43_29.stl"/>
+        <mesh name="D_43_30" file="objects/D_43/D_43_30.stl"/>
+        <mesh name="D_43_31" file="objects/D_43/D_43_31.stl"/>
+        <mesh name="D_43_32" file="objects/D_43/D_43_32.stl"/>
         <mesh name="D_43_visual" file="objects/D_43/D_43_full.stl"/>
     </asset>
 </mujoco>

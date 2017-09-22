@@ -2,7 +2,6 @@
     <asset>
         <mesh name="D_180_1" file="objects/D_180/D_180_1.stl"/>
         <mesh name="D_180_2" file="objects/D_180/D_180_2.stl"/>
-        <mesh name="D_180_3" file="objects/D_180/D_180_3.stl"/>
         <mesh name="D_180_visual" file="objects/D_180/D_180_full.stl"/>
     </asset>
 </mujoco>

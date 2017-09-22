@@ -27,8 +27,6 @@
         <mesh name="D_131_25" file="objects/D_131/D_131_25.stl"/>
         <mesh name="D_131_26" file="objects/D_131/D_131_26.stl"/>
         <mesh name="D_131_27" file="objects/D_131/D_131_27.stl"/>
-        <mesh name="D_131_28" file="objects/D_131/D_131_28.stl"/>
-        <mesh name="D_131_29" file="objects/D_131/D_131_29.stl"/>
         <mesh name="D_131_visual" file="objects/D_131/D_131_full.stl"/>
     </asset>
 </mujoco>

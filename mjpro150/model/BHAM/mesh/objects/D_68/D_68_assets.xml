@@ -22,13 +22,6 @@
         <mesh name="D_68_20" file="objects/D_68/D_68_20.stl"/>
         <mesh name="D_68_21" file="objects/D_68/D_68_21.stl"/>
         <mesh name="D_68_22" file="objects/D_68/D_68_22.stl"/>
-        <mesh name="D_68_23" file="objects/D_68/D_68_23.stl"/>
-        <mesh name="D_68_24" file="objects/D_68/D_68_24.stl"/>
-        <mesh name="D_68_25" file="objects/D_68/D_68_25.stl"/>
-        <mesh name="D_68_26" file="objects/D_68/D_68_26.stl"/>
-        <mesh name="D_68_27" file="objects/D_68/D_68_27.stl"/>
-        <mesh name="D_68_28" file="objects/D_68/D_68_28.stl"/>
-        <mesh name="D_68_29" file="objects/D_68/D_68_29.stl"/>
         <mesh name="D_68_visual" file="objects/D_68/D_68_full.stl"/>
     </asset>
 </mujoco>

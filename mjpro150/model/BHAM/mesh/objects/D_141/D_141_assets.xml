@@ -43,19 +43,6 @@
         <mesh name="D_141_41" file="objects/D_141/D_141_41.stl"/>
         <mesh name="D_141_42" file="objects/D_141/D_141_42.stl"/>
         <mesh name="D_141_43" file="objects/D_141/D_141_43.stl"/>
-        <mesh name="D_141_44" file="objects/D_141/D_141_44.stl"/>
-        <mesh name="D_141_45" file="objects/D_141/D_141_45.stl"/>
-        <mesh name="D_141_46" file="objects/D_141/D_141_46.stl"/>
-        <mesh name="D_141_47" file="objects/D_141/D_141_47.stl"/>
-        <mesh name="D_141_48" file="objects/D_141/D_141_48.stl"/>
-        <mesh name="D_141_49" file="objects/D_141/D_141_49.stl"/>
-        <mesh name="D_141_50" file="objects/D_141/D_141_50.stl"/>
-        <mesh name="D_141_51" file="objects/D_141/D_141_51.stl"/>
-        <mesh name="D_141_52" file="objects/D_141/D_141_52.stl"/>
-        <mesh name="D_141_53" file="objects/D_141/D_141_53.stl"/>
-        <mesh name="D_141_54" file="objects/D_141/D_141_54.stl"/>
-        <mesh name="D_141_55" file="objects/D_141/D_141_55.stl"/>
-        <mesh name="D_141_56" file="objects/D_141/D_141_56.stl"/>
         <mesh name="D_141_visual" file="objects/D_141/D_141_full.stl"/>
     </asset>
 </mujoco>

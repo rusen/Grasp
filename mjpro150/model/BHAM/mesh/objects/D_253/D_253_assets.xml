@@ -78,36 +78,6 @@
         <mesh name="D_253_76" file="objects/D_253/D_253_76.stl"/>
         <mesh name="D_253_77" file="objects/D_253/D_253_77.stl"/>
         <mesh name="D_253_78" file="objects/D_253/D_253_78.stl"/>
-        <mesh name="D_253_79" file="objects/D_253/D_253_79.stl"/>
-        <mesh name="D_253_80" file="objects/D_253/D_253_80.stl"/>
-        <mesh name="D_253_81" file="objects/D_253/D_253_81.stl"/>
-        <mesh name="D_253_82" file="objects/D_253/D_253_82.stl"/>
-        <mesh name="D_253_83" file="objects/D_253/D_253_83.stl"/>
-        <mesh name="D_253_84" file="objects/D_253/D_253_84.stl"/>
-        <mesh name="D_253_85" file="objects/D_253/D_253_85.stl"/>
-        <mesh name="D_253_86" file="objects/D_253/D_253_86.stl"/>
-        <mesh name="D_253_87" file="objects/D_253/D_253_87.stl"/>
-        <mesh name="D_253_88" file="objects/D_253/D_253_88.stl"/>
-        <mesh name="D_253_89" file="objects/D_253/D_253_89.stl"/>
-        <mesh name="D_253_90" file="objects/D_253/D_253_90.stl"/>
-        <mesh name="D_253_91" file="objects/D_253/D_253_91.stl"/>
-        <mesh name="D_253_92" file="objects/D_253/D_253_92.stl"/>
-        <mesh name="D_253_93" file="objects/D_253/D_253_93.stl"/>
-        <mesh name="D_253_94" file="objects/D_253/D_253_94.stl"/>
-        <mesh name="D_253_95" file="objects/D_253/D_253_95.stl"/>
-        <mesh name="D_253_96" file="objects/D_253/D_253_96.stl"/>
-        <mesh name="D_253_97" file="objects/D_253/D_253_97.stl"/>
-        <mesh name="D_253_98" file="objects/D_253/D_253_98.stl"/>
-        <mesh name="D_253_99" file="objects/D_253/D_253_99.stl"/>
-        <mesh name="D_253_100" file="objects/D_253/D_253_100.stl"/>
-        <mesh name="D_253_101" file="objects/D_253/D_253_101.stl"/>
-        <mesh name="D_253_102" file="objects/D_253/D_253_102.stl"/>
-        <mesh name="D_253_103" file="objects/D_253/D_253_103.stl"/>
-        <mesh name="D_253_104" file="objects/D_253/D_253_104.stl"/>
-        <mesh name="D_253_105" file="objects/D_253/D_253_105.stl"/>
-        <mesh name="D_253_106" file="objects/D_253/D_253_106.stl"/>
-        <mesh name="D_253_107" file="objects/D_253/D_253_107.stl"/>
-        <mesh name="D_253_108" file="objects/D_253/D_253_108.stl"/>
         <mesh name="D_253_visual" file="objects/D_253/D_253_full.stl"/>
     </asset>
 </mujoco>

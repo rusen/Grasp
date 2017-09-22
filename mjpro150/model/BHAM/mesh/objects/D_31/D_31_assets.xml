@@ -48,6 +48,33 @@
         <mesh name="D_31_46" file="objects/D_31/D_31_46.stl"/>
         <mesh name="D_31_47" file="objects/D_31/D_31_47.stl"/>
         <mesh name="D_31_48" file="objects/D_31/D_31_48.stl"/>
+        <mesh name="D_31_49" file="objects/D_31/D_31_49.stl"/>
+        <mesh name="D_31_50" file="objects/D_31/D_31_50.stl"/>
+        <mesh name="D_31_51" file="objects/D_31/D_31_51.stl"/>
+        <mesh name="D_31_52" file="objects/D_31/D_31_52.stl"/>
+        <mesh name="D_31_53" file="objects/D_31/D_31_53.stl"/>
+        <mesh name="D_31_54" file="objects/D_31/D_31_54.stl"/>
+        <mesh name="D_31_55" file="objects/D_31/D_31_55.stl"/>
+        <mesh name="D_31_56" file="objects/D_31/D_31_56.stl"/>
+        <mesh name="D_31_57" file="objects/D_31/D_31_57.stl"/>
+        <mesh name="D_31_58" file="objects/D_31/D_31_58.stl"/>
+        <mesh name="D_31_59" file="objects/D_31/D_31_59.stl"/>
+        <mesh name="D_31_60" file="objects/D_31/D_31_60.stl"/>
+        <mesh name="D_31_61" file="objects/D_31/D_31_61.stl"/>
+        <mesh name="D_31_62" file="objects/D_31/D_31_62.stl"/>
+        <mesh name="D_31_63" file="objects/D_31/D_31_63.stl"/>
+        <mesh name="D_31_64" file="objects/D_31/D_31_64.stl"/>
+        <mesh name="D_31_65" file="objects/D_31/D_31_65.stl"/>
+        <mesh name="D_31_66" file="objects/D_31/D_31_66.stl"/>
+        <mesh name="D_31_67" file="objects/D_31/D_31_67.stl"/>
+        <mesh name="D_31_68" file="objects/D_31/D_31_68.stl"/>
+        <mesh name="D_31_69" file="objects/D_31/D_31_69.stl"/>
+        <mesh name="D_31_70" file="objects/D_31/D_31_70.stl"/>
+        <mesh name="D_31_71" file="objects/D_31/D_31_71.stl"/>
+        <mesh name="D_31_72" file="objects/D_31/D_31_72.stl"/>
+        <mesh name="D_31_73" file="objects/D_31/D_31_73.stl"/>
+        <mesh name="D_31_74" file="objects/D_31/D_31_74.stl"/>
+        <mesh name="D_31_75" file="objects/D_31/D_31_75.stl"/>
         <mesh name="D_31_visual" file="objects/D_31/D_31_full.stl"/>
     </asset>
 </mujoco>

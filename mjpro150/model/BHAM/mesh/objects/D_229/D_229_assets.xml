@@ -67,6 +67,18 @@
         <mesh name="D_229_65" file="objects/D_229/D_229_65.stl"/>
         <mesh name="D_229_66" file="objects/D_229/D_229_66.stl"/>
         <mesh name="D_229_67" file="objects/D_229/D_229_67.stl"/>
+        <mesh name="D_229_68" file="objects/D_229/D_229_68.stl"/>
+        <mesh name="D_229_69" file="objects/D_229/D_229_69.stl"/>
+        <mesh name="D_229_70" file="objects/D_229/D_229_70.stl"/>
+        <mesh name="D_229_71" file="objects/D_229/D_229_71.stl"/>
+        <mesh name="D_229_72" file="objects/D_229/D_229_72.stl"/>
+        <mesh name="D_229_73" file="objects/D_229/D_229_73.stl"/>
+        <mesh name="D_229_74" file="objects/D_229/D_229_74.stl"/>
+        <mesh name="D_229_75" file="objects/D_229/D_229_75.stl"/>
+        <mesh name="D_229_76" file="objects/D_229/D_229_76.stl"/>
+        <mesh name="D_229_77" file="objects/D_229/D_229_77.stl"/>
+        <mesh name="D_229_78" file="objects/D_229/D_229_78.stl"/>
+        <mesh name="D_229_79" file="objects/D_229/D_229_79.stl"/>
         <mesh name="D_229_visual" file="objects/D_229/D_229_full.stl"/>
     </asset>
 </mujoco>

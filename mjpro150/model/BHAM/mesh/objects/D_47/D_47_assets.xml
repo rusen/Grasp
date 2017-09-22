@@ -77,6 +77,63 @@
         <mesh name="D_47_75" file="objects/D_47/D_47_75.stl"/>
         <mesh name="D_47_76" file="objects/D_47/D_47_76.stl"/>
         <mesh name="D_47_77" file="objects/D_47/D_47_77.stl"/>
+        <mesh name="D_47_78" file="objects/D_47/D_47_78.stl"/>
+        <mesh name="D_47_79" file="objects/D_47/D_47_79.stl"/>
+        <mesh name="D_47_80" file="objects/D_47/D_47_80.stl"/>
+        <mesh name="D_47_81" file="objects/D_47/D_47_81.stl"/>
+        <mesh name="D_47_82" file="objects/D_47/D_47_82.stl"/>
+        <mesh name="D_47_83" file="objects/D_47/D_47_83.stl"/>
+        <mesh name="D_47_84" file="objects/D_47/D_47_84.stl"/>
+        <mesh name="D_47_85" file="objects/D_47/D_47_85.stl"/>
+        <mesh name="D_47_86" file="objects/D_47/D_47_86.stl"/>
+        <mesh name="D_47_87" file="objects/D_47/D_47_87.stl"/>
+        <mesh name="D_47_88" file="objects/D_47/D_47_88.stl"/>
+        <mesh name="D_47_89" file="objects/D_47/D_47_89.stl"/>
+        <mesh name="D_47_90" file="objects/D_47/D_47_90.stl"/>
+        <mesh name="D_47_91" file="objects/D_47/D_47_91.stl"/>
+        <mesh name="D_47_92" file="objects/D_47/D_47_92.stl"/>
+        <mesh name="D_47_93" file="objects/D_47/D_47_93.stl"/>
+        <mesh name="D_47_94" file="objects/D_47/D_47_94.stl"/>
+        <mesh name="D_47_95" file="objects/D_47/D_47_95.stl"/>
+        <mesh name="D_47_96" file="objects/D_47/D_47_96.stl"/>
+        <mesh name="D_47_97" file="objects/D_47/D_47_97.stl"/>
+        <mesh name="D_47_98" file="objects/D_47/D_47_98.stl"/>
+        <mesh name="D_47_99" file="objects/D_47/D_47_99.stl"/>
+        <mesh name="D_47_100" file="objects/D_47/D_47_100.stl"/>
+        <mesh name="D_47_101" file="objects/D_47/D_47_101.stl"/>
+        <mesh name="D_47_102" file="objects/D_47/D_47_102.stl"/>
+        <mesh name="D_47_103" file="objects/D_47/D_47_103.stl"/>
+        <mesh name="D_47_104" file="objects/D_47/D_47_104.stl"/>
+        <mesh name="D_47_105" file="objects/D_47/D_47_105.stl"/>
+        <mesh name="D_47_106" file="objects/D_47/D_47_106.stl"/>
+        <mesh name="D_47_107" file="objects/D_47/D_47_107.stl"/>
+        <mesh name="D_47_108" file="objects/D_47/D_47_108.stl"/>
+        <mesh name="D_47_109" file="objects/D_47/D_47_109.stl"/>
+        <mesh name="D_47_110" file="objects/D_47/D_47_110.stl"/>
+        <mesh name="D_47_111" file="objects/D_47/D_47_111.stl"/>
+        <mesh name="D_47_112" file="objects/D_47/D_47_112.stl"/>
+        <mesh name="D_47_113" file="objects/D_47/D_47_113.stl"/>
+        <mesh name="D_47_114" file="objects/D_47/D_47_114.stl"/>
+        <mesh name="D_47_115" file="objects/D_47/D_47_115.stl"/>
+        <mesh name="D_47_116" file="objects/D_47/D_47_116.stl"/>
+        <mesh name="D_47_117" file="objects/D_47/D_47_117.stl"/>
+        <mesh name="D_47_118" file="objects/D_47/D_47_118.stl"/>
+        <mesh name="D_47_119" file="objects/D_47/D_47_119.stl"/>
+        <mesh name="D_47_120" file="objects/D_47/D_47_120.stl"/>
+        <mesh name="D_47_121" file="objects/D_47/D_47_121.stl"/>
+        <mesh name="D_47_122" file="objects/D_47/D_47_122.stl"/>
+        <mesh name="D_47_123" file="objects/D_47/D_47_123.stl"/>
+        <mesh name="D_47_124" file="objects/D_47/D_47_124.stl"/>
+        <mesh name="D_47_125" file="objects/D_47/D_47_125.stl"/>
+        <mesh name="D_47_126" file="objects/D_47/D_47_126.stl"/>
+        <mesh name="D_47_127" file="objects/D_47/D_47_127.stl"/>
+        <mesh name="D_47_128" file="objects/D_47/D_47_128.stl"/>
+        <mesh name="D_47_129" file="objects/D_47/D_47_129.stl"/>
+        <mesh name="D_47_130" file="objects/D_47/D_47_130.stl"/>
+        <mesh name="D_47_131" file="objects/D_47/D_47_131.stl"/>
+        <mesh name="D_47_132" file="objects/D_47/D_47_132.stl"/>
+        <mesh name="D_47_133" file="objects/D_47/D_47_133.stl"/>
+        <mesh name="D_47_134" file="objects/D_47/D_47_134.stl"/>
         <mesh name="D_47_visual" file="objects/D_47/D_47_full.stl"/>
     </asset>
 </mujoco>

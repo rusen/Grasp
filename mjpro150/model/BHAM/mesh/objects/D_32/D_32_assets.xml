@@ -71,10 +71,6 @@
         <mesh name="D_32_69" file="objects/D_32/D_32_69.stl"/>
         <mesh name="D_32_70" file="objects/D_32/D_32_70.stl"/>
         <mesh name="D_32_71" file="objects/D_32/D_32_71.stl"/>
-        <mesh name="D_32_72" file="objects/D_32/D_32_72.stl"/>
-        <mesh name="D_32_73" file="objects/D_32/D_32_73.stl"/>
-        <mesh name="D_32_74" file="objects/D_32/D_32_74.stl"/>
-        <mesh name="D_32_75" file="objects/D_32/D_32_75.stl"/>
         <mesh name="D_32_visual" file="objects/D_32/D_32_full.stl"/>
     </asset>
 </mujoco>

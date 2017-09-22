@@ -43,6 +43,33 @@
         <mesh name="D_144_41" file="objects/D_144/D_144_41.stl"/>
         <mesh name="D_144_42" file="objects/D_144/D_144_42.stl"/>
         <mesh name="D_144_43" file="objects/D_144/D_144_43.stl"/>
+        <mesh name="D_144_44" file="objects/D_144/D_144_44.stl"/>
+        <mesh name="D_144_45" file="objects/D_144/D_144_45.stl"/>
+        <mesh name="D_144_46" file="objects/D_144/D_144_46.stl"/>
+        <mesh name="D_144_47" file="objects/D_144/D_144_47.stl"/>
+        <mesh name="D_144_48" file="objects/D_144/D_144_48.stl"/>
+        <mesh name="D_144_49" file="objects/D_144/D_144_49.stl"/>
+        <mesh name="D_144_50" file="objects/D_144/D_144_50.stl"/>
+        <mesh name="D_144_51" file="objects/D_144/D_144_51.stl"/>
+        <mesh name="D_144_52" file="objects/D_144/D_144_52.stl"/>
+        <mesh name="D_144_53" file="objects/D_144/D_144_53.stl"/>
+        <mesh name="D_144_54" file="objects/D_144/D_144_54.stl"/>
+        <mesh name="D_144_55" file="objects/D_144/D_144_55.stl"/>
+        <mesh name="D_144_56" file="objects/D_144/D_144_56.stl"/>
+        <mesh name="D_144_57" file="objects/D_144/D_144_57.stl"/>
+        <mesh name="D_144_58" file="objects/D_144/D_144_58.stl"/>
+        <mesh name="D_144_59" file="objects/D_144/D_144_59.stl"/>
+        <mesh name="D_144_60" file="objects/D_144/D_144_60.stl"/>
+        <mesh name="D_144_61" file="objects/D_144/D_144_61.stl"/>
+        <mesh name="D_144_62" file="objects/D_144/D_144_62.stl"/>
+        <mesh name="D_144_63" file="objects/D_144/D_144_63.stl"/>
+        <mesh name="D_144_64" file="objects/D_144/D_144_64.stl"/>
+        <mesh name="D_144_65" file="objects/D_144/D_144_65.stl"/>
+        <mesh name="D_144_66" file="objects/D_144/D_144_66.stl"/>
+        <mesh name="D_144_67" file="objects/D_144/D_144_67.stl"/>
+        <mesh name="D_144_68" file="objects/D_144/D_144_68.stl"/>
+        <mesh name="D_144_69" file="objects/D_144/D_144_69.stl"/>
+        <mesh name="D_144_70" file="objects/D_144/D_144_70.stl"/>
         <mesh name="D_144_visual" file="objects/D_144/D_144_full.stl"/>
     </asset>
 </mujoco>

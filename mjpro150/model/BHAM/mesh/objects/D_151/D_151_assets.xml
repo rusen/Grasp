@@ -65,13 +65,6 @@
         <mesh name="D_151_63" file="objects/D_151/D_151_63.stl"/>
         <mesh name="D_151_64" file="objects/D_151/D_151_64.stl"/>
         <mesh name="D_151_65" file="objects/D_151/D_151_65.stl"/>
-        <mesh name="D_151_66" file="objects/D_151/D_151_66.stl"/>
-        <mesh name="D_151_67" file="objects/D_151/D_151_67.stl"/>
-        <mesh name="D_151_68" file="objects/D_151/D_151_68.stl"/>
-        <mesh name="D_151_69" file="objects/D_151/D_151_69.stl"/>
-        <mesh name="D_151_70" file="objects/D_151/D_151_70.stl"/>
-        <mesh name="D_151_71" file="objects/D_151/D_151_71.stl"/>
-        <mesh name="D_151_72" file="objects/D_151/D_151_72.stl"/>
         <mesh name="D_151_visual" file="objects/D_151/D_151_full.stl"/>
     </asset>
 </mujoco>

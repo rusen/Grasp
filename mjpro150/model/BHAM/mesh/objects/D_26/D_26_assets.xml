@@ -52,17 +52,6 @@
         <mesh name="D_26_50" file="objects/D_26/D_26_50.stl"/>
         <mesh name="D_26_51" file="objects/D_26/D_26_51.stl"/>
         <mesh name="D_26_52" file="objects/D_26/D_26_52.stl"/>
-        <mesh name="D_26_53" file="objects/D_26/D_26_53.stl"/>
-        <mesh name="D_26_54" file="objects/D_26/D_26_54.stl"/>
-        <mesh name="D_26_55" file="objects/D_26/D_26_55.stl"/>
-        <mesh name="D_26_56" file="objects/D_26/D_26_56.stl"/>
-        <mesh name="D_26_57" file="objects/D_26/D_26_57.stl"/>
-        <mesh name="D_26_58" file="objects/D_26/D_26_58.stl"/>
-        <mesh name="D_26_59" file="objects/D_26/D_26_59.stl"/>
-        <mesh name="D_26_60" file="objects/D_26/D_26_60.stl"/>
-        <mesh name="D_26_61" file="objects/D_26/D_26_61.stl"/>
-        <mesh name="D_26_62" file="objects/D_26/D_26_62.stl"/>
-        <mesh name="D_26_63" file="objects/D_26/D_26_63.stl"/>
         <mesh name="D_26_visual" file="objects/D_26/D_26_full.stl"/>
     </asset>
 </mujoco>

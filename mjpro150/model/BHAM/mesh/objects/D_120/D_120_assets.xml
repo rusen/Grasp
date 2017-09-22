@@ -4,13 +4,6 @@
         <mesh name="D_120_2" file="objects/D_120/D_120_2.stl"/>
         <mesh name="D_120_3" file="objects/D_120/D_120_3.stl"/>
         <mesh name="D_120_4" file="objects/D_120/D_120_4.stl"/>
-        <mesh name="D_120_5" file="objects/D_120/D_120_5.stl"/>
-        <mesh name="D_120_6" file="objects/D_120/D_120_6.stl"/>
-        <mesh name="D_120_7" file="objects/D_120/D_120_7.stl"/>
-        <mesh name="D_120_8" file="objects/D_120/D_120_8.stl"/>
-        <mesh name="D_120_9" file="objects/D_120/D_120_9.stl"/>
-        <mesh name="D_120_10" file="objects/D_120/D_120_10.stl"/>
-        <mesh name="D_120_11" file="objects/D_120/D_120_11.stl"/>
         <mesh name="D_120_visual" file="objects/D_120/D_120_full.stl"/>
     </asset>
 </mujoco>

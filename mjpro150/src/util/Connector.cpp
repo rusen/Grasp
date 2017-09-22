@@ -9,6 +9,7 @@
 #include <cstdlib>
 #include <cerrno>
 #include <fstream>
+#include <boost/filesystem.hpp>
 #include <curlpp/cURLpp.hpp>
 #include <curlpp/Easy.hpp>
 #include <curlpp/Options.hpp>
@@ -31,6 +32,13 @@ Connector::~Connector() {
 
 // Function that uploads a file to the server.
 bool Connector::UploadFile(const char *name){
+
+	if (!boost::filesystem::exists(name))
+	{
+		std::cout<<"File "<<name<<" does not exist!"<<std::endl;
+ 		return true;
+	}
+
 	bool flag = false;
 	try{
 		curlpp::Cleanup cleaner;
@@ -93,6 +101,13 @@ bool Connector::UploadFile(const char *name){
 }
 
 bool Connector::UploadFileToDropbox(const char * fileId, const char *name, const char * dropboxFolder){
+
+	if (!boost::filesystem::exists(name))
+	{
+		std::cout<<"File "<<name<<" does not exist!"<<std::endl;
+ 		return true;
+	}
+
 	char newName[100];
 	strcpy(newName, dropboxFolder);
 	strcat(newName, "/points/");

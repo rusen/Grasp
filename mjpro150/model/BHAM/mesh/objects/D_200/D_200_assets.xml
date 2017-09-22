@@ -47,19 +47,6 @@
         <mesh name="D_200_45" file="objects/D_200/D_200_45.stl"/>
         <mesh name="D_200_46" file="objects/D_200/D_200_46.stl"/>
         <mesh name="D_200_47" file="objects/D_200/D_200_47.stl"/>
-        <mesh name="D_200_48" file="objects/D_200/D_200_48.stl"/>
-        <mesh name="D_200_49" file="objects/D_200/D_200_49.stl"/>
-        <mesh name="D_200_50" file="objects/D_200/D_200_50.stl"/>
-        <mesh name="D_200_51" file="objects/D_200/D_200_51.stl"/>
-        <mesh name="D_200_52" file="objects/D_200/D_200_52.stl"/>
-        <mesh name="D_200_53" file="objects/D_200/D_200_53.stl"/>
-        <mesh name="D_200_54" file="objects/D_200/D_200_54.stl"/>
-        <mesh name="D_200_55" file="objects/D_200/D_200_55.stl"/>
-        <mesh name="D_200_56" file="objects/D_200/D_200_56.stl"/>
-        <mesh name="D_200_57" file="objects/D_200/D_200_57.stl"/>
-        <mesh name="D_200_58" file="objects/D_200/D_200_58.stl"/>
-        <mesh name="D_200_59" file="objects/D_200/D_200_59.stl"/>
-        <mesh name="D_200_60" file="objects/D_200/D_200_60.stl"/>
         <mesh name="D_200_visual" file="objects/D_200/D_200_full.stl"/>
     </asset>
 </mujoco>

@@ -40,10 +40,6 @@
         <mesh name="D_149_38" file="objects/D_149/D_149_38.stl"/>
         <mesh name="D_149_39" file="objects/D_149/D_149_39.stl"/>
         <mesh name="D_149_40" file="objects/D_149/D_149_40.stl"/>
-        <mesh name="D_149_41" file="objects/D_149/D_149_41.stl"/>
-        <mesh name="D_149_42" file="objects/D_149/D_149_42.stl"/>
-        <mesh name="D_149_43" file="objects/D_149/D_149_43.stl"/>
-        <mesh name="D_149_44" file="objects/D_149/D_149_44.stl"/>
         <mesh name="D_149_visual" file="objects/D_149/D_149_full.stl"/>
     </asset>
 </mujoco>

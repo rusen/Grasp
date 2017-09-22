@@ -4263,3 +4263,7 @@ Tue Sep 19 23:59:17 2017
 ERROR: Load model error: Error: eigenvalue of mesh inertia too small: D_13_1
 Object name = D_13_1, id = 40, line = 3, column = 9
 
+Fri Sep 22 06:49:21 2017
+ERROR: Load model error: Error: could not open STL file '/Users/rusi/git/Grasp/mjpro150/model/BHAM/mesh/objects/D_13/D_13_1.stl'
+Object name = D_13_1, id = 40, line = 3, column = 9
+

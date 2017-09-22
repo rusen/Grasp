@@ -5,6 +5,24 @@
         <mesh name="D_244_3" file="objects/D_244/D_244_3.stl"/>
         <mesh name="D_244_4" file="objects/D_244/D_244_4.stl"/>
         <mesh name="D_244_5" file="objects/D_244/D_244_5.stl"/>
+        <mesh name="D_244_6" file="objects/D_244/D_244_6.stl"/>
+        <mesh name="D_244_7" file="objects/D_244/D_244_7.stl"/>
+        <mesh name="D_244_8" file="objects/D_244/D_244_8.stl"/>
+        <mesh name="D_244_9" file="objects/D_244/D_244_9.stl"/>
+        <mesh name="D_244_10" file="objects/D_244/D_244_10.stl"/>
+        <mesh name="D_244_11" file="objects/D_244/D_244_11.stl"/>
+        <mesh name="D_244_12" file="objects/D_244/D_244_12.stl"/>
+        <mesh name="D_244_13" file="objects/D_244/D_244_13.stl"/>
+        <mesh name="D_244_14" file="objects/D_244/D_244_14.stl"/>
+        <mesh name="D_244_15" file="objects/D_244/D_244_15.stl"/>
+        <mesh name="D_244_16" file="objects/D_244/D_244_16.stl"/>
+        <mesh name="D_244_17" file="objects/D_244/D_244_17.stl"/>
+        <mesh name="D_244_18" file="objects/D_244/D_244_18.stl"/>
+        <mesh name="D_244_19" file="objects/D_244/D_244_19.stl"/>
+        <mesh name="D_244_20" file="objects/D_244/D_244_20.stl"/>
+        <mesh name="D_244_21" file="objects/D_244/D_244_21.stl"/>
+        <mesh name="D_244_22" file="objects/D_244/D_244_22.stl"/>
+        <mesh name="D_244_23" file="objects/D_244/D_244_23.stl"/>
         <mesh name="D_244_visual" file="objects/D_244/D_244_full.stl"/>
     </asset>
 </mujoco>

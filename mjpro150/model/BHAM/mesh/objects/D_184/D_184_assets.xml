@@ -58,35 +58,6 @@
         <mesh name="D_184_56" file="objects/D_184/D_184_56.stl"/>
         <mesh name="D_184_57" file="objects/D_184/D_184_57.stl"/>
         <mesh name="D_184_58" file="objects/D_184/D_184_58.stl"/>
-        <mesh name="D_184_59" file="objects/D_184/D_184_59.stl"/>
-        <mesh name="D_184_60" file="objects/D_184/D_184_60.stl"/>
-        <mesh name="D_184_61" file="objects/D_184/D_184_61.stl"/>
-        <mesh name="D_184_62" file="objects/D_184/D_184_62.stl"/>
-        <mesh name="D_184_63" file="objects/D_184/D_184_63.stl"/>
-        <mesh name="D_184_64" file="objects/D_184/D_184_64.stl"/>
-        <mesh name="D_184_65" file="objects/D_184/D_184_65.stl"/>
-        <mesh name="D_184_66" file="objects/D_184/D_184_66.stl"/>
-        <mesh name="D_184_67" file="objects/D_184/D_184_67.stl"/>
-        <mesh name="D_184_68" file="objects/D_184/D_184_68.stl"/>
-        <mesh name="D_184_69" file="objects/D_184/D_184_69.stl"/>
-        <mesh name="D_184_70" file="objects/D_184/D_184_70.stl"/>
-        <mesh name="D_184_71" file="objects/D_184/D_184_71.stl"/>
-        <mesh name="D_184_72" file="objects/D_184/D_184_72.stl"/>
-        <mesh name="D_184_73" file="objects/D_184/D_184_73.stl"/>
-        <mesh name="D_184_74" file="objects/D_184/D_184_74.stl"/>
-        <mesh name="D_184_75" file="objects/D_184/D_184_75.stl"/>
-        <mesh name="D_184_76" file="objects/D_184/D_184_76.stl"/>
-        <mesh name="D_184_77" file="objects/D_184/D_184_77.stl"/>
-        <mesh name="D_184_78" file="objects/D_184/D_184_78.stl"/>
-        <mesh name="D_184_79" file="objects/D_184/D_184_79.stl"/>
-        <mesh name="D_184_80" file="objects/D_184/D_184_80.stl"/>
-        <mesh name="D_184_81" file="objects/D_184/D_184_81.stl"/>
-        <mesh name="D_184_82" file="objects/D_184/D_184_82.stl"/>
-        <mesh name="D_184_83" file="objects/D_184/D_184_83.stl"/>
-        <mesh name="D_184_84" file="objects/D_184/D_184_84.stl"/>
-        <mesh name="D_184_85" file="objects/D_184/D_184_85.stl"/>
-        <mesh name="D_184_86" file="objects/D_184/D_184_86.stl"/>
-        <mesh name="D_184_87" file="objects/D_184/D_184_87.stl"/>
         <mesh name="D_184_visual" file="objects/D_184/D_184_full.stl"/>
     </asset>
 </mujoco>

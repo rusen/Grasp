@@ -4,6 +4,42 @@
         <mesh name="D_171_2" file="objects/D_171/D_171_2.stl"/>
         <mesh name="D_171_3" file="objects/D_171/D_171_3.stl"/>
         <mesh name="D_171_4" file="objects/D_171/D_171_4.stl"/>
+        <mesh name="D_171_5" file="objects/D_171/D_171_5.stl"/>
+        <mesh name="D_171_6" file="objects/D_171/D_171_6.stl"/>
+        <mesh name="D_171_7" file="objects/D_171/D_171_7.stl"/>
+        <mesh name="D_171_8" file="objects/D_171/D_171_8.stl"/>
+        <mesh name="D_171_9" file="objects/D_171/D_171_9.stl"/>
+        <mesh name="D_171_10" file="objects/D_171/D_171_10.stl"/>
+        <mesh name="D_171_11" file="objects/D_171/D_171_11.stl"/>
+        <mesh name="D_171_12" file="objects/D_171/D_171_12.stl"/>
+        <mesh name="D_171_13" file="objects/D_171/D_171_13.stl"/>
+        <mesh name="D_171_14" file="objects/D_171/D_171_14.stl"/>
+        <mesh name="D_171_15" file="objects/D_171/D_171_15.stl"/>
+        <mesh name="D_171_16" file="objects/D_171/D_171_16.stl"/>
+        <mesh name="D_171_17" file="objects/D_171/D_171_17.stl"/>
+        <mesh name="D_171_18" file="objects/D_171/D_171_18.stl"/>
+        <mesh name="D_171_19" file="objects/D_171/D_171_19.stl"/>
+        <mesh name="D_171_20" file="objects/D_171/D_171_20.stl"/>
+        <mesh name="D_171_21" file="objects/D_171/D_171_21.stl"/>
+        <mesh name="D_171_22" file="objects/D_171/D_171_22.stl"/>
+        <mesh name="D_171_23" file="objects/D_171/D_171_23.stl"/>
+        <mesh name="D_171_24" file="objects/D_171/D_171_24.stl"/>
+        <mesh name="D_171_25" file="objects/D_171/D_171_25.stl"/>
+        <mesh name="D_171_26" file="objects/D_171/D_171_26.stl"/>
+        <mesh name="D_171_27" file="objects/D_171/D_171_27.stl"/>
+        <mesh name="D_171_28" file="objects/D_171/D_171_28.stl"/>
+        <mesh name="D_171_29" file="objects/D_171/D_171_29.stl"/>
+        <mesh name="D_171_30" file="objects/D_171/D_171_30.stl"/>
+        <mesh name="D_171_31" file="objects/D_171/D_171_31.stl"/>
+        <mesh name="D_171_32" file="objects/D_171/D_171_32.stl"/>
+        <mesh name="D_171_33" file="objects/D_171/D_171_33.stl"/>
+        <mesh name="D_171_34" file="objects/D_171/D_171_34.stl"/>
+        <mesh name="D_171_35" file="objects/D_171/D_171_35.stl"/>
+        <mesh name="D_171_36" file="objects/D_171/D_171_36.stl"/>
+        <mesh name="D_171_37" file="objects/D_171/D_171_37.stl"/>
+        <mesh name="D_171_38" file="objects/D_171/D_171_38.stl"/>
+        <mesh name="D_171_39" file="objects/D_171/D_171_39.stl"/>
+        <mesh name="D_171_40" file="objects/D_171/D_171_40.stl"/>
         <mesh name="D_171_visual" file="objects/D_171/D_171_full.stl"/>
     </asset>
 </mujoco>

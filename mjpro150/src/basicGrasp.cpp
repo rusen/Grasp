@@ -46,7 +46,7 @@ double lastx = 0;
 double lasty = 0;
 
 // Dataset related variables.
-int objectCount = 256;
+int objectCount = 255;
 int baseIds[1000];
 bool utensilFlag = false;
 bool pauseFlag = true;
@@ -353,7 +353,6 @@ int main(int argc, const char** argv)
     // Get random object, and relevant asset/object files.
     srand(time(NULL));
     int objectId = rand()%objectCount + 1;
-    std::cout<<"SELECTED OBJECT:"<<objectId<<std::endl;
     int baseId = rand()%13 + 1;
 
     // Manage file names

@@ -32,6 +32,28 @@
         <mesh name="D_139_30" file="objects/D_139/D_139_30.stl"/>
         <mesh name="D_139_31" file="objects/D_139/D_139_31.stl"/>
         <mesh name="D_139_32" file="objects/D_139/D_139_32.stl"/>
+        <mesh name="D_139_33" file="objects/D_139/D_139_33.stl"/>
+        <mesh name="D_139_34" file="objects/D_139/D_139_34.stl"/>
+        <mesh name="D_139_35" file="objects/D_139/D_139_35.stl"/>
+        <mesh name="D_139_36" file="objects/D_139/D_139_36.stl"/>
+        <mesh name="D_139_37" file="objects/D_139/D_139_37.stl"/>
+        <mesh name="D_139_38" file="objects/D_139/D_139_38.stl"/>
+        <mesh name="D_139_39" file="objects/D_139/D_139_39.stl"/>
+        <mesh name="D_139_40" file="objects/D_139/D_139_40.stl"/>
+        <mesh name="D_139_41" file="objects/D_139/D_139_41.stl"/>
+        <mesh name="D_139_42" file="objects/D_139/D_139_42.stl"/>
+        <mesh name="D_139_43" file="objects/D_139/D_139_43.stl"/>
+        <mesh name="D_139_44" file="objects/D_139/D_139_44.stl"/>
+        <mesh name="D_139_45" file="objects/D_139/D_139_45.stl"/>
+        <mesh name="D_139_46" file="objects/D_139/D_139_46.stl"/>
+        <mesh name="D_139_47" file="objects/D_139/D_139_47.stl"/>
+        <mesh name="D_139_48" file="objects/D_139/D_139_48.stl"/>
+        <mesh name="D_139_49" file="objects/D_139/D_139_49.stl"/>
+        <mesh name="D_139_50" file="objects/D_139/D_139_50.stl"/>
+        <mesh name="D_139_51" file="objects/D_139/D_139_51.stl"/>
+        <mesh name="D_139_52" file="objects/D_139/D_139_52.stl"/>
+        <mesh name="D_139_53" file="objects/D_139/D_139_53.stl"/>
+        <mesh name="D_139_54" file="objects/D_139/D_139_54.stl"/>
         <mesh name="D_139_visual" file="objects/D_139/D_139_full.stl"/>
     </asset>
 </mujoco>

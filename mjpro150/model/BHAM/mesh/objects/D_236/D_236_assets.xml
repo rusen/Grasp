@@ -68,14 +68,6 @@
         <mesh name="D_236_66" file="objects/D_236/D_236_66.stl"/>
         <mesh name="D_236_67" file="objects/D_236/D_236_67.stl"/>
         <mesh name="D_236_68" file="objects/D_236/D_236_68.stl"/>
-        <mesh name="D_236_69" file="objects/D_236/D_236_69.stl"/>
-        <mesh name="D_236_70" file="objects/D_236/D_236_70.stl"/>
-        <mesh name="D_236_71" file="objects/D_236/D_236_71.stl"/>
-        <mesh name="D_236_72" file="objects/D_236/D_236_72.stl"/>
-        <mesh name="D_236_73" file="objects/D_236/D_236_73.stl"/>
-        <mesh name="D_236_74" file="objects/D_236/D_236_74.stl"/>
-        <mesh name="D_236_75" file="objects/D_236/D_236_75.stl"/>
-        <mesh name="D_236_76" file="objects/D_236/D_236_76.stl"/>
         <mesh name="D_236_visual" file="objects/D_236/D_236_full.stl"/>
     </asset>
 </mujoco>

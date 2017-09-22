@@ -22,8 +22,6 @@
         <mesh name="D_164_20" file="objects/D_164/D_164_20.stl"/>
         <mesh name="D_164_21" file="objects/D_164/D_164_21.stl"/>
         <mesh name="D_164_22" file="objects/D_164/D_164_22.stl"/>
-        <mesh name="D_164_23" file="objects/D_164/D_164_23.stl"/>
-        <mesh name="D_164_24" file="objects/D_164/D_164_24.stl"/>
         <mesh name="D_164_visual" file="objects/D_164/D_164_full.stl"/>
     </asset>
 </mujoco>

@@ -17,11 +17,6 @@
         <mesh name="D_248_15" file="objects/D_248/D_248_15.stl"/>
         <mesh name="D_248_16" file="objects/D_248/D_248_16.stl"/>
         <mesh name="D_248_17" file="objects/D_248/D_248_17.stl"/>
-        <mesh name="D_248_18" file="objects/D_248/D_248_18.stl"/>
-        <mesh name="D_248_19" file="objects/D_248/D_248_19.stl"/>
-        <mesh name="D_248_20" file="objects/D_248/D_248_20.stl"/>
-        <mesh name="D_248_21" file="objects/D_248/D_248_21.stl"/>
-        <mesh name="D_248_22" file="objects/D_248/D_248_22.stl"/>
         <mesh name="D_248_visual" file="objects/D_248/D_248_full.stl"/>
     </asset>
 </mujoco>

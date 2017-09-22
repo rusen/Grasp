@@ -6,34 +6,6 @@
         <mesh name="D_106_4" file="objects/D_106/D_106_4.stl"/>
         <mesh name="D_106_5" file="objects/D_106/D_106_5.stl"/>
         <mesh name="D_106_6" file="objects/D_106/D_106_6.stl"/>
-        <mesh name="D_106_7" file="objects/D_106/D_106_7.stl"/>
-        <mesh name="D_106_8" file="objects/D_106/D_106_8.stl"/>
-        <mesh name="D_106_9" file="objects/D_106/D_106_9.stl"/>
-        <mesh name="D_106_10" file="objects/D_106/D_106_10.stl"/>
-        <mesh name="D_106_11" file="objects/D_106/D_106_11.stl"/>
-        <mesh name="D_106_12" file="objects/D_106/D_106_12.stl"/>
-        <mesh name="D_106_13" file="objects/D_106/D_106_13.stl"/>
-        <mesh name="D_106_14" file="objects/D_106/D_106_14.stl"/>
-        <mesh name="D_106_15" file="objects/D_106/D_106_15.stl"/>
-        <mesh name="D_106_16" file="objects/D_106/D_106_16.stl"/>
-        <mesh name="D_106_17" file="objects/D_106/D_106_17.stl"/>
-        <mesh name="D_106_18" file="objects/D_106/D_106_18.stl"/>
-        <mesh name="D_106_19" file="objects/D_106/D_106_19.stl"/>
-        <mesh name="D_106_20" file="objects/D_106/D_106_20.stl"/>
-        <mesh name="D_106_21" file="objects/D_106/D_106_21.stl"/>
-        <mesh name="D_106_22" file="objects/D_106/D_106_22.stl"/>
-        <mesh name="D_106_23" file="objects/D_106/D_106_23.stl"/>
-        <mesh name="D_106_24" file="objects/D_106/D_106_24.stl"/>
-        <mesh name="D_106_25" file="objects/D_106/D_106_25.stl"/>
-        <mesh name="D_106_26" file="objects/D_106/D_106_26.stl"/>
-        <mesh name="D_106_27" file="objects/D_106/D_106_27.stl"/>
-        <mesh name="D_106_28" file="objects/D_106/D_106_28.stl"/>
-        <mesh name="D_106_29" file="objects/D_106/D_106_29.stl"/>
-        <mesh name="D_106_30" file="objects/D_106/D_106_30.stl"/>
-        <mesh name="D_106_31" file="objects/D_106/D_106_31.stl"/>
-        <mesh name="D_106_32" file="objects/D_106/D_106_32.stl"/>
-        <mesh name="D_106_33" file="objects/D_106/D_106_33.stl"/>
-        <mesh name="D_106_34" file="objects/D_106/D_106_34.stl"/>
         <mesh name="D_106_visual" file="objects/D_106/D_106_full.stl"/>
     </asset>
 </mujoco>

@@ -38,6 +38,15 @@
         <mesh name="D_209_36" file="objects/D_209/D_209_36.stl"/>
         <mesh name="D_209_37" file="objects/D_209/D_209_37.stl"/>
         <mesh name="D_209_38" file="objects/D_209/D_209_38.stl"/>
+        <mesh name="D_209_39" file="objects/D_209/D_209_39.stl"/>
+        <mesh name="D_209_40" file="objects/D_209/D_209_40.stl"/>
+        <mesh name="D_209_41" file="objects/D_209/D_209_41.stl"/>
+        <mesh name="D_209_42" file="objects/D_209/D_209_42.stl"/>
+        <mesh name="D_209_43" file="objects/D_209/D_209_43.stl"/>
+        <mesh name="D_209_44" file="objects/D_209/D_209_44.stl"/>
+        <mesh name="D_209_45" file="objects/D_209/D_209_45.stl"/>
+        <mesh name="D_209_46" file="objects/D_209/D_209_46.stl"/>
+        <mesh name="D_209_47" file="objects/D_209/D_209_47.stl"/>
         <mesh name="D_209_visual" file="objects/D_209/D_209_full.stl"/>
     </asset>
 </mujoco>

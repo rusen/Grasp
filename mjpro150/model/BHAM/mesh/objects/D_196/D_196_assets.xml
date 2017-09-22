@@ -15,8 +15,6 @@
         <mesh name="D_196_13" file="objects/D_196/D_196_13.stl"/>
         <mesh name="D_196_14" file="objects/D_196/D_196_14.stl"/>
         <mesh name="D_196_15" file="objects/D_196/D_196_15.stl"/>
-        <mesh name="D_196_16" file="objects/D_196/D_196_16.stl"/>
-        <mesh name="D_196_17" file="objects/D_196/D_196_17.stl"/>
         <mesh name="D_196_visual" file="objects/D_196/D_196_full.stl"/>
     </asset>
 </mujoco>

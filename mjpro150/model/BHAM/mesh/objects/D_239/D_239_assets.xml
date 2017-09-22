@@ -78,13 +78,6 @@
         <mesh name="D_239_76" file="objects/D_239/D_239_76.stl"/>
         <mesh name="D_239_77" file="objects/D_239/D_239_77.stl"/>
         <mesh name="D_239_78" file="objects/D_239/D_239_78.stl"/>
-        <mesh name="D_239_79" file="objects/D_239/D_239_79.stl"/>
-        <mesh name="D_239_80" file="objects/D_239/D_239_80.stl"/>
-        <mesh name="D_239_81" file="objects/D_239/D_239_81.stl"/>
-        <mesh name="D_239_82" file="objects/D_239/D_239_82.stl"/>
-        <mesh name="D_239_83" file="objects/D_239/D_239_83.stl"/>
-        <mesh name="D_239_84" file="objects/D_239/D_239_84.stl"/>
-        <mesh name="D_239_85" file="objects/D_239/D_239_85.stl"/>
         <mesh name="D_239_visual" file="objects/D_239/D_239_full.stl"/>
     </asset>
 </mujoco>

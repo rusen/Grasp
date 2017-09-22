@@ -68,6 +68,18 @@
         <mesh name="D_237_66" file="objects/D_237/D_237_66.stl"/>
         <mesh name="D_237_67" file="objects/D_237/D_237_67.stl"/>
         <mesh name="D_237_68" file="objects/D_237/D_237_68.stl"/>
+        <mesh name="D_237_69" file="objects/D_237/D_237_69.stl"/>
+        <mesh name="D_237_70" file="objects/D_237/D_237_70.stl"/>
+        <mesh name="D_237_71" file="objects/D_237/D_237_71.stl"/>
+        <mesh name="D_237_72" file="objects/D_237/D_237_72.stl"/>
+        <mesh name="D_237_73" file="objects/D_237/D_237_73.stl"/>
+        <mesh name="D_237_74" file="objects/D_237/D_237_74.stl"/>
+        <mesh name="D_237_75" file="objects/D_237/D_237_75.stl"/>
+        <mesh name="D_237_76" file="objects/D_237/D_237_76.stl"/>
+        <mesh name="D_237_77" file="objects/D_237/D_237_77.stl"/>
+        <mesh name="D_237_78" file="objects/D_237/D_237_78.stl"/>
+        <mesh name="D_237_79" file="objects/D_237/D_237_79.stl"/>
+        <mesh name="D_237_80" file="objects/D_237/D_237_80.stl"/>
         <mesh name="D_237_visual" file="objects/D_237/D_237_full.stl"/>
     </asset>
 </mujoco>

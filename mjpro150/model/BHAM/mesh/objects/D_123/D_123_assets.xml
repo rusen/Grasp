@@ -2,6 +2,10 @@
     <asset>
         <mesh name="D_123_1" file="objects/D_123/D_123_1.stl"/>
         <mesh name="D_123_2" file="objects/D_123/D_123_2.stl"/>
+        <mesh name="D_123_3" file="objects/D_123/D_123_3.stl"/>
+        <mesh name="D_123_4" file="objects/D_123/D_123_4.stl"/>
+        <mesh name="D_123_5" file="objects/D_123/D_123_5.stl"/>
+        <mesh name="D_123_6" file="objects/D_123/D_123_6.stl"/>
         <mesh name="D_123_visual" file="objects/D_123/D_123_full.stl"/>
     </asset>
 </mujoco>

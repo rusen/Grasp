@@ -22,6 +22,7 @@
         <mesh name="D_69_20" file="objects/D_69/D_69_20.stl"/>
         <mesh name="D_69_21" file="objects/D_69/D_69_21.stl"/>
         <mesh name="D_69_22" file="objects/D_69/D_69_22.stl"/>
+        <mesh name="D_69_23" file="objects/D_69/D_69_23.stl"/>
         <mesh name="D_69_visual" file="objects/D_69/D_69_full.stl"/>
     </asset>
 </mujoco>

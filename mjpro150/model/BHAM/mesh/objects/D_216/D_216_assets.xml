@@ -38,6 +38,13 @@
         <mesh name="D_216_36" file="objects/D_216/D_216_36.stl"/>
         <mesh name="D_216_37" file="objects/D_216/D_216_37.stl"/>
         <mesh name="D_216_38" file="objects/D_216/D_216_38.stl"/>
+        <mesh name="D_216_39" file="objects/D_216/D_216_39.stl"/>
+        <mesh name="D_216_40" file="objects/D_216/D_216_40.stl"/>
+        <mesh name="D_216_41" file="objects/D_216/D_216_41.stl"/>
+        <mesh name="D_216_42" file="objects/D_216/D_216_42.stl"/>
+        <mesh name="D_216_43" file="objects/D_216/D_216_43.stl"/>
+        <mesh name="D_216_44" file="objects/D_216/D_216_44.stl"/>
+        <mesh name="D_216_45" file="objects/D_216/D_216_45.stl"/>
         <mesh name="D_216_visual" file="objects/D_216/D_216_full.stl"/>
     </asset>
 </mujoco>

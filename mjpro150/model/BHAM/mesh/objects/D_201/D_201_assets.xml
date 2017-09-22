@@ -9,44 +9,6 @@
         <mesh name="D_201_7" file="objects/D_201/D_201_7.stl"/>
         <mesh name="D_201_8" file="objects/D_201/D_201_8.stl"/>
         <mesh name="D_201_9" file="objects/D_201/D_201_9.stl"/>
-        <mesh name="D_201_10" file="objects/D_201/D_201_10.stl"/>
-        <mesh name="D_201_11" file="objects/D_201/D_201_11.stl"/>
-        <mesh name="D_201_12" file="objects/D_201/D_201_12.stl"/>
-        <mesh name="D_201_13" file="objects/D_201/D_201_13.stl"/>
-        <mesh name="D_201_14" file="objects/D_201/D_201_14.stl"/>
-        <mesh name="D_201_15" file="objects/D_201/D_201_15.stl"/>
-        <mesh name="D_201_16" file="objects/D_201/D_201_16.stl"/>
-        <mesh name="D_201_17" file="objects/D_201/D_201_17.stl"/>
-        <mesh name="D_201_18" file="objects/D_201/D_201_18.stl"/>
-        <mesh name="D_201_19" file="objects/D_201/D_201_19.stl"/>
-        <mesh name="D_201_20" file="objects/D_201/D_201_20.stl"/>
-        <mesh name="D_201_21" file="objects/D_201/D_201_21.stl"/>
-        <mesh name="D_201_22" file="objects/D_201/D_201_22.stl"/>
-        <mesh name="D_201_23" file="objects/D_201/D_201_23.stl"/>
-        <mesh name="D_201_24" file="objects/D_201/D_201_24.stl"/>
-        <mesh name="D_201_25" file="objects/D_201/D_201_25.stl"/>
-        <mesh name="D_201_26" file="objects/D_201/D_201_26.stl"/>
-        <mesh name="D_201_27" file="objects/D_201/D_201_27.stl"/>
-        <mesh name="D_201_28" file="objects/D_201/D_201_28.stl"/>
-        <mesh name="D_201_29" file="objects/D_201/D_201_29.stl"/>
-        <mesh name="D_201_30" file="objects/D_201/D_201_30.stl"/>
-        <mesh name="D_201_31" file="objects/D_201/D_201_31.stl"/>
-        <mesh name="D_201_32" file="objects/D_201/D_201_32.stl"/>
-        <mesh name="D_201_33" file="objects/D_201/D_201_33.stl"/>
-        <mesh name="D_201_34" file="objects/D_201/D_201_34.stl"/>
-        <mesh name="D_201_35" file="objects/D_201/D_201_35.stl"/>
-        <mesh name="D_201_36" file="objects/D_201/D_201_36.stl"/>
-        <mesh name="D_201_37" file="objects/D_201/D_201_37.stl"/>
-        <mesh name="D_201_38" file="objects/D_201/D_201_38.stl"/>
-        <mesh name="D_201_39" file="objects/D_201/D_201_39.stl"/>
-        <mesh name="D_201_40" file="objects/D_201/D_201_40.stl"/>
-        <mesh name="D_201_41" file="objects/D_201/D_201_41.stl"/>
-        <mesh name="D_201_42" file="objects/D_201/D_201_42.stl"/>
-        <mesh name="D_201_43" file="objects/D_201/D_201_43.stl"/>
-        <mesh name="D_201_44" file="objects/D_201/D_201_44.stl"/>
-        <mesh name="D_201_45" file="objects/D_201/D_201_45.stl"/>
-        <mesh name="D_201_46" file="objects/D_201/D_201_46.stl"/>
-        <mesh name="D_201_47" file="objects/D_201/D_201_47.stl"/>
         <mesh name="D_201_visual" file="objects/D_201/D_201_full.stl"/>
     </asset>
 </mujoco>

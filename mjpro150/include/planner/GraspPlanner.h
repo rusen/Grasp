@@ -56,6 +56,10 @@ public:
 	bool collisionSet = false, collisionRun = true, hasCollided = false;
 	float* data = NULL;
 
+	// Upload and timeout time
+	time_t uploadTime = 0;
+	time_t trajectoryTimeout = 600; // seconds. If trajectory doesn't arrive within this timeframe, operation aborted.
+
 	// Steps to perform approach.
 	int counter = 0;
 	int graspCounter = 0;

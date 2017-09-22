@@ -16,7 +16,6 @@
         <mesh name="D_249_14" file="objects/D_249/D_249_14.stl"/>
         <mesh name="D_249_15" file="objects/D_249/D_249_15.stl"/>
         <mesh name="D_249_16" file="objects/D_249/D_249_16.stl"/>
-        <mesh name="D_249_17" file="objects/D_249/D_249_17.stl"/>
         <mesh name="D_249_visual" file="objects/D_249/D_249_full.stl"/>
     </asset>
 </mujoco>

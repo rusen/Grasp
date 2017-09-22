@@ -5,6 +5,33 @@
         <mesh name="D_231_3" file="objects/D_231/D_231_3.stl"/>
         <mesh name="D_231_4" file="objects/D_231/D_231_4.stl"/>
         <mesh name="D_231_5" file="objects/D_231/D_231_5.stl"/>
+        <mesh name="D_231_6" file="objects/D_231/D_231_6.stl"/>
+        <mesh name="D_231_7" file="objects/D_231/D_231_7.stl"/>
+        <mesh name="D_231_8" file="objects/D_231/D_231_8.stl"/>
+        <mesh name="D_231_9" file="objects/D_231/D_231_9.stl"/>
+        <mesh name="D_231_10" file="objects/D_231/D_231_10.stl"/>
+        <mesh name="D_231_11" file="objects/D_231/D_231_11.stl"/>
+        <mesh name="D_231_12" file="objects/D_231/D_231_12.stl"/>
+        <mesh name="D_231_13" file="objects/D_231/D_231_13.stl"/>
+        <mesh name="D_231_14" file="objects/D_231/D_231_14.stl"/>
+        <mesh name="D_231_15" file="objects/D_231/D_231_15.stl"/>
+        <mesh name="D_231_16" file="objects/D_231/D_231_16.stl"/>
+        <mesh name="D_231_17" file="objects/D_231/D_231_17.stl"/>
+        <mesh name="D_231_18" file="objects/D_231/D_231_18.stl"/>
+        <mesh name="D_231_19" file="objects/D_231/D_231_19.stl"/>
+        <mesh name="D_231_20" file="objects/D_231/D_231_20.stl"/>
+        <mesh name="D_231_21" file="objects/D_231/D_231_21.stl"/>
+        <mesh name="D_231_22" file="objects/D_231/D_231_22.stl"/>
+        <mesh name="D_231_23" file="objects/D_231/D_231_23.stl"/>
+        <mesh name="D_231_24" file="objects/D_231/D_231_24.stl"/>
+        <mesh name="D_231_25" file="objects/D_231/D_231_25.stl"/>
+        <mesh name="D_231_26" file="objects/D_231/D_231_26.stl"/>
+        <mesh name="D_231_27" file="objects/D_231/D_231_27.stl"/>
+        <mesh name="D_231_28" file="objects/D_231/D_231_28.stl"/>
+        <mesh name="D_231_29" file="objects/D_231/D_231_29.stl"/>
+        <mesh name="D_231_30" file="objects/D_231/D_231_30.stl"/>
+        <mesh name="D_231_31" file="objects/D_231/D_231_31.stl"/>
+        <mesh name="D_231_32" file="objects/D_231/D_231_32.stl"/>
         <mesh name="D_231_visual" file="objects/D_231/D_231_full.stl"/>
     </asset>
 </mujoco>

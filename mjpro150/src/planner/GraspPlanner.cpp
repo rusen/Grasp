@@ -278,9 +278,11 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 			if (!success)
 			{
 				std::cout<< "Could not upload file " << fileId << std::endl;
+				graspState = done;
 				break;
 			}
 
+			uploadTime = time(NULL);
 			startFlag = true;
 			success = false;
 			std::cout<< "Waiting for trajectories." << std::endl;
@@ -301,6 +303,16 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 				trjFP = fopen(trajectoryFile, "rb");
 				fread(&numberOfGrasps, 4, 1, trjFP);
 				std::cout<< "Number of grasps:" << numberOfGrasps << std::endl;
+			}
+			else
+			{
+				time_t timePassed = time(NULL) - uploadTime;
+				std::cout<<"Time passed:"<<timePassed<<std::endl;
+				if (timePassed > trajectoryTimeout)
+				{
+					graspState = done;
+				}
+
 			}
 		}
 

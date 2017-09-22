@@ -53,25 +53,6 @@
         <mesh name="D_88_51" file="objects/D_88/D_88_51.stl"/>
         <mesh name="D_88_52" file="objects/D_88/D_88_52.stl"/>
         <mesh name="D_88_53" file="objects/D_88/D_88_53.stl"/>
-        <mesh name="D_88_54" file="objects/D_88/D_88_54.stl"/>
-        <mesh name="D_88_55" file="objects/D_88/D_88_55.stl"/>
-        <mesh name="D_88_56" file="objects/D_88/D_88_56.stl"/>
-        <mesh name="D_88_57" file="objects/D_88/D_88_57.stl"/>
-        <mesh name="D_88_58" file="objects/D_88/D_88_58.stl"/>
-        <mesh name="D_88_59" file="objects/D_88/D_88_59.stl"/>
-        <mesh name="D_88_60" file="objects/D_88/D_88_60.stl"/>
-        <mesh name="D_88_61" file="objects/D_88/D_88_61.stl"/>
-        <mesh name="D_88_62" file="objects/D_88/D_88_62.stl"/>
-        <mesh name="D_88_63" file="objects/D_88/D_88_63.stl"/>
-        <mesh name="D_88_64" file="objects/D_88/D_88_64.stl"/>
-        <mesh name="D_88_65" file="objects/D_88/D_88_65.stl"/>
-        <mesh name="D_88_66" file="objects/D_88/D_88_66.stl"/>
-        <mesh name="D_88_67" file="objects/D_88/D_88_67.stl"/>
-        <mesh name="D_88_68" file="objects/D_88/D_88_68.stl"/>
-        <mesh name="D_88_69" file="objects/D_88/D_88_69.stl"/>
-        <mesh name="D_88_70" file="objects/D_88/D_88_70.stl"/>
-        <mesh name="D_88_71" file="objects/D_88/D_88_71.stl"/>
-        <mesh name="D_88_72" file="objects/D_88/D_88_72.stl"/>
         <mesh name="D_88_visual" file="objects/D_88/D_88_full.stl"/>
     </asset>
 </mujoco>

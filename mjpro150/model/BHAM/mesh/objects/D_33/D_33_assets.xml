@@ -69,8 +69,6 @@
         <mesh name="D_33_67" file="objects/D_33/D_33_67.stl"/>
         <mesh name="D_33_68" file="objects/D_33/D_33_68.stl"/>
         <mesh name="D_33_69" file="objects/D_33/D_33_69.stl"/>
-        <mesh name="D_33_70" file="objects/D_33/D_33_70.stl"/>
-        <mesh name="D_33_71" file="objects/D_33/D_33_71.stl"/>
         <mesh name="D_33_visual" file="objects/D_33/D_33_full.stl"/>
     </asset>
 </mujoco>

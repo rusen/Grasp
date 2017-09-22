@@ -58,6 +58,45 @@
         <mesh name="D_185_56" file="objects/D_185/D_185_56.stl"/>
         <mesh name="D_185_57" file="objects/D_185/D_185_57.stl"/>
         <mesh name="D_185_58" file="objects/D_185/D_185_58.stl"/>
+        <mesh name="D_185_59" file="objects/D_185/D_185_59.stl"/>
+        <mesh name="D_185_60" file="objects/D_185/D_185_60.stl"/>
+        <mesh name="D_185_61" file="objects/D_185/D_185_61.stl"/>
+        <mesh name="D_185_62" file="objects/D_185/D_185_62.stl"/>
+        <mesh name="D_185_63" file="objects/D_185/D_185_63.stl"/>
+        <mesh name="D_185_64" file="objects/D_185/D_185_64.stl"/>
+        <mesh name="D_185_65" file="objects/D_185/D_185_65.stl"/>
+        <mesh name="D_185_66" file="objects/D_185/D_185_66.stl"/>
+        <mesh name="D_185_67" file="objects/D_185/D_185_67.stl"/>
+        <mesh name="D_185_68" file="objects/D_185/D_185_68.stl"/>
+        <mesh name="D_185_69" file="objects/D_185/D_185_69.stl"/>
+        <mesh name="D_185_70" file="objects/D_185/D_185_70.stl"/>
+        <mesh name="D_185_71" file="objects/D_185/D_185_71.stl"/>
+        <mesh name="D_185_72" file="objects/D_185/D_185_72.stl"/>
+        <mesh name="D_185_73" file="objects/D_185/D_185_73.stl"/>
+        <mesh name="D_185_74" file="objects/D_185/D_185_74.stl"/>
+        <mesh name="D_185_75" file="objects/D_185/D_185_75.stl"/>
+        <mesh name="D_185_76" file="objects/D_185/D_185_76.stl"/>
+        <mesh name="D_185_77" file="objects/D_185/D_185_77.stl"/>
+        <mesh name="D_185_78" file="objects/D_185/D_185_78.stl"/>
+        <mesh name="D_185_79" file="objects/D_185/D_185_79.stl"/>
+        <mesh name="D_185_80" file="objects/D_185/D_185_80.stl"/>
+        <mesh name="D_185_81" file="objects/D_185/D_185_81.stl"/>
+        <mesh name="D_185_82" file="objects/D_185/D_185_82.stl"/>
+        <mesh name="D_185_83" file="objects/D_185/D_185_83.stl"/>
+        <mesh name="D_185_84" file="objects/D_185/D_185_84.stl"/>
+        <mesh name="D_185_85" file="objects/D_185/D_185_85.stl"/>
+        <mesh name="D_185_86" file="objects/D_185/D_185_86.stl"/>
+        <mesh name="D_185_87" file="objects/D_185/D_185_87.stl"/>
+        <mesh name="D_185_88" file="objects/D_185/D_185_88.stl"/>
+        <mesh name="D_185_89" file="objects/D_185/D_185_89.stl"/>
+        <mesh name="D_185_90" file="objects/D_185/D_185_90.stl"/>
+        <mesh name="D_185_91" file="objects/D_185/D_185_91.stl"/>
+        <mesh name="D_185_92" file="objects/D_185/D_185_92.stl"/>
+        <mesh name="D_185_93" file="objects/D_185/D_185_93.stl"/>
+        <mesh name="D_185_94" file="objects/D_185/D_185_94.stl"/>
+        <mesh name="D_185_95" file="objects/D_185/D_185_95.stl"/>
+        <mesh name="D_185_96" file="objects/D_185/D_185_96.stl"/>
+        <mesh name="D_185_97" file="objects/D_185/D_185_97.stl"/>
         <mesh name="D_185_visual" file="objects/D_185/D_185_full.stl"/>
     </asset>
 </mujoco>

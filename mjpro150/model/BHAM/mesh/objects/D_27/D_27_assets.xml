@@ -52,6 +52,39 @@
         <mesh name="D_27_50" file="objects/D_27/D_27_50.stl"/>
         <mesh name="D_27_51" file="objects/D_27/D_27_51.stl"/>
         <mesh name="D_27_52" file="objects/D_27/D_27_52.stl"/>
+        <mesh name="D_27_53" file="objects/D_27/D_27_53.stl"/>
+        <mesh name="D_27_54" file="objects/D_27/D_27_54.stl"/>
+        <mesh name="D_27_55" file="objects/D_27/D_27_55.stl"/>
+        <mesh name="D_27_56" file="objects/D_27/D_27_56.stl"/>
+        <mesh name="D_27_57" file="objects/D_27/D_27_57.stl"/>
+        <mesh name="D_27_58" file="objects/D_27/D_27_58.stl"/>
+        <mesh name="D_27_59" file="objects/D_27/D_27_59.stl"/>
+        <mesh name="D_27_60" file="objects/D_27/D_27_60.stl"/>
+        <mesh name="D_27_61" file="objects/D_27/D_27_61.stl"/>
+        <mesh name="D_27_62" file="objects/D_27/D_27_62.stl"/>
+        <mesh name="D_27_63" file="objects/D_27/D_27_63.stl"/>
+        <mesh name="D_27_64" file="objects/D_27/D_27_64.stl"/>
+        <mesh name="D_27_65" file="objects/D_27/D_27_65.stl"/>
+        <mesh name="D_27_66" file="objects/D_27/D_27_66.stl"/>
+        <mesh name="D_27_67" file="objects/D_27/D_27_67.stl"/>
+        <mesh name="D_27_68" file="objects/D_27/D_27_68.stl"/>
+        <mesh name="D_27_69" file="objects/D_27/D_27_69.stl"/>
+        <mesh name="D_27_70" file="objects/D_27/D_27_70.stl"/>
+        <mesh name="D_27_71" file="objects/D_27/D_27_71.stl"/>
+        <mesh name="D_27_72" file="objects/D_27/D_27_72.stl"/>
+        <mesh name="D_27_73" file="objects/D_27/D_27_73.stl"/>
+        <mesh name="D_27_74" file="objects/D_27/D_27_74.stl"/>
+        <mesh name="D_27_75" file="objects/D_27/D_27_75.stl"/>
+        <mesh name="D_27_76" file="objects/D_27/D_27_76.stl"/>
+        <mesh name="D_27_77" file="objects/D_27/D_27_77.stl"/>
+        <mesh name="D_27_78" file="objects/D_27/D_27_78.stl"/>
+        <mesh name="D_27_79" file="objects/D_27/D_27_79.stl"/>
+        <mesh name="D_27_80" file="objects/D_27/D_27_80.stl"/>
+        <mesh name="D_27_81" file="objects/D_27/D_27_81.stl"/>
+        <mesh name="D_27_82" file="objects/D_27/D_27_82.stl"/>
+        <mesh name="D_27_83" file="objects/D_27/D_27_83.stl"/>
+        <mesh name="D_27_84" file="objects/D_27/D_27_84.stl"/>
+        <mesh name="D_27_85" file="objects/D_27/D_27_85.stl"/>
         <mesh name="D_27_visual" file="objects/D_27/D_27_full.stl"/>
     </asset>
 </mujoco>

@@ -8,34 +8,6 @@
         <mesh name="D_214_6" file="objects/D_214/D_214_6.stl"/>
         <mesh name="D_214_7" file="objects/D_214/D_214_7.stl"/>
         <mesh name="D_214_8" file="objects/D_214/D_214_8.stl"/>
-        <mesh name="D_214_9" file="objects/D_214/D_214_9.stl"/>
-        <mesh name="D_214_10" file="objects/D_214/D_214_10.stl"/>
-        <mesh name="D_214_11" file="objects/D_214/D_214_11.stl"/>
-        <mesh name="D_214_12" file="objects/D_214/D_214_12.stl"/>
-        <mesh name="D_214_13" file="objects/D_214/D_214_13.stl"/>
-        <mesh name="D_214_14" file="objects/D_214/D_214_14.stl"/>
-        <mesh name="D_214_15" file="objects/D_214/D_214_15.stl"/>
-        <mesh name="D_214_16" file="objects/D_214/D_214_16.stl"/>
-        <mesh name="D_214_17" file="objects/D_214/D_214_17.stl"/>
-        <mesh name="D_214_18" file="objects/D_214/D_214_18.stl"/>
-        <mesh name="D_214_19" file="objects/D_214/D_214_19.stl"/>
-        <mesh name="D_214_20" file="objects/D_214/D_214_20.stl"/>
-        <mesh name="D_214_21" file="objects/D_214/D_214_21.stl"/>
-        <mesh name="D_214_22" file="objects/D_214/D_214_22.stl"/>
-        <mesh name="D_214_23" file="objects/D_214/D_214_23.stl"/>
-        <mesh name="D_214_24" file="objects/D_214/D_214_24.stl"/>
-        <mesh name="D_214_25" file="objects/D_214/D_214_25.stl"/>
-        <mesh name="D_214_26" file="objects/D_214/D_214_26.stl"/>
-        <mesh name="D_214_27" file="objects/D_214/D_214_27.stl"/>
-        <mesh name="D_214_28" file="objects/D_214/D_214_28.stl"/>
-        <mesh name="D_214_29" file="objects/D_214/D_214_29.stl"/>
-        <mesh name="D_214_30" file="objects/D_214/D_214_30.stl"/>
-        <mesh name="D_214_31" file="objects/D_214/D_214_31.stl"/>
-        <mesh name="D_214_32" file="objects/D_214/D_214_32.stl"/>
-        <mesh name="D_214_33" file="objects/D_214/D_214_33.stl"/>
-        <mesh name="D_214_34" file="objects/D_214/D_214_34.stl"/>
-        <mesh name="D_214_35" file="objects/D_214/D_214_35.stl"/>
-        <mesh name="D_214_36" file="objects/D_214/D_214_36.stl"/>
         <mesh name="D_214_visual" file="objects/D_214/D_214_full.stl"/>
     </asset>
 </mujoco>

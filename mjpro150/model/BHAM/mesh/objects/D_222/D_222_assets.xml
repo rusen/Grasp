@@ -49,6 +49,27 @@
         <mesh name="D_222_47" file="objects/D_222/D_222_47.stl"/>
         <mesh name="D_222_48" file="objects/D_222/D_222_48.stl"/>
         <mesh name="D_222_49" file="objects/D_222/D_222_49.stl"/>
+        <mesh name="D_222_50" file="objects/D_222/D_222_50.stl"/>
+        <mesh name="D_222_51" file="objects/D_222/D_222_51.stl"/>
+        <mesh name="D_222_52" file="objects/D_222/D_222_52.stl"/>
+        <mesh name="D_222_53" file="objects/D_222/D_222_53.stl"/>
+        <mesh name="D_222_54" file="objects/D_222/D_222_54.stl"/>
+        <mesh name="D_222_55" file="objects/D_222/D_222_55.stl"/>
+        <mesh name="D_222_56" file="objects/D_222/D_222_56.stl"/>
+        <mesh name="D_222_57" file="objects/D_222/D_222_57.stl"/>
+        <mesh name="D_222_58" file="objects/D_222/D_222_58.stl"/>
+        <mesh name="D_222_59" file="objects/D_222/D_222_59.stl"/>
+        <mesh name="D_222_60" file="objects/D_222/D_222_60.stl"/>
+        <mesh name="D_222_61" file="objects/D_222/D_222_61.stl"/>
+        <mesh name="D_222_62" file="objects/D_222/D_222_62.stl"/>
+        <mesh name="D_222_63" file="objects/D_222/D_222_63.stl"/>
+        <mesh name="D_222_64" file="objects/D_222/D_222_64.stl"/>
+        <mesh name="D_222_65" file="objects/D_222/D_222_65.stl"/>
+        <mesh name="D_222_66" file="objects/D_222/D_222_66.stl"/>
+        <mesh name="D_222_67" file="objects/D_222/D_222_67.stl"/>
+        <mesh name="D_222_68" file="objects/D_222/D_222_68.stl"/>
+        <mesh name="D_222_69" file="objects/D_222/D_222_69.stl"/>
+        <mesh name="D_222_70" file="objects/D_222/D_222_70.stl"/>
         <mesh name="D_222_visual" file="objects/D_222/D_222_full.stl"/>
     </asset>
 </mujoco>

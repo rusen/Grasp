@@ -1,6 +1,64 @@
 <mujoco>
     <asset>
         <mesh name="D_176_1" file="objects/D_176/D_176_1.stl"/>
+        <mesh name="D_176_2" file="objects/D_176/D_176_2.stl"/>
+        <mesh name="D_176_3" file="objects/D_176/D_176_3.stl"/>
+        <mesh name="D_176_4" file="objects/D_176/D_176_4.stl"/>
+        <mesh name="D_176_5" file="objects/D_176/D_176_5.stl"/>
+        <mesh name="D_176_6" file="objects/D_176/D_176_6.stl"/>
+        <mesh name="D_176_7" file="objects/D_176/D_176_7.stl"/>
+        <mesh name="D_176_8" file="objects/D_176/D_176_8.stl"/>
+        <mesh name="D_176_9" file="objects/D_176/D_176_9.stl"/>
+        <mesh name="D_176_10" file="objects/D_176/D_176_10.stl"/>
+        <mesh name="D_176_11" file="objects/D_176/D_176_11.stl"/>
+        <mesh name="D_176_12" file="objects/D_176/D_176_12.stl"/>
+        <mesh name="D_176_13" file="objects/D_176/D_176_13.stl"/>
+        <mesh name="D_176_14" file="objects/D_176/D_176_14.stl"/>
+        <mesh name="D_176_15" file="objects/D_176/D_176_15.stl"/>
+        <mesh name="D_176_16" file="objects/D_176/D_176_16.stl"/>
+        <mesh name="D_176_17" file="objects/D_176/D_176_17.stl"/>
+        <mesh name="D_176_18" file="objects/D_176/D_176_18.stl"/>
+        <mesh name="D_176_19" file="objects/D_176/D_176_19.stl"/>
+        <mesh name="D_176_20" file="objects/D_176/D_176_20.stl"/>
+        <mesh name="D_176_21" file="objects/D_176/D_176_21.stl"/>
+        <mesh name="D_176_22" file="objects/D_176/D_176_22.stl"/>
+        <mesh name="D_176_23" file="objects/D_176/D_176_23.stl"/>
+        <mesh name="D_176_24" file="objects/D_176/D_176_24.stl"/>
+        <mesh name="D_176_25" file="objects/D_176/D_176_25.stl"/>
+        <mesh name="D_176_26" file="objects/D_176/D_176_26.stl"/>
+        <mesh name="D_176_27" file="objects/D_176/D_176_27.stl"/>
+        <mesh name="D_176_28" file="objects/D_176/D_176_28.stl"/>
+        <mesh name="D_176_29" file="objects/D_176/D_176_29.stl"/>
+        <mesh name="D_176_30" file="objects/D_176/D_176_30.stl"/>
+        <mesh name="D_176_31" file="objects/D_176/D_176_31.stl"/>
+        <mesh name="D_176_32" file="objects/D_176/D_176_32.stl"/>
+        <mesh name="D_176_33" file="objects/D_176/D_176_33.stl"/>
+        <mesh name="D_176_34" file="objects/D_176/D_176_34.stl"/>
+        <mesh name="D_176_35" file="objects/D_176/D_176_35.stl"/>
+        <mesh name="D_176_36" file="objects/D_176/D_176_36.stl"/>
+        <mesh name="D_176_37" file="objects/D_176/D_176_37.stl"/>
+        <mesh name="D_176_38" file="objects/D_176/D_176_38.stl"/>
+        <mesh name="D_176_39" file="objects/D_176/D_176_39.stl"/>
+        <mesh name="D_176_40" file="objects/D_176/D_176_40.stl"/>
+        <mesh name="D_176_41" file="objects/D_176/D_176_41.stl"/>
+        <mesh name="D_176_42" file="objects/D_176/D_176_42.stl"/>
+        <mesh name="D_176_43" file="objects/D_176/D_176_43.stl"/>
+        <mesh name="D_176_44" file="objects/D_176/D_176_44.stl"/>
+        <mesh name="D_176_45" file="objects/D_176/D_176_45.stl"/>
+        <mesh name="D_176_46" file="objects/D_176/D_176_46.stl"/>
+        <mesh name="D_176_47" file="objects/D_176/D_176_47.stl"/>
+        <mesh name="D_176_48" file="objects/D_176/D_176_48.stl"/>
+        <mesh name="D_176_49" file="objects/D_176/D_176_49.stl"/>
+        <mesh name="D_176_50" file="objects/D_176/D_176_50.stl"/>
+        <mesh name="D_176_51" file="objects/D_176/D_176_51.stl"/>
+        <mesh name="D_176_52" file="objects/D_176/D_176_52.stl"/>
+        <mesh name="D_176_53" file="objects/D_176/D_176_53.stl"/>
+        <mesh name="D_176_54" file="objects/D_176/D_176_54.stl"/>
+        <mesh name="D_176_55" file="objects/D_176/D_176_55.stl"/>
+        <mesh name="D_176_56" file="objects/D_176/D_176_56.stl"/>
+        <mesh name="D_176_57" file="objects/D_176/D_176_57.stl"/>
+        <mesh name="D_176_58" file="objects/D_176/D_176_58.stl"/>
+        <mesh name="D_176_59" file="objects/D_176/D_176_59.stl"/>
         <mesh name="D_176_visual" file="objects/D_176/D_176_full.stl"/>
     </asset>
 </mujoco>

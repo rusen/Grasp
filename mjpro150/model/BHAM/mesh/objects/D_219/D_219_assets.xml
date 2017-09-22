@@ -31,6 +31,9 @@
         <mesh name="D_219_29" file="objects/D_219/D_219_29.stl"/>
         <mesh name="D_219_30" file="objects/D_219/D_219_30.stl"/>
         <mesh name="D_219_31" file="objects/D_219/D_219_31.stl"/>
+        <mesh name="D_219_32" file="objects/D_219/D_219_32.stl"/>
+        <mesh name="D_219_33" file="objects/D_219/D_219_33.stl"/>
+        <mesh name="D_219_34" file="objects/D_219/D_219_34.stl"/>
         <mesh name="D_219_visual" file="objects/D_219/D_219_full.stl"/>
     </asset>
 </mujoco>

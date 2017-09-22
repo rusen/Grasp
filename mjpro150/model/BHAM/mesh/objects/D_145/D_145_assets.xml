@@ -58,18 +58,6 @@
         <mesh name="D_145_56" file="objects/D_145/D_145_56.stl"/>
         <mesh name="D_145_57" file="objects/D_145/D_145_57.stl"/>
         <mesh name="D_145_58" file="objects/D_145/D_145_58.stl"/>
-        <mesh name="D_145_59" file="objects/D_145/D_145_59.stl"/>
-        <mesh name="D_145_60" file="objects/D_145/D_145_60.stl"/>
-        <mesh name="D_145_61" file="objects/D_145/D_145_61.stl"/>
-        <mesh name="D_145_62" file="objects/D_145/D_145_62.stl"/>
-        <mesh name="D_145_63" file="objects/D_145/D_145_63.stl"/>
-        <mesh name="D_145_64" file="objects/D_145/D_145_64.stl"/>
-        <mesh name="D_145_65" file="objects/D_145/D_145_65.stl"/>
-        <mesh name="D_145_66" file="objects/D_145/D_145_66.stl"/>
-        <mesh name="D_145_67" file="objects/D_145/D_145_67.stl"/>
-        <mesh name="D_145_68" file="objects/D_145/D_145_68.stl"/>
-        <mesh name="D_145_69" file="objects/D_145/D_145_69.stl"/>
-        <mesh name="D_145_70" file="objects/D_145/D_145_70.stl"/>
         <mesh name="D_145_visual" file="objects/D_145/D_145_full.stl"/>
     </asset>
 </mujoco>

@@ -28,11 +28,6 @@
         <mesh name="D_40_26" file="objects/D_40/D_40_26.stl"/>
         <mesh name="D_40_27" file="objects/D_40/D_40_27.stl"/>
         <mesh name="D_40_28" file="objects/D_40/D_40_28.stl"/>
-        <mesh name="D_40_29" file="objects/D_40/D_40_29.stl"/>
-        <mesh name="D_40_30" file="objects/D_40/D_40_30.stl"/>
-        <mesh name="D_40_31" file="objects/D_40/D_40_31.stl"/>
-        <mesh name="D_40_32" file="objects/D_40/D_40_32.stl"/>
-        <mesh name="D_40_33" file="objects/D_40/D_40_33.stl"/>
         <mesh name="D_40_visual" file="objects/D_40/D_40_full.stl"/>
     </asset>
 </mujoco>

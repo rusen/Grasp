@@ -57,7 +57,6 @@
         <mesh name="D_146_55" file="objects/D_146/D_146_55.stl"/>
         <mesh name="D_146_56" file="objects/D_146/D_146_56.stl"/>
         <mesh name="D_146_57" file="objects/D_146/D_146_57.stl"/>
-        <mesh name="D_146_58" file="objects/D_146/D_146_58.stl"/>
         <mesh name="D_146_visual" file="objects/D_146/D_146_full.stl"/>
     </asset>
 </mujoco>

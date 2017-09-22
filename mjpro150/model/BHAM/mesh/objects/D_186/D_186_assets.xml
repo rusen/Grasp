@@ -97,6 +97,56 @@
         <mesh name="D_186_95" file="objects/D_186/D_186_95.stl"/>
         <mesh name="D_186_96" file="objects/D_186/D_186_96.stl"/>
         <mesh name="D_186_97" file="objects/D_186/D_186_97.stl"/>
+        <mesh name="D_186_98" file="objects/D_186/D_186_98.stl"/>
+        <mesh name="D_186_99" file="objects/D_186/D_186_99.stl"/>
+        <mesh name="D_186_100" file="objects/D_186/D_186_100.stl"/>
+        <mesh name="D_186_101" file="objects/D_186/D_186_101.stl"/>
+        <mesh name="D_186_102" file="objects/D_186/D_186_102.stl"/>
+        <mesh name="D_186_103" file="objects/D_186/D_186_103.stl"/>
+        <mesh name="D_186_104" file="objects/D_186/D_186_104.stl"/>
+        <mesh name="D_186_105" file="objects/D_186/D_186_105.stl"/>
+        <mesh name="D_186_106" file="objects/D_186/D_186_106.stl"/>
+        <mesh name="D_186_107" file="objects/D_186/D_186_107.stl"/>
+        <mesh name="D_186_108" file="objects/D_186/D_186_108.stl"/>
+        <mesh name="D_186_109" file="objects/D_186/D_186_109.stl"/>
+        <mesh name="D_186_110" file="objects/D_186/D_186_110.stl"/>
+        <mesh name="D_186_111" file="objects/D_186/D_186_111.stl"/>
+        <mesh name="D_186_112" file="objects/D_186/D_186_112.stl"/>
+        <mesh name="D_186_113" file="objects/D_186/D_186_113.stl"/>
+        <mesh name="D_186_114" file="objects/D_186/D_186_114.stl"/>
+        <mesh name="D_186_115" file="objects/D_186/D_186_115.stl"/>
+        <mesh name="D_186_116" file="objects/D_186/D_186_116.stl"/>
+        <mesh name="D_186_117" file="objects/D_186/D_186_117.stl"/>
+        <mesh name="D_186_118" file="objects/D_186/D_186_118.stl"/>
+        <mesh name="D_186_119" file="objects/D_186/D_186_119.stl"/>
+        <mesh name="D_186_120" file="objects/D_186/D_186_120.stl"/>
+        <mesh name="D_186_121" file="objects/D_186/D_186_121.stl"/>
+        <mesh name="D_186_122" file="objects/D_186/D_186_122.stl"/>
+        <mesh name="D_186_123" file="objects/D_186/D_186_123.stl"/>
+        <mesh name="D_186_124" file="objects/D_186/D_186_124.stl"/>
+        <mesh name="D_186_125" file="objects/D_186/D_186_125.stl"/>
+        <mesh name="D_186_126" file="objects/D_186/D_186_126.stl"/>
+        <mesh name="D_186_127" file="objects/D_186/D_186_127.stl"/>
+        <mesh name="D_186_128" file="objects/D_186/D_186_128.stl"/>
+        <mesh name="D_186_129" file="objects/D_186/D_186_129.stl"/>
+        <mesh name="D_186_130" file="objects/D_186/D_186_130.stl"/>
+        <mesh name="D_186_131" file="objects/D_186/D_186_131.stl"/>
+        <mesh name="D_186_132" file="objects/D_186/D_186_132.stl"/>
+        <mesh name="D_186_133" file="objects/D_186/D_186_133.stl"/>
+        <mesh name="D_186_134" file="objects/D_186/D_186_134.stl"/>
+        <mesh name="D_186_135" file="objects/D_186/D_186_135.stl"/>
+        <mesh name="D_186_136" file="objects/D_186/D_186_136.stl"/>
+        <mesh name="D_186_137" file="objects/D_186/D_186_137.stl"/>
+        <mesh name="D_186_138" file="objects/D_186/D_186_138.stl"/>
+        <mesh name="D_186_139" file="objects/D_186/D_186_139.stl"/>
+        <mesh name="D_186_140" file="objects/D_186/D_186_140.stl"/>
+        <mesh name="D_186_141" file="objects/D_186/D_186_141.stl"/>
+        <mesh name="D_186_142" file="objects/D_186/D_186_142.stl"/>
+        <mesh name="D_186_143" file="objects/D_186/D_186_143.stl"/>
+        <mesh name="D_186_144" file="objects/D_186/D_186_144.stl"/>
+        <mesh name="D_186_145" file="objects/D_186/D_186_145.stl"/>
+        <mesh name="D_186_146" file="objects/D_186/D_186_146.stl"/>
+        <mesh name="D_186_147" file="objects/D_186/D_186_147.stl"/>
         <mesh name="D_186_visual" file="objects/D_186/D_186_full.stl"/>
     </asset>
 </mujoco>

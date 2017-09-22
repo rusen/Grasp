@@ -76,6 +76,46 @@
         <mesh name="D_110_74" file="objects/D_110/D_110_74.stl"/>
         <mesh name="D_110_75" file="objects/D_110/D_110_75.stl"/>
         <mesh name="D_110_76" file="objects/D_110/D_110_76.stl"/>
+        <mesh name="D_110_77" file="objects/D_110/D_110_77.stl"/>
+        <mesh name="D_110_78" file="objects/D_110/D_110_78.stl"/>
+        <mesh name="D_110_79" file="objects/D_110/D_110_79.stl"/>
+        <mesh name="D_110_80" file="objects/D_110/D_110_80.stl"/>
+        <mesh name="D_110_81" file="objects/D_110/D_110_81.stl"/>
+        <mesh name="D_110_82" file="objects/D_110/D_110_82.stl"/>
+        <mesh name="D_110_83" file="objects/D_110/D_110_83.stl"/>
+        <mesh name="D_110_84" file="objects/D_110/D_110_84.stl"/>
+        <mesh name="D_110_85" file="objects/D_110/D_110_85.stl"/>
+        <mesh name="D_110_86" file="objects/D_110/D_110_86.stl"/>
+        <mesh name="D_110_87" file="objects/D_110/D_110_87.stl"/>
+        <mesh name="D_110_88" file="objects/D_110/D_110_88.stl"/>
+        <mesh name="D_110_89" file="objects/D_110/D_110_89.stl"/>
+        <mesh name="D_110_90" file="objects/D_110/D_110_90.stl"/>
+        <mesh name="D_110_91" file="objects/D_110/D_110_91.stl"/>
+        <mesh name="D_110_92" file="objects/D_110/D_110_92.stl"/>
+        <mesh name="D_110_93" file="objects/D_110/D_110_93.stl"/>
+        <mesh name="D_110_94" file="objects/D_110/D_110_94.stl"/>
+        <mesh name="D_110_95" file="objects/D_110/D_110_95.stl"/>
+        <mesh name="D_110_96" file="objects/D_110/D_110_96.stl"/>
+        <mesh name="D_110_97" file="objects/D_110/D_110_97.stl"/>
+        <mesh name="D_110_98" file="objects/D_110/D_110_98.stl"/>
+        <mesh name="D_110_99" file="objects/D_110/D_110_99.stl"/>
+        <mesh name="D_110_100" file="objects/D_110/D_110_100.stl"/>
+        <mesh name="D_110_101" file="objects/D_110/D_110_101.stl"/>
+        <mesh name="D_110_102" file="objects/D_110/D_110_102.stl"/>
+        <mesh name="D_110_103" file="objects/D_110/D_110_103.stl"/>
+        <mesh name="D_110_104" file="objects/D_110/D_110_104.stl"/>
+        <mesh name="D_110_105" file="objects/D_110/D_110_105.stl"/>
+        <mesh name="D_110_106" file="objects/D_110/D_110_106.stl"/>
+        <mesh name="D_110_107" file="objects/D_110/D_110_107.stl"/>
+        <mesh name="D_110_108" file="objects/D_110/D_110_108.stl"/>
+        <mesh name="D_110_109" file="objects/D_110/D_110_109.stl"/>
+        <mesh name="D_110_110" file="objects/D_110/D_110_110.stl"/>
+        <mesh name="D_110_111" file="objects/D_110/D_110_111.stl"/>
+        <mesh name="D_110_112" file="objects/D_110/D_110_112.stl"/>
+        <mesh name="D_110_113" file="objects/D_110/D_110_113.stl"/>
+        <mesh name="D_110_114" file="objects/D_110/D_110_114.stl"/>
+        <mesh name="D_110_115" file="objects/D_110/D_110_115.stl"/>
+        <mesh name="D_110_116" file="objects/D_110/D_110_116.stl"/>
         <mesh name="D_110_visual" file="objects/D_110/D_110_full.stl"/>
     </asset>
 </mujoco>

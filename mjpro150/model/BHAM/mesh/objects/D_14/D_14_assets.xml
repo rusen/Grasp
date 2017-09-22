@@ -4,7 +4,6 @@
         <mesh name="D_14_2" file="objects/D_14/D_14_2.stl"/>
         <mesh name="D_14_3" file="objects/D_14/D_14_3.stl"/>
         <mesh name="D_14_4" file="objects/D_14/D_14_4.stl"/>
-        <mesh name="D_14_5" file="objects/D_14/D_14_5.stl"/>
         <mesh name="D_14_visual" file="objects/D_14/D_14_full.stl"/>
     </asset>
 </mujoco>

@@ -80,6 +80,11 @@
         <mesh name="D_238_78" file="objects/D_238/D_238_78.stl"/>
         <mesh name="D_238_79" file="objects/D_238/D_238_79.stl"/>
         <mesh name="D_238_80" file="objects/D_238/D_238_80.stl"/>
+        <mesh name="D_238_81" file="objects/D_238/D_238_81.stl"/>
+        <mesh name="D_238_82" file="objects/D_238/D_238_82.stl"/>
+        <mesh name="D_238_83" file="objects/D_238/D_238_83.stl"/>
+        <mesh name="D_238_84" file="objects/D_238/D_238_84.stl"/>
+        <mesh name="D_238_85" file="objects/D_238/D_238_85.stl"/>
         <mesh name="D_238_visual" file="objects/D_238/D_238_full.stl"/>
     </asset>
 </mujoco>

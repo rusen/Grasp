@@ -9,17 +9,6 @@
         <mesh name="D_153_7" file="objects/D_153/D_153_7.stl"/>
         <mesh name="D_153_8" file="objects/D_153/D_153_8.stl"/>
         <mesh name="D_153_9" file="objects/D_153/D_153_9.stl"/>
-        <mesh name="D_153_10" file="objects/D_153/D_153_10.stl"/>
-        <mesh name="D_153_11" file="objects/D_153/D_153_11.stl"/>
-        <mesh name="D_153_12" file="objects/D_153/D_153_12.stl"/>
-        <mesh name="D_153_13" file="objects/D_153/D_153_13.stl"/>
-        <mesh name="D_153_14" file="objects/D_153/D_153_14.stl"/>
-        <mesh name="D_153_15" file="objects/D_153/D_153_15.stl"/>
-        <mesh name="D_153_16" file="objects/D_153/D_153_16.stl"/>
-        <mesh name="D_153_17" file="objects/D_153/D_153_17.stl"/>
-        <mesh name="D_153_18" file="objects/D_153/D_153_18.stl"/>
-        <mesh name="D_153_19" file="objects/D_153/D_153_19.stl"/>
-        <mesh name="D_153_20" file="objects/D_153/D_153_20.stl"/>
         <mesh name="D_153_visual" file="objects/D_153/D_153_full.stl"/>
     </asset>
 </mujoco>

@@ -68,33 +68,6 @@
         <mesh name="D_100_66" file="objects/D_100/D_100_66.stl"/>
         <mesh name="D_100_67" file="objects/D_100/D_100_67.stl"/>
         <mesh name="D_100_68" file="objects/D_100/D_100_68.stl"/>
-        <mesh name="D_100_69" file="objects/D_100/D_100_69.stl"/>
-        <mesh name="D_100_70" file="objects/D_100/D_100_70.stl"/>
-        <mesh name="D_100_71" file="objects/D_100/D_100_71.stl"/>
-        <mesh name="D_100_72" file="objects/D_100/D_100_72.stl"/>
-        <mesh name="D_100_73" file="objects/D_100/D_100_73.stl"/>
-        <mesh name="D_100_74" file="objects/D_100/D_100_74.stl"/>
-        <mesh name="D_100_75" file="objects/D_100/D_100_75.stl"/>
-        <mesh name="D_100_76" file="objects/D_100/D_100_76.stl"/>
-        <mesh name="D_100_77" file="objects/D_100/D_100_77.stl"/>
-        <mesh name="D_100_78" file="objects/D_100/D_100_78.stl"/>
-        <mesh name="D_100_79" file="objects/D_100/D_100_79.stl"/>
-        <mesh name="D_100_80" file="objects/D_100/D_100_80.stl"/>
-        <mesh name="D_100_81" file="objects/D_100/D_100_81.stl"/>
-        <mesh name="D_100_82" file="objects/D_100/D_100_82.stl"/>
-        <mesh name="D_100_83" file="objects/D_100/D_100_83.stl"/>
-        <mesh name="D_100_84" file="objects/D_100/D_100_84.stl"/>
-        <mesh name="D_100_85" file="objects/D_100/D_100_85.stl"/>
-        <mesh name="D_100_86" file="objects/D_100/D_100_86.stl"/>
-        <mesh name="D_100_87" file="objects/D_100/D_100_87.stl"/>
-        <mesh name="D_100_88" file="objects/D_100/D_100_88.stl"/>
-        <mesh name="D_100_89" file="objects/D_100/D_100_89.stl"/>
-        <mesh name="D_100_90" file="objects/D_100/D_100_90.stl"/>
-        <mesh name="D_100_91" file="objects/D_100/D_100_91.stl"/>
-        <mesh name="D_100_92" file="objects/D_100/D_100_92.stl"/>
-        <mesh name="D_100_93" file="objects/D_100/D_100_93.stl"/>
-        <mesh name="D_100_94" file="objects/D_100/D_100_94.stl"/>
-        <mesh name="D_100_95" file="objects/D_100/D_100_95.stl"/>
         <mesh name="D_100_visual" file="objects/D_100/D_100_full.stl"/>
     </asset>
 </mujoco>

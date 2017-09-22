@@ -21,12 +21,6 @@
         <mesh name="D_132_19" file="objects/D_132/D_132_19.stl"/>
         <mesh name="D_132_20" file="objects/D_132/D_132_20.stl"/>
         <mesh name="D_132_21" file="objects/D_132/D_132_21.stl"/>
-        <mesh name="D_132_22" file="objects/D_132/D_132_22.stl"/>
-        <mesh name="D_132_23" file="objects/D_132/D_132_23.stl"/>
-        <mesh name="D_132_24" file="objects/D_132/D_132_24.stl"/>
-        <mesh name="D_132_25" file="objects/D_132/D_132_25.stl"/>
-        <mesh name="D_132_26" file="objects/D_132/D_132_26.stl"/>
-        <mesh name="D_132_27" file="objects/D_132/D_132_27.stl"/>
         <mesh name="D_132_visual" file="objects/D_132/D_132_full.stl"/>
     </asset>
 </mujoco>

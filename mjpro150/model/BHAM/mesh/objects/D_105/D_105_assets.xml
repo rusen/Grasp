@@ -11,6 +11,29 @@
         <mesh name="D_105_9" file="objects/D_105/D_105_9.stl"/>
         <mesh name="D_105_10" file="objects/D_105/D_105_10.stl"/>
         <mesh name="D_105_11" file="objects/D_105/D_105_11.stl"/>
+        <mesh name="D_105_12" file="objects/D_105/D_105_12.stl"/>
+        <mesh name="D_105_13" file="objects/D_105/D_105_13.stl"/>
+        <mesh name="D_105_14" file="objects/D_105/D_105_14.stl"/>
+        <mesh name="D_105_15" file="objects/D_105/D_105_15.stl"/>
+        <mesh name="D_105_16" file="objects/D_105/D_105_16.stl"/>
+        <mesh name="D_105_17" file="objects/D_105/D_105_17.stl"/>
+        <mesh name="D_105_18" file="objects/D_105/D_105_18.stl"/>
+        <mesh name="D_105_19" file="objects/D_105/D_105_19.stl"/>
+        <mesh name="D_105_20" file="objects/D_105/D_105_20.stl"/>
+        <mesh name="D_105_21" file="objects/D_105/D_105_21.stl"/>
+        <mesh name="D_105_22" file="objects/D_105/D_105_22.stl"/>
+        <mesh name="D_105_23" file="objects/D_105/D_105_23.stl"/>
+        <mesh name="D_105_24" file="objects/D_105/D_105_24.stl"/>
+        <mesh name="D_105_25" file="objects/D_105/D_105_25.stl"/>
+        <mesh name="D_105_26" file="objects/D_105/D_105_26.stl"/>
+        <mesh name="D_105_27" file="objects/D_105/D_105_27.stl"/>
+        <mesh name="D_105_28" file="objects/D_105/D_105_28.stl"/>
+        <mesh name="D_105_29" file="objects/D_105/D_105_29.stl"/>
+        <mesh name="D_105_30" file="objects/D_105/D_105_30.stl"/>
+        <mesh name="D_105_31" file="objects/D_105/D_105_31.stl"/>
+        <mesh name="D_105_32" file="objects/D_105/D_105_32.stl"/>
+        <mesh name="D_105_33" file="objects/D_105/D_105_33.stl"/>
+        <mesh name="D_105_34" file="objects/D_105/D_105_34.stl"/>
         <mesh name="D_105_visual" file="objects/D_105/D_105_full.stl"/>
     </asset>
 </mujoco>

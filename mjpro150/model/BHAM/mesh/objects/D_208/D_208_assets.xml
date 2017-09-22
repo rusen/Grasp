@@ -38,10 +38,6 @@
         <mesh name="D_208_36" file="objects/D_208/D_208_36.stl"/>
         <mesh name="D_208_37" file="objects/D_208/D_208_37.stl"/>
         <mesh name="D_208_38" file="objects/D_208/D_208_38.stl"/>
-        <mesh name="D_208_39" file="objects/D_208/D_208_39.stl"/>
-        <mesh name="D_208_40" file="objects/D_208/D_208_40.stl"/>
-        <mesh name="D_208_41" file="objects/D_208/D_208_41.stl"/>
-        <mesh name="D_208_42" file="objects/D_208/D_208_42.stl"/>
         <mesh name="D_208_visual" file="objects/D_208/D_208_full.stl"/>
     </asset>
 </mujoco>

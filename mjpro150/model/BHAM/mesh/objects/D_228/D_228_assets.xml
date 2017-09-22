@@ -67,20 +67,6 @@
         <mesh name="D_228_65" file="objects/D_228/D_228_65.stl"/>
         <mesh name="D_228_66" file="objects/D_228/D_228_66.stl"/>
         <mesh name="D_228_67" file="objects/D_228/D_228_67.stl"/>
-        <mesh name="D_228_68" file="objects/D_228/D_228_68.stl"/>
-        <mesh name="D_228_69" file="objects/D_228/D_228_69.stl"/>
-        <mesh name="D_228_70" file="objects/D_228/D_228_70.stl"/>
-        <mesh name="D_228_71" file="objects/D_228/D_228_71.stl"/>
-        <mesh name="D_228_72" file="objects/D_228/D_228_72.stl"/>
-        <mesh name="D_228_73" file="objects/D_228/D_228_73.stl"/>
-        <mesh name="D_228_74" file="objects/D_228/D_228_74.stl"/>
-        <mesh name="D_228_75" file="objects/D_228/D_228_75.stl"/>
-        <mesh name="D_228_76" file="objects/D_228/D_228_76.stl"/>
-        <mesh name="D_228_77" file="objects/D_228/D_228_77.stl"/>
-        <mesh name="D_228_78" file="objects/D_228/D_228_78.stl"/>
-        <mesh name="D_228_79" file="objects/D_228/D_228_79.stl"/>
-        <mesh name="D_228_80" file="objects/D_228/D_228_80.stl"/>
-        <mesh name="D_228_81" file="objects/D_228/D_228_81.stl"/>
         <mesh name="D_228_visual" file="objects/D_228/D_228_full.stl"/>
     </asset>
 </mujoco>

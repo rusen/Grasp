@@ -49,6 +49,12 @@
         <mesh name="D_84_47" file="objects/D_84/D_84_47.stl"/>
         <mesh name="D_84_48" file="objects/D_84/D_84_48.stl"/>
         <mesh name="D_84_49" file="objects/D_84/D_84_49.stl"/>
+        <mesh name="D_84_50" file="objects/D_84/D_84_50.stl"/>
+        <mesh name="D_84_51" file="objects/D_84/D_84_51.stl"/>
+        <mesh name="D_84_52" file="objects/D_84/D_84_52.stl"/>
+        <mesh name="D_84_53" file="objects/D_84/D_84_53.stl"/>
+        <mesh name="D_84_54" file="objects/D_84/D_84_54.stl"/>
+        <mesh name="D_84_55" file="objects/D_84/D_84_55.stl"/>
         <mesh name="D_84_visual" file="objects/D_84/D_84_full.stl"/>
     </asset>
 </mujoco>

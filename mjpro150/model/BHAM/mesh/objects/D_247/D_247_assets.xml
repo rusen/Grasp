@@ -9,6 +9,19 @@
         <mesh name="D_247_7" file="objects/D_247/D_247_7.stl"/>
         <mesh name="D_247_8" file="objects/D_247/D_247_8.stl"/>
         <mesh name="D_247_9" file="objects/D_247/D_247_9.stl"/>
+        <mesh name="D_247_10" file="objects/D_247/D_247_10.stl"/>
+        <mesh name="D_247_11" file="objects/D_247/D_247_11.stl"/>
+        <mesh name="D_247_12" file="objects/D_247/D_247_12.stl"/>
+        <mesh name="D_247_13" file="objects/D_247/D_247_13.stl"/>
+        <mesh name="D_247_14" file="objects/D_247/D_247_14.stl"/>
+        <mesh name="D_247_15" file="objects/D_247/D_247_15.stl"/>
+        <mesh name="D_247_16" file="objects/D_247/D_247_16.stl"/>
+        <mesh name="D_247_17" file="objects/D_247/D_247_17.stl"/>
+        <mesh name="D_247_18" file="objects/D_247/D_247_18.stl"/>
+        <mesh name="D_247_19" file="objects/D_247/D_247_19.stl"/>
+        <mesh name="D_247_20" file="objects/D_247/D_247_20.stl"/>
+        <mesh name="D_247_21" file="objects/D_247/D_247_21.stl"/>
+        <mesh name="D_247_22" file="objects/D_247/D_247_22.stl"/>
         <mesh name="D_247_visual" file="objects/D_247/D_247_full.stl"/>
     </asset>
 </mujoco>

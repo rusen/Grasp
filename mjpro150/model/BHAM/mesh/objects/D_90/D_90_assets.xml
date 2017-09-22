@@ -25,21 +25,6 @@
         <mesh name="D_90_23" file="objects/D_90/D_90_23.stl"/>
         <mesh name="D_90_24" file="objects/D_90/D_90_24.stl"/>
         <mesh name="D_90_25" file="objects/D_90/D_90_25.stl"/>
-        <mesh name="D_90_26" file="objects/D_90/D_90_26.stl"/>
-        <mesh name="D_90_27" file="objects/D_90/D_90_27.stl"/>
-        <mesh name="D_90_28" file="objects/D_90/D_90_28.stl"/>
-        <mesh name="D_90_29" file="objects/D_90/D_90_29.stl"/>
-        <mesh name="D_90_30" file="objects/D_90/D_90_30.stl"/>
-        <mesh name="D_90_31" file="objects/D_90/D_90_31.stl"/>
-        <mesh name="D_90_32" file="objects/D_90/D_90_32.stl"/>
-        <mesh name="D_90_33" file="objects/D_90/D_90_33.stl"/>
-        <mesh name="D_90_34" file="objects/D_90/D_90_34.stl"/>
-        <mesh name="D_90_35" file="objects/D_90/D_90_35.stl"/>
-        <mesh name="D_90_36" file="objects/D_90/D_90_36.stl"/>
-        <mesh name="D_90_37" file="objects/D_90/D_90_37.stl"/>
-        <mesh name="D_90_38" file="objects/D_90/D_90_38.stl"/>
-        <mesh name="D_90_39" file="objects/D_90/D_90_39.stl"/>
-        <mesh name="D_90_40" file="objects/D_90/D_90_40.stl"/>
         <mesh name="D_90_visual" file="objects/D_90/D_90_full.stl"/>
     </asset>
 </mujoco>

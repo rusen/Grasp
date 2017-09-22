@@ -5,6 +5,15 @@
         <mesh name="D_192_3" file="objects/D_192/D_192_3.stl"/>
         <mesh name="D_192_4" file="objects/D_192/D_192_4.stl"/>
         <mesh name="D_192_5" file="objects/D_192/D_192_5.stl"/>
+        <mesh name="D_192_6" file="objects/D_192/D_192_6.stl"/>
+        <mesh name="D_192_7" file="objects/D_192/D_192_7.stl"/>
+        <mesh name="D_192_8" file="objects/D_192/D_192_8.stl"/>
+        <mesh name="D_192_9" file="objects/D_192/D_192_9.stl"/>
+        <mesh name="D_192_10" file="objects/D_192/D_192_10.stl"/>
+        <mesh name="D_192_11" file="objects/D_192/D_192_11.stl"/>
+        <mesh name="D_192_12" file="objects/D_192/D_192_12.stl"/>
+        <mesh name="D_192_13" file="objects/D_192/D_192_13.stl"/>
+        <mesh name="D_192_14" file="objects/D_192/D_192_14.stl"/>
         <mesh name="D_192_visual" file="objects/D_192/D_192_full.stl"/>
     </asset>
 </mujoco>

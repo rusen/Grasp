@@ -58,13 +58,6 @@
         <mesh name="D_126_56" file="objects/D_126/D_126_56.stl"/>
         <mesh name="D_126_57" file="objects/D_126/D_126_57.stl"/>
         <mesh name="D_126_58" file="objects/D_126/D_126_58.stl"/>
-        <mesh name="D_126_59" file="objects/D_126/D_126_59.stl"/>
-        <mesh name="D_126_60" file="objects/D_126/D_126_60.stl"/>
-        <mesh name="D_126_61" file="objects/D_126/D_126_61.stl"/>
-        <mesh name="D_126_62" file="objects/D_126/D_126_62.stl"/>
-        <mesh name="D_126_63" file="objects/D_126/D_126_63.stl"/>
-        <mesh name="D_126_64" file="objects/D_126/D_126_64.stl"/>
-        <mesh name="D_126_65" file="objects/D_126/D_126_65.stl"/>
         <mesh name="D_126_visual" file="objects/D_126/D_126_full.stl"/>
     </asset>
 </mujoco>

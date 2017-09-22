@@ -7,13 +7,6 @@
         <mesh name="D_193_5" file="objects/D_193/D_193_5.stl"/>
         <mesh name="D_193_6" file="objects/D_193/D_193_6.stl"/>
         <mesh name="D_193_7" file="objects/D_193/D_193_7.stl"/>
-        <mesh name="D_193_8" file="objects/D_193/D_193_8.stl"/>
-        <mesh name="D_193_9" file="objects/D_193/D_193_9.stl"/>
-        <mesh name="D_193_10" file="objects/D_193/D_193_10.stl"/>
-        <mesh name="D_193_11" file="objects/D_193/D_193_11.stl"/>
-        <mesh name="D_193_12" file="objects/D_193/D_193_12.stl"/>
-        <mesh name="D_193_13" file="objects/D_193/D_193_13.stl"/>
-        <mesh name="D_193_14" file="objects/D_193/D_193_14.stl"/>
         <mesh name="D_193_visual" file="objects/D_193/D_193_full.stl"/>
     </asset>
 </mujoco>

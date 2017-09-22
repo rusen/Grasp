@@ -78,6 +78,35 @@
         <mesh name="D_254_76" file="objects/D_254/D_254_76.stl"/>
         <mesh name="D_254_77" file="objects/D_254/D_254_77.stl"/>
         <mesh name="D_254_78" file="objects/D_254/D_254_78.stl"/>
+        <mesh name="D_254_79" file="objects/D_254/D_254_79.stl"/>
+        <mesh name="D_254_80" file="objects/D_254/D_254_80.stl"/>
+        <mesh name="D_254_81" file="objects/D_254/D_254_81.stl"/>
+        <mesh name="D_254_82" file="objects/D_254/D_254_82.stl"/>
+        <mesh name="D_254_83" file="objects/D_254/D_254_83.stl"/>
+        <mesh name="D_254_84" file="objects/D_254/D_254_84.stl"/>
+        <mesh name="D_254_85" file="objects/D_254/D_254_85.stl"/>
+        <mesh name="D_254_86" file="objects/D_254/D_254_86.stl"/>
+        <mesh name="D_254_87" file="objects/D_254/D_254_87.stl"/>
+        <mesh name="D_254_88" file="objects/D_254/D_254_88.stl"/>
+        <mesh name="D_254_89" file="objects/D_254/D_254_89.stl"/>
+        <mesh name="D_254_90" file="objects/D_254/D_254_90.stl"/>
+        <mesh name="D_254_91" file="objects/D_254/D_254_91.stl"/>
+        <mesh name="D_254_92" file="objects/D_254/D_254_92.stl"/>
+        <mesh name="D_254_93" file="objects/D_254/D_254_93.stl"/>
+        <mesh name="D_254_94" file="objects/D_254/D_254_94.stl"/>
+        <mesh name="D_254_95" file="objects/D_254/D_254_95.stl"/>
+        <mesh name="D_254_96" file="objects/D_254/D_254_96.stl"/>
+        <mesh name="D_254_97" file="objects/D_254/D_254_97.stl"/>
+        <mesh name="D_254_98" file="objects/D_254/D_254_98.stl"/>
+        <mesh name="D_254_99" file="objects/D_254/D_254_99.stl"/>
+        <mesh name="D_254_100" file="objects/D_254/D_254_100.stl"/>
+        <mesh name="D_254_101" file="objects/D_254/D_254_101.stl"/>
+        <mesh name="D_254_102" file="objects/D_254/D_254_102.stl"/>
+        <mesh name="D_254_103" file="objects/D_254/D_254_103.stl"/>
+        <mesh name="D_254_104" file="objects/D_254/D_254_104.stl"/>
+        <mesh name="D_254_105" file="objects/D_254/D_254_105.stl"/>
+        <mesh name="D_254_106" file="objects/D_254/D_254_106.stl"/>
+        <mesh name="D_254_107" file="objects/D_254/D_254_107.stl"/>
         <mesh name="D_254_visual" file="objects/D_254/D_254_full.stl"/>
     </asset>
 </mujoco>

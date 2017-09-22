@@ -44,9 +44,6 @@
         <mesh name="D_160_42" file="objects/D_160/D_160_42.stl"/>
         <mesh name="D_160_43" file="objects/D_160/D_160_43.stl"/>
         <mesh name="D_160_44" file="objects/D_160/D_160_44.stl"/>
-        <mesh name="D_160_45" file="objects/D_160/D_160_45.stl"/>
-        <mesh name="D_160_46" file="objects/D_160/D_160_46.stl"/>
-        <mesh name="D_160_47" file="objects/D_160/D_160_47.stl"/>
         <mesh name="D_160_visual" file="objects/D_160/D_160_full.stl"/>
     </asset>
 </mujoco>

@@ -60,14 +60,6 @@
         <mesh name="D_199_58" file="objects/D_199/D_199_58.stl"/>
         <mesh name="D_199_59" file="objects/D_199/D_199_59.stl"/>
         <mesh name="D_199_60" file="objects/D_199/D_199_60.stl"/>
-        <mesh name="D_199_61" file="objects/D_199/D_199_61.stl"/>
-        <mesh name="D_199_62" file="objects/D_199/D_199_62.stl"/>
-        <mesh name="D_199_63" file="objects/D_199/D_199_63.stl"/>
-        <mesh name="D_199_64" file="objects/D_199/D_199_64.stl"/>
-        <mesh name="D_199_65" file="objects/D_199/D_199_65.stl"/>
-        <mesh name="D_199_66" file="objects/D_199/D_199_66.stl"/>
-        <mesh name="D_199_67" file="objects/D_199/D_199_67.stl"/>
-        <mesh name="D_199_68" file="objects/D_199/D_199_68.stl"/>
         <mesh name="D_199_visual" file="objects/D_199/D_199_full.stl"/>
     </asset>
 </mujoco>

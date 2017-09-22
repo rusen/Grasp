@@ -47,6 +47,38 @@
         <mesh name="D_49_45" file="objects/D_49/D_49_45.stl"/>
         <mesh name="D_49_46" file="objects/D_49/D_49_46.stl"/>
         <mesh name="D_49_47" file="objects/D_49/D_49_47.stl"/>
+        <mesh name="D_49_48" file="objects/D_49/D_49_48.stl"/>
+        <mesh name="D_49_49" file="objects/D_49/D_49_49.stl"/>
+        <mesh name="D_49_50" file="objects/D_49/D_49_50.stl"/>
+        <mesh name="D_49_51" file="objects/D_49/D_49_51.stl"/>
+        <mesh name="D_49_52" file="objects/D_49/D_49_52.stl"/>
+        <mesh name="D_49_53" file="objects/D_49/D_49_53.stl"/>
+        <mesh name="D_49_54" file="objects/D_49/D_49_54.stl"/>
+        <mesh name="D_49_55" file="objects/D_49/D_49_55.stl"/>
+        <mesh name="D_49_56" file="objects/D_49/D_49_56.stl"/>
+        <mesh name="D_49_57" file="objects/D_49/D_49_57.stl"/>
+        <mesh name="D_49_58" file="objects/D_49/D_49_58.stl"/>
+        <mesh name="D_49_59" file="objects/D_49/D_49_59.stl"/>
+        <mesh name="D_49_60" file="objects/D_49/D_49_60.stl"/>
+        <mesh name="D_49_61" file="objects/D_49/D_49_61.stl"/>
+        <mesh name="D_49_62" file="objects/D_49/D_49_62.stl"/>
+        <mesh name="D_49_63" file="objects/D_49/D_49_63.stl"/>
+        <mesh name="D_49_64" file="objects/D_49/D_49_64.stl"/>
+        <mesh name="D_49_65" file="objects/D_49/D_49_65.stl"/>
+        <mesh name="D_49_66" file="objects/D_49/D_49_66.stl"/>
+        <mesh name="D_49_67" file="objects/D_49/D_49_67.stl"/>
+        <mesh name="D_49_68" file="objects/D_49/D_49_68.stl"/>
+        <mesh name="D_49_69" file="objects/D_49/D_49_69.stl"/>
+        <mesh name="D_49_70" file="objects/D_49/D_49_70.stl"/>
+        <mesh name="D_49_71" file="objects/D_49/D_49_71.stl"/>
+        <mesh name="D_49_72" file="objects/D_49/D_49_72.stl"/>
+        <mesh name="D_49_73" file="objects/D_49/D_49_73.stl"/>
+        <mesh name="D_49_74" file="objects/D_49/D_49_74.stl"/>
+        <mesh name="D_49_75" file="objects/D_49/D_49_75.stl"/>
+        <mesh name="D_49_76" file="objects/D_49/D_49_76.stl"/>
+        <mesh name="D_49_77" file="objects/D_49/D_49_77.stl"/>
+        <mesh name="D_49_78" file="objects/D_49/D_49_78.stl"/>
+        <mesh name="D_49_79" file="objects/D_49/D_49_79.stl"/>
         <mesh name="D_49_visual" file="objects/D_49/D_49_full.stl"/>
     </asset>
 </mujoco>

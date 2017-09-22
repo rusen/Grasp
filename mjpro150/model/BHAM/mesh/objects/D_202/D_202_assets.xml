@@ -9,6 +9,26 @@
         <mesh name="D_202_7" file="objects/D_202/D_202_7.stl"/>
         <mesh name="D_202_8" file="objects/D_202/D_202_8.stl"/>
         <mesh name="D_202_9" file="objects/D_202/D_202_9.stl"/>
+        <mesh name="D_202_10" file="objects/D_202/D_202_10.stl"/>
+        <mesh name="D_202_11" file="objects/D_202/D_202_11.stl"/>
+        <mesh name="D_202_12" file="objects/D_202/D_202_12.stl"/>
+        <mesh name="D_202_13" file="objects/D_202/D_202_13.stl"/>
+        <mesh name="D_202_14" file="objects/D_202/D_202_14.stl"/>
+        <mesh name="D_202_15" file="objects/D_202/D_202_15.stl"/>
+        <mesh name="D_202_16" file="objects/D_202/D_202_16.stl"/>
+        <mesh name="D_202_17" file="objects/D_202/D_202_17.stl"/>
+        <mesh name="D_202_18" file="objects/D_202/D_202_18.stl"/>
+        <mesh name="D_202_19" file="objects/D_202/D_202_19.stl"/>
+        <mesh name="D_202_20" file="objects/D_202/D_202_20.stl"/>
+        <mesh name="D_202_21" file="objects/D_202/D_202_21.stl"/>
+        <mesh name="D_202_22" file="objects/D_202/D_202_22.stl"/>
+        <mesh name="D_202_23" file="objects/D_202/D_202_23.stl"/>
+        <mesh name="D_202_24" file="objects/D_202/D_202_24.stl"/>
+        <mesh name="D_202_25" file="objects/D_202/D_202_25.stl"/>
+        <mesh name="D_202_26" file="objects/D_202/D_202_26.stl"/>
+        <mesh name="D_202_27" file="objects/D_202/D_202_27.stl"/>
+        <mesh name="D_202_28" file="objects/D_202/D_202_28.stl"/>
+        <mesh name="D_202_29" file="objects/D_202/D_202_29.stl"/>
         <mesh name="D_202_visual" file="objects/D_202/D_202_full.stl"/>
     </asset>
 </mujoco>

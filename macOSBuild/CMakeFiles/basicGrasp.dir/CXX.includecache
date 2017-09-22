@@ -1215,6 +1215,8 @@ cerrno
 -
 fstream
 -
+boost/filesystem.hpp
+-
 curlpp/cURLpp.hpp
 -
 curlpp/Easy.hpp
