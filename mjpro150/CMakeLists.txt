@@ -9,7 +9,7 @@ message("Starteda")
 if (APPLE)
 	add_compile_options(-O3 -I${PROJECT_SOURCE_DIR}/include -frounding-math)
 elseif (UNIX)
-	add_compile_options(-O3 -fopenmp -DBOOST_NO_CXX11_SCOPED_ENUMS -I${PROJECT_SOURCE_DIR}/include -mavx -frounding-math)
+	add_compile_options(-O3 -std=c++11 -fopenmp -DBOOST_NO_CXX11_SCOPED_ENUMS -I${PROJECT_SOURCE_DIR}/include -mavx -frounding-math)
 endif ()
 
 set(CMAKE_BUILD_TYPE Debug)
