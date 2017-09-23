@@ -9,8 +9,7 @@ message("Starteda")
 if (APPLE)
 	add_compile_options(-O3 -I${PROJECT_SOURCE_DIR}/include -frounding-math)
 elseif (UNIX)
-	add_compile_options(-O3 -fopenmp -I${PROJECT_SOURCE_DIR}/include -mavx -frounding-math)
-	set(OpenCV_DIR "${PROJECT_SOURCE_DIR}/lib/unix/opencv-3.2.0/release")
+	add_compile_options(-O3 -fopenmp -DBOOST_NO_CXX11_SCOPED_ENUMS -I${PROJECT_SOURCE_DIR}/include -mavx -frounding-math)
 endif ()
 
 set(CMAKE_BUILD_TYPE Debug)
@@ -65,7 +64,7 @@ add_library(${PROJECT_NAME} src/sensor/kinectSimulator.cpp src/sensor/noiseutils
 if (APPLE)
 	target_link_libraries(${PROJECT_NAME} -lmujoco150 -L${PROJECT_SOURCE_DIR}/lib/macos curl curlpp ${PCL_LIBRARIES} ${NOISE_LIBRARY} -lglfw.3 ${OpenCV_LIBS} ${LIBS} ${OPENGL_gl_LIBRARY})
 elseif (UNIX)
-	target_link_libraries(${PROJECT_NAME}  -fopenmp -lmujoco150  ${PCL_LIBRARIES} -lboost_system -L${PROJECT_SOURCE_DIR}/lib/unix curl curlpp -lGL -lglew -lglfw noise ${OpenCV_LIBS} ${LIBS} ${OPENGL_gl_LIBRARY})
+	target_link_libraries(${PROJECT_NAME}  -fopenmp -lmujoco150 -DBOOST_NO_CXX11_SCOPED_ENUMS ${PCL_LIBRARIES} -lboost_system -L${PROJECT_SOURCE_DIR}/lib/unix ${PROJECT_SOURCE_DIR}/lib/unix/libglfw.so.3 curl curlpp -lGL -lglew noise ${OpenCV_LIBS} ${LIBS} ${OPENGL_gl_LIBRARY})
 endif ()
 
 file(GLOB_RECURSE EXTRA_SOURCES "src/*/*.cpp")

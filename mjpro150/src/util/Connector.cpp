@@ -64,7 +64,9 @@ bool Connector::UploadFile(const char *name){
 		strcat(remotePath, SERVER_ADDRESS);
 
 		// Get filename and extension.
-		char * fn = strrchr(name, '/') + 1;
+		char tempName[1000];
+		strcpy(tempName, name);
+		char * fn = strrchr(tempName, '/') + 1;
 		strcat(remotePath, fn);
 		std::cout<<"Remote path:"<<remotePath<<std::endl;
 	    std::ifstream myStream( name, std::ios::binary);
@@ -166,7 +168,9 @@ bool Connector::DownloadFile(const char *name){
 			strcat(remotePath, "next");
 		else
 		{
-			char * fn = strrchr(name, '/') + 1;
+			char tempName[1000];
+			strcpy(tempName, name);
+			char * fn = strrchr(tempName, '/') + 1;
 			strcat(remotePath, fn);
 		}
 
