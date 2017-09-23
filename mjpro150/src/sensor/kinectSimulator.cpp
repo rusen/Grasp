@@ -156,7 +156,8 @@ pcl::PointCloud<pcl::PointXYZRGBNormal> * KinectSimulator::intersect(const mjMod
 				  glm::vec3 newCamPos,
 				  glm::vec3 newCamGaze,
 				  float minPointZ,
-				  char * rgbFile)
+				  char * rgbFile,
+				  std::ofstream * ostream)
   {
 
     // allocate memory for depth map
@@ -210,8 +211,8 @@ pcl::PointCloud<pcl::PointXYZRGBNormal> * KinectSimulator::intersect(const mjMod
     }
 
     rgbCam.elevation = (asin(normGaze[2]) * 180.0) / PI;
-    std::cout<<"RGB Azimuth Elevation Distance:"<<rgbCam.azimuth<<" "<<rgbCam.elevation<<" "<<rgbCam.distance<<std::endl;
-    std::cout<<"RGB Lookat:"<<rgbCamLookAt[0]<<" "<<rgbCamLookAt[1]<<" "<<rgbCamLookAt[2]<<std::endl;
+    (*ostream)<<"RGB Azimuth Elevation Distance:"<<rgbCam.azimuth<<" "<<rgbCam.elevation<<" "<<rgbCam.distance<<std::endl;
+    (*ostream)<<"RGB Lookat:"<<rgbCamLookAt[0]<<" "<<rgbCamLookAt[1]<<" "<<rgbCamLookAt[2]<<std::endl;
 
     mjrRect viewport = {0, 0, 640, 480};
 
@@ -246,14 +247,14 @@ pcl::PointCloud<pcl::PointXYZRGBNormal> * KinectSimulator::intersect(const mjMod
     cv::imwrite( rgbFile, out );
 
     // Print the vectors.
-    std::cout<<"CAM POS: "<< newCamPos[0]<<" "<< newCamPos[1]<<" "<< newCamPos[2]<<std::endl;
-    std::cout<<"RGB CAM POS: "<< rgbCamPos[0]<<" "<< rgbCamPos[1]<<" "<< rgbCamPos[2]<<std::endl;
-    std::cout<<"RGB CAM LOOKAT: "<< rgbCamLookAt[0]<<" "<< rgbCamLookAt[1]<<" "<< rgbCamLookAt[2]<<std::endl;
-    std::cout<<"CAM GAZE: "<< normGaze[0]<<" "<< normGaze[1]<<" "<< normGaze[2]<<std::endl;
-    std::cout<<"CAM VIEWPORT: "<< viewportCenter[0]<<" "<< viewportCenter[1]<<" "<< viewportCenter[2]<<std::endl;
-    std::cout<<"CAM RIGHT: "<< normRight[0]<<" "<< normRight[1]<<" "<< normRight[2]<<std::endl;
-    std::cout<<"CAM UP: "<< viewUp[0]<<" "<< viewUp[1]<<" "<< viewUp[2]<<std::endl;
-    std::cout<<"CAM 2 POS: "<< newCamPos2[0]<<" "<< newCamPos2[1]<<" "<< newCamPos2[2]<<std::endl;
+    (*ostream)<<"CAM POS: "<< newCamPos[0]<<" "<< newCamPos[1]<<" "<< newCamPos[2]<<std::endl;
+    (*ostream)<<"RGB CAM POS: "<< rgbCamPos[0]<<" "<< rgbCamPos[1]<<" "<< rgbCamPos[2]<<std::endl;
+    (*ostream)<<"RGB CAM LOOKAT: "<< rgbCamLookAt[0]<<" "<< rgbCamLookAt[1]<<" "<< rgbCamLookAt[2]<<std::endl;
+    (*ostream)<<"CAM GAZE: "<< normGaze[0]<<" "<< normGaze[1]<<" "<< normGaze[2]<<std::endl;
+    (*ostream)<<"CAM VIEWPORT: "<< viewportCenter[0]<<" "<< viewportCenter[1]<<" "<< viewportCenter[2]<<std::endl;
+    (*ostream)<<"CAM RIGHT: "<< normRight[0]<<" "<< normRight[1]<<" "<< normRight[2]<<std::endl;
+    (*ostream)<<"CAM UP: "<< viewUp[0]<<" "<< viewUp[1]<<" "<< viewUp[2]<<std::endl;
+    (*ostream)<<"CAM 2 POS: "<< newCamPos2[0]<<" "<< newCamPos2[1]<<" "<< newCamPos2[2]<<std::endl;
 
     // Create transformation vector for second camera.
 	glm::mat4 r, s, t, tOrg, p;
@@ -327,7 +328,7 @@ pcl::PointCloud<pcl::PointXYZRGBNormal> * KinectSimulator::intersect(const mjMod
 				if(abs(diff)<0.0001) {
 
 				  // get pixel position of ray in right image
-//				  std::cout<<"Actual point:"<<tempP[0]<<" "<<tempP[1]<<" "<<tempP[2]<<std::endl;
+//				  (*ostream)<<"Actual point:"<<tempP[0]<<" "<<tempP[1]<<" "<<tempP[2]<<std::endl;
 				  cv::Point2f left_pixel = camera_.project3dToPixel(tempP, TM);
 
 				  // quantize right_pixel

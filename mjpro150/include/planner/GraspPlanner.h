@@ -57,6 +57,7 @@ public:
 	int collisionPoints = 50, collisionCounter = 0;
 	bool collisionSet = false, collisionRun = true, hasCollided = false;
 	float* data = NULL;
+	std::ofstream *logStream = NULL;
 
 	// Upload and timeout time
 	time_t uploadTime = 0;

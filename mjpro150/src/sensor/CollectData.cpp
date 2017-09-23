@@ -14,7 +14,7 @@
 namespace Grasp{
 
 void CollectData(Simulate* Simulator, const mjModel* m, mjData* d,  mjvScene *scn, mjrContext *con, unsigned char* rgbBuffer, unsigned char* depthBuffer,
-		glm::vec3 cameraPos, glm::vec3 gazeDir, int * camSize, float minPointZ, bool*finishFlag)
+		glm::vec3 cameraPos, glm::vec3 gazeDir, int * camSize, float minPointZ, bool*finishFlag, std::ofstream * out)
 {
 	std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
 
@@ -23,7 +23,7 @@ void CollectData(Simulate* Simulator, const mjModel* m, mjData* d,  mjvScene *sc
 	int startIdx = (m->nbody-1);
 
 	// Get image from kinect camera.
-	Simulator->simulateMeasurement(m, d, scn, con, cameraPos, gazeDir, minPointZ);
+	Simulator->simulateMeasurement(m, d, scn, con, cameraPos, gazeDir, minPointZ, out);
 	if (Simulator->cloud->size() > 0)
 		pcl::PCDWriter().write(Simulator->cloudFile, *(Simulator->cloud), true);
 	else
@@ -51,8 +51,8 @@ void CollectData(Simulate* Simulator, const mjModel* m, mjData* d,  mjvScene *sc
 	*finishFlag = true;
 
 	std::chrono::steady_clock::time_point end= std::chrono::steady_clock::now();
-	std::cout<<"Depth image captured!"<<std::endl;
-	std::cout << "Time difference = " << std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count() <<std::endl;
+	(*out)<<"Depth image captured!"<<std::endl;
+	(*out) << "Time difference = " << std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count() <<std::endl;
 }
 
 }

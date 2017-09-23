@@ -80,12 +80,12 @@ namespace Grasp {
     	  delete cloud;
     }
 
-    void simulateMeasurement(const mjModel* m, mjData* d,  mjvScene *scn, mjrContext *con, glm::vec3 newCamPos, glm::vec3 newCamGaze, float minPointZ) {
+    void simulateMeasurement(const mjModel* m, mjData* d,  mjvScene *scn, mjrContext *con, glm::vec3 newCamPos, glm::vec3 newCamGaze, float minPointZ, std::ofstream *out) {
       countf++;
 
       // simulate measurement of object and store in image, point cloud and labeled image
       cv::Mat p_result;
-      cloud = object_model_->intersect(m, d, scn, con, rgbIm, depth_im_, newCamPos, newCamGaze, minPointZ, rgbFile);
+      cloud = object_model_->intersect(m, d, scn, con, rgbIm, depth_im_, newCamPos, newCamGaze, minPointZ, rgbFile, out);
       
       // store on disk
   	  std::stringstream lD;
@@ -145,7 +145,7 @@ namespace Grasp {
   };
 
   // Function to collect data from simulated Kinect camera.
-  void CollectData(Simulate* Simulator, const mjModel* m, mjData* d, mjvScene *scn, mjrContext *con, unsigned char* rgbBuffer, unsigned char* depthBuffer, glm::vec3 cameraPos, glm::vec3 gazeDir, int * camSize, float minPointZ, bool*finishFlag);
+  void CollectData(Simulate* Simulator, const mjModel* m, mjData* d, mjvScene *scn, mjrContext *con, unsigned char* rgbBuffer, unsigned char* depthBuffer, glm::vec3 cameraPos, glm::vec3 gazeDir, int * camSize, float minPointZ, bool*finishFlag, std::ofstream * out);
 
 } //namespace Grasp
 #endif // SIMULATE_H

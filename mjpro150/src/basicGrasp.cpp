@@ -109,11 +109,6 @@ void mouse_button(GLFWwindow* window, int button, int act, int mods)
     glfwGetCursorPos(window, &lastx, &lasty);
 }
 
-void print(glm::vec3 a){
-	std::cout<<a[0]<<" "<<a[1]<<" "<<a[2]<<std::endl;
-	return;
-}
-
 // mouse move callback
 void mouse_move(GLFWwindow* window, double xpos, double ypos)
 {
@@ -183,12 +178,12 @@ void graspObject(const mjModel* m, mjData* d){
 				findStableFlag = false;
 
 				// Print data.
-				std::cout<<"QPOS STABLE"<<std::endl;
+				(*(planner->logStream))<<"QPOS STABLE"<<std::endl;
 				for (int i = 0; i<m->nq; i++)
 				{
-					std::cout<<d->qpos[i]<<" ";
+					(*(planner->logStream))<<d->qpos[i]<<" ";
 				}
-				std::cout<<std::endl;
+				(*(planner->logStream))<<std::endl;
 			}
 
 			// Get last data
@@ -200,7 +195,7 @@ void graspObject(const mjModel* m, mjData* d){
      	if (planner->getGraspState() == Grasp::grasping && planner->counter == 0)
      	{
      		fprintf(outGraspDataFile, "#Time:%lf# Starting grasp %d.\n", d->time, planner->graspCounter);
-     		std::cout<<"#Time:"<<d->time<<"# Starting grasp "<<planner->graspCounter<<"."<<std::endl;
+     		(*(planner->logStream))<<"#Time:"<<d->time<<"# Starting grasp "<<planner->graspCounter<<"."<<std::endl;
      	}
 
      	if (planner->getGraspState() == Grasp::lifting && planner->counter == 0)
@@ -231,7 +226,7 @@ void graspObject(const mjModel* m, mjData* d){
      		float angle = acos(mju_dot3(res, vec)) / PI; // scaled to 0-1.
      		float distance = sqrt(pow(lastPos[0] - stablePos[0],2) + pow(lastPos[1] - stablePos[1],2) + pow(lastPos[2] - stablePos[2],2));
      		fprintf(outGraspDataFile, "#Time:%lf# Grasp %d has %f shift and %f rotation.\n", d->time, planner->graspCounter, distance, angle);
-     		std::cout<<"#Time:"<<d->time<<"# Grasp "<<planner->graspCounter<<" has "<<distance<<" shift and "<<angle<<" rotation."<<std::endl;
+     		(*(planner->logStream))<<"#Time:"<<d->time<<"# Grasp "<<planner->graspCounter<<" has "<<distance<<" shift and "<<angle<<" rotation."<<std::endl;
      	}
 
 		// If we're at the end of a stand state, save log data.
@@ -258,7 +253,7 @@ void graspObject(const mjModel* m, mjData* d){
      		float angle = acos(mju_dot3(res, vec)) / PI; // scaled to 0-1.
      		float distance = sqrt(pow(finalPos[0] - lastPos[0],2) + pow(finalPos[1] - lastPos[1],2) + pow(finalPos[2] - lastPos[2],2));
      		fprintf(outGraspDataFile, "#Time:%lf# Finished grasp %d. Grasp success: %d. Grasp shift: %f. In-hand rotation: %f.\n", d->time, planner->graspCounter, (int)graspSuccess, distance, angle);
-     		std::cout<<"#Time:"<<d->time<<"# Finished grasp "<<planner->graspCounter<<". Grasp success: "<<graspSuccess<<". Grasp shift: "<<distance<<". In-hand rotation: "<<angle<<"."<<std::endl;
+     		(*(planner->logStream))<<"#Time:"<<d->time<<"# Finished grasp "<<planner->graspCounter<<". Grasp success: "<<graspSuccess<<". Grasp shift: "<<distance<<". In-hand rotation: "<<angle<<"."<<std::endl;
      	}
 
 		// Perform grasping loop.
@@ -357,10 +352,6 @@ int main(int argc, const char** argv)
     	visualFlag = false;
 
     // Redirect cout to file.
-    std::ofstream out(planner->debugLogFile);
-    std::streambuf *coutbuf = std::cout.rdbuf(); //save old buf
-    std::cout.rdbuf(out.rdbuf()); //redirect std::cout to out.txt!
-    std::cerr.rdbuf(out.rdbuf()); //redirect std::err to out.txt!
     outGraspDataFile = fopen(planner->resultFile, "w");
 
     // Get random object, and relevant asset/object files.
@@ -440,7 +431,7 @@ int main(int argc, const char** argv)
 
     // Open out file.
     outFile = fopen(planner->logFile, "wb");
-    std::cout<<planner->logFile<<" opened!"<<std::endl;
+    (*(planner->logStream))<<planner->logFile<<" opened!"<<std::endl;
 
 	// Print header.
     writeHeader(m, d, outFile);
@@ -523,7 +514,6 @@ int main(int argc, const char** argv)
     // Close record file
     fclose(outFile);
     fclose(outGraspDataFile);
-    std::cout.rdbuf(coutbuf); //reset to standard output again
 
     // Upload the data.
     UploadFiles(argv[1], planner, objectId, baseId);

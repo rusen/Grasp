@@ -59,6 +59,7 @@ GraspPlanner::GraspPlanner(const char * dropboxBase) {
 	logFile [0] = debugLogFile[0] = pointFile [0] = rgbFile [0] = depthFile[0] = resultFile[0] = trajectoryFile[0] = 0; // Set to ""
 	strcat(logFile, localPrefix); strcat(debugLogFile, localPrefix); strcat(pointFile, localPrefix); strcat(rgbFile, localPrefix); strcat(depthFile, localPrefix); strcat(resultFile, localPrefix); strcat(trajectoryFile, prefix);
 	strcat(logFile, ".log"); strcat(debugLogFile, "_debug.log"); strcat(pointFile, ".pcd"); strcat(rgbFile, "_rgb.png"); strcat(depthFile, "_depth.png"); strcat(resultFile, ".gd"); strcat(trajectoryFile, ".trj");
+	logStream = new std::ofstream(debugLogFile);
 
     // Create and start kinect simulator.
 	CameraInfo camInfo;
@@ -72,7 +73,7 @@ GraspPlanner::GraspPlanner(const char * dropboxBase) {
     float radialR = (((float) (rand()%360))/360.0f) * (2*3.1416);
     glm::vec3 gazePosition = {((float) (rand()%100) - 50)/1000.0f, ((float) (rand()%100) - 50)/1000.0f, -0.35};
     glm::vec3 handPosition(cos(radialR) * (0.5 + ((float) (rand()%100) - 50)/1000.0f), sin(radialR) * (0.5 + ((float) (rand()%100) - 50)/1000.0f), ((float) (rand()%100) - 50)/1000.0f);
-    std::cout<<"Position of the hand:"<<handPosition[0]<<" "<<handPosition[1]<<" "<<handPosition[2]<<std::endl;
+    (*logStream)<<"Position of the hand:"<<handPosition[0]<<" "<<handPosition[1]<<" "<<handPosition[2]<<std::endl;
 
     // Calculate gaze dir.
     gazeDir = normalize(gazePosition - handPosition);
@@ -97,6 +98,8 @@ GraspPlanner::~GraspPlanner() {
     {
        boost::filesystem::remove_all(prefix);
     }
+    logStream->close();
+    delete logStream;
 
 	if (finalApproach != NULL)
 		delete finalApproach;
@@ -123,7 +126,7 @@ void GraspPlanner::ReadTrajectory(){
 	fread(&graspType, 4, 1, trjFP);
 	fread(&wpCount, 4, 1, trjFP);
 	finalApproach = new Path(wpCount+1);
-//	std::cout<<"Path has " << wpCount+1 << " waypoints."<<std::endl;
+//	(*logStream)<<"Path has " << wpCount+1 << " waypoints."<<std::endl;
 	for (int i = 1; i< wpCount+1; i++)
 	{
 		fread(wristPos, 4, 3, trjFP);
@@ -224,7 +227,7 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 		if (!startFlag)
 		{
 			startFlag = true;
-			CollectData(Simulator, m, d, scn, con, rgbBuffer, depthBuffer, cameraPos, gazeDir, camSize, minPointZ, &finishFlag);
+			CollectData(Simulator, m, d, scn, con, rgbBuffer, depthBuffer, cameraPos, gazeDir, camSize, minPointZ, &finishFlag, logStream);
 			if (!boost::filesystem::exists(Simulator->cloudFile))
 			{
 				graspState = done;
@@ -255,7 +258,7 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 
 			if (!success)
 			{
-				std::cout<< "Could not upload file " << fileId << std::endl;
+				(*logStream)<< "Could not upload file " << fileId << std::endl;
 				graspState = done;
 				break;
 			}
@@ -263,7 +266,7 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 			uploadTime = time(NULL);
 			startFlag = true;
 			success = false;
-			std::cout<< "Waiting for trajectories." << std::endl;
+			(*logStream)<< "Waiting for trajectories." << std::endl;
 		}
 		else
 		{
@@ -273,7 +276,7 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 			{
 				trjFP = fopen(trajectoryFile, "rb");
 				fread(&numberOfGrasps, 4, 1, trjFP);
-				std::cout<< "Number of grasps:" << numberOfGrasps << std::endl;
+				(*logStream)<< "Number of grasps:" << numberOfGrasps << std::endl;
 			}
 			else
 			{
@@ -290,7 +293,7 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 		if (success)
 		{
 			startFlag = false;
-			std::cout<<"Moving on to grasping."<<std::endl;
+			(*logStream)<<"Moving on to grasping."<<std::endl;
 
 			// Switch to grasping state.
 	    	graspState = pregrasp;
@@ -397,17 +400,17 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 		{
 			if (prevState  == checkingCollision && hasCollided)
 			{
-	//			std::cout<<"Collision! Moving on to the next grasp here."<<std::endl;
+	//			(*logStream)<<"Collision! Moving on to the next grasp here."<<std::endl;
 				graspState = pregrasp;
 			}
 			else if (prevState == stand)
 			{
-	//			std::cout<<"Successful grasp! Moving on to the next grasp."<<std::endl;
+	//			(*logStream)<<"Successful grasp! Moving on to the next grasp."<<std::endl;
 				graspState = pregrasp;
 			}
 			else
 			{
-		//		std::cout<<"Coming from "<<prevState<<". No collision in the checks. Perform grasp."<<std::endl;
+		//		(*logStream)<<"Coming from "<<prevState<<". No collision in the checks. Perform grasp."<<std::endl;
 				graspState = grasping;
 			}
 			counter = 0;
