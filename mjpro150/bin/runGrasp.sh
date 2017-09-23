@@ -2,7 +2,7 @@
 
 task(){
    PORT=$(((RANDOM<<15)|RANDOM))
-   ./basicGrasp ../model/BHAM /Users/rusi/Dropbox visualOff $PORT
+   ./basicGrasp ../model/BHAM /home/rusi/Dropbox visualOff $PORT
 }
 
 open_sem(){
