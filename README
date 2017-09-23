@@ -5,6 +5,7 @@ sudo apt-get update
 sudo apt-get install build-essential git cmake freeglut3-dev libopencv-dev python-opencv libpcl-all libnoise-dev libcurl4-openssl-dev libcurlpp-dev
 
 git clone https://gitlab.com/rusen/Grasp.git
+cd Grasp
 mkdir build
 cd build
 cmake ../mjpro150
