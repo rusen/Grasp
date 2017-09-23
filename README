@@ -1,0 +1,27 @@
+Ubuntu Installation Instructions:
+
+sudo apt-apt-repository ppa:v-launchpad-jochen-sprickerhof-de/pcl
+sudo apt-get update
+sudo apt-get install git build-essential freeglut3-dev libopencv-dev python-opencv libpcl-all libnoise-dev libcurlpp-dev
+
+git clone https://gitlab.com/rusen/Grasp.git
+mkdir build
+cd build
+cmake ../mjpro150
+make
+
+# Running the program
+First of all, the computer requires a special license file from mujoco.org, as explained here: https://www.roboti.us/license.html
+When the license file is obtained, it should be placed in mjpro150/bin directory, and should be renamed from (mjkey.txt) to (mjkey_unix.txt). This file should not be commited to git. Please keep a backup copy of this file in case it gets overwritten.
+
+Dropbox folder sharing invitations should be accepted (shared separately), and Dropbox path (e.g. /Users/username/Dropbox) should be entered in mjpro150/bin/runGrasp.sh. The $N parameter in that file should also be changed to the (number of cores+1) in the machine. Then, the user should:
+
+cd ../mjpro150/bin
+screen ./runGrasp.sh
+
+press (ctrl + a) , then (d) to leave screen window, and type (screen -x) to revisit the window later.
+To stop processing, you can go to the screen window by typing (screen -x) and pressing (ctrl + c). If the child processes do not stop, you can kill them all by typing:
+
+killall -v basicGrasp 
+
+The computer should be connected to the internet at all times. MUjoco grasp simulation uses Dropbox to access another machine in Birmingham, where point clouds are processed to obtain trajectories. The resulting log data is sent to an AWS machine, and is not kept locally after that. In case this server is down, the files are saved under mjpro/bin/tmp.
