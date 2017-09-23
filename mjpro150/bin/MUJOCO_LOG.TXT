@@ -59,3 +59,38 @@ WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. T
 Fri Sep 22 01:12:28 2017
 WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 376.2800.
 
+Sat Sep 23 10:23:17 2017
+ERROR: Load model error: XML Error: Include error: 'XML parse error at line 0, column 0:
+Failed to open file
+'
+Element 'include', line 8, column 5
+
+
+Sat Sep 23 10:23:17 2017
+ERROR: Load model error: XML Error: Include error: 'XML parse error at line 0, column 0:
+Failed to open file
+'
+Element 'include', line 8, column 5
+
+
+Sat Sep 23 10:23:35 2017
+ERROR: Load model error: XML Error: Include error: 'XML parse error at line 0, column 0:
+Failed to open file
+'
+Element 'include', line 8, column 5
+
+
+Sat Sep 23 10:24:30 2017
+ERROR: Load model error: XML Error: Include error: 'XML parse error at line 0, column 0:
+Failed to open file
+'
+Element 'include', line 8, column 5
+
+
+Sat Sep 23 10:25:57 2017
+ERROR: Load model error: XML Error: Include error: 'XML parse error at line 0, column 0:
+Failed to open file
+'
+Element 'include', line 8, column 5
+
+

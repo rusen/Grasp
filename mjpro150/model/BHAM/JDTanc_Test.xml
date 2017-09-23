@@ -1,8 +1,0 @@
-<mujoco model="BHAM">
-    <include file="include_BHAM.xml"/>
-    <include file="include_assets.xml"/>
-    <include file="JDTanc_include_light.xml"/>
-    <include file="JDTanc_include_table.xml"/>
-    <include file="JDTanc_include_object.xml"/>
-    <include file="JDTanc_include_object_assets.xml"/>
-</mujoco>

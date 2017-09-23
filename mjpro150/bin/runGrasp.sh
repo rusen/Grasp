@@ -23,7 +23,12 @@ run_with_lock(){
     )&
 }
 
-N=4
+# Delete temp files                                                                                                                                                                                     
+rm -rf ./tmp
+rm -rf ../model/BHAM/*_include*.xml
+rm -rf ../model/BHAM/*_Test.xml
+
+N=6
 open_sem $N
 while true; do
     run_with_lock task
