@@ -94,3 +94,9 @@ Failed to open file
 Element 'include', line 8, column 5
 
 
+Sat Sep 23 22:26:57 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 30. The simulation is unstable. Time = 222.8980.
+
+Sat Sep 23 23:05:28 2017
+WARNING: Nan, Inf or huge value in QACC at DOF 26. The simulation is unstable. Time = 654.5180.
+

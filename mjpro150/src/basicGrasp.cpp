@@ -338,12 +338,17 @@ int main(int argc, const char** argv)
     planner = new Grasp::GraspPlanner(argv[2]);
     planner->randSeed = randSeed;
 
+    // Activate software
+    mj_activate("mjkey.txt");
+
+    /*
 	#ifdef __unix__
     // activate software
     mj_activate("mjkey_unix.txt");
 	#elif __APPLE__
     mj_activate("mjkey_macos.txt");
 	#endif
+	*/
 
     // Set visual flag based on input.
     if (!strcmp(argv[3], "visualOn"))

@@ -1,0 +1,295 @@
+Position of the hand:0.304038 0.398344 -0.043
+./tmp/data/tigWJi/tigWJi.log opened!
+QPOS STABLE
+-2.79939e-13 -4.60737e-13 9.99986 -1.43497e-05 1 3.26792e-07 8.51225e-07 0.000553746 0.0871958 0.0872529 0.087263 0.000108775 0.0897041 0.0877342 0.0873727 9.21992e-09 0.0897134 0.087736 0.0873731 -0.000108749 0.0897041 0.0877342 0.0873727 -0.00041927 0.0896762 0.0877289 0.0873715 0.0129554 -0.101057 -0.125969 0.697962 0.143443 0.196363 -0.673584 
+RGB Azimuth Elevation Distance:-126.411 -29.3516 1
+RGB Lookat:-0.253292 -0.334563 -0.446005
+CAM POS: 0.285808 0.350883 0.0441628
+RGB CAM POS: 0.264078 0.366909 0.0441628
+RGB CAM LOOKAT: -0.253292 -0.334563 -0.446005
+CAM GAZE: -0.517371 -0.701472 -0.490167
+CAM VIEWPORT: -0.231563 -0.35059 -0.446005
+CAM RIGHT: -0.804784 0.593568 0
+CAM UP: -0.290948 -0.394479 0.871628
+CAM 2 POS: 0.225449 0.3954 0.0441628
+Depth image captured!
+Time difference = 1992
+Waiting for trajectories.
+Number of grasps:92
+Moving on to grasping.
+#Time:1.476# Starting grasp 1.
+#Time:4.476# Grasp 1 has 0.00654859 shift and 0.00480868 rotation.
+#Time:8.078# Finished grasp 1. Grasp success: 1. Grasp shift: 0.00904615. In-hand rotation: 0.0814525.
+#Time:8.288# Starting grasp 2.
+#Time:11.288# Grasp 2 has 0.00455451 shift and 0.00162369 rotation.
+#Time:14.89# Finished grasp 2. Grasp success: 1. Grasp shift: 0.00727312. In-hand rotation: 0.0777111.
+#Time:15.1# Starting grasp 3.
+#Time:18.1# Grasp 3 has 0.00420765 shift and 0.00118617 rotation.
+#Time:21.702# Finished grasp 3. Grasp success: 1. Grasp shift: 0.00992039. In-hand rotation: 0.101771.
+#Time:21.912# Starting grasp 4.
+#Time:24.912# Grasp 4 has 0.00404451 shift and 0.00384654 rotation.
+#Time:28.514# Finished grasp 4. Grasp success: 1. Grasp shift: 0.00102917. In-hand rotation: 0.0115848.
+#Time:28.724# Starting grasp 5.
+#Time:31.724# Grasp 5 has 0.0142549 shift and 0.0187064 rotation.
+#Time:35.326# Finished grasp 5. Grasp success: 0. Grasp shift: 1.00825. In-hand rotation: 0.0309392.
+#Time:35.536# Starting grasp 6.
+#Time:38.536# Grasp 6 has 0.00861438 shift and 0.0133684 rotation.
+#Time:42.138# Finished grasp 6. Grasp success: 0. Grasp shift: 1.14689. In-hand rotation: 0.62225.
+#Time:42.348# Starting grasp 7.
+#Time:45.348# Grasp 7 has 0.00580325 shift and 0.00397606 rotation.
+#Time:48.95# Finished grasp 7. Grasp success: 1. Grasp shift: 0.00719783. In-hand rotation: 0.0698397.
+#Time:49.16# Starting grasp 8.
+#Time:52.16# Grasp 8 has 0.0190261 shift and 0.0207257 rotation.
+#Time:55.762# Finished grasp 8. Grasp success: 0. Grasp shift: 1.23684. In-hand rotation: 0.526821.
+#Time:55.972# Starting grasp 9.
+#Time:58.972# Grasp 9 has 0.00848405 shift and 0.00144804 rotation.
+#Time:62.574# Finished grasp 9. Grasp success: 1. Grasp shift: 0.0114203. In-hand rotation: 0.104897.
+#Time:62.784# Starting grasp 10.
+#Time:65.784# Grasp 10 has 0.0141982 shift and 0.0135401 rotation.
+#Time:69.386# Finished grasp 10. Grasp success: 1. Grasp shift: 0.00448457. In-hand rotation: 0.0815592.
+#Time:69.596# Starting grasp 11.
+#Time:72.596# Grasp 11 has 0.00404959 shift and 0.00257724 rotation.
+#Time:76.198# Finished grasp 11. Grasp success: 1. Grasp shift: 0.00192943. In-hand rotation: 0.0654061.
+#Time:76.408# Starting grasp 12.
+#Time:79.408# Grasp 12 has 0.0130347 shift and 0.0143861 rotation.
+#Time:83.01# Finished grasp 12. Grasp success: 1. Grasp shift: 0.00336739. In-hand rotation: 0.03365.
+#Time:83.22# Starting grasp 13.
+#Time:86.22# Grasp 13 has 0.0135004 shift and 0.0178271 rotation.
+#Time:89.822# Finished grasp 13. Grasp success: 0. Grasp shift: 1.00855. In-hand rotation: 0.0334744.
+#Time:90.032# Starting grasp 14.
+#Time:93.032# Grasp 14 has 0.011421 shift and 0.0151134 rotation.
+#Time:96.634# Finished grasp 14. Grasp success: 0. Grasp shift: 1.00833. In-hand rotation: 0.0455329.
+#Time:96.844# Starting grasp 15.
+#Time:99.844# Grasp 15 has 0.0112695 shift and 0.0147393 rotation.
+#Time:103.446# Finished grasp 15. Grasp success: 0. Grasp shift: 1.00808. In-hand rotation: 0.0439879.
+#Time:103.656# Starting grasp 16.
+#Time:106.656# Grasp 16 has 0.00278923 shift and 0.00282396 rotation.
+#Time:110.258# Finished grasp 16. Grasp success: 1. Grasp shift: 0.0031897. In-hand rotation: 0.0255381.
+#Time:110.468# Starting grasp 17.
+#Time:113.468# Grasp 17 has 0.0081593 shift and 0.00927729 rotation.
+#Time:117.07# Finished grasp 17. Grasp success: 1. Grasp shift: 0.00163824. In-hand rotation: 0.0232109.
+#Time:117.28# Starting grasp 18.
+#Time:120.28# Grasp 18 has 0.00477849 shift and 0.0012913 rotation.
+#Time:123.882# Finished grasp 18. Grasp success: 1. Grasp shift: 0.000977218. In-hand rotation: 0.00865925.
+#Time:124.092# Starting grasp 19.
+#Time:127.092# Grasp 19 has 0.00635259 shift and 0.00335758 rotation.
+#Time:130.694# Finished grasp 19. Grasp success: 1. Grasp shift: 0.00126288. In-hand rotation: 0.0132108.
+#Time:130.904# Starting grasp 20.
+#Time:133.904# Grasp 20 has 0.00513904 shift and 0.00469098 rotation.
+#Time:137.506# Finished grasp 20. Grasp success: 1. Grasp shift: 0.000880233. In-hand rotation: 0.00634428.
+#Time:137.716# Starting grasp 21.
+#Time:140.716# Grasp 21 has 0.0156161 shift and 0.0207449 rotation.
+#Time:144.318# Finished grasp 21. Grasp success: 0. Grasp shift: 1.01003. In-hand rotation: 0.0559796.
+#Time:144.528# Starting grasp 22.
+#Time:147.528# Grasp 22 has 0.0052812 shift and 0.00655737 rotation.
+#Time:151.13# Finished grasp 22. Grasp success: 1. Grasp shift: 0.00379624. In-hand rotation: 0.0390615.
+#Time:151.34# Starting grasp 23.
+#Time:154.34# Grasp 23 has 0.0124092 shift and 0.0164518 rotation.
+#Time:157.942# Finished grasp 23. Grasp success: 0. Grasp shift: 1.00876. In-hand rotation: 0.0498925.
+#Time:158.152# Starting grasp 24.
+#Time:161.152# Grasp 24 has 0.0104893 shift and 0.0137188 rotation.
+#Time:164.754# Finished grasp 24. Grasp success: 1. Grasp shift: 0.0052891. In-hand rotation: 0.106285.
+#Time:164.964# Starting grasp 25.
+#Time:167.964# Grasp 25 has 0.0120025 shift and 0.0158495 rotation.
+#Time:171.566# Finished grasp 25. Grasp success: 0. Grasp shift: 1.00865. In-hand rotation: 0.0453705.
+#Time:171.776# Starting grasp 26.
+#Time:174.776# Grasp 26 has 0.00706639 shift and 0.00568352 rotation.
+#Time:178.378# Finished grasp 26. Grasp success: 1. Grasp shift: 0.000982982. In-hand rotation: 0.0174332.
+#Time:178.588# Starting grasp 27.
+#Time:181.588# Grasp 27 has 0.0124701 shift and 0.0165274 rotation.
+#Time:185.19# Finished grasp 27. Grasp success: 0. Grasp shift: 1.00742. In-hand rotation: 0.0281858.
+#Time:185.4# Starting grasp 28.
+#Time:188.4# Grasp 28 has 0.00753192 shift and 0.00881337 rotation.
+#Time:192.002# Finished grasp 28. Grasp success: 1. Grasp shift: 0.00113871. In-hand rotation: 0.00842507.
+#Time:192.212# Starting grasp 29.
+#Time:195.212# Grasp 29 has 0.00408213 shift and 0.00445573 rotation.
+#Time:198.814# Finished grasp 29. Grasp success: 1. Grasp shift: 0.00243585. In-hand rotation: 0.0230073.
+#Time:199.024# Starting grasp 30.
+#Time:202.024# Grasp 30 has 0.00839574 shift and 0.0110088 rotation.
+#Time:205.626# Finished grasp 30. Grasp success: 0. Grasp shift: 1.00562. In-hand rotation: 0.0254391.
+#Time:205.836# Starting grasp 31.
+#Time:208.836# Grasp 31 has 0.00820576 shift and 0.0107196 rotation.
+#Time:212.438# Finished grasp 31. Grasp success: 1. Grasp shift: 0.00468253. In-hand rotation: 0.069646.
+#Time:212.648# Starting grasp 32.
+#Time:215.648# Grasp 32 has 0.00678144 shift and 0.00438081 rotation.
+#Time:219.25# Finished grasp 32. Grasp success: 1. Grasp shift: 0.00110819. In-hand rotation: 0.00558397.
+#Time:219.46# Starting grasp 33.
+#Time:222.46# Grasp 33 has 0.00594607 shift and 0.00137674 rotation.
+#Time:226.062# Finished grasp 33. Grasp success: 1. Grasp shift: 0.00169252. In-hand rotation: 0.0317928.
+#Time:226.272# Starting grasp 34.
+#Time:229.272# Grasp 34 has 0.0130959 shift and 0.0171059 rotation.
+#Time:232.874# Finished grasp 34. Grasp success: 0. Grasp shift: 1.00869. In-hand rotation: 0.0368631.
+#Time:233.084# Starting grasp 35.
+#Time:236.084# Grasp 35 has 0.00997171 shift and 0.0133159 rotation.
+#Time:239.686# Finished grasp 35. Grasp success: 0. Grasp shift: 1.0072. In-hand rotation: 0.0373714.
+#Time:239.896# Starting grasp 36.
+#Time:242.896# Grasp 36 has 0.00961915 shift and 0.0112703 rotation.
+#Time:246.498# Finished grasp 36. Grasp success: 1. Grasp shift: 0.00107103. In-hand rotation: 0.00754537.
+#Time:246.708# Starting grasp 37.
+#Time:249.708# Grasp 37 has 0.00960198 shift and 0.0126852 rotation.
+#Time:253.31# Finished grasp 37. Grasp success: 1. Grasp shift: 0.00125562. In-hand rotation: 0.00658391.
+#Time:253.52# Starting grasp 38.
+#Time:256.52# Grasp 38 has 0.00922158 shift and 0.0118332 rotation.
+#Time:260.122# Finished grasp 38. Grasp success: 1. Grasp shift: 0.00468631. In-hand rotation: 0.0413323.
+#Time:260.332# Starting grasp 39.
+#Time:263.332# Grasp 39 has 0.00851786 shift and 0.0117382 rotation.
+#Time:266.934# Finished grasp 39. Grasp success: 1. Grasp shift: 0.00139247. In-hand rotation: 0.00909008.
+#Time:267.144# Starting grasp 40.
+#Time:270.144# Grasp 40 has 0.00626818 shift and 0.00783035 rotation.
+#Time:273.746# Finished grasp 40. Grasp success: 1. Grasp shift: 0.00176226. In-hand rotation: 0.0044548.
+#Time:273.956# Starting grasp 41.
+#Time:276.956# Grasp 41 has 0.00731635 shift and 0.00927363 rotation.
+#Time:280.558# Finished grasp 41. Grasp success: 1. Grasp shift: 0.00477465. In-hand rotation: 0.028704.
+#Time:280.768# Starting grasp 42.
+#Time:283.768# Grasp 42 has 0.00471035 shift and 0.00609968 rotation.
+#Time:287.37# Finished grasp 42. Grasp success: 1. Grasp shift: 0.00483093. In-hand rotation: 0.054223.
+#Time:287.58# Starting grasp 43.
+#Time:290.58# Grasp 43 has 0.00703508 shift and 0.0103594 rotation.
+#Time:294.182# Finished grasp 43. Grasp success: 1. Grasp shift: 0.00253351. In-hand rotation: 0.014932.
+#Time:294.392# Starting grasp 44.
+#Time:297.392# Grasp 44 has 0.0102879 shift and 0.0130737 rotation.
+#Time:300.994# Finished grasp 44. Grasp success: 1. Grasp shift: 0.00320049. In-hand rotation: 0.0345817.
+#Time:301.204# Starting grasp 45.
+#Time:304.204# Grasp 45 has 0.00586291 shift and 0.00857735 rotation.
+#Time:307.806# Finished grasp 45. Grasp success: 0. Grasp shift: 0.998718. In-hand rotation: 0.196563.
+#Time:308.016# Starting grasp 46.
+#Time:311.016# Grasp 46 has 0.0107418 shift and 0.0132751 rotation.
+#Time:314.618# Finished grasp 46. Grasp success: 1. Grasp shift: 0.00655002. In-hand rotation: 0.091372.
+#Time:314.828# Starting grasp 47.
+#Time:317.828# Grasp 47 has 0.00494296 shift and 0.00632369 rotation.
+#Time:321.43# Finished grasp 47. Grasp success: 1. Grasp shift: 0.00106773. In-hand rotation: 0.00867657.
+#Time:321.64# Starting grasp 48.
+#Time:324.64# Grasp 48 has 0.00514531 shift and 0.00505673 rotation.
+#Time:328.242# Finished grasp 48. Grasp success: 1. Grasp shift: 0.00597898. In-hand rotation: 0.0994499.
+#Time:328.452# Starting grasp 49.
+#Time:331.452# Grasp 49 has 0.00955384 shift and 0.0122587 rotation.
+#Time:335.054# Finished grasp 49. Grasp success: 1. Grasp shift: 0.00571935. In-hand rotation: 0.102257.
+#Time:335.264# Starting grasp 50.
+#Time:338.264# Grasp 50 has 0.00376275 shift and 0.00281353 rotation.
+#Time:341.866# Finished grasp 50. Grasp success: 1. Grasp shift: 0.00934243. In-hand rotation: 0.0577793.
+#Time:342.076# Starting grasp 51.
+#Time:345.076# Grasp 51 has 0.0103998 shift and 0.0150756 rotation.
+#Time:348.678# Finished grasp 51. Grasp success: 1. Grasp shift: 0.00221395. In-hand rotation: 0.0117029.
+#Time:348.888# Starting grasp 52.
+#Time:351.888# Grasp 52 has 0.0181711 shift and 0.022945 rotation.
+#Time:355.49# Finished grasp 52. Grasp success: 1. Grasp shift: 0.00457639. In-hand rotation: 0.107854.
+#Time:355.7# Starting grasp 53.
+#Time:358.7# Grasp 53 has 0.0114194 shift and 0.0143163 rotation.
+#Time:362.302# Finished grasp 53. Grasp success: 1. Grasp shift: 0.00672454. In-hand rotation: 0.0833932.
+#Time:362.512# Starting grasp 54.
+#Time:365.512# Grasp 54 has 0.0102559 shift and 0.0134268 rotation.
+#Time:369.114# Finished grasp 54. Grasp success: 1. Grasp shift: 0.00112555. In-hand rotation: 0.00513984.
+#Time:369.324# Starting grasp 55.
+#Time:372.324# Grasp 55 has 0.0102811 shift and 0.00808209 rotation.
+#Time:375.926# Finished grasp 55. Grasp success: 1. Grasp shift: 0.00333934. In-hand rotation: 0.0508718.
+#Time:376.136# Starting grasp 56.
+#Time:379.136# Grasp 56 has 0.00993024 shift and 0.0125319 rotation.
+#Time:382.738# Finished grasp 56. Grasp success: 0. Grasp shift: 1.39941. In-hand rotation: 0.569672.
+#Time:382.948# Starting grasp 57.
+#Time:385.948# Grasp 57 has 0.00845061 shift and 0.0104976 rotation.
+#Time:389.55# Finished grasp 57. Grasp success: 0. Grasp shift: 1.00516. In-hand rotation: 0.0165624.
+#Time:389.76# Starting grasp 58.
+#Time:392.76# Grasp 58 has 0.00612405 shift and 0.0233313 rotation.
+#Time:396.362# Finished grasp 58. Grasp success: 0. Grasp shift: 0.996362. In-hand rotation: 0.043995.
+#Time:396.572# Starting grasp 59.
+#Time:399.572# Grasp 59 has 0.00698576 shift and 0.0092082 rotation.
+#Time:403.174# Finished grasp 59. Grasp success: 0. Grasp shift: 1.00383. In-hand rotation: 0.0161257.
+#Time:403.384# Starting grasp 60.
+#Time:406.384# Grasp 60 has 0.0095493 shift and 0.0120884 rotation.
+#Time:409.986# Finished grasp 60. Grasp success: 0. Grasp shift: 1.00557. In-hand rotation: 0.0163492.
+#Time:410.196# Starting grasp 61.
+#Time:413.196# Grasp 61 has 0.0179988 shift and 0.0242376 rotation.
+#Time:416.798# Finished grasp 61. Grasp success: 0. Grasp shift: 1.24985. In-hand rotation: 0.37576.
+#Time:417.008# Starting grasp 62.
+#Time:420.008# Grasp 62 has 0.0224048 shift and 0.0294966 rotation.
+#Time:423.61# Finished grasp 62. Grasp success: 1. Grasp shift: 0.0137931. In-hand rotation: 0.037358.
+#Time:423.82# Starting grasp 63.
+#Time:426.82# Grasp 63 has 0.0186234 shift and 0.0243609 rotation.
+#Time:430.422# Finished grasp 63. Grasp success: 0. Grasp shift: 1.01056. In-hand rotation: 0.0528547.
+#Time:430.632# Starting grasp 64.
+#Time:433.632# Grasp 64 has 0.0188305 shift and 0.0246784 rotation.
+#Time:437.234# Finished grasp 64. Grasp success: 0. Grasp shift: 1.01046. In-hand rotation: 0.0440689.
+#Time:437.444# Starting grasp 65.
+#Time:440.444# Grasp 65 has 0.023367 shift and 0.0299335 rotation.
+#Time:444.046# Finished grasp 65. Grasp success: 0. Grasp shift: 1.01396. In-hand rotation: 0.079049.
+#Time:444.256# Starting grasp 66.
+#Time:447.256# Grasp 66 has 0.0103305 shift and 0.0131503 rotation.
+#Time:450.858# Finished grasp 66. Grasp success: 0. Grasp shift: 1.00477. In-hand rotation: 0.0147791.
+#Time:451.068# Starting grasp 67.
+#Time:454.068# Grasp 67 has 0.0174168 shift and 0.0190057 rotation.
+#Time:457.67# Finished grasp 67. Grasp success: 0. Grasp shift: 1.23986. In-hand rotation: 0.521182.
+#Time:457.88# Starting grasp 68.
+#Time:460.88# Grasp 68 has 0.0131902 shift and 0.0160983 rotation.
+#Time:464.482# Finished grasp 68. Grasp success: 1. Grasp shift: 0.00184542. In-hand rotation: 0.0176197.
+#Time:464.692# Starting grasp 69.
+#Time:467.692# Grasp 69 has 0.0120335 shift and 0.0156366 rotation.
+#Time:471.294# Finished grasp 69. Grasp success: 0. Grasp shift: 1.00757. In-hand rotation: 0.0285046.
+#Time:471.504# Starting grasp 70.
+#Time:474.504# Grasp 70 has 0.018607 shift and 0.0241097 rotation.
+#Time:478.106# Finished grasp 70. Grasp success: 0. Grasp shift: 1.01084. In-hand rotation: 0.0571604.
+#Time:478.316# Starting grasp 71.
+#Time:481.316# Grasp 71 has 0.0217396 shift and 0.0285719 rotation.
+#Time:484.918# Finished grasp 71. Grasp success: 0. Grasp shift: 1.01182. In-hand rotation: 0.044103.
+#Time:485.128# Starting grasp 72.
+#Time:488.128# Grasp 72 has 0.0204305 shift and 0.0257752 rotation.
+#Time:491.73# Finished grasp 72. Grasp success: 0. Grasp shift: 1.01256. In-hand rotation: 0.0832086.
+#Time:491.94# Starting grasp 73.
+#Time:494.94# Grasp 73 has 0.0204287 shift and 0.0266155 rotation.
+#Time:498.542# Finished grasp 73. Grasp success: 0. Grasp shift: 1.01064. In-hand rotation: 0.0455076.
+#Time:498.752# Starting grasp 74.
+#Time:501.752# Grasp 74 has 0.0219126 shift and 0.0282933 rotation.
+#Time:505.354# Finished grasp 74. Grasp success: 0. Grasp shift: 1.01042. In-hand rotation: 0.0347284.
+#Time:505.564# Starting grasp 75.
+#Time:508.564# Grasp 75 has 0.0280524 shift and 0.0354829 rotation.
+#Time:512.166# Finished grasp 75. Grasp success: 0. Grasp shift: 1.01532. In-hand rotation: 0.0881566.
+#Time:512.376# Starting grasp 76.
+#Time:515.376# Grasp 76 has 0.00661349 shift and 0.00930196 rotation.
+#Time:518.978# Finished grasp 76. Grasp success: 0. Grasp shift: 1.00292. In-hand rotation: 0.0275261.
+#Time:519.188# Starting grasp 77.
+#Time:522.188# Grasp 77 has 0.021315 shift and 0.0275896 rotation.
+#Time:525.79# Finished grasp 77. Grasp success: 0. Grasp shift: 1.01163. In-hand rotation: 0.0602801.
+#Time:526# Starting grasp 78.
+#Time:529# Grasp 78 has 0.0274753 shift and 0.0361787 rotation.
+#Time:532.602# Finished grasp 78. Grasp success: 0. Grasp shift: 1.0149. In-hand rotation: 0.0460107.
+#Time:532.812# Starting grasp 79.
+#Time:535.812# Grasp 79 has 0.00866769 shift and 0.0112522 rotation.
+#Time:539.414# Finished grasp 79. Grasp success: 0. Grasp shift: 1.00495. In-hand rotation: 0.0136303.
+#Time:539.624# Starting grasp 80.
+#Time:542.624# Grasp 80 has 0.0232185 shift and 0.0324188 rotation.
+#Time:546.226# Finished grasp 80. Grasp success: 1. Grasp shift: 0.00671018. In-hand rotation: 0.0636377.
+#Time:546.436# Starting grasp 81.
+#Time:549.436# Grasp 81 has 0.0234979 shift and 0.0320581 rotation.
+#Time:553.038# Finished grasp 81. Grasp success: 0. Grasp shift: 1.01069. In-hand rotation: 0.0359134.
+#Time:553.248# Starting grasp 82.
+#Time:556.248# Grasp 82 has 0.0135749 shift and 0.0180978 rotation.
+#Time:559.85# Finished grasp 82. Grasp success: 0. Grasp shift: 1.00777. In-hand rotation: 0.0240364.
+#Time:560.06# Starting grasp 83.
+#Time:563.06# Grasp 83 has 0.0356796 shift and 0.0480731 rotation.
+#Time:566.662# Finished grasp 83. Grasp success: 1. Grasp shift: 0.00340583. In-hand rotation: 0.0131346.
+#Time:566.872# Starting grasp 84.
+#Time:569.872# Grasp 84 has 0.0377935 shift and 0.047512 rotation.
+#Time:573.474# Finished grasp 84. Grasp success: 0. Grasp shift: 1.00324. In-hand rotation: 0.0459857.
+#Time:573.684# Starting grasp 85.
+#Time:576.684# Grasp 85 has 0.0732421 shift and 0.116105 rotation.
+#Time:580.286# Finished grasp 85. Grasp success: 0. Grasp shift: 0.998818. In-hand rotation: 0.0464592.
+#Time:580.496# Starting grasp 86.
+#Time:583.496# Grasp 86 has 0.0125772 shift and 0.0150353 rotation.
+#Time:587.098# Finished grasp 86. Grasp success: 0. Grasp shift: 1.00897. In-hand rotation: 0.029772.
+#Time:587.308# Starting grasp 87.
+#Time:590.308# Grasp 87 has 0.0196412 shift and 0.0315671 rotation.
+#Time:593.91# Finished grasp 87. Grasp success: 1. Grasp shift: 0.00457611. In-hand rotation: 0.0140742.
+#Time:594.12# Starting grasp 88.
+#Time:597.12# Grasp 88 has 0.0236636 shift and 0.03009 rotation.
+#Time:600.722# Finished grasp 88. Grasp success: 0. Grasp shift: 1.00825. In-hand rotation: 0.0306443.
+#Time:600.932# Starting grasp 89.
+#Time:603.932# Grasp 89 has 9.69506e-06 shift and 1.95547e-05 rotation.
+#Time:607.534# Finished grasp 89. Grasp success: 0. Grasp shift: 1.00249. In-hand rotation: 0.152417.
+#Time:607.744# Starting grasp 90.
+#Time:610.744# Grasp 90 has 0.0341551 shift and 0.0470337 rotation.
+#Time:614.346# Finished grasp 90. Grasp success: 0. Grasp shift: 1.25684. In-hand rotation: 0.452965.
+#Time:614.556# Starting grasp 91.
+#Time:617.556# Grasp 91 has 0.0184851 shift and 0.0233125 rotation.
+#Time:621.158# Finished grasp 91. Grasp success: 1. Grasp shift: 0.133641. In-hand rotation: 0.164609.
+#Time:621.368# Starting grasp 92.
+#Time:624.368# Grasp 92 has 0.0169139 shift and 0.0203471 rotation.
+#Time:627.97# Finished grasp 92. Grasp success: 0. Grasp shift: 1.01092. In-hand rotation: 0.0752552.
