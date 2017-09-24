@@ -12,10 +12,7 @@ cmake ../mjpro150
 make
 
 # Running the program
-First of all, the computer requires a special license file from mujoco.org, as explained here: https://www.roboti.us/license.html
-When the license file is obtained, it should be placed in mjpro150/bin directory, and should be renamed from (mjkey.txt) to (mjkey_unix.txt). This file should not be commited to git. Please keep a backup copy of this file in case it gets overwritten.
-
-Dropbox folder sharing invitations should be accepted (shared separately), and Dropbox path (e.g. /Users/username/Dropbox) should be entered in mjpro150/bin/runGrasp.sh. The $N parameter in that file should also be changed to the (number of cores+1) in the machine. Then, the user should:
+Dropbox folder sharing invitations should be accepted (shared separately), and Dropbox path (e.g. /Users/username/Dropbox) should be entered in mjpro150/bin/runGrasp.sh. The $N parameter in that file should also be changed to the (number of cores-1) in the machine, with an upper limit of 5. Then, the user should:
 
 cd ../mjpro150/bin
 screen ./runGrasp.sh
