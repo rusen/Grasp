@@ -2,7 +2,7 @@
 
 task(){
    PORT=$(((RANDOM<<15)|RANDOM))
-   ./basicGrasp ../model/BHAM /Users/rusi/Dropbox visualOff $PORT
+   ./basicGrasp ../model/BHAM /home/rusi/Dropbox visualOff $PORT
 }
 
 open_sem(){
@@ -28,7 +28,7 @@ rm -rf ./tmp
 rm -rf ../model/BHAM/*_include*.xml
 rm -rf ../model/BHAM/*_Test.xml
 
-N=6
+N=5
 open_sem $N
 while true; do
     run_with_lock task
