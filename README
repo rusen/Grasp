@@ -2,7 +2,7 @@ Ubuntu Installation Instructions:
 
 sudo add-apt-repository ppa:v-launchpad-jochen-sprickerhof-de/pcl
 sudo apt-get update
-sudo apt-get install build-essential git cmake freeglut3-dev libopencv-dev python-opencv libpcl-all libnoise-dev libcurl4-openssl-dev libcurlpp-dev parallel
+sudo apt-get install build-essential screen git cmake freeglut3-dev libopencv-dev python-opencv libpcl-all libnoise-dev libcurl4-openssl-dev libcurlpp-dev parallel
 
 git clone https://gitlab.com/rusen/Grasp.git
 cd Grasp
