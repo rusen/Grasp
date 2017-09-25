@@ -73,7 +73,7 @@ unsigned char addonBuffer[2400*4000];
 
 // Data output stuff
 FILE * outFile = NULL, *outGraspDataFile = NULL;
-int skipSteps = 5, ctr = 0;
+int skipSteps = 50, ctr = 0;
 
 // Joint info debugging data.
 double jointArr[20][6];

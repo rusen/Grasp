@@ -298,7 +298,7 @@ void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int ba
     if (boost::filesystem::exists(tmpStr))
     	boost::filesystem::remove(tmpStr);
 
-    //    uploadSuccess = uploadSuccess && Grasp::Connector::UploadFile(planner->logFile); // Currently off, too much data sent.
+    uploadSuccess = uploadSuccess && Connector::UploadFile(planner->logFile);
     uploadSuccess = uploadSuccess && Connector::UploadFile(planner->rgbFile);
     uploadSuccess = uploadSuccess && Connector::UploadFile(planner->depthFile);
     uploadSuccess = uploadSuccess && Connector::UploadFile(planner->trajectoryFile);
