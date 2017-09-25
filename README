@@ -12,7 +12,7 @@ cmake ../mjpro150
 make
 
 # Running the program
-Dropbox folder sharing invitations should be accepted (shared separately), and Dropbox path (e.g. /Users/username/Dropbox) should be entered in mjpro150/bin/runGrasp.sh. The $N parameter in that file should also be changed to the (number of cores-1) in the machine, with an upper limit of 5. Then, the user should:
+Dropbox folder sharing invitations should be accepted (shared separately), and Dropbox path (e.g. /Users/username/Dropbox) should be entered in mjpro150/bin/runGrasp.sh. The $N parameter in that file should also be changed to the (number of cores-1) in the machine, with an upper limit of 4 for Ubuntu. Then, the user should:
 
 cd ../mjpro150/bin
 screen ./runGrasp.sh
