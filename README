@@ -12,12 +12,19 @@ cmake ../mjpro150
 make
 
 # Running the program
-Dropbox folder sharing invitations should be accepted (shared separately), and Dropbox path (e.g. /Users/username/Dropbox) should be entered in mjpro150/bin/runGrasp.sh. The $N parameter in that file should also be changed to the (number of cores-1) in the machine, with an upper limit of 4 for Ubuntu. Then, the user should:
+Dropbox folder sharing invitations should be accepted (shared separately). This is how the program can be run:
 
 cd ../mjpro150/bin
-screen ./runGrasp.sh
+screen ./runGrasp.sh <number of processes> <Dropbox folder>
 
-press (ctrl + a) , then (d) to leave screen window, and type (screen -x) to revisit the window later.
+The script runs <number of processes> simultaneous processes at once. An example run is:
+
+screen ./runGrasp.sh 4 /home/username/Dropbox
+
+# Misc
+For Ubuntu 14.04, a number higher than 4 is causing crashes, hence a maximum number of 4 is recommended. For Mac, one can go higher. 
+
+After running the above command, press (ctrl + a) , then (d) to leave screen window, and type (screen -x) to revisit the window later.
 To stop processing, you can go to the screen window by typing (screen -x) and pressing (ctrl + c). If the child processes do not stop, you can kill them all by typing:
 
 killall -v basicGrasp 
