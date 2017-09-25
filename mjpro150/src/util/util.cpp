@@ -149,9 +149,8 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 	replaceAll(objectStr, std::string("friction=\"\""), std::string(tmp));
 
 	// Create random density
-	int density = rand()%6000; // 6 for metal, 0.5 for plastic.
+	int density = rand()%5000; // 6 for metal, 0.5 for plastic.
 	density = density + 500;
-	density = 5500;
 	sprintf(tmp, "density=\"%d\"", density);
 
 	// Replace density
