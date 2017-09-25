@@ -360,7 +360,8 @@ int main(int argc, const char** argv)
     outGraspDataFile = fopen(planner->resultFile, "w");
 
     // Get random object, and relevant asset/object files.
-    int objectId = rand()%objectCount + 1;
+//    int objectId = rand()%objectCount + 1;
+    int objectId = rand()%10 + 80;
     int baseId = rand()%13 + 1;
 
     // Modify the xml files with random parameters.

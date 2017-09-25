@@ -149,8 +149,9 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 	replaceAll(objectStr, std::string("friction=\"\""), std::string(tmp));
 
 	// Create random density
-	int density = rand()%500;
-	density = density + 100;
+	int density = rand()%6000; // 6 for metal, 0.5 for plastic.
+	density = density + 500;
+	density = 5500;
 	sprintf(tmp, "density=\"%d\"", density);
 
 	// Replace density
@@ -220,7 +221,7 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 	                 std::istreambuf_iterator<char>());
 	tTable.close();
 	intensity = (static_cast <float> (rand()) / static_cast <float> (RAND_MAX));
-	intensity = intensity/2 + 0.25; // [0.25 - 0.75]
+	intensity = intensity/2 + 0.3; // [0.3 - 0.8]
 	sprintf(tmp, "rgba=\"%f %f %f 1\"", intensity, intensity, intensity);
 	replaceAll(tableStr, std::string("rgba=\"\""), std::string(tmp));
 
