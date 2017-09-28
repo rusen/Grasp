@@ -499,11 +499,15 @@ void RemoveOldFolders(const char * dropboxBase){
 	boost::filesystem::directory_iterator end_itr;
 	bool uploadFlag = true;
 	char tmp[1000];
+	time_t curTime = time(NULL);
 
 	// Take the first file you see.
 	for (auto i = boost::filesystem::directory_iterator(p); i != boost::filesystem::directory_iterator(); i++)
 	{
-		std::cout<<i->path().string().c_str()<<std::endl;
+		time_t fileTime = boost::filesystem::last_write_time(i->path());
+		if (curTime - fileTime > 1800){
+			boost::filesystem::remove(i->path());
+		}
 	}
 }
 

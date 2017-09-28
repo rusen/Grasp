@@ -12,7 +12,7 @@ int main(int argc, const char** argv){
 	    Grasp::UploadExtraFiles(argv[1]);
 
 	    // Remove old folders from dropbox
-//	    Grasp::RemoveOldFolders(argv[1]);
+	    Grasp::RemoveOldFolders(argv[1]);
 
 	    // Sleep for 10 seconds and try again.
 		std::this_thread::sleep_for(std::chrono::seconds(10));
