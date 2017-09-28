@@ -482,7 +482,29 @@ void UploadExtraFiles(const char * dropboxBase){
 				break;
 		}
 	}
+}
 
+
+void RemoveOldFolders(const char * dropboxBase){
+	char tmpStr[1000];
+	strcpy(tmpStr, dropboxBase);
+	strcat(tmpStr, "/data");
+
+	// No such folder? Return.
+	if (!boost::filesystem::is_directory(tmpStr))
+		return;
+
+	// Try to upload all files under the $dropboxBase$/upload folder to the system.
+	boost::filesystem::path p(tmpStr);
+	boost::filesystem::directory_iterator end_itr;
+	bool uploadFlag = true;
+	char tmp[1000];
+
+	// Take the first file you see.
+	for (auto i = boost::filesystem::directory_iterator(p); i != boost::filesystem::directory_iterator(); i++)
+	{
+		std::cout<<i->path().string().c_str()<<std::endl;
+	}
 }
 
 
