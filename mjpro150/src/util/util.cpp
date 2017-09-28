@@ -506,7 +506,7 @@ void RemoveOldFolders(const char * dropboxBase){
 	{
 		time_t fileTime = boost::filesystem::last_write_time(i->path());
 		if (curTime - fileTime > 1800){
-			boost::filesystem::remove(i->path());
+			boost::filesystem::remove_all(i->path());
 		}
 	}
 }
