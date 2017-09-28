@@ -14,6 +14,7 @@
 namespace Grasp{
 std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, int baseId);
 void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int baseId);
+void UploadExtraFiles(const char * path);
 }
 
 #endif /* INCLUDE_UTIL_UTIL_H_ */

@@ -338,17 +338,26 @@ int main(int argc, const char** argv)
     planner = new Grasp::GraspPlanner(argv[2]);
     planner->randSeed = randSeed;
 
+    // Create dropbox directories
+    char tmpDropboxFolder[1000];
+    strcpy(tmpDropboxFolder, argv[2]);
+    strcat(tmpDropboxFolder, "/");
+    strcat(tmpDropboxFolder, "/points");
+	if (!boost::filesystem::is_directory(tmpDropboxFolder))
+		boost::filesystem::create_directories(tmpDropboxFolder);
+    strcpy(tmpDropboxFolder, argv[2]);
+    strcat(tmpDropboxFolder, "/");
+    strcat(tmpDropboxFolder, "/data");
+	if (!boost::filesystem::is_directory(tmpDropboxFolder))
+		boost::filesystem::create_directories(tmpDropboxFolder);
+    strcpy(tmpDropboxFolder, argv[2]);
+    strcat(tmpDropboxFolder, "/");
+    strcat(tmpDropboxFolder, "/upload");
+	if (!boost::filesystem::is_directory(tmpDropboxFolder))
+		boost::filesystem::create_directories(tmpDropboxFolder);
+
     // Activate software
     mj_activate("mjkey.txt");
-
-    /*
-	#ifdef __unix__
-    // activate software
-    mj_activate("mjkey_unix.txt");
-	#elif __APPLE__
-    mj_activate("mjkey_macos.txt");
-	#endif
-	*/
 
     // Set visual flag based on input.
     if (!strcmp(argv[3], "visualOn"))
@@ -378,6 +387,8 @@ int main(int argc, const char** argv)
         m = mj_loadXML(modelPath.c_str(), 0, error, 1000);
     if( !m )
         mju_error_s("Load model error: %s", error);
+
+    std::cout<<planner->dropboxFolder<<std::endl;
 
     // make data
     d = mj_makeData(m);

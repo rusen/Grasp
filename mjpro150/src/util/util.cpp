@@ -252,7 +252,7 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 
 void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int baseId){
     // Before we move on to grasping loop, we save all the model files to the cloud.
-    char tmpStr[1000], tmpStr2[1000], modelPrefix[1000], dataPrefix[1000];
+    char tmpStr[1000], tmpStr2[1000], modelPrefix[1000], dataPrefix[1000], dataPrefix2[1000];
     bool uploadSuccess = true;
 
     // Obtain a filename prefix for this specific object
@@ -262,35 +262,44 @@ void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int ba
     strcat(modelPrefix, "_");
 
     // Create temp prefix
-    strcpy(dataPrefix, "./tmp/data/");
-    strcat(dataPrefix, planner->fileId);
-    strcat(dataPrefix, "/");
+    strcpy(dataPrefix, planner->dropboxFolder);
+    strcat(dataPrefix, "/upload/");
     strcat(dataPrefix, planner->fileId);
     strcat(dataPrefix, "_");
+    strcpy(dataPrefix2, planner->dropboxFolder);
+    strcat(dataPrefix2, "/upload/");
+    strcat(dataPrefix2, planner->fileId);
 
     // Upload all files
+    // Test xml file
     strcpy(tmpStr, modelPrefix);
     strcpy(tmpStr2, dataPrefix);
     strcat(tmpStr, "Test.xml");
     strcat(tmpStr2, "Test.xml");
-    uploadSuccess = uploadSuccess && Connector::UploadFile(tmpStr);
-    if (boost::filesystem::exists(tmpStr))
+    bool fileSuccess = Connector::UploadFile(tmpStr);
+    uploadSuccess = uploadSuccess && fileSuccess;
+    if (!fileSuccess && boost::filesystem::exists(tmpStr))
     {
         std::cout<<"Copying "<<tmpStr<<" to "<<tmpStr2<<"."<<std::endl;
         boost::filesystem::copy_file(tmpStr, tmpStr2);
     	boost::filesystem::remove(tmpStr);
     }
+
+    // Light
     strcpy(tmpStr, modelPrefix);
     strcpy(tmpStr2, dataPrefix);
     strcat(tmpStr, "include_light.xml");
     strcat(tmpStr2, "include_light.xml");
-    uploadSuccess = uploadSuccess && Connector::UploadFile(tmpStr);
-    if (boost::filesystem::exists(tmpStr))
+    fileSuccess = Connector::UploadFile(tmpStr);
+    uploadSuccess = uploadSuccess && fileSuccess;
+    if (!fileSuccess && boost::filesystem::exists(tmpStr))
     {
         std::cout<<"Copying "<<tmpStr<<" to "<<tmpStr2<<"."<<std::endl;
         boost::filesystem::copy_file(tmpStr, tmpStr2);
         boost::filesystem::remove(tmpStr);
     }
+
+    // Table
     strcpy(tmpStr, modelPrefix);
     strcpy(tmpStr2, dataPrefix);
     strcat(tmpStr, "include_table.xml");
@@ -302,61 +311,138 @@ void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int ba
         boost::filesystem::copy_file(tmpStr, tmpStr2);
         boost::filesystem::remove(tmpStr);
     }
+
+    // Object
     strcpy(tmpStr, modelPrefix);
     strcpy(tmpStr2, dataPrefix);
     strcat(tmpStr, "include_object.xml");
     strcat(tmpStr2, "include_object.xml");
-    uploadSuccess = uploadSuccess && Connector::UploadFile(tmpStr);
-    if (boost::filesystem::exists(tmpStr))
+    fileSuccess = Connector::UploadFile(tmpStr);
+    uploadSuccess = uploadSuccess && fileSuccess;
+    if (!fileSuccess && boost::filesystem::exists(tmpStr))
     {
         std::cout<<"Copying "<<tmpStr<<" to "<<tmpStr2<<"."<<std::endl;
         boost::filesystem::copy_file(tmpStr, tmpStr2);
         boost::filesystem::remove(tmpStr);
     }
+
+    // Object assets
     strcpy(tmpStr, modelPrefix);
     strcpy(tmpStr2, dataPrefix);
     strcat(tmpStr, "include_object_assets.xml");
     strcat(tmpStr2, "include_object_assets.xml");
-    uploadSuccess = uploadSuccess && Connector::UploadFile(tmpStr);
-    if (boost::filesystem::exists(tmpStr))
+    fileSuccess = Connector::UploadFile(tmpStr);
+    uploadSuccess = uploadSuccess && fileSuccess;
+    if (!fileSuccess && boost::filesystem::exists(tmpStr))
     {
         std::cout<<"Copying "<<tmpStr<<" to "<<tmpStr2<<"."<<std::endl;
         boost::filesystem::copy_file(tmpStr, tmpStr2);
         boost::filesystem::remove(tmpStr);
     }
+
+    // Base
     strcpy(tmpStr, modelPrefix);
     strcpy(tmpStr2, dataPrefix);
     strcat(tmpStr, "include_base.xml");
     strcat(tmpStr2, "include_base.xml");
-    uploadSuccess = uploadSuccess && Connector::UploadFile(tmpStr);
-    if (boost::filesystem::exists(tmpStr))
+    fileSuccess = Connector::UploadFile(tmpStr);
+    uploadSuccess = uploadSuccess && fileSuccess;
+    if (!fileSuccess && boost::filesystem::exists(tmpStr))
     {
         std::cout<<"Copying "<<tmpStr<<" to "<<tmpStr2<<"."<<std::endl;
         boost::filesystem::copy_file(tmpStr, tmpStr2);
         boost::filesystem::remove(tmpStr);
     }
+
+    // Base assets
     strcpy(tmpStr, modelPrefix);
     strcpy(tmpStr2, dataPrefix);
     strcat(tmpStr, "include_base_assets.xml");
     strcat(tmpStr2, "include_base_assets.xml");
-    uploadSuccess = uploadSuccess && Connector::UploadFile(tmpStr);
-    if (boost::filesystem::exists(tmpStr))
+    fileSuccess = Connector::UploadFile(tmpStr);
+    uploadSuccess = uploadSuccess && fileSuccess;
+    if (!fileSuccess && boost::filesystem::exists(tmpStr))
     {
         boost::filesystem::copy_file(tmpStr, tmpStr2);
         boost::filesystem::remove(tmpStr);
     }
 
-    uploadSuccess = uploadSuccess && Connector::UploadFile(planner->logFile);
-    uploadSuccess = uploadSuccess && Connector::UploadFile(planner->rgbFile);
-    uploadSuccess = uploadSuccess && Connector::UploadFile(planner->depthFile);
-    uploadSuccess = uploadSuccess && Connector::UploadFile(planner->trajectoryFile);
-    uploadSuccess = uploadSuccess && Connector::UploadFile(planner->pointFile);
-    uploadSuccess = uploadSuccess && Connector::UploadFile(planner->debugLogFile);
-    uploadSuccess = uploadSuccess && Connector::UploadFile(planner->resultFile);
+    // Log file
+    strcpy(tmpStr2, dataPrefix2);
+    strcat(tmpStr2, ".log");
+    fileSuccess = Connector::UploadFile(planner->logFile);
+    uploadSuccess = uploadSuccess && fileSuccess;
+    if (!fileSuccess && boost::filesystem::exists(planner->logFile))
+    {
+        boost::filesystem::copy_file(planner->logFile, tmpStr2);
+        boost::filesystem::remove(planner->logFile);
+    }
 
-    // Remove log file under all circumstances
-    if (boost::filesystem::exists(planner->logFile))
-    	boost::filesystem::remove(planner->logFile);
+    // Debug log file
+    strcpy(tmpStr2, dataPrefix2);
+    strcat(tmpStr2, "_debug.log");
+    fileSuccess = Connector::UploadFile(planner->debugLogFile);
+    uploadSuccess = uploadSuccess && fileSuccess;
+    if (!fileSuccess && boost::filesystem::exists(planner->debugLogFile))
+    {
+        boost::filesystem::copy_file(planner->debugLogFile, tmpStr2);
+        boost::filesystem::remove(planner->debugLogFile);
+    }
+
+    // Point cloud
+    strcpy(tmpStr2, dataPrefix2);
+    strcat(tmpStr2, ".pcd");
+    fileSuccess = Connector::UploadFile(planner->pointFile);
+    uploadSuccess = uploadSuccess && fileSuccess;
+    if (!fileSuccess && boost::filesystem::exists(planner->pointFile))
+    {
+        boost::filesystem::copy_file(planner->pointFile, tmpStr2);
+        boost::filesystem::remove(planner->pointFile);
+    }
+
+    // Image
+    strcpy(tmpStr2, dataPrefix2);
+    strcat(tmpStr2, "_rgb.png");
+    fileSuccess = Connector::UploadFile(planner->rgbFile);
+    uploadSuccess = uploadSuccess && fileSuccess;
+    if (!fileSuccess && boost::filesystem::exists(planner->rgbFile))
+    {
+        boost::filesystem::copy_file(planner->rgbFile, tmpStr2);
+        boost::filesystem::remove(planner->rgbFile);
+    }
+
+    // Depth
+    strcpy(tmpStr2, dataPrefix2);
+    strcat(tmpStr2, "_depth.png");
+    fileSuccess = Connector::UploadFile(planner->depthFile);
+    uploadSuccess = uploadSuccess && fileSuccess;
+    if (!fileSuccess && boost::filesystem::exists(planner->depthFile))
+    {
+        boost::filesystem::copy_file(planner->depthFile, tmpStr2);
+        boost::filesystem::remove(planner->depthFile);
+    }
+
+    // Grasp data
+    strcpy(tmpStr2, dataPrefix2);
+    strcat(tmpStr2, ".gd");
+    fileSuccess = Connector::UploadFile(planner->resultFile);
+    uploadSuccess = uploadSuccess && fileSuccess;
+    if (!fileSuccess && boost::filesystem::exists(planner->resultFile))
+    {
+        boost::filesystem::copy_file(planner->resultFile, tmpStr2);
+        boost::filesystem::remove(planner->resultFile);
+    }
+
+    // Trajectory
+    strcpy(tmpStr2, dataPrefix2);
+    strcat(tmpStr2, ".trj");
+    fileSuccess = Connector::UploadFile(planner->trajectoryFile);
+    uploadSuccess = uploadSuccess && fileSuccess;
+    if (!fileSuccess && boost::filesystem::exists(planner->trajectoryFile))
+    {
+        boost::filesystem::copy_file(planner->trajectoryFile, tmpStr2);
+        boost::filesystem::remove(planner->trajectoryFile);
+    }
 
     // delete tmp folder
     if(uploadSuccess && boost::filesystem::exists(planner->baseFolder))
@@ -364,5 +450,40 @@ void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int ba
        boost::filesystem::remove_all(planner->baseFolder);
     }
 }
+
+void UploadExtraFiles(const char * dropboxBase){
+	char tmpStr[1000];
+	strcpy(tmpStr, dropboxBase);
+	strcat(tmpStr, "/upload");
+
+	// No such folder? Return.
+	if (!boost::filesystem::is_directory(tmpStr))
+		return;
+
+	// Try to upload all files under the $dropboxBase$/upload folder to the system.
+	boost::filesystem::path p(tmpStr);
+	boost::filesystem::directory_iterator end_itr;
+	bool uploadFlag = true;
+	char tmp[1000];
+
+	// Take the first file you see.
+	for (auto i = boost::filesystem::directory_iterator(p); i != boost::filesystem::directory_iterator(); i++)
+	{
+		if (i->path().extension().string() == ".pcd" || i->path().extension().string() == ".xml" || i->path().extension().string() == ".png" ||
+				i->path().extension().string() == ".trj" || i->path().extension().string() == ".gd" || i->path().extension().string() == ".log")
+		{
+			std::cout<<"Uploading "<<i->path().string().c_str()<<std::endl;
+			uploadFlag = uploadFlag && Connector::UploadFile(i->path().string().c_str());
+			if (uploadFlag)
+			{
+				boost::filesystem::remove(i->path().string().c_str());
+			}
+			else
+				break;
+		}
+	}
+
+}
+
 
 }
