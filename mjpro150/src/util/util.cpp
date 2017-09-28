@@ -252,7 +252,7 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 
 void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int baseId){
     // Before we move on to grasping loop, we save all the model files to the cloud.
-    char tmpStr[1000], tmpStr2[1000], modelPrefix[1000], dataPrefix[1000], dataPrefix2[1000];
+    char tmpStr[1000], tmpStr2[1000], modelPrefix[1000], dataPrefix[1000], dataPrefix2[1000], selfDropboxFolder[1000];
     bool uploadSuccess = true;
 
     // Obtain a filename prefix for this specific object
@@ -445,7 +445,7 @@ void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int ba
     }
 
     // delete tmp folder
-    if(uploadSuccess && boost::filesystem::exists(planner->baseFolder))
+    if(boost::filesystem::exists(planner->baseFolder))
     {
        boost::filesystem::remove_all(planner->baseFolder);
     }
