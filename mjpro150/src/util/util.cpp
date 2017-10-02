@@ -304,8 +304,9 @@ void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int ba
     strcpy(tmpStr2, dataPrefix);
     strcat(tmpStr, "include_table.xml");
     strcat(tmpStr2, "include_table.xml");
-    uploadSuccess = uploadSuccess && Connector::UploadFile(tmpStr);
-    if (boost::filesystem::exists(tmpStr))
+    fileSuccess = Connector::UploadFile(tmpStr);
+    uploadSuccess = uploadSuccess && fileSuccess;
+    if (!fileSuccess && boost::filesystem::exists(tmpStr))
     {
         std::cout<<"Copying "<<tmpStr<<" to "<<tmpStr2<<"."<<std::endl;
         boost::filesystem::copy_file(tmpStr, tmpStr2);
