@@ -368,6 +368,7 @@ void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int ba
         boost::filesystem::remove(tmpStr);
     }
 
+    /*
     // Log file
     strcpy(tmpStr2, dataPrefix2);
     strcat(tmpStr2, ".log");
@@ -378,6 +379,7 @@ void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int ba
         boost::filesystem::copy_file(planner->logFile, tmpStr2);
         boost::filesystem::remove(planner->logFile);
     }
+    */
 
     // Debug log file
     strcpy(tmpStr2, dataPrefix2);
