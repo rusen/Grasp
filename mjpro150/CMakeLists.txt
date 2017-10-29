@@ -72,10 +72,13 @@ file(GLOB_RECURSE EXTRA_SOURCES "src/*/*.cpp")
 
 add_executable(basicGrasp src/basicGrasp.cpp ${EXTRA_SOURCES})
 add_executable(playlog src/playlog.cpp ${EXTRA_SOURCES})
+add_executable(sampleTrajectories src/sampleTrajectories.cpp ${EXTRA_SOURCES})
 add_executable(uploadFiles src/uploadFiles.cpp ${EXTRA_SOURCES})
 
 target_link_libraries(basicGrasp ${PROJECT_NAME} curlpp)
 target_link_libraries(basicGrasp ${OpenCV_LIBS})
+target_link_libraries(sampleTrajectories ${PROJECT_NAME})
+target_link_libraries(sampleTrajectories ${OpenCV_LIBS})
 target_link_libraries(playlog ${PROJECT_NAME})
 target_link_libraries(playlog ${OpenCV_LIBS})
 target_link_libraries(uploadFiles ${PROJECT_NAME})
