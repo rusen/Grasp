@@ -31,7 +31,6 @@
 #include <glm/gtx/quaternion.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
-#include <OpenGL/glu.h>
 
 #define PI 3.14159265
 
@@ -360,6 +359,14 @@ int main(int argc, const char** argv)
 	{
 		// Read trajectory info
 		int numberOfGrasps = 0;
+
+		// File 1
+		std::ifstream t(i->path().string().c_str());
+		std::string str((std::istreambuf_iterator<char>(t)),
+		                 std::istreambuf_iterator<char>());
+		i++;
+
+		// File 2
 		std::cout <<i->path().string().c_str()<<std::endl;
 		FILE * trjFP = fopen(i->path().string().c_str(), "rb");
 		char newFile[1000];
@@ -368,15 +375,9 @@ int main(int argc, const char** argv)
 		strcat(newFile, ".trj");
 		FILE * newTrjFP = fopen(newFile, "wb");
 		fread(&numberOfGrasps, 4, 1, trjFP);
-		i++;
-
-		// Get frame info.
-		float posx, posy, posz, gazex, gazey, gazez, upx, upy, upz, rightx, righty, rightz;
-		std::ifstream t(i->path().string().c_str());
-		std::string str((std::istreambuf_iterator<char>(t)),
-		                 std::istreambuf_iterator<char>());
 
 		// Read camera parameters
+		float posx, posy, posz, gazex, gazey, gazez, upx, upy, upz, rightx, righty, rightz;
 		std::size_t found = str.find(std::string("RGB CAM POS:")) + 12;
 		sscanf(str.c_str() + found, "%f %f %f", &posx, &posy, &posz);
 		found = str.find(std::string("CAM GAZE:")) + 9;
