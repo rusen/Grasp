@@ -360,7 +360,7 @@ int main(int argc, const char** argv)
 	{
 		// Read trajectory info
 		int numberOfGrasps = 0;
-//		std::cout << i->path().string()<<std::endl;
+		std::cout <<i->path().string().c_str()<<std::endl;
 		FILE * trjFP = fopen(i->path().string().c_str(), "rb");
 		char newFile[1000];
 		strcpy(newFile, "./processedTrj/");
