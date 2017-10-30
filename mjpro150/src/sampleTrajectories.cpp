@@ -357,17 +357,15 @@ int main(int argc, const char** argv)
 	int count = 0;
 	for (auto i = boost::filesystem::directory_iterator(p); i != boost::filesystem::directory_iterator(); i++)
 	{
+
+		// Only get trajectory files.
+		if (i->path().extension().string() != ".trj")
+			continue;
+
 		// Read trajectory info
 		int numberOfGrasps = 0;
 
-		// File 1
-		std::ifstream t(i->path().string().c_str());
-		std::string str((std::istreambuf_iterator<char>(t)),
-		                 std::istreambuf_iterator<char>());
-		i++;
-
-		// File 2
-		std::cout <<i->path().string().c_str()<<std::endl;
+		// File
 		FILE * trjFP = fopen(i->path().string().c_str(), "rb");
 		char newFile[1000];
 		strcpy(newFile, "./processedTrj/");
@@ -375,6 +373,15 @@ int main(int argc, const char** argv)
 		strcat(newFile, ".trj");
 		FILE * newTrjFP = fopen(newFile, "wb");
 		fread(&numberOfGrasps, 4, 1, trjFP);
+
+		// File 1
+		char debugFile[1000];
+		strcpy(debugFile, "./processedTrj/");
+		strcat(debugFile, i->path().stem().string().c_str());
+		strcat(debugFile, "_debug.log");
+		std::ifstream t(debugFile);
+		std::string str((std::istreambuf_iterator<char>(t)),
+		                 std::istreambuf_iterator<char>());
 
 		// Read camera parameters
 		float posx, posy, posz, gazex, gazey, gazez, upx, upy, upz, rightx, righty, rightz;
