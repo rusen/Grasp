@@ -395,13 +395,16 @@ int main(int argc, const char** argv)
 		sscanf(str.c_str() + found, "%f %f %f", &rightx, &righty, &rightz);
 
 		// Print data.
+		/*
 		std::cout<<"POSITION: "<<posx<<" "<<posy<<" "<<posz<<std::endl;
 		std::cout<<"GAZE: "<<gazex<<" "<<gazey<<" "<<gazez<<std::endl;
 		std::cout<<"UP: "<<upx<<" "<<upy<<" "<<upz<<std::endl;
 		std::cout<<"RIGHT: "<<rightx<<" "<<righty<<" "<<rightz<<std::endl;
+		*/
 
 		glm::mat4 viewM = glm::lookAt(glm::vec3(posx, posy, posz), glm::vec3(posx+gazex, posy+gazey, posz+gazez), glm::vec3(upx, upy, upz));
 
+		/*
 		std::cout<<" **************************** "<<std::endl;
 		const float *pSource = (const float*)glm::value_ptr(viewM);
 		std::cout<<pSource[0]<<" "<<pSource[1]<<" "<<pSource[2]<<" "<<pSource[3]<<std::endl;
@@ -409,6 +412,7 @@ int main(int argc, const char** argv)
 		std::cout<<pSource[8]<<" "<<pSource[9]<<" "<<pSource[10]<<" "<<pSource[11]<<std::endl;
 		std::cout<<pSource[12]<<" "<<pSource[13]<<" "<<pSource[14]<<" "<<pSource[15]<<std::endl;
 		std::cout<<" **************************** "<<std::endl;
+		*/
 
 		// Read paths one by one
 		for (int j = 0; j < numberOfGrasps; j++)
@@ -454,6 +458,7 @@ int main(int argc, const char** argv)
 		fclose(newTrjFP);
 
 
+		/*
 		// Read new TrjFP just to check.
 		FILE * fid = fopen(newFile, "rb");
 		for (int j = 0; j < numberOfGrasps; j++)
@@ -469,6 +474,7 @@ int main(int argc, const char** argv)
 		}
 
 		fclose(fid);
+		*/
 	}
 }
 
