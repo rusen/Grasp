@@ -376,7 +376,7 @@ int main(int argc, const char** argv)
 
 		// File 1
 		char debugFile[1000];
-		strcpy(debugFile, "./processedTrj/");
+		strcpy(debugFile, "./trjdata/");
 		strcat(debugFile, i->path().stem().string().c_str());
 		strcat(debugFile, "_debug.log");
 		std::ifstream t(debugFile);
@@ -395,13 +395,13 @@ int main(int argc, const char** argv)
 		sscanf(str.c_str() + found, "%f %f %f", &rightx, &righty, &rightz);
 
 		// Print data.
-//		std::cout<<"POSITION: "<<posx<<" "<<posy<<" "<<posz<<std::endl;
-//		std::cout<<"GAZE: "<<gazex<<" "<<gazey<<" "<<gazez<<std::endl;
-//		std::cout<<"UP: "<<upx<<" "<<upy<<" "<<upz<<std::endl;
-//		std::cout<<"RIGHT: "<<rightx<<" "<<righty<<" "<<rightz<<std::endl;
+		std::cout<<"POSITION: "<<posx<<" "<<posy<<" "<<posz<<std::endl;
+		std::cout<<"GAZE: "<<gazex<<" "<<gazey<<" "<<gazez<<std::endl;
+		std::cout<<"UP: "<<upx<<" "<<upy<<" "<<upz<<std::endl;
+		std::cout<<"RIGHT: "<<rightx<<" "<<righty<<" "<<rightz<<std::endl;
 
 		glm::mat4 viewM = glm::lookAt(glm::vec3(posx, posy, posz), glm::vec3(posx+gazex, posy+gazey, posz+gazez), glm::vec3(upx, upy, upz));
-		/*
+
 		std::cout<<" **************************** "<<std::endl;
 		const float *pSource = (const float*)glm::value_ptr(viewM);
 		std::cout<<pSource[0]<<" "<<pSource[1]<<" "<<pSource[2]<<" "<<pSource[3]<<std::endl;
@@ -409,7 +409,6 @@ int main(int argc, const char** argv)
 		std::cout<<pSource[8]<<" "<<pSource[9]<<" "<<pSource[10]<<" "<<pSource[11]<<std::endl;
 		std::cout<<pSource[12]<<" "<<pSource[13]<<" "<<pSource[14]<<" "<<pSource[15]<<std::endl;
 		std::cout<<" **************************** "<<std::endl;
-		*/
 
 		// Read paths one by one
 		for (int j = 0; j < numberOfGrasps; j++)
@@ -436,19 +435,7 @@ int main(int argc, const char** argv)
 				// Convert to the camera coordinate system.
 				rotM = viewM * rotM;
 
-				// Print data
-				const float *pSource = (const float*)glm::value_ptr(rotM);
-				/*
-				std::cout<<"QUAT:"<<wp.quat.w<<" "<<wp.quat.x<<" "<<wp.quat.y<<" "<<wp.quat.z<<std::endl;
-				std::cout<<" *************** "<<std::endl;
-				std::cout<<pSource[0]<<" "<<pSource[1]<<" "<<pSource[2]<<" "<<pSource[3]<<std::endl;
-				std::cout<<pSource[4]<<" "<<pSource[5]<<" "<<pSource[6]<<" "<<pSource[7]<<std::endl;
-				std::cout<<pSource[8]<<" "<<pSource[9]<<" "<<pSource[10]<<" "<<pSource[11]<<std::endl;
-				std::cout<<pSource[12]<<" "<<pSource[13]<<" "<<pSource[14]<<" "<<pSource[15]<<std::endl;
-				std::cout<<" *************** "<<std::endl;
-				*/
 				glm::quat newQuat = glm::toQuat(rotM);
-		//		std::cout<<"CONVERTED QUAT:"<<newQuat.w<<" "<<newQuat.x<<" "<<newQuat.y<<" "<<newQuat.z<<std::endl;
 				float printedVals[7];
 				printedVals[0] = pos[0];
 				printedVals[1] = pos[1];
@@ -465,6 +452,23 @@ int main(int argc, const char** argv)
 		}
 		fclose(trjFP);
 		fclose(newTrjFP);
+
+
+		// Read new TrjFP just to check.
+		FILE * fid = fopen(newFile, "rb");
+		for (int j = 0; j < numberOfGrasps; j++)
+		{
+			float buf[270];
+			fread(buf, 4, 270, fid);
+			std::cout<<"GRASP NO "<<j<<std::endl;
+			for (int itr = 0; itr<270; itr++)
+			{
+				std::cout<<buf[itr]<<" ";
+			}
+			std::cout<<std::endl;
+		}
+
+		fclose(fid);
 	}
 }
 
