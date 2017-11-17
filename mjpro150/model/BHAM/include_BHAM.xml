@@ -164,7 +164,7 @@
     <worldbody>
         <camera name="fixed" pos="-1 0 0.7" zaxis="-1 0 1" fovy="60" ipd="0.068"/>
 
-        <body name="mocap" mocap="true" pos="0 0.175 10.025">
+        <body name="mocap" mocap="true" pos="0 0.18 10.025"> <!-- 0 0.175 10.025 -->
             <geom type="box" group="2" size="0.02 0.02 0.02" contype="0" conaffinity="0" rgba=".9 .5 .5 1"/>
         </body>
         

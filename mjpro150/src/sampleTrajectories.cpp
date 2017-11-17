@@ -352,6 +352,9 @@ int main(int argc, const char** argv)
 	bool flag = false;
 	char oldestName[100];
 	time_t oldestTime = std::numeric_limits<time_t>::max();
+	int successCounts[7] = {0,0,0,0,0,0,0};
+	int failCounts[7] = {0,0,0,0,0,0,0};
+	int validCounts[7] = {0,0,0,0,0,0,0};
 
 	// Go through the files
 	int count = 0;
@@ -395,16 +398,13 @@ int main(int argc, const char** argv)
 		sscanf(str.c_str() + found, "%f %f %f", &rightx, &righty, &rightz);
 
 		// Print data.
-		/*
 		std::cout<<"POSITION: "<<posx<<" "<<posy<<" "<<posz<<std::endl;
 		std::cout<<"GAZE: "<<gazex<<" "<<gazey<<" "<<gazez<<std::endl;
 		std::cout<<"UP: "<<upx<<" "<<upy<<" "<<upz<<std::endl;
 		std::cout<<"RIGHT: "<<rightx<<" "<<righty<<" "<<rightz<<std::endl;
-		*/
 
 		glm::mat4 viewM = glm::lookAt(glm::vec3(posx, posy, posz), glm::vec3(posx+gazex, posy+gazey, posz+gazez), glm::vec3(upx, upy, upz));
 
-		/*
 		std::cout<<" **************************** "<<std::endl;
 		const float *pSource = (const float*)glm::value_ptr(viewM);
 		std::cout<<pSource[0]<<" "<<pSource[1]<<" "<<pSource[2]<<" "<<pSource[3]<<std::endl;
@@ -412,7 +412,6 @@ int main(int argc, const char** argv)
 		std::cout<<pSource[8]<<" "<<pSource[9]<<" "<<pSource[10]<<" "<<pSource[11]<<std::endl;
 		std::cout<<pSource[12]<<" "<<pSource[13]<<" "<<pSource[14]<<" "<<pSource[15]<<std::endl;
 		std::cout<<" **************************** "<<std::endl;
-		*/
 
 		// Read paths one by one
 		for (int j = 0; j < numberOfGrasps; j++)
@@ -431,7 +430,10 @@ int main(int argc, const char** argv)
 				pos[1] = wp.pos[1];
 				pos[2] = wp.pos[2];
 				pos[3] = 1;
+
+				std::cout<<"Point before conversion:"<<pos[0]<<" "<<pos[1]<<" "<<pos[2]<<std::endl;
 				pos = viewM * pos;
+				std::cout<<"Point after conversion:"<<pos[0]<<" "<<pos[1]<<" "<<pos[2]<<std::endl;
 
 				// Get rotation matrix
 				glm::mat4 rotM = glm::toMat4(wp.quat);
@@ -456,25 +458,6 @@ int main(int argc, const char** argv)
 		}
 		fclose(trjFP);
 		fclose(newTrjFP);
-
-
-		/*
-		// Read new TrjFP just to check.
-		FILE * fid = fopen(newFile, "rb");
-		for (int j = 0; j < numberOfGrasps; j++)
-		{
-			float buf[270];
-			fread(buf, 4, 270, fid);
-			std::cout<<"GRASP NO "<<j<<std::endl;
-			for (int itr = 0; itr<270; itr++)
-			{
-				std::cout<<buf[itr]<<" ";
-			}
-			std::cout<<std::endl;
-		}
-
-		fclose(fid);
-		*/
 	}
 }
 

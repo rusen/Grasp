@@ -115,18 +115,19 @@ glm::vec3 getPt( glm::vec3 n1 , glm::vec3 n2 , float perc )
 void GraspPlanner::ReadTrajectory(){
 	// Reads the next trajectory from the file, and sets path variable.
 	float extraGrip = 0.03;
+	float extrapolate = 0.3;
 	int wpCount = 0;
 	float likelihood = 0;
 	int graspType = 0;
 	float wristPos[3];
 	float wristQuat[4];
 	float fingerPos[20];
-
 	fread(&likelihood, 4, 1, trjFP);
 	fread(&graspType, 4, 1, trjFP);
 	fread(&wpCount, 4, 1, trjFP);
 	finalApproach = new Path(wpCount+1);
-//	(*logStream)<<"Path has " << wpCount+1 << " waypoints."<<std::endl;
+
+	// Read trajectory waypoint by waypoint.
 	for (int i = 1; i< wpCount+1; i++)
 	{
 		fread(wristPos, 4, 3, trjFP);
@@ -136,6 +137,9 @@ void GraspPlanner::ReadTrajectory(){
 		float addedVal = 0;
 		if (i == wpCount)
 			addedVal = extraGrip;
+		float addedPolate = 0;
+		if (i == wpCount)
+			addedPolate = extrapolate;
 
 		// Read waypoints.
 		finalApproach->waypoints[i].pos[0] = wristPos[0] - 0.5, finalApproach->waypoints[i].pos[1] = wristPos[1], finalApproach->waypoints[i].pos[2] = wristPos[2];
@@ -152,24 +156,23 @@ void GraspPlanner::ReadTrajectory(){
 				finalApproach->waypoints[i].jointAngles[k] = fingerPos[k] + 0.087266 + addedVal;
 			else if (k < 4)
 			{
-				finalApproach->waypoints[i].jointAngles[k] = fingerPos[k] + 0.087266 + addedVal;
+				finalApproach->waypoints[i].jointAngles[k] = fingerPos[k] + 0.087266 + addedVal + addedPolate;
 			}
 			else if (k < 8)
 			{
-				finalApproach->waypoints[i].jointAngles[k] = fingerPos[k] + 0.087266 + addedVal;
+				finalApproach->waypoints[i].jointAngles[k] = fingerPos[k] + 0.087266 + addedVal + addedPolate;
 			}
 			else if (k < 12)
 			{
-				finalApproach->waypoints[i].jointAngles[k] = fingerPos[k] + addedVal;
+				finalApproach->waypoints[i].jointAngles[k] = fingerPos[k] + addedVal + addedPolate;
 			}
 			else if (k < 16)
 			{
-				finalApproach->waypoints[i].jointAngles[k] = (fingerPos[k] - 0.087266) + addedVal;
+				finalApproach->waypoints[i].jointAngles[k] = (fingerPos[k] - 0.087266) + addedVal + addedPolate;
 			}
 			else{
-				finalApproach->waypoints[i].jointAngles[k] = (fingerPos[k] - 0.1745) + addedVal;
+				finalApproach->waypoints[i].jointAngles[k] = (fingerPos[k] - 0.1745) + addedVal + addedPolate;
 			}
-
 		}
 	}
 

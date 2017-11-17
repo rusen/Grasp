@@ -444,7 +444,6 @@ int main(int argc, const char** argv)
     // Filename operations
     if (!boost::filesystem::is_directory("./tmp"))
     	boost::filesystem::create_directories("./tmp"); // Create temp dir
- //   srand(randSeed);
 
     // Open out file.
     outFile = fopen(planner->logFile, "wb");
