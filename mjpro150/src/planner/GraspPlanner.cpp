@@ -294,7 +294,7 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 			{
 				trjFP = fopen(trajectoryFile, "rb");
 				fread(&numberOfGrasps, 4, 1, trjFP);
-				(*logStream)<< "Number of grasps:" << numberOfGrasps << std::endl; d
+				(*logStream)<< "Number of grasps:" << numberOfGrasps << std::endl;
 			}
 			else
 			{
