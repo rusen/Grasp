@@ -126,8 +126,6 @@ void GraspPlanner::ReadTrajectory(){
 	fread(&wpCount, 4, 1, trjFP);
 	finalApproach = new Path(wpCount+2);
 
-	std::cout.flush();
-
 	// Read trajectory waypoint by waypoint.
 	for (int i = 1; i< wpCount+2; i++)
 	{
@@ -202,6 +200,7 @@ void GraspPlanner::ReadTrajectory(){
 	finalApproach->waypoints[0].quat.w = finalApproach->waypoints[1].quat.w;
 	for (int k = 0; k<20; k++)
 		finalApproach->waypoints[0].jointAngles[k] = 0;
+
 }
 
 bool GraspPlanner::FollowTrajectory(const mjModel* m, mjData* d, float yOffset){
@@ -295,7 +294,7 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 			{
 				trjFP = fopen(trajectoryFile, "rb");
 				fread(&numberOfGrasps, 4, 1, trjFP);
-				(*logStream)<< "Number of grasps:" << numberOfGrasps << std::endl;
+				(*logStream)<< "Number of grasps:" << numberOfGrasps << std::endl; d
 			}
 			else
 			{
@@ -320,15 +319,17 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 		break;
 	case pregrasp:
 
-		// Read trajectory
-		ReadTrajectory();
-
 		// If enough grasps have been performed, exit.
 		if (graspCounter >= numberOfGrasps)
 		{
 			graspState = done;
 			break;
 		}
+
+		// Read trajectory
+		ReadTrajectory();
+
+		// Increase counter and move on.
 		graspCounter++;
 		graspState = checkingCollision;
 		counter = 0;
