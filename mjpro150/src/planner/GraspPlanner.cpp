@@ -149,8 +149,6 @@ void GraspPlanner::ReadTrajectory(){
 				if (newVal > maxVal)
 					maxVal = newVal;
 			}
-			std::cout<<"Max angle:"<<maxVal<<std::endl;
-			std::cout.flush();
 			multiplyFactor = extraGrip / maxVal;
 		}
 		else
@@ -204,11 +202,6 @@ void GraspPlanner::ReadTrajectory(){
 	finalApproach->waypoints[0].quat.w = finalApproach->waypoints[1].quat.w;
 	for (int k = 0; k<20; k++)
 		finalApproach->waypoints[0].jointAngles[k] = 0;
-
-	for (int i = 0; i< wpCount+2; i++)
-		{
-			finalApproach->waypoints[i].print();
-		}
 }
 
 bool GraspPlanner::FollowTrajectory(const mjModel* m, mjData* d, float yOffset){
