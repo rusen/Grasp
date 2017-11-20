@@ -114,8 +114,7 @@ glm::vec3 getPt( glm::vec3 n1 , glm::vec3 n2 , float perc )
 
 void GraspPlanner::ReadTrajectory(){
 	// Reads the next trajectory from the file, and sets path variable.
-	float extraGrip = 0.03;
-	float extrapolate = 0.3;
+	float extraGrip = 0.5236; // 0.5236 for 30 degrees
 	int wpCount = 0;
 	float likelihood = 0;
 	int graspType = 0;
@@ -125,21 +124,40 @@ void GraspPlanner::ReadTrajectory(){
 	fread(&likelihood, 4, 1, trjFP);
 	fread(&graspType, 4, 1, trjFP);
 	fread(&wpCount, 4, 1, trjFP);
-	finalApproach = new Path(wpCount+1);
+	finalApproach = new Path(wpCount+2);
+
+	std::cout.flush();
 
 	// Read trajectory waypoint by waypoint.
-	for (int i = 1; i< wpCount+1; i++)
+	for (int i = 1; i< wpCount+2; i++)
 	{
-		fread(wristPos, 4, 3, trjFP);
-		fread(wristQuat, 4, 4, trjFP);
-		fread(fingerPos, 4, 20, trjFP);
+		if (i<wpCount+1)
+		{
+			fread(wristPos, 4, 3, trjFP);
+			fread(wristQuat, 4, 4, trjFP);
+			fread(fingerPos, 4, 20, trjFP);
+		}
 
-		float addedVal = 0;
-		if (i == wpCount)
-			addedVal = extraGrip;
-		float addedPolate = 0;
-		if (i == wpCount)
-			addedPolate = extrapolate;
+		float multiplyFactor = 0, maxVal = 0;
+		float differences[20];
+		if (i == wpCount+1)
+		{
+			for (int k = 0; k<20; k++){
+				float newVal = finalApproach->waypoints[i-1].jointAngles[k] -
+						finalApproach->waypoints[i-2].jointAngles[k];
+				differences[k] = newVal;
+				if (newVal > maxVal)
+					maxVal = newVal;
+			}
+			std::cout<<"Max angle:"<<maxVal<<std::endl;
+			std::cout.flush();
+			multiplyFactor = extraGrip / maxVal;
+		}
+		else
+		{
+			for (int k = 0; k<20; k++)
+				differences[k] = 0;
+		}
 
 		// Read waypoints.
 		finalApproach->waypoints[i].pos[0] = wristPos[0] - 0.5, finalApproach->waypoints[i].pos[1] = wristPos[1], finalApproach->waypoints[i].pos[2] = wristPos[2];
@@ -153,25 +171,25 @@ void GraspPlanner::ReadTrajectory(){
 			if (!(k % 4))
 				finalApproach->waypoints[i].jointAngles[k] = fingerPos[k];
 			else if (k%4 == 2 || k%4 == 3)
-				finalApproach->waypoints[i].jointAngles[k] = fingerPos[k] + 0.087266 + addedVal;
+				finalApproach->waypoints[i].jointAngles[k] = fingerPos[k] + 0.087266 + multiplyFactor * differences[k];
 			else if (k < 4)
 			{
-				finalApproach->waypoints[i].jointAngles[k] = fingerPos[k] + 0.087266 + addedVal + addedPolate;
+				finalApproach->waypoints[i].jointAngles[k] = fingerPos[k] + 0.087266 + multiplyFactor * differences[k];
 			}
 			else if (k < 8)
 			{
-				finalApproach->waypoints[i].jointAngles[k] = fingerPos[k] + 0.087266 + addedVal + addedPolate;
+				finalApproach->waypoints[i].jointAngles[k] = fingerPos[k] + 0.087266 + multiplyFactor * differences[k];
 			}
 			else if (k < 12)
 			{
-				finalApproach->waypoints[i].jointAngles[k] = fingerPos[k] + addedVal + addedPolate;
+				finalApproach->waypoints[i].jointAngles[k] = fingerPos[k] + multiplyFactor * differences[k];
 			}
 			else if (k < 16)
 			{
-				finalApproach->waypoints[i].jointAngles[k] = (fingerPos[k] - 0.087266) + addedVal + addedPolate;
+				finalApproach->waypoints[i].jointAngles[k] = (fingerPos[k] - 0.087266) + multiplyFactor * differences[k];
 			}
 			else{
-				finalApproach->waypoints[i].jointAngles[k] = (fingerPos[k] - 0.1745) + addedVal + addedPolate;
+				finalApproach->waypoints[i].jointAngles[k] = (fingerPos[k] - 0.1745) + multiplyFactor * differences[k];
 			}
 		}
 	}
@@ -186,6 +204,11 @@ void GraspPlanner::ReadTrajectory(){
 	finalApproach->waypoints[0].quat.w = finalApproach->waypoints[1].quat.w;
 	for (int k = 0; k<20; k++)
 		finalApproach->waypoints[0].jointAngles[k] = 0;
+
+	for (int i = 0; i< wpCount+2; i++)
+		{
+			finalApproach->waypoints[i].print();
+		}
 }
 
 bool GraspPlanner::FollowTrajectory(const mjModel* m, mjData* d, float yOffset){
