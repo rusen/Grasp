@@ -49,6 +49,33 @@
         <mesh name="D_221_47" file="objects/D_221/D_221_47.stl"/>
         <mesh name="D_221_48" file="objects/D_221/D_221_48.stl"/>
         <mesh name="D_221_49" file="objects/D_221/D_221_49.stl"/>
+        <mesh name="D_221_50" file="objects/D_221/D_221_50.stl"/>
+        <mesh name="D_221_51" file="objects/D_221/D_221_51.stl"/>
+        <mesh name="D_221_52" file="objects/D_221/D_221_52.stl"/>
+        <mesh name="D_221_53" file="objects/D_221/D_221_53.stl"/>
+        <mesh name="D_221_54" file="objects/D_221/D_221_54.stl"/>
+        <mesh name="D_221_55" file="objects/D_221/D_221_55.stl"/>
+        <mesh name="D_221_56" file="objects/D_221/D_221_56.stl"/>
+        <mesh name="D_221_57" file="objects/D_221/D_221_57.stl"/>
+        <mesh name="D_221_58" file="objects/D_221/D_221_58.stl"/>
+        <mesh name="D_221_59" file="objects/D_221/D_221_59.stl"/>
+        <mesh name="D_221_60" file="objects/D_221/D_221_60.stl"/>
+        <mesh name="D_221_61" file="objects/D_221/D_221_61.stl"/>
+        <mesh name="D_221_62" file="objects/D_221/D_221_62.stl"/>
+        <mesh name="D_221_63" file="objects/D_221/D_221_63.stl"/>
+        <mesh name="D_221_64" file="objects/D_221/D_221_64.stl"/>
+        <mesh name="D_221_65" file="objects/D_221/D_221_65.stl"/>
+        <mesh name="D_221_66" file="objects/D_221/D_221_66.stl"/>
+        <mesh name="D_221_67" file="objects/D_221/D_221_67.stl"/>
+        <mesh name="D_221_68" file="objects/D_221/D_221_68.stl"/>
+        <mesh name="D_221_69" file="objects/D_221/D_221_69.stl"/>
+        <mesh name="D_221_70" file="objects/D_221/D_221_70.stl"/>
+        <mesh name="D_221_71" file="objects/D_221/D_221_71.stl"/>
+        <mesh name="D_221_72" file="objects/D_221/D_221_72.stl"/>
+        <mesh name="D_221_73" file="objects/D_221/D_221_73.stl"/>
+        <mesh name="D_221_74" file="objects/D_221/D_221_74.stl"/>
+        <mesh name="D_221_75" file="objects/D_221/D_221_75.stl"/>
+        <mesh name="D_221_76" file="objects/D_221/D_221_76.stl"/>
         <mesh name="D_221_visual" file="objects/D_221/D_221_full.stl"/>
     </asset>
 </mujoco>

@@ -71,10 +71,6 @@
         <mesh name="D_31_69" file="objects/D_31/D_31_69.stl"/>
         <mesh name="D_31_70" file="objects/D_31/D_31_70.stl"/>
         <mesh name="D_31_71" file="objects/D_31/D_31_71.stl"/>
-        <mesh name="D_31_72" file="objects/D_31/D_31_72.stl"/>
-        <mesh name="D_31_73" file="objects/D_31/D_31_73.stl"/>
-        <mesh name="D_31_74" file="objects/D_31/D_31_74.stl"/>
-        <mesh name="D_31_75" file="objects/D_31/D_31_75.stl"/>
         <mesh name="D_31_visual" file="objects/D_31/D_31_full.stl"/>
     </asset>
 </mujoco>

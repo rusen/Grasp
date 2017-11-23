@@ -47,20 +47,6 @@
         <mesh name="D_197_45" file="objects/D_197/D_197_45.stl"/>
         <mesh name="D_197_46" file="objects/D_197/D_197_46.stl"/>
         <mesh name="D_197_47" file="objects/D_197/D_197_47.stl"/>
-        <mesh name="D_197_48" file="objects/D_197/D_197_48.stl"/>
-        <mesh name="D_197_49" file="objects/D_197/D_197_49.stl"/>
-        <mesh name="D_197_50" file="objects/D_197/D_197_50.stl"/>
-        <mesh name="D_197_51" file="objects/D_197/D_197_51.stl"/>
-        <mesh name="D_197_52" file="objects/D_197/D_197_52.stl"/>
-        <mesh name="D_197_53" file="objects/D_197/D_197_53.stl"/>
-        <mesh name="D_197_54" file="objects/D_197/D_197_54.stl"/>
-        <mesh name="D_197_55" file="objects/D_197/D_197_55.stl"/>
-        <mesh name="D_197_56" file="objects/D_197/D_197_56.stl"/>
-        <mesh name="D_197_57" file="objects/D_197/D_197_57.stl"/>
-        <mesh name="D_197_58" file="objects/D_197/D_197_58.stl"/>
-        <mesh name="D_197_59" file="objects/D_197/D_197_59.stl"/>
-        <mesh name="D_197_60" file="objects/D_197/D_197_60.stl"/>
-        <mesh name="D_197_61" file="objects/D_197/D_197_61.stl"/>
         <mesh name="D_197_visual" file="objects/D_197/D_197_full.stl"/>
     </asset>
 </mujoco>

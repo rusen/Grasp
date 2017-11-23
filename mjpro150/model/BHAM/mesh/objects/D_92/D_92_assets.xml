@@ -19,27 +19,6 @@
         <mesh name="D_92_17" file="objects/D_92/D_92_17.stl"/>
         <mesh name="D_92_18" file="objects/D_92/D_92_18.stl"/>
         <mesh name="D_92_19" file="objects/D_92/D_92_19.stl"/>
-        <mesh name="D_92_20" file="objects/D_92/D_92_20.stl"/>
-        <mesh name="D_92_21" file="objects/D_92/D_92_21.stl"/>
-        <mesh name="D_92_22" file="objects/D_92/D_92_22.stl"/>
-        <mesh name="D_92_23" file="objects/D_92/D_92_23.stl"/>
-        <mesh name="D_92_24" file="objects/D_92/D_92_24.stl"/>
-        <mesh name="D_92_25" file="objects/D_92/D_92_25.stl"/>
-        <mesh name="D_92_26" file="objects/D_92/D_92_26.stl"/>
-        <mesh name="D_92_27" file="objects/D_92/D_92_27.stl"/>
-        <mesh name="D_92_28" file="objects/D_92/D_92_28.stl"/>
-        <mesh name="D_92_29" file="objects/D_92/D_92_29.stl"/>
-        <mesh name="D_92_30" file="objects/D_92/D_92_30.stl"/>
-        <mesh name="D_92_31" file="objects/D_92/D_92_31.stl"/>
-        <mesh name="D_92_32" file="objects/D_92/D_92_32.stl"/>
-        <mesh name="D_92_33" file="objects/D_92/D_92_33.stl"/>
-        <mesh name="D_92_34" file="objects/D_92/D_92_34.stl"/>
-        <mesh name="D_92_35" file="objects/D_92/D_92_35.stl"/>
-        <mesh name="D_92_36" file="objects/D_92/D_92_36.stl"/>
-        <mesh name="D_92_37" file="objects/D_92/D_92_37.stl"/>
-        <mesh name="D_92_38" file="objects/D_92/D_92_38.stl"/>
-        <mesh name="D_92_39" file="objects/D_92/D_92_39.stl"/>
-        <mesh name="D_92_40" file="objects/D_92/D_92_40.stl"/>
         <mesh name="D_92_visual" file="objects/D_92/D_92_full.stl"/>
     </asset>
 </mujoco>

@@ -68,6 +68,50 @@
         <mesh name="D_236_66" file="objects/D_236/D_236_66.stl"/>
         <mesh name="D_236_67" file="objects/D_236/D_236_67.stl"/>
         <mesh name="D_236_68" file="objects/D_236/D_236_68.stl"/>
+        <mesh name="D_236_69" file="objects/D_236/D_236_69.stl"/>
+        <mesh name="D_236_70" file="objects/D_236/D_236_70.stl"/>
+        <mesh name="D_236_71" file="objects/D_236/D_236_71.stl"/>
+        <mesh name="D_236_72" file="objects/D_236/D_236_72.stl"/>
+        <mesh name="D_236_73" file="objects/D_236/D_236_73.stl"/>
+        <mesh name="D_236_74" file="objects/D_236/D_236_74.stl"/>
+        <mesh name="D_236_75" file="objects/D_236/D_236_75.stl"/>
+        <mesh name="D_236_76" file="objects/D_236/D_236_76.stl"/>
+        <mesh name="D_236_77" file="objects/D_236/D_236_77.stl"/>
+        <mesh name="D_236_78" file="objects/D_236/D_236_78.stl"/>
+        <mesh name="D_236_79" file="objects/D_236/D_236_79.stl"/>
+        <mesh name="D_236_80" file="objects/D_236/D_236_80.stl"/>
+        <mesh name="D_236_81" file="objects/D_236/D_236_81.stl"/>
+        <mesh name="D_236_82" file="objects/D_236/D_236_82.stl"/>
+        <mesh name="D_236_83" file="objects/D_236/D_236_83.stl"/>
+        <mesh name="D_236_84" file="objects/D_236/D_236_84.stl"/>
+        <mesh name="D_236_85" file="objects/D_236/D_236_85.stl"/>
+        <mesh name="D_236_86" file="objects/D_236/D_236_86.stl"/>
+        <mesh name="D_236_87" file="objects/D_236/D_236_87.stl"/>
+        <mesh name="D_236_88" file="objects/D_236/D_236_88.stl"/>
+        <mesh name="D_236_89" file="objects/D_236/D_236_89.stl"/>
+        <mesh name="D_236_90" file="objects/D_236/D_236_90.stl"/>
+        <mesh name="D_236_91" file="objects/D_236/D_236_91.stl"/>
+        <mesh name="D_236_92" file="objects/D_236/D_236_92.stl"/>
+        <mesh name="D_236_93" file="objects/D_236/D_236_93.stl"/>
+        <mesh name="D_236_94" file="objects/D_236/D_236_94.stl"/>
+        <mesh name="D_236_95" file="objects/D_236/D_236_95.stl"/>
+        <mesh name="D_236_96" file="objects/D_236/D_236_96.stl"/>
+        <mesh name="D_236_97" file="objects/D_236/D_236_97.stl"/>
+        <mesh name="D_236_98" file="objects/D_236/D_236_98.stl"/>
+        <mesh name="D_236_99" file="objects/D_236/D_236_99.stl"/>
+        <mesh name="D_236_100" file="objects/D_236/D_236_100.stl"/>
+        <mesh name="D_236_101" file="objects/D_236/D_236_101.stl"/>
+        <mesh name="D_236_102" file="objects/D_236/D_236_102.stl"/>
+        <mesh name="D_236_103" file="objects/D_236/D_236_103.stl"/>
+        <mesh name="D_236_104" file="objects/D_236/D_236_104.stl"/>
+        <mesh name="D_236_105" file="objects/D_236/D_236_105.stl"/>
+        <mesh name="D_236_106" file="objects/D_236/D_236_106.stl"/>
+        <mesh name="D_236_107" file="objects/D_236/D_236_107.stl"/>
+        <mesh name="D_236_108" file="objects/D_236/D_236_108.stl"/>
+        <mesh name="D_236_109" file="objects/D_236/D_236_109.stl"/>
+        <mesh name="D_236_110" file="objects/D_236/D_236_110.stl"/>
+        <mesh name="D_236_111" file="objects/D_236/D_236_111.stl"/>
+        <mesh name="D_236_112" file="objects/D_236/D_236_112.stl"/>
         <mesh name="D_236_visual" file="objects/D_236/D_236_full.stl"/>
     </asset>
 </mujoco>

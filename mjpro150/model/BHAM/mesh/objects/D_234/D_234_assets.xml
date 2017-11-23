@@ -30,6 +30,61 @@
         <mesh name="D_234_28" file="objects/D_234/D_234_28.stl"/>
         <mesh name="D_234_29" file="objects/D_234/D_234_29.stl"/>
         <mesh name="D_234_30" file="objects/D_234/D_234_30.stl"/>
+        <mesh name="D_234_31" file="objects/D_234/D_234_31.stl"/>
+        <mesh name="D_234_32" file="objects/D_234/D_234_32.stl"/>
+        <mesh name="D_234_33" file="objects/D_234/D_234_33.stl"/>
+        <mesh name="D_234_34" file="objects/D_234/D_234_34.stl"/>
+        <mesh name="D_234_35" file="objects/D_234/D_234_35.stl"/>
+        <mesh name="D_234_36" file="objects/D_234/D_234_36.stl"/>
+        <mesh name="D_234_37" file="objects/D_234/D_234_37.stl"/>
+        <mesh name="D_234_38" file="objects/D_234/D_234_38.stl"/>
+        <mesh name="D_234_39" file="objects/D_234/D_234_39.stl"/>
+        <mesh name="D_234_40" file="objects/D_234/D_234_40.stl"/>
+        <mesh name="D_234_41" file="objects/D_234/D_234_41.stl"/>
+        <mesh name="D_234_42" file="objects/D_234/D_234_42.stl"/>
+        <mesh name="D_234_43" file="objects/D_234/D_234_43.stl"/>
+        <mesh name="D_234_44" file="objects/D_234/D_234_44.stl"/>
+        <mesh name="D_234_45" file="objects/D_234/D_234_45.stl"/>
+        <mesh name="D_234_46" file="objects/D_234/D_234_46.stl"/>
+        <mesh name="D_234_47" file="objects/D_234/D_234_47.stl"/>
+        <mesh name="D_234_48" file="objects/D_234/D_234_48.stl"/>
+        <mesh name="D_234_49" file="objects/D_234/D_234_49.stl"/>
+        <mesh name="D_234_50" file="objects/D_234/D_234_50.stl"/>
+        <mesh name="D_234_51" file="objects/D_234/D_234_51.stl"/>
+        <mesh name="D_234_52" file="objects/D_234/D_234_52.stl"/>
+        <mesh name="D_234_53" file="objects/D_234/D_234_53.stl"/>
+        <mesh name="D_234_54" file="objects/D_234/D_234_54.stl"/>
+        <mesh name="D_234_55" file="objects/D_234/D_234_55.stl"/>
+        <mesh name="D_234_56" file="objects/D_234/D_234_56.stl"/>
+        <mesh name="D_234_57" file="objects/D_234/D_234_57.stl"/>
+        <mesh name="D_234_58" file="objects/D_234/D_234_58.stl"/>
+        <mesh name="D_234_59" file="objects/D_234/D_234_59.stl"/>
+        <mesh name="D_234_60" file="objects/D_234/D_234_60.stl"/>
+        <mesh name="D_234_61" file="objects/D_234/D_234_61.stl"/>
+        <mesh name="D_234_62" file="objects/D_234/D_234_62.stl"/>
+        <mesh name="D_234_63" file="objects/D_234/D_234_63.stl"/>
+        <mesh name="D_234_64" file="objects/D_234/D_234_64.stl"/>
+        <mesh name="D_234_65" file="objects/D_234/D_234_65.stl"/>
+        <mesh name="D_234_66" file="objects/D_234/D_234_66.stl"/>
+        <mesh name="D_234_67" file="objects/D_234/D_234_67.stl"/>
+        <mesh name="D_234_68" file="objects/D_234/D_234_68.stl"/>
+        <mesh name="D_234_69" file="objects/D_234/D_234_69.stl"/>
+        <mesh name="D_234_70" file="objects/D_234/D_234_70.stl"/>
+        <mesh name="D_234_71" file="objects/D_234/D_234_71.stl"/>
+        <mesh name="D_234_72" file="objects/D_234/D_234_72.stl"/>
+        <mesh name="D_234_73" file="objects/D_234/D_234_73.stl"/>
+        <mesh name="D_234_74" file="objects/D_234/D_234_74.stl"/>
+        <mesh name="D_234_75" file="objects/D_234/D_234_75.stl"/>
+        <mesh name="D_234_76" file="objects/D_234/D_234_76.stl"/>
+        <mesh name="D_234_77" file="objects/D_234/D_234_77.stl"/>
+        <mesh name="D_234_78" file="objects/D_234/D_234_78.stl"/>
+        <mesh name="D_234_79" file="objects/D_234/D_234_79.stl"/>
+        <mesh name="D_234_80" file="objects/D_234/D_234_80.stl"/>
+        <mesh name="D_234_81" file="objects/D_234/D_234_81.stl"/>
+        <mesh name="D_234_82" file="objects/D_234/D_234_82.stl"/>
+        <mesh name="D_234_83" file="objects/D_234/D_234_83.stl"/>
+        <mesh name="D_234_84" file="objects/D_234/D_234_84.stl"/>
+        <mesh name="D_234_85" file="objects/D_234/D_234_85.stl"/>
         <mesh name="D_234_visual" file="objects/D_234/D_234_full.stl"/>
     </asset>
 </mujoco>

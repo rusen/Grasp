@@ -8,6 +8,23 @@
         <mesh name="D_107_6" file="objects/D_107/D_107_6.stl"/>
         <mesh name="D_107_7" file="objects/D_107/D_107_7.stl"/>
         <mesh name="D_107_8" file="objects/D_107/D_107_8.stl"/>
+        <mesh name="D_107_9" file="objects/D_107/D_107_9.stl"/>
+        <mesh name="D_107_10" file="objects/D_107/D_107_10.stl"/>
+        <mesh name="D_107_11" file="objects/D_107/D_107_11.stl"/>
+        <mesh name="D_107_12" file="objects/D_107/D_107_12.stl"/>
+        <mesh name="D_107_13" file="objects/D_107/D_107_13.stl"/>
+        <mesh name="D_107_14" file="objects/D_107/D_107_14.stl"/>
+        <mesh name="D_107_15" file="objects/D_107/D_107_15.stl"/>
+        <mesh name="D_107_16" file="objects/D_107/D_107_16.stl"/>
+        <mesh name="D_107_17" file="objects/D_107/D_107_17.stl"/>
+        <mesh name="D_107_18" file="objects/D_107/D_107_18.stl"/>
+        <mesh name="D_107_19" file="objects/D_107/D_107_19.stl"/>
+        <mesh name="D_107_20" file="objects/D_107/D_107_20.stl"/>
+        <mesh name="D_107_21" file="objects/D_107/D_107_21.stl"/>
+        <mesh name="D_107_22" file="objects/D_107/D_107_22.stl"/>
+        <mesh name="D_107_23" file="objects/D_107/D_107_23.stl"/>
+        <mesh name="D_107_24" file="objects/D_107/D_107_24.stl"/>
+        <mesh name="D_107_25" file="objects/D_107/D_107_25.stl"/>
         <mesh name="D_107_visual" file="objects/D_107/D_107_full.stl"/>
     </asset>
 </mujoco>

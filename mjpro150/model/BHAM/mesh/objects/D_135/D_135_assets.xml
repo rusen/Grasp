@@ -40,6 +40,15 @@
         <mesh name="D_135_38" file="objects/D_135/D_135_38.stl"/>
         <mesh name="D_135_39" file="objects/D_135/D_135_39.stl"/>
         <mesh name="D_135_40" file="objects/D_135/D_135_40.stl"/>
+        <mesh name="D_135_41" file="objects/D_135/D_135_41.stl"/>
+        <mesh name="D_135_42" file="objects/D_135/D_135_42.stl"/>
+        <mesh name="D_135_43" file="objects/D_135/D_135_43.stl"/>
+        <mesh name="D_135_44" file="objects/D_135/D_135_44.stl"/>
+        <mesh name="D_135_45" file="objects/D_135/D_135_45.stl"/>
+        <mesh name="D_135_46" file="objects/D_135/D_135_46.stl"/>
+        <mesh name="D_135_47" file="objects/D_135/D_135_47.stl"/>
+        <mesh name="D_135_48" file="objects/D_135/D_135_48.stl"/>
+        <mesh name="D_135_49" file="objects/D_135/D_135_49.stl"/>
         <mesh name="D_135_visual" file="objects/D_135/D_135_full.stl"/>
     </asset>
 </mujoco>

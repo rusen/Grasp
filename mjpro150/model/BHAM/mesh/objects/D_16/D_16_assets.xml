@@ -2,6 +2,8 @@
     <asset>
         <mesh name="D_16_1" file="objects/D_16/D_16_1.stl"/>
         <mesh name="D_16_2" file="objects/D_16/D_16_2.stl"/>
+        <mesh name="D_16_3" file="objects/D_16/D_16_3.stl"/>
+        <mesh name="D_16_4" file="objects/D_16/D_16_4.stl"/>
         <mesh name="D_16_visual" file="objects/D_16/D_16_full.stl"/>
     </asset>
 </mujoco>

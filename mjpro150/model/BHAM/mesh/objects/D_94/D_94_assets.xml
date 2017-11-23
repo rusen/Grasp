@@ -100,6 +100,11 @@
         <mesh name="D_94_98" file="objects/D_94/D_94_98.stl"/>
         <mesh name="D_94_99" file="objects/D_94/D_94_99.stl"/>
         <mesh name="D_94_100" file="objects/D_94/D_94_100.stl"/>
+        <mesh name="D_94_101" file="objects/D_94/D_94_101.stl"/>
+        <mesh name="D_94_102" file="objects/D_94/D_94_102.stl"/>
+        <mesh name="D_94_103" file="objects/D_94/D_94_103.stl"/>
+        <mesh name="D_94_104" file="objects/D_94/D_94_104.stl"/>
+        <mesh name="D_94_105" file="objects/D_94/D_94_105.stl"/>
         <mesh name="D_94_visual" file="objects/D_94/D_94_full.stl"/>
     </asset>
 </mujoco>

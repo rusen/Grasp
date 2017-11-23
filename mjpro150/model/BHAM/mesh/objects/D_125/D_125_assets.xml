@@ -58,13 +58,6 @@
         <mesh name="D_125_56" file="objects/D_125/D_125_56.stl"/>
         <mesh name="D_125_57" file="objects/D_125/D_125_57.stl"/>
         <mesh name="D_125_58" file="objects/D_125/D_125_58.stl"/>
-        <mesh name="D_125_59" file="objects/D_125/D_125_59.stl"/>
-        <mesh name="D_125_60" file="objects/D_125/D_125_60.stl"/>
-        <mesh name="D_125_61" file="objects/D_125/D_125_61.stl"/>
-        <mesh name="D_125_62" file="objects/D_125/D_125_62.stl"/>
-        <mesh name="D_125_63" file="objects/D_125/D_125_63.stl"/>
-        <mesh name="D_125_64" file="objects/D_125/D_125_64.stl"/>
-        <mesh name="D_125_65" file="objects/D_125/D_125_65.stl"/>
         <mesh name="D_125_visual" file="objects/D_125/D_125_full.stl"/>
     </asset>
 </mujoco>

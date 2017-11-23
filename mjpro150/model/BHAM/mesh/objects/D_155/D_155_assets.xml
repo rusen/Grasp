@@ -65,6 +65,11 @@
         <mesh name="D_155_63" file="objects/D_155/D_155_63.stl"/>
         <mesh name="D_155_64" file="objects/D_155/D_155_64.stl"/>
         <mesh name="D_155_65" file="objects/D_155/D_155_65.stl"/>
+        <mesh name="D_155_66" file="objects/D_155/D_155_66.stl"/>
+        <mesh name="D_155_67" file="objects/D_155/D_155_67.stl"/>
+        <mesh name="D_155_68" file="objects/D_155/D_155_68.stl"/>
+        <mesh name="D_155_69" file="objects/D_155/D_155_69.stl"/>
+        <mesh name="D_155_70" file="objects/D_155/D_155_70.stl"/>
         <mesh name="D_155_visual" file="objects/D_155/D_155_full.stl"/>
     </asset>
 </mujoco>

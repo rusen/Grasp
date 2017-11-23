@@ -15,6 +15,20 @@
         <mesh name="D_54_13" file="objects/D_54/D_54_13.stl"/>
         <mesh name="D_54_14" file="objects/D_54/D_54_14.stl"/>
         <mesh name="D_54_15" file="objects/D_54/D_54_15.stl"/>
+        <mesh name="D_54_16" file="objects/D_54/D_54_16.stl"/>
+        <mesh name="D_54_17" file="objects/D_54/D_54_17.stl"/>
+        <mesh name="D_54_18" file="objects/D_54/D_54_18.stl"/>
+        <mesh name="D_54_19" file="objects/D_54/D_54_19.stl"/>
+        <mesh name="D_54_20" file="objects/D_54/D_54_20.stl"/>
+        <mesh name="D_54_21" file="objects/D_54/D_54_21.stl"/>
+        <mesh name="D_54_22" file="objects/D_54/D_54_22.stl"/>
+        <mesh name="D_54_23" file="objects/D_54/D_54_23.stl"/>
+        <mesh name="D_54_24" file="objects/D_54/D_54_24.stl"/>
+        <mesh name="D_54_25" file="objects/D_54/D_54_25.stl"/>
+        <mesh name="D_54_26" file="objects/D_54/D_54_26.stl"/>
+        <mesh name="D_54_27" file="objects/D_54/D_54_27.stl"/>
+        <mesh name="D_54_28" file="objects/D_54/D_54_28.stl"/>
+        <mesh name="D_54_29" file="objects/D_54/D_54_29.stl"/>
         <mesh name="D_54_visual" file="objects/D_54/D_54_full.stl"/>
     </asset>
 </mujoco>

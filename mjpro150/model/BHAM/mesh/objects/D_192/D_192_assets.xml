@@ -14,6 +14,9 @@
         <mesh name="D_192_12" file="objects/D_192/D_192_12.stl"/>
         <mesh name="D_192_13" file="objects/D_192/D_192_13.stl"/>
         <mesh name="D_192_14" file="objects/D_192/D_192_14.stl"/>
+        <mesh name="D_192_15" file="objects/D_192/D_192_15.stl"/>
+        <mesh name="D_192_16" file="objects/D_192/D_192_16.stl"/>
+        <mesh name="D_192_17" file="objects/D_192/D_192_17.stl"/>
         <mesh name="D_192_visual" file="objects/D_192/D_192_full.stl"/>
     </asset>
 </mujoco>

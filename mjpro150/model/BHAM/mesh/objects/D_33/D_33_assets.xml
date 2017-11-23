@@ -60,15 +60,6 @@
         <mesh name="D_33_58" file="objects/D_33/D_33_58.stl"/>
         <mesh name="D_33_59" file="objects/D_33/D_33_59.stl"/>
         <mesh name="D_33_60" file="objects/D_33/D_33_60.stl"/>
-        <mesh name="D_33_61" file="objects/D_33/D_33_61.stl"/>
-        <mesh name="D_33_62" file="objects/D_33/D_33_62.stl"/>
-        <mesh name="D_33_63" file="objects/D_33/D_33_63.stl"/>
-        <mesh name="D_33_64" file="objects/D_33/D_33_64.stl"/>
-        <mesh name="D_33_65" file="objects/D_33/D_33_65.stl"/>
-        <mesh name="D_33_66" file="objects/D_33/D_33_66.stl"/>
-        <mesh name="D_33_67" file="objects/D_33/D_33_67.stl"/>
-        <mesh name="D_33_68" file="objects/D_33/D_33_68.stl"/>
-        <mesh name="D_33_69" file="objects/D_33/D_33_69.stl"/>
         <mesh name="D_33_visual" file="objects/D_33/D_33_full.stl"/>
     </asset>
 </mujoco>

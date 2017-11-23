@@ -14,6 +14,17 @@
         <mesh name="D_60_12" file="objects/D_60/D_60_12.stl"/>
         <mesh name="D_60_13" file="objects/D_60/D_60_13.stl"/>
         <mesh name="D_60_14" file="objects/D_60/D_60_14.stl"/>
+        <mesh name="D_60_15" file="objects/D_60/D_60_15.stl"/>
+        <mesh name="D_60_16" file="objects/D_60/D_60_16.stl"/>
+        <mesh name="D_60_17" file="objects/D_60/D_60_17.stl"/>
+        <mesh name="D_60_18" file="objects/D_60/D_60_18.stl"/>
+        <mesh name="D_60_19" file="objects/D_60/D_60_19.stl"/>
+        <mesh name="D_60_20" file="objects/D_60/D_60_20.stl"/>
+        <mesh name="D_60_21" file="objects/D_60/D_60_21.stl"/>
+        <mesh name="D_60_22" file="objects/D_60/D_60_22.stl"/>
+        <mesh name="D_60_23" file="objects/D_60/D_60_23.stl"/>
+        <mesh name="D_60_24" file="objects/D_60/D_60_24.stl"/>
+        <mesh name="D_60_25" file="objects/D_60/D_60_25.stl"/>
         <mesh name="D_60_visual" file="objects/D_60/D_60_full.stl"/>
     </asset>
 </mujoco>

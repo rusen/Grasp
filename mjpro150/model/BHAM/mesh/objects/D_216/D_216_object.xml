@@ -1,52 +1,41 @@
 <mujoco>
     <worldbody>
         <body name="object" pos="0 0 0" euler="">
-            <geom type="mesh" group="1" mesh="D_216_1" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_2" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_3" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_4" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_5" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_6" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_7" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_8" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_9" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_10" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_11" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_12" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_13" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_14" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_15" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_16" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_17" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_18" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_19" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_20" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_21" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_22" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_23" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_24" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_25" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_26" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_27" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_28" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_29" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_30" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_31" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_32" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_33" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_34" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_35" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_36" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_37" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_38" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_39" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_40" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_41" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_42" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_43" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_44" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group="1" mesh="D_216_45" condim="6" density="" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
-            <geom type="mesh" group ="2" mass="0" contype="0" rgba="" conaffinity="0" mesh="D_216_visual"/>
+            <geom type="mesh" group="1" mesh="D_216_1" condim="6" mass="0.000001" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_216_2" condim="6" mass="0.000001" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_216_3" condim="6" mass="0.000001" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_216_4" condim="6" mass="0.000001" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_216_5" condim="6" mass="0.000001" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_216_6" condim="6" mass="0.000001" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_216_7" condim="6" mass="0.000001" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_216_8" condim="6" mass="0.000001" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_216_9" condim="6" mass="0.000001" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_216_10" condim="6" mass="0.000001" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_216_11" condim="6" mass="0.000001" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_216_12" condim="6" mass="0.000001" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_216_13" condim="6" mass="0.000001" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_216_14" condim="6" mass="0.000001" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_216_15" condim="6" mass="0.000001" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_216_16" condim="6" mass="0.000001" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_216_17" condim="6" mass="0.000001" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_216_18" condim="6" mass="0.000001" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_216_19" condim="6" mass="0.000001" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_216_20" condim="6" mass="0.000001" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_216_21" condim="6" mass="0.000001" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_216_22" condim="6" mass="0.000001" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_216_23" condim="6" mass="0.000001" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_216_24" condim="6" mass="0.000001" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_216_25" condim="6" mass="0.000001" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_216_26" condim="6" mass="0.000001" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_216_27" condim="6" mass="0.000001" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_216_28" condim="6" mass="0.000001" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_216_29" condim="6" mass="0.000001" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_216_30" condim="6" mass="0.000001" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_216_31" condim="6" mass="0.000001" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_216_32" condim="6" mass="0.000001" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_216_33" condim="6" mass="0.000001" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group="1" mesh="D_216_34" condim="6" mass="0.000001" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <geom type="mesh" group ="2" mass="" contype="0" rgba="" conaffinity="0" mesh="D_216_visual"/>
             <joint class="free"/>
         </body>
     </worldbody>

@@ -6,6 +6,8 @@
         <mesh name="D_106_4" file="objects/D_106/D_106_4.stl"/>
         <mesh name="D_106_5" file="objects/D_106/D_106_5.stl"/>
         <mesh name="D_106_6" file="objects/D_106/D_106_6.stl"/>
+        <mesh name="D_106_7" file="objects/D_106/D_106_7.stl"/>
+        <mesh name="D_106_8" file="objects/D_106/D_106_8.stl"/>
         <mesh name="D_106_visual" file="objects/D_106/D_106_full.stl"/>
     </asset>
 </mujoco>

@@ -15,12 +15,6 @@
         <mesh name="D_62_13" file="objects/D_62/D_62_13.stl"/>
         <mesh name="D_62_14" file="objects/D_62/D_62_14.stl"/>
         <mesh name="D_62_15" file="objects/D_62/D_62_15.stl"/>
-        <mesh name="D_62_16" file="objects/D_62/D_62_16.stl"/>
-        <mesh name="D_62_17" file="objects/D_62/D_62_17.stl"/>
-        <mesh name="D_62_18" file="objects/D_62/D_62_18.stl"/>
-        <mesh name="D_62_19" file="objects/D_62/D_62_19.stl"/>
-        <mesh name="D_62_20" file="objects/D_62/D_62_20.stl"/>
-        <mesh name="D_62_21" file="objects/D_62/D_62_21.stl"/>
         <mesh name="D_62_visual" file="objects/D_62/D_62_full.stl"/>
     </asset>
 </mujoco>

@@ -76,6 +76,11 @@
         <mesh name="D_224_74" file="objects/D_224/D_224_74.stl"/>
         <mesh name="D_224_75" file="objects/D_224/D_224_75.stl"/>
         <mesh name="D_224_76" file="objects/D_224/D_224_76.stl"/>
+        <mesh name="D_224_77" file="objects/D_224/D_224_77.stl"/>
+        <mesh name="D_224_78" file="objects/D_224/D_224_78.stl"/>
+        <mesh name="D_224_79" file="objects/D_224/D_224_79.stl"/>
+        <mesh name="D_224_80" file="objects/D_224/D_224_80.stl"/>
+        <mesh name="D_224_81" file="objects/D_224/D_224_81.stl"/>
         <mesh name="D_224_visual" file="objects/D_224/D_224_full.stl"/>
     </asset>
 </mujoco>

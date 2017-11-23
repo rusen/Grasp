@@ -65,12 +65,6 @@
         <mesh name="D_223_63" file="objects/D_223/D_223_63.stl"/>
         <mesh name="D_223_64" file="objects/D_223/D_223_64.stl"/>
         <mesh name="D_223_65" file="objects/D_223/D_223_65.stl"/>
-        <mesh name="D_223_66" file="objects/D_223/D_223_66.stl"/>
-        <mesh name="D_223_67" file="objects/D_223/D_223_67.stl"/>
-        <mesh name="D_223_68" file="objects/D_223/D_223_68.stl"/>
-        <mesh name="D_223_69" file="objects/D_223/D_223_69.stl"/>
-        <mesh name="D_223_70" file="objects/D_223/D_223_70.stl"/>
-        <mesh name="D_223_71" file="objects/D_223/D_223_71.stl"/>
         <mesh name="D_223_visual" file="objects/D_223/D_223_full.stl"/>
     </asset>
 </mujoco>

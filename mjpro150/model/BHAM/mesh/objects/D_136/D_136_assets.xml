@@ -49,6 +49,12 @@
         <mesh name="D_136_47" file="objects/D_136/D_136_47.stl"/>
         <mesh name="D_136_48" file="objects/D_136/D_136_48.stl"/>
         <mesh name="D_136_49" file="objects/D_136/D_136_49.stl"/>
+        <mesh name="D_136_50" file="objects/D_136/D_136_50.stl"/>
+        <mesh name="D_136_51" file="objects/D_136/D_136_51.stl"/>
+        <mesh name="D_136_52" file="objects/D_136/D_136_52.stl"/>
+        <mesh name="D_136_53" file="objects/D_136/D_136_53.stl"/>
+        <mesh name="D_136_54" file="objects/D_136/D_136_54.stl"/>
+        <mesh name="D_136_55" file="objects/D_136/D_136_55.stl"/>
         <mesh name="D_136_visual" file="objects/D_136/D_136_full.stl"/>
     </asset>
 </mujoco>

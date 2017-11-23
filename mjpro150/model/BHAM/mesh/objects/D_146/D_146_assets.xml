@@ -44,19 +44,6 @@
         <mesh name="D_146_42" file="objects/D_146/D_146_42.stl"/>
         <mesh name="D_146_43" file="objects/D_146/D_146_43.stl"/>
         <mesh name="D_146_44" file="objects/D_146/D_146_44.stl"/>
-        <mesh name="D_146_45" file="objects/D_146/D_146_45.stl"/>
-        <mesh name="D_146_46" file="objects/D_146/D_146_46.stl"/>
-        <mesh name="D_146_47" file="objects/D_146/D_146_47.stl"/>
-        <mesh name="D_146_48" file="objects/D_146/D_146_48.stl"/>
-        <mesh name="D_146_49" file="objects/D_146/D_146_49.stl"/>
-        <mesh name="D_146_50" file="objects/D_146/D_146_50.stl"/>
-        <mesh name="D_146_51" file="objects/D_146/D_146_51.stl"/>
-        <mesh name="D_146_52" file="objects/D_146/D_146_52.stl"/>
-        <mesh name="D_146_53" file="objects/D_146/D_146_53.stl"/>
-        <mesh name="D_146_54" file="objects/D_146/D_146_54.stl"/>
-        <mesh name="D_146_55" file="objects/D_146/D_146_55.stl"/>
-        <mesh name="D_146_56" file="objects/D_146/D_146_56.stl"/>
-        <mesh name="D_146_57" file="objects/D_146/D_146_57.stl"/>
         <mesh name="D_146_visual" file="objects/D_146/D_146_full.stl"/>
     </asset>
 </mujoco>

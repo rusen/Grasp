@@ -32,7 +32,7 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 	sprintf(modelXMLStr, "<mujoco model=\"BHAM\">\n    <include file=\"include_BHAM.xml\"/>\n    <include file=\"include_assets.xml\"/>\n");
 
     // Manage file names
-    char baseIdFile[1000], oldAssetFile[1000], oldBaseAssetFile[1000], newAssetFile[1000],
+    char baseIdFile[1000], classIdFile[1000], oldAssetFile[1000], oldBaseAssetFile[1000], newAssetFile[1000],
 	newBaseAssetFile[1000], oldObjectFile[1000], oldBaseFile[1000], newObjectFile[1000], newBaseFile[1000],
 	tmp[1000], tmpXML[1000], lightFile[1000], tableFile[1000], modelPrefix[1000];
 
@@ -45,6 +45,18 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
     FILE * fid = fopen(baseIdFile, "r");
     for (int i = 0; i<objectId; i++)
     	fscanf(fid, "%d\n", &baseType);
+    fclose(fid);
+
+    // Get base id file name
+    strcpy(classIdFile, base);
+    strcat(classIdFile, "/classIds.txt");
+
+    // Read base id
+    int classId = 0;
+    fid = fopen(classIdFile, "r");
+    for (int i = 0; i<objectId; i++)
+    	fscanf(fid, "%d\n", &classId);
+    classId = classId - 1;
     fclose(fid);
 
     // Obtain a filename prefix for this specific object
@@ -148,13 +160,18 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 	// Replace friction
 	replaceAll(objectStr, std::string("friction=\"\""), std::string(tmp));
 
-	// Create random density
-	int density = rand()%5000; // 6 for metal, 0.5 for plastic.
-	density = density + 500;
-	sprintf(tmp, "density=\"%d\"", density);
+	// Create random mass, depending on the object type.
+	float baseWeights[] = {30, 50, 30, 40, 150, 70, 50, 250, 40, 50, 100, 40, 40, 150, 500};
+	float addedWeights[] = {40, 350, 40, 40, 250, 80, 100, 100, 80, 100, 60, 40, 40, 100, 300};
+
+	int baseWeight = baseWeights[classId];
+	int addedWeight = addedWeights[classId];
+	float mass = (float)(rand()%addedWeight + baseWeight);
+	mass = mass/1000;
+	sprintf(tmp, "mass=\"%f\"", mass);
 
 	// Replace density
-	replaceAll(objectStr, std::string("density=\"\""), std::string(tmp));
+	replaceAll(objectStr, std::string("mass=\"\""), std::string(tmp));
 
 	// Create random orientation
 	r = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);

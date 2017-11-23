@@ -76,6 +76,19 @@
         <mesh name="D_235_74" file="objects/D_235/D_235_74.stl"/>
         <mesh name="D_235_75" file="objects/D_235/D_235_75.stl"/>
         <mesh name="D_235_76" file="objects/D_235/D_235_76.stl"/>
+        <mesh name="D_235_77" file="objects/D_235/D_235_77.stl"/>
+        <mesh name="D_235_78" file="objects/D_235/D_235_78.stl"/>
+        <mesh name="D_235_79" file="objects/D_235/D_235_79.stl"/>
+        <mesh name="D_235_80" file="objects/D_235/D_235_80.stl"/>
+        <mesh name="D_235_81" file="objects/D_235/D_235_81.stl"/>
+        <mesh name="D_235_82" file="objects/D_235/D_235_82.stl"/>
+        <mesh name="D_235_83" file="objects/D_235/D_235_83.stl"/>
+        <mesh name="D_235_84" file="objects/D_235/D_235_84.stl"/>
+        <mesh name="D_235_85" file="objects/D_235/D_235_85.stl"/>
+        <mesh name="D_235_86" file="objects/D_235/D_235_86.stl"/>
+        <mesh name="D_235_87" file="objects/D_235/D_235_87.stl"/>
+        <mesh name="D_235_88" file="objects/D_235/D_235_88.stl"/>
+        <mesh name="D_235_89" file="objects/D_235/D_235_89.stl"/>
         <mesh name="D_235_visual" file="objects/D_235/D_235_full.stl"/>
     </asset>
 </mujoco>

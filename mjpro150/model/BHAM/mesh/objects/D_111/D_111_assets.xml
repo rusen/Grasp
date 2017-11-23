@@ -4,9 +4,6 @@
         <mesh name="D_111_2" file="objects/D_111/D_111_2.stl"/>
         <mesh name="D_111_3" file="objects/D_111/D_111_3.stl"/>
         <mesh name="D_111_4" file="objects/D_111/D_111_4.stl"/>
-        <mesh name="D_111_5" file="objects/D_111/D_111_5.stl"/>
-        <mesh name="D_111_6" file="objects/D_111/D_111_6.stl"/>
-        <mesh name="D_111_7" file="objects/D_111/D_111_7.stl"/>
         <mesh name="D_111_visual" file="objects/D_111/D_111_full.stl"/>
     </asset>
 </mujoco>

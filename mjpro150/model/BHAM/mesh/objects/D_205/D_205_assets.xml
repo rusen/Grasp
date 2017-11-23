@@ -26,6 +26,18 @@
         <mesh name="D_205_24" file="objects/D_205/D_205_24.stl"/>
         <mesh name="D_205_25" file="objects/D_205/D_205_25.stl"/>
         <mesh name="D_205_26" file="objects/D_205/D_205_26.stl"/>
+        <mesh name="D_205_27" file="objects/D_205/D_205_27.stl"/>
+        <mesh name="D_205_28" file="objects/D_205/D_205_28.stl"/>
+        <mesh name="D_205_29" file="objects/D_205/D_205_29.stl"/>
+        <mesh name="D_205_30" file="objects/D_205/D_205_30.stl"/>
+        <mesh name="D_205_31" file="objects/D_205/D_205_31.stl"/>
+        <mesh name="D_205_32" file="objects/D_205/D_205_32.stl"/>
+        <mesh name="D_205_33" file="objects/D_205/D_205_33.stl"/>
+        <mesh name="D_205_34" file="objects/D_205/D_205_34.stl"/>
+        <mesh name="D_205_35" file="objects/D_205/D_205_35.stl"/>
+        <mesh name="D_205_36" file="objects/D_205/D_205_36.stl"/>
+        <mesh name="D_205_37" file="objects/D_205/D_205_37.stl"/>
+        <mesh name="D_205_38" file="objects/D_205/D_205_38.stl"/>
         <mesh name="D_205_visual" file="objects/D_205/D_205_full.stl"/>
     </asset>
 </mujoco>

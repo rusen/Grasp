@@ -1,7 +1,6 @@
 <mujoco>
     <asset>
         <mesh name="D_172_1" file="objects/D_172/D_172_1.stl"/>
-        <mesh name="D_172_2" file="objects/D_172/D_172_2.stl"/>
         <mesh name="D_172_visual" file="objects/D_172/D_172_full.stl"/>
     </asset>
 </mujoco>

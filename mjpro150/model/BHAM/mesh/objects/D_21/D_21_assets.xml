@@ -63,22 +63,6 @@
         <mesh name="D_21_61" file="objects/D_21/D_21_61.stl"/>
         <mesh name="D_21_62" file="objects/D_21/D_21_62.stl"/>
         <mesh name="D_21_63" file="objects/D_21/D_21_63.stl"/>
-        <mesh name="D_21_64" file="objects/D_21/D_21_64.stl"/>
-        <mesh name="D_21_65" file="objects/D_21/D_21_65.stl"/>
-        <mesh name="D_21_66" file="objects/D_21/D_21_66.stl"/>
-        <mesh name="D_21_67" file="objects/D_21/D_21_67.stl"/>
-        <mesh name="D_21_68" file="objects/D_21/D_21_68.stl"/>
-        <mesh name="D_21_69" file="objects/D_21/D_21_69.stl"/>
-        <mesh name="D_21_70" file="objects/D_21/D_21_70.stl"/>
-        <mesh name="D_21_71" file="objects/D_21/D_21_71.stl"/>
-        <mesh name="D_21_72" file="objects/D_21/D_21_72.stl"/>
-        <mesh name="D_21_73" file="objects/D_21/D_21_73.stl"/>
-        <mesh name="D_21_74" file="objects/D_21/D_21_74.stl"/>
-        <mesh name="D_21_75" file="objects/D_21/D_21_75.stl"/>
-        <mesh name="D_21_76" file="objects/D_21/D_21_76.stl"/>
-        <mesh name="D_21_77" file="objects/D_21/D_21_77.stl"/>
-        <mesh name="D_21_78" file="objects/D_21/D_21_78.stl"/>
-        <mesh name="D_21_79" file="objects/D_21/D_21_79.stl"/>
         <mesh name="D_21_visual" file="objects/D_21/D_21_full.stl"/>
     </asset>
 </mujoco>

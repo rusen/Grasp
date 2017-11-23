@@ -32,29 +32,6 @@
         <mesh name="D_137_30" file="objects/D_137/D_137_30.stl"/>
         <mesh name="D_137_31" file="objects/D_137/D_137_31.stl"/>
         <mesh name="D_137_32" file="objects/D_137/D_137_32.stl"/>
-        <mesh name="D_137_33" file="objects/D_137/D_137_33.stl"/>
-        <mesh name="D_137_34" file="objects/D_137/D_137_34.stl"/>
-        <mesh name="D_137_35" file="objects/D_137/D_137_35.stl"/>
-        <mesh name="D_137_36" file="objects/D_137/D_137_36.stl"/>
-        <mesh name="D_137_37" file="objects/D_137/D_137_37.stl"/>
-        <mesh name="D_137_38" file="objects/D_137/D_137_38.stl"/>
-        <mesh name="D_137_39" file="objects/D_137/D_137_39.stl"/>
-        <mesh name="D_137_40" file="objects/D_137/D_137_40.stl"/>
-        <mesh name="D_137_41" file="objects/D_137/D_137_41.stl"/>
-        <mesh name="D_137_42" file="objects/D_137/D_137_42.stl"/>
-        <mesh name="D_137_43" file="objects/D_137/D_137_43.stl"/>
-        <mesh name="D_137_44" file="objects/D_137/D_137_44.stl"/>
-        <mesh name="D_137_45" file="objects/D_137/D_137_45.stl"/>
-        <mesh name="D_137_46" file="objects/D_137/D_137_46.stl"/>
-        <mesh name="D_137_47" file="objects/D_137/D_137_47.stl"/>
-        <mesh name="D_137_48" file="objects/D_137/D_137_48.stl"/>
-        <mesh name="D_137_49" file="objects/D_137/D_137_49.stl"/>
-        <mesh name="D_137_50" file="objects/D_137/D_137_50.stl"/>
-        <mesh name="D_137_51" file="objects/D_137/D_137_51.stl"/>
-        <mesh name="D_137_52" file="objects/D_137/D_137_52.stl"/>
-        <mesh name="D_137_53" file="objects/D_137/D_137_53.stl"/>
-        <mesh name="D_137_54" file="objects/D_137/D_137_54.stl"/>
-        <mesh name="D_137_55" file="objects/D_137/D_137_55.stl"/>
         <mesh name="D_137_visual" file="objects/D_137/D_137_full.stl"/>
     </asset>
 </mujoco>

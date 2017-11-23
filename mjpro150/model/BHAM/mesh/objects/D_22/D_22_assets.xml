@@ -63,6 +63,40 @@
         <mesh name="D_22_61" file="objects/D_22/D_22_61.stl"/>
         <mesh name="D_22_62" file="objects/D_22/D_22_62.stl"/>
         <mesh name="D_22_63" file="objects/D_22/D_22_63.stl"/>
+        <mesh name="D_22_64" file="objects/D_22/D_22_64.stl"/>
+        <mesh name="D_22_65" file="objects/D_22/D_22_65.stl"/>
+        <mesh name="D_22_66" file="objects/D_22/D_22_66.stl"/>
+        <mesh name="D_22_67" file="objects/D_22/D_22_67.stl"/>
+        <mesh name="D_22_68" file="objects/D_22/D_22_68.stl"/>
+        <mesh name="D_22_69" file="objects/D_22/D_22_69.stl"/>
+        <mesh name="D_22_70" file="objects/D_22/D_22_70.stl"/>
+        <mesh name="D_22_71" file="objects/D_22/D_22_71.stl"/>
+        <mesh name="D_22_72" file="objects/D_22/D_22_72.stl"/>
+        <mesh name="D_22_73" file="objects/D_22/D_22_73.stl"/>
+        <mesh name="D_22_74" file="objects/D_22/D_22_74.stl"/>
+        <mesh name="D_22_75" file="objects/D_22/D_22_75.stl"/>
+        <mesh name="D_22_76" file="objects/D_22/D_22_76.stl"/>
+        <mesh name="D_22_77" file="objects/D_22/D_22_77.stl"/>
+        <mesh name="D_22_78" file="objects/D_22/D_22_78.stl"/>
+        <mesh name="D_22_79" file="objects/D_22/D_22_79.stl"/>
+        <mesh name="D_22_80" file="objects/D_22/D_22_80.stl"/>
+        <mesh name="D_22_81" file="objects/D_22/D_22_81.stl"/>
+        <mesh name="D_22_82" file="objects/D_22/D_22_82.stl"/>
+        <mesh name="D_22_83" file="objects/D_22/D_22_83.stl"/>
+        <mesh name="D_22_84" file="objects/D_22/D_22_84.stl"/>
+        <mesh name="D_22_85" file="objects/D_22/D_22_85.stl"/>
+        <mesh name="D_22_86" file="objects/D_22/D_22_86.stl"/>
+        <mesh name="D_22_87" file="objects/D_22/D_22_87.stl"/>
+        <mesh name="D_22_88" file="objects/D_22/D_22_88.stl"/>
+        <mesh name="D_22_89" file="objects/D_22/D_22_89.stl"/>
+        <mesh name="D_22_90" file="objects/D_22/D_22_90.stl"/>
+        <mesh name="D_22_91" file="objects/D_22/D_22_91.stl"/>
+        <mesh name="D_22_92" file="objects/D_22/D_22_92.stl"/>
+        <mesh name="D_22_93" file="objects/D_22/D_22_93.stl"/>
+        <mesh name="D_22_94" file="objects/D_22/D_22_94.stl"/>
+        <mesh name="D_22_95" file="objects/D_22/D_22_95.stl"/>
+        <mesh name="D_22_96" file="objects/D_22/D_22_96.stl"/>
+        <mesh name="D_22_97" file="objects/D_22/D_22_97.stl"/>
         <mesh name="D_22_visual" file="objects/D_22/D_22_full.stl"/>
     </asset>
 </mujoco>

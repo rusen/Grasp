@@ -15,7 +15,6 @@
         <mesh name="D_187_13" file="objects/D_187/D_187_13.stl"/>
         <mesh name="D_187_14" file="objects/D_187/D_187_14.stl"/>
         <mesh name="D_187_15" file="objects/D_187/D_187_15.stl"/>
-        <mesh name="D_187_16" file="objects/D_187/D_187_16.stl"/>
         <mesh name="D_187_visual" file="objects/D_187/D_187_full.stl"/>
     </asset>
 </mujoco>

@@ -20,6 +20,51 @@
         <mesh name="D_152_18" file="objects/D_152/D_152_18.stl"/>
         <mesh name="D_152_19" file="objects/D_152/D_152_19.stl"/>
         <mesh name="D_152_20" file="objects/D_152/D_152_20.stl"/>
+        <mesh name="D_152_21" file="objects/D_152/D_152_21.stl"/>
+        <mesh name="D_152_22" file="objects/D_152/D_152_22.stl"/>
+        <mesh name="D_152_23" file="objects/D_152/D_152_23.stl"/>
+        <mesh name="D_152_24" file="objects/D_152/D_152_24.stl"/>
+        <mesh name="D_152_25" file="objects/D_152/D_152_25.stl"/>
+        <mesh name="D_152_26" file="objects/D_152/D_152_26.stl"/>
+        <mesh name="D_152_27" file="objects/D_152/D_152_27.stl"/>
+        <mesh name="D_152_28" file="objects/D_152/D_152_28.stl"/>
+        <mesh name="D_152_29" file="objects/D_152/D_152_29.stl"/>
+        <mesh name="D_152_30" file="objects/D_152/D_152_30.stl"/>
+        <mesh name="D_152_31" file="objects/D_152/D_152_31.stl"/>
+        <mesh name="D_152_32" file="objects/D_152/D_152_32.stl"/>
+        <mesh name="D_152_33" file="objects/D_152/D_152_33.stl"/>
+        <mesh name="D_152_34" file="objects/D_152/D_152_34.stl"/>
+        <mesh name="D_152_35" file="objects/D_152/D_152_35.stl"/>
+        <mesh name="D_152_36" file="objects/D_152/D_152_36.stl"/>
+        <mesh name="D_152_37" file="objects/D_152/D_152_37.stl"/>
+        <mesh name="D_152_38" file="objects/D_152/D_152_38.stl"/>
+        <mesh name="D_152_39" file="objects/D_152/D_152_39.stl"/>
+        <mesh name="D_152_40" file="objects/D_152/D_152_40.stl"/>
+        <mesh name="D_152_41" file="objects/D_152/D_152_41.stl"/>
+        <mesh name="D_152_42" file="objects/D_152/D_152_42.stl"/>
+        <mesh name="D_152_43" file="objects/D_152/D_152_43.stl"/>
+        <mesh name="D_152_44" file="objects/D_152/D_152_44.stl"/>
+        <mesh name="D_152_45" file="objects/D_152/D_152_45.stl"/>
+        <mesh name="D_152_46" file="objects/D_152/D_152_46.stl"/>
+        <mesh name="D_152_47" file="objects/D_152/D_152_47.stl"/>
+        <mesh name="D_152_48" file="objects/D_152/D_152_48.stl"/>
+        <mesh name="D_152_49" file="objects/D_152/D_152_49.stl"/>
+        <mesh name="D_152_50" file="objects/D_152/D_152_50.stl"/>
+        <mesh name="D_152_51" file="objects/D_152/D_152_51.stl"/>
+        <mesh name="D_152_52" file="objects/D_152/D_152_52.stl"/>
+        <mesh name="D_152_53" file="objects/D_152/D_152_53.stl"/>
+        <mesh name="D_152_54" file="objects/D_152/D_152_54.stl"/>
+        <mesh name="D_152_55" file="objects/D_152/D_152_55.stl"/>
+        <mesh name="D_152_56" file="objects/D_152/D_152_56.stl"/>
+        <mesh name="D_152_57" file="objects/D_152/D_152_57.stl"/>
+        <mesh name="D_152_58" file="objects/D_152/D_152_58.stl"/>
+        <mesh name="D_152_59" file="objects/D_152/D_152_59.stl"/>
+        <mesh name="D_152_60" file="objects/D_152/D_152_60.stl"/>
+        <mesh name="D_152_61" file="objects/D_152/D_152_61.stl"/>
+        <mesh name="D_152_62" file="objects/D_152/D_152_62.stl"/>
+        <mesh name="D_152_63" file="objects/D_152/D_152_63.stl"/>
+        <mesh name="D_152_64" file="objects/D_152/D_152_64.stl"/>
+        <mesh name="D_152_65" file="objects/D_152/D_152_65.stl"/>
         <mesh name="D_152_visual" file="objects/D_152/D_152_full.stl"/>
     </asset>
 </mujoco>

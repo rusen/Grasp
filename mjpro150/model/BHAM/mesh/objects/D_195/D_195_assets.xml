@@ -17,6 +17,57 @@
         <mesh name="D_195_15" file="objects/D_195/D_195_15.stl"/>
         <mesh name="D_195_16" file="objects/D_195/D_195_16.stl"/>
         <mesh name="D_195_17" file="objects/D_195/D_195_17.stl"/>
+        <mesh name="D_195_18" file="objects/D_195/D_195_18.stl"/>
+        <mesh name="D_195_19" file="objects/D_195/D_195_19.stl"/>
+        <mesh name="D_195_20" file="objects/D_195/D_195_20.stl"/>
+        <mesh name="D_195_21" file="objects/D_195/D_195_21.stl"/>
+        <mesh name="D_195_22" file="objects/D_195/D_195_22.stl"/>
+        <mesh name="D_195_23" file="objects/D_195/D_195_23.stl"/>
+        <mesh name="D_195_24" file="objects/D_195/D_195_24.stl"/>
+        <mesh name="D_195_25" file="objects/D_195/D_195_25.stl"/>
+        <mesh name="D_195_26" file="objects/D_195/D_195_26.stl"/>
+        <mesh name="D_195_27" file="objects/D_195/D_195_27.stl"/>
+        <mesh name="D_195_28" file="objects/D_195/D_195_28.stl"/>
+        <mesh name="D_195_29" file="objects/D_195/D_195_29.stl"/>
+        <mesh name="D_195_30" file="objects/D_195/D_195_30.stl"/>
+        <mesh name="D_195_31" file="objects/D_195/D_195_31.stl"/>
+        <mesh name="D_195_32" file="objects/D_195/D_195_32.stl"/>
+        <mesh name="D_195_33" file="objects/D_195/D_195_33.stl"/>
+        <mesh name="D_195_34" file="objects/D_195/D_195_34.stl"/>
+        <mesh name="D_195_35" file="objects/D_195/D_195_35.stl"/>
+        <mesh name="D_195_36" file="objects/D_195/D_195_36.stl"/>
+        <mesh name="D_195_37" file="objects/D_195/D_195_37.stl"/>
+        <mesh name="D_195_38" file="objects/D_195/D_195_38.stl"/>
+        <mesh name="D_195_39" file="objects/D_195/D_195_39.stl"/>
+        <mesh name="D_195_40" file="objects/D_195/D_195_40.stl"/>
+        <mesh name="D_195_41" file="objects/D_195/D_195_41.stl"/>
+        <mesh name="D_195_42" file="objects/D_195/D_195_42.stl"/>
+        <mesh name="D_195_43" file="objects/D_195/D_195_43.stl"/>
+        <mesh name="D_195_44" file="objects/D_195/D_195_44.stl"/>
+        <mesh name="D_195_45" file="objects/D_195/D_195_45.stl"/>
+        <mesh name="D_195_46" file="objects/D_195/D_195_46.stl"/>
+        <mesh name="D_195_47" file="objects/D_195/D_195_47.stl"/>
+        <mesh name="D_195_48" file="objects/D_195/D_195_48.stl"/>
+        <mesh name="D_195_49" file="objects/D_195/D_195_49.stl"/>
+        <mesh name="D_195_50" file="objects/D_195/D_195_50.stl"/>
+        <mesh name="D_195_51" file="objects/D_195/D_195_51.stl"/>
+        <mesh name="D_195_52" file="objects/D_195/D_195_52.stl"/>
+        <mesh name="D_195_53" file="objects/D_195/D_195_53.stl"/>
+        <mesh name="D_195_54" file="objects/D_195/D_195_54.stl"/>
+        <mesh name="D_195_55" file="objects/D_195/D_195_55.stl"/>
+        <mesh name="D_195_56" file="objects/D_195/D_195_56.stl"/>
+        <mesh name="D_195_57" file="objects/D_195/D_195_57.stl"/>
+        <mesh name="D_195_58" file="objects/D_195/D_195_58.stl"/>
+        <mesh name="D_195_59" file="objects/D_195/D_195_59.stl"/>
+        <mesh name="D_195_60" file="objects/D_195/D_195_60.stl"/>
+        <mesh name="D_195_61" file="objects/D_195/D_195_61.stl"/>
+        <mesh name="D_195_62" file="objects/D_195/D_195_62.stl"/>
+        <mesh name="D_195_63" file="objects/D_195/D_195_63.stl"/>
+        <mesh name="D_195_64" file="objects/D_195/D_195_64.stl"/>
+        <mesh name="D_195_65" file="objects/D_195/D_195_65.stl"/>
+        <mesh name="D_195_66" file="objects/D_195/D_195_66.stl"/>
+        <mesh name="D_195_67" file="objects/D_195/D_195_67.stl"/>
+        <mesh name="D_195_68" file="objects/D_195/D_195_68.stl"/>
         <mesh name="D_195_visual" file="objects/D_195/D_195_full.stl"/>
     </asset>
 </mujoco>

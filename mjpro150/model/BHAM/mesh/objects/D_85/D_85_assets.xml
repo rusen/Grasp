@@ -58,13 +58,6 @@
         <mesh name="D_85_56" file="objects/D_85/D_85_56.stl"/>
         <mesh name="D_85_57" file="objects/D_85/D_85_57.stl"/>
         <mesh name="D_85_58" file="objects/D_85/D_85_58.stl"/>
-        <mesh name="D_85_59" file="objects/D_85/D_85_59.stl"/>
-        <mesh name="D_85_60" file="objects/D_85/D_85_60.stl"/>
-        <mesh name="D_85_61" file="objects/D_85/D_85_61.stl"/>
-        <mesh name="D_85_62" file="objects/D_85/D_85_62.stl"/>
-        <mesh name="D_85_63" file="objects/D_85/D_85_63.stl"/>
-        <mesh name="D_85_64" file="objects/D_85/D_85_64.stl"/>
-        <mesh name="D_85_65" file="objects/D_85/D_85_65.stl"/>
         <mesh name="D_85_visual" file="objects/D_85/D_85_full.stl"/>
     </asset>
 </mujoco>

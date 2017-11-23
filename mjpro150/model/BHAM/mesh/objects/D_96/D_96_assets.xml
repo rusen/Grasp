@@ -69,6 +69,15 @@
         <mesh name="D_96_67" file="objects/D_96/D_96_67.stl"/>
         <mesh name="D_96_68" file="objects/D_96/D_96_68.stl"/>
         <mesh name="D_96_69" file="objects/D_96/D_96_69.stl"/>
+        <mesh name="D_96_70" file="objects/D_96/D_96_70.stl"/>
+        <mesh name="D_96_71" file="objects/D_96/D_96_71.stl"/>
+        <mesh name="D_96_72" file="objects/D_96/D_96_72.stl"/>
+        <mesh name="D_96_73" file="objects/D_96/D_96_73.stl"/>
+        <mesh name="D_96_74" file="objects/D_96/D_96_74.stl"/>
+        <mesh name="D_96_75" file="objects/D_96/D_96_75.stl"/>
+        <mesh name="D_96_76" file="objects/D_96/D_96_76.stl"/>
+        <mesh name="D_96_77" file="objects/D_96/D_96_77.stl"/>
+        <mesh name="D_96_78" file="objects/D_96/D_96_78.stl"/>
         <mesh name="D_96_visual" file="objects/D_96/D_96_full.stl"/>
     </asset>
 </mujoco>

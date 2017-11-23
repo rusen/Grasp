@@ -9,10 +9,6 @@
         <mesh name="D_250_7" file="objects/D_250/D_250_7.stl"/>
         <mesh name="D_250_8" file="objects/D_250/D_250_8.stl"/>
         <mesh name="D_250_9" file="objects/D_250/D_250_9.stl"/>
-        <mesh name="D_250_10" file="objects/D_250/D_250_10.stl"/>
-        <mesh name="D_250_11" file="objects/D_250/D_250_11.stl"/>
-        <mesh name="D_250_12" file="objects/D_250/D_250_12.stl"/>
-        <mesh name="D_250_13" file="objects/D_250/D_250_13.stl"/>
         <mesh name="D_250_visual" file="objects/D_250/D_250_full.stl"/>
     </asset>
 </mujoco>

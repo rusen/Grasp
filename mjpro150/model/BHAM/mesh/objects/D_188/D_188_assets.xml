@@ -5,10 +5,6 @@
         <mesh name="D_188_3" file="objects/D_188/D_188_3.stl"/>
         <mesh name="D_188_4" file="objects/D_188/D_188_4.stl"/>
         <mesh name="D_188_5" file="objects/D_188/D_188_5.stl"/>
-        <mesh name="D_188_6" file="objects/D_188/D_188_6.stl"/>
-        <mesh name="D_188_7" file="objects/D_188/D_188_7.stl"/>
-        <mesh name="D_188_8" file="objects/D_188/D_188_8.stl"/>
-        <mesh name="D_188_9" file="objects/D_188/D_188_9.stl"/>
         <mesh name="D_188_visual" file="objects/D_188/D_188_full.stl"/>
     </asset>
 </mujoco>

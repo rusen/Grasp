@@ -3,6 +3,10 @@
         <mesh name="D_114_1" file="objects/D_114/D_114_1.stl"/>
         <mesh name="D_114_2" file="objects/D_114/D_114_2.stl"/>
         <mesh name="D_114_3" file="objects/D_114/D_114_3.stl"/>
+        <mesh name="D_114_4" file="objects/D_114/D_114_4.stl"/>
+        <mesh name="D_114_5" file="objects/D_114/D_114_5.stl"/>
+        <mesh name="D_114_6" file="objects/D_114/D_114_6.stl"/>
+        <mesh name="D_114_7" file="objects/D_114/D_114_7.stl"/>
         <mesh name="D_114_visual" file="objects/D_114/D_114_full.stl"/>
     </asset>
 </mujoco>

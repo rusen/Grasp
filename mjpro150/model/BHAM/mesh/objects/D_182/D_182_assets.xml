@@ -94,6 +94,9 @@
         <mesh name="D_182_92" file="objects/D_182/D_182_92.stl"/>
         <mesh name="D_182_93" file="objects/D_182/D_182_93.stl"/>
         <mesh name="D_182_94" file="objects/D_182/D_182_94.stl"/>
+        <mesh name="D_182_95" file="objects/D_182/D_182_95.stl"/>
+        <mesh name="D_182_96" file="objects/D_182/D_182_96.stl"/>
+        <mesh name="D_182_97" file="objects/D_182/D_182_97.stl"/>
         <mesh name="D_182_visual" file="objects/D_182/D_182_full.stl"/>
     </asset>
 </mujoco>

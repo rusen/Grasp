@@ -46,6 +46,25 @@
         <mesh name="D_124_44" file="objects/D_124/D_124_44.stl"/>
         <mesh name="D_124_45" file="objects/D_124/D_124_45.stl"/>
         <mesh name="D_124_46" file="objects/D_124/D_124_46.stl"/>
+        <mesh name="D_124_47" file="objects/D_124/D_124_47.stl"/>
+        <mesh name="D_124_48" file="objects/D_124/D_124_48.stl"/>
+        <mesh name="D_124_49" file="objects/D_124/D_124_49.stl"/>
+        <mesh name="D_124_50" file="objects/D_124/D_124_50.stl"/>
+        <mesh name="D_124_51" file="objects/D_124/D_124_51.stl"/>
+        <mesh name="D_124_52" file="objects/D_124/D_124_52.stl"/>
+        <mesh name="D_124_53" file="objects/D_124/D_124_53.stl"/>
+        <mesh name="D_124_54" file="objects/D_124/D_124_54.stl"/>
+        <mesh name="D_124_55" file="objects/D_124/D_124_55.stl"/>
+        <mesh name="D_124_56" file="objects/D_124/D_124_56.stl"/>
+        <mesh name="D_124_57" file="objects/D_124/D_124_57.stl"/>
+        <mesh name="D_124_58" file="objects/D_124/D_124_58.stl"/>
+        <mesh name="D_124_59" file="objects/D_124/D_124_59.stl"/>
+        <mesh name="D_124_60" file="objects/D_124/D_124_60.stl"/>
+        <mesh name="D_124_61" file="objects/D_124/D_124_61.stl"/>
+        <mesh name="D_124_62" file="objects/D_124/D_124_62.stl"/>
+        <mesh name="D_124_63" file="objects/D_124/D_124_63.stl"/>
+        <mesh name="D_124_64" file="objects/D_124/D_124_64.stl"/>
+        <mesh name="D_124_65" file="objects/D_124/D_124_65.stl"/>
         <mesh name="D_124_visual" file="objects/D_124/D_124_full.stl"/>
     </asset>
 </mujoco>

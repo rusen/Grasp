@@ -25,21 +25,6 @@
         <mesh name="D_89_23" file="objects/D_89/D_89_23.stl"/>
         <mesh name="D_89_24" file="objects/D_89/D_89_24.stl"/>
         <mesh name="D_89_25" file="objects/D_89/D_89_25.stl"/>
-        <mesh name="D_89_26" file="objects/D_89/D_89_26.stl"/>
-        <mesh name="D_89_27" file="objects/D_89/D_89_27.stl"/>
-        <mesh name="D_89_28" file="objects/D_89/D_89_28.stl"/>
-        <mesh name="D_89_29" file="objects/D_89/D_89_29.stl"/>
-        <mesh name="D_89_30" file="objects/D_89/D_89_30.stl"/>
-        <mesh name="D_89_31" file="objects/D_89/D_89_31.stl"/>
-        <mesh name="D_89_32" file="objects/D_89/D_89_32.stl"/>
-        <mesh name="D_89_33" file="objects/D_89/D_89_33.stl"/>
-        <mesh name="D_89_34" file="objects/D_89/D_89_34.stl"/>
-        <mesh name="D_89_35" file="objects/D_89/D_89_35.stl"/>
-        <mesh name="D_89_36" file="objects/D_89/D_89_36.stl"/>
-        <mesh name="D_89_37" file="objects/D_89/D_89_37.stl"/>
-        <mesh name="D_89_38" file="objects/D_89/D_89_38.stl"/>
-        <mesh name="D_89_39" file="objects/D_89/D_89_39.stl"/>
-        <mesh name="D_89_40" file="objects/D_89/D_89_40.stl"/>
         <mesh name="D_89_visual" file="objects/D_89/D_89_full.stl"/>
     </asset>
 </mujoco>

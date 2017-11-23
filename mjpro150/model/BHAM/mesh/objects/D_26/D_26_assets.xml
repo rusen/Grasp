@@ -52,6 +52,39 @@
         <mesh name="D_26_50" file="objects/D_26/D_26_50.stl"/>
         <mesh name="D_26_51" file="objects/D_26/D_26_51.stl"/>
         <mesh name="D_26_52" file="objects/D_26/D_26_52.stl"/>
+        <mesh name="D_26_53" file="objects/D_26/D_26_53.stl"/>
+        <mesh name="D_26_54" file="objects/D_26/D_26_54.stl"/>
+        <mesh name="D_26_55" file="objects/D_26/D_26_55.stl"/>
+        <mesh name="D_26_56" file="objects/D_26/D_26_56.stl"/>
+        <mesh name="D_26_57" file="objects/D_26/D_26_57.stl"/>
+        <mesh name="D_26_58" file="objects/D_26/D_26_58.stl"/>
+        <mesh name="D_26_59" file="objects/D_26/D_26_59.stl"/>
+        <mesh name="D_26_60" file="objects/D_26/D_26_60.stl"/>
+        <mesh name="D_26_61" file="objects/D_26/D_26_61.stl"/>
+        <mesh name="D_26_62" file="objects/D_26/D_26_62.stl"/>
+        <mesh name="D_26_63" file="objects/D_26/D_26_63.stl"/>
+        <mesh name="D_26_64" file="objects/D_26/D_26_64.stl"/>
+        <mesh name="D_26_65" file="objects/D_26/D_26_65.stl"/>
+        <mesh name="D_26_66" file="objects/D_26/D_26_66.stl"/>
+        <mesh name="D_26_67" file="objects/D_26/D_26_67.stl"/>
+        <mesh name="D_26_68" file="objects/D_26/D_26_68.stl"/>
+        <mesh name="D_26_69" file="objects/D_26/D_26_69.stl"/>
+        <mesh name="D_26_70" file="objects/D_26/D_26_70.stl"/>
+        <mesh name="D_26_71" file="objects/D_26/D_26_71.stl"/>
+        <mesh name="D_26_72" file="objects/D_26/D_26_72.stl"/>
+        <mesh name="D_26_73" file="objects/D_26/D_26_73.stl"/>
+        <mesh name="D_26_74" file="objects/D_26/D_26_74.stl"/>
+        <mesh name="D_26_75" file="objects/D_26/D_26_75.stl"/>
+        <mesh name="D_26_76" file="objects/D_26/D_26_76.stl"/>
+        <mesh name="D_26_77" file="objects/D_26/D_26_77.stl"/>
+        <mesh name="D_26_78" file="objects/D_26/D_26_78.stl"/>
+        <mesh name="D_26_79" file="objects/D_26/D_26_79.stl"/>
+        <mesh name="D_26_80" file="objects/D_26/D_26_80.stl"/>
+        <mesh name="D_26_81" file="objects/D_26/D_26_81.stl"/>
+        <mesh name="D_26_82" file="objects/D_26/D_26_82.stl"/>
+        <mesh name="D_26_83" file="objects/D_26/D_26_83.stl"/>
+        <mesh name="D_26_84" file="objects/D_26/D_26_84.stl"/>
+        <mesh name="D_26_85" file="objects/D_26/D_26_85.stl"/>
         <mesh name="D_26_visual" file="objects/D_26/D_26_full.stl"/>
     </asset>
 </mujoco>

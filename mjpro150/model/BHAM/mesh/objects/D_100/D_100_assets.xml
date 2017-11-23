@@ -22,52 +22,6 @@
         <mesh name="D_100_20" file="objects/D_100/D_100_20.stl"/>
         <mesh name="D_100_21" file="objects/D_100/D_100_21.stl"/>
         <mesh name="D_100_22" file="objects/D_100/D_100_22.stl"/>
-        <mesh name="D_100_23" file="objects/D_100/D_100_23.stl"/>
-        <mesh name="D_100_24" file="objects/D_100/D_100_24.stl"/>
-        <mesh name="D_100_25" file="objects/D_100/D_100_25.stl"/>
-        <mesh name="D_100_26" file="objects/D_100/D_100_26.stl"/>
-        <mesh name="D_100_27" file="objects/D_100/D_100_27.stl"/>
-        <mesh name="D_100_28" file="objects/D_100/D_100_28.stl"/>
-        <mesh name="D_100_29" file="objects/D_100/D_100_29.stl"/>
-        <mesh name="D_100_30" file="objects/D_100/D_100_30.stl"/>
-        <mesh name="D_100_31" file="objects/D_100/D_100_31.stl"/>
-        <mesh name="D_100_32" file="objects/D_100/D_100_32.stl"/>
-        <mesh name="D_100_33" file="objects/D_100/D_100_33.stl"/>
-        <mesh name="D_100_34" file="objects/D_100/D_100_34.stl"/>
-        <mesh name="D_100_35" file="objects/D_100/D_100_35.stl"/>
-        <mesh name="D_100_36" file="objects/D_100/D_100_36.stl"/>
-        <mesh name="D_100_37" file="objects/D_100/D_100_37.stl"/>
-        <mesh name="D_100_38" file="objects/D_100/D_100_38.stl"/>
-        <mesh name="D_100_39" file="objects/D_100/D_100_39.stl"/>
-        <mesh name="D_100_40" file="objects/D_100/D_100_40.stl"/>
-        <mesh name="D_100_41" file="objects/D_100/D_100_41.stl"/>
-        <mesh name="D_100_42" file="objects/D_100/D_100_42.stl"/>
-        <mesh name="D_100_43" file="objects/D_100/D_100_43.stl"/>
-        <mesh name="D_100_44" file="objects/D_100/D_100_44.stl"/>
-        <mesh name="D_100_45" file="objects/D_100/D_100_45.stl"/>
-        <mesh name="D_100_46" file="objects/D_100/D_100_46.stl"/>
-        <mesh name="D_100_47" file="objects/D_100/D_100_47.stl"/>
-        <mesh name="D_100_48" file="objects/D_100/D_100_48.stl"/>
-        <mesh name="D_100_49" file="objects/D_100/D_100_49.stl"/>
-        <mesh name="D_100_50" file="objects/D_100/D_100_50.stl"/>
-        <mesh name="D_100_51" file="objects/D_100/D_100_51.stl"/>
-        <mesh name="D_100_52" file="objects/D_100/D_100_52.stl"/>
-        <mesh name="D_100_53" file="objects/D_100/D_100_53.stl"/>
-        <mesh name="D_100_54" file="objects/D_100/D_100_54.stl"/>
-        <mesh name="D_100_55" file="objects/D_100/D_100_55.stl"/>
-        <mesh name="D_100_56" file="objects/D_100/D_100_56.stl"/>
-        <mesh name="D_100_57" file="objects/D_100/D_100_57.stl"/>
-        <mesh name="D_100_58" file="objects/D_100/D_100_58.stl"/>
-        <mesh name="D_100_59" file="objects/D_100/D_100_59.stl"/>
-        <mesh name="D_100_60" file="objects/D_100/D_100_60.stl"/>
-        <mesh name="D_100_61" file="objects/D_100/D_100_61.stl"/>
-        <mesh name="D_100_62" file="objects/D_100/D_100_62.stl"/>
-        <mesh name="D_100_63" file="objects/D_100/D_100_63.stl"/>
-        <mesh name="D_100_64" file="objects/D_100/D_100_64.stl"/>
-        <mesh name="D_100_65" file="objects/D_100/D_100_65.stl"/>
-        <mesh name="D_100_66" file="objects/D_100/D_100_66.stl"/>
-        <mesh name="D_100_67" file="objects/D_100/D_100_67.stl"/>
-        <mesh name="D_100_68" file="objects/D_100/D_100_68.stl"/>
         <mesh name="D_100_visual" file="objects/D_100/D_100_full.stl"/>
     </asset>
 </mujoco>

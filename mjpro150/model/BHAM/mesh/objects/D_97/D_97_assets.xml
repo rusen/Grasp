@@ -26,58 +26,6 @@
         <mesh name="D_97_24" file="objects/D_97/D_97_24.stl"/>
         <mesh name="D_97_25" file="objects/D_97/D_97_25.stl"/>
         <mesh name="D_97_26" file="objects/D_97/D_97_26.stl"/>
-        <mesh name="D_97_27" file="objects/D_97/D_97_27.stl"/>
-        <mesh name="D_97_28" file="objects/D_97/D_97_28.stl"/>
-        <mesh name="D_97_29" file="objects/D_97/D_97_29.stl"/>
-        <mesh name="D_97_30" file="objects/D_97/D_97_30.stl"/>
-        <mesh name="D_97_31" file="objects/D_97/D_97_31.stl"/>
-        <mesh name="D_97_32" file="objects/D_97/D_97_32.stl"/>
-        <mesh name="D_97_33" file="objects/D_97/D_97_33.stl"/>
-        <mesh name="D_97_34" file="objects/D_97/D_97_34.stl"/>
-        <mesh name="D_97_35" file="objects/D_97/D_97_35.stl"/>
-        <mesh name="D_97_36" file="objects/D_97/D_97_36.stl"/>
-        <mesh name="D_97_37" file="objects/D_97/D_97_37.stl"/>
-        <mesh name="D_97_38" file="objects/D_97/D_97_38.stl"/>
-        <mesh name="D_97_39" file="objects/D_97/D_97_39.stl"/>
-        <mesh name="D_97_40" file="objects/D_97/D_97_40.stl"/>
-        <mesh name="D_97_41" file="objects/D_97/D_97_41.stl"/>
-        <mesh name="D_97_42" file="objects/D_97/D_97_42.stl"/>
-        <mesh name="D_97_43" file="objects/D_97/D_97_43.stl"/>
-        <mesh name="D_97_44" file="objects/D_97/D_97_44.stl"/>
-        <mesh name="D_97_45" file="objects/D_97/D_97_45.stl"/>
-        <mesh name="D_97_46" file="objects/D_97/D_97_46.stl"/>
-        <mesh name="D_97_47" file="objects/D_97/D_97_47.stl"/>
-        <mesh name="D_97_48" file="objects/D_97/D_97_48.stl"/>
-        <mesh name="D_97_49" file="objects/D_97/D_97_49.stl"/>
-        <mesh name="D_97_50" file="objects/D_97/D_97_50.stl"/>
-        <mesh name="D_97_51" file="objects/D_97/D_97_51.stl"/>
-        <mesh name="D_97_52" file="objects/D_97/D_97_52.stl"/>
-        <mesh name="D_97_53" file="objects/D_97/D_97_53.stl"/>
-        <mesh name="D_97_54" file="objects/D_97/D_97_54.stl"/>
-        <mesh name="D_97_55" file="objects/D_97/D_97_55.stl"/>
-        <mesh name="D_97_56" file="objects/D_97/D_97_56.stl"/>
-        <mesh name="D_97_57" file="objects/D_97/D_97_57.stl"/>
-        <mesh name="D_97_58" file="objects/D_97/D_97_58.stl"/>
-        <mesh name="D_97_59" file="objects/D_97/D_97_59.stl"/>
-        <mesh name="D_97_60" file="objects/D_97/D_97_60.stl"/>
-        <mesh name="D_97_61" file="objects/D_97/D_97_61.stl"/>
-        <mesh name="D_97_62" file="objects/D_97/D_97_62.stl"/>
-        <mesh name="D_97_63" file="objects/D_97/D_97_63.stl"/>
-        <mesh name="D_97_64" file="objects/D_97/D_97_64.stl"/>
-        <mesh name="D_97_65" file="objects/D_97/D_97_65.stl"/>
-        <mesh name="D_97_66" file="objects/D_97/D_97_66.stl"/>
-        <mesh name="D_97_67" file="objects/D_97/D_97_67.stl"/>
-        <mesh name="D_97_68" file="objects/D_97/D_97_68.stl"/>
-        <mesh name="D_97_69" file="objects/D_97/D_97_69.stl"/>
-        <mesh name="D_97_70" file="objects/D_97/D_97_70.stl"/>
-        <mesh name="D_97_71" file="objects/D_97/D_97_71.stl"/>
-        <mesh name="D_97_72" file="objects/D_97/D_97_72.stl"/>
-        <mesh name="D_97_73" file="objects/D_97/D_97_73.stl"/>
-        <mesh name="D_97_74" file="objects/D_97/D_97_74.stl"/>
-        <mesh name="D_97_75" file="objects/D_97/D_97_75.stl"/>
-        <mesh name="D_97_76" file="objects/D_97/D_97_76.stl"/>
-        <mesh name="D_97_77" file="objects/D_97/D_97_77.stl"/>
-        <mesh name="D_97_78" file="objects/D_97/D_97_78.stl"/>
         <mesh name="D_97_visual" file="objects/D_97/D_97_full.stl"/>
     </asset>
 </mujoco>

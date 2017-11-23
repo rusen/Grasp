@@ -47,40 +47,6 @@
         <mesh name="D_156_45" file="objects/D_156/D_156_45.stl"/>
         <mesh name="D_156_46" file="objects/D_156/D_156_46.stl"/>
         <mesh name="D_156_47" file="objects/D_156/D_156_47.stl"/>
-        <mesh name="D_156_48" file="objects/D_156/D_156_48.stl"/>
-        <mesh name="D_156_49" file="objects/D_156/D_156_49.stl"/>
-        <mesh name="D_156_50" file="objects/D_156/D_156_50.stl"/>
-        <mesh name="D_156_51" file="objects/D_156/D_156_51.stl"/>
-        <mesh name="D_156_52" file="objects/D_156/D_156_52.stl"/>
-        <mesh name="D_156_53" file="objects/D_156/D_156_53.stl"/>
-        <mesh name="D_156_54" file="objects/D_156/D_156_54.stl"/>
-        <mesh name="D_156_55" file="objects/D_156/D_156_55.stl"/>
-        <mesh name="D_156_56" file="objects/D_156/D_156_56.stl"/>
-        <mesh name="D_156_57" file="objects/D_156/D_156_57.stl"/>
-        <mesh name="D_156_58" file="objects/D_156/D_156_58.stl"/>
-        <mesh name="D_156_59" file="objects/D_156/D_156_59.stl"/>
-        <mesh name="D_156_60" file="objects/D_156/D_156_60.stl"/>
-        <mesh name="D_156_61" file="objects/D_156/D_156_61.stl"/>
-        <mesh name="D_156_62" file="objects/D_156/D_156_62.stl"/>
-        <mesh name="D_156_63" file="objects/D_156/D_156_63.stl"/>
-        <mesh name="D_156_64" file="objects/D_156/D_156_64.stl"/>
-        <mesh name="D_156_65" file="objects/D_156/D_156_65.stl"/>
-        <mesh name="D_156_66" file="objects/D_156/D_156_66.stl"/>
-        <mesh name="D_156_67" file="objects/D_156/D_156_67.stl"/>
-        <mesh name="D_156_68" file="objects/D_156/D_156_68.stl"/>
-        <mesh name="D_156_69" file="objects/D_156/D_156_69.stl"/>
-        <mesh name="D_156_70" file="objects/D_156/D_156_70.stl"/>
-        <mesh name="D_156_71" file="objects/D_156/D_156_71.stl"/>
-        <mesh name="D_156_72" file="objects/D_156/D_156_72.stl"/>
-        <mesh name="D_156_73" file="objects/D_156/D_156_73.stl"/>
-        <mesh name="D_156_74" file="objects/D_156/D_156_74.stl"/>
-        <mesh name="D_156_75" file="objects/D_156/D_156_75.stl"/>
-        <mesh name="D_156_76" file="objects/D_156/D_156_76.stl"/>
-        <mesh name="D_156_77" file="objects/D_156/D_156_77.stl"/>
-        <mesh name="D_156_78" file="objects/D_156/D_156_78.stl"/>
-        <mesh name="D_156_79" file="objects/D_156/D_156_79.stl"/>
-        <mesh name="D_156_80" file="objects/D_156/D_156_80.stl"/>
-        <mesh name="D_156_81" file="objects/D_156/D_156_81.stl"/>
         <mesh name="D_156_visual" file="objects/D_156/D_156_full.stl"/>
     </asset>
 </mujoco>

@@ -46,7 +46,7 @@ double lastx = 0;
 double lasty = 0;
 
 // Dataset related variables.
-int objectCount = 255;
+int objectCount = 250;
 int baseIds[1000];
 bool utensilFlag = false;
 bool pauseFlag = true;

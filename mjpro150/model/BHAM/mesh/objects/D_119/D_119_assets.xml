@@ -4,13 +4,6 @@
         <mesh name="D_119_2" file="objects/D_119/D_119_2.stl"/>
         <mesh name="D_119_3" file="objects/D_119/D_119_3.stl"/>
         <mesh name="D_119_4" file="objects/D_119/D_119_4.stl"/>
-        <mesh name="D_119_5" file="objects/D_119/D_119_5.stl"/>
-        <mesh name="D_119_6" file="objects/D_119/D_119_6.stl"/>
-        <mesh name="D_119_7" file="objects/D_119/D_119_7.stl"/>
-        <mesh name="D_119_8" file="objects/D_119/D_119_8.stl"/>
-        <mesh name="D_119_9" file="objects/D_119/D_119_9.stl"/>
-        <mesh name="D_119_10" file="objects/D_119/D_119_10.stl"/>
-        <mesh name="D_119_11" file="objects/D_119/D_119_11.stl"/>
         <mesh name="D_119_visual" file="objects/D_119/D_119_full.stl"/>
     </asset>
 </mujoco>

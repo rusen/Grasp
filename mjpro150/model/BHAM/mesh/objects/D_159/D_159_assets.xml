@@ -22,31 +22,6 @@
         <mesh name="D_159_20" file="objects/D_159/D_159_20.stl"/>
         <mesh name="D_159_21" file="objects/D_159/D_159_21.stl"/>
         <mesh name="D_159_22" file="objects/D_159/D_159_22.stl"/>
-        <mesh name="D_159_23" file="objects/D_159/D_159_23.stl"/>
-        <mesh name="D_159_24" file="objects/D_159/D_159_24.stl"/>
-        <mesh name="D_159_25" file="objects/D_159/D_159_25.stl"/>
-        <mesh name="D_159_26" file="objects/D_159/D_159_26.stl"/>
-        <mesh name="D_159_27" file="objects/D_159/D_159_27.stl"/>
-        <mesh name="D_159_28" file="objects/D_159/D_159_28.stl"/>
-        <mesh name="D_159_29" file="objects/D_159/D_159_29.stl"/>
-        <mesh name="D_159_30" file="objects/D_159/D_159_30.stl"/>
-        <mesh name="D_159_31" file="objects/D_159/D_159_31.stl"/>
-        <mesh name="D_159_32" file="objects/D_159/D_159_32.stl"/>
-        <mesh name="D_159_33" file="objects/D_159/D_159_33.stl"/>
-        <mesh name="D_159_34" file="objects/D_159/D_159_34.stl"/>
-        <mesh name="D_159_35" file="objects/D_159/D_159_35.stl"/>
-        <mesh name="D_159_36" file="objects/D_159/D_159_36.stl"/>
-        <mesh name="D_159_37" file="objects/D_159/D_159_37.stl"/>
-        <mesh name="D_159_38" file="objects/D_159/D_159_38.stl"/>
-        <mesh name="D_159_39" file="objects/D_159/D_159_39.stl"/>
-        <mesh name="D_159_40" file="objects/D_159/D_159_40.stl"/>
-        <mesh name="D_159_41" file="objects/D_159/D_159_41.stl"/>
-        <mesh name="D_159_42" file="objects/D_159/D_159_42.stl"/>
-        <mesh name="D_159_43" file="objects/D_159/D_159_43.stl"/>
-        <mesh name="D_159_44" file="objects/D_159/D_159_44.stl"/>
-        <mesh name="D_159_45" file="objects/D_159/D_159_45.stl"/>
-        <mesh name="D_159_46" file="objects/D_159/D_159_46.stl"/>
-        <mesh name="D_159_47" file="objects/D_159/D_159_47.stl"/>
         <mesh name="D_159_visual" file="objects/D_159/D_159_full.stl"/>
     </asset>
 </mujoco>

@@ -36,34 +36,6 @@
         <mesh name="D_210_34" file="objects/D_210/D_210_34.stl"/>
         <mesh name="D_210_35" file="objects/D_210/D_210_35.stl"/>
         <mesh name="D_210_36" file="objects/D_210/D_210_36.stl"/>
-        <mesh name="D_210_37" file="objects/D_210/D_210_37.stl"/>
-        <mesh name="D_210_38" file="objects/D_210/D_210_38.stl"/>
-        <mesh name="D_210_39" file="objects/D_210/D_210_39.stl"/>
-        <mesh name="D_210_40" file="objects/D_210/D_210_40.stl"/>
-        <mesh name="D_210_41" file="objects/D_210/D_210_41.stl"/>
-        <mesh name="D_210_42" file="objects/D_210/D_210_42.stl"/>
-        <mesh name="D_210_43" file="objects/D_210/D_210_43.stl"/>
-        <mesh name="D_210_44" file="objects/D_210/D_210_44.stl"/>
-        <mesh name="D_210_45" file="objects/D_210/D_210_45.stl"/>
-        <mesh name="D_210_46" file="objects/D_210/D_210_46.stl"/>
-        <mesh name="D_210_47" file="objects/D_210/D_210_47.stl"/>
-        <mesh name="D_210_48" file="objects/D_210/D_210_48.stl"/>
-        <mesh name="D_210_49" file="objects/D_210/D_210_49.stl"/>
-        <mesh name="D_210_50" file="objects/D_210/D_210_50.stl"/>
-        <mesh name="D_210_51" file="objects/D_210/D_210_51.stl"/>
-        <mesh name="D_210_52" file="objects/D_210/D_210_52.stl"/>
-        <mesh name="D_210_53" file="objects/D_210/D_210_53.stl"/>
-        <mesh name="D_210_54" file="objects/D_210/D_210_54.stl"/>
-        <mesh name="D_210_55" file="objects/D_210/D_210_55.stl"/>
-        <mesh name="D_210_56" file="objects/D_210/D_210_56.stl"/>
-        <mesh name="D_210_57" file="objects/D_210/D_210_57.stl"/>
-        <mesh name="D_210_58" file="objects/D_210/D_210_58.stl"/>
-        <mesh name="D_210_59" file="objects/D_210/D_210_59.stl"/>
-        <mesh name="D_210_60" file="objects/D_210/D_210_60.stl"/>
-        <mesh name="D_210_61" file="objects/D_210/D_210_61.stl"/>
-        <mesh name="D_210_62" file="objects/D_210/D_210_62.stl"/>
-        <mesh name="D_210_63" file="objects/D_210/D_210_63.stl"/>
-        <mesh name="D_210_64" file="objects/D_210/D_210_64.stl"/>
         <mesh name="D_210_visual" file="objects/D_210/D_210_full.stl"/>
     </asset>
 </mujoco>

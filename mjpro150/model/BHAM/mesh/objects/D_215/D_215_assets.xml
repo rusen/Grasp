@@ -31,13 +31,6 @@
         <mesh name="D_215_29" file="objects/D_215/D_215_29.stl"/>
         <mesh name="D_215_30" file="objects/D_215/D_215_30.stl"/>
         <mesh name="D_215_31" file="objects/D_215/D_215_31.stl"/>
-        <mesh name="D_215_32" file="objects/D_215/D_215_32.stl"/>
-        <mesh name="D_215_33" file="objects/D_215/D_215_33.stl"/>
-        <mesh name="D_215_34" file="objects/D_215/D_215_34.stl"/>
-        <mesh name="D_215_35" file="objects/D_215/D_215_35.stl"/>
-        <mesh name="D_215_36" file="objects/D_215/D_215_36.stl"/>
-        <mesh name="D_215_37" file="objects/D_215/D_215_37.stl"/>
-        <mesh name="D_215_38" file="objects/D_215/D_215_38.stl"/>
         <mesh name="D_215_visual" file="objects/D_215/D_215_full.stl"/>
     </asset>
 </mujoco>

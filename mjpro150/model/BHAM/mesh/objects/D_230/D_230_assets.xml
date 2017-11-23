@@ -5,6 +5,31 @@
         <mesh name="D_230_3" file="objects/D_230/D_230_3.stl"/>
         <mesh name="D_230_4" file="objects/D_230/D_230_4.stl"/>
         <mesh name="D_230_5" file="objects/D_230/D_230_5.stl"/>
+        <mesh name="D_230_6" file="objects/D_230/D_230_6.stl"/>
+        <mesh name="D_230_7" file="objects/D_230/D_230_7.stl"/>
+        <mesh name="D_230_8" file="objects/D_230/D_230_8.stl"/>
+        <mesh name="D_230_9" file="objects/D_230/D_230_9.stl"/>
+        <mesh name="D_230_10" file="objects/D_230/D_230_10.stl"/>
+        <mesh name="D_230_11" file="objects/D_230/D_230_11.stl"/>
+        <mesh name="D_230_12" file="objects/D_230/D_230_12.stl"/>
+        <mesh name="D_230_13" file="objects/D_230/D_230_13.stl"/>
+        <mesh name="D_230_14" file="objects/D_230/D_230_14.stl"/>
+        <mesh name="D_230_15" file="objects/D_230/D_230_15.stl"/>
+        <mesh name="D_230_16" file="objects/D_230/D_230_16.stl"/>
+        <mesh name="D_230_17" file="objects/D_230/D_230_17.stl"/>
+        <mesh name="D_230_18" file="objects/D_230/D_230_18.stl"/>
+        <mesh name="D_230_19" file="objects/D_230/D_230_19.stl"/>
+        <mesh name="D_230_20" file="objects/D_230/D_230_20.stl"/>
+        <mesh name="D_230_21" file="objects/D_230/D_230_21.stl"/>
+        <mesh name="D_230_22" file="objects/D_230/D_230_22.stl"/>
+        <mesh name="D_230_23" file="objects/D_230/D_230_23.stl"/>
+        <mesh name="D_230_24" file="objects/D_230/D_230_24.stl"/>
+        <mesh name="D_230_25" file="objects/D_230/D_230_25.stl"/>
+        <mesh name="D_230_26" file="objects/D_230/D_230_26.stl"/>
+        <mesh name="D_230_27" file="objects/D_230/D_230_27.stl"/>
+        <mesh name="D_230_28" file="objects/D_230/D_230_28.stl"/>
+        <mesh name="D_230_29" file="objects/D_230/D_230_29.stl"/>
+        <mesh name="D_230_30" file="objects/D_230/D_230_30.stl"/>
         <mesh name="D_230_visual" file="objects/D_230/D_230_full.stl"/>
     </asset>
 </mujoco>

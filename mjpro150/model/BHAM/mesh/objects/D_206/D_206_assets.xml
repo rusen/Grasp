@@ -37,6 +37,16 @@
         <mesh name="D_206_35" file="objects/D_206/D_206_35.stl"/>
         <mesh name="D_206_36" file="objects/D_206/D_206_36.stl"/>
         <mesh name="D_206_37" file="objects/D_206/D_206_37.stl"/>
+        <mesh name="D_206_38" file="objects/D_206/D_206_38.stl"/>
+        <mesh name="D_206_39" file="objects/D_206/D_206_39.stl"/>
+        <mesh name="D_206_40" file="objects/D_206/D_206_40.stl"/>
+        <mesh name="D_206_41" file="objects/D_206/D_206_41.stl"/>
+        <mesh name="D_206_42" file="objects/D_206/D_206_42.stl"/>
+        <mesh name="D_206_43" file="objects/D_206/D_206_43.stl"/>
+        <mesh name="D_206_44" file="objects/D_206/D_206_44.stl"/>
+        <mesh name="D_206_45" file="objects/D_206/D_206_45.stl"/>
+        <mesh name="D_206_46" file="objects/D_206/D_206_46.stl"/>
+        <mesh name="D_206_47" file="objects/D_206/D_206_47.stl"/>
         <mesh name="D_206_visual" file="objects/D_206/D_206_full.stl"/>
     </asset>
 </mujoco>

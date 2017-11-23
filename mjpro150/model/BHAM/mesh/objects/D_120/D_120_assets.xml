@@ -4,6 +4,43 @@
         <mesh name="D_120_2" file="objects/D_120/D_120_2.stl"/>
         <mesh name="D_120_3" file="objects/D_120/D_120_3.stl"/>
         <mesh name="D_120_4" file="objects/D_120/D_120_4.stl"/>
+        <mesh name="D_120_5" file="objects/D_120/D_120_5.stl"/>
+        <mesh name="D_120_6" file="objects/D_120/D_120_6.stl"/>
+        <mesh name="D_120_7" file="objects/D_120/D_120_7.stl"/>
+        <mesh name="D_120_8" file="objects/D_120/D_120_8.stl"/>
+        <mesh name="D_120_9" file="objects/D_120/D_120_9.stl"/>
+        <mesh name="D_120_10" file="objects/D_120/D_120_10.stl"/>
+        <mesh name="D_120_11" file="objects/D_120/D_120_11.stl"/>
+        <mesh name="D_120_12" file="objects/D_120/D_120_12.stl"/>
+        <mesh name="D_120_13" file="objects/D_120/D_120_13.stl"/>
+        <mesh name="D_120_14" file="objects/D_120/D_120_14.stl"/>
+        <mesh name="D_120_15" file="objects/D_120/D_120_15.stl"/>
+        <mesh name="D_120_16" file="objects/D_120/D_120_16.stl"/>
+        <mesh name="D_120_17" file="objects/D_120/D_120_17.stl"/>
+        <mesh name="D_120_18" file="objects/D_120/D_120_18.stl"/>
+        <mesh name="D_120_19" file="objects/D_120/D_120_19.stl"/>
+        <mesh name="D_120_20" file="objects/D_120/D_120_20.stl"/>
+        <mesh name="D_120_21" file="objects/D_120/D_120_21.stl"/>
+        <mesh name="D_120_22" file="objects/D_120/D_120_22.stl"/>
+        <mesh name="D_120_23" file="objects/D_120/D_120_23.stl"/>
+        <mesh name="D_120_24" file="objects/D_120/D_120_24.stl"/>
+        <mesh name="D_120_25" file="objects/D_120/D_120_25.stl"/>
+        <mesh name="D_120_26" file="objects/D_120/D_120_26.stl"/>
+        <mesh name="D_120_27" file="objects/D_120/D_120_27.stl"/>
+        <mesh name="D_120_28" file="objects/D_120/D_120_28.stl"/>
+        <mesh name="D_120_29" file="objects/D_120/D_120_29.stl"/>
+        <mesh name="D_120_30" file="objects/D_120/D_120_30.stl"/>
+        <mesh name="D_120_31" file="objects/D_120/D_120_31.stl"/>
+        <mesh name="D_120_32" file="objects/D_120/D_120_32.stl"/>
+        <mesh name="D_120_33" file="objects/D_120/D_120_33.stl"/>
+        <mesh name="D_120_34" file="objects/D_120/D_120_34.stl"/>
+        <mesh name="D_120_35" file="objects/D_120/D_120_35.stl"/>
+        <mesh name="D_120_36" file="objects/D_120/D_120_36.stl"/>
+        <mesh name="D_120_37" file="objects/D_120/D_120_37.stl"/>
+        <mesh name="D_120_38" file="objects/D_120/D_120_38.stl"/>
+        <mesh name="D_120_39" file="objects/D_120/D_120_39.stl"/>
+        <mesh name="D_120_40" file="objects/D_120/D_120_40.stl"/>
+        <mesh name="D_120_41" file="objects/D_120/D_120_41.stl"/>
         <mesh name="D_120_visual" file="objects/D_120/D_120_full.stl"/>
     </asset>
 </mujoco>

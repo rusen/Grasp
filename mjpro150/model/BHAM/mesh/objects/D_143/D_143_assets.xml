@@ -43,6 +43,21 @@
         <mesh name="D_143_41" file="objects/D_143/D_143_41.stl"/>
         <mesh name="D_143_42" file="objects/D_143/D_143_42.stl"/>
         <mesh name="D_143_43" file="objects/D_143/D_143_43.stl"/>
+        <mesh name="D_143_44" file="objects/D_143/D_143_44.stl"/>
+        <mesh name="D_143_45" file="objects/D_143/D_143_45.stl"/>
+        <mesh name="D_143_46" file="objects/D_143/D_143_46.stl"/>
+        <mesh name="D_143_47" file="objects/D_143/D_143_47.stl"/>
+        <mesh name="D_143_48" file="objects/D_143/D_143_48.stl"/>
+        <mesh name="D_143_49" file="objects/D_143/D_143_49.stl"/>
+        <mesh name="D_143_50" file="objects/D_143/D_143_50.stl"/>
+        <mesh name="D_143_51" file="objects/D_143/D_143_51.stl"/>
+        <mesh name="D_143_52" file="objects/D_143/D_143_52.stl"/>
+        <mesh name="D_143_53" file="objects/D_143/D_143_53.stl"/>
+        <mesh name="D_143_54" file="objects/D_143/D_143_54.stl"/>
+        <mesh name="D_143_55" file="objects/D_143/D_143_55.stl"/>
+        <mesh name="D_143_56" file="objects/D_143/D_143_56.stl"/>
+        <mesh name="D_143_57" file="objects/D_143/D_143_57.stl"/>
+        <mesh name="D_143_58" file="objects/D_143/D_143_58.stl"/>
         <mesh name="D_143_visual" file="objects/D_143/D_143_full.stl"/>
     </asset>
 </mujoco>

@@ -76,6 +76,46 @@
         <mesh name="D_109_74" file="objects/D_109/D_109_74.stl"/>
         <mesh name="D_109_75" file="objects/D_109/D_109_75.stl"/>
         <mesh name="D_109_76" file="objects/D_109/D_109_76.stl"/>
+        <mesh name="D_109_77" file="objects/D_109/D_109_77.stl"/>
+        <mesh name="D_109_78" file="objects/D_109/D_109_78.stl"/>
+        <mesh name="D_109_79" file="objects/D_109/D_109_79.stl"/>
+        <mesh name="D_109_80" file="objects/D_109/D_109_80.stl"/>
+        <mesh name="D_109_81" file="objects/D_109/D_109_81.stl"/>
+        <mesh name="D_109_82" file="objects/D_109/D_109_82.stl"/>
+        <mesh name="D_109_83" file="objects/D_109/D_109_83.stl"/>
+        <mesh name="D_109_84" file="objects/D_109/D_109_84.stl"/>
+        <mesh name="D_109_85" file="objects/D_109/D_109_85.stl"/>
+        <mesh name="D_109_86" file="objects/D_109/D_109_86.stl"/>
+        <mesh name="D_109_87" file="objects/D_109/D_109_87.stl"/>
+        <mesh name="D_109_88" file="objects/D_109/D_109_88.stl"/>
+        <mesh name="D_109_89" file="objects/D_109/D_109_89.stl"/>
+        <mesh name="D_109_90" file="objects/D_109/D_109_90.stl"/>
+        <mesh name="D_109_91" file="objects/D_109/D_109_91.stl"/>
+        <mesh name="D_109_92" file="objects/D_109/D_109_92.stl"/>
+        <mesh name="D_109_93" file="objects/D_109/D_109_93.stl"/>
+        <mesh name="D_109_94" file="objects/D_109/D_109_94.stl"/>
+        <mesh name="D_109_95" file="objects/D_109/D_109_95.stl"/>
+        <mesh name="D_109_96" file="objects/D_109/D_109_96.stl"/>
+        <mesh name="D_109_97" file="objects/D_109/D_109_97.stl"/>
+        <mesh name="D_109_98" file="objects/D_109/D_109_98.stl"/>
+        <mesh name="D_109_99" file="objects/D_109/D_109_99.stl"/>
+        <mesh name="D_109_100" file="objects/D_109/D_109_100.stl"/>
+        <mesh name="D_109_101" file="objects/D_109/D_109_101.stl"/>
+        <mesh name="D_109_102" file="objects/D_109/D_109_102.stl"/>
+        <mesh name="D_109_103" file="objects/D_109/D_109_103.stl"/>
+        <mesh name="D_109_104" file="objects/D_109/D_109_104.stl"/>
+        <mesh name="D_109_105" file="objects/D_109/D_109_105.stl"/>
+        <mesh name="D_109_106" file="objects/D_109/D_109_106.stl"/>
+        <mesh name="D_109_107" file="objects/D_109/D_109_107.stl"/>
+        <mesh name="D_109_108" file="objects/D_109/D_109_108.stl"/>
+        <mesh name="D_109_109" file="objects/D_109/D_109_109.stl"/>
+        <mesh name="D_109_110" file="objects/D_109/D_109_110.stl"/>
+        <mesh name="D_109_111" file="objects/D_109/D_109_111.stl"/>
+        <mesh name="D_109_112" file="objects/D_109/D_109_112.stl"/>
+        <mesh name="D_109_113" file="objects/D_109/D_109_113.stl"/>
+        <mesh name="D_109_114" file="objects/D_109/D_109_114.stl"/>
+        <mesh name="D_109_115" file="objects/D_109/D_109_115.stl"/>
+        <mesh name="D_109_116" file="objects/D_109/D_109_116.stl"/>
         <mesh name="D_109_visual" file="objects/D_109/D_109_full.stl"/>
     </asset>
 </mujoco>

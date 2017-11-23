@@ -7,14 +7,6 @@
         <mesh name="D_190_5" file="objects/D_190/D_190_5.stl"/>
         <mesh name="D_190_6" file="objects/D_190/D_190_6.stl"/>
         <mesh name="D_190_7" file="objects/D_190/D_190_7.stl"/>
-        <mesh name="D_190_8" file="objects/D_190/D_190_8.stl"/>
-        <mesh name="D_190_9" file="objects/D_190/D_190_9.stl"/>
-        <mesh name="D_190_10" file="objects/D_190/D_190_10.stl"/>
-        <mesh name="D_190_11" file="objects/D_190/D_190_11.stl"/>
-        <mesh name="D_190_12" file="objects/D_190/D_190_12.stl"/>
-        <mesh name="D_190_13" file="objects/D_190/D_190_13.stl"/>
-        <mesh name="D_190_14" file="objects/D_190/D_190_14.stl"/>
-        <mesh name="D_190_15" file="objects/D_190/D_190_15.stl"/>
         <mesh name="D_190_visual" file="objects/D_190/D_190_full.stl"/>
     </asset>
 </mujoco>

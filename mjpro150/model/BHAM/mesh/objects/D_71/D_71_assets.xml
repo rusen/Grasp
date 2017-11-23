@@ -21,8 +21,6 @@
         <mesh name="D_71_19" file="objects/D_71/D_71_19.stl"/>
         <mesh name="D_71_20" file="objects/D_71/D_71_20.stl"/>
         <mesh name="D_71_21" file="objects/D_71/D_71_21.stl"/>
-        <mesh name="D_71_22" file="objects/D_71/D_71_22.stl"/>
-        <mesh name="D_71_23" file="objects/D_71/D_71_23.stl"/>
         <mesh name="D_71_visual" file="objects/D_71/D_71_full.stl"/>
     </asset>
 </mujoco>

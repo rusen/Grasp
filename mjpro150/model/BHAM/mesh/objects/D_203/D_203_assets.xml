@@ -37,10 +37,6 @@
         <mesh name="D_203_35" file="objects/D_203/D_203_35.stl"/>
         <mesh name="D_203_36" file="objects/D_203/D_203_36.stl"/>
         <mesh name="D_203_37" file="objects/D_203/D_203_37.stl"/>
-        <mesh name="D_203_38" file="objects/D_203/D_203_38.stl"/>
-        <mesh name="D_203_39" file="objects/D_203/D_203_39.stl"/>
-        <mesh name="D_203_40" file="objects/D_203/D_203_40.stl"/>
-        <mesh name="D_203_41" file="objects/D_203/D_203_41.stl"/>
         <mesh name="D_203_visual" file="objects/D_203/D_203_full.stl"/>
     </asset>
 </mujoco>

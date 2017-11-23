@@ -24,6 +24,14 @@
         <mesh name="D_163_22" file="objects/D_163/D_163_22.stl"/>
         <mesh name="D_163_23" file="objects/D_163/D_163_23.stl"/>
         <mesh name="D_163_24" file="objects/D_163/D_163_24.stl"/>
+        <mesh name="D_163_25" file="objects/D_163/D_163_25.stl"/>
+        <mesh name="D_163_26" file="objects/D_163/D_163_26.stl"/>
+        <mesh name="D_163_27" file="objects/D_163/D_163_27.stl"/>
+        <mesh name="D_163_28" file="objects/D_163/D_163_28.stl"/>
+        <mesh name="D_163_29" file="objects/D_163/D_163_29.stl"/>
+        <mesh name="D_163_30" file="objects/D_163/D_163_30.stl"/>
+        <mesh name="D_163_31" file="objects/D_163/D_163_31.stl"/>
+        <mesh name="D_163_32" file="objects/D_163/D_163_32.stl"/>
         <mesh name="D_163_visual" file="objects/D_163/D_163_full.stl"/>
     </asset>
 </mujoco>

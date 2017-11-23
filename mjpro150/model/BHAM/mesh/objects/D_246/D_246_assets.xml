@@ -9,6 +9,10 @@
         <mesh name="D_246_7" file="objects/D_246/D_246_7.stl"/>
         <mesh name="D_246_8" file="objects/D_246/D_246_8.stl"/>
         <mesh name="D_246_9" file="objects/D_246/D_246_9.stl"/>
+        <mesh name="D_246_10" file="objects/D_246/D_246_10.stl"/>
+        <mesh name="D_246_11" file="objects/D_246/D_246_11.stl"/>
+        <mesh name="D_246_12" file="objects/D_246/D_246_12.stl"/>
+        <mesh name="D_246_13" file="objects/D_246/D_246_13.stl"/>
         <mesh name="D_246_visual" file="objects/D_246/D_246_full.stl"/>
     </asset>
 </mujoco>

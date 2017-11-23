@@ -48,6 +48,25 @@
         <mesh name="D_75_46" file="objects/D_75/D_75_46.stl"/>
         <mesh name="D_75_47" file="objects/D_75/D_75_47.stl"/>
         <mesh name="D_75_48" file="objects/D_75/D_75_48.stl"/>
+        <mesh name="D_75_49" file="objects/D_75/D_75_49.stl"/>
+        <mesh name="D_75_50" file="objects/D_75/D_75_50.stl"/>
+        <mesh name="D_75_51" file="objects/D_75/D_75_51.stl"/>
+        <mesh name="D_75_52" file="objects/D_75/D_75_52.stl"/>
+        <mesh name="D_75_53" file="objects/D_75/D_75_53.stl"/>
+        <mesh name="D_75_54" file="objects/D_75/D_75_54.stl"/>
+        <mesh name="D_75_55" file="objects/D_75/D_75_55.stl"/>
+        <mesh name="D_75_56" file="objects/D_75/D_75_56.stl"/>
+        <mesh name="D_75_57" file="objects/D_75/D_75_57.stl"/>
+        <mesh name="D_75_58" file="objects/D_75/D_75_58.stl"/>
+        <mesh name="D_75_59" file="objects/D_75/D_75_59.stl"/>
+        <mesh name="D_75_60" file="objects/D_75/D_75_60.stl"/>
+        <mesh name="D_75_61" file="objects/D_75/D_75_61.stl"/>
+        <mesh name="D_75_62" file="objects/D_75/D_75_62.stl"/>
+        <mesh name="D_75_63" file="objects/D_75/D_75_63.stl"/>
+        <mesh name="D_75_64" file="objects/D_75/D_75_64.stl"/>
+        <mesh name="D_75_65" file="objects/D_75/D_75_65.stl"/>
+        <mesh name="D_75_66" file="objects/D_75/D_75_66.stl"/>
+        <mesh name="D_75_67" file="objects/D_75/D_75_67.stl"/>
         <mesh name="D_75_visual" file="objects/D_75/D_75_full.stl"/>
     </asset>
 </mujoco>

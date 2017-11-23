@@ -43,6 +43,26 @@
         <mesh name="D_24_41" file="objects/D_24/D_24_41.stl"/>
         <mesh name="D_24_42" file="objects/D_24/D_24_42.stl"/>
         <mesh name="D_24_43" file="objects/D_24/D_24_43.stl"/>
+        <mesh name="D_24_44" file="objects/D_24/D_24_44.stl"/>
+        <mesh name="D_24_45" file="objects/D_24/D_24_45.stl"/>
+        <mesh name="D_24_46" file="objects/D_24/D_24_46.stl"/>
+        <mesh name="D_24_47" file="objects/D_24/D_24_47.stl"/>
+        <mesh name="D_24_48" file="objects/D_24/D_24_48.stl"/>
+        <mesh name="D_24_49" file="objects/D_24/D_24_49.stl"/>
+        <mesh name="D_24_50" file="objects/D_24/D_24_50.stl"/>
+        <mesh name="D_24_51" file="objects/D_24/D_24_51.stl"/>
+        <mesh name="D_24_52" file="objects/D_24/D_24_52.stl"/>
+        <mesh name="D_24_53" file="objects/D_24/D_24_53.stl"/>
+        <mesh name="D_24_54" file="objects/D_24/D_24_54.stl"/>
+        <mesh name="D_24_55" file="objects/D_24/D_24_55.stl"/>
+        <mesh name="D_24_56" file="objects/D_24/D_24_56.stl"/>
+        <mesh name="D_24_57" file="objects/D_24/D_24_57.stl"/>
+        <mesh name="D_24_58" file="objects/D_24/D_24_58.stl"/>
+        <mesh name="D_24_59" file="objects/D_24/D_24_59.stl"/>
+        <mesh name="D_24_60" file="objects/D_24/D_24_60.stl"/>
+        <mesh name="D_24_61" file="objects/D_24/D_24_61.stl"/>
+        <mesh name="D_24_62" file="objects/D_24/D_24_62.stl"/>
+        <mesh name="D_24_63" file="objects/D_24/D_24_63.stl"/>
         <mesh name="D_24_visual" file="objects/D_24/D_24_full.stl"/>
     </asset>
 </mujoco>

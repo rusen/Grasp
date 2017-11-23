@@ -69,42 +69,6 @@
         <mesh name="D_95_67" file="objects/D_95/D_95_67.stl"/>
         <mesh name="D_95_68" file="objects/D_95/D_95_68.stl"/>
         <mesh name="D_95_69" file="objects/D_95/D_95_69.stl"/>
-        <mesh name="D_95_70" file="objects/D_95/D_95_70.stl"/>
-        <mesh name="D_95_71" file="objects/D_95/D_95_71.stl"/>
-        <mesh name="D_95_72" file="objects/D_95/D_95_72.stl"/>
-        <mesh name="D_95_73" file="objects/D_95/D_95_73.stl"/>
-        <mesh name="D_95_74" file="objects/D_95/D_95_74.stl"/>
-        <mesh name="D_95_75" file="objects/D_95/D_95_75.stl"/>
-        <mesh name="D_95_76" file="objects/D_95/D_95_76.stl"/>
-        <mesh name="D_95_77" file="objects/D_95/D_95_77.stl"/>
-        <mesh name="D_95_78" file="objects/D_95/D_95_78.stl"/>
-        <mesh name="D_95_79" file="objects/D_95/D_95_79.stl"/>
-        <mesh name="D_95_80" file="objects/D_95/D_95_80.stl"/>
-        <mesh name="D_95_81" file="objects/D_95/D_95_81.stl"/>
-        <mesh name="D_95_82" file="objects/D_95/D_95_82.stl"/>
-        <mesh name="D_95_83" file="objects/D_95/D_95_83.stl"/>
-        <mesh name="D_95_84" file="objects/D_95/D_95_84.stl"/>
-        <mesh name="D_95_85" file="objects/D_95/D_95_85.stl"/>
-        <mesh name="D_95_86" file="objects/D_95/D_95_86.stl"/>
-        <mesh name="D_95_87" file="objects/D_95/D_95_87.stl"/>
-        <mesh name="D_95_88" file="objects/D_95/D_95_88.stl"/>
-        <mesh name="D_95_89" file="objects/D_95/D_95_89.stl"/>
-        <mesh name="D_95_90" file="objects/D_95/D_95_90.stl"/>
-        <mesh name="D_95_91" file="objects/D_95/D_95_91.stl"/>
-        <mesh name="D_95_92" file="objects/D_95/D_95_92.stl"/>
-        <mesh name="D_95_93" file="objects/D_95/D_95_93.stl"/>
-        <mesh name="D_95_94" file="objects/D_95/D_95_94.stl"/>
-        <mesh name="D_95_95" file="objects/D_95/D_95_95.stl"/>
-        <mesh name="D_95_96" file="objects/D_95/D_95_96.stl"/>
-        <mesh name="D_95_97" file="objects/D_95/D_95_97.stl"/>
-        <mesh name="D_95_98" file="objects/D_95/D_95_98.stl"/>
-        <mesh name="D_95_99" file="objects/D_95/D_95_99.stl"/>
-        <mesh name="D_95_100" file="objects/D_95/D_95_100.stl"/>
-        <mesh name="D_95_101" file="objects/D_95/D_95_101.stl"/>
-        <mesh name="D_95_102" file="objects/D_95/D_95_102.stl"/>
-        <mesh name="D_95_103" file="objects/D_95/D_95_103.stl"/>
-        <mesh name="D_95_104" file="objects/D_95/D_95_104.stl"/>
-        <mesh name="D_95_105" file="objects/D_95/D_95_105.stl"/>
         <mesh name="D_95_visual" file="objects/D_95/D_95_full.stl"/>
     </asset>
 </mujoco>

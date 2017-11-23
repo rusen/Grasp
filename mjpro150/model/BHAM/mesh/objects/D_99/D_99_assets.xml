@@ -68,33 +68,6 @@
         <mesh name="D_99_66" file="objects/D_99/D_99_66.stl"/>
         <mesh name="D_99_67" file="objects/D_99/D_99_67.stl"/>
         <mesh name="D_99_68" file="objects/D_99/D_99_68.stl"/>
-        <mesh name="D_99_69" file="objects/D_99/D_99_69.stl"/>
-        <mesh name="D_99_70" file="objects/D_99/D_99_70.stl"/>
-        <mesh name="D_99_71" file="objects/D_99/D_99_71.stl"/>
-        <mesh name="D_99_72" file="objects/D_99/D_99_72.stl"/>
-        <mesh name="D_99_73" file="objects/D_99/D_99_73.stl"/>
-        <mesh name="D_99_74" file="objects/D_99/D_99_74.stl"/>
-        <mesh name="D_99_75" file="objects/D_99/D_99_75.stl"/>
-        <mesh name="D_99_76" file="objects/D_99/D_99_76.stl"/>
-        <mesh name="D_99_77" file="objects/D_99/D_99_77.stl"/>
-        <mesh name="D_99_78" file="objects/D_99/D_99_78.stl"/>
-        <mesh name="D_99_79" file="objects/D_99/D_99_79.stl"/>
-        <mesh name="D_99_80" file="objects/D_99/D_99_80.stl"/>
-        <mesh name="D_99_81" file="objects/D_99/D_99_81.stl"/>
-        <mesh name="D_99_82" file="objects/D_99/D_99_82.stl"/>
-        <mesh name="D_99_83" file="objects/D_99/D_99_83.stl"/>
-        <mesh name="D_99_84" file="objects/D_99/D_99_84.stl"/>
-        <mesh name="D_99_85" file="objects/D_99/D_99_85.stl"/>
-        <mesh name="D_99_86" file="objects/D_99/D_99_86.stl"/>
-        <mesh name="D_99_87" file="objects/D_99/D_99_87.stl"/>
-        <mesh name="D_99_88" file="objects/D_99/D_99_88.stl"/>
-        <mesh name="D_99_89" file="objects/D_99/D_99_89.stl"/>
-        <mesh name="D_99_90" file="objects/D_99/D_99_90.stl"/>
-        <mesh name="D_99_91" file="objects/D_99/D_99_91.stl"/>
-        <mesh name="D_99_92" file="objects/D_99/D_99_92.stl"/>
-        <mesh name="D_99_93" file="objects/D_99/D_99_93.stl"/>
-        <mesh name="D_99_94" file="objects/D_99/D_99_94.stl"/>
-        <mesh name="D_99_95" file="objects/D_99/D_99_95.stl"/>
         <mesh name="D_99_visual" file="objects/D_99/D_99_full.stl"/>
     </asset>
 </mujoco>

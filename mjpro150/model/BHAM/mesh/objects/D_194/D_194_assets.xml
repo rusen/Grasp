@@ -38,6 +38,29 @@
         <mesh name="D_194_36" file="objects/D_194/D_194_36.stl"/>
         <mesh name="D_194_37" file="objects/D_194/D_194_37.stl"/>
         <mesh name="D_194_38" file="objects/D_194/D_194_38.stl"/>
+        <mesh name="D_194_39" file="objects/D_194/D_194_39.stl"/>
+        <mesh name="D_194_40" file="objects/D_194/D_194_40.stl"/>
+        <mesh name="D_194_41" file="objects/D_194/D_194_41.stl"/>
+        <mesh name="D_194_42" file="objects/D_194/D_194_42.stl"/>
+        <mesh name="D_194_43" file="objects/D_194/D_194_43.stl"/>
+        <mesh name="D_194_44" file="objects/D_194/D_194_44.stl"/>
+        <mesh name="D_194_45" file="objects/D_194/D_194_45.stl"/>
+        <mesh name="D_194_46" file="objects/D_194/D_194_46.stl"/>
+        <mesh name="D_194_47" file="objects/D_194/D_194_47.stl"/>
+        <mesh name="D_194_48" file="objects/D_194/D_194_48.stl"/>
+        <mesh name="D_194_49" file="objects/D_194/D_194_49.stl"/>
+        <mesh name="D_194_50" file="objects/D_194/D_194_50.stl"/>
+        <mesh name="D_194_51" file="objects/D_194/D_194_51.stl"/>
+        <mesh name="D_194_52" file="objects/D_194/D_194_52.stl"/>
+        <mesh name="D_194_53" file="objects/D_194/D_194_53.stl"/>
+        <mesh name="D_194_54" file="objects/D_194/D_194_54.stl"/>
+        <mesh name="D_194_55" file="objects/D_194/D_194_55.stl"/>
+        <mesh name="D_194_56" file="objects/D_194/D_194_56.stl"/>
+        <mesh name="D_194_57" file="objects/D_194/D_194_57.stl"/>
+        <mesh name="D_194_58" file="objects/D_194/D_194_58.stl"/>
+        <mesh name="D_194_59" file="objects/D_194/D_194_59.stl"/>
+        <mesh name="D_194_60" file="objects/D_194/D_194_60.stl"/>
+        <mesh name="D_194_61" file="objects/D_194/D_194_61.stl"/>
         <mesh name="D_194_visual" file="objects/D_194/D_194_full.stl"/>
     </asset>
 </mujoco>

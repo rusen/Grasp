@@ -60,6 +60,27 @@
         <mesh name="D_34_58" file="objects/D_34/D_34_58.stl"/>
         <mesh name="D_34_59" file="objects/D_34/D_34_59.stl"/>
         <mesh name="D_34_60" file="objects/D_34/D_34_60.stl"/>
+        <mesh name="D_34_61" file="objects/D_34/D_34_61.stl"/>
+        <mesh name="D_34_62" file="objects/D_34/D_34_62.stl"/>
+        <mesh name="D_34_63" file="objects/D_34/D_34_63.stl"/>
+        <mesh name="D_34_64" file="objects/D_34/D_34_64.stl"/>
+        <mesh name="D_34_65" file="objects/D_34/D_34_65.stl"/>
+        <mesh name="D_34_66" file="objects/D_34/D_34_66.stl"/>
+        <mesh name="D_34_67" file="objects/D_34/D_34_67.stl"/>
+        <mesh name="D_34_68" file="objects/D_34/D_34_68.stl"/>
+        <mesh name="D_34_69" file="objects/D_34/D_34_69.stl"/>
+        <mesh name="D_34_70" file="objects/D_34/D_34_70.stl"/>
+        <mesh name="D_34_71" file="objects/D_34/D_34_71.stl"/>
+        <mesh name="D_34_72" file="objects/D_34/D_34_72.stl"/>
+        <mesh name="D_34_73" file="objects/D_34/D_34_73.stl"/>
+        <mesh name="D_34_74" file="objects/D_34/D_34_74.stl"/>
+        <mesh name="D_34_75" file="objects/D_34/D_34_75.stl"/>
+        <mesh name="D_34_76" file="objects/D_34/D_34_76.stl"/>
+        <mesh name="D_34_77" file="objects/D_34/D_34_77.stl"/>
+        <mesh name="D_34_78" file="objects/D_34/D_34_78.stl"/>
+        <mesh name="D_34_79" file="objects/D_34/D_34_79.stl"/>
+        <mesh name="D_34_80" file="objects/D_34/D_34_80.stl"/>
+        <mesh name="D_34_81" file="objects/D_34/D_34_81.stl"/>
         <mesh name="D_34_visual" file="objects/D_34/D_34_full.stl"/>
     </asset>
 </mujoco>

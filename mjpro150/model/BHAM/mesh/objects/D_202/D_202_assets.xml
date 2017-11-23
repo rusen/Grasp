@@ -26,9 +26,6 @@
         <mesh name="D_202_24" file="objects/D_202/D_202_24.stl"/>
         <mesh name="D_202_25" file="objects/D_202/D_202_25.stl"/>
         <mesh name="D_202_26" file="objects/D_202/D_202_26.stl"/>
-        <mesh name="D_202_27" file="objects/D_202/D_202_27.stl"/>
-        <mesh name="D_202_28" file="objects/D_202/D_202_28.stl"/>
-        <mesh name="D_202_29" file="objects/D_202/D_202_29.stl"/>
         <mesh name="D_202_visual" file="objects/D_202/D_202_full.stl"/>
     </asset>
 </mujoco>

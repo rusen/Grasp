@@ -8,28 +8,6 @@
         <mesh name="D_211_6" file="objects/D_211/D_211_6.stl"/>
         <mesh name="D_211_7" file="objects/D_211/D_211_7.stl"/>
         <mesh name="D_211_8" file="objects/D_211/D_211_8.stl"/>
-        <mesh name="D_211_9" file="objects/D_211/D_211_9.stl"/>
-        <mesh name="D_211_10" file="objects/D_211/D_211_10.stl"/>
-        <mesh name="D_211_11" file="objects/D_211/D_211_11.stl"/>
-        <mesh name="D_211_12" file="objects/D_211/D_211_12.stl"/>
-        <mesh name="D_211_13" file="objects/D_211/D_211_13.stl"/>
-        <mesh name="D_211_14" file="objects/D_211/D_211_14.stl"/>
-        <mesh name="D_211_15" file="objects/D_211/D_211_15.stl"/>
-        <mesh name="D_211_16" file="objects/D_211/D_211_16.stl"/>
-        <mesh name="D_211_17" file="objects/D_211/D_211_17.stl"/>
-        <mesh name="D_211_18" file="objects/D_211/D_211_18.stl"/>
-        <mesh name="D_211_19" file="objects/D_211/D_211_19.stl"/>
-        <mesh name="D_211_20" file="objects/D_211/D_211_20.stl"/>
-        <mesh name="D_211_21" file="objects/D_211/D_211_21.stl"/>
-        <mesh name="D_211_22" file="objects/D_211/D_211_22.stl"/>
-        <mesh name="D_211_23" file="objects/D_211/D_211_23.stl"/>
-        <mesh name="D_211_24" file="objects/D_211/D_211_24.stl"/>
-        <mesh name="D_211_25" file="objects/D_211/D_211_25.stl"/>
-        <mesh name="D_211_26" file="objects/D_211/D_211_26.stl"/>
-        <mesh name="D_211_27" file="objects/D_211/D_211_27.stl"/>
-        <mesh name="D_211_28" file="objects/D_211/D_211_28.stl"/>
-        <mesh name="D_211_29" file="objects/D_211/D_211_29.stl"/>
-        <mesh name="D_211_30" file="objects/D_211/D_211_30.stl"/>
         <mesh name="D_211_visual" file="objects/D_211/D_211_full.stl"/>
     </asset>
 </mujoco>

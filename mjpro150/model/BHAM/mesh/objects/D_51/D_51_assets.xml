@@ -29,33 +29,6 @@
         <mesh name="D_51_27" file="objects/D_51/D_51_27.stl"/>
         <mesh name="D_51_28" file="objects/D_51/D_51_28.stl"/>
         <mesh name="D_51_29" file="objects/D_51/D_51_29.stl"/>
-        <mesh name="D_51_30" file="objects/D_51/D_51_30.stl"/>
-        <mesh name="D_51_31" file="objects/D_51/D_51_31.stl"/>
-        <mesh name="D_51_32" file="objects/D_51/D_51_32.stl"/>
-        <mesh name="D_51_33" file="objects/D_51/D_51_33.stl"/>
-        <mesh name="D_51_34" file="objects/D_51/D_51_34.stl"/>
-        <mesh name="D_51_35" file="objects/D_51/D_51_35.stl"/>
-        <mesh name="D_51_36" file="objects/D_51/D_51_36.stl"/>
-        <mesh name="D_51_37" file="objects/D_51/D_51_37.stl"/>
-        <mesh name="D_51_38" file="objects/D_51/D_51_38.stl"/>
-        <mesh name="D_51_39" file="objects/D_51/D_51_39.stl"/>
-        <mesh name="D_51_40" file="objects/D_51/D_51_40.stl"/>
-        <mesh name="D_51_41" file="objects/D_51/D_51_41.stl"/>
-        <mesh name="D_51_42" file="objects/D_51/D_51_42.stl"/>
-        <mesh name="D_51_43" file="objects/D_51/D_51_43.stl"/>
-        <mesh name="D_51_44" file="objects/D_51/D_51_44.stl"/>
-        <mesh name="D_51_45" file="objects/D_51/D_51_45.stl"/>
-        <mesh name="D_51_46" file="objects/D_51/D_51_46.stl"/>
-        <mesh name="D_51_47" file="objects/D_51/D_51_47.stl"/>
-        <mesh name="D_51_48" file="objects/D_51/D_51_48.stl"/>
-        <mesh name="D_51_49" file="objects/D_51/D_51_49.stl"/>
-        <mesh name="D_51_50" file="objects/D_51/D_51_50.stl"/>
-        <mesh name="D_51_51" file="objects/D_51/D_51_51.stl"/>
-        <mesh name="D_51_52" file="objects/D_51/D_51_52.stl"/>
-        <mesh name="D_51_53" file="objects/D_51/D_51_53.stl"/>
-        <mesh name="D_51_54" file="objects/D_51/D_51_54.stl"/>
-        <mesh name="D_51_55" file="objects/D_51/D_51_55.stl"/>
-        <mesh name="D_51_56" file="objects/D_51/D_51_56.stl"/>
         <mesh name="D_51_visual" file="objects/D_51/D_51_full.stl"/>
     </asset>
 </mujoco>

@@ -13,16 +13,6 @@
         <mesh name="D_69_11" file="objects/D_69/D_69_11.stl"/>
         <mesh name="D_69_12" file="objects/D_69/D_69_12.stl"/>
         <mesh name="D_69_13" file="objects/D_69/D_69_13.stl"/>
-        <mesh name="D_69_14" file="objects/D_69/D_69_14.stl"/>
-        <mesh name="D_69_15" file="objects/D_69/D_69_15.stl"/>
-        <mesh name="D_69_16" file="objects/D_69/D_69_16.stl"/>
-        <mesh name="D_69_17" file="objects/D_69/D_69_17.stl"/>
-        <mesh name="D_69_18" file="objects/D_69/D_69_18.stl"/>
-        <mesh name="D_69_19" file="objects/D_69/D_69_19.stl"/>
-        <mesh name="D_69_20" file="objects/D_69/D_69_20.stl"/>
-        <mesh name="D_69_21" file="objects/D_69/D_69_21.stl"/>
-        <mesh name="D_69_22" file="objects/D_69/D_69_22.stl"/>
-        <mesh name="D_69_23" file="objects/D_69/D_69_23.stl"/>
         <mesh name="D_69_visual" file="objects/D_69/D_69_full.stl"/>
     </asset>
 </mujoco>

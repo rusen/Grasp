@@ -42,17 +42,6 @@
         <mesh name="D_204_40" file="objects/D_204/D_204_40.stl"/>
         <mesh name="D_204_41" file="objects/D_204/D_204_41.stl"/>
         <mesh name="D_204_42" file="objects/D_204/D_204_42.stl"/>
-        <mesh name="D_204_43" file="objects/D_204/D_204_43.stl"/>
-        <mesh name="D_204_44" file="objects/D_204/D_204_44.stl"/>
-        <mesh name="D_204_45" file="objects/D_204/D_204_45.stl"/>
-        <mesh name="D_204_46" file="objects/D_204/D_204_46.stl"/>
-        <mesh name="D_204_47" file="objects/D_204/D_204_47.stl"/>
-        <mesh name="D_204_48" file="objects/D_204/D_204_48.stl"/>
-        <mesh name="D_204_49" file="objects/D_204/D_204_49.stl"/>
-        <mesh name="D_204_50" file="objects/D_204/D_204_50.stl"/>
-        <mesh name="D_204_51" file="objects/D_204/D_204_51.stl"/>
-        <mesh name="D_204_52" file="objects/D_204/D_204_52.stl"/>
-        <mesh name="D_204_53" file="objects/D_204/D_204_53.stl"/>
         <mesh name="D_204_visual" file="objects/D_204/D_204_full.stl"/>
     </asset>
 </mujoco>
