@@ -154,7 +154,7 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 
 	// Create random parameters
 	float r = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
-	r = r / 2 + 0.5;  // random number between 0.5 and 1;
+	r = r / 5 + 0.8;  // random number between 0.8 and 1;
 	sprintf(tmp, "friction=\"%f 0.005 0.0001\"", r);
 
 	// Replace friction
