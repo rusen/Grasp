@@ -154,7 +154,7 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 
 	// Create random parameters
 	float r = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
-	r = r / 5 + 0.8;  // random number between 0.8 and 1;
+	r = r / 2 + 0.5;  // random number between 0.5 and 1;
 	sprintf(tmp, "friction=\"%f 0.005 0.0001\"", r);
 
 	// Replace friction
@@ -531,5 +531,49 @@ void RemoveOldFolders(const char * dropboxBase){
 	}
 }
 
+void RemoveOldTmpFolders(const char * modelFolder){
+
+	// Remove all files from the model folder
+	boost::filesystem::path p(modelFolder);
+	time_t curTime = time(NULL);
+
+	// Go over the files and delete them one by one.
+	for (auto i = boost::filesystem::directory_iterator(p); i != boost::filesystem::directory_iterator(); i++)
+	{
+		time_t fileTime = boost::filesystem::last_write_time(i->path());
+		if (curTime - fileTime > 1800 &&
+				((i->path().string().find("_include_light.xml") !=std::string::npos) ||
+						(i->path().string().find("_include_table.xml") !=std::string::npos) ||
+						(i->path().string().find("_Test.xml") !=std::string::npos) ||
+						(i->path().string().find("_include_base_assets.xml") !=std::string::npos) ||
+						(i->path().string().find("_include_base.xml") !=std::string::npos) ||
+						(i->path().string().find("_include_object_assets.xml") !=std::string::npos) ||
+						(i->path().string().find("_include_object.xml") !=std::string::npos))
+		){
+			try{
+				boost::filesystem::remove_all(i->path());
+			}
+			catch(const std::exception&)
+			{}
+		}
+	}
+
+	// Remove all files from the tmp folder
+	boost::filesystem::path p2("./tmp/data");
+
+	// Go over the files and delete them one by one.
+	for (auto i = boost::filesystem::directory_iterator(p2); i != boost::filesystem::directory_iterator(); i++)
+	{
+		time_t fileTime = boost::filesystem::last_write_time(i->path());
+		if (curTime - fileTime > 1800)
+		{
+			try{
+				boost::filesystem::remove_all(i->path());
+			}
+			catch(const std::exception&)
+			{}
+		}
+	}
+}
 
 }

@@ -376,6 +376,9 @@ int main(int argc, const char** argv)
     // Modify the xml files with random parameters.
     std::string modelPath = Grasp::CreateXMLs(argv[1], planner, objectId, baseId);
 
+    // Remove old files
+    Grasp::RemoveOldTmpFolders(argv[1]);
+
     // install control callback
     mjcb_control = graspObject;
 
