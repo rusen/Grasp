@@ -69,6 +69,8 @@ public:
 	// Steps to perform approach.
 	int counter = 0;
 	int graspCounter = 0;
+	int stableCounter = 0;
+	int stableLimit = 100;
 
 	// Simulator allocation
 	Simulate* Simulator = NULL;

@@ -213,7 +213,7 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 	float y = (static_cast <float> (rand()) / static_cast <float> (RAND_MAX));
 	y = y - 0.5;
 	float z = (static_cast <float> (rand()) / static_cast <float> (RAND_MAX));
-	z = z + 1;
+	z = z + 0.9;
 	sprintf(tmp, "pos=\"%f %f %f\"", x, y, z);
 	replaceAll(lightStr, std::string("pos=\"\""), std::string(tmp));
 

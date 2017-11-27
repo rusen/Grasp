@@ -333,10 +333,21 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 		graspCounter++;
 		graspState = checkingCollision;
 		counter = 0;
+		stableCounter = 0;
 		finishFlag = false;
 		break;
 	case checkingCollision:
-		// Check a number of viewpoints.
+
+		// Allow the hand to stabilize
+		if (stableCounter < stableLimit)
+		{
+			FollowTrajectory(m, d, yOffset);
+			counter = 0;
+			stableCounter++;
+			break;
+		}
+
+		// Check a number of points on the trajectory.
 		if (collisionCounter < collisionPoints){
 			if (!collisionSet)
 			{
@@ -372,6 +383,7 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 		}
 		else
 		{
+			stableCounter = 0;
 			collisionCounter = 0;
 			counter = 0;
 			collisionSet = false;
@@ -379,11 +391,21 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 		}
 		break;
 	case grasping:
-		success = FollowTrajectory(m, d, 0);
+		if (stableCounter < stableLimit)
+		{
+			FollowTrajectory(m, d, 0);
+			counter = 0;
+			stableCounter++;
+			break;
+		}
+		else{
+			success = FollowTrajectory(m, d, 0);
+		}
 
 		// If grasp complete, move on to lift the object.
 		if (success){
 			counter = 0;
+			stableCounter = 0;
 			graspState = lifting; //lifting
 		}
 		break;
@@ -404,7 +426,7 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 		}
 		break;
 	case reset:
-		if (counter < 1)
+		if (counter < 100)
 		{
 			// Reset everything
 			for (int i = 0; i<m->nq; i++)
@@ -420,17 +442,17 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 		{
 			if (prevState  == checkingCollision && hasCollided)
 			{
-	//			(*logStream)<<"Collision! Moving on to the next grasp here."<<std::endl;
+				// Collision! Moving on to the next grasp here.
 				graspState = pregrasp;
 			}
 			else if (prevState == stand)
 			{
-	//			(*logStream)<<"Successful grasp! Moving on to the next grasp."<<std::endl;
+				// Successful grasp! Moving on to the next grasp.
 				graspState = pregrasp;
 			}
 			else
 			{
-		//		(*logStream)<<"Coming from "<<prevState<<". No collision in the checks. Perform grasp."<<std::endl;
+				// No collision in the checks. Perform grasp.
 				graspState = grasping;
 			}
 			counter = 0;
