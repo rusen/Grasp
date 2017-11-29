@@ -59,6 +59,9 @@ public:
 	float* data = NULL;
 	std::ofstream *logStream = NULL;
 
+	// Info for camera capture.
+	glm::vec3 cameraPos, gazeDir;
+
 	// Upload and timeout time
 	time_t uploadTime = 0;
 	time_t trajectoryTimeout = 600; // seconds. If trajectory doesn't arrive within this timeframe, operation aborted.
@@ -113,9 +116,6 @@ private:
 	// Approach waypoints.
 	Waypoint capturePos; // Position of the wrist in capture mode.
 	Path *finalApproach = NULL; // Path to the final approach.
-
-	// Info for camera capture.
-	glm::vec3 cameraPos, gazeDir;
 
 	// Hand controller allocation.
 	DLRHandController controller;

@@ -294,6 +294,30 @@ void render(GLFWwindow* window, const mjModel* m, mjData* d)
 	// Render the rgb buffer.
 	mjr_drawPixels(planner->rgbBuffer, NULL, bottomleft, &con);
 
+	/*
+    glLineWidth(10);
+	glBegin(GL_LINES);
+	glVertex3f(0, 0, 0);
+	glVertex3f(0, 0, 0.5);
+	glVertex3f(0, 0, 0);
+	glVertex3f(0, 0.25, 0);
+	glVertex3f(0, 0, 0);
+	glVertex3f(0.1, 0, 0);
+	glEnd();
+
+    glLineWidth(5);
+	glBegin(GL_LINES);
+	glVertex3f(planner->cameraPos[0], planner->cameraPos[1], planner->cameraPos[2]);
+	glVertex3f(planner->cameraPos[0]+(planner->gazeDir[0]*0.3), planner->cameraPos[1]+(planner->gazeDir[1]*0.3), planner->cameraPos[2]+(planner->gazeDir[2]*0.3));
+	glm::vec3 right = glm::normalize(glm::cross(planner->gazeDir, glm::vec3(0, 0, 1)));
+	glm::vec3 up = glm::normalize(glm::cross(right, planner->gazeDir));
+	glVertex3f(planner->cameraPos[0], planner->cameraPos[1], planner->cameraPos[2]);
+	glVertex3f(planner->cameraPos[0]+(right[0]*0.075), planner->cameraPos[1]+(right[1]*0.075), planner->cameraPos[2]+(right[2]*0.075));
+	glVertex3f(planner->cameraPos[0], planner->cameraPos[1], planner->cameraPos[2]);
+	glVertex3f(planner->cameraPos[0]+(up[0]*0.15), planner->cameraPos[1]+(up[1]*0.15), planner->cameraPos[2]+(up[2]*0.15));
+	glEnd();
+	*/
+
 	// Fill in relevant pixels with point cloud data.
 	if (planner->Simulator->cloud != nullptr){
 

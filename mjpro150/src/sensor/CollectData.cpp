@@ -25,7 +25,21 @@ void CollectData(Simulate* Simulator, const mjModel* m, mjData* d,  mjvScene *sc
 	// Get image from kinect camera.
 	Simulator->simulateMeasurement(m, d, scn, con, cameraPos, gazeDir, minPointZ, out);
 	if (Simulator->cloud->size() > 0)
-		pcl::PCDWriter().write(Simulator->cloudFile, *(Simulator->cloud), true);
+	{
+	//	pcl::PCDWriter().write(Simulator->cloudFile, *(Simulator->cloud), true);
+
+	    pcl::PointCloud<pcl::PointXYZ> *cloud = new pcl::PointCloud<pcl::PointXYZ>(Simulator->cloud->size(), 1);
+	    for (int i = 0; i<Simulator->cloud->size(); i++)
+	    {
+	    	if (cloud->points[i].z >= minPointZ)
+	    	{
+	    		  cloud->points[i].x = Simulator->cloud->points[i].x;
+	    		  cloud->points[i].y = Simulator->cloud->points[i].y;
+	    		  cloud->points[i].z = Simulator->cloud->points[i].z;
+	    	}
+	    }
+	    pcl::PCDWriter().write(Simulator->cloudFile, *(cloud), true);
+	}
 	else
 		return;
 
