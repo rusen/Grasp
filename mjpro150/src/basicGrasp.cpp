@@ -18,6 +18,7 @@
 #include <fstream>
 #include <math.h>       /* cos */
 #include <chrono>
+#include <vector>
 #include <planner/GraspPlanner.h>
 #include <sensor/camera.h>
 #include <record/savelog.h>
@@ -58,6 +59,8 @@ double stableError = 0.000005;
 mjtNum lastPose[4], lastPos[3]; // For keeping track of pose after object is gripped.
 int stableCounter = 0, stableIterations = 5000;
 bool visualFlag = true;
+bool testFlag = false;
+int classSelection = 0;
 
 // Get the path to the dot pattern
 std::string dotPath = "./kinect-pattern_3x3.png";
@@ -94,6 +97,46 @@ void keyboard(GLFWwindow* window, int key, int scancode, int act, int mods)
 		if (pauseFlag)
 			pauseFlag = false;
 		else pauseFlag = true;
+	}
+
+    // backspace: reset simulation
+	if( act==GLFW_PRESS && key==GLFW_KEY_T )
+	{
+		if (testFlag)
+			testFlag = false;
+		else testFlag = true;
+	}
+
+    // b - Next grasp
+	if( act==GLFW_PRESS && key==GLFW_KEY_N )
+	{
+		if ((planner->numberOfGrasps-1) > planner->graspCounter)
+		{
+			planner->graspCounter++;
+		}
+		planner->counter = 0;
+		if (testFlag)
+			planner->prevState = Grasp::checkingCollision;
+		else
+			planner->prevState = Grasp::pregrasp;
+		planner->hasCollided = false;
+		planner->graspState = Grasp::reset;
+	}
+
+    // b - Previous grasp
+	if( act==GLFW_PRESS && key==GLFW_KEY_B )
+	{
+		if (planner->graspCounter > 0)
+		{
+			planner->graspCounter--;
+		}
+		planner->counter = 0;
+		if (testFlag)
+			planner->prevState = Grasp::checkingCollision;
+		else
+			planner->prevState = Grasp::pregrasp;
+		planner->hasCollided = false;
+		planner->graspState = Grasp::reset;
 	}
 }
 
@@ -235,6 +278,7 @@ void graspObject(const mjModel* m, mjData* d){
      		// Calculate grasp success
      		bool graspSuccess = d->qpos[29] > 0;
 
+
      		mjtNum finalPose[4], finalPos[3], tmpQuat[4], tmpQuat2[4], vec[3] = {0, 0, 1}, res[3], res2[3];
      		finalPos[0] = d->qpos[27];
      		finalPos[1] = d->qpos[28];
@@ -260,6 +304,7 @@ void graspObject(const mjModel* m, mjData* d){
 		if (stableFlag)
 		{
 			// Perform grasp loop
+			planner->testFlag = testFlag;
 			planner->PerformGrasp(m, d, stableQpos, stableQvel, stableCtrl, &scn, &con);
 		}
 	}
@@ -323,12 +368,9 @@ void render(GLFWwindow* window, const mjModel* m, mjData* d)
 
 		glBegin(GL_POINTS);
 		for (int i = 0; i < planner->Simulator->cloud->size(); i++) {
-		  if (planner->Simulator->cloud->points[i].r > 0)
-		  {
 			  glVertex3f(planner->Simulator->cloud->points[i].x - 0.5, //.x
-			  					  planner->Simulator->cloud->points[i].y, //.y
-			  					  planner->Simulator->cloud->points[i].z);
-		  }
+						  planner->Simulator->cloud->points[i].y, //.y
+						  planner->Simulator->cloud->points[i].z);
 		}
 		glEnd();
 
@@ -344,19 +386,19 @@ int main(int argc, const char** argv)
 	time_t randSeed = time(NULL);
 
     // check command-line arguments
-    if( argc < 4 )
+    if( argc < 6 )
     {
-        printf(" USAGE:  basic ModelFolder dropboxFolder <visualOn/visualOff> (RandomInt)\n");
+        printf(" USAGE:  basicGrasp ModelFolder dropboxFolder <visualOn/visualOff> classSelection (RandomInt)\n");
         return 0;
     }
 
     // If random seed provided, use it
-    if (argc>4)
-    {
-    	sscanf(argv[4], "%ud", &tmpNo);
-    	randSeed = randSeed + (time_t) tmpNo;
-    }
+	sscanf(argv[5], "%ud", &tmpNo);
+	randSeed = randSeed + (time_t) tmpNo;
     srand(randSeed);
+
+    // Read class selection parameter.
+	sscanf(argv[4], "%ud", &classSelection);
 
     // Allocate planner
     planner = new Grasp::GraspPlanner(argv[2]);
@@ -392,9 +434,43 @@ int main(int argc, const char** argv)
     // Redirect cout to file.
     outGraspDataFile = fopen(planner->resultFile, "w");
 
-    // Get random object, and relevant asset/object files.
-    int objectId = rand()%objectCount + 1;
-//    int objectId = rand()%10 + 80;
+    // Depending on requested class, get relevant objects.
+    int objectId = 0;
+    if (!classSelection)
+    {
+    	objectId = rand()%objectCount + 1;
+    }
+    else
+    {
+    	std::vector<int> objectIdx;
+    	char tmpStr[1000];
+    	strcpy(tmpStr, argv[1]);
+    	strcat(tmpStr, "/classIds.txt");
+
+    	// Read relevant numbers into an array.
+    	int tmpNo;
+        FILE * fid = fopen(tmpStr, "r");
+        for (int i = 0; i<objectCount; i++)
+        {
+        	fscanf(fid, "%d\n", &tmpNo);
+        	if (tmpNo == classSelection)
+        	{
+        		objectIdx.push_back(i + 1);
+        	}
+        }
+        fclose(fid);
+
+        // Check if we have any examples of this class
+        if (!objectIdx.size())
+        {
+        	std::cout<<"This class has no objects! Pick a number between 0-15, with 0 allocated for all classes."<<std::endl;
+        	return -1;
+        }
+
+        // Select a random element of this class.
+        objectId = objectIdx[rand()%(objectIdx.size())];
+    }
+
     int baseId = rand()%13 + 1;
 
     // Modify the xml files with random parameters.
@@ -559,7 +635,10 @@ int main(int argc, const char** argv)
     fclose(outGraspDataFile);
 
     // Upload the data.
-    UploadFiles(argv[1], planner, objectId, baseId);
+    if (!testFlag)
+    {
+    	UploadFiles(argv[1], planner, objectId, baseId);
+    }
 
     // close GLFW, free visualization storage
     if (visualFlag)

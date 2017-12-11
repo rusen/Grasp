@@ -21,24 +21,19 @@ void CollectData(Simulate* Simulator, const mjModel* m, mjData* d,  mjvScene *sc
 	// up vector
 	glm::vec3 newCamUp;
 	int startIdx = (m->nbody-1);
+	glm::quat q;
 
 	// Get image from kinect camera.
-	Simulator->simulateMeasurement(m, d, scn, con, cameraPos, gazeDir, minPointZ, out);
+	Simulator->simulateMeasurement(m, d, scn, con, cameraPos, gazeDir, minPointZ, out, &q);
 	if (Simulator->cloud->size() > 0)
 	{
-	//	pcl::PCDWriter().write(Simulator->cloudFile, *(Simulator->cloud), true);
-
-	    pcl::PointCloud<pcl::PointXYZ> *cloud = new pcl::PointCloud<pcl::PointXYZ>(Simulator->cloud->size(), 1);
-	    for (int i = 0; i<Simulator->cloud->size(); i++)
-	    {
-	    	if (cloud->points[i].z >= minPointZ)
-	    	{
-	    		  cloud->points[i].x = Simulator->cloud->points[i].x;
-	    		  cloud->points[i].y = Simulator->cloud->points[i].y;
-	    		  cloud->points[i].z = Simulator->cloud->points[i].z;
-	    	}
-	    }
-	    pcl::PCDWriter().write(Simulator->cloudFile, *(cloud), true);
+		std::cout<<"Point cloud size:"<<Simulator->cloud->size()<<std::endl;
+	    // Find camera frame and write the point cloud into a file.
+	    Eigen::Vector4f cameraOrigin(cameraPos[0] + 0.5, cameraPos[1], cameraPos[2], 0);
+	    Eigen::Quaternionf cameraRot(q.w, q.x, q.y, q.z);
+	    pcl::PCLPointCloud2 pc2;
+	    pcl::toPCLPointCloud2(*(Simulator->cloud), pc2);
+	    pcl::PCDWriter().writeBinaryCompressed(Simulator->cloudFile, pc2, cameraOrigin, cameraRot);
 	}
 	else
 		return;

@@ -69,7 +69,6 @@ GraspPlanner::GraspPlanner(const char * dropboxBase) {
     strcpy(Simulator->depthFile,depthFile);
 
     // Calculate a location and orientation for placing the depth cam.
-//    srand(randSeed);
     float radialR = (((float) (rand()%360))/360.0f) * (2*3.1416);
     glm::vec3 gazePosition = {((float) (rand()%100) - 50)/1000.0f, ((float) (rand()%100) - 50)/1000.0f, -0.35};
     glm::vec3 handPosition(cos(radialR) * (0.5 + ((float) (rand()%100) - 50)/1000.0f), sin(radialR) * (0.5 + ((float) (rand()%100) - 50)/1000.0f), ((float) (rand()%100) - 50)/1000.0f);
@@ -101,8 +100,15 @@ GraspPlanner::~GraspPlanner() {
     logStream->close();
     delete logStream;
 
-	if (finalApproach != NULL)
-		delete finalApproach;
+    // Delete trajectories.
+    for (int i = 0; i<numberOfGrasps; i++)
+    {
+    	if (finalApproachArr[i] != NULL)
+    		delete finalApproachArr[i];
+    }
+
+	if (finalApproachArr != NULL)
+		delete finalApproachArr;
 	fclose(trjFP);
 }
 
@@ -112,101 +118,118 @@ glm::vec3 getPt( glm::vec3 n1 , glm::vec3 n2 , float perc )
     return n1 + ( diff * perc );
 }
 
-void GraspPlanner::ReadTrajectory(){
-	// Reads the next trajectory from the file, and sets path variable.
-	float extraGrip = 0.5236; // 0.5236 for 30 degrees
-	int wpCount = 0;
-	float likelihood = 0;
-	int graspType = 0;
-	float wristPos[3];
-	float wristQuat[4];
-	float fingerPos[20];
-	fread(&likelihood, 4, 1, trjFP);
-	fread(&graspType, 4, 1, trjFP);
-	fread(&wpCount, 4, 1, trjFP);
-	finalApproach = new Path(wpCount+2);
-
-	// Read trajectory waypoint by waypoint.
-	for (int i = 1; i< wpCount+2; i++)
+void GraspPlanner::ReadTrajectories(int numberOfGrasps){
+	finalApproachArr = new Path* [numberOfGrasps];
+	for (int readCtr = 0; readCtr<numberOfGrasps; readCtr++)
 	{
-		if (i<wpCount+1)
-		{
-			fread(wristPos, 4, 3, trjFP);
-			fread(wristQuat, 4, 4, trjFP);
-			fread(fingerPos, 4, 20, trjFP);
-		}
+		// Reads the next trajectory from the file, and sets path variable.
+		float extraGrip = 0.5236; // 0.5236 for 30 degrees
+		int wpCount = 0;
+		float likelihood = 0;
+		int graspType = 0;
+		float wristPos[3];
+		float wristQuat[4];
+		float fingerPos[20];
+		fread(&likelihood, 4, 1, trjFP);
+		fread(&graspType, 4, 1, trjFP);
+		fread(&wpCount, 4, 1, trjFP);
+		finalApproachArr[readCtr] = new Path(wpCount+2);
 
-		float multiplyFactor = 0, maxVal = 0;
-		float differences[20];
-		if (i == wpCount+1)
+		// Read trajectory waypoint by waypoint.
+		for (int i = 1; i< wpCount+2; i++)
 		{
-			for (int k = 0; k<20; k++){
-				float newVal = finalApproach->waypoints[i-1].jointAngles[k] -
-						finalApproach->waypoints[i-2].jointAngles[k];
-				differences[k] = newVal;
-				if (newVal > maxVal)
-					maxVal = newVal;
+			if (i<wpCount+1)
+			{
+				fread(wristPos, 4, 3, trjFP);
+				fread(wristQuat, 4, 4, trjFP);
+				fread(fingerPos, 4, 20, trjFP);
 			}
-			multiplyFactor = extraGrip / maxVal;
-		}
-		else
-		{
+
+			float multiplyFactor = 0, maxVal = 0;
+			float differences[20];
+			if (i == wpCount+1)
+			{
+				for (int k = 0; k<20; k++){
+					float newVal = finalApproachArr[readCtr]->waypoints[i-1].jointAngles[k] -
+							finalApproachArr[readCtr]->waypoints[i-2].jointAngles[k];
+					differences[k] = newVal;
+					if (newVal > maxVal)
+						maxVal = newVal;
+				}
+		//		multiplyFactor = extraGrip / maxVal;
+			}
+			else
+			{
+				for (int k = 0; k<20; k++)
+					differences[k] = 0;
+			}
+
+			// Read waypoints.
+			finalApproachArr[readCtr]->waypoints[i].pos[0] = wristPos[0] - 0.5, finalApproachArr[readCtr]->waypoints[i].pos[1] = wristPos[1], finalApproachArr[readCtr]->waypoints[i].pos[2] = wristPos[2];
+			finalApproachArr[readCtr]->waypoints[i].quat.x = wristQuat[0];
+			finalApproachArr[readCtr]->waypoints[i].quat.y = wristQuat[1];
+			finalApproachArr[readCtr]->waypoints[i].quat.z = wristQuat[2];
+			finalApproachArr[readCtr]->waypoints[i].quat.w = wristQuat[3];
+
 			for (int k = 0; k<20; k++)
-				differences[k] = 0;
+			{
+				if (!(k % 4))
+				{
+					// Sideways joints
+					if (!k)
+						finalApproachArr[readCtr]->waypoints[i].jointAngles[k] = fingerPos[k] + 0.087266;
+					else if (k == 4)
+						finalApproachArr[readCtr]->waypoints[i].jointAngles[k] = fingerPos[k] + 0.043633;
+					else if (k == 8)
+						finalApproachArr[readCtr]->waypoints[i].jointAngles[k] = fingerPos[k];
+					else if (k == 12)
+						finalApproachArr[readCtr]->waypoints[i].jointAngles[k] = fingerPos[k] - 0.043633;
+					else if (k == 16)
+						finalApproachArr[readCtr]->waypoints[i].jointAngles[k] = fingerPos[k] - (0.0537);
+				}
+				else if (k%4 == 2 || k%4 == 3)
+					// Middle joints
+					finalApproachArr[readCtr]->waypoints[i].jointAngles[k] = fingerPos[k] + 0.087266 + multiplyFactor * differences[k];
+				else if (k < 4)
+				{	// thumb
+					finalApproachArr[readCtr]->waypoints[i].jointAngles[k] = (fingerPos[k] - 0.02908866667) + multiplyFactor * differences[k];
+				}
+				else if (k < 8)
+				{	// index
+					finalApproachArr[readCtr]->waypoints[i].jointAngles[k] = fingerPos[k] + (0.07) + multiplyFactor * differences[k];
+				}
+				else if (k < 12)
+				{	// middle
+					finalApproachArr[readCtr]->waypoints[i].jointAngles[k] = (fingerPos[k] - 0.01) + multiplyFactor * differences[k];
+				}
+				else if (k < 16)
+				{	// ring
+					finalApproachArr[readCtr]->waypoints[i].jointAngles[k] = (fingerPos[k] - 0.06) + multiplyFactor * differences[k];
+				}
+				else{	// little
+					finalApproachArr[readCtr]->waypoints[i].jointAngles[k] = (fingerPos[k] - 0.160899) + multiplyFactor * differences[k];
+				}
+			}
 		}
 
-		// Read waypoints.
-		finalApproach->waypoints[i].pos[0] = wristPos[0] - 0.5, finalApproach->waypoints[i].pos[1] = wristPos[1], finalApproach->waypoints[i].pos[2] = wristPos[2];
-		finalApproach->waypoints[i].quat.x = wristQuat[0];
-		finalApproach->waypoints[i].quat.y = wristQuat[1];
-		finalApproach->waypoints[i].quat.z = wristQuat[2];
-		finalApproach->waypoints[i].quat.w = wristQuat[3];
-
+		// Set the first waypoint as an initial approach from outside.
+		finalApproachArr[readCtr]->waypoints[0].pos[0] = 2 * finalApproachArr[readCtr]->waypoints[1].pos[0];
+		finalApproachArr[readCtr]->waypoints[0].pos[1] = 2 * finalApproachArr[readCtr]->waypoints[1].pos[1];
+		finalApproachArr[readCtr]->waypoints[0].pos[2] = 2 * (finalApproachArr[readCtr]->waypoints[1].pos[2] + 0.35) - 0.35;
+		finalApproachArr[readCtr]->waypoints[0].quat.x = finalApproachArr[readCtr]->waypoints[1].quat.x;
+		finalApproachArr[readCtr]->waypoints[0].quat.y = finalApproachArr[readCtr]->waypoints[1].quat.y;
+		finalApproachArr[readCtr]->waypoints[0].quat.z = finalApproachArr[readCtr]->waypoints[1].quat.z;
+		finalApproachArr[readCtr]->waypoints[0].quat.w = finalApproachArr[readCtr]->waypoints[1].quat.w;
 		for (int k = 0; k<20; k++)
-		{
-			if (!(k % 4))
-				finalApproach->waypoints[i].jointAngles[k] = fingerPos[k];
-			else if (k%4 == 2 || k%4 == 3)
-				finalApproach->waypoints[i].jointAngles[k] = fingerPos[k] + 0.087266 + multiplyFactor * differences[k];
-			else if (k < 4)
-			{
-				finalApproach->waypoints[i].jointAngles[k] = fingerPos[k] + 0.087266 + multiplyFactor * differences[k];
-			}
-			else if (k < 8)
-			{
-				finalApproach->waypoints[i].jointAngles[k] = fingerPos[k] + 0.087266 + multiplyFactor * differences[k];
-			}
-			else if (k < 12)
-			{
-				finalApproach->waypoints[i].jointAngles[k] = fingerPos[k] + multiplyFactor * differences[k];
-			}
-			else if (k < 16)
-			{
-				finalApproach->waypoints[i].jointAngles[k] = (fingerPos[k] - 0.087266) + multiplyFactor * differences[k];
-			}
-			else{
-				finalApproach->waypoints[i].jointAngles[k] = (fingerPos[k] - 0.1745) + multiplyFactor * differences[k];
-			}
-		}
+			finalApproachArr[readCtr]->waypoints[0].jointAngles[k] = 0;
 	}
-
-	// Set the first waypoint as an initial approach from outside.
-	finalApproach->waypoints[0].pos[0] = 2 * finalApproach->waypoints[1].pos[0];
-	finalApproach->waypoints[0].pos[1] = 2 * finalApproach->waypoints[1].pos[1];
-	finalApproach->waypoints[0].pos[2] = 2 * (finalApproach->waypoints[1].pos[2] + 0.35) - 0.35;
-	finalApproach->waypoints[0].quat.x = finalApproach->waypoints[1].quat.x;
-	finalApproach->waypoints[0].quat.y = finalApproach->waypoints[1].quat.y;
-	finalApproach->waypoints[0].quat.z = finalApproach->waypoints[1].quat.z;
-	finalApproach->waypoints[0].quat.w = finalApproach->waypoints[1].quat.w;
-	for (int k = 0; k<20; k++)
-		finalApproach->waypoints[0].jointAngles[k] = 0;
 
 }
 
 bool GraspPlanner::FollowTrajectory(const mjModel* m, mjData* d, float yOffset){
 
 	// Set pose of the hand.
-	Waypoint wp = finalApproach->Interpolate(counter);
+	Waypoint wp = finalApproachArr[graspCounter]->Interpolate(counter);
 
 	// Add y offset, if requested
 	wp.pos[1] += yOffset;
@@ -218,7 +241,7 @@ bool GraspPlanner::FollowTrajectory(const mjModel* m, mjData* d, float yOffset){
 	counter++;
 
 	// If total number of steps have been performed, we move on.
-	if (counter>=finalApproach->steps)
+	if (counter>=finalApproachArr[graspCounter]->steps)
 		return true;
 	else return false;
 
@@ -294,6 +317,10 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 			{
 				trjFP = fopen(trajectoryFile, "rb");
 				fread(&numberOfGrasps, 4, 1, trjFP);
+
+				// Read trajectories
+				ReadTrajectories(numberOfGrasps);
+
 				(*logStream)<< "Number of grasps:" << numberOfGrasps << std::endl;
 			}
 			else
@@ -314,7 +341,8 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 			(*logStream)<<"Moving on to grasping."<<std::endl;
 
 			// Switch to grasping state.
-	    	graspState = pregrasp;
+			prevState = stand;
+	    	graspState = reset;
 		}
 		break;
 	case pregrasp:
@@ -325,9 +353,6 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 			graspState = done;
 			break;
 		}
-
-		// Read trajectory
-		ReadTrajectory();
 
 		// Increase counter and move on.
 		graspCounter++;
@@ -351,7 +376,7 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 		if (collisionCounter < collisionPoints){
 			if (!collisionSet)
 			{
-				counter = round(((float) collisionCounter / float(collisionPoints-1)) * (float)(finalApproach->steps));
+				counter = round(((float) collisionCounter / float(collisionPoints-1)) * (float)(finalApproachArr[graspCounter]->steps));
 				FollowTrajectory(m, d, yOffset);
 				collisionSet = true;
 			}
@@ -401,7 +426,6 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 		else{
 			success = FollowTrajectory(m, d, 0);
 		}
-
 		// If grasp complete, move on to lift the object.
 		if (success){
 			counter = 0;
@@ -410,6 +434,8 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 		}
 		break;
 	case lifting:
+		if (testFlag)
+			break;
 		d->mocap_pos[2] += 0.001;
 		counter++;
 		if (counter > 1000){
@@ -428,9 +454,12 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 	case reset:
 		if (counter < 100)
 		{
+
 			// Reset everything
 			for (int i = 0; i<m->nq; i++)
 				d->qpos[i] = stableQpos[i];
+			if (testFlag)
+				d->qpos[27] = d->qpos[27] + 1;
 			for (int i = 0; i<m->nv; i++)
 				d->qvel[i] = stableQvel[i];
 			for (int i = 0; i<m->nu; i++)
@@ -452,6 +481,7 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 			}
 			else
 			{
+				std::cout<<"Grasp #"<<graspCounter<<" starting."<<std::endl;
 				// No collision in the checks. Perform grasp.
 				graspState = grasping;
 			}

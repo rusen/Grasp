@@ -5,9 +5,11 @@
 #include <streambuf>
 #include <iostream>
 #include <stdio.h>
+#include <random>
 #include <boost/filesystem.hpp>
 
 #define PI 3.141592
+#define RF (static_cast <float> (rand()) / static_cast <float> (RAND_MAX))
 
 namespace Grasp{
 
@@ -51,7 +53,7 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
     strcpy(classIdFile, base);
     strcat(classIdFile, "/classIds.txt");
 
-    // Read base id
+    // Read class id
     int classId = 0;
     fid = fopen(classIdFile, "r");
     for (int i = 0; i<objectId; i++)
@@ -152,7 +154,7 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 	std::string objectStr((std::istreambuf_iterator<char>(t)),
 					 std::istreambuf_iterator<char>());
 
-	// Create random parameters
+	// Create random friction
 	float r = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
 	r = r / 2 + 0.5;  // random number between 0.5 and 1;
 	sprintf(tmp, "friction=\"%f 0.005 0.0001\"", r);
@@ -160,17 +162,104 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 	// Replace friction
 	replaceAll(objectStr, std::string("friction=\"\""), std::string(tmp));
 
+    // Scale the object randomly.
+	std::ifstream tAsset(newAssetFile);
+	std::string assetStr((std::istreambuf_iterator<char>(tAsset)),
+					 std::istreambuf_iterator<char>());
+	tAsset.close();
+
+	// Create random scale based on the object type.
+	float xScale = RF/2+0.75;
+	float yScale = xScale;
+	float zScale = RF/2+0.75;
+	switch(classId)
+	{
+	case 0: // Bottle
+		zScale = RF/2+0.8;
+		yScale = RF*0.2+0.8;
+		xScale = yScale;
+		break;
+	case 1: // Bowl
+		xScale = RF+0.5; // make it all proportional
+		yScale = xScale;
+		zScale = xScale;
+		break;
+	case 2: // Cup
+		zScale = RF/2+1; // longer
+		yScale = RF*0.5+0.6;
+		xScale = yScale;
+		break;
+	case 3: // Fork
+		break; // default
+	case 4: // Pan
+		xScale = RF/2+0.5;
+		yScale = xScale;
+		zScale = RF/2+1;
+		break;
+	case 5: // Jug
+		xScale = RF*0.3+0.7; // slightly smaller
+		yScale = xScale;
+		zScale = xScale;
+		break;
+	case 6: // Knife
+		break; // default
+	case 7: // Mug
+		xScale = RF*0.4+0.8; // make it all proportional
+		yScale = xScale;
+		zScale = xScale;
+		break;
+	case 8: //Plate
+		xScale = RF*0.5+0.75; // make it all proportional
+		yScale = xScale;
+		zScale = xScale;
+		break;
+	case 9: // Scissors
+		xScale = RF*0.5+0.75; // make it all proportional
+		yScale = xScale;
+		zScale = xScale;
+		break; //
+	case 10: // Shaker
+		xScale = RF*0.2+0.9; // make it all proportional
+		yScale = xScale;
+		zScale = xScale;
+		break;
+	case 11: //Spatula
+		break; // default
+	case 12: // Spoon
+		break; // default
+	case 13: // Teacup
+		xScale = RF*0.4+0.9; // make it all proportional, slightly bigger
+		yScale = xScale;
+		zScale = xScale;
+		break;
+	case 14: // Teapot
+		xScale = RF*0.3+0.7; // slightly smaller
+		yScale = xScale;
+		zScale = xScale;
+		break;
+	}
+	sprintf(tmp, "<mesh scale=\"%f %f %f\" ", xScale, yScale, zScale);
+
+	// Replace friction
+	replaceAll(assetStr, std::string("<mesh "), std::string(tmp));
+
+	// Write light string.
+	std::ofstream tAssetOut(newAssetFile);
+	tAssetOut<<assetStr;
+	tAssetOut.close();
+
 	// Create random mass, depending on the object type.
-	float baseWeights[] = {30, 50, 30, 40, 150, 70, 50, 250, 40, 50, 100, 40, 40, 150, 500};
-	float addedWeights[] = {40, 350, 40, 40, 250, 80, 100, 100, 80, 100, 60, 40, 40, 100, 300};
+	float baseWeights[] = {30, 50, 30, 40, 200, 80, 50, 250, 40, 50, 100, 40, 40, 120, 800};
+	float addedWeights[] = {40, 350, 40, 40, 330, 90, 100, 100, 80, 100, 60, 40, 40, 80, 400};
 
 	int baseWeight = baseWeights[classId];
 	int addedWeight = addedWeights[classId];
 	float mass = (float)(rand()%addedWeight + baseWeight);
 	mass = mass/1000;
+	mass = mass * (xScale * yScale * zScale); // Scale with object size
 	sprintf(tmp, "mass=\"%f\"", mass);
 
-	// Replace density
+	// Replace mass
 	replaceAll(objectStr, std::string("mass=\"\""), std::string(tmp));
 
 	// Create random orientation

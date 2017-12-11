@@ -33,7 +33,7 @@ enum handType {MPL};
 
 class GraspPlanner {
 public:
-
+	// All relevant variables come here
 	int camSize[2] = {480, 640};
 	unsigned char rgbBuffer[640*480*3];
 	unsigned char depthBuffer[640*480*3];
@@ -53,11 +53,18 @@ public:
 	char trajectoryFile[1000]; // Trajectory file (.trj)
 	char dropboxFolder[1000]; // Dropbox folder for this run
 	FILE * trjFP = NULL;
+
+	// Grasp-related variables.
 	int numberOfGrasps = 0;
 	int collisionPoints = 50, collisionCounter = 0;
 	bool collisionSet = false, collisionRun = true, hasCollided = false;
+	bool testFlag = false;
 	float* data = NULL;
 	std::ofstream *logStream = NULL;
+
+	// Grasp state variables
+	state graspState = collectingData; //initial for full scenario
+	state prevState = collectingData; // Previous state
 
 	// Info for camera capture.
 	glm::vec3 cameraPos, gazeDir;
@@ -89,7 +96,7 @@ public:
 
 	// Gets the trajectory from the data trajectory file,
 	// and assigns it as next trajectory.
-	void ReadTrajectory();
+	void ReadTrajectories( int numberOfGrasps );
 
 	// CheckCollision checks the collision of
 	// the next trajectory with the table.
@@ -106,8 +113,6 @@ public:
 	void setGraspState(state graspState);
 
 private:
-	state graspState = collectingData; //initial for full scenario
-	state prevState = collectingData; // Previous state
 	bool startFlag = false;
 	bool finishFlag = false;
 	bool uploadFlag = false;
@@ -115,7 +120,8 @@ private:
 
 	// Approach waypoints.
 	Waypoint capturePos; // Position of the wrist in capture mode.
-	Path *finalApproach = NULL; // Path to the final approach.
+	Path **finalApproachArr = NULL; // Path to the final approach.
+	int trajectoryCounter = 0;
 
 	// Hand controller allocation.
 	DLRHandController controller;

@@ -28,7 +28,7 @@
 			<geom material="MatMesh" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
         	<joint limited="true" damping="0.2" armature=".01"/>
         	<site material="MatTouch" type="ellipsoid" group="3"/>
-            <position kp="10" ctrllimited="true" forcelimited="true" forcerange="-10 10"/>
+            <position kp="10" ctrllimited="true" forcelimited="true" forcerange="-1 1"/>
 		</default>
 
         <default class="IMU">
@@ -164,7 +164,7 @@
     <worldbody>
         <camera name="fixed" pos="-1 0 0.7" zaxis="-1 0 1" fovy="60" ipd="0.068"/>
 
-        <body name="mocap" mocap="true" pos="0 0.18 2.025"> <!-- 0 0.175 10.025 -->
+        <body name="mocap" mocap="true" pos="-0.005 0.1725 2.02"> <!-- 0 0.175 10.025 -->
             <geom type="box" group="2" size="0.02 0.02 0.02" contype="0" conaffinity="0" rgba=".9 .5 .5 1"/>
         </body>
         
@@ -173,7 +173,7 @@
             <joint class="free"/>
             <geom type="cylinder" size="0.02 0.01"/>
             <body name="palm" pos="0 0 0">
-            	<geom type="mesh" mass="0" contype="0" conaffinity="0" mesh="righthandbase"/>
+            	<geom type="mesh" contype="0" conaffinity="0" mesh="righthandbase"/>
                 <geom type="mesh" mesh="palm1" rgba="0 0 0 0"/>
                 <geom type="mesh" mesh="palm2" rgba="0 0 0 0"/>
                 <geom type="mesh" mesh="palm3" rgba="0 0 0 0"/>
@@ -333,6 +333,7 @@
         <weld body1="mocap" body2="forearm" solref="0.01 1" solimp=".9 .9 0.01"/>
     </equality>
 	
+	<!--
 	<actuator>
         <position name="A_thumb_ABD"  class="BHAM" joint="thumb_ABD"  ctrlrange="-0.26180 0.26180"/>
         <position name="A_thumb_IN"  class="BHAM" joint="thumb_IN"  ctrlrange="0.087266 1.5708"/>
@@ -355,4 +356,29 @@
         <position name="A_little_OUT"  class="BHAM" joint="little_OUT"  ctrlrange="0.087266 1.4835"/>
         <position name="A_little_TIP"  class="BHAM" joint="little_TIP"  ctrlrange="0.087266 1.4835"/>
 	</actuator>
+	-->
+	
+	<actuator>
+        <position name="A_thumb_ABD"  class="BHAM" joint="thumb_ABD"  ctrlrange="-0.26180 0.26180"/>
+        <position name="A_thumb_IN"  class="BHAM" joint="thumb_IN"  ctrlrange="0.0786 1.5708"/>
+        <position name="A_thumb_OUT"  class="BHAM" joint="thumb_OUT"  ctrlrange="0.1571 1.4835"/>
+        <position name="A_thumb_TIP"  class="BHAM" joint="thumb_TIP"  ctrlrange="0.1571 1.4835"/>
+        <position name="A_fore_ABD"  class="BHAM" joint="fore_ABD"  ctrlrange="-0.26180 0.26180"/>
+        <position name="A_fore_IN"  class="BHAM" joint="fore_IN"  ctrlrange="0.189 1.5708"/>
+        <position name="A_fore_OUT"  class="BHAM" joint="fore_OUT"  ctrlrange="0.1571 1.4835"/>
+        <position name="A_fore_TIP"  class="BHAM" joint="fore_TIP"  ctrlrange="0.1571 1.4835"/>
+        <position name="A_middle_ABD"  class="BHAM" joint="middle_ABD"  ctrlrange="-0.26180 0.26180"/>
+        <position name="A_middle_IN"  class="BHAM" joint="middle_IN"  ctrlrange="0.189 1.5708"/>
+        <position name="A_middle_OUT"  class="BHAM" joint="middle_OUT"  ctrlrange="0.1571 1.4835"/>
+        <position name="A_middle_TIP"  class="BHAM" joint="middle_TIP"  ctrlrange="0.1571 1.4835"/>
+        <position name="A_ring_ABD"  class="BHAM" joint="ring_ABD"  ctrlrange="-0.26180 0.26180"/>
+        <position name="A_ring_IN"  class="BHAM" joint="ring_IN"  ctrlrange="0.189 1.5708"/>
+        <position name="A_ring_OUT"  class="BHAM" joint="ring_OUT"  ctrlrange="0.1571 1.4835"/>
+        <position name="A_ring_TIP"  class="BHAM" joint="ring_TIP"  ctrlrange="0.1571 1.4835"/>
+        <position name="A_little_ABD"  class="BHAM" joint="little_ABD"  ctrlrange="-0.26180 0.26180"/>
+        <position name="A_little_IN"  class="BHAM" joint="little_IN"  ctrlrange="0.189 1.5708"/>
+        <position name="A_little_OUT"  class="BHAM" joint="little_OUT"  ctrlrange="0.1571 1.4835"/>
+        <position name="A_little_TIP"  class="BHAM" joint="little_TIP"  ctrlrange="0.1571 1.4835"/>
+	</actuator>
+	
 </mujoco>

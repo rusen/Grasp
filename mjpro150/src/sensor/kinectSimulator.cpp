@@ -61,6 +61,7 @@
 #include <sensor/simplex.h>
 
 #include <string>
+#include <limits>
 #include <stdio.h>
 #include <glm/gtc/type_ptr.hpp>
 #include <glm/glm.hpp>
@@ -148,7 +149,7 @@ namespace Grasp {
   
   
   // Function that intersects rays with the object model at current state.
-pcl::PointCloud<pcl::PointXYZRGBNormal> * KinectSimulator::intersect(const mjModel* m, mjData* d,
+pcl::PointCloud<pcl::PointXYZ> * KinectSimulator::intersect(const mjModel* m, mjData* d,
 			      mjvScene *scn,
 				  mjrContext *con,
 				  cv::Mat &rgb_map,
@@ -157,7 +158,8 @@ pcl::PointCloud<pcl::PointXYZRGBNormal> * KinectSimulator::intersect(const mjMod
 				  glm::vec3 newCamGaze,
 				  float minPointZ,
 				  char * rgbFile,
-				  std::ofstream * ostream)
+				  std::ofstream * ostream,
+				  glm::quat * q)
   {
 
     // allocate memory for depth map
@@ -285,9 +287,64 @@ pcl::PointCloud<pcl::PointXYZRGBNormal> * KinectSimulator::intersect(const mjMod
     vopt.geomgroup[1] = 1;
     vopt.geomgroup[2] = 0;
 
-    int pointCount = 0;
+    // Convert r to quats.
+    //FPS camera:  RotationX(pitch) * RotationY(yaw)
+
+    /*
+    Eigen::Matrix3f mat;
+    mat << normRight[0], normRight[1], normRight[2],
+    	   viewUp[0], viewUp[1], viewUp[2],
+		   normGaze[0], normGaze[1], normGaze[2];
+    Eigen::Quaternionf qTmp(mat);
+    Eigen::Matrix3f mat2(qTmp);
+    */
+
+
+    glm::vec3 tv = glm::normalize(glm::vec3(normGaze[0], normGaze[1], 0));
+    float angle2;
+    if (tv[1] > 0)
+    	angle2 = -(acos(tv[0]) - M_PI/2);
+    else
+    	angle2 = -((2*M_PI - acos(tv[0])) - M_PI/2);
+    std::cout<<normGaze[0]<<" "<<normGaze[1]<<" "<<normGaze[2]<<" "<<angle2<<std::endl;
+    std::cout<<"Gaze:"<<normGaze[0]<<" "<<normGaze[1]<<" "<<normGaze[2]<<std::endl;
+    float dist1 = sqrt(normGaze[0] * normGaze[0] + normGaze[1] * normGaze[1]);
+    float angle3 = atan(normGaze[2]/dist1);
+    std::cout<<"angle"<<normGaze[2]<<" "<<dist1<<" "<<angle3<<std::endl;
+    Eigen::Matrix3f m2;
+    Eigen::Quaternionf q1(Eigen::AngleAxisf(-0.5*M_PI, Eigen::Vector3f::UnitX()));
+    Eigen::Quaternionf q2(Eigen::AngleAxisf(angle2, Eigen::Vector3f::UnitY()));
+    Eigen::Quaternionf q3(Eigen::AngleAxisf(angle3, Eigen::Vector3f::UnitX()));
+    Eigen::Quaternionf q4(Eigen::AngleAxisf(M_PI, Eigen::Vector3f::UnitZ()));
+    m2 = q1 * q2 * q3 * q4;
+ //   m2 = q1 * q2;
+
+    Eigen::Quaternionf qTmp2(m2);
+    q->w = qTmp2.w();
+    q->x = qTmp2.x();
+    q->y = qTmp2.y();
+    q->z = qTmp2.z();
+
+    /*
+    glm::quat tempQ;
+    glm::vec3 difference = glm::cross(glm::vec3(0,0,1), normGaze);
+    std::cout<<normGaze[0]<<" "<<normGaze[1]<<" "<<normGaze[2]<<std::endl;
+
+
+    tempQ.x = difference.x;
+    tempQ.y = difference.y;
+    tempQ.z = difference.z;
+    tempQ.w = 1 + glm::dot(glm::vec3(0,0,1), normGaze);
+    tempQ = glm::normalize(tempQ);
+    q->w = tempQ.w;
+    q->x = tempQ.x;
+    q->y = tempQ.y;
+    q->z = tempQ.z;
+    std::cout<<"Rotation as it is created:"<<q->w<<" "<<q->x<<" "<<q->y<<" "<<q->z<<std::endl;
+*/
 
     // Send rays for each and every pixel!
+    int pointCount = 0;
     for(int c=0; c<camera_.getWidth(); ++c) {
       for(int r=0; r<camera_.getHeight(); ++r) {
 
@@ -353,12 +410,21 @@ pcl::PointCloud<pcl::PointXYZRGBNormal> * KinectSimulator::intersect(const mjMod
     filterDisp(disp, out_disp);
 
     // Allocate space for cloud.
-    pcl::PointCloud<pcl::PointXYZRGBNormal> *tempCloud = new pcl::PointCloud<pcl::PointXYZRGBNormal>(pointCount, 1);
+    float f = std::numeric_limits<float>::quiet_NaN();
+    pcl::PointXYZ pNull;
+    pNull.x = f;
+    pNull.y = f;
+    pNull.z = f;
+    pcl::PointCloud<pcl::PointXYZ> *tempCloud = new pcl::PointCloud<pcl::PointXYZ>(640, 480, pNull);
+    tempCloud->is_dense = true;
+	tempCloud->points.resize(640*480);
 
-    // Reset point counter.
-    pointCount = 0;
+    // Matrix transformations
+    glm::mat4 T = s * (r * tOrg);
+    glm::mat4 invT = glm::inverse(T);
 
-    //Go over disparity image and recompute depth map and point cloud after filtering and adding noise etc
+    //Go over disparity image and recompute depth map and point cloud after filtering and adding noise etcs
+    std::cout<<camera_.getHeight()<<" "<<camera_.getWidth()<<std::endl;
     for(int r=0; r<camera_.getHeight(); ++r) {
       float* disp_i = out_disp.ptr<float>(r);
       double* depth_map_i = depth_map.ptr<double>(r);
@@ -374,60 +440,28 @@ pcl::PointCloud<pcl::PointXYZRGBNormal> * KinectSimulator::intersect(const mjMod
 	  new_p.x = (new_p.z/ camera_.getFx()) * (c - camera_.getCx());
 	  new_p.y = (new_p.z/ camera_.getFy()) * (r - camera_.getCy());
 
-	  // Set x-y-z coordinates of points.
-	  tempCloud->points[pointCount].x = new_p.x;
-	  tempCloud->points[pointCount].y = new_p.y;
-	  tempCloud->points[pointCount].z = new_p.z;
-	  // Assign colours to these poins.
-	  tempCloud->points[pointCount].r = 127;
-	  tempCloud->points[pointCount].g = 127;
-	  tempCloud->points[pointCount].b = 127;
-	  pointCount++;
+	  // Check if minimum point is below z threshold
+	  glm::vec4 p(new_p.x, new_p.y, new_p.z, 1);
+	  p = invT * p;
+	  p = p / p[3];
 
+	  // If the point is below the minimum plane, remove it from the point cloud.
+	  if (p.z >= minPointZ)
+	  {
+		  // Save point
+		  tempCloud->points[r*640+c].x = (float) p.x + 0.5;
+		  tempCloud->points[r*640+c].y = (float) p.y;
+		  tempCloud->points[r*640+c].z = (float) p.z;
+	  }
+
+	  // save z to a depth map.
 	  depth_map_i[(int)c] = new_p.z;
 	}
       }
     }
 
-    // Convert into real world coordinates.
-    int lastPointCount = 0;
-    glm::mat4 T = s * (r * tOrg);
-    glm::mat4 invT = glm::inverse(T);
-
-	for (int i = 0; i < pointCount; i++) {
-	  glm::vec4 p(tempCloud->points[i].x, tempCloud->points[i].y, tempCloud->points[i].z, 1);
-	  p = invT * p;
-	  p = p / p[3];
-	  tempCloud->points[i].x = (float) p[0] + 0.5;
-	  tempCloud->points[i].y = (float) p[1];
-	  tempCloud->points[i].z = (float) p[2];
-
-	  // If the point is below the minimum plane, remove it from the point cloud.
-	  if (tempCloud->points[i].z >= minPointZ)
-		  lastPointCount++;
-	}
-
-	// Finally, save good points onto a list.
-    pcl::PointCloud<pcl::PointXYZRGBNormal> *cloud = new pcl::PointCloud<pcl::PointXYZRGBNormal>(lastPointCount, 1);
-    lastPointCount = 0;
-    for (int i = 0; i<pointCount; i++)
-    {
-    	if (tempCloud->points[i].z >= minPointZ)
-    	{
-    		  cloud->points[lastPointCount].x = tempCloud->points[i].x;
-    		  cloud->points[lastPointCount].y = tempCloud->points[i].y;
-    		  cloud->points[lastPointCount].z = tempCloud->points[i].z;
-    		  // Assign colours to these poins.
-    		  cloud->points[lastPointCount].r = 127;
-    		  cloud->points[lastPointCount].g = 127;
-    		  cloud->points[lastPointCount].b = 127;
-    		  lastPointCount++;
-    	}
-    }
-    delete tempCloud;
-
     // Return new point cloud.
-	return cloud;
+	return tempCloud;
   }
 
   // filter disparity with a 9x9 correlation window

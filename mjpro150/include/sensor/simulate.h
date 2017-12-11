@@ -80,13 +80,15 @@ namespace Grasp {
     	  delete cloud;
     }
 
-    void simulateMeasurement(const mjModel* m, mjData* d,  mjvScene *scn, mjrContext *con, glm::vec3 newCamPos, glm::vec3 newCamGaze, float minPointZ, std::ofstream *out) {
+    void simulateMeasurement(const mjModel* m, mjData* d,  mjvScene *scn, mjrContext *con, glm::vec3 newCamPos, glm::vec3 newCamGaze, float minPointZ, std::ofstream *out, glm::quat * q) {
       countf++;
 
       // simulate measurement of object and store in image, point cloud and labeled image
       cv::Mat p_result;
-      cloud = object_model_->intersect(m, d, scn, con, rgbIm, depth_im_, newCamPos, newCamGaze, minPointZ, rgbFile, out);
+      cloud = object_model_->intersect(m, d, scn, con, rgbIm, depth_im_, newCamPos, newCamGaze, minPointZ, rgbFile, out, q);
       
+      std::cout<<"Rotation as it is transferred:"<<q->w<<" "<<q->x<<" "<<q->y<<" "<<q->z<<std::endl;
+
       // store on disk
   	  std::stringstream lD;
   	  convertScaleAbs(depth_im_, scaled_im_, 255.0f);
@@ -95,53 +97,16 @@ namespace Grasp {
       cv::Mat outDepth;
       cv::flip(scaled_im_, outDepth, -1);
       cv::imwrite( depthFile, outDepth );
-
-  	  // Calculate surface normals as well!
-  	  int pointCount = cloud->size();
-  	  boost::shared_ptr<pcl::PointCloud<pcl::PointXYZ>> ptr(new pcl::PointCloud<pcl::PointXYZ>(pointCount, 1));
-  	  for (int i = 0; i < pointCount; i++) {
-  		  if (cloud->points[i].r > 0)
-  		  {
-				ptr->points[i].x = cloud->points[i].x;
-				ptr->points[i].y = cloud->points[i].y;
-				ptr->points[i].z = cloud->points[i].z;
-  		  }
-  	  }
-
-  	  // Calculate normals.
-  	  ne.setInputCloud(ptr);
-      pcl::search::KdTree<pcl::PointXYZ>::Ptr tree (new pcl::search::KdTree<pcl::PointXYZ>);
-      ne.setSearchMethod (tree);
-      pcl::PointCloud<pcl::Normal>::Ptr cloud_normals (new pcl::PointCloud<pcl::Normal>);
-      ne.setRadiusSearch (0.05);
-      ne.compute (*cloud_normals);
-      normals = cloud_normals;
-
-      // Assign back the normals.
-  	  for (int i = 0; i < pointCount; i++) {
-  		  if (cloud->points[i].r > 0)
-  		  {
-				cloud->points[i].normal_x = -normals->points[i].normal_x;
-				cloud->points[i].normal_y = -normals->points[i].normal_y;
-				cloud->points[i].normal_z = -normals->points[i].normal_z;
-				cloud->points[i].curvature = -normals->points[i].curvature;
-  		  }
-  	  }
-  	  ptr.reset();
-  	  tree.reset();
-  	  cloud_normals.reset();
-
     }
 
     KinectSimulator *object_model_;
     CameraInfo cam_info;
     cv::Mat depth_im_, scaled_im_, labels_;
     cv::Mat rgbIm;
-    pcl::PointCloud<pcl::PointXYZRGBNormal> *cloud;
+    pcl::PointCloud<pcl::PointXYZ> *cloud;
 	pcl::NormalEstimation<pcl::PointXYZ, pcl::Normal> ne;
 	pcl::PointCloud<pcl::Normal>::Ptr normals;
 	char cloudFile[1000], rgbFile[1000], depthFile[1000];
-
   };
 
   // Function to collect data from simulated Kinect camera.
