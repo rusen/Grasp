@@ -128,7 +128,7 @@ void keyboard(GLFWwindow* window, int key, int scancode, int act, int mods)
     // b - Previous grasp
 	if( act==GLFW_PRESS && key==GLFW_KEY_B )
 	{
-		if (planner->graspCounter > 0)
+		if (planner->graspCounter > 1)
 		{
 			planner->graspCounter--;
 		}
@@ -225,7 +225,7 @@ void graspObject(const mjModel* m, mjData* d){
 				// If the object is outside the 20x20 box in the middle,
 				// we put it in a random location in this square.
 				bool relocated = false;
-				if (fabs(d->qpos[m->nq-7]) > 0.05 || fabs(d->qpos[m->nq-6]) > 0.05)
+				if ((fabs(d->qpos[m->nq-7]) > 0.05 || fabs(d->qpos[m->nq-6]) > 0.05) && planner->baseType != 1)
 				{
 					std::cout<<"Object has moved outside!"<<std::endl;
 					// The object moved outside! Put it in a 20x20 area in the middle.
@@ -448,22 +448,6 @@ int main(int argc, const char** argv)
 	if (!boost::filesystem::is_directory(tmpDropboxFolder))
 		boost::filesystem::create_directories(tmpDropboxFolder);
 
-    // Allocate planner
-    planner = new Grasp::GraspPlanner(argv[2], testFlag);
-    planner->randSeed = randSeed;
-
-    // Activate software
-    mj_activate("mjkey.txt");
-
-    // Set visual flag based on input.
-    if (!strcmp(argv[3], "visualOn"))
-    	visualFlag = true;
-    else
-    	visualFlag = false;
-
-    // Redirect cout to file.
-    outGraspDataFile = fopen(planner->resultFile, "w");
-
     // Depending on requested class, get relevant objects.
     int objectId = 0;
     if (!classSelection)
@@ -501,7 +485,33 @@ int main(int argc, const char** argv)
         objectId = objectIdx[rand()%(objectIdx.size())];
     }
 
+    char baseIdFile[1000];
+    strcpy(baseIdFile, argv[1]);
+    strcat(baseIdFile, "/baseIds.txt");
+
+    // Read base id
+    int baseType = 0;
+    FILE * fid = fopen(baseIdFile, "r");
+    for (int i = 0; i<objectId; i++)
+    	fscanf(fid, "%d\n", &baseType);
+    fclose(fid);
     int baseId = rand()%13 + 1;
+
+    // Allocate planner
+    planner = new Grasp::GraspPlanner(argv[2], testFlag, baseType);
+    planner->randSeed = randSeed;
+
+    // Activate software
+    mj_activate("mjkey.txt");
+
+    // Set visual flag based on input.
+    if (!strcmp(argv[3], "visualOn"))
+    	visualFlag = true;
+    else
+    	visualFlag = false;
+
+    // Redirect cout to file.
+    outGraspDataFile = fopen(planner->resultFile, "w");
 
     // Modify the xml files with random parameters.
     std::string modelPath = Grasp::CreateXMLs(argv[1], planner, objectId, baseId);

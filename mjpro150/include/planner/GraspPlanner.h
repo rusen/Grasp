@@ -52,6 +52,7 @@ public:
 	char resultFile[1000]; // Grasp success/diagnostics file (.gd)
 	char trajectoryFile[1000]; // Trajectory file (.trj)
 	char dropboxFolder[1000]; // Dropbox folder for this run
+	int baseType = 0; // Type of base for current object
 	FILE * trjFP = NULL;
 
 	// Grasp-related variables.
@@ -87,7 +88,7 @@ public:
 	// Simulator allocation
 	Simulate* Simulator = NULL;
 
-	GraspPlanner(const char * dropboxFolder, bool testFlag);
+	GraspPlanner(const char * dropboxFolder, bool testFlag, int baseType);
 	virtual ~GraspPlanner();
 
 	// Reset simulation to initial configuration

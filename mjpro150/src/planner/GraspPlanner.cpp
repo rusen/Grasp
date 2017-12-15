@@ -34,10 +34,11 @@ void GraspPlanner::SetFrame(const mjModel* m, mjData * d)
     mju_f2n(d->sensordata, data+1+m->nq+m->nv+m->nu+7*m->nmocap, m->nsensordata);
 }
 
-GraspPlanner::GraspPlanner(const char * dropboxBase, bool testFlag) {
+GraspPlanner::GraspPlanner(const char * dropboxBase, bool testFlag, int baseType) {
 
-	// Save test flag
+	// Save test flag and base type.
 	this->testFlag = testFlag;
+	this->baseType = baseType;
 
 	// Create file paths.
 	fileId[0] = 0;
