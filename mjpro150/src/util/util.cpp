@@ -242,7 +242,7 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 		break;
 	}
 
-	// Replace friction
+	// Replace scale
 	sprintf(tmp, "<mesh scale=\"%f %f %f\" ", xScale, yScale, zScale);
 	replaceAll(assetStr, std::string("<mesh "), std::string(tmp));
 

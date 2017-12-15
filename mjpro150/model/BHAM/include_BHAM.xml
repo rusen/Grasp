@@ -20,7 +20,7 @@
     -->
     
     <compiler angle="radian" meshdir="mesh/" texturedir="texture/" convexhull="true" coordinate="local"/>
-    <option timestep="0.002" iterations="50" apirate="50" noslip_iterations="0" cone="elliptic"/>
+    <option timestep="0.002" iterations="50" apirate="50" noslip_iterations="10" cone="elliptic"/>
     <size njmax="5000" nconmax="500" nstack="500000"/> 
 
     <default>
@@ -28,7 +28,7 @@
 			<geom material="MatMesh" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
         	<joint limited="true" damping="0.2" armature=".01"/>
         	<site material="MatTouch" type="ellipsoid" group="3"/>
-            <position kp="10" ctrllimited="true" forcelimited="true" forcerange="-1 1"/>
+            <position kp="10" ctrllimited="true" forcelimited="true" forcerange="-3 3"/>
 		</default>
 
         <default class="IMU">
@@ -164,7 +164,7 @@
     <worldbody>
         <camera name="fixed" pos="-1 0 0.7" zaxis="-1 0 1" fovy="60" ipd="0.068"/>
 
-        <body name="mocap" mocap="true" pos="-0.005 0.1725 2.02"> <!-- 0 0.175 10.025 -->
+        <body name="mocap" mocap="true" pos="-0.005 0.173 2.02"> <!-- 0 0.175 10.025 -->
             <geom type="box" group="2" size="0.02 0.02 0.02" contype="0" conaffinity="0" rgba=".9 .5 .5 1"/>
         </body>
         
