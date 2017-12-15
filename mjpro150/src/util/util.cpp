@@ -172,11 +172,12 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 	float xScale = RF/2+0.75;
 	float yScale = xScale;
 	float zScale = RF/2+0.75;
+	float eulerx = 0, eulery = 0, eulerz = RF * 2 * M_PI;
 	switch(classId)
 	{
 	case 0: // Bottle
 		zScale = RF/2+0.8;
-		yScale = RF*0.2+0.8;
+		yScale = RF*0.2+0.9;
 		xScale = yScale;
 		break;
 	case 1: // Bowl
@@ -204,9 +205,11 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 	case 6: // Knife
 		break; // default
 	case 7: // Mug
-		xScale = RF*0.4+0.8; // make it all proportional
+		xScale = RF*0.1+0.7; // make it all proportional
 		yScale = xScale;
 		zScale = xScale;
+		eulerx = RF * M_PI;
+		eulery = RF * M_PI;
 		break;
 	case 8: //Plate
 		xScale = RF*0.5+0.75; // make it all proportional
@@ -238,9 +241,9 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 		zScale = xScale;
 		break;
 	}
-	sprintf(tmp, "<mesh scale=\"%f %f %f\" ", xScale, yScale, zScale);
 
 	// Replace friction
+	sprintf(tmp, "<mesh scale=\"%f %f %f\" ", xScale, yScale, zScale);
 	replaceAll(assetStr, std::string("<mesh "), std::string(tmp));
 
 	// Write light string.
@@ -249,8 +252,8 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 	tAssetOut.close();
 
 	// Create random mass, depending on the object type.
-	float baseWeights[] = {30, 50, 30, 40, 200, 80, 50, 250, 40, 50, 100, 40, 40, 120, 800};
-	float addedWeights[] = {40, 350, 40, 40, 330, 90, 100, 100, 80, 100, 60, 40, 40, 80, 400};
+	float baseWeights[] = {30, 50, 30, 40, 200, 80, 50, 650, 40, 50, 100, 40, 40, 120, 800};
+	float addedWeights[] = {40, 350, 300, 40, 330, 90, 100, 100, 80, 100, 60, 40, 40, 80, 400};
 
 	int baseWeight = baseWeights[classId];
 	int addedWeight = addedWeights[classId];
@@ -263,9 +266,7 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 	replaceAll(objectStr, std::string("mass=\"\""), std::string(tmp));
 
 	// Create random orientation
-	r = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
-	float orientation = PI * 2 * (r - 0.5);
-	sprintf(tmp, "euler=\"0 0 %f\"", orientation);
+	sprintf(tmp, "euler=\"%f %f %f\"", eulerx, eulery, eulerz);
 	replaceAll(objectStr, std::string("euler=\"\""), std::string(tmp));
 
 	// Create random object colour

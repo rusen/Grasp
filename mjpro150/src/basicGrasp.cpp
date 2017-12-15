@@ -29,6 +29,7 @@
 #include <glm/gtx/quaternion.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
+#define RF (static_cast <float> (rand()) / static_cast <float> (RAND_MAX))
 #define PI 3.14159265
 
 // MuJoCo data structures
@@ -57,9 +58,10 @@ int counter = 0;
 mjtNum *lastQpos, *stableQpos = NULL, *stableQvel = NULL, *stableCtrl = NULL;
 double stableError = 0.000005;
 mjtNum lastPose[4], lastPos[3]; // For keeping track of pose after object is gripped.
-int stableCounter = 0, stableIterations = 5000;
+int stableCounter = 0, stableIterations = 4000, stableRuns = 3, runCounter = 0;
 bool visualFlag = true;
 bool testFlag = false;
+bool terminateFlag = false;
 int classSelection = 0;
 
 // Get the path to the dot pattern
@@ -210,23 +212,52 @@ void graspObject(const mjModel* m, mjData* d){
 			for (int i = 0; i<m->nq; i++)
 				err += fabs((d->qpos[i]) - lastQpos[i]);
 
+			if (runCounter >= stableRuns)
+			{
+				terminateFlag = true;
+				return;
+			}
+
+
 			// If stable, move on.
 			if (err < stableError || stableCounter >= stableIterations)
 			{
-				// Get stable data.
-				copyArray(d->qpos, stableQpos, m->nq);
-				copyArray(d->qvel, stableQvel, m->nv);
-				copyArray(d->ctrl, stableCtrl, m->nu);
-				stableFlag = true;
-				findStableFlag = false;
-
-				// Print data.
-				(*(planner->logStream))<<"QPOS STABLE"<<std::endl;
-				for (int i = 0; i<m->nq; i++)
+				// If the object is outside the 20x20 box in the middle,
+				// we put it in a random location in this square.
+				bool relocated = false;
+				if (fabs(d->qpos[m->nq-7]) > 0.05 || fabs(d->qpos[m->nq-6]) > 0.05)
 				{
-					(*(planner->logStream))<<d->qpos[i]<<" ";
+					std::cout<<"Object has moved outside!"<<std::endl;
+					// The object moved outside! Put it in a 20x20 area in the middle.
+					float newX = (RF - 0.5) * 0.09;
+					float newY = (RF - 0.5) * 0.09;
+					d->qpos[m->nq-7] = newX;
+					d->qpos[m->nq-6] = newY;
+					relocated = true;
+					runCounter ++;
+					stableCounter = 0;
+					if (runCounter >= stableRuns)
+						terminateFlag = true;
 				}
-				(*(planner->logStream))<<std::endl;
+
+				// If the object has not been relocated,
+				if (!relocated)
+				{
+					// Get stable data.
+					copyArray(d->qpos, stableQpos, m->nq);
+					copyArray(d->qvel, stableQvel, m->nv);
+					copyArray(d->ctrl, stableCtrl, m->nu);
+					stableFlag = true;
+					findStableFlag = false;
+
+					// Print data.
+					(*(planner->logStream))<<"QPOS STABLE"<<std::endl;
+					for (int i = 0; i<m->nq; i++)
+					{
+						(*(planner->logStream))<<d->qpos[i]<<" ";
+					}
+					(*(planner->logStream))<<std::endl;
+				}
 			}
 
 			// Get last data
@@ -304,7 +335,6 @@ void graspObject(const mjModel* m, mjData* d){
 		if (stableFlag)
 		{
 			// Perform grasp loop
-			planner->testFlag = testFlag;
 			planner->PerformGrasp(m, d, stableQpos, stableQvel, stableCtrl, &scn, &con);
 		}
 	}
@@ -400,10 +430,6 @@ int main(int argc, const char** argv)
     // Read class selection parameter.
 	sscanf(argv[4], "%ud", &classSelection);
 
-    // Allocate planner
-    planner = new Grasp::GraspPlanner(argv[2]);
-    planner->randSeed = randSeed;
-
     // Create dropbox directories
     char tmpDropboxFolder[1000];
     strcpy(tmpDropboxFolder, argv[2]);
@@ -421,6 +447,10 @@ int main(int argc, const char** argv)
     strcat(tmpDropboxFolder, "/upload");
 	if (!boost::filesystem::is_directory(tmpDropboxFolder))
 		boost::filesystem::create_directories(tmpDropboxFolder);
+
+    // Allocate planner
+    planner = new Grasp::GraspPlanner(argv[2], testFlag);
+    planner->randSeed = randSeed;
 
     // Activate software
     mj_activate("mjkey.txt");
@@ -580,7 +610,7 @@ int main(int argc, const char** argv)
 				break;
 
 		// All grasps done? Break.
-		if (planner->getGraspState() == Grasp::done)
+		if (planner->getGraspState() == Grasp::done || terminateFlag)
 			break;
 
 		// advance interactive simulation for 1/60 sec

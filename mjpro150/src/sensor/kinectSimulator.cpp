@@ -306,42 +306,20 @@ pcl::PointCloud<pcl::PointXYZ> * KinectSimulator::intersect(const mjModel* m, mj
     	angle2 = -(acos(tv[0]) - M_PI/2);
     else
     	angle2 = -((2*M_PI - acos(tv[0])) - M_PI/2);
-    std::cout<<normGaze[0]<<" "<<normGaze[1]<<" "<<normGaze[2]<<" "<<angle2<<std::endl;
-    std::cout<<"Gaze:"<<normGaze[0]<<" "<<normGaze[1]<<" "<<normGaze[2]<<std::endl;
     float dist1 = sqrt(normGaze[0] * normGaze[0] + normGaze[1] * normGaze[1]);
     float angle3 = atan(normGaze[2]/dist1);
-    std::cout<<"angle"<<normGaze[2]<<" "<<dist1<<" "<<angle3<<std::endl;
     Eigen::Matrix3f m2;
     Eigen::Quaternionf q1(Eigen::AngleAxisf(-0.5*M_PI, Eigen::Vector3f::UnitX()));
     Eigen::Quaternionf q2(Eigen::AngleAxisf(angle2, Eigen::Vector3f::UnitY()));
     Eigen::Quaternionf q3(Eigen::AngleAxisf(angle3, Eigen::Vector3f::UnitX()));
     Eigen::Quaternionf q4(Eigen::AngleAxisf(M_PI, Eigen::Vector3f::UnitZ()));
     m2 = q1 * q2 * q3 * q4;
- //   m2 = q1 * q2;
 
     Eigen::Quaternionf qTmp2(m2);
     q->w = qTmp2.w();
     q->x = qTmp2.x();
     q->y = qTmp2.y();
     q->z = qTmp2.z();
-
-    /*
-    glm::quat tempQ;
-    glm::vec3 difference = glm::cross(glm::vec3(0,0,1), normGaze);
-    std::cout<<normGaze[0]<<" "<<normGaze[1]<<" "<<normGaze[2]<<std::endl;
-
-
-    tempQ.x = difference.x;
-    tempQ.y = difference.y;
-    tempQ.z = difference.z;
-    tempQ.w = 1 + glm::dot(glm::vec3(0,0,1), normGaze);
-    tempQ = glm::normalize(tempQ);
-    q->w = tempQ.w;
-    q->x = tempQ.x;
-    q->y = tempQ.y;
-    q->z = tempQ.z;
-    std::cout<<"Rotation as it is created:"<<q->w<<" "<<q->x<<" "<<q->y<<" "<<q->z<<std::endl;
-*/
 
     // Send rays for each and every pixel!
     int pointCount = 0;

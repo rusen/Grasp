@@ -68,6 +68,8 @@ public:
 
 	// Info for camera capture.
 	glm::vec3 cameraPos, gazeDir;
+	std::vector <glm::vec3> cameraPosArr, gazeDirArr;
+	int numberOfAngles = 1;
 
 	// Upload and timeout time
 	time_t uploadTime = 0;
@@ -85,7 +87,7 @@ public:
 	// Simulator allocation
 	Simulate* Simulator = NULL;
 
-	GraspPlanner(const char * dropboxFolder);
+	GraspPlanner(const char * dropboxFolder, bool testFlag);
 	virtual ~GraspPlanner();
 
 	// Reset simulation to initial configuration

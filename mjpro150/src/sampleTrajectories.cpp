@@ -37,7 +37,7 @@
 // MuJoCo data structures
 mjModel* m = NULL;                  // MuJoCo model
 mjData* d = NULL;                   // MuJoCo data
-mjvCamera cam, wristCam;                      // abstract camera
+mjvCamera cam, wristCam;            // abstract camera
 mjvOption opt;                      // visualization options
 mjvScene scn;                       // abstract scene
 mjrContext con;                     // custom GPU context
@@ -358,6 +358,7 @@ int main(int argc, const char** argv)
 
 	// Go through the files
 	int count = 0;
+	int nanCounter = 0;
 	for (auto i = boost::filesystem::directory_iterator(p); i != boost::filesystem::directory_iterator(); i++)
 	{
 
@@ -374,8 +375,10 @@ int main(int argc, const char** argv)
 		strcpy(newFile, "./processedTrj/");
 		strcat(newFile, i->path().stem().string().c_str());
 		strcat(newFile, ".trj");
+
 		FILE * newTrjFP = fopen(newFile, "wb");
 		fread(&numberOfGrasps, 4, 1, trjFP);
+		std::cout<<newFile<<std::endl;
 
 		// File 1
 		char debugFile[1000];
@@ -398,13 +401,16 @@ int main(int argc, const char** argv)
 		sscanf(str.c_str() + found, "%f %f %f", &rightx, &righty, &rightz);
 
 		// Print data.
+		/*
 		std::cout<<"POSITION: "<<posx<<" "<<posy<<" "<<posz<<std::endl;
 		std::cout<<"GAZE: "<<gazex<<" "<<gazey<<" "<<gazez<<std::endl;
 		std::cout<<"UP: "<<upx<<" "<<upy<<" "<<upz<<std::endl;
 		std::cout<<"RIGHT: "<<rightx<<" "<<righty<<" "<<rightz<<std::endl;
+	*/
 
 		glm::mat4 viewM = glm::lookAt(glm::vec3(posx, posy, posz), glm::vec3(posx+gazex, posy+gazey, posz+gazez), glm::vec3(upx, upy, upz));
 
+		/*
 		std::cout<<" **************************** "<<std::endl;
 		const float *pSource = (const float*)glm::value_ptr(viewM);
 		std::cout<<pSource[0]<<" "<<pSource[1]<<" "<<pSource[2]<<" "<<pSource[3]<<std::endl;
@@ -412,6 +418,10 @@ int main(int argc, const char** argv)
 		std::cout<<pSource[8]<<" "<<pSource[9]<<" "<<pSource[10]<<" "<<pSource[11]<<std::endl;
 		std::cout<<pSource[12]<<" "<<pSource[13]<<" "<<pSource[14]<<" "<<pSource[15]<<std::endl;
 		std::cout<<" **************************** "<<std::endl;
+*/
+
+		bool flag = false;
+		std::cout<<"Flag"<<std::endl;
 
 		// Read paths one by one
 		for (int j = 0; j < numberOfGrasps; j++)
@@ -431,9 +441,7 @@ int main(int argc, const char** argv)
 				pos[2] = wp.pos[2];
 				pos[3] = 1;
 
-				std::cout<<"Point before conversion:"<<pos[0]<<" "<<pos[1]<<" "<<pos[2]<<std::endl;
 				pos = viewM * pos;
-				std::cout<<"Point after conversion:"<<pos[0]<<" "<<pos[1]<<" "<<pos[2]<<std::endl;
 
 				// Get rotation matrix
 				glm::mat4 rotM = glm::toMat4(wp.quat);
@@ -450,7 +458,6 @@ int main(int argc, const char** argv)
 				printedVals[4] = newQuat.x;
 				printedVals[5] = newQuat.y;
 				printedVals[6] = newQuat.z;
-
 				fwrite(printedVals, 4, 7, newTrjFP);
 				// Convert position and quat.
 				fwrite(wp.jointAngles, 4, 20, newTrjFP);
@@ -458,7 +465,29 @@ int main(int argc, const char** argv)
 		}
 		fclose(trjFP);
 		fclose(newTrjFP);
+		std::cout<<"Flag"<<std::endl;
+
+		// Check the written data.
+		float buffer[numberOfGrasps*270];
+		newTrjFP = fopen(newFile, "rb");
+		int no = fread(buffer, 4, numberOfGrasps*270, newTrjFP);
+		flag = false;
+		for (int k = 0; k<no; k++)
+		{
+			if (isnan(buffer[k]))
+			{
+				flag = true;
+			}
+		}
+		if (flag)
+		{
+			std::cout<<"NAN FILE!"<<i->path().string().c_str()<<std::endl;
+			nanCounter++;
+		}
+		fclose(newTrjFP);
 	}
+
+	std::cout<<"\nTotal NAN files:"<<nanCounter<<std::endl;
 }
 
 

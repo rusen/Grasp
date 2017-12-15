@@ -34,7 +34,10 @@ void GraspPlanner::SetFrame(const mjModel* m, mjData * d)
     mju_f2n(d->sensordata, data+1+m->nq+m->nv+m->nu+7*m->nmocap, m->nsensordata);
 }
 
-GraspPlanner::GraspPlanner(const char * dropboxBase) {
+GraspPlanner::GraspPlanner(const char * dropboxBase, bool testFlag) {
+
+	// Save test flag
+	this->testFlag = testFlag;
 
 	// Create file paths.
 	fileId[0] = 0;
@@ -68,22 +71,44 @@ GraspPlanner::GraspPlanner(const char * dropboxBase) {
     strcpy(Simulator->rgbFile,rgbFile);
     strcpy(Simulator->depthFile,depthFile);
 
-    // Calculate a location and orientation for placing the depth cam.
-    float radialR = (((float) (rand()%360))/360.0f) * (2*3.1416);
-    glm::vec3 gazePosition = {((float) (rand()%100) - 50)/1000.0f, ((float) (rand()%100) - 50)/1000.0f, -0.35};
-    glm::vec3 handPosition(cos(radialR) * (0.5 + ((float) (rand()%100) - 50)/1000.0f), sin(radialR) * (0.5 + ((float) (rand()%100) - 50)/1000.0f), ((float) (rand()%100) - 50)/1000.0f);
-    (*logStream)<<"Position of the hand:"<<handPosition[0]<<" "<<handPosition[1]<<" "<<handPosition[2]<<std::endl;
+    // If testing, we don't need many angles.
+    if (testFlag)
+    	numberOfAngles = 1;
 
-    // Calculate gaze dir.
-    gazeDir = normalize(gazePosition - handPosition);
+    // Find camera and gaze locations
+    for (int i = 0; i<numberOfAngles; i++)
+    {
+		// Calculate a location and orientation for placing the depth cam.
+		float radialR = (((float) (rand()%360))/360.0f) * (2*3.1416);
+		glm::vec3 gazePosition = {((float) (rand()%100) - 50)/1000.0f, ((float) (rand()%100) - 50)/1000.0f, -0.35};
+		glm::vec3 handPosition(cos(radialR) * (0.5 + ((float) (rand()%100) - 50)/1000.0f), sin(radialR) * (0.5 + ((float) (rand()%100) - 50)/1000.0f), ((float) (rand()%100) - 50)/1000.0f);
 
-    // Next, we find the view-right vector (right hand vector)
-    glm::vec3 tempUp(0, 0, 1), rightDir, upDir;
-    rightDir = normalize(glm::cross(gazeDir, tempUp));
-    upDir = normalize(glm::cross(rightDir, gazeDir));
+		// Calculate gaze dir.
+		glm::vec3 tempGaze = normalize(gazePosition - handPosition);
 
-    // Find camera pos.
-    cameraPos = handPosition + 0.1f * upDir - 0.0135f * rightDir;
+		// Next, we find the view-right vector (right hand vector)
+		glm::vec3 tempUp(0, 0, 1), rightDir, upDir;
+		rightDir = normalize(glm::cross(tempGaze, tempUp));
+		upDir = normalize(glm::cross(rightDir, tempGaze));
+
+		// Find camera pos.
+		glm::vec3 tempCameraPos = handPosition + 0.1f * upDir - 0.0135f * rightDir;
+
+		// Add camera information to the arrays.
+		cameraPosArr.push_back(tempCameraPos);
+		gazeDirArr.push_back(tempGaze);
+
+		// First point is the one shown to the camera.
+		if (!i)
+		{
+			gazeDir = tempGaze;
+			cameraPos = tempCameraPos;
+		}
+
+		// Save data into the stream.
+		(*logStream)<<"Position "<<i<<" of the hand:"<<tempCameraPos[0]<<" "<<tempCameraPos[1]<<" "<<tempCameraPos[2]<<std::endl;
+		(*logStream)<<"Gaze "<<i<<" of the hand:"<<tempGaze[0]<<" "<<tempGaze[1]<<" "<<tempGaze[2]<<std::endl;
+    }
 }
 
 GraspPlanner::~GraspPlanner() {
@@ -123,7 +148,7 @@ void GraspPlanner::ReadTrajectories(int numberOfGrasps){
 	for (int readCtr = 0; readCtr<numberOfGrasps; readCtr++)
 	{
 		// Reads the next trajectory from the file, and sets path variable.
-		float extraGrip = 0.5236; // 0.5236 for 30 degrees
+		float extraGrip = 0.349; // 0.349 for 20 degrees
 		int wpCount = 0;
 		float likelihood = 0;
 		int graspType = 0;
@@ -156,7 +181,7 @@ void GraspPlanner::ReadTrajectories(int numberOfGrasps){
 					if (newVal > maxVal)
 						maxVal = newVal;
 				}
-		//		multiplyFactor = extraGrip / maxVal;
+				multiplyFactor = extraGrip / maxVal;
 			}
 			else
 			{
@@ -229,7 +254,7 @@ void GraspPlanner::ReadTrajectories(int numberOfGrasps){
 bool GraspPlanner::FollowTrajectory(const mjModel* m, mjData* d, float yOffset){
 
 	// Set pose of the hand.
-	Waypoint wp = finalApproachArr[graspCounter]->Interpolate(counter);
+	Waypoint wp = finalApproachArr[graspCounter-1]->Interpolate(counter);
 
 	// Add y offset, if requested
 	wp.pos[1] += yOffset;
@@ -241,7 +266,7 @@ bool GraspPlanner::FollowTrajectory(const mjModel* m, mjData* d, float yOffset){
 	counter++;
 
 	// If total number of steps have been performed, we move on.
-	if (counter>=finalApproachArr[graspCounter]->steps)
+	if (counter>=finalApproachArr[graspCounter-1]->steps)
 		return true;
 	else return false;
 
@@ -268,7 +293,47 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 		if (!startFlag)
 		{
 			startFlag = true;
-			CollectData(Simulator, m, d, scn, con, rgbBuffer, depthBuffer, cameraPos, gazeDir, camSize, minPointZ, &finishFlag, logStream);
+
+			// Copy saved files into different names.
+			char localPrefix[1000], imagePrefix[1000], tmpStr[1000];
+			strcpy(localPrefix, baseFolder);
+			strcat(localPrefix, fileId);
+			strcat(localPrefix, "_");
+			strcpy(imagePrefix, baseFolder);
+			strcat(imagePrefix, "/images");
+
+			std::cout<<"Array length:"<<cameraPosArr.size()<<std::endl;
+			if (!boost::filesystem::exists(imagePrefix))
+				boost::filesystem::create_directories(imagePrefix);
+
+			// Collect data from all angles.
+			for (int i = numberOfAngles-1; i>-1; i--)
+			{
+
+				// Collect data
+				CollectData(Simulator, m, d, scn, con, rgbBuffer, depthBuffer, cameraPosArr[i], gazeDirArr[i], camSize, minPointZ, &finishFlag, logStream, i);
+
+				// Print aux info
+				std::cout<<"Getting data from "<<i<<"th location."<<std::endl;
+				std::cout<<cameraPosArr[i][0]<<" "<<cameraPosArr[i][1]<<" "<<cameraPosArr[i][2]<<std::endl;
+				std::cout<<gazeDirArr[i][0]<<" "<<gazeDirArr[i][1]<<" "<<gazeDirArr[i][2]<<std::endl;
+
+				// Copy files
+				strcpy(tmpStr, imagePrefix);
+				strcat(tmpStr, "/");
+				strcat(tmpStr, fileId);
+				strcat(tmpStr, "_");
+				strcat(tmpStr, std::to_string(i).c_str());
+				strcat(tmpStr, "_rgb.jpg");
+				boost::filesystem::copy_file(Simulator->rgbFile, tmpStr);
+				strcpy(tmpStr, imagePrefix);
+				strcat(tmpStr, "/");
+				strcat(tmpStr, fileId);
+				strcat(tmpStr, "_");
+				strcat(tmpStr, std::to_string(i).c_str());
+				strcat(tmpStr, "_depth.png");
+				boost::filesystem::copy_file(Simulator->depthFile, tmpStr);
+			}
 			if (!boost::filesystem::exists(Simulator->cloudFile))
 			{
 				graspState = done;
@@ -322,6 +387,7 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 				ReadTrajectories(numberOfGrasps);
 
 				(*logStream)<< "Number of grasps:" << numberOfGrasps << std::endl;
+				std::cout<< "Number of grasps:" << numberOfGrasps << std::endl;
 			}
 			else
 			{
@@ -376,7 +442,7 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 		if (collisionCounter < collisionPoints){
 			if (!collisionSet)
 			{
-				counter = round(((float) collisionCounter / float(collisionPoints-1)) * (float)(finalApproachArr[graspCounter]->steps));
+				counter = round(((float) collisionCounter / float(collisionPoints-1)) * (float)(finalApproachArr[graspCounter-1]->steps));
 				FollowTrajectory(m, d, yOffset);
 				collisionSet = true;
 			}
@@ -481,7 +547,7 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 			}
 			else
 			{
-				std::cout<<"Grasp #"<<graspCounter<<" starting."<<std::endl;
+				std::cout<<"Grasp #"<<graspCounter-1<<" starting."<<std::endl;
 				// No collision in the checks. Perform grasp.
 				graspState = grasping;
 			}

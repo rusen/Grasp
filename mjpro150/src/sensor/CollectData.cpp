@@ -14,7 +14,7 @@
 namespace Grasp{
 
 void CollectData(Simulate* Simulator, const mjModel* m, mjData* d,  mjvScene *scn, mjrContext *con, unsigned char* rgbBuffer, unsigned char* depthBuffer,
-		glm::vec3 cameraPos, glm::vec3 gazeDir, int * camSize, float minPointZ, bool*finishFlag, std::ofstream * out)
+		glm::vec3 cameraPos, glm::vec3 gazeDir, int * camSize, float minPointZ, bool*finishFlag, std::ofstream * out, int imageId)
 {
 	std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
 
@@ -27,7 +27,6 @@ void CollectData(Simulate* Simulator, const mjModel* m, mjData* d,  mjvScene *sc
 	Simulator->simulateMeasurement(m, d, scn, con, cameraPos, gazeDir, minPointZ, out, &q);
 	if (Simulator->cloud->size() > 0)
 	{
-		std::cout<<"Point cloud size:"<<Simulator->cloud->size()<<std::endl;
 	    // Find camera frame and write the point cloud into a file.
 	    Eigen::Vector4f cameraOrigin(cameraPos[0] + 0.5, cameraPos[1], cameraPos[2], 0);
 	    Eigen::Quaternionf cameraRot(q.w, q.x, q.y, q.z);

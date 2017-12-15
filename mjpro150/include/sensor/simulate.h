@@ -87,8 +87,6 @@ namespace Grasp {
       cv::Mat p_result;
       cloud = object_model_->intersect(m, d, scn, con, rgbIm, depth_im_, newCamPos, newCamGaze, minPointZ, rgbFile, out, q);
       
-      std::cout<<"Rotation as it is transferred:"<<q->w<<" "<<q->x<<" "<<q->y<<" "<<q->z<<std::endl;
-
       // store on disk
   	  std::stringstream lD;
   	  convertScaleAbs(depth_im_, scaled_im_, 255.0f);
@@ -110,7 +108,10 @@ namespace Grasp {
   };
 
   // Function to collect data from simulated Kinect camera.
-  void CollectData(Simulate* Simulator, const mjModel* m, mjData* d, mjvScene *scn, mjrContext *con, unsigned char* rgbBuffer, unsigned char* depthBuffer, glm::vec3 cameraPos, glm::vec3 gazeDir, int * camSize, float minPointZ, bool*finishFlag, std::ofstream * out);
+  void CollectData(Simulate* Simulator, const mjModel* m, mjData* d,
+		  mjvScene *scn, mjrContext *con, unsigned char* rgbBuffer, unsigned char* depthBuffer,
+		  glm::vec3 cameraPos, glm::vec3 gazeDir, int * camSize, float minPointZ, bool*finishFlag,
+		  std::ofstream * out, int imageId);
 
 } //namespace Grasp
 #endif // SIMULATE_H
