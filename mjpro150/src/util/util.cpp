@@ -203,6 +203,9 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 		zScale = xScale;
 		break;
 	case 6: // Knife
+		zScale = RF/2+0.85; // longer
+		yScale = RF*0.2 + 0.8;
+		xScale = yScale;
 		break; // default
 	case 7: // Mug
 		xScale = RF*0.1+0.7; // make it all proportional

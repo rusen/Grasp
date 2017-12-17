@@ -1,69 +1,69 @@
 <mujoco>
     <asset>
-        <mesh name="D_13_1" file="bases/D_13/D_13_1.stl"/>
-        <mesh name="D_13_2" file="bases/D_13/D_13_2.stl"/>
-        <mesh name="D_13_3" file="bases/D_13/D_13_3.stl"/>
-        <mesh name="D_13_4" file="bases/D_13/D_13_4.stl"/>
-        <mesh name="D_13_5" file="bases/D_13/D_13_5.stl"/>
-        <mesh name="D_13_6" file="bases/D_13/D_13_6.stl"/>
-        <mesh name="D_13_7" file="bases/D_13/D_13_7.stl"/>
-        <mesh name="D_13_8" file="bases/D_13/D_13_8.stl"/>
-        <mesh name="D_13_9" file="bases/D_13/D_13_9.stl"/>
-        <mesh name="D_13_10" file="bases/D_13/D_13_10.stl"/>
-        <mesh name="D_13_11" file="bases/D_13/D_13_11.stl"/>
-        <mesh name="D_13_12" file="bases/D_13/D_13_12.stl"/>
-        <mesh name="D_13_13" file="bases/D_13/D_13_13.stl"/>
-        <mesh name="D_13_14" file="bases/D_13/D_13_14.stl"/>
-        <mesh name="D_13_15" file="bases/D_13/D_13_15.stl"/>
-        <mesh name="D_13_16" file="bases/D_13/D_13_16.stl"/>
-        <mesh name="D_13_17" file="bases/D_13/D_13_17.stl"/>
-        <mesh name="D_13_18" file="bases/D_13/D_13_18.stl"/>
-        <mesh name="D_13_19" file="bases/D_13/D_13_19.stl"/>
-        <mesh name="D_13_20" file="bases/D_13/D_13_20.stl"/>
-        <mesh name="D_13_21" file="bases/D_13/D_13_21.stl"/>
-        <mesh name="D_13_22" file="bases/D_13/D_13_22.stl"/>
-        <mesh name="D_13_23" file="bases/D_13/D_13_23.stl"/>
-        <mesh name="D_13_24" file="bases/D_13/D_13_24.stl"/>
-        <mesh name="D_13_25" file="bases/D_13/D_13_25.stl"/>
-        <mesh name="D_13_26" file="bases/D_13/D_13_26.stl"/>
-        <mesh name="D_13_27" file="bases/D_13/D_13_27.stl"/>
-        <mesh name="D_13_28" file="bases/D_13/D_13_28.stl"/>
-        <mesh name="D_13_29" file="bases/D_13/D_13_29.stl"/>
-        <mesh name="D_13_30" file="bases/D_13/D_13_30.stl"/>
-        <mesh name="D_13_31" file="bases/D_13/D_13_31.stl"/>
-        <mesh name="D_13_32" file="bases/D_13/D_13_32.stl"/>
-        <mesh name="D_13_33" file="bases/D_13/D_13_33.stl"/>
-        <mesh name="D_13_34" file="bases/D_13/D_13_34.stl"/>
-        <mesh name="D_13_35" file="bases/D_13/D_13_35.stl"/>
-        <mesh name="D_13_36" file="bases/D_13/D_13_36.stl"/>
-        <mesh name="D_13_37" file="bases/D_13/D_13_37.stl"/>
-        <mesh name="D_13_38" file="bases/D_13/D_13_38.stl"/>
-        <mesh name="D_13_39" file="bases/D_13/D_13_39.stl"/>
-        <mesh name="D_13_40" file="bases/D_13/D_13_40.stl"/>
-        <mesh name="D_13_41" file="bases/D_13/D_13_41.stl"/>
-        <mesh name="D_13_42" file="bases/D_13/D_13_42.stl"/>
-        <mesh name="D_13_43" file="bases/D_13/D_13_43.stl"/>
-        <mesh name="D_13_44" file="bases/D_13/D_13_44.stl"/>
-        <mesh name="D_13_45" file="bases/D_13/D_13_45.stl"/>
-        <mesh name="D_13_46" file="bases/D_13/D_13_46.stl"/>
-        <mesh name="D_13_47" file="bases/D_13/D_13_47.stl"/>
-        <mesh name="D_13_48" file="bases/D_13/D_13_48.stl"/>
-        <mesh name="D_13_49" file="bases/D_13/D_13_49.stl"/>
-        <mesh name="D_13_50" file="bases/D_13/D_13_50.stl"/>
-        <mesh name="D_13_51" file="bases/D_13/D_13_51.stl"/>
-        <mesh name="D_13_52" file="bases/D_13/D_13_52.stl"/>
-        <mesh name="D_13_53" file="bases/D_13/D_13_53.stl"/>
-        <mesh name="D_13_54" file="bases/D_13/D_13_54.stl"/>
-        <mesh name="D_13_55" file="bases/D_13/D_13_55.stl"/>
-        <mesh name="D_13_56" file="bases/D_13/D_13_56.stl"/>
-        <mesh name="D_13_57" file="bases/D_13/D_13_57.stl"/>
-        <mesh name="D_13_58" file="bases/D_13/D_13_58.stl"/>
-        <mesh name="D_13_59" file="bases/D_13/D_13_59.stl"/>
-        <mesh name="D_13_60" file="bases/D_13/D_13_60.stl"/>
-        <mesh name="D_13_61" file="bases/D_13/D_13_61.stl"/>
-        <mesh name="D_13_62" file="bases/D_13/D_13_62.stl"/>
-        <mesh name="D_13_63" file="bases/D_13/D_13_63.stl"/>
-        <mesh name="D_13_64" file="bases/D_13/D_13_64.stl"/>
-        <mesh name="D_13_visual" file="bases/D_13/D_13_full.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_1" file="bases/D_13/D_13_1.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_2" file="bases/D_13/D_13_2.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_3" file="bases/D_13/D_13_3.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_4" file="bases/D_13/D_13_4.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_5" file="bases/D_13/D_13_5.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_6" file="bases/D_13/D_13_6.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_7" file="bases/D_13/D_13_7.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_8" file="bases/D_13/D_13_8.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_9" file="bases/D_13/D_13_9.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_10" file="bases/D_13/D_13_10.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_11" file="bases/D_13/D_13_11.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_12" file="bases/D_13/D_13_12.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_13" file="bases/D_13/D_13_13.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_14" file="bases/D_13/D_13_14.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_15" file="bases/D_13/D_13_15.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_16" file="bases/D_13/D_13_16.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_17" file="bases/D_13/D_13_17.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_18" file="bases/D_13/D_13_18.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_19" file="bases/D_13/D_13_19.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_20" file="bases/D_13/D_13_20.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_21" file="bases/D_13/D_13_21.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_22" file="bases/D_13/D_13_22.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_23" file="bases/D_13/D_13_23.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_24" file="bases/D_13/D_13_24.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_25" file="bases/D_13/D_13_25.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_26" file="bases/D_13/D_13_26.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_27" file="bases/D_13/D_13_27.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_28" file="bases/D_13/D_13_28.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_29" file="bases/D_13/D_13_29.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_30" file="bases/D_13/D_13_30.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_31" file="bases/D_13/D_13_31.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_32" file="bases/D_13/D_13_32.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_33" file="bases/D_13/D_13_33.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_34" file="bases/D_13/D_13_34.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_35" file="bases/D_13/D_13_35.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_36" file="bases/D_13/D_13_36.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_37" file="bases/D_13/D_13_37.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_38" file="bases/D_13/D_13_38.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_39" file="bases/D_13/D_13_39.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_40" file="bases/D_13/D_13_40.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_41" file="bases/D_13/D_13_41.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_42" file="bases/D_13/D_13_42.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_43" file="bases/D_13/D_13_43.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_44" file="bases/D_13/D_13_44.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_45" file="bases/D_13/D_13_45.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_46" file="bases/D_13/D_13_46.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_47" file="bases/D_13/D_13_47.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_48" file="bases/D_13/D_13_48.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_49" file="bases/D_13/D_13_49.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_50" file="bases/D_13/D_13_50.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_51" file="bases/D_13/D_13_51.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_52" file="bases/D_13/D_13_52.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_53" file="bases/D_13/D_13_53.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_54" file="bases/D_13/D_13_54.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_55" file="bases/D_13/D_13_55.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_56" file="bases/D_13/D_13_56.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_57" file="bases/D_13/D_13_57.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_58" file="bases/D_13/D_13_58.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_59" file="bases/D_13/D_13_59.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_60" file="bases/D_13/D_13_60.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_61" file="bases/D_13/D_13_61.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_62" file="bases/D_13/D_13_62.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_63" file="bases/D_13/D_13_63.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_64" file="bases/D_13/D_13_64.stl"/>
+        <mesh scale="1.5 1.5 1" name="D_13_visual" file="bases/D_13/D_13_full.stl"/>
     </asset>
 </mujoco>

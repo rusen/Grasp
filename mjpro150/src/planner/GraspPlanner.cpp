@@ -149,7 +149,8 @@ void GraspPlanner::ReadTrajectories(int numberOfGrasps){
 	for (int readCtr = 0; readCtr<numberOfGrasps; readCtr++)
 	{
 		// Reads the next trajectory from the file, and sets path variable.
-		float extraGrip = 0.349; // 0.349 for 20 degrees
+		float extraGrip = 0.523; // 0.523 for 30 degrees
+//		float extraGrip = 0; // 0.523 for 30 degrees
 		int wpCount = 0;
 		float likelihood = 0;
 		int graspType = 0;
@@ -203,7 +204,7 @@ void GraspPlanner::ReadTrajectories(int numberOfGrasps){
 				{
 					// Sideways joints
 					if (!k)
-						finalApproachArr[readCtr]->waypoints[i].jointAngles[k] = fingerPos[k] + 0.087266;
+						finalApproachArr[readCtr]->waypoints[i].jointAngles[k] = fingerPos[k] + 0.06; // 0.087266
 					else if (k == 4)
 						finalApproachArr[readCtr]->waypoints[i].jointAngles[k] = fingerPos[k] + 0.043633;
 					else if (k == 8)
