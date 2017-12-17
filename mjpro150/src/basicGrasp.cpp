@@ -415,6 +415,20 @@ void render(GLFWwindow* window, const mjModel* m, mjData* d)
 
 }
 
+bool ismember(std::vector<int> vec, int query)
+{
+	bool flag = false;
+	for (int i = 0; i<vec.size(); i++)
+	{
+		if (vec[i] == query)
+		{
+			flag = true;
+			break;
+		}
+	}
+	return flag;
+}
+
 // main function
 int main(int argc, const char** argv)
 {
@@ -455,11 +469,19 @@ int main(int argc, const char** argv)
 	if (!boost::filesystem::is_directory(tmpDropboxFolder))
 		boost::filesystem::create_directories(tmpDropboxFolder);
 
+	// Exclude some objects. Hard coded. Needs to change.
+	std::vector <int> excludedObjects;
+	excludedObjects.push_back(117);
+	excludedObjects.push_back(115);
+	excludedObjects.push_back(112);
+	excludedObjects.push_back(0);
+
     // Depending on requested class, get relevant objects.
     int objectId = 0;
     if (!classSelection)
     {
-    	objectId = rand()%objectCount + 1;
+    	while(ismember(excludedObjects, objectId))
+    		objectId = rand()%objectCount + 1;
     }
     else
     {
@@ -474,7 +496,7 @@ int main(int argc, const char** argv)
         for (int i = 0; i<objectCount; i++)
         {
         	fscanf(fid, "%d\n", &tmpNo);
-        	if (tmpNo == classSelection)
+        	if (tmpNo == classSelection && !ismember(excludedObjects, i + 1))
         	{
         		objectIdx.push_back(i + 1);
         	}
@@ -682,7 +704,7 @@ int main(int argc, const char** argv)
     fclose(outGraspDataFile);
 
     // Upload the data.
-    if (!testFlag)
+    if (!testFlag && planner->numberOfGrasps > 0)
     {
     	UploadFiles(argv[1], planner, objectId, baseId);
     }

@@ -304,7 +304,6 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 			strcpy(imagePrefix, baseFolder);
 			strcat(imagePrefix, "/images");
 
-			std::cout<<"Array length:"<<cameraPosArr.size()<<std::endl;
 			if (!boost::filesystem::exists(imagePrefix))
 				boost::filesystem::create_directories(imagePrefix);
 
