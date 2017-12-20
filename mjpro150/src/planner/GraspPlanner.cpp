@@ -204,7 +204,7 @@ void GraspPlanner::ReadTrajectories(int numberOfGrasps){
 				{
 					// Sideways joints
 					if (!k)
-						finalApproachArr[readCtr]->waypoints[i].jointAngles[k] = fingerPos[k] + 0.06; // 0.087266
+						finalApproachArr[readCtr]->waypoints[i].jointAngles[k] = fingerPos[k] + 0.05; // 0.087266
 					else if (k == 4)
 						finalApproachArr[readCtr]->waypoints[i].jointAngles[k] = fingerPos[k] + 0.043633;
 					else if (k == 8)

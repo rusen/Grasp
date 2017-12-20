@@ -155,8 +155,7 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 					 std::istreambuf_iterator<char>());
 
 	// Create random friction
-	float r = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
-	r = r / 2 + 0.5;  // random number between 0.5 and 1;
+	float r = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);;
 	sprintf(tmp, "friction=\"%f 0.005 0.0001\"", r);
 
 	// Replace friction
@@ -239,7 +238,7 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 		zScale = xScale;
 		break;
 	case 14: // Teapot
-		xScale = RF*0.3+0.7; // slightly smaller
+		xScale = RF*0.3+0.8; // slightly smaller
 		yScale = xScale;
 		zScale = xScale;
 		break;
@@ -255,14 +254,13 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 	tAssetOut.close();
 
 	// Create random mass, depending on the object type.
-	float baseWeights[] = {30, 50, 30, 40, 200, 80, 50, 650, 40, 50, 100, 40, 40, 120, 800};
-	float addedWeights[] = {40, 350, 300, 40, 330, 90, 100, 100, 80, 100, 60, 40, 40, 80, 400};
+	float baseWeights[] = {30, 50, 30, 40, 150, 70, 50, 250, 40, 50, 100, 40, 40, 150, 500};
+	float addedWeights[] = {40, 350, 300, 40, 300, 80, 100, 100, 80, 100, 60, 40, 40, 100, 300};
 
 	int baseWeight = baseWeights[classId];
 	int addedWeight = addedWeights[classId];
 	float mass = (float)(rand()%addedWeight + baseWeight);
 	mass = mass/1000;
-	mass = mass * (xScale * yScale * zScale); // Scale with object size
 	sprintf(tmp, "mass=\"%f\"", mass);
 
 	// Replace mass

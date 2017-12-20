@@ -474,6 +474,7 @@ int main(int argc, const char** argv)
 	excludedObjects.push_back(117);
 	excludedObjects.push_back(115);
 	excludedObjects.push_back(112);
+	excludedObjects.push_back(77);
 	excludedObjects.push_back(0);
 
     // Depending on requested class, get relevant objects.
