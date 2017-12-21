@@ -273,11 +273,13 @@ void graspObject(const mjModel* m, mjData* d){
 		}
 
 		// When beginning a new grasp, save data.
+		/*
      	if (planner->getGraspState() == Grasp::grasping && planner->counter == 0)
      	{
      		fprintf(outGraspDataFile, "#Time:%lf# Starting grasp %d.\n", d->time, planner->graspCounter);
      		(*(planner->logStream))<<"#Time:"<<d->time<<"# Starting grasp "<<planner->graspCounter<<"."<<std::endl;
      	}
+*/
 
      	if (planner->getGraspState() == Grasp::lifting && planner->counter == 0)
      	{
