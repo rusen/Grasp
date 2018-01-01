@@ -58,7 +58,7 @@ public:
 
 	// Grasp-related variables.
 	int numberOfGrasps = 0;
-	int numberOfTrials = 10;
+	int numberOfTrials = 4;
 	int varItr = 0;
 	int collisionPoints = 50, collisionCounter = 0;
 	bool collisionSet = false, collisionRun = true, hasCollided = false;
