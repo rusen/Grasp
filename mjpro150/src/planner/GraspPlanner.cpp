@@ -7,6 +7,7 @@
 
 #include "mujoco.h"
 #include <util/Connector.h>
+#include <opencv2/opencv.hpp>
 #include <planner/GraspPlanner.h>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/quaternion.hpp>
@@ -76,6 +77,12 @@ GraspPlanner::GraspPlanner(const char * dropboxBase, bool testFlag, int baseType
     if (testFlag)
     	numberOfAngles = 1;
 
+    // Fill collision state/grasp params array.
+    for (int i = 0; i < 500; i++)
+    {
+    	collisionState[i] = -1;
+    }
+
     // Find camera and gaze locations
     for (int i = 0; i<numberOfAngles; i++)
     {
@@ -136,6 +143,8 @@ GraspPlanner::~GraspPlanner() {
 	if (finalApproachArr != NULL)
 		delete finalApproachArr;
 	fclose(trjFP);
+
+	delete []resultArr;
 }
 
 glm::vec3 getPt( glm::vec3 n1 , glm::vec3 n2 , float perc )
@@ -150,7 +159,6 @@ void GraspPlanner::ReadTrajectories(int numberOfGrasps){
 	{
 		// Reads the next trajectory from the file, and sets path variable.
 		float extraGrip = 0.523; // 0.523 for 30 degrees
-//		float extraGrip = 0; // 0.523 for 30 degrees
 		int wpCount = 0;
 		float likelihood = 0;
 		int graspType = 0;
@@ -160,7 +168,10 @@ void GraspPlanner::ReadTrajectories(int numberOfGrasps){
 		fread(&likelihood, 4, 1, trjFP);
 		fread(&graspType, 4, 1, trjFP);
 		fread(&wpCount, 4, 1, trjFP);
+		if (graspType < 0 || graspType > 9)
+			graspType = 0;
 		finalApproachArr[readCtr] = new Path(wpCount+2);
+		finalApproachArr[readCtr]->graspType = graspType;
 
 		// Read trajectory waypoint by waypoint.
 		for (int i = 1; i< wpCount+2; i++)
@@ -249,6 +260,10 @@ void GraspPlanner::ReadTrajectories(int numberOfGrasps){
 		finalApproachArr[readCtr]->waypoints[0].quat.w = finalApproachArr[readCtr]->waypoints[1].quat.w;
 		for (int k = 0; k<20; k++)
 			finalApproachArr[readCtr]->waypoints[0].jointAngles[k] = 0;
+
+		// Finally, save grasp parameter data
+		std::vector<float> curParams = finalApproachArr[readCtr]->getGraspParams(resultArr[readCtr].gazeDir, resultArr[readCtr].camPos);
+		graspParams.push_back(curParams);
 	}
 
 }
@@ -302,7 +317,7 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 			strcat(localPrefix, fileId);
 			strcat(localPrefix, "_");
 			strcpy(imagePrefix, baseFolder);
-			strcat(imagePrefix, "/images");
+			strcat(imagePrefix, "/views");
 
 			if (!boost::filesystem::exists(imagePrefix))
 				boost::filesystem::create_directories(imagePrefix);
@@ -310,7 +325,6 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 			// Collect data from all angles.
 			for (int i = numberOfAngles-1; i>-1; i--)
 			{
-
 				// Collect data
 				CollectData(Simulator, m, d, scn, con, rgbBuffer, depthBuffer, cameraPosArr[i], gazeDirArr[i], camSize, minPointZ, &finishFlag, logStream, i);
 
@@ -319,21 +333,34 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 				std::cout<<cameraPosArr[i][0]<<" "<<cameraPosArr[i][1]<<" "<<cameraPosArr[i][2]<<std::endl;
 				std::cout<<gazeDirArr[i][0]<<" "<<gazeDirArr[i][1]<<" "<<gazeDirArr[i][2]<<std::endl;
 
-				// Copy files
+				// Crop and save file.
+			    cv::Rect roi;
+			    roi.x = 90;
+			    roi.y = 10;
+			    roi.width = 460;
+			    roi.height = 460;
+
+				// RGB
 				strcpy(tmpStr, imagePrefix);
 				strcat(tmpStr, "/");
-				strcat(tmpStr, fileId);
-				strcat(tmpStr, "_");
 				strcat(tmpStr, std::to_string(i).c_str());
-				strcat(tmpStr, "_rgb.jpg");
-				boost::filesystem::copy_file(Simulator->rgbFile, tmpStr);
+				strcat(tmpStr, ".jpg");
+				cv::Mat img = cv::imread(Simulator->rgbFile);
+			    cv::Mat crop = img(roi);
+			    cv::Mat dst;
+			    cv::resize(crop, dst, cv::Size(224, 224), 0, 0, cv::INTER_CUBIC);
+			    cv::imwrite(tmpStr, dst);
+
+			    // DEPTH
 				strcpy(tmpStr, imagePrefix);
 				strcat(tmpStr, "/");
-				strcat(tmpStr, fileId);
-				strcat(tmpStr, "_");
 				strcat(tmpStr, std::to_string(i).c_str());
-				strcat(tmpStr, "_depth.png");
-				boost::filesystem::copy_file(Simulator->depthFile, tmpStr);
+				strcat(tmpStr, ".png");
+				cv::Mat imgDepth = cv::imread(Simulator->depthFile);
+			    cv::Mat cropDepth = imgDepth(roi);
+			    cv::Mat dstDepth;
+			    cv::resize(cropDepth, dstDepth, cv::Size(224, 224), 0, 0, cv::INTER_CUBIC);
+			    cv::imwrite(tmpStr, dstDepth);
 			}
 			if (!boost::filesystem::exists(Simulator->cloudFile))
 			{
@@ -384,9 +411,24 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 				trjFP = fopen(trajectoryFile, "rb");
 				fread(&numberOfGrasps, 4, 1, trjFP);
 
+				// Allocate output array
+				resultArr = new Grasp::GraspResult[numberOfGrasps];
+
+				// Allocate a view for each grasp
+				for (int i = 0; i<numberOfGrasps; i++)
+				{
+					int id = i; // unique view
+					if (numberOfAngles < numberOfGrasps) // if not enough views, then randomly pick one
+						id = rand()%numberOfAngles;
+					resultArr[i].viewId = id;
+					resultArr[i].camPos = cameraPosArr[id];
+					resultArr[i].gazeDir = gazeDirArr[id];
+				}
+
 				// Read trajectories
 				ReadTrajectories(numberOfGrasps);
 
+				// Log/output
 				(*logStream)<< "Number of grasps:" << numberOfGrasps << std::endl;
 				std::cout<< "Number of grasps:" << numberOfGrasps << std::endl;
 			}
@@ -397,7 +439,6 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 				{
 					graspState = done;
 				}
-
 			}
 		}
 
@@ -405,6 +446,7 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 		if (success)
 		{
 			startFlag = false;
+			std::cout<<"Moving on to grasping."<<std::endl;
 			(*logStream)<<"Moving on to grasping."<<std::endl;
 
 			// Switch to grasping state.
@@ -429,6 +471,28 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 		finishFlag = false;
 		break;
 	case checkingCollision:
+
+		// If collision has already been checked for this one, move on.
+		if (collisionState[graspCounter-1] > -1)
+		{
+			// Reset
+			stableCounter = 0;
+			collisionCounter = 0;
+			counter = 0;
+			collisionSet = false;
+			graspState = reset;
+
+			// Mark hasCollided.
+			if (!collisionState[graspCounter-1]) // No collision
+			{
+				hasCollided = false;
+			}
+			else // Collision
+			{
+				hasCollided = true;
+			}
+			break;
+		}
 
 		// Allow the hand to stabilize
 		if (stableCounter < stableLimit)
@@ -458,10 +522,12 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 						(d->contact[i].geom2 < 42 && d->contact[i].geom2 > 0)))
 					{
 						// Collision detected, abort!
+						stableCounter = 0;
 						collisionCounter = 0;
 						counter = 0;
-						graspState = reset;
 						hasCollided = true;
+						collisionState[graspCounter-1] = 1;
+						graspState = reset;
 						break;
 					}
 				}
@@ -475,10 +541,14 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 		}
 		else
 		{
+			// Non-colliding grasp! Move on.
 			stableCounter = 0;
 			collisionCounter = 0;
 			counter = 0;
 			collisionSet = false;
+			hasCollided = false;
+			collisionState[graspCounter-1] = 0;
+			numberOfNoncollidingGrasps++;
 			graspState = reset;
 		}
 		break;
@@ -503,23 +573,23 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 	case lifting:
 		if (testFlag)
 			break;
-		d->mocap_pos[2] += 0.001;
+		d->mocap_pos[2] += 0.0025;
 		counter++;
-		if (counter > 1000){
+		if (counter > 400){
 			counter = 0;
 			graspState = stand;
 		}
 		break;
 	case stand:
 		counter++;
-		if (counter > 800){
+		if (counter > 400){
 			counter = 0;
 			// If the total number of grasps has been reached, move on to the next phase. Otherwise, perform next grasp.
 			graspState = reset;
 		}
 		break;
 	case reset:
-		if (counter < 100)
+		if (counter < 25)
 		{
 
 			// Reset everything
@@ -548,7 +618,7 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 			}
 			else
 			{
-				std::cout<<"Grasp #"<<graspCounter-1<<" starting."<<std::endl;
+				std::cout<<"Grasp #"<<graspCounter-1<<" starting. Grasp type:"<<finalApproachArr[graspCounter-1]->graspType<<std::endl;
 				// No collision in the checks. Perform grasp.
 				graspState = grasping;
 			}

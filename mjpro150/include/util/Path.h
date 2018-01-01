@@ -10,6 +10,11 @@
 
 #include "util/Path.h"
 #include "util/Waypoint.h"
+#include <vector>
+#include <glm/glm.hpp>
+#include <glm/gtc/quaternion.hpp>
+#include <glm/gtx/quaternion.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 
 namespace Grasp {
 
@@ -19,7 +24,8 @@ public:
 	~Path();
 	int getSteps() const;
 	void setSteps(int steps);
-	int steps = 1500;
+	int steps = 750;
+	int graspType = 0;
 	Waypoint * waypoints;
 
 	// Linear interpolation
@@ -33,6 +39,8 @@ public:
 		this->waypointCount = waypointCount;
 	}
 
+	// Function to extract grasp parameters.
+	std::vector<float> getGraspParams(glm::vec3 gazeDir, glm::vec3 camPos);
 
 private:
 	int waypointCount = 0;

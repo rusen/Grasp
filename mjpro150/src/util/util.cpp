@@ -5,6 +5,7 @@
 #include <streambuf>
 #include <iostream>
 #include <stdio.h>
+#include <stdlib.h>
 #include <random>
 #include <boost/filesystem.hpp>
 
@@ -24,7 +25,7 @@ void replaceAll(std::string& str, const std::string& from, const std::string& to
 }
 
 // Function to create relevant XMLs with random parameters.
-std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, int baseId){
+std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, int baseId, int runCount){
 	// Templates for model, base and assets files are already there.
 	// We just need to modify them by adding the variations.
 
@@ -36,7 +37,7 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
     // Manage file names
     char baseIdFile[1000], classIdFile[1000], oldAssetFile[1000], oldBaseAssetFile[1000], newAssetFile[1000],
 	newBaseAssetFile[1000], oldObjectFile[1000], oldBaseFile[1000], newObjectFile[1000], newBaseFile[1000],
-	tmp[1000], tmpXML[1000], lightFile[1000], tableFile[1000], modelPrefix[1000];
+	tmp[1000], tmpXML[1000], lightFile[1000], tableFile[1000], modelPrefix[1000], tmpModelPrefix[1000];
 
     // Get base id file name
     strcpy(baseIdFile, base);
@@ -66,6 +67,21 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
     strcat(modelPrefix, "/");
     strcat(modelPrefix, planner->fileId);
     strcat(modelPrefix, "_");
+
+    // Obtain a temp filename prefix for this specific object
+    strcpy(tmpModelPrefix, base);
+    strcat(tmpModelPrefix, "/tmp");
+
+    // Create tmp folder if it doesn't exist
+    std::cout<<"Creating: "<<tmpModelPrefix<<std::endl;
+    std::cout.flush();
+    if (!boost::filesystem::exists(tmpModelPrefix))
+    	boost::filesystem::create_directories(tmpModelPrefix);
+
+    // Set prefix
+    strcat(tmpModelPrefix, "/");
+    strcat(tmpModelPrefix, planner->fileId);
+    strcat(tmpModelPrefix, "_include_object");
 
     // Get light and table for this specific object
     strcpy(tmp, base);
@@ -149,23 +165,9 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 	// Create output string.
 	std::string outputStr(tmp);
 
-    // Modify model file.
-	std::ifstream t(newObjectFile);
-	std::string objectStr((std::istreambuf_iterator<char>(t)),
-					 std::istreambuf_iterator<char>());
-
-	// Create random friction
-	float r = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);;
-	sprintf(tmp, "friction=\"%f 0.005 0.0001\"", r);
-
-	// Replace friction
-	replaceAll(objectStr, std::string("friction=\"\""), std::string(tmp));
-
-    // Scale the object randomly.
-	std::ifstream tAsset(newAssetFile);
-	std::string assetStr((std::istreambuf_iterator<char>(tAsset)),
-					 std::istreambuf_iterator<char>());
-	tAsset.close();
+	// Set friction upper limit.
+	float frictionLowerLimit = 0.5;
+	float frictionUpperLimit = 1;
 
 	// Create random scale based on the object type.
 	float xScale = RF/2+0.75;
@@ -195,6 +197,8 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 		xScale = RF/2+0.5;
 		yScale = xScale;
 		zScale = RF/2+1;
+		frictionLowerLimit = 0;
+		frictionUpperLimit = 0.5;
 		break;
 	case 5: // Jug
 		xScale = RF*0.3+0.7; // slightly smaller
@@ -212,6 +216,8 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 		zScale = xScale;
 		eulerx = RF * M_PI;
 		eulery = RF * M_PI;
+		frictionLowerLimit = 0;
+		frictionUpperLimit = 0.5;
 		break;
 	case 8: //Plate
 		xScale = RF*0.5+0.75; // make it all proportional
@@ -236,6 +242,8 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 		xScale = RF*0.4+0.9; // make it all proportional, slightly bigger
 		yScale = xScale;
 		zScale = xScale;
+		frictionLowerLimit = 0;
+		frictionUpperLimit = 0.5;
 		break;
 	case 14: // Teapot
 		xScale = RF*0.3+0.8; // slightly smaller
@@ -243,6 +251,12 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 		zScale = xScale;
 		break;
 	}
+
+	// Scale the object randomly.
+	std::ifstream tAsset(newAssetFile);
+	std::string assetStr((std::istreambuf_iterator<char>(tAsset)),
+					 std::istreambuf_iterator<char>());
+	tAsset.close();
 
 	// Replace scale
 	sprintf(tmp, "<mesh scale=\"%f %f %f\" ", xScale, yScale, zScale);
@@ -253,33 +267,58 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 	tAssetOut<<assetStr;
 	tAssetOut.close();
 
-	// Create random mass, depending on the object type.
-	float baseWeights[] = {30, 50, 30, 40, 150, 70, 50, 250, 40, 50, 100, 40, 40, 150, 500};
-	float addedWeights[] = {40, 350, 300, 40, 300, 80, 100, 100, 80, 100, 60, 40, 40, 100, 300};
+	// For each run, we create a different object with varying friction and weight.
+	for (int runItr = 0; runItr<runCount; runItr++)
+	{
+		// Create random parameters
+		float friction = RF * (frictionUpperLimit - frictionLowerLimit) + frictionLowerLimit;
 
-	int baseWeight = baseWeights[classId];
-	int addedWeight = addedWeights[classId];
-	float mass = (float)(rand()%addedWeight + baseWeight);
-	mass = mass/1000;
-	sprintf(tmp, "mass=\"%f\"", mass);
+		// Get the right object file.
+		boost::filesystem::copy_file(oldObjectFile, newObjectFile, boost::filesystem::copy_option::overwrite_if_exists);
 
-	// Replace mass
-	replaceAll(objectStr, std::string("mass=\"\""), std::string(tmp));
+		// Modify model file.
+		std::ifstream t(newObjectFile);
+		std::string objectStr((std::istreambuf_iterator<char>(t)),
+						 std::istreambuf_iterator<char>());
 
-	// Create random orientation
-	sprintf(tmp, "euler=\"%f %f %f\"", eulerx, eulery, eulerz);
-	replaceAll(objectStr, std::string("euler=\"\""), std::string(tmp));
+		// Replace friction
+		sprintf(tmp, "friction=\"%f %f %f\"", friction, friction*0.005, friction*0.0001);
+		replaceAll(objectStr, std::string("friction=\"\""), std::string(tmp));
 
-	// Create random object colour
-	float red = ((float)(rand()%255))/255.0, green = ((float)(rand()%255))/255.0, blue = ((float)(rand()%255))/255.0;
-	sprintf(tmp, "rgba=\"%f %f %f 1\"", red, green, blue);
-	replaceAll(objectStr, std::string("rgba=\"\""), std::string(tmp));
+		// Create random mass, depending on the object type.
+		float baseWeights[] = {30, 50, 30, 40, 150, 70, 50, 250, 40, 50, 100, 40, 40, 150, 500};
+		float addedWeights[] = {40, 350, 300, 40, 300, 80, 100, 100, 80, 100, 60, 40, 40, 100, 300};
+		int baseWeight = baseWeights[classId];
+		int addedWeight = addedWeights[classId];
+		float mass = (float)(rand()%addedWeight + baseWeight);
+		mass = mass/1000;
+		sprintf(tmp, "mass=\"%f\"", mass);
 
-	// Write object file.
-	t.close();
-	std::ofstream tOutObject(newObjectFile);
-	tOutObject<<objectStr;
-	tOutObject.close();
+		// Replace mass
+		replaceAll(objectStr, std::string("mass=\"\""), std::string(tmp));
+
+		// Create random orientation
+		sprintf(tmp, "euler=\"%f %f %f\"", eulerx, eulery, eulerz);
+		replaceAll(objectStr, std::string("euler=\"\""), std::string(tmp));
+
+		// Create random object colour
+		float red = ((float)(rand()%255))/255.0, green = ((float)(rand()%255))/255.0, blue = ((float)(rand()%255))/255.0;
+		sprintf(tmp, "rgba=\"%f %f %f 1\"", red, green, blue);
+		replaceAll(objectStr, std::string("rgba=\"\""), std::string(tmp));
+
+		// Write object file.
+		t.close();
+		std::ofstream tOutObject(newObjectFile);
+		tOutObject<<objectStr;
+		tOutObject.close();
+
+		// Finally, move the file into a sub-folder so that we do not clutter the workspace.
+		char tmp[1000];
+		strcpy(tmp, tmpModelPrefix);
+		strcat(tmp, std::to_string(runItr).c_str());
+		strcat(tmp, ".xml");
+		boost::filesystem::rename(newObjectFile, tmp);
+	}
 
 	// Moving on to the light.
 	std::ifstream tLight(lightFile);
@@ -344,7 +383,7 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 		std::string baseStr((std::istreambuf_iterator<char>(tBase)),
 						 std::istreambuf_iterator<char>());
 		tBase.close();
-		red = ((float)(rand()%255))/255.0, green = ((float)(rand()%255))/255.0, blue = ((float)(rand()%255))/255.0;
+		float red = ((float)(rand()%255))/255.0, green = ((float)(rand()%255))/255.0, blue = ((float)(rand()%255))/255.0;
 		sprintf(tmp, "rgba=\"%f %f %f 1\"", red, green, blue);
 		replaceAll(baseStr, std::string("rgba=\"\""), std::string(tmp));
 
@@ -354,205 +393,118 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 		tBaseOut.close();
 	}
 
-	// Return
+	// Return name of the entry file.
 	return outputStr;
 }
 
 void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int baseId){
-    // Before we move on to grasping loop, we save all the model files to the cloud.
-    char tmpStr[1000], tmpStr2[1000], modelPrefix[1000], dataPrefix[1000], dataPrefix2[1000], selfDropboxFolder[1000];
-    bool uploadSuccess = true;
 
-    // Obtain a filename prefix for this specific object
-    strcpy(modelPrefix, base);
-    strcat(modelPrefix, "/");
-    strcat(modelPrefix, planner->fileId);
-    strcat(modelPrefix, "_");
+	std::cout<<"BASE FOLDER:"<<planner->baseFolder<<std::endl;
+	char viewFolder[1000], imageFolder[1000], dataFile[1000];
+	strcpy(viewFolder, planner->baseFolder);
+	strcat(viewFolder, "/views/");
+	strcpy(imageFolder, planner->baseFolder);
+	strcat(imageFolder, "/images/");
+	if (!boost::filesystem::exists(imageFolder))
+		boost::filesystem::create_directories(imageFolder);
+
+	int ctr = 0;
+	// First, we need to prepare the grasp data and images.
+	// We will create a bin file that includes object class,
+	// object id, grasp output (success, stability) and
+	// grasp parameters (wrist, joint).
+
+	strcpy(dataFile, planner->baseFolder);
+	strcat(dataFile, "data.bin");
+	FILE * dataFP = fopen(dataFile, "wb");
+
+	for (int i = 0; i<planner->numberOfGrasps; i++)
+	{
+		if (!planner->resultArr[i].counter)
+			continue;
+
+		// Get image from views and save into images folder
+		std::string im = std::string(viewFolder) + std::string(std::to_string(planner->resultArr[i].viewId)) + std::string(".jpg");
+		std::string destIm = std::string(imageFolder) + std::string(std::to_string(ctr)) + std::string(".jpg");
+		boost::filesystem::copy_file(im, destIm);
+
+		std::string imDepth = std::string(viewFolder) + std::string(std::to_string(planner->resultArr[i].viewId)) + std::string(".png");
+		std::string destImDepth = std::string(imageFolder) + std::string(std::to_string(ctr)) + std::string(".png");
+		boost::filesystem::copy_file(imDepth, destImDepth);
+
+		// Get object id, grasp params, output parameters etc print in a file.
+		float success = planner->resultArr[i].successProbability/(double)planner->resultArr[i].counter;
+		float stabilityArr[4];
+		stabilityArr[0] = planner->resultArr[i].x1/(double)planner->resultArr[i].counter;
+		stabilityArr[1] = planner->resultArr[i].r1/(double)planner->resultArr[i].counter;
+		stabilityArr[2] = planner->resultArr[i].x2/(double)planner->resultArr[i].counter;
+		stabilityArr[3] = planner->resultArr[i].r2/(double)planner->resultArr[i].counter;
+		fwrite(&success, 4, 1, dataFP); // Writing success probability
+		fwrite(stabilityArr, 4, 4, dataFP); // Writing stability values
+		std::vector<float> tmpVec = planner->graspParams[i];
+		float * tmpArr = new float[tmpVec.size()];
+		for (int k = 0; k<tmpVec.size(); k++)
+			tmpArr[k] = planner->graspParams[i][k];
+		fwrite(tmpArr, 4, tmpVec.size(), dataFP); // Writing grasp parameters
+
+		// Increase counter.
+		ctr++;
+	}
+	fclose(dataFP);
+
+	if (system(NULL)) puts ("Ok");
+    	else exit (EXIT_FAILURE);
+
+	// Remove views folder and unnecessary files
+	if (boost::filesystem::exists(viewFolder))
+		boost::filesystem::remove_all(viewFolder);
+	if (boost::filesystem::exists(planner->debugLogFile))
+		boost::filesystem::remove(planner->debugLogFile);
+	if (boost::filesystem::exists(planner->rgbFile))
+		boost::filesystem::remove(planner->rgbFile);
+	if (boost::filesystem::exists(planner->depthFile))
+		boost::filesystem::remove(planner->depthFile);
+	if (boost::filesystem::exists(planner->pointFile))
+		boost::filesystem::remove(planner->pointFile);
+
+	// Write object id to a file
+	char objectIdFile[1000];
+	strcpy(objectIdFile, planner->baseFolder);
+	strcat(objectIdFile, "/objectId.txt");
+	FILE * f = fopen(objectIdFile, "w");
+	fprintf(f, "%d\n", objectId);
+	fclose(f);
+
+    // Compress the folder
+	char command[1000], zipFile[1000];
+	strcpy(command, "cd ./tmp/data/");
+	strcat(command, planner->fileId);
+	strcat(command, " && zip -r ");
+	strcat(command, planner->fileId);
+	strcat(command, ".zip .");
+	strcpy(zipFile, "./tmp/data/");
+	strcat(zipFile, planner->fileId);
+	strcat(zipFile, "/");
+	strcat(zipFile, planner->fileId);
+	strcat(zipFile, ".zip");
+
+	// Call zip command
+	system(command);
 
     // Create temp prefix
-    strcpy(dataPrefix, planner->dropboxFolder);
-    strcat(dataPrefix, "/upload/");
-    strcat(dataPrefix, planner->fileId);
-    strcat(dataPrefix, "_");
-    strcpy(dataPrefix2, planner->dropboxFolder);
-    strcat(dataPrefix2, "/upload/");
-    strcat(dataPrefix2, planner->fileId);
+	char dropboxZipFile[1000];
+    strcpy(dropboxZipFile, planner->dropboxFolder);
+    strcat(dropboxZipFile, "/upload/");
+    strcat(dropboxZipFile, planner->fileId);
+    strcat(dropboxZipFile, ".zip");
 
-    // Upload all files
-    // Test xml file
-    strcpy(tmpStr, modelPrefix);
-    strcpy(tmpStr2, dataPrefix);
-    strcat(tmpStr, "Test.xml");
-    strcat(tmpStr2, "Test.xml");
-    bool fileSuccess = Connector::UploadFile(tmpStr);
-    uploadSuccess = uploadSuccess && fileSuccess;
-    if (!fileSuccess && boost::filesystem::exists(tmpStr))
+    // Upload file
+    bool uploadSuccess = Connector::UploadFile(zipFile);
+    if (!uploadSuccess && boost::filesystem::exists(zipFile))
     {
-        std::cout<<"Copying "<<tmpStr<<" to "<<tmpStr2<<"."<<std::endl;
-        boost::filesystem::copy_file(tmpStr, tmpStr2);
-    	boost::filesystem::remove(tmpStr);
-    }
-
-    // Light
-    strcpy(tmpStr, modelPrefix);
-    strcpy(tmpStr2, dataPrefix);
-    strcat(tmpStr, "include_light.xml");
-    strcat(tmpStr2, "include_light.xml");
-    fileSuccess = Connector::UploadFile(tmpStr);
-    uploadSuccess = uploadSuccess && fileSuccess;
-    if (!fileSuccess && boost::filesystem::exists(tmpStr))
-    {
-        std::cout<<"Copying "<<tmpStr<<" to "<<tmpStr2<<"."<<std::endl;
-        boost::filesystem::copy_file(tmpStr, tmpStr2);
-        boost::filesystem::remove(tmpStr);
-    }
-
-    // Table
-    strcpy(tmpStr, modelPrefix);
-    strcpy(tmpStr2, dataPrefix);
-    strcat(tmpStr, "include_table.xml");
-    strcat(tmpStr2, "include_table.xml");
-    fileSuccess = Connector::UploadFile(tmpStr);
-    uploadSuccess = uploadSuccess && fileSuccess;
-    if (!fileSuccess && boost::filesystem::exists(tmpStr))
-    {
-        std::cout<<"Copying "<<tmpStr<<" to "<<tmpStr2<<"."<<std::endl;
-        boost::filesystem::copy_file(tmpStr, tmpStr2);
-        boost::filesystem::remove(tmpStr);
-    }
-
-    // Object
-    strcpy(tmpStr, modelPrefix);
-    strcpy(tmpStr2, dataPrefix);
-    strcat(tmpStr, "include_object.xml");
-    strcat(tmpStr2, "include_object.xml");
-    fileSuccess = Connector::UploadFile(tmpStr);
-    uploadSuccess = uploadSuccess && fileSuccess;
-    if (!fileSuccess && boost::filesystem::exists(tmpStr))
-    {
-        std::cout<<"Copying "<<tmpStr<<" to "<<tmpStr2<<"."<<std::endl;
-        boost::filesystem::copy_file(tmpStr, tmpStr2);
-        boost::filesystem::remove(tmpStr);
-    }
-
-    // Object assets
-    strcpy(tmpStr, modelPrefix);
-    strcpy(tmpStr2, dataPrefix);
-    strcat(tmpStr, "include_object_assets.xml");
-    strcat(tmpStr2, "include_object_assets.xml");
-    fileSuccess = Connector::UploadFile(tmpStr);
-    uploadSuccess = uploadSuccess && fileSuccess;
-    if (!fileSuccess && boost::filesystem::exists(tmpStr))
-    {
-        std::cout<<"Copying "<<tmpStr<<" to "<<tmpStr2<<"."<<std::endl;
-        boost::filesystem::copy_file(tmpStr, tmpStr2);
-        boost::filesystem::remove(tmpStr);
-    }
-
-    // Base
-    strcpy(tmpStr, modelPrefix);
-    strcpy(tmpStr2, dataPrefix);
-    strcat(tmpStr, "include_base.xml");
-    strcat(tmpStr2, "include_base.xml");
-    fileSuccess = Connector::UploadFile(tmpStr);
-    uploadSuccess = uploadSuccess && fileSuccess;
-    if (!fileSuccess && boost::filesystem::exists(tmpStr))
-    {
-        std::cout<<"Copying "<<tmpStr<<" to "<<tmpStr2<<"."<<std::endl;
-        boost::filesystem::copy_file(tmpStr, tmpStr2);
-        boost::filesystem::remove(tmpStr);
-    }
-
-    // Base assets
-    strcpy(tmpStr, modelPrefix);
-    strcpy(tmpStr2, dataPrefix);
-    strcat(tmpStr, "include_base_assets.xml");
-    strcat(tmpStr2, "include_base_assets.xml");
-    fileSuccess = Connector::UploadFile(tmpStr);
-    uploadSuccess = uploadSuccess && fileSuccess;
-    if (!fileSuccess && boost::filesystem::exists(tmpStr))
-    {
-        boost::filesystem::copy_file(tmpStr, tmpStr2);
-        boost::filesystem::remove(tmpStr);
-    }
-
-    /*
-    // Log file
-    strcpy(tmpStr2, dataPrefix2);
-    strcat(tmpStr2, ".log");
-    fileSuccess = Connector::UploadFile(planner->logFile);
-    uploadSuccess = uploadSuccess && fileSuccess;
-    if (!fileSuccess && boost::filesystem::exists(planner->logFile))
-    {
-        boost::filesystem::copy_file(planner->logFile, tmpStr2);
-        boost::filesystem::remove(planner->logFile);
-    }
-    */
-
-    // Debug log file
-    strcpy(tmpStr2, dataPrefix2);
-    strcat(tmpStr2, "_debug.log");
-    fileSuccess = Connector::UploadFile(planner->debugLogFile);
-    uploadSuccess = uploadSuccess && fileSuccess;
-    if (!fileSuccess && boost::filesystem::exists(planner->debugLogFile))
-    {
-        boost::filesystem::copy_file(planner->debugLogFile, tmpStr2);
-        boost::filesystem::remove(planner->debugLogFile);
-    }
-
-    // Point cloud
-    strcpy(tmpStr2, dataPrefix2);
-    strcat(tmpStr2, ".pcd");
-    fileSuccess = Connector::UploadFile(planner->pointFile);
-    uploadSuccess = uploadSuccess && fileSuccess;
-    if (!fileSuccess && boost::filesystem::exists(planner->pointFile))
-    {
-        boost::filesystem::copy_file(planner->pointFile, tmpStr2);
-        boost::filesystem::remove(planner->pointFile);
-    }
-
-    // Image
-    strcpy(tmpStr2, dataPrefix2);
-    strcat(tmpStr2, "_rgb.png");
-    fileSuccess = Connector::UploadFile(planner->rgbFile);
-    uploadSuccess = uploadSuccess && fileSuccess;
-    if (!fileSuccess && boost::filesystem::exists(planner->rgbFile))
-    {
-        boost::filesystem::copy_file(planner->rgbFile, tmpStr2);
-        boost::filesystem::remove(planner->rgbFile);
-    }
-
-    // Depth
-    strcpy(tmpStr2, dataPrefix2);
-    strcat(tmpStr2, "_depth.png");
-    fileSuccess = Connector::UploadFile(planner->depthFile);
-    uploadSuccess = uploadSuccess && fileSuccess;
-    if (!fileSuccess && boost::filesystem::exists(planner->depthFile))
-    {
-        boost::filesystem::copy_file(planner->depthFile, tmpStr2);
-        boost::filesystem::remove(planner->depthFile);
-    }
-
-    // Grasp data
-    strcpy(tmpStr2, dataPrefix2);
-    strcat(tmpStr2, ".gd");
-    fileSuccess = Connector::UploadFile(planner->resultFile);
-    uploadSuccess = uploadSuccess && fileSuccess;
-    if (!fileSuccess && boost::filesystem::exists(planner->resultFile))
-    {
-        boost::filesystem::copy_file(planner->resultFile, tmpStr2);
-        boost::filesystem::remove(planner->resultFile);
-    }
-
-    // Trajectory
-    strcpy(tmpStr2, dataPrefix2);
-    strcat(tmpStr2, ".trj");
-    fileSuccess = Connector::UploadFile(planner->trajectoryFile);
-    uploadSuccess = uploadSuccess && fileSuccess;
-    if (!fileSuccess && boost::filesystem::exists(planner->trajectoryFile))
-    {
-        boost::filesystem::copy_file(planner->trajectoryFile, tmpStr2);
-        boost::filesystem::remove(planner->trajectoryFile);
+        std::cout<<"Could not upload. Copying "<<zipFile<<" to "<<dropboxZipFile<<"."<<std::endl;
+        boost::filesystem::copy_file(zipFile, dropboxZipFile);
+        boost::filesystem::remove(zipFile);
     }
 
     // delete tmp folder
@@ -580,8 +532,7 @@ void UploadExtraFiles(const char * dropboxBase){
 	// Take the first file you see.
 	for (auto i = boost::filesystem::directory_iterator(p); i != boost::filesystem::directory_iterator(); i++)
 	{
-		if (i->path().extension().string() == ".pcd" || i->path().extension().string() == ".xml" || i->path().extension().string() == ".png" ||
-				i->path().extension().string() == ".trj" || i->path().extension().string() == ".gd" || i->path().extension().string() == ".log")
+		if (i->path().extension().string() == ".zip")
 		{
 			std::cout<<"Uploading "<<i->path().string().c_str()<<std::endl;
 			uploadFlag = uploadFlag && Connector::UploadFile(i->path().string().c_str());
@@ -646,6 +597,31 @@ void RemoveOldTmpFolders(const char * modelFolder){
 			}
 			catch(const std::exception&)
 			{}
+		}
+	}
+
+	char tmpModelFolder[1000];
+	strcpy(tmpModelFolder, modelFolder);
+	strcat(tmpModelFolder, "/tmp");
+
+	// Remove all files from the temporary model folder
+	if (boost::filesystem::exists(tmpModelFolder))
+	{
+		boost::filesystem::path p3(tmpModelFolder);
+
+		// Go over the files and delete them one by one.
+		for (auto i = boost::filesystem::directory_iterator(p3); i != boost::filesystem::directory_iterator(); i++)
+		{
+			time_t fileTime = boost::filesystem::last_write_time(i->path());
+			if (curTime - fileTime > 1800 &&
+					((i->path().string().find(".xml") !=std::string::npos)))
+			{
+				try{
+					boost::filesystem::remove_all(i->path());
+				}
+				catch(const std::exception&)
+				{}
+			}
 		}
 	}
 

@@ -49,6 +49,8 @@ double lasty = 0;
 
 // Dataset related variables.
 int objectCount = 250;
+int nonCollidingGraspLimit = 10;
+bool firstTimeFlag = true; // True in the first run, false otherwise.
 int baseIds[1000];
 bool utensilFlag = false;
 bool pauseFlag = true;
@@ -64,6 +66,9 @@ bool testFlag = false;
 bool terminateFlag = false;
 int classSelection = 0;
 
+// Save latest grasp data
+Grasp::GraspResult latestGrasp;
+
 // Get the path to the dot pattern
 std::string dotPath = "./kinect-pattern_3x3.png";
 
@@ -75,10 +80,6 @@ glm::vec3 camDirection, camPosition;
 glm::mat4 TM;
 unsigned char glBuffer[2400*4000*3];
 unsigned char addonBuffer[2400*4000];
-
-// Data output stuff
-FILE * outFile = NULL, *outGraspDataFile = NULL;
-int skipSteps = 50, ctr = 0;
 
 // Joint info debugging data.
 double jointArr[20][6];
@@ -127,7 +128,7 @@ void keyboard(GLFWwindow* window, int key, int scancode, int act, int mods)
 		if (testFlag)
 			planner->prevState = Grasp::checkingCollision;
 		else
-			planner->prevState = Grasp::pregrasp;
+			planner->prevState = Grasp::stand;
 		planner->hasCollided = false;
 		planner->graspState = Grasp::reset;
 	}
@@ -143,7 +144,7 @@ void keyboard(GLFWwindow* window, int key, int scancode, int act, int mods)
 		if (testFlag)
 			planner->prevState = Grasp::checkingCollision;
 		else
-			planner->prevState = Grasp::pregrasp;
+			planner->prevState = Grasp::stand;
 		planner->hasCollided = false;
 		planner->graspState = Grasp::reset;
 	}
@@ -272,15 +273,7 @@ void graspObject(const mjModel* m, mjData* d){
 			stableCounter++;
 		}
 
-		// When beginning a new grasp, save data.
-		/*
-     	if (planner->getGraspState() == Grasp::grasping && planner->counter == 0)
-     	{
-     		fprintf(outGraspDataFile, "#Time:%lf# Starting grasp %d.\n", d->time, planner->graspCounter);
-     		(*(planner->logStream))<<"#Time:"<<d->time<<"# Starting grasp "<<planner->graspCounter<<"."<<std::endl;
-     	}
-*/
-
+		// Calculate error after lifting
      	if (planner->getGraspState() == Grasp::lifting && planner->counter == 0)
      	{
      		// Find stability info with respect to the global frame.
@@ -308,12 +301,13 @@ void graspObject(const mjModel* m, mjData* d){
      		// Get angle between two vectors.
      		float angle = acos(mju_dot3(res, vec)) / PI; // scaled to 0-1.
      		float distance = sqrt(pow(lastPos[0] - stablePos[0],2) + pow(lastPos[1] - stablePos[1],2) + pow(lastPos[2] - stablePos[2],2));
-     		fprintf(outGraspDataFile, "#Time:%lf# Grasp %d has %f shift and %f rotation.\n", d->time, planner->graspCounter, distance, angle);
+     		latestGrasp.x1 = distance;
+     		latestGrasp.r1 = angle;
      		(*(planner->logStream))<<"#Time:"<<d->time<<"# Grasp "<<planner->graspCounter<<" has "<<distance<<" shift and "<<angle<<" rotation."<<std::endl;
      	}
 
 		// If we're at the end of a stand state, save log data.
-     	if (planner->getGraspState() == Grasp::stand && planner->counter == 800)
+     	if (planner->getGraspState() == Grasp::stand && planner->counter == 400)
      	{
      		// Calculate grasp success
      		bool graspSuccess = d->qpos[29] > 0;
@@ -336,7 +330,26 @@ void graspObject(const mjModel* m, mjData* d){
      		// Get angle between two vectors.
      		float angle = acos(mju_dot3(res, vec)) / PI; // scaled to 0-1.
      		float distance = sqrt(pow(finalPos[0] - lastPos[0],2) + pow(finalPos[1] - lastPos[1],2) + pow(finalPos[2] - lastPos[2],2));
-     		fprintf(outGraspDataFile, "#Time:%lf# Finished grasp %d. Grasp success: %d. Grasp shift: %f. In-hand rotation: %f.\n", d->time, planner->graspCounter, (int)graspSuccess, distance, angle);
+
+     		// Get grasp result
+     		latestGrasp.x2 = distance;
+     		latestGrasp.r2 = angle;
+     		latestGrasp.successProbability = (double) graspSuccess;
+
+     		// Save grasp data to the relevant array.
+     		planner->resultArr[planner->graspCounter - 1].counter++;
+			planner->resultArr[planner->graspCounter - 1].successProbability += latestGrasp.successProbability;
+     		if (graspSuccess)
+     		{
+     			planner->resultArr[planner->graspCounter - 1].successCounter++;
+				planner->resultArr[planner->graspCounter - 1].x1 += latestGrasp.x1;
+				planner->resultArr[planner->graspCounter - 1].r1 += latestGrasp.r2;
+				planner->resultArr[planner->graspCounter - 1].x2 += latestGrasp.x2;
+				planner->resultArr[planner->graspCounter - 1].r2 += latestGrasp.r2;
+     		}
+
+     		// Output to file.
+     		std::cout<<"Latest grasp:"<<planner->graspCounter<<" "<<latestGrasp.successProbability<<std::endl;
      		(*(planner->logStream))<<"#Time:"<<d->time<<"# Finished grasp "<<planner->graspCounter<<". Grasp success: "<<graspSuccess<<". Grasp shift: "<<distance<<". In-hand rotation: "<<angle<<"."<<std::endl;
      	}
 
@@ -542,34 +555,17 @@ int main(int argc, const char** argv)
     else
     	visualFlag = false;
 
-    // Redirect cout to file.
-    outGraspDataFile = fopen(planner->resultFile, "w");
-
-    // Modify the xml files with random parameters.
-    std::string modelPath = Grasp::CreateXMLs(argv[1], planner, objectId, baseId);
-
     // Remove old files
     Grasp::RemoveOldTmpFolders(argv[1]);
 
     // install control callback
     mjcb_control = graspObject;
 
-    // load and compile model
-    char error[1000] = "Could not load binary model";
-    if( strlen(modelPath.c_str())>4 && !strcmp(modelPath.c_str()+strlen(modelPath.c_str())-4, ".mjb") )
-        m = mj_loadModel(modelPath.c_str(), 0);
-    else
-        m = mj_loadXML(modelPath.c_str(), 0, error, 1000);
-    if( !m )
-        mju_error_s("Load model error: %s", error);
+    // Create random xml files.
+    std::string modelPath = Grasp::CreateXMLs(argv[1], planner, objectId, baseId, planner->numberOfTrials);
 
-    std::cout<<planner->dropboxFolder<<std::endl;
-
-    // make data
-    d = mj_makeData(m);
-    lastQpos = new mjtNum[m->nq], stableQpos = new mjtNum[m->nq], stableQvel = new mjtNum[m->nv], stableCtrl = new mjtNum[m->nu];
-
-    GLFWwindow* window = NULL;
+    // Visual operations
+	GLFWwindow* window = NULL;
 	// init GLFW
 	if( !glfwInit() )
 		mju_error("Could not initialize GLFW");
@@ -585,129 +581,141 @@ int main(int argc, const char** argv)
 	glfwMakeContextCurrent(window);
 	glfwSwapInterval(1);
 
-    // initialize visualization data structures
-    mjv_defaultCamera(&cam);
-    mjv_defaultCamera(&wristCam);
-    mjv_defaultOption(&opt);
+	// initialize visualization data structures
+	mjv_defaultCamera(&cam);
+	mjv_defaultCamera(&wristCam);
+	mjv_defaultOption(&opt);
 	opt.geomgroup[0] = 1;
 	opt.geomgroup[1] = 1;
 	opt.geomgroup[2] = 1;
 	opt.geomgroup[3] = 0;
 	opt.geomgroup[4] = 0;
-    for (int i = 0; i<18; i++)
-    {
-    	if (i != 17)
-    		opt.flags[i] = 0;
-    }
+	for (int i = 0; i<18; i++)
+	{
+		if (i != 17)
+			opt.flags[i] = 0;
+	}
 
-    mjr_defaultContext(&con);
-    mjv_makeScene(&scn, 1000);                   // space for 1000 objects
-    mjr_makeContext(m, &con, mjFONTSCALE_100);   // model-specific context
-
-    if (visualFlag)
-    {
+	if (visualFlag)
+	{
 		// install GLFW mouse and keyboard callbacks
 		glfwSetKeyCallback(window, keyboard);
 		glfwSetCursorPosCallback(window, mouse_move);
 		glfwSetMouseButtonCallback(window, mouse_button);
 		glfwSetScrollCallback(window, scroll);
 
-	    // Enlarge the points
-	    glPointSize(5);
-    }
-
-    // Filename operations
-    if (!boost::filesystem::is_directory("./tmp"))
-    	boost::filesystem::create_directories("./tmp"); // Create temp dir
-
-    // Open out file.
-    outFile = fopen(planner->logFile, "wb");
-    (*(planner->logStream))<<planner->logFile<<" opened!"<<std::endl;
-
-	// Print header.
-    writeHeader(m, d, outFile);
-
-    // Write object names.
-    char c;
-    for( int n=0; n<strlen(m->names); n++ )
-    {
-        std::fwrite(&c, 1, 1, outFile);
-    }
-
-    // Save the first log, and read it from the file into an array.
-    // We'll use the array to reset the simulation.
-    int recsz = 1 + m->nq + m->nv + m->nu + 7*m->nmocap + m->nsensordata;
-    planner->data = new float[recsz];
-	savelog(m, d, planner->data, outFile);
-
-	// Unset pause flag.
-	pauseFlag = false;
-
-    // run main loop, target real-time simulation and 60 fps rendering
-	while( true )
-	{
-		// If stop requested, we stop simulation.
-		if (visualFlag)
-			if (glfwWindowShouldClose(window))
-				break;
-
-		// All grasps done? Break.
-		if (planner->getGraspState() == Grasp::done || terminateFlag)
-			break;
-
-		// advance interactive simulation for 1/60 sec
-		//  Assuming MuJoCo can simulate faster than real-time, which it usually can,
-		//  this loop will finish on time for the next frame to be rendered at 60 fps.
-		//  Otherwise add a cpu timer and exit this loop when it is time to render.
-		mjtNum simstart = d->time;
-		while( d->time - simstart < 1.0/60.0 )
-		{
-			if (planner->getGraspState() == Grasp::grasping ||
-					planner->getGraspState() == Grasp::lifting ||
-					planner->getGraspState() == Grasp::stand)
-			{
-				// Here, we save data. Skip steps if needed.
-				if (skipSteps > 0 && ctr < skipSteps)
-				{
-					ctr++;
-				}
-				else{
-					int recsz = 1 + m->nq + m->nv + m->nu + 7*m->nmocap + m->nsensordata;
-					float buffer[recsz];
-					savelog(m, d, buffer, outFile);
-					ctr = 0;
-				}
-			}
-
-			mj_step(m, d);
-		}
-
-		// render the scene.
-		if (visualFlag)
-		{
-			// get framebuffer viewport
-			mjrRect viewport = {0, 0, 0, 0};
-			glfwGetFramebufferSize(window, &viewport.width, &viewport.height);
-
-			// update scene and render
-			mjv_updateScene(m, d, &opt, NULL, &cam, mjCAT_ALL, &scn);
-			mjr_render(viewport, &scn, &con);
-			render(window, m, d);
-
-			// swap OpenGL buffers (blocking call due to v-sync)
-			glfwSwapBuffers(window);
-
-			// process pending GUI events, call GLFW callbacks
-			glfwPollEvents();
-		}
+		// Enlarge the points
+		glPointSize(5);
 	}
 
-    // Close record file
-    fclose(outFile);
-    fclose(outGraspDataFile);
+	// Filename operations
+	if (!boost::filesystem::is_directory("./tmp"))
+		boost::filesystem::create_directories("./tmp"); // Create temp dir
+
+    // We will grasp the object using each variation once.
+    for (planner->varItr = 0; planner->varItr < planner->numberOfTrials; planner->varItr++)
+    {
+    	// Get the right object into the scene.
+    	char currentFile[1000], objectFile[1000];
+    	strcpy(currentFile, argv[1]), strcpy(objectFile, argv[1]);
+        strcat(objectFile, "/"), strcat(objectFile, planner->fileId), strcat(objectFile, "_include_object.xml");
+        strcat(currentFile, "/tmp/"), strcat(currentFile, planner->fileId), strcat(currentFile, "_include_object");
+		strcat(currentFile, std::to_string(planner->varItr).c_str());
+		strcat(currentFile, ".xml");
+        boost::filesystem::copy_file(currentFile, objectFile, boost::filesystem::copy_option::overwrite_if_exists);
+
+		// load and compile model
+		char error[1000] = "Could not load binary model";
+		if( strlen(modelPath.c_str())>4 && !strcmp(modelPath.c_str()+strlen(modelPath.c_str())-4, ".mjb") )
+			m = mj_loadModel(modelPath.c_str(), 0);
+		else
+			m = mj_loadXML(modelPath.c_str(), 0, error, 1000);
+		if( !m )
+			mju_error_s("Load model error: %s", error);
+
+		// Make data, save space for stable position info, start visual structures.
+		d = mj_makeData(m);
+		if (!planner->varItr)
+		{
+			lastQpos = new mjtNum[m->nq], stableQpos = new mjtNum[m->nq], stableQvel = new mjtNum[m->nv], stableCtrl = new mjtNum[m->nu];
+			mjr_defaultContext(&con);
+			mjv_makeScene(&scn, 1000);                   // space for 1000 objects
+			mjr_makeContext(m, &con, mjFONTSCALE_100);   // model-specific context
+		}
+		else
+		{
+			// Reset planner
+		    planner->graspCounter = 0;
+			planner->counter = 0;
+			if (testFlag)
+				planner->prevState = Grasp::checkingCollision;
+			else
+				planner->prevState = Grasp::stand;
+			planner->hasCollided = false;
+			planner->graspState = Grasp::reset;
+		}
+
+		// Unset pause flag.
+		pauseFlag = false;
+
+		// run main loop, target real-time simulation and 60 fps rendering
+		while( true )
+		{
+			// If stop requested, we stop simulation.
+			if (visualFlag)
+				if (glfwWindowShouldClose(window))
+					break;
+
+			// All grasps done? Break.
+			if (planner->getGraspState() == Grasp::done || terminateFlag)
+				break;
+
+			// advance interactive simulation for 1/60 sec
+			//  Assuming MuJoCo can simulate faster than real-time, which it usually can,
+			//  this loop will finish on time for the next frame to be rendered at 60 fps.
+			//  Otherwise add a cpu timer and exit this loop when it is time to render.
+			mjtNum simstart = d->time;
+			while( d->time - simstart < 1.0/60.0 )
+			{
+				mj_step(m, d);
+			}
+
+			// render the scene.
+			if (visualFlag)
+			{
+				// get framebuffer viewport
+				mjrRect viewport = {0, 0, 0, 0};
+				glfwGetFramebufferSize(window, &viewport.width, &viewport.height);
+
+				// update scene and render
+				mjv_updateScene(m, d, &opt, NULL, &cam, mjCAT_ALL, &scn);
+				mjr_render(viewport, &scn, &con);
+				render(window, m, d);
+
+				// swap OpenGL buffers (blocking call due to v-sync)
+				glfwSwapBuffers(window);
+
+				// process pending GUI events, call GLFW callbacks
+				glfwPollEvents();
+			}
+		}
+
+		// Delete existing structures and start again.
+	    mj_deleteData(d);
+	    mj_deleteModel(m);
+    }
+
+    for (int i = 0; i<planner->numberOfGrasps; i++)
+    {
+    	if (planner->resultArr[i].counter)
+    	{
+    		std::cout<<"Grasp "<<i<<" has been performed "<<planner->resultArr[i].counter<<" times. Grasp success:"<<planner->resultArr[i].successProbability/(double)(planner->resultArr[i].counter)<<std::endl;
+    	}
+    }
 
     // Upload the data.
-    if (!testFlag && planner->numberOfGrasps > 0)
+    std::cout<<"Out of "<<planner->numberOfGrasps<<", "<< planner->numberOfNoncollidingGrasps<< " are non-colliding!"<<std::endl;
+    if (!testFlag && planner->numberOfGrasps > 0 && planner->numberOfNoncollidingGrasps >= nonCollidingGraspLimit)
     {
     	UploadFiles(argv[1], planner, objectId, baseId);
     }
@@ -718,15 +726,13 @@ int main(int argc, const char** argv)
     mjv_freeScene(&scn);
     mjr_freeContext(&con);
 
-    // free MuJoCo model and data, deactivate
-    mj_deleteData(d);
+    // Delete final data structures, deactivate.
 	delete[] planner->data;
 	delete planner;
 	delete[] lastQpos;
 	delete [] stableQpos;
 	delete [] stableQvel;
 	delete [] stableCtrl;
-    mj_deleteModel(m);
     mj_deactivate();
 
     return 0;

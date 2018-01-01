@@ -92,7 +92,6 @@ bool Connector::UploadFile(const char *name){
 
 		// Close mystream and remove file.
 		myStream.close();
-//		remove(name);
 	}
     catch ( curlpp::LogicError & e ) {
       std::cout << e.what() << std::endl;

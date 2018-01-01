@@ -14,6 +14,7 @@
 #include <controller/DLRHandController.h>
 #include <sensor/simulate.h>
 #include <sensor/camera.h>
+#include <planner/GraspResult.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/quaternion.hpp>
 #include <glm/gtx/quaternion.hpp>
@@ -57,11 +58,18 @@ public:
 
 	// Grasp-related variables.
 	int numberOfGrasps = 0;
+	int numberOfTrials = 10;
+	int varItr = 0;
 	int collisionPoints = 50, collisionCounter = 0;
 	bool collisionSet = false, collisionRun = true, hasCollided = false;
 	bool testFlag = false;
 	float* data = NULL;
+	int collisionState[500];
 	std::ofstream *logStream = NULL;
+
+	// Grasp output array
+	GraspResult* resultArr = NULL;
+	std::vector<std::vector<float>> graspParams;
 
 	// Grasp state variables
 	state graspState = collectingData; //initial for full scenario
@@ -70,7 +78,7 @@ public:
 	// Info for camera capture.
 	glm::vec3 cameraPos, gazeDir;
 	std::vector <glm::vec3> cameraPosArr, gazeDirArr;
-	int numberOfAngles = 1;
+	int numberOfAngles = 20;
 
 	// Upload and timeout time
 	time_t uploadTime = 0;
@@ -83,7 +91,8 @@ public:
 	int counter = 0;
 	int graspCounter = 0;
 	int stableCounter = 0;
-	int stableLimit = 100;
+	int stableLimit = 25;
+	int numberOfNoncollidingGrasps = 0;
 
 	// Simulator allocation
 	Simulate* Simulator = NULL;
