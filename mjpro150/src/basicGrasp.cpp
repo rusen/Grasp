@@ -496,7 +496,7 @@ int main(int argc, const char** argv)
     int objectId = 0;
     if (!classSelection)
     {
-    	while(ismember(excludedObjects, objectId))
+    	while(ismember(excludedObjects, objectId) || (objectId>91 && objectId<110) || objectId>234)
     		objectId = rand()%objectCount + 1;
     }
     else
