@@ -60,7 +60,7 @@ int counter = 0;
 mjtNum *lastQpos, *stableQpos = NULL, *stableQvel = NULL, *stableCtrl = NULL;
 double stableError = 0.000005;
 mjtNum lastPose[4], lastPos[3]; // For keeping track of pose after object is gripped.
-int stableCounter = 0, stableIterations = 4000, stableRuns = 3, runCounter = 0;
+int stableCounter = 0, stableIterations = 4000, minStableIterations = 100, stableRuns = 3, runCounter = 0;
 bool visualFlag = true;
 bool testFlag = false;
 bool terminateFlag = false;
@@ -228,7 +228,7 @@ void graspObject(const mjModel* m, mjData* d){
 
 
 			// If stable, move on.
-			if (err < stableError || stableCounter >= stableIterations)
+			if ((err < stableError || stableCounter >= stableIterations) && (stableCounter >= minStableIterations))
 			{
 				// If the object is outside the 20x20 box in the middle,
 				// we put it in a random location in this square.
