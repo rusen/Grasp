@@ -142,7 +142,6 @@ GraspPlanner::~GraspPlanner() {
 
 	if (finalApproachArr != NULL)
 		delete finalApproachArr;
-	fclose(trjFP);
 
 	delete []resultArr;
 }
@@ -265,7 +264,7 @@ void GraspPlanner::ReadTrajectories(int numberOfGrasps){
 		std::vector<float> curParams = finalApproachArr[readCtr]->getGraspParams(resultArr[readCtr].gazeDir, resultArr[readCtr].camPos);
 		graspParams.push_back(curParams);
 	}
-
+	fclose(trjFP);
 }
 
 bool GraspPlanner::FollowTrajectory(const mjModel* m, mjData* d, float yOffset){

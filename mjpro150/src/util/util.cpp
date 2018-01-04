@@ -73,7 +73,6 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
     strcat(tmpModelPrefix, "/tmp");
 
     // Create tmp folder if it doesn't exist
-    std::cout<<"Creating: "<<tmpModelPrefix<<std::endl;
     std::cout.flush();
     if (!boost::filesystem::exists(tmpModelPrefix))
     	boost::filesystem::create_directories(tmpModelPrefix);
@@ -400,7 +399,7 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int baseId){
 
 	std::cout<<"BASE FOLDER:"<<planner->baseFolder<<std::endl;
-	char viewFolder[1000], imageFolder[1000], dataFile[1000];
+	char viewFolder[1000], imageFolder[1000], dataFile[1000], trjFile[1000];
 	strcpy(viewFolder, planner->baseFolder);
 	strcat(viewFolder, "/views/");
 	strcpy(imageFolder, planner->baseFolder);
@@ -416,6 +415,11 @@ void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int ba
 
 	strcpy(dataFile, planner->baseFolder);
 	strcat(dataFile, "data.bin");
+	strcpy(trjFile, planner->baseFolder);
+	strcat(trjFile, planner->fileId);
+	strcat(trjFile, ".trj");
+	boost::filesystem::copy_file(planner->trajectoryFile, trjFile);
+
 	FILE * dataFP = fopen(dataFile, "wb");
 
 	for (int i = 0; i<planner->numberOfGrasps; i++)
@@ -464,8 +468,6 @@ void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int ba
 		boost::filesystem::remove(planner->rgbFile);
 	if (boost::filesystem::exists(planner->depthFile))
 		boost::filesystem::remove(planner->depthFile);
-	if (boost::filesystem::exists(planner->pointFile))
-		boost::filesystem::remove(planner->pointFile);
 
 	// Write object id to a file
 	char objectIdFile[1000];

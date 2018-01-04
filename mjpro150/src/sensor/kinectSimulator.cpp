@@ -402,7 +402,6 @@ pcl::PointCloud<pcl::PointXYZ> * KinectSimulator::intersect(const mjModel* m, mj
     glm::mat4 invT = glm::inverse(T);
 
     //Go over disparity image and recompute depth map and point cloud after filtering and adding noise etcs
-    std::cout<<camera_.getHeight()<<" "<<camera_.getWidth()<<std::endl;
     for(int r=0; r<camera_.getHeight(); ++r) {
       float* disp_i = out_disp.ptr<float>(r);
       double* depth_map_i = depth_map.ptr<double>(r);
