@@ -9,9 +9,6 @@
 #include <random>
 #include <boost/filesystem.hpp>
 
-#define PI 3.141592
-#define RF (static_cast <float> (rand()) / static_cast <float> (RAND_MAX))
-
 namespace Grasp{
 
 void replaceAll(std::string& str, const std::string& from, const std::string& to) {
@@ -187,8 +184,10 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 		break;
 	case 2: // Cup
 		zScale = RF/2+1; // longer
-		yScale = RF*0.5+0.6;
+		yScale = RF*0.6+0.6;
 		xScale = yScale;
+		eulerx = RF * M_PI;
+		eulery = RF * M_PI;
 		break;
 	case 3: // Fork
 		break; // default
@@ -418,14 +417,31 @@ void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int ba
 	strcpy(trjFile, planner->baseFolder);
 	strcat(trjFile, planner->fileId);
 	strcat(trjFile, ".trj");
-	boost::filesystem::copy_file(planner->trajectoryFile, trjFile);
+	FILE * trjFP1 = fopen(planner->trajectoryFile, "rb");
+	FILE * trjFP2 = fopen(trjFile, "wb");
+	int numberOfGrasps, graspType, wpCount;
+	float likelihood, buffer[1000];
+	fread(&numberOfGrasps, 4, 1, trjFP1);
 
 	FILE * dataFP = fopen(dataFile, "wb");
 
 	for (int i = 0; i<planner->numberOfGrasps; i++)
 	{
+		// Read original trajectory data
+		fread(&likelihood, 4, 1, trjFP1);
+		fread(&graspType, 4, 1, trjFP1);
+		fread(&wpCount, 4, 1, trjFP1);
+		fread(buffer, 4, 27*wpCount, trjFP1);
+
+		// If no trials have been performed, move on.
 		if (!planner->resultArr[i].counter)
 			continue;
+
+		// Write original trajectory data
+		fwrite(&likelihood, 4, 1, trjFP2);
+		fwrite(&graspType, 4, 1, trjFP2);
+		fwrite(&wpCount, 4, 1, trjFP2);
+		fwrite(buffer, 4, 27*wpCount, trjFP2);
 
 		// Get image from views and save into images folder
 		std::string im = std::string(viewFolder) + std::string(std::to_string(planner->resultArr[i].viewId)) + std::string(".jpg");
@@ -455,6 +471,8 @@ void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int ba
 		ctr++;
 	}
 	fclose(dataFP);
+	fclose(trjFP1);
+	fclose(trjFP2);
 
 	if (system(NULL)) puts ("Ok");
     	else exit (EXIT_FAILURE);

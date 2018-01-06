@@ -29,9 +29,6 @@
 #include <glm/gtx/quaternion.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
-#define RF (static_cast <float> (rand()) / static_cast <float> (RAND_MAX))
-#define PI 3.14159265
-
 // MuJoCo data structures
 mjModel* m = NULL;                  // MuJoCo model
 mjData* d = NULL;                   // MuJoCo data
@@ -122,31 +119,31 @@ void keyboard(GLFWwindow* window, int key, int scancode, int act, int mods)
 	{
 		if ((planner->numberOfGrasps-1) > planner->graspCounter)
 		{
-			planner->graspCounter++;
+			planner->counter = 0;
+			if (testFlag)
+				planner->prevState = Grasp::checkingCollision;
+			else
+				planner->prevState = Grasp::stand;
+			planner->hasCollided = false;
+			planner->graspState = Grasp::reset;
 		}
-		planner->counter = 0;
-		if (testFlag)
-			planner->prevState = Grasp::checkingCollision;
-		else
-			planner->prevState = Grasp::stand;
-		planner->hasCollided = false;
-		planner->graspState = Grasp::reset;
 	}
 
     // b - Previous grasp
 	if( act==GLFW_PRESS && key==GLFW_KEY_B )
 	{
-		if (planner->graspCounter > 1)
+		std::cout<<"Grasp counter: "<<planner->graspCounter<<std::endl;
+		if (planner->graspCounter > 2)
 		{
-			planner->graspCounter--;
+			planner->graspCounter -= 2;
+			planner->counter = 0;
+			if (testFlag)
+				planner->prevState = Grasp::checkingCollision;
+			else
+				planner->prevState = Grasp::stand;
+			planner->hasCollided = false;
+			planner->graspState = Grasp::reset;
 		}
-		planner->counter = 0;
-		if (testFlag)
-			planner->prevState = Grasp::checkingCollision;
-		else
-			planner->prevState = Grasp::stand;
-		planner->hasCollided = false;
-		planner->graspState = Grasp::reset;
 	}
 }
 
@@ -233,10 +230,11 @@ void graspObject(const mjModel* m, mjData* d){
 				// If the object is outside the 20x20 box in the middle,
 				// we put it in a random location in this square.
 				bool relocated = false;
+				std::cout<<"Object position: "<<d->qpos[m->nq-7]<<" "<<d->qpos[m->nq-6]<<std::endl;
 				if ((fabs(d->qpos[m->nq-7]) > 0.05 || fabs(d->qpos[m->nq-6]) > 0.05) && planner->baseType != 1)
 				{
 					std::cout<<"Object has moved outside!"<<std::endl;
-					// The object moved outside! Put it in a 20x20 area in the middle.
+					// The object moved outside! Put it in a 10cmx10cm area in the middle.
 					float newX = (RF - 0.5) * 0.09;
 					float newY = (RF - 0.5) * 0.09;
 					d->qpos[m->nq-7] = newX;
@@ -713,9 +711,14 @@ int main(int argc, const char** argv)
     	}
     }
 
+    bool successFlag = false;
+    for (int i = 0; i<planner->numberOfGrasps; i++)
+    	if (planner->resultArr[i].counter > 0)
+    		successFlag = successFlag || (planner->resultArr[i].successProbability/(double)planner->resultArr[i].counter) > 0.499999;
+
     // Upload the data.
     std::cout<<"Out of "<<planner->numberOfGrasps<<", "<< planner->numberOfNoncollidingGrasps<< " are non-colliding!"<<std::endl;
-    if (!testFlag && planner->numberOfGrasps > 0 && planner->numberOfNoncollidingGrasps >= nonCollidingGraspLimit)
+    if (!testFlag && planner->numberOfGrasps > 0 && successFlag && planner->numberOfNoncollidingGrasps >= nonCollidingGraspLimit)
     {
     	UploadFiles(argv[1], planner, objectId, baseId);
     }

@@ -27,6 +27,9 @@
 #include <vector>
 #include <thread>
 
+#define RF (static_cast <float> (rand()) / static_cast <float> (RAND_MAX))
+#define PI 3.14159265
+
 namespace Grasp {
 
 enum state { collectingData, planning, pregrasp, checkingCollision, grasping, lifting, stand, reset, done };

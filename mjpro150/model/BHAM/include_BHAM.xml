@@ -20,7 +20,7 @@
     -->
     
     <compiler angle="radian" meshdir="mesh/" texturedir="texture/" convexhull="true" coordinate="local"/>
-    <option timestep="0.004" iterations="50" apirate="50" noslip_iterations="0" cone="elliptic"/>
+    <option timestep="0.004" tolerance="1e-10" iterations="50" apirate="50" impratio="1.5" cone="elliptic"/>
     <size njmax="5000" nconmax="500" nstack="500000"/> 
 
     <default>
@@ -28,7 +28,7 @@
 			<geom material="MatMesh" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
         	<joint limited="true" damping="0.2" armature=".01"/>
         	<site material="MatTouch" type="ellipsoid" group="3"/>
-            <position kp="1" ctrllimited="true" forcelimited="true" forcerange="-1.5 1.5"/>
+            <position kp="1" ctrllimited="true" forcelimited="true" forcerange="-1.25 1.25"/>
 		</default>
 
         <default class="IMU">

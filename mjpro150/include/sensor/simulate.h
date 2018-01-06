@@ -89,12 +89,12 @@ namespace Grasp {
       
       // store on disk
   	  std::stringstream lD;
-  	  convertScaleAbs(depth_im_, scaled_im_, 255.0f);
+      cv::Mat outDepth;
+  	  convertScaleAbs(depth_im_, outDepth, 255.0f);
 
       // Save depth map on a file.
-      cv::Mat outDepth;
-      cv::flip(scaled_im_, outDepth, -1);
-      cv::imwrite( depthFile, outDepth );
+      cv::flip(outDepth, scaled_im_, -1);
+      cv::imwrite( depthFile, scaled_im_ );
     }
 
     KinectSimulator *object_model_;

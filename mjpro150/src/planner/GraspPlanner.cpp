@@ -87,12 +87,12 @@ GraspPlanner::GraspPlanner(const char * dropboxBase, bool testFlag, int baseType
     for (int i = 0; i<numberOfAngles; i++)
     {
 		// Calculate a location and orientation for placing the depth cam.
-		float radialR = (((float) (rand()%360))/360.0f) * (2*3.1416);
-		glm::vec3 gazePosition = {((float) (rand()%100) - 50)/1000.0f, ((float) (rand()%100) - 50)/1000.0f, -0.35};
-		glm::vec3 handPosition(cos(radialR) * (0.5 + ((float) (rand()%100) - 50)/1000.0f), sin(radialR) * (0.5 + ((float) (rand()%100) - 50)/1000.0f), ((float) (rand()%100) - 50)/1000.0f);
+		float radialR = RF * (2*PI);
+		glm::vec3 gazePosition = {(RF-0.5) * 0.08, (RF-0.5) * 0.08, (-(0.26 + RF * 0.04))};
+		glm::vec3 camPosition(cos(radialR) * (0.315 + RF * 0.03), sin(radialR) * (0.315 + RF * 0.03), RF * 0.03 + 0.045);
 
 		// Calculate gaze dir.
-		glm::vec3 tempGaze = normalize(gazePosition - handPosition);
+		glm::vec3 tempGaze = normalize(gazePosition - camPosition);
 
 		// Next, we find the view-right vector (right hand vector)
 		glm::vec3 tempUp(0, 0, 1), rightDir, upDir;
@@ -100,7 +100,7 @@ GraspPlanner::GraspPlanner(const char * dropboxBase, bool testFlag, int baseType
 		upDir = normalize(glm::cross(rightDir, tempGaze));
 
 		// Find camera pos.
-		glm::vec3 tempCameraPos = handPosition + 0.1f * upDir - 0.0135f * rightDir;
+		glm::vec3 tempCameraPos = camPosition - 0.0135f * rightDir;
 
 		// Add camera information to the arrays.
 		cameraPosArr.push_back(tempCameraPos);
@@ -112,10 +112,6 @@ GraspPlanner::GraspPlanner(const char * dropboxBase, bool testFlag, int baseType
 			gazeDir = tempGaze;
 			cameraPos = tempCameraPos;
 		}
-
-		// Save data into the stream.
-		(*logStream)<<"Position "<<i<<" of the hand:"<<tempCameraPos[0]<<" "<<tempCameraPos[1]<<" "<<tempCameraPos[2]<<std::endl;
-		(*logStream)<<"Gaze "<<i<<" of the hand:"<<tempGaze[0]<<" "<<tempGaze[1]<<" "<<tempGaze[2]<<std::endl;
     }
 }
 
@@ -355,8 +351,7 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 				strcat(tmpStr, "/");
 				strcat(tmpStr, std::to_string(i).c_str());
 				strcat(tmpStr, ".png");
-				cv::Mat imgDepth = cv::imread(Simulator->depthFile);
-			    cv::Mat cropDepth = imgDepth(roi);
+			    cv::Mat cropDepth = Simulator->scaled_im_(roi);
 			    cv::Mat dstDepth;
 			    cv::resize(cropDepth, dstDepth, cv::Size(224, 224), 0, 0, cv::INTER_CUBIC);
 			    cv::imwrite(tmpStr, dstDepth);

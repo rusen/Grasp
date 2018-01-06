@@ -45,7 +45,8 @@ void CollectData(Simulate* Simulator, const mjModel* m, mjData* d,  mjvScene *sc
 		for( int colId=0; colId<cols; colId++ )
 		{
 			// Find where to get the data and where to write it.
-			int offset = (rowId)*(cols) + ((cols - 1) - colId);
+	//		int offset = (rowId)*(cols) + ((cols - 1) - colId);
+			int offset = ((rows - 1) - rowId)*(cols) + colId;
 
 			// assign rgb
 			depthBuffer[offset * 3] = depthBuffer[offset * 3 + 1] = depthBuffer[offset * 3 + 2] =

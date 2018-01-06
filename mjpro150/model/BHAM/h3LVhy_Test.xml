@@ -1,0 +1,9 @@
+<mujoco model="BHAM">
+    <include file="include_BHAM.xml"/>
+    <include file="include_assets.xml"/>
+    <include file="h3LVhy_include_light.xml"/>
+    <include file="h3LVhy_include_table.xml"/>
+    <include file="h3LVhy_include_object.xml"/>
+    <include file="h3LVhy_include_object_assets.xml"/>
+    <include file="include_baseInv.xml"/>
+</mujoco>

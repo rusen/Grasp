@@ -1,0 +1,9 @@
+<mujoco model="BHAM">
+    <include file="include_BHAM.xml"/>
+    <include file="include_assets.xml"/>
+    <include file="HEocJC_include_light.xml"/>
+    <include file="HEocJC_include_table.xml"/>
+    <include file="HEocJC_include_object.xml"/>
+    <include file="HEocJC_include_object_assets.xml"/>
+    <include file="include_baseInv.xml"/>
+</mujoco>
