@@ -2,7 +2,7 @@
 
 sudo add-apt-repository ppa:v-launchpad-jochen-sprickerhof-de/pcl
 sudo apt-get update
-sudo apt-get install build-essential screen git cmake freeglut3-dev libopencv-dev python-opencv libpcl-all libnoise-dev libcurl4-openssl-dev libcurlpp-dev parallel
+sudo apt-get install build-essential screen git cmake freeglut3-dev libopencv-dev python-opencv libpcl-all libnoise-dev libcurl4-openssl-dev libcurlpp-dev parallel zip unzip
 
 # Ubuntu 16.04 Requirement Installation Instructions:
 sudo apt-get remove libcurlpp0
@@ -11,7 +11,7 @@ cd curlpp
 cmake .
 make
 sudo make install
-sudo apt-get install build-essential screen git cmake libproj-dev freeglut3-dev libopencv-dev python-opencv libpcl-dev libnoise-dev libcurl4-openssl-dev parallel
+sudo apt-get install build-essential screen git cmake libproj-dev freeglut3-dev libopencv-dev python-opencv libpcl-dev libnoise-dev libcurl4-openssl-dev parallel zip unzip
 
 # Following instructions are the same for both 14.04 and 16.04:
 
