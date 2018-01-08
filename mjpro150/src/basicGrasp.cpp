@@ -305,7 +305,7 @@ void graspObject(const mjModel* m, mjData* d){
      	}
 
 		// If we're at the end of a stand state, save log data.
-     	if (planner->getGraspState() == Grasp::stand && planner->counter == 1600)
+     	if (planner->getGraspState() == Grasp::stand && planner->counter == 1000)
      	{
      		// Calculate grasp success
      		bool graspSuccess = d->qpos[29] > 0;

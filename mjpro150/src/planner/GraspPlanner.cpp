@@ -567,23 +567,23 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 	case lifting:
 		if (testFlag)
 			break;
-		d->mocap_pos[2] += 0.000625;
+		d->mocap_pos[2] += 0.0008;
 		counter++;
-		if (counter > 1600){
+		if (counter > 1200){
 			counter = 0;
 			graspState = stand;
 		}
 		break;
 	case stand:
 		counter++;
-		if (counter > 1600){
+		if (counter > 1000){
 			counter = 0;
 			// If the total number of grasps has been reached, move on to the next phase. Otherwise, perform next grasp.
 			graspState = reset;
 		}
 		break;
 	case reset:
-		if (counter < 100)
+		if (counter < 50)
 		{
 
 			// Reset everything

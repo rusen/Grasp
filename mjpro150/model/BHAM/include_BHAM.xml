@@ -20,7 +20,7 @@
     -->
     
     <compiler angle="radian" meshdir="mesh/" texturedir="texture/" convexhull="true" coordinate="local"/>
-    <option timestep="0.002" tolerance="1e-10" iterations="50" apirate="50" impratio="5" cone="elliptic"/>
+    <option timestep="0.002" tolerance="1e-10" iterations="50" apirate="50" impratio="1" cone="elliptic"/>
     <size njmax="5000" nconmax="500" nstack="500000"/> 
 
     <default>
