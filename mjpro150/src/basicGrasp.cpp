@@ -305,11 +305,10 @@ void graspObject(const mjModel* m, mjData* d){
      	}
 
 		// If we're at the end of a stand state, save log data.
-     	if (planner->getGraspState() == Grasp::stand && planner->counter == 400)
+     	if (planner->getGraspState() == Grasp::stand && planner->counter == 1600)
      	{
      		// Calculate grasp success
      		bool graspSuccess = d->qpos[29] > 0;
-
 
      		mjtNum finalPose[4], finalPos[3], tmpQuat[4], tmpQuat2[4], vec[3] = {0, 0, 1}, res[3], res2[3];
      		finalPos[0] = d->qpos[27];
@@ -488,6 +487,7 @@ int main(int argc, const char** argv)
 	excludedObjects.push_back(115);
 	excludedObjects.push_back(112);
 	excludedObjects.push_back(77);
+	excludedObjects.push_back(7);
 	excludedObjects.push_back(0);
 
     // Depending on requested class, get relevant objects.
@@ -527,6 +527,7 @@ int main(int argc, const char** argv)
         // Select a random element of this class.
         objectId = objectIdx[rand()%(objectIdx.size())];
     }
+ //   objectId = 19;
 
     char baseIdFile[1000];
     strcpy(baseIdFile, argv[1]);

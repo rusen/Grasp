@@ -170,26 +170,35 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 	float yScale = xScale;
 	float zScale = RF/2+0.75;
 	float eulerx = 0, eulery = 0, eulerz = RF * 2 * M_PI;
+	bool lowerObject = true;
+	char lowerStr[20];
+	strcpy(lowerStr, "pos=\"0 0 -0.2\"");
+
 	switch(classId)
 	{
 	case 0: // Bottle
 		zScale = RF/2+0.8;
-		yScale = RF*0.2+0.9;
+		yScale = RF*0.2+1;
+		if (objectId == 4)
+		{
+			yScale = RF*0.2+0.5;
+		}
 		xScale = yScale;
 		break;
 	case 1: // Bowl
-		xScale = RF+0.5; // make it all proportional
+		xScale = RF*0.38+0.65; // make it all proportional
 		yScale = xScale;
 		zScale = xScale;
+		lowerObject = false;
 		break;
 	case 2: // Cup
 		zScale = RF/2+1; // longer
 		yScale = RF*0.6+0.6;
 		xScale = yScale;
-		eulerx = RF * M_PI;
-		eulery = RF * M_PI;
+		lowerObject = false;
 		break;
 	case 3: // Fork
+		lowerObject = false;
 		break; // default
 	case 4: // Pan
 		xScale = RF/2+0.5;
@@ -197,16 +206,19 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 		zScale = RF/2+1;
 		frictionLowerLimit = 0;
 		frictionUpperLimit = 0.5;
+		lowerObject = false;
 		break;
 	case 5: // Jug
 		xScale = RF*0.3+0.7; // slightly smaller
 		yScale = xScale;
 		zScale = xScale;
+		lowerObject = false;
 		break;
 	case 6: // Knife
 		zScale = RF*0.3+0.85; // longer
 		yScale = RF*0.2 + 0.9;
 		xScale = yScale;
+		lowerObject = false;
 		break; // default
 	case 7: // Mug
 		xScale = RF*0.1+0.7; // make it all proportional
@@ -221,11 +233,13 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 		xScale = RF*0.5+0.75; // make it all proportional
 		yScale = xScale;
 		zScale = xScale;
+		lowerObject = false;
 		break;
 	case 9: // Scissors
 		xScale = RF*0.5+0.75; // make it all proportional
 		yScale = xScale;
 		zScale = xScale;
+		lowerObject = false;
 		break; //
 	case 10: // Shaker
 		xScale = RF*0.2+0.9; // make it all proportional
@@ -233,8 +247,10 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 		zScale = xScale;
 		break;
 	case 11: //Spatula
+		lowerObject = false;
 		break; // default
 	case 12: // Spoon
+		lowerObject = false;
 		break; // default
 	case 13: // Teacup
 		xScale = RF*0.4+0.9; // make it all proportional, slightly bigger
@@ -247,6 +263,7 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 		xScale = RF*0.3+0.8; // slightly smaller
 		yScale = xScale;
 		zScale = xScale;
+		lowerObject = false;
 		break;
 	}
 
@@ -298,6 +315,12 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 		// Create random orientation
 		sprintf(tmp, "euler=\"%f %f %f\"", eulerx, eulery, eulerz);
 		replaceAll(objectStr, std::string("euler=\"\""), std::string(tmp));
+
+		// Lower the object's initial position
+		if (lowerObject)
+		{
+			replaceAll(objectStr, std::string("pos=\"0 0 0\""), std::string(lowerStr));
+		}
 
 		// Create random object colour
 		float red = ((float)(rand()%255))/255.0, green = ((float)(rand()%255))/255.0, blue = ((float)(rand()%255))/255.0;

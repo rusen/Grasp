@@ -88,8 +88,8 @@ GraspPlanner::GraspPlanner(const char * dropboxBase, bool testFlag, int baseType
     {
 		// Calculate a location and orientation for placing the depth cam.
 		float radialR = RF * (2*PI);
-		glm::vec3 gazePosition = {(RF-0.5) * 0.08, (RF-0.5) * 0.08, (-(0.26 + RF * 0.04))};
-		glm::vec3 camPosition(cos(radialR) * (0.315 + RF * 0.03), sin(radialR) * (0.315 + RF * 0.03), RF * 0.03 + 0.045);
+		glm::vec3 gazePosition = {(RF-0.5) * 0.08, (RF-0.5) * 0.08, (-(0.24 + RF * 0.04))};
+		glm::vec3 camPosition(cos(radialR) * (0.315 + RF * 0.03), sin(radialR) * (0.315 + RF * 0.03), RF * 0.03 + 0.07);
 
 		// Calculate gaze dir.
 		glm::vec3 tempGaze = normalize(gazePosition - camPosition);
@@ -567,23 +567,23 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 	case lifting:
 		if (testFlag)
 			break;
-		d->mocap_pos[2] += 0.0025;
+		d->mocap_pos[2] += 0.000625;
 		counter++;
-		if (counter > 400){
+		if (counter > 1600){
 			counter = 0;
 			graspState = stand;
 		}
 		break;
 	case stand:
 		counter++;
-		if (counter > 400){
+		if (counter > 1600){
 			counter = 0;
 			// If the total number of grasps has been reached, move on to the next phase. Otherwise, perform next grasp.
 			graspState = reset;
 		}
 		break;
 	case reset:
-		if (counter < 25)
+		if (counter < 100)
 		{
 
 			// Reset everything
