@@ -567,9 +567,9 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 	case lifting:
 		if (testFlag)
 			break;
-		d->mocap_pos[2] += 0.0008;
+		d->mocap_pos[2] += 0.000625;
 		counter++;
-		if (counter > 1200){
+		if (counter > 1600){
 			counter = 0;
 			graspState = stand;
 		}

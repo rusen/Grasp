@@ -24,7 +24,7 @@ public:
 	~Path();
 	int getSteps() const;
 	void setSteps(int steps);
-	int steps = 2500;
+	int steps = 3000;
 	int graspType = 0;
 	Waypoint * waypoints;
 
