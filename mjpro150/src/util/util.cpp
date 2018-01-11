@@ -616,6 +616,32 @@ void RemoveOldFolders(const char * dropboxBase){
 	}
 }
 
+void RemoveOldPoints(const char * dropboxBase){
+	char tmpStr[1000];
+	strcpy(tmpStr, dropboxBase);
+	strcat(tmpStr, "/points");
+
+	// No such folder? Return.
+	if (!boost::filesystem::is_directory(tmpStr))
+		return;
+
+	// Try to upload all files under the $dropboxBase$/upload folder to the system.
+	boost::filesystem::path p(tmpStr);
+	boost::filesystem::directory_iterator end_itr;
+	bool uploadFlag = true;
+	char tmp[1000];
+	time_t curTime = time(NULL);
+
+	// Take the first file you see.
+	for (auto i = boost::filesystem::directory_iterator(p); i != boost::filesystem::directory_iterator(); i++)
+	{
+		time_t fileTime = boost::filesystem::last_write_time(i->path());
+		if (curTime - fileTime > 1200){
+			boost::filesystem::remove_all(i->path());
+		}
+	}
+}
+
 void RemoveOldTmpFolders(const char * modelFolder){
 
 	// Remove all files from the model folder
