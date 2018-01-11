@@ -100,7 +100,7 @@ GraspPlanner::GraspPlanner(const char * dropboxBase, bool testFlag, int baseType
 		upDir = normalize(glm::cross(rightDir, tempGaze));
 
 		// Find camera pos.
-		glm::vec3 tempCameraPos = camPosition;
+		glm::vec3 tempCameraPos = camPosition - 0.0135f * rightDir;
 
 		// Add camera information to the arrays.
 		cameraPosArr.push_back(tempCameraPos);
