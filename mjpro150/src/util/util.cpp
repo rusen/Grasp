@@ -656,6 +656,7 @@ void DistributePoints(const char * dropboxBase){
 		strcat(newFile, "/");
 		strcat(newFile, pFile.filename().c_str());
 		boost::filesystem::copy_file (oldestFile.c_str(), newFile, boost::filesystem::copy_option::overwrite_if_exists);
+		boost::filesystem::remove(oldestFile.c_str());
 
 		// Remove entries
 		emptyDirs.erase(emptyDirs.begin());
