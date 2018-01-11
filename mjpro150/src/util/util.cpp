@@ -469,11 +469,11 @@ void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int ba
 		// Get image from views and save into images folder
 		std::string im = std::string(viewFolder) + std::string(std::to_string(planner->resultArr[i].viewId)) + std::string(".jpg");
 		std::string destIm = std::string(imageFolder) + std::string(std::to_string(ctr)) + std::string(".jpg");
-		boost::filesystem::copy_file(im, destIm);
+		boost::filesystem::copy_file(im, destIm, boost::filesystem::copy_option::overwrite_if_exists);
 
 		std::string imDepth = std::string(viewFolder) + std::string(std::to_string(planner->resultArr[i].viewId)) + std::string(".png");
 		std::string destImDepth = std::string(imageFolder) + std::string(std::to_string(ctr)) + std::string(".png");
-		boost::filesystem::copy_file(imDepth, destImDepth);
+		boost::filesystem::copy_file(imDepth, destImDepth, boost::filesystem::copy_option::overwrite_if_exists);
 
 		// Get object id, grasp params, output parameters etc print in a file.
 		float success = planner->resultArr[i].successProbability/(double)planner->resultArr[i].counter;
@@ -546,7 +546,7 @@ void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int ba
     if (!uploadSuccess && boost::filesystem::exists(zipFile))
     {
         std::cout<<"Could not upload. Copying "<<zipFile<<" to "<<dropboxZipFile<<"."<<std::endl;
-        boost::filesystem::copy_file(zipFile, dropboxZipFile);
+        boost::filesystem::copy_file(zipFile, dropboxZipFile, boost::filesystem::copy_option::overwrite_if_exists);
         boost::filesystem::remove(zipFile);
     }
 
@@ -648,9 +648,14 @@ void DistributePoints(const char * dropboxBase){
 			}
 		}
 
-		std::cout<<"Assigning " << oldestFile << " to server " << index << std::endl;
+		std::cout<<"Assigning " << oldestFile << " to server " << emptyDirs[0].c_str() << std::endl;
 		// Assign the point file to the first empty directory
-		boost::filesystem::copy_file(oldestFile.c_str(), emptyDirs[0].c_str());
+		boost::filesystem::path pFile(oldestFile.c_str());
+		char newFile[1000];
+		strcpy(newFile, emptyDirs[0].c_str());
+		strcat(newFile, "/");
+		strcat(newFile, pFile.filename().c_str());
+		boost::filesystem::copy_file (oldestFile.c_str(), newFile, boost::filesystem::copy_option::overwrite_if_exists);
 
 		// Remove entries
 		emptyDirs.erase(emptyDirs.begin());
