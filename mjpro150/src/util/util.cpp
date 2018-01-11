@@ -636,7 +636,7 @@ void RemoveOldPoints(const char * dropboxBase){
 	for (auto i = boost::filesystem::directory_iterator(p); i != boost::filesystem::directory_iterator(); i++)
 	{
 		time_t fileTime = boost::filesystem::last_write_time(i->path());
-		if (curTime - fileTime > 1200){
+		if (curTime - fileTime > 300){
 			boost::filesystem::remove_all(i->path());
 		}
 	}
