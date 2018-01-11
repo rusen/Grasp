@@ -6,6 +6,8 @@
  */
 
 #include <sensor/simulate.h>
+#include <sensor/VirtualCamera.h>
+
 #include "mujoco.h"
 #include <thread>
 #include <iostream>
@@ -32,6 +34,11 @@ void CollectData(Simulate* Simulator, const mjModel* m, mjData* d,  mjvScene *sc
 	    Eigen::Quaternionf cameraRot(q.w, q.x, q.y, q.z);
 	    pcl::PCLPointCloud2 pc2;
 	    pcl::toPCLPointCloud2(*(Simulator->cloud), pc2);
+
+	    // Reproject the point cloud
+	    Grasp::VirtualCamera cam;
+	    cam.ReprojectPointCloud(NULL, Simulator->cloud, cameraOrigin, cameraRot);
+
 	    pcl::PCDWriter().writeBinaryCompressed(Simulator->cloudFile, pc2, cameraOrigin, cameraRot);
 	}
 	else

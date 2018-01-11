@@ -399,6 +399,8 @@ void render(GLFWwindow* window, const mjModel* m, mjData* d)
 	glVertex3f(0.1, 0, 0);
 	glEnd();
 
+	*/
+
     glLineWidth(5);
 	glBegin(GL_LINES);
 	glVertex3f(planner->cameraPos[0], planner->cameraPos[1], planner->cameraPos[2]);
@@ -410,7 +412,6 @@ void render(GLFWwindow* window, const mjModel* m, mjData* d)
 	glVertex3f(planner->cameraPos[0], planner->cameraPos[1], planner->cameraPos[2]);
 	glVertex3f(planner->cameraPos[0]+(up[0]*0.15), planner->cameraPos[1]+(up[1]*0.15), planner->cameraPos[2]+(up[2]*0.15));
 	glEnd();
-	*/
 
 	// Fill in relevant pixels with point cloud data.
 	if (planner->Simulator->cloud != nullptr){

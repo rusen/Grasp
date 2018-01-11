@@ -15,6 +15,7 @@ namespace Grasp{
 std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, int baseId, int runCount);
 void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int baseId);
 void UploadExtraFiles(const char * path);
+void DistributePoints(const char * path);
 void RemoveOldFolders(const char * path);
 void RemoveOldPoints(const char * path);
 void RemoveOldTmpFolders(const char * modelFolder);

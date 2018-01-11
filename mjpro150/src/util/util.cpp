@@ -557,6 +557,108 @@ void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int ba
     }
 }
 
+void DistributePoints(const char * dropboxBase){
+	char tmpStr[1000];
+	strcpy(tmpStr, dropboxBase);
+	strcat(tmpStr, "/points");
+
+	// No such folder? Return.
+	if (!boost::filesystem::is_directory(tmpStr))
+		return;
+
+	time_t curTime = time(NULL);
+	std::vector<std::string> emptyDirs;
+
+	// Create folders for up to 6 servers, if they don't exist
+	for (int i = 0; i<6; i++)
+	{
+		char tmp[1000];
+		strcpy(tmp, dropboxBase);
+		strcat(tmp, "/server/");
+		char str[10];
+		sprintf(str, "%d", i);
+		strcat(tmp, str);
+
+		bool dirEmpty = true;
+		// If directory doesn't exist, create. If it does, check if it has any pcd files in it.
+		if (!boost::filesystem::is_directory(tmp))
+				boost::filesystem::create_directories(tmp);
+		else{
+			// If this directory is empty (no point files), mark it empty.
+			boost::filesystem::path p3(tmp);
+
+			// Check if this folder has any pcd files in it
+			for (auto k = boost::filesystem::directory_iterator(p3); k != boost::filesystem::directory_iterator(); k++)
+			{
+				if ((k->path().string().find(".pcd") !=std::string::npos))
+				{
+					// Mark directory full
+					dirEmpty = false;
+					break;
+				}
+			}
+		}
+
+		// If no files, mark it empty
+		if (dirEmpty)
+			emptyDirs.push_back(std::string(tmp));
+	}
+
+	// Shuffle emptyDirs
+	if (emptyDirs.size() > 0)
+		std::random_shuffle ( emptyDirs.begin(), emptyDirs.end() );
+
+	// Get file list and ages in seconds
+	boost::filesystem::path p(tmpStr);
+	char tmp[1000];
+	std::vector<time_t> ages;
+	std::vector<std::string> filePaths;
+
+	// Check if this folder has any pcd files in it
+	for (auto k = boost::filesystem::directory_iterator(p); k != boost::filesystem::directory_iterator(); k++)
+	{
+		if ((k->path().string().find(".pcd") !=std::string::npos))
+		{
+			time_t fileTime = boost::filesystem::last_write_time(k->path());
+			ages.push_back(curTime - fileTime);
+			filePaths.push_back(k->path().string());
+		}
+	}
+
+	// Assign point files into empty server folders
+	while(true)
+	{
+		// No empty dirs: break
+		if (!emptyDirs.size() || !filePaths.size())
+			break;
+
+		// Find oldest file
+		std::string oldestFile = filePaths[0];
+		time_t age = ages[0];
+		int index = 0;
+
+		// Check if this folder has any pcd files in it
+		for (int k = 1; k<ages.size(); k++)
+		{
+			if (ages[k] > age)
+			{
+				index = k;
+				age = ages[k];
+				oldestFile = filePaths[k];
+			}
+		}
+
+		std::cout<<"Assigning " << oldestFile << " to server " << index << std::endl;
+		// Assign the point file to the first empty directory
+		boost::filesystem::copy_file(oldestFile.c_str(), emptyDirs[0].c_str());
+
+		// Remove entries
+		emptyDirs.erase(emptyDirs.begin());
+		ages.erase(ages.begin() + index);
+		filePaths.erase(filePaths.begin() + index);
+	}
+}
+
 void UploadExtraFiles(const char * dropboxBase){
 	char tmpStr[1000];
 	strcpy(tmpStr, dropboxBase);
@@ -568,7 +670,6 @@ void UploadExtraFiles(const char * dropboxBase){
 
 	// Try to upload all files under the $dropboxBase$/upload folder to the system.
 	boost::filesystem::path p(tmpStr);
-	boost::filesystem::directory_iterator end_itr;
 	bool uploadFlag = true;
 	char tmp[1000];
 
@@ -601,7 +702,6 @@ void RemoveOldFolders(const char * dropboxBase){
 
 	// Try to upload all files under the $dropboxBase$/upload folder to the system.
 	boost::filesystem::path p(tmpStr);
-	boost::filesystem::directory_iterator end_itr;
 	bool uploadFlag = true;
 	char tmp[1000];
 	time_t curTime = time(NULL);
@@ -627,7 +727,6 @@ void RemoveOldPoints(const char * dropboxBase){
 
 	// Try to upload all files under the $dropboxBase$/upload folder to the system.
 	boost::filesystem::path p(tmpStr);
-	boost::filesystem::directory_iterator end_itr;
 	bool uploadFlag = true;
 	char tmp[1000];
 	time_t curTime = time(NULL);
@@ -636,7 +735,7 @@ void RemoveOldPoints(const char * dropboxBase){
 	for (auto i = boost::filesystem::directory_iterator(p); i != boost::filesystem::directory_iterator(); i++)
 	{
 		time_t fileTime = boost::filesystem::last_write_time(i->path());
-		if (curTime - fileTime > 300){
+		if (curTime - fileTime > 360){
 			boost::filesystem::remove_all(i->path());
 		}
 	}

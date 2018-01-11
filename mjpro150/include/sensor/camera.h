@@ -136,7 +136,6 @@ namespace Grasp
     	p = TM * p;
 
     	// Make p homogenous
- //   	std::cout<<"Converted point:"<<p[0]<<" "<<p[1]<<" "<<p[2]<<" "<<p[3]<<std::endl;
     	p = p / p[2];
 
     	// Write back the output.

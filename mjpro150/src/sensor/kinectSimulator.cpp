@@ -181,10 +181,10 @@ pcl::PointCloud<pcl::PointXYZ> * KinectSimulator::intersect(const mjModel* m, mj
     normRight = normalize(glm::cross(normGaze, tempUp));
 
     // Get location of the second cam.
-    glm::vec3 newCamPos2(0,0,0), rgbCamPos, temp, temp2, tempP, tempP2;
+    glm::vec3 emitterPos(0,0,0), rgbCamPos, temp, temp2, tempP, tempP2;
     temp = normRight * (float) camera_.getTx();
     temp2 = normRight * (float) camera_.getColourTx();
-    newCamPos2 = newCamPos + temp;
+    emitterPos = newCamPos + temp;
     rgbCamPos = newCamPos + temp2;
     glm::vec3 rgbCamLookAt = rgbCamPos + normGaze;
 
@@ -256,7 +256,7 @@ pcl::PointCloud<pcl::PointXYZ> * KinectSimulator::intersect(const mjModel* m, mj
     (*ostream)<<"CAM VIEWPORT: "<< viewportCenter[0]<<" "<< viewportCenter[1]<<" "<< viewportCenter[2]<<std::endl;
     (*ostream)<<"CAM RIGHT: "<< normRight[0]<<" "<< normRight[1]<<" "<< normRight[2]<<std::endl;
     (*ostream)<<"CAM UP: "<< viewUp[0]<<" "<< viewUp[1]<<" "<< viewUp[2]<<std::endl;
-    (*ostream)<<"CAM 2 POS: "<< newCamPos2[0]<<" "<< newCamPos2[1]<<" "<< newCamPos2[2]<<std::endl;
+    (*ostream)<<"CAM 2 POS: "<< emitterPos[0]<<" "<< emitterPos[1]<<" "<< emitterPos[2]<<std::endl;
 
     // Create transformation vector for second camera.
 	glm::mat4 r, s, t, tOrg, p;
@@ -271,7 +271,7 @@ pcl::PointCloud<pcl::PointXYZ> * KinectSimulator::intersect(const mjModel* m, mj
 	t = glm::mat4(1, 0, 0, 0,
 		 0, 1, 0, 0,
 		 0, 0, 1, 0,
-		 -newCamPos2[0], -newCamPos2[1], -newCamPos2[2], 1);
+		 -emitterPos[0], -emitterPos[1], -emitterPos[2], 1);
 	tOrg = glm::mat4(1, 0, 0, 0,
 		 0, 1, 0, 0,
 		 0, 0, 1, 0,
@@ -287,19 +287,7 @@ pcl::PointCloud<pcl::PointXYZ> * KinectSimulator::intersect(const mjModel* m, mj
     vopt.geomgroup[1] = 1;
     vopt.geomgroup[2] = 0;
 
-    // Convert r to quats.
-    //FPS camera:  RotationX(pitch) * RotationY(yaw)
-
-    /*
-    Eigen::Matrix3f mat;
-    mat << normRight[0], normRight[1], normRight[2],
-    	   viewUp[0], viewUp[1], viewUp[2],
-		   normGaze[0], normGaze[1], normGaze[2];
-    Eigen::Quaternionf qTmp(mat);
-    Eigen::Matrix3f mat2(qTmp);
-    */
-
-
+    // find camera transformation matrix (and quaternion)
     glm::vec3 tv = glm::normalize(glm::vec3(normGaze[0], normGaze[1], 0));
     float angle2;
     if (tv[1] > 0)
@@ -343,10 +331,10 @@ pcl::PointCloud<pcl::PointXYZ> * KinectSimulator::intersect(const mjModel* m, mj
 			temp = normalize(rayDir);
 			temp = temp * (float) distance;
 			tempP = newCamPos + temp;
-			temp = tempP - newCamPos2;
+			temp = tempP - emitterPos;
 			temp = normalize(temp);
 
-	    	double t1[3] = {newCamPos2[0], newCamPos2[1], newCamPos2[2]};
+	    	double t1[3] = {emitterPos[0], emitterPos[1], emitterPos[2]};
 	    	double t2[3] = {temp[0], temp[1], temp[2]};
 
 			// check if point is also visible in second camera by casting a ray to this point
@@ -356,14 +344,13 @@ pcl::PointCloud<pcl::PointXYZ> * KinectSimulator::intersect(const mjModel* m, mj
 
 				// Find hit point wrt the second camera.
 				temp = temp * (float)distance2;
-				tempP2 = newCamPos2 + temp;
+				tempP2 = emitterPos + temp;
 
 				// Compare two hit points!
 				glm::vec3 diff(tempP2[0] - tempP[0], tempP2[1] - tempP[1],tempP2[2] - tempP[2]);
 				if(abs(diff)<0.0001) {
 
 				  // get pixel position of ray in right image
-//				  (*ostream)<<"Actual point:"<<tempP[0]<<" "<<tempP[1]<<" "<<tempP[2]<<std::endl;
 				  cv::Point2f left_pixel = camera_.project3dToPixel(tempP, TM);
 
 				  // quantize right_pixel

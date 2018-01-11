@@ -5,6 +5,9 @@ int main(int argc, const char** argv){
 
 	while(true)
 	{
+		// Check points and distribute them to Grasp server clients.
+		Grasp::DistributePoints(argv[1]);
+
 	    // There may be extra files that need to be uploaded
 	    // (by other clients which do not have direct internet access).
 	    // Upload them too.
@@ -22,6 +25,6 @@ int main(int argc, const char** argv){
 	    }
 
 	    // Sleep for 10 seconds and try again.
-		std::this_thread::sleep_for(std::chrono::seconds(10));
+		std::this_thread::sleep_for(std::chrono::seconds(2));
 	}
 }
