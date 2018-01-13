@@ -256,7 +256,7 @@ pcl::PointCloud<pcl::PointXYZ> * KinectSimulator::intersect(const mjModel* m, mj
     (*ostream)<<"CAM VIEWPORT: "<< viewportCenter[0]<<" "<< viewportCenter[1]<<" "<< viewportCenter[2]<<std::endl;
     (*ostream)<<"CAM RIGHT: "<< normRight[0]<<" "<< normRight[1]<<" "<< normRight[2]<<std::endl;
     (*ostream)<<"CAM UP: "<< viewUp[0]<<" "<< viewUp[1]<<" "<< viewUp[2]<<std::endl;
-    (*ostream)<<"CAM 2 POS: "<< emitterPos[0]<<" "<< emitterPos[1]<<" "<< emitterPos[2]<<std::endl;
+    (*ostream)<<"EMITTER POS: "<< emitterPos[0]<<" "<< emitterPos[1]<<" "<< emitterPos[2]<<std::endl;
 
     // Create transformation vector for second camera.
 	glm::mat4 r, s, t, tOrg, p;
@@ -287,6 +287,16 @@ pcl::PointCloud<pcl::PointXYZ> * KinectSimulator::intersect(const mjModel* m, mj
     vopt.geomgroup[1] = 1;
     vopt.geomgroup[2] = 0;
 
+	// TODO: PRINT TM
+    /*
+    std::cout<<" PRINTING TM "<<std::endl;
+	std::cout<<TM[0][0]<<" "<<TM[0][1]<<" "<<TM[0][2]<<" "<<TM[0][3]<<std::endl;
+	std::cout<<TM[1][0]<<" "<<TM[1][1]<<" "<<TM[1][2]<<" "<<TM[1][3]<<std::endl;
+	std::cout<<TM[2][0]<<" "<<TM[2][1]<<" "<<TM[2][2]<<" "<<TM[2][3]<<std::endl;
+	std::cout<<TM[3][0]<<" "<<TM[3][1]<<" "<<TM[3][2]<<" "<<TM[3][3]<<std::endl;
+    std::cout<<"  **************************************  "<<std::endl;
+	*/
+
     // find camera transformation matrix (and quaternion)
     glm::vec3 tv = glm::normalize(glm::vec3(normGaze[0], normGaze[1], 0));
     float angle2;
@@ -302,6 +312,13 @@ pcl::PointCloud<pcl::PointXYZ> * KinectSimulator::intersect(const mjModel* m, mj
     Eigen::Quaternionf q3(Eigen::AngleAxisf(angle3, Eigen::Vector3f::UnitX()));
     Eigen::Quaternionf q4(Eigen::AngleAxisf(M_PI, Eigen::Vector3f::UnitZ()));
     m2 = q1 * q2 * q3 * q4;
+
+    /*
+    std::cout<<"PRINTING MATRIX"<<std::endl;
+    std::cout<<m2(0)<<" "<<m2(1)<<" "<<m2(2)<<std::endl;
+    std::cout<<m2(3)<<" "<<m2(4)<<" "<<m2(5)<<std::endl;
+    std::cout<<m2(6)<<" "<<m2(7)<<" "<<m2(8)<<std::endl;
+    */
 
     Eigen::Quaternionf qTmp2(m2);
     q->w = qTmp2.w();

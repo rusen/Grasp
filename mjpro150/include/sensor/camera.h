@@ -168,8 +168,7 @@ namespace Grasp
 		return ray;
       }
 
-  private:
-    CameraInfo info_;
+      CameraInfo info_;
   };
  
 } // namespace render_kinect

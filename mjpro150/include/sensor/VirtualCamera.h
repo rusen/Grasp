@@ -22,7 +22,8 @@ public:
 	virtual ~VirtualCamera();
 
 	// Reprojection of point cloud
-	static void ReprojectPointCloud(char * fileName, pcl::PointCloud<pcl::PointXYZ> * cloud, Eigen::Vector4f origin, Eigen::Quaternionf orientation);
+	static void ReprojectPointCloud(char * fileName, pcl::PointCloud<pcl::PointXYZ> * cloud,
+			cv::Mat &depth_map, Eigen::Vector4f origin, Eigen::Quaternionf orientation);
 };
 
 } /* namespace Grasp */

@@ -66,7 +66,8 @@ namespace Grasp {
 		int h = cam_info.height;
 
 		depth_im_ = cv::Mat(h, w, CV_32FC1);
-		scaled_im_ = cv::Mat(h, w, CV_32FC1);
+		scaled_im_ = cv::Mat(h, w, CV_8UC1);
+		scaled_im_.setTo(0);
 		rgbIm = cv::Mat(h, w, CV_8UC3);
 
 		object_model_ = new KinectSimulator(cam_info);
@@ -86,15 +87,6 @@ namespace Grasp {
       // simulate measurement of object and store in image, point cloud and labeled image
       cv::Mat p_result;
       cloud = object_model_->intersect(m, d, scn, con, rgbIm, depth_im_, newCamPos, newCamGaze, minPointZ, rgbFile, out, q);
-      
-      // store on disk
-  	  std::stringstream lD;
-      cv::Mat outDepth;
-  	  convertScaleAbs(depth_im_, outDepth, 255.0f);
-
-      // Save depth map on a file.
-      cv::flip(outDepth, scaled_im_, -1);
-      cv::imwrite( depthFile, scaled_im_ );
     }
 
     KinectSimulator *object_model_;

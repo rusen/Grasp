@@ -37,9 +37,11 @@ void CollectData(Simulate* Simulator, const mjModel* m, mjData* d,  mjvScene *sc
 
 	    // Reproject the point cloud
 	    Grasp::VirtualCamera cam;
-	    cam.ReprojectPointCloud(NULL, Simulator->cloud, cameraOrigin, cameraRot);
+	    cam.ReprojectPointCloud(Simulator->depthFile, Simulator->cloud, Simulator->scaled_im_, cameraOrigin, cameraRot);
 
+	    // Write the point cloud to a file
 	    pcl::PCDWriter().writeBinaryCompressed(Simulator->cloudFile, pc2, cameraOrigin, cameraRot);
+
 	}
 	else
 		return;

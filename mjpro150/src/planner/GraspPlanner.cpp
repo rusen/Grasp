@@ -100,7 +100,7 @@ GraspPlanner::GraspPlanner(const char * dropboxBase, bool testFlag, int baseType
 		upDir = normalize(glm::cross(rightDir, tempGaze));
 
 		// Find camera pos.
-		glm::vec3 tempCameraPos = camPosition - 0.0135f * rightDir;
+		glm::vec3 tempCameraPos = camPosition;
 
 		// Add camera information to the arrays.
 		cameraPosArr.push_back(tempCameraPos);
@@ -352,8 +352,10 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 				strcat(tmpStr, std::to_string(i).c_str());
 				strcat(tmpStr, ".png");
 			    cv::Mat cropDepth = Simulator->scaled_im_(roi);
+			    cv::Mat outDepth;
+			    cv::flip(cropDepth, outDepth, -1);
 			    cv::Mat dstDepth;
-			    cv::resize(cropDepth, dstDepth, cv::Size(224, 224), 0, 0, cv::INTER_CUBIC);
+			    cv::resize(outDepth, dstDepth, cv::Size(224, 224), 0, 0, cv::INTER_NEAREST);
 			    cv::imwrite(tmpStr, dstDepth);
 			}
 			if (!boost::filesystem::exists(Simulator->cloudFile))
