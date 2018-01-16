@@ -32,14 +32,17 @@ void CollectData(Simulate* Simulator, const mjModel* m, mjData* d,  mjvScene *sc
 	Eigen::Vector3f newGaze;
 	Eigen::Vector4f cameraOrigin(cameraPos[0] + 0.5, cameraPos[1], cameraPos[2], 0);
 	Eigen::Quaternionf cameraRot(q.w, q.x, q.y, q.z), newCameraRot;
+	newCameraRot = cameraRot;
 	pcl::PCLPointCloud2 pc2;
 	pcl::toPCLPointCloud2(*(Simulator->cloud), pc2);
 
 	// Reproject the point cloud
 	Grasp::VirtualCamera cam;
 	bool findNewCamera = true;
+	std::cout<<"NEW GAZE BEFORE CHANGE::"<<newGaze[0]<<" "<<newGaze[1]<<" "<<newGaze[2]<<std::endl;
 	cam.ReprojectPointCloud(Simulator->cloud, Simulator->scaled_im_, cameraOrigin, newGaze, cameraRot, newCameraRot, findNewCamera);
 
+	std::cout<<"NEW GAZE AFTER CHANGE::"<<newGaze[0]<<" "<<newGaze[1]<<" "<<newGaze[2]<<std::endl;
 	// Update gaze
 	gazeDir = glm::vec3(newGaze[0],newGaze[1],newGaze[2]);
 
@@ -47,7 +50,7 @@ void CollectData(Simulate* Simulator, const mjModel* m, mjData* d,  mjvScene *sc
 	Simulator->object_model_->captureRGB(m, d, scn, con, Simulator->rgbIm, cameraPos, gazeDir , Simulator->rgbFile);
 
 	// Write the point cloud to a file
-	pcl::PCDWriter().writeBinaryCompressed(Simulator->cloudFile, pc2, cameraOrigin, cameraRot);
+	pcl::PCDWriter().writeBinaryCompressed(Simulator->cloudFile, pc2, cameraOrigin, newCameraRot);
 
 	int rows = Simulator->scaled_im_.rows;
 	int cols = Simulator->scaled_im_.cols;

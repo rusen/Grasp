@@ -25,7 +25,7 @@ public:
 	// Reprojection of point cloud
 	static void ReprojectPointCloud(pcl::PointCloud<pcl::PointXYZ> * cloud,
 			cv::Mat &depth_map, Eigen::Vector4f origin, Eigen::Vector3f &newGaze,
-		    Eigen::Quaternionf orientation, Eigen::Quaternionf newOrientation, bool findNewCamera);
+		    Eigen::Quaternionf orientation, Eigen::Quaternionf &newOrientation, bool findNewCamera);
 };
 
 } /* namespace Grasp */

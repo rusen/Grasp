@@ -326,7 +326,9 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 			for (int i = numberOfAngles-1; i>-1; i--)
 			{
 				// Collect data
+				std::cout<<"Gaze:"<<gazeDirArr[i][0]<<" "<<gazeDirArr[i][1]<<" "<<gazeDirArr[i][2]<<std::endl;
 				CollectData(Simulator, m, d, scn, con, rgbBuffer, depthBuffer, cameraPosArr[i], gazeDirArr[i], camSize, minPointZ, &finishFlag, logStream, i);
+				std::cout<<"New Gaze:"<<gazeDirArr[i][0]<<" "<<gazeDirArr[i][1]<<" "<<gazeDirArr[i][2]<<std::endl;
 
 				// Print aux info
 				std::cout<<"Getting data from "<<i<<"th location."<<std::endl;

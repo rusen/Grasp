@@ -21,7 +21,7 @@ VirtualCamera::~VirtualCamera() {
 
 void VirtualCamera::ReprojectPointCloud(pcl::PointCloud<pcl::PointXYZ> * cloud,
 		  cv::Mat &depth_map, Eigen::Vector4f origin, Eigen::Vector3f &newGaze,
-		  Eigen::Quaternionf orientation, Eigen::Quaternionf outOrientation,
+		  Eigen::Quaternionf orientation, Eigen::Quaternionf &outOrientation,
 		  bool findNewCamera)
 {
 	CameraInfo camInfo;
@@ -56,6 +56,7 @@ void VirtualCamera::ReprojectPointCloud(pcl::PointCloud<pcl::PointXYZ> * cloud,
 
         // Find a new camera frame with added noise
         Eigen::Vector3f newGazePoint(centerx + (RF-0.5)*0.1, centery + (RF-0.5)*0.1, centerz + (RF-0.5)*0.06);
+        std::cout<<"newGazePoint:"<<newGazePoint[0]<<" "<<newGazePoint[1]<<" "<<newGazePoint[2]<<std::endl;
         newGaze = newGazePoint - Eigen::Vector3f(origin[0], origin[1], origin[2]);
         newGaze.normalize();
         Eigen::Vector3f tempUp(0, 0, 1), newRight, newUp;
@@ -94,6 +95,8 @@ void VirtualCamera::ReprojectPointCloud(pcl::PointCloud<pcl::PointXYZ> * cloud,
     {
     	newOrientation = orientation;
     }
+
+    std::cout<<"New orientation: "<<newOrientation.w()<<" "<<newOrientation.x()<<" "<<newOrientation.y()<<" "<<newOrientation.z()<<std::endl;
 
 	// Obtain a transformation matrix out of the orientation quaternion
 	Eigen::Matrix3f m2(newOrientation.conjugate());
