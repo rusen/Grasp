@@ -148,49 +148,22 @@ namespace Grasp {
   }
   
   
-  // Function that intersects rays with the object model at current state.
-pcl::PointCloud<pcl::PointXYZ> * KinectSimulator::intersect(const mjModel* m, mjData* d,
+// Function that intersects rays with the object model at current state.
+void KinectSimulator::captureRGB(const mjModel* m, mjData* d,
 			      mjvScene *scn,
 				  mjrContext *con,
 				  cv::Mat &rgb_map,
-				  cv::Mat &depth_map,
 				  glm::vec3 newCamPos,
 				  glm::vec3 newCamGaze,
-				  float minPointZ,
-				  char * rgbFile,
-				  std::ofstream * ostream,
-				  glm::quat * q)
-  {
+				  char * rgbFile)
+{
 
-    // allocate memory for depth map
-    depth_map = cv::Mat(camera_.getHeight(), camera_.getWidth(), CV_64FC1);
-    depth_map.setTo(0.0);
-    cv::Mat disp(camera_.getHeight(), camera_.getWidth(), CV_32FC1);
-    disp.setTo(invalid_disp_);
-
-    // Allocate space for vectors.
-    glm::vec3 rayDir = {0,0,0}, normGaze, viewportCenter;
-    int geomId, geomId2;
-
-    // First, we find center of the viewport.
-    normGaze = normalize(newCamGaze);
-    viewportCenter = newCamPos + normGaze;
-
-    // Next, we find the view-right vector (right hand vector)
+	newCamGaze = glm::normalize(newCamGaze);
+	// Next, we find the view-right vector (right hand vector)
     glm::vec3 tempUp(0, 0, 1), viewRight, normRight;
-    normRight = normalize(glm::cross(normGaze, tempUp));
-
-    // Get location of the second cam.
-    glm::vec3 emitterPos(0,0,0), rgbCamPos, temp, temp2, tempP, tempP2;
-    temp = normRight * (float) camera_.getTx();
-    temp2 = normRight * (float) camera_.getColourTx();
-    emitterPos = newCamPos + temp;
-    rgbCamPos = newCamPos + temp2;
-    glm::vec3 rgbCamLookAt = rgbCamPos + normGaze;
-
-    // Finally, get view-up vector.
-    glm::vec3 viewUp;
-    viewUp = normalize(glm::cross(normRight, normGaze));
+    normRight = glm::normalize(glm::cross(newCamGaze, tempUp));
+    glm::vec3 rgbCamPos = newCamPos + normRight * (float) camera_.getColourTx();
+    glm::vec3 rgbCamLookAt = rgbCamPos + newCamGaze;
     mjvOption vopt;
     mjv_defaultOption(&vopt);
 
@@ -199,8 +172,8 @@ pcl::PointCloud<pcl::PointXYZ> * KinectSimulator::intersect(const mjModel* m, mj
     mjv_defaultCamera(&rgbCam);
     rgbCam.lookat[0] = rgbCamLookAt[0], rgbCam.lookat[1] = rgbCamLookAt[1], rgbCam.lookat[2] = rgbCamLookAt[2];
     rgbCam.distance = 1;
-    float valx = normGaze[0];
-    float valy = normGaze[1];
+    float valx = newCamGaze[0];
+    float valy = newCamGaze[1];
     float l = sqrt(valx*valx + valy*valy);
     valx /= l;
     valy /= l;
@@ -212,10 +185,7 @@ pcl::PointCloud<pcl::PointXYZ> * KinectSimulator::intersect(const mjModel* m, mj
     	rgbCam.azimuth = -(acos(valx) * 180) / PI;
     }
 
-    rgbCam.elevation = (asin(normGaze[2]) * 180.0) / PI;
-    (*ostream)<<"RGB Azimuth Elevation Distance:"<<rgbCam.azimuth<<" "<<rgbCam.elevation<<" "<<rgbCam.distance<<std::endl;
-    (*ostream)<<"RGB Lookat:"<<rgbCamLookAt[0]<<" "<<rgbCamLookAt[1]<<" "<<rgbCamLookAt[2]<<std::endl;
-
+    rgbCam.elevation = (asin(newCamGaze[2]) * 180.0) / PI;
     mjrRect viewport = {0, 0, 640, 480};
 
     // Set visualization options.
@@ -247,11 +217,51 @@ pcl::PointCloud<pcl::PointXYZ> * KinectSimulator::intersect(const mjModel* m, mj
     cv::Mat out;
     cv::flip(rgb_map, out, 0);
     cv::imwrite( rgbFile, out );
+}
+
+// Function that intersects rays with the object model at current state.
+pcl::PointCloud<pcl::PointXYZ> * KinectSimulator::intersect(const mjModel* m, mjData* d,
+				  cv::Mat &depth_map,
+				  glm::vec3 newCamPos,
+				  glm::vec3 newCamGaze,
+				  float minPointZ,
+				  std::ofstream * ostream,
+				  glm::quat * q)
+  {
+	// Default option for the camera.
+    mjvOption vopt;
+    mjv_defaultOption(&vopt);
+
+    // allocate memory for depth map
+    depth_map = cv::Mat(camera_.getHeight(), camera_.getWidth(), CV_64FC1);
+    depth_map.setTo(0.0);
+    cv::Mat disp(camera_.getHeight(), camera_.getWidth(), CV_32FC1);
+    disp.setTo(invalid_disp_);
+
+    // Allocate space for vectors.
+    glm::vec3 rayDir = {0,0,0}, normGaze, viewportCenter;
+    int geomId, geomId2;
+
+    // First, we find center of the viewport.
+    normGaze = normalize(newCamGaze);
+    viewportCenter = newCamPos + normGaze;
+
+    // Next, we find the view-right vector (right hand vector)
+    glm::vec3 tempUp(0, 0, 1), viewRight, normRight;
+    normRight = normalize(glm::cross(normGaze, tempUp));
+
+    // Get location of the second cam.
+    glm::vec3 emitterPos(0,0,0), rgbCamPos, temp, temp2, tempP, tempP2;
+    temp = normRight * (float) camera_.getTx();
+    emitterPos = newCamPos + temp;
+
+    // Finally, get view-up vector.
+    glm::vec3 viewUp;
+    viewUp = normalize(glm::cross(normRight, normGaze));
 
     // Print the vectors.
     (*ostream)<<"CAM POS: "<< newCamPos[0]<<" "<< newCamPos[1]<<" "<< newCamPos[2]<<std::endl;
     (*ostream)<<"RGB CAM POS: "<< rgbCamPos[0]<<" "<< rgbCamPos[1]<<" "<< rgbCamPos[2]<<std::endl;
-    (*ostream)<<"RGB CAM LOOKAT: "<< rgbCamLookAt[0]<<" "<< rgbCamLookAt[1]<<" "<< rgbCamLookAt[2]<<std::endl;
     (*ostream)<<"CAM GAZE: "<< normGaze[0]<<" "<< normGaze[1]<<" "<< normGaze[2]<<std::endl;
     (*ostream)<<"CAM VIEWPORT: "<< viewportCenter[0]<<" "<< viewportCenter[1]<<" "<< viewportCenter[2]<<std::endl;
     (*ostream)<<"CAM RIGHT: "<< normRight[0]<<" "<< normRight[1]<<" "<< normRight[2]<<std::endl;

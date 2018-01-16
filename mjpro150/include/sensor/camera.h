@@ -61,7 +61,7 @@ namespace Grasp
 	// Initialized with Carmine 1.09 parameters.
     int width = 640, height = 480;
     double z_near = 0.30, z_far = 1.4;
-    double fx = 575.0, fy = 575.0; // 575 both For a vertical focal length close to 45.
+    double fx = 574.0, fy = 574.0; // 574 both For a vertical focal length close to 45.
     double cx_ = 320, cy_ = 240;
     double tx_ = 0.075; // -0.075 normally.
     double colourtx_ = 0.027; // -0.048 normally.

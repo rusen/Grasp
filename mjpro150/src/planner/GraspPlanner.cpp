@@ -87,9 +87,14 @@ GraspPlanner::GraspPlanner(const char * dropboxBase, bool testFlag, int baseType
     for (int i = 0; i<numberOfAngles; i++)
     {
 		// Calculate a location and orientation for placing the depth cam.
-		float radialR = RF * (2*PI);
-		glm::vec3 gazePosition = {(RF-0.5) * 0.08, (RF-0.5) * 0.08, (-(0.24 + RF * 0.04))};
-		glm::vec3 camPosition(cos(radialR) * (0.315 + RF * 0.03), sin(radialR) * (0.315 + RF * 0.03), RF * 0.03 + 0.07);
+		glm::vec3 camPosition, gazePosition = {(RF-0.5) * 0.06, (RF-0.5) * 0.06, (-(0.25 + RF * 0.06))};
+		float lookAngle = 0.64 + 0.4 * RF; //(37-60 degrees)
+		float distanceFromCenter = 0.4 + 0.35 * RF; // 0.45-0.75 meter distance!
+		float horzAngle = RF * 2 * M_PI;
+		float horzDistance = cos(lookAngle) * distanceFromCenter;
+		camPosition[0] = cos(horzAngle) * horzDistance;
+		camPosition[1] = sin(horzAngle) * horzDistance;
+		camPosition[2] = sin(lookAngle) * distanceFromCenter + gazePosition[2];
 
 		// Calculate gaze dir.
 		glm::vec3 tempGaze = normalize(gazePosition - camPosition);
@@ -352,10 +357,11 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 				strcat(tmpStr, std::to_string(i).c_str());
 				strcat(tmpStr, ".png");
 			    cv::Mat cropDepth = Simulator->scaled_im_(roi);
-			    cv::Mat outDepth;
+			    cv::Mat outDepth, filteredDepth;
 			    cv::flip(cropDepth, outDepth, -1);
+			    medianBlur ( outDepth, filteredDepth, 3 );
 			    cv::Mat dstDepth;
-			    cv::resize(outDepth, dstDepth, cv::Size(224, 224), 0, 0, cv::INTER_NEAREST);
+			    cv::resize(filteredDepth, dstDepth, cv::Size(224, 224), 0, 0, cv::INTER_NEAREST);
 			    cv::imwrite(tmpStr, dstDepth);
 			}
 			if (!boost::filesystem::exists(Simulator->cloudFile))

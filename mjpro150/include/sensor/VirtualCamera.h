@@ -13,6 +13,7 @@
 #include <pcl/point_types.h>
 #include <pcl/io/pcd_io.h>
 #include <pcl/features/normal_3d.h>
+#define RF (static_cast <float> (rand()) / static_cast <float> (RAND_MAX))
 
 namespace Grasp {
 
@@ -22,8 +23,9 @@ public:
 	virtual ~VirtualCamera();
 
 	// Reprojection of point cloud
-	static void ReprojectPointCloud(char * fileName, pcl::PointCloud<pcl::PointXYZ> * cloud,
-			cv::Mat &depth_map, Eigen::Vector4f origin, Eigen::Quaternionf orientation);
+	static void ReprojectPointCloud(pcl::PointCloud<pcl::PointXYZ> * cloud,
+			cv::Mat &depth_map, Eigen::Vector4f origin, Eigen::Vector3f &newGaze,
+		    Eigen::Quaternionf orientation, Eigen::Quaternionf newOrientation, bool findNewCamera);
 };
 
 } /* namespace Grasp */

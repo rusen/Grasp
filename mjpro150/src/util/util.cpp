@@ -147,6 +147,7 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
     }
     else if (baseType == 2)
     {
+    	planner->minPointZ = -0.3; // Table is at -0.35, each base is about 9 cms.
     	strcat(modelXMLStr, "    <include file=\"include_baseInv.xml\"/>\n");
     }
 
