@@ -11,10 +11,7 @@
 #include "util/Path.h"
 #include "util/Waypoint.h"
 #include <vector>
-#include <glm/glm.hpp>
-#include <glm/gtc/quaternion.hpp>
-#include <glm/gtx/quaternion.hpp>
-#include <glm/gtc/matrix_transform.hpp>
+#include <Eigen/Geometry>
 
 namespace Grasp {
 
@@ -40,7 +37,7 @@ public:
 	}
 
 	// Function to extract grasp parameters.
-	std::vector<float> getGraspParams(glm::vec3 gazeDir, glm::vec3 camPos);
+	std::vector<float> getGraspParams(Eigen::Vector3f gazeDir, Eigen::Vector3f camPos);
 
 private:
 	int waypointCount = 0;

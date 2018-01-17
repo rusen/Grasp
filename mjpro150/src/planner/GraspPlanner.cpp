@@ -262,7 +262,9 @@ void GraspPlanner::ReadTrajectories(int numberOfGrasps){
 			finalApproachArr[readCtr]->waypoints[0].jointAngles[k] = 0;
 
 		// Finally, save grasp parameter data
-		std::vector<float> curParams = finalApproachArr[readCtr]->getGraspParams(resultArr[readCtr].gazeDir, resultArr[readCtr].camPos);
+		Eigen::Vector3f gazeDir(resultArr[readCtr].gazeDir[0], resultArr[readCtr].gazeDir[1], resultArr[readCtr].gazeDir[2]);
+		Eigen::Vector3f camPos(resultArr[readCtr].camPos[0], resultArr[readCtr].camPos[1], resultArr[readCtr].camPos[2]);
+		std::vector<float> curParams = finalApproachArr[readCtr]->getGraspParams(gazeDir, camPos);
 		graspParams.push_back(curParams);
 	}
 	fclose(trjFP);
@@ -326,14 +328,14 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 			for (int i = numberOfAngles-1; i>-1; i--)
 			{
 				// Collect data
-				std::cout<<"Gaze:"<<gazeDirArr[i][0]<<" "<<gazeDirArr[i][1]<<" "<<gazeDirArr[i][2]<<std::endl;
+		//		std::cout<<"Gaze:"<<gazeDirArr[i][0]<<" "<<gazeDirArr[i][1]<<" "<<gazeDirArr[i][2]<<std::endl;
 				CollectData(Simulator, m, d, scn, con, rgbBuffer, depthBuffer, cameraPosArr[i], gazeDirArr[i], camSize, minPointZ, &finishFlag, logStream, i);
-				std::cout<<"New Gaze:"<<gazeDirArr[i][0]<<" "<<gazeDirArr[i][1]<<" "<<gazeDirArr[i][2]<<std::endl;
+		//		std::cout<<"New Gaze:"<<gazeDirArr[i][0]<<" "<<gazeDirArr[i][1]<<" "<<gazeDirArr[i][2]<<std::endl;
 
 				// Print aux info
-				std::cout<<"Getting data from "<<i<<"th location."<<std::endl;
-				std::cout<<cameraPosArr[i][0]<<" "<<cameraPosArr[i][1]<<" "<<cameraPosArr[i][2]<<std::endl;
-				std::cout<<gazeDirArr[i][0]<<" "<<gazeDirArr[i][1]<<" "<<gazeDirArr[i][2]<<std::endl;
+		//		std::cout<<"Getting data from "<<i<<"th location."<<std::endl;
+		//		std::cout<<cameraPosArr[i][0]<<" "<<cameraPosArr[i][1]<<" "<<cameraPosArr[i][2]<<std::endl;
+		//		std::cout<<gazeDirArr[i][0]<<" "<<gazeDirArr[i][1]<<" "<<gazeDirArr[i][2]<<std::endl;
 
 				// Crop and save file.
 			    cv::Rect roi;

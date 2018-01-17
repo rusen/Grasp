@@ -69,15 +69,38 @@ Waypoint Path::Interpolate(int step){
 	}
 }
 
-std::vector<float> Path::getGraspParams(glm::vec3 gazeDir, glm::vec3 camPos){
+std::vector<float> Path::getGraspParams(Eigen::Vector3f gazeDir, Eigen::Vector3f camPos){
 	// Get up, right vectors as well.
     // Find right and up vectors
-    glm::vec3 tempUp(0, 0, 1), normRight, viewUp;
-    normRight = normalize(glm::cross(gazeDir, tempUp));
-    viewUp = normalize(glm::cross(normRight, gazeDir));
+	gazeDir.normalize();
+    Eigen::Vector3f tempUp(0, 0, 1), normRight, viewUp;
+    normRight = gazeDir.cross(tempUp);
+    normRight.normalize();
+    viewUp = normRight.cross(gazeDir);
+    viewUp.normalize();
 
-    // Find camera transformation matrix (without projection)
-	glm::mat4 viewM = glm::lookAt(camPos, camPos + gazeDir, viewUp);
+    // Create transformation matrices
+	Eigen::Matrix4f cameraTraM, cameraRotM;
+	cameraRotM.setZero(), cameraTraM.setZero();
+	Eigen::Matrix3f camFrame;
+	camFrame.setZero();
+
+	// Translation
+	cameraTraM(0,0) = 1, cameraTraM(1,1) = 1, cameraTraM(2,2) = 1, cameraTraM(3,3) = 1;
+	cameraTraM(0,3) = -camPos(0), cameraTraM(1,3) = -camPos(1), cameraTraM(2,3) = -camPos(2);
+
+	// Rotation
+	cameraRotM(0,0) = normRight(0), cameraRotM(0,1) = normRight(1), cameraRotM(0,2) = normRight(2);
+	cameraRotM(1,0) = viewUp(0), cameraRotM(1,1) = viewUp(1), cameraRotM(1,2) = viewUp(2);
+	cameraRotM(2,0) = gazeDir(0), cameraRotM(2,1) = gazeDir(1), cameraRotM(2,2) = gazeDir(2);
+	cameraRotM(3,3) = 1;
+	camFrame(0,0) = cameraRotM(0,0), camFrame(0,1) = cameraRotM(0,1), camFrame(0,2) = cameraRotM(0,2);
+	camFrame(1,0) = cameraRotM(1,0), camFrame(1,1) = cameraRotM(1,1), camFrame(1,2) = cameraRotM(1,2);
+	camFrame(2,0) = cameraRotM(2,0), camFrame(2,1) = cameraRotM(2,1), camFrame(2,2) = cameraRotM(2,2);
+
+	// Final transformation matrices/quats
+	Eigen::Quaternionf tQuat = Eigen::Quaternionf(camFrame).inverse();
+	Eigen::Matrix4f tM = cameraRotM * cameraTraM;
 
 	// Interpolate waypoints to 10 separate points.
 	int limit = 10;
@@ -94,28 +117,21 @@ std::vector<float> Path::getGraspParams(glm::vec3 gazeDir, glm::vec3 camPos){
 		Grasp::Waypoint wp = Interpolate(cnt);
 
 		// Convert to view coordinates.
-		glm::vec4 pos;
-		pos[0] = wp.pos[0];
-		pos[1] = wp.pos[1];
-		pos[2] = wp.pos[2];
-		pos[3] = 1;
+		Eigen::Vector4f pos(wp.pos[0], wp.pos[1], wp.pos[2], 1);
 
-		pos = viewM * pos;
+		// Transform wrist point
+		pos = tM * pos;
+		Eigen::Quaternionf wristQuat = Eigen::Quaternionf(wp.quat.w, wp.quat.x, wp.quat.y, wp.quat.z);
+		wristQuat = tQuat * wristQuat;
 
-		// Get rotation matrix
-		glm::mat4 rotM = glm::toMat4(wp.quat);
-
-		// Convert to the camera coordinate system.
-		rotM = viewM * rotM;
-
-		glm::quat newQuat = glm::toQuat(rotM);
+		// Write back the data
 		outputData[currentOffset + k * 27 + 10] = pos[0];
 		outputData[currentOffset + k * 27 + 11] = pos[1];
 		outputData[currentOffset + k * 27 + 12] = pos[2];
-		outputData[currentOffset + k * 27 + 13] = newQuat.w;
-		outputData[currentOffset + k * 27 + 14] = newQuat.x;
-		outputData[currentOffset + k * 27 + 15] = newQuat.y;
-		outputData[currentOffset + k * 27 + 16] = newQuat.z;
+		outputData[currentOffset + k * 27 + 13] = wristQuat.w();
+		outputData[currentOffset + k * 27 + 14] = wristQuat.x();
+		outputData[currentOffset + k * 27 + 15] = wristQuat.y();
+		outputData[currentOffset + k * 27 + 16] = wristQuat.z();
 
 		for (int i = 0; i<20; i++)
 			outputData[currentOffset + k * 27 + 17 + i] = wp.jointAngles[i];
