@@ -468,10 +468,6 @@ void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int ba
 		fwrite(buffer, 4, 27*wpCount, trjFP2);
 
 		// Get image from views and save into images folder
-		std::string im = std::string(viewFolder) + std::string(std::to_string(planner->resultArr[i].viewId)) + std::string(".jpg");
-		std::string destIm = std::string(imageFolder) + std::string(std::to_string(ctr)) + std::string(".jpg");
-		boost::filesystem::copy_file(im, destIm, boost::filesystem::copy_option::overwrite_if_exists);
-
 		std::string imDepth = std::string(viewFolder) + std::string(std::to_string(planner->resultArr[i].viewId)) + std::string(".png");
 		std::string destImDepth = std::string(imageFolder) + std::string(std::to_string(ctr)) + std::string(".png");
 		boost::filesystem::copy_file(imDepth, destImDepth, boost::filesystem::copy_option::overwrite_if_exists);
@@ -506,8 +502,6 @@ void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int ba
 		boost::filesystem::remove_all(viewFolder);
 	if (boost::filesystem::exists(planner->debugLogFile))
 		boost::filesystem::remove(planner->debugLogFile);
-	if (boost::filesystem::exists(planner->rgbFile))
-		boost::filesystem::remove(planner->rgbFile);
 	if (boost::filesystem::exists(planner->depthFile))
 		boost::filesystem::remove(planner->depthFile);
 
