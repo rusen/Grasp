@@ -147,7 +147,7 @@ namespace Grasp {
 	  delete noise_gen_;
   }
   
-  
+/*
 // Function that intersects rays with the object model at current state.
 void KinectSimulator::captureRGB(const mjModel* m, mjData* d,
 			      mjvScene *scn,
@@ -218,6 +218,7 @@ void KinectSimulator::captureRGB(const mjModel* m, mjData* d,
     cv::flip(rgb_map, out, 0);
     cv::imwrite( rgbFile, out );
 }
+*/
 
 // Function that intersects rays with the object model at current state.
 pcl::PointCloud<pcl::PointXYZ> * KinectSimulator::intersect(const mjModel* m, mjData* d,

@@ -15,7 +15,7 @@
 
 namespace Grasp{
 
-void CollectData(Simulate* Simulator, const mjModel* m, mjData* d,  mjvScene *scn, mjrContext *con, unsigned char* rgbBuffer, unsigned char* depthBuffer,
+void CollectData(Simulate* Simulator, const mjModel* m, mjData* d, unsigned char* depthBuffer,
 		glm::vec3 cameraPos, glm::vec3 &gazeDir, int * camSize, float minPointZ, bool*finishFlag, std::ofstream * out, int imageId)
 {
 	std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
@@ -26,7 +26,7 @@ void CollectData(Simulate* Simulator, const mjModel* m, mjData* d,  mjvScene *sc
 	glm::quat q;
 
 	// Get image from kinect camera.
-	Simulator->simulateMeasurement(m, d, scn, con, cameraPos, gazeDir, minPointZ, out, &q);
+	Simulator->simulateMeasurement(m, d, cameraPos, gazeDir, minPointZ, out, &q);
 
 	// Find camera frame and write the point cloud into a file.
 	Eigen::Vector3f newGaze;
@@ -47,7 +47,7 @@ void CollectData(Simulate* Simulator, const mjModel* m, mjData* d,  mjvScene *sc
 	gazeDir = glm::vec3(newGaze[0],newGaze[1],newGaze[2]);
 
 	// Capture RGB
-	Simulator->object_model_->captureRGB(m, d, scn, con, Simulator->rgbIm, cameraPos, gazeDir , Simulator->rgbFile);
+//	Simulator->object_model_->captureRGB(m, d, scn, con, Simulator->rgbIm, cameraPos, gazeDir , Simulator->rgbFile);
 
 	// Write the point cloud to a file
 	pcl::PCDWriter().writeBinaryCompressed(Simulator->cloudFile, pc2, cameraOrigin, newCameraRot);
@@ -66,9 +66,9 @@ void CollectData(Simulate* Simulator, const mjModel* m, mjData* d,  mjvScene *sc
 			depthBuffer[offset * 3] = depthBuffer[offset * 3 + 1] = depthBuffer[offset * 3 + 2] =
 					(unsigned char) round((double)(Simulator->scaled_im_.at<uint16_t>(rowId, colId))/255.0); //input[offset];
 
-			rgbBuffer[offset * 3] = Simulator->rgbIm.data[offset * 3];
-			rgbBuffer[offset * 3 + 1] = Simulator->rgbIm.data[offset * 3 + 1];
-			rgbBuffer[offset * 3 + 2] = Simulator->rgbIm.data[offset * 3 + 2];
+//			rgbBuffer[offset * 3] = Simulator->rgbIm.data[offset * 3];
+//			rgbBuffer[offset * 3 + 1] = Simulator->rgbIm.data[offset * 3 + 1];
+//			rgbBuffer[offset * 3 + 2] = Simulator->rgbIm.data[offset * 3 + 2];
 		}
 	}
 	*finishFlag = true;

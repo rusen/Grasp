@@ -301,7 +301,7 @@ void GraspPlanner::setGraspState(state graspState = collectingData) {
 
 // Main function that plans a grasp from initial position to the final trajectory.
 // It's a state driven function since it is called in every simulation step.
-void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos, mjtNum * stableQvel, mjtNum * stableCtrl, mjvScene *scn, mjrContext *con){
+void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos, mjtNum * stableQvel, mjtNum * stableCtrl){
 
 	bool success = false;
 	switch (graspState)
@@ -329,7 +329,7 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 			{
 				// Collect data
 		//		std::cout<<"Gaze:"<<gazeDirArr[i][0]<<" "<<gazeDirArr[i][1]<<" "<<gazeDirArr[i][2]<<std::endl;
-				CollectData(Simulator, m, d, scn, con, rgbBuffer, depthBuffer, cameraPosArr[i], gazeDirArr[i], camSize, minPointZ, &finishFlag, logStream, i);
+				CollectData(Simulator, m, d, depthBuffer, cameraPosArr[i], gazeDirArr[i], camSize, minPointZ, &finishFlag, logStream, i);
 		//		std::cout<<"New Gaze:"<<gazeDirArr[i][0]<<" "<<gazeDirArr[i][1]<<" "<<gazeDirArr[i][2]<<std::endl;
 
 				// Print aux info
@@ -345,6 +345,7 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 			    roi.height = 460;
 
 				// RGB
+			    /*
 				strcpy(tmpStr, imagePrefix);
 				strcat(tmpStr, "/");
 				strcat(tmpStr, std::to_string(i).c_str());
@@ -354,6 +355,7 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 			    cv::Mat dst;
 			    cv::resize(crop, dst, cv::Size(224, 224), 0, 0, cv::INTER_CUBIC);
 			    cv::imwrite(tmpStr, dst);
+			    */
 
 			    // DEPTH
 				strcpy(tmpStr, imagePrefix);

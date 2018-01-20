@@ -81,7 +81,7 @@ namespace Grasp {
     	  delete cloud;
     }
 
-    void simulateMeasurement(const mjModel* m, mjData* d,  mjvScene *scn, mjrContext *con, glm::vec3 newCamPos, glm::vec3 newCamGaze, float minPointZ, std::ofstream *out, glm::quat * q) {
+    void simulateMeasurement(const mjModel* m, mjData* d,  glm::vec3 newCamPos, glm::vec3 newCamGaze, float minPointZ, std::ofstream *out, glm::quat * q) {
       countf++;
 
       // simulate measurement of object and store in image, point cloud and labeled image
@@ -100,8 +100,7 @@ namespace Grasp {
   };
 
   // Function to collect data from simulated Kinect camera.
-  void CollectData(Simulate* Simulator, const mjModel* m, mjData* d,
-		  mjvScene *scn, mjrContext *con, unsigned char* rgbBuffer, unsigned char* depthBuffer,
+  void CollectData(Simulate* Simulator, const mjModel* m, mjData* d, unsigned char* depthBuffer,
 		  glm::vec3 cameraPos, glm::vec3 &gazeDir, int * camSize, float minPointZ, bool*finishFlag,
 		  std::ofstream * out, int imageId);
 

@@ -354,7 +354,7 @@ void graspObject(const mjModel* m, mjData* d){
 		if (stableFlag)
 		{
 			// Perform grasp loop
-			planner->PerformGrasp(m, d, stableQpos, stableQvel, stableCtrl, &scn, &con);
+			planner->PerformGrasp(m, d, stableQpos, stableQvel, stableCtrl);
 		}
 	}
 }
@@ -386,7 +386,7 @@ void render(GLFWwindow* window, const mjModel* m, mjData* d)
 	mjr_drawPixels(planner->depthBuffer, NULL, bottomright, &con);
 
 	// Render the rgb buffer.
-	mjr_drawPixels(planner->rgbBuffer, NULL, bottomleft, &con);
+//	mjr_drawPixels(planner->rgbBuffer, NULL, bottomleft, &con);
 
 	/*
     glLineWidth(10);
@@ -566,9 +566,6 @@ int main(int argc, const char** argv)
 
     // Visual operations
 	GLFWwindow* window = NULL;
-	// init GLFW
-	if( !glfwInit() )
-		mju_error("Could not initialize GLFW");
 
 	// create window, make OpenGL context current, request v-sync
 	if (!visualFlag)
@@ -577,9 +574,16 @@ int main(int argc, const char** argv)
 		glfwWindowHint(GLFW_FOCUSED, GLFW_FALSE);
 		glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE);
 	}
-	window = glfwCreateWindow(1200, 900, "Demo", NULL, NULL);
-	glfwMakeContextCurrent(window);
-	glfwSwapInterval(1);
+	else
+	{
+		// init GLFW
+		if( !glfwInit() )
+			mju_error("Could not initialize GLFW");
+		window = glfwCreateWindow(1200, 900, "Demo", NULL, NULL);
+		glfwMakeContextCurrent(window);
+		glfwSwapInterval(1);
+	}
+	std::cout<<"GLFW INIT SKIPPED"<<std::endl;
 
 	// initialize visualization data structures
 	mjv_defaultCamera(&cam);
@@ -595,6 +599,8 @@ int main(int argc, const char** argv)
 		if (i != 17)
 			opt.flags[i] = 0;
 	}
+
+	std::cout<<"MJV CAM STARTED"<<std::endl;
 
 	if (visualFlag)
 	{
@@ -633,14 +639,21 @@ int main(int argc, const char** argv)
 		if( !m )
 			mju_error_s("Load model error: %s", error);
 
+		std::cout<<"DATA TO BE MADE"<<std::endl;
+
 		// Make data, save space for stable position info, start visual structures.
 		d = mj_makeData(m);
+		std::cout<<"DATA MADE. MOVING to CONTEXT                                                                                                                                                                                                                                                                                                                                                                                                                                 "<<std::endl;
 		if (!planner->varItr)
 		{
 			lastQpos = new mjtNum[m->nq], stableQpos = new mjtNum[m->nq], stableQvel = new mjtNum[m->nv], stableCtrl = new mjtNum[m->nu];
-			mjr_defaultContext(&con);
-			mjv_makeScene(&scn, 1000);                   // space for 1000 objects
-			mjr_makeContext(m, &con, mjFONTSCALE_100);   // model-specific context
+
+			if (visualFlag)
+			{
+				mjr_defaultContext(&con);
+				mjv_makeScene(&scn, 1000);          // space for 1000 objects
+				mjr_makeContext(m, &con, mjFONTSCALE_100);   // model-specific context
+			}
 		}
 		else
 		{
@@ -654,6 +667,7 @@ int main(int argc, const char** argv)
 			planner->hasCollided = false;
 			planner->graspState = Grasp::reset;
 		}
+		std::cout<<"DATA MADE"<<std::endl;
 
 		// Unset pause flag.
 		pauseFlag = false;
@@ -727,9 +741,11 @@ int main(int argc, const char** argv)
 
     // close GLFW, free visualization storage
     if (visualFlag)
+    {
     	glfwTerminate();
-    mjv_freeScene(&scn);
-    mjr_freeContext(&con);
+        mjv_freeScene(&scn);
+        mjr_freeContext(&con);
+    }
 
     // Delete final data structures, deactivate.
 	delete[] planner->data;

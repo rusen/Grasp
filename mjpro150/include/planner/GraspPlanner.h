@@ -122,7 +122,7 @@ public:
 	bool FollowTrajectory(const mjModel* m, mjData* d, float yOffset);
 
 	// Perform grasp.
-	void PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos, mjtNum * stableQvel, mjtNum * stableCtrl, mjvScene *scn, mjrContext *con);
+	void PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos, mjtNum * stableQvel, mjtNum * stableCtrl);
 
 	state getGraspState() const;
 	void setGraspState(state graspState);

@@ -8,7 +8,6 @@
 #ifndef SRC_UTIL_PATH_H_
 #define SRC_UTIL_PATH_H_
 
-#include "util/Path.h"
 #include "util/Waypoint.h"
 #include <vector>
 #include <Eigen/Geometry>
