@@ -368,7 +368,24 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 			    medianBlur ( outDepth, filteredDepth, 3 );
 			    cv::Mat dstDepth;
 			    cv::resize(filteredDepth, dstDepth, cv::Size(224, 224), 0, 0, cv::INTER_NEAREST);
-			    cv::imwrite(tmpStr, dstDepth);
+
+			    // Count non-nan pixels
+			    int counter = 0;
+			    for (int r=0; r<224; ++r) {
+			    	unsigned int* depthMapRow = dstDepth.ptr<unsigned int>(r);
+			    	for (int c = 0; c<224; c++)
+			    	{
+			    		unsigned int px = depthMapRow[224 - c];
+			    		if (px > 0)
+			    			counter++;
+			    	}
+			    }
+			    std::cout<<"Valid pixel count for "<<i<<" : "<<counter<<std::endl;
+			    if (counter >= validViewPixels)
+			    {
+			    	validViews.push_back(i);
+			    	cv::imwrite(tmpStr, dstDepth);
+			    }
 			}
 			if (!boost::filesystem::exists(Simulator->cloudFile))
 			{
@@ -425,9 +442,7 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 				// Allocate a view for each grasp
 				for (int i = 0; i<numberOfGrasps; i++)
 				{
-					int id = i; // unique view
-					if (numberOfAngles < numberOfGrasps) // if not enough views, then randomly pick one
-						id = rand()%numberOfAngles;
+					int id = validViews[rand()%validViews.size()];
 					resultArr[i].viewId = id;
 					resultArr[i].camPos = cameraPosArr[id];
 					resultArr[i].gazeDir = gazeDirArr[id];

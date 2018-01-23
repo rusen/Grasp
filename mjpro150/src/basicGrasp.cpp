@@ -45,7 +45,7 @@ double lastx = 0;
 double lasty = 0;
 
 // Dataset related variables.
-int objectCount = 250;
+int objectCount = 0;
 int nonCollidingGraspLimit = 10;
 bool firstTimeFlag = true; // True in the first run, false otherwise.
 int baseIds[1000];
@@ -447,7 +447,7 @@ int main(int argc, const char** argv)
 {
 	unsigned int tmpNo;
     // Allocate planner
-	time_t randSeed = time(NULL);
+	unsigned int randSeed = time(NULL);
 
     // check command-line arguments
     if( argc < 6 )
@@ -460,6 +460,7 @@ int main(int argc, const char** argv)
 	sscanf(argv[5], "%ud", &tmpNo);
 	randSeed = randSeed + (time_t) tmpNo;
     srand(randSeed);
+    std::cout<<" RANDOM SEED: "<<randSeed << std::endl;
 
     // Read class selection parameter.
 	sscanf(argv[4], "%ud", &classSelection);
@@ -484,18 +485,32 @@ int main(int argc, const char** argv)
 
 	// Exclude some objects. Hard coded. Needs to change.
 	std::vector <int> excludedObjects;
-	excludedObjects.push_back(117);
-	excludedObjects.push_back(115);
-	excludedObjects.push_back(112);
-	excludedObjects.push_back(77);
-	excludedObjects.push_back(7);
 	excludedObjects.push_back(0);
+
+	// Count number of objects
+    // Get base id file name
+	char classIdFile[1000];
+    strcpy(classIdFile, argv[1]);
+    strcat(classIdFile, "/classIds.txt");
+
+    // Read class id
+    int classId = 0;
+    FILE * classFid = fopen(classIdFile, "r");
+    for (int i = 0; i<10000; i++)
+    {
+    	int charsRead = fscanf(classFid, "%d\n", &classId);
+    	if (charsRead < 1)
+    		break;
+    	objectCount++;
+    }
+    fclose(classFid);
+    std::cout<<"Object count:"<<objectCount<<std::endl;
 
     // Depending on requested class, get relevant objects.
     int objectId = 0;
     if (!classSelection)
     {
-    	while(ismember(excludedObjects, objectId) || (objectId>91 && objectId<110) || objectId>234)
+    	while(ismember(excludedObjects, objectId))
     		objectId = rand()%objectCount + 1;
     }
     else
@@ -513,6 +528,7 @@ int main(int argc, const char** argv)
         	fscanf(fid, "%d\n", &tmpNo);
         	if (tmpNo == classSelection && !ismember(excludedObjects, i + 1))
         	{
+        		std::cout<<"Object added to class:"<<i+1<<std::endl;
         		objectIdx.push_back(i + 1);
         	}
         }
@@ -528,7 +544,7 @@ int main(int argc, const char** argv)
         // Select a random element of this class.
         objectId = objectIdx[rand()%(objectIdx.size())];
     }
- //   objectId = 19;
+    std::cout<<"Selected object:"<<objectId<<std::endl;
 
     char baseIdFile[1000];
     strcpy(baseIdFile, argv[1]);
@@ -737,6 +753,12 @@ int main(int argc, const char** argv)
     if (!testFlag && planner->numberOfGrasps > 0 && successFlag && planner->numberOfNoncollidingGrasps >= nonCollidingGraspLimit)
     {
     	UploadFiles(argv[1], planner, objectId, baseId);
+    }
+
+    // delete tmp folder
+    if(boost::filesystem::exists(planner->baseFolder))
+    {
+       boost::filesystem::remove_all(planner->baseFolder);
     }
 
     // close GLFW, free visualization storage

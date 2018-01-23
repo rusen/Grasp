@@ -1,7 +1,7 @@
 <mujoco>
     <worldbody>
     	<body name="base" pos="0 0 0">
-	        <geom condim="4" rgba="0 0 0 0" solimp="0.9 0.95 0.001" solref="0.008 1.0" type="box" pos="0 0 -0.35" margin="0.001" size="5 5 .04"/>
+	        <geom condim="4" rgba="0 0 0 0" solimp="0.9 0.95 0.001" solref="0.008 1.0" type="box" pos="0 0 -0.35" margin="0.001" size="5 5 .025"/>
     	</body>
     </worldbody>
     

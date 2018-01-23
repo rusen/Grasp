@@ -56,7 +56,6 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
     fid = fopen(classIdFile, "r");
     for (int i = 0; i<objectId; i++)
     	fscanf(fid, "%d\n", &classId);
-    classId = classId - 1;
     fclose(fid);
 
     // Obtain a filename prefix for this specific object
@@ -106,6 +105,26 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
     strcat(modelXMLStr, tmpXML);
     boost::filesystem::copy_file(oldObjectFile, newObjectFile, boost::filesystem::copy_option::overwrite_if_exists);
 
+    // Mass info
+    char massFile[1000],tmpStr10[1000];
+    strcpy(massFile, base);
+    strcat(massFile, "/mesh/objects/");
+    sprintf(tmpStr10, "D_%d/D_%d_mass.txt", objectId, objectId);
+    strcat(massFile, tmpStr10);
+
+    int numberOfParts;
+    float partMasses[5000], totalMass = 0;
+    FILE * massFileID = fopen(massFile, "r");
+    fscanf(massFileID, "%d\n", &numberOfParts);
+    for (int itr = 0; itr<numberOfParts; itr++)
+    {
+    	fscanf(massFileID, "%f\n", &(partMasses[itr]));
+    	totalMass += partMasses[itr];
+    }
+    fclose(massFileID);
+    for (int itr = 0; itr<numberOfParts; itr++)
+        std::cout<<"New mass:"<<partMasses[itr]<<std::endl;
+
     // Object assets
     strcpy(newAssetFile, modelPrefix);
     strcat(newAssetFile, "include_object_assets.xml");
@@ -147,7 +166,7 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
     }
     else if (baseType == 2)
     {
-    	planner->minPointZ = -0.3; // Table is at -0.35, each base is about 9 cms.
+    	planner->minPointZ = -0.315; // 1 cm above invisible base.
     	strcat(modelXMLStr, "    <include file=\"include_baseInv.xml\"/>\n");
     }
 
@@ -167,105 +186,25 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 	float frictionUpperLimit = 1;
 
 	// Create random scale based on the object type.
-	float xScale = RF/2+0.75;
+	float xScale = RF*0.1+0.95;
 	float yScale = xScale;
-	float zScale = RF/2+0.75;
+	float zScale = xScale;
 	float eulerx = 0, eulery = 0, eulerz = RF * 2 * M_PI;
-	bool lowerObject = true;
 	char lowerStr[20];
-	strcpy(lowerStr, "pos=\"0 0 -0.2\"");
+	strcpy(lowerStr, "pos=\"0 0 -0.15\"");
 
-	switch(classId)
+	if (classId == 7 || classId == 10 || classId == 13 || classId == 15 || classId == 16 )
 	{
-	case 0: // Bottle
-		zScale = RF/2+0.8;
-		yScale = RF*0.2+1;
-		if (objectId == 4)
-		{
-			yScale = RF*0.2+0.5;
-		}
-		xScale = yScale;
-		break;
-	case 1: // Bowl
-		xScale = RF*0.38+0.65; // make it all proportional
-		yScale = xScale;
-		zScale = xScale;
-		lowerObject = false;
-		break;
-	case 2: // Cup
-		zScale = RF/2+1; // longer
-		yScale = RF*0.6+0.6;
-		xScale = yScale;
-		lowerObject = false;
-		break;
-	case 3: // Fork
-		lowerObject = false;
-		break; // default
-	case 4: // Pan
-		xScale = RF/2+0.5;
-		yScale = xScale;
-		zScale = RF/2+1;
-		frictionLowerLimit = 0;
-		frictionUpperLimit = 0.5;
-		lowerObject = false;
-		break;
-	case 5: // Jug
-		xScale = RF*0.3+0.7; // slightly smaller
-		yScale = xScale;
-		zScale = xScale;
-		lowerObject = false;
-		break;
-	case 6: // Knife
-		zScale = RF*0.3+0.85; // longer
-		yScale = RF*0.2 + 0.9;
-		xScale = yScale;
-		lowerObject = false;
-		break; // default
-	case 7: // Mug
-		xScale = RF*0.1+0.7; // make it all proportional
-		yScale = xScale;
-		zScale = xScale;
-		eulerx = RF * M_PI;
-		eulery = RF * M_PI;
-		frictionLowerLimit = 0;
-		frictionUpperLimit = 0.5;
-		break;
-	case 8: //Plate
-		xScale = RF*0.5+0.75; // make it all proportional
-		yScale = xScale;
-		zScale = xScale;
-		lowerObject = false;
-		break;
-	case 9: // Scissors
-		xScale = RF*0.5+0.75; // make it all proportional
-		yScale = xScale;
-		zScale = xScale;
-		lowerObject = false;
-		break; //
-	case 10: // Shaker
-		xScale = RF*0.2+0.9; // make it all proportional
-		yScale = xScale;
-		zScale = xScale;
-		break;
-	case 11: //Spatula
-		lowerObject = false;
-		break; // default
-	case 12: // Spoon
-		lowerObject = false;
-		break; // default
-	case 13: // Teacup
-		xScale = RF*0.4+0.9; // make it all proportional, slightly bigger
-		yScale = xScale;
-		zScale = xScale;
-		frictionLowerLimit = 0;
-		frictionUpperLimit = 0.5;
-		break;
-	case 14: // Teapot
-		xScale = RF*0.3+0.8; // slightly smaller
-		yScale = xScale;
-		zScale = xScale;
-		lowerObject = false;
-		break;
+		strcpy(lowerStr, "pos=\"0 0 0\"");
+	}
+	if (classId == 5) // Cup and Funnel can be of any direction.
+	{
+		if (rand()%2 == 1)
+			eulerx = RF * 2 * M_PI, eulery = RF * 2 * M_PI;
+	}
+	if (classId == 22)
+	{
+		eulerx = RF * 2 * M_PI, eulery = RF * 2 * M_PI;
 	}
 
 	// Scale the object randomly.
@@ -302,26 +241,36 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 		replaceAll(objectStr, std::string("friction=\"\""), std::string(tmp));
 
 		// Create random mass, depending on the object type.
-		float baseWeights[] = {30, 50, 30, 40, 150, 70, 50, 250, 40, 50, 100, 40, 40, 150, 500};
-		float addedWeights[] = {40, 350, 300, 40, 300, 80, 100, 100, 80, 100, 60, 40, 40, 100, 300};
-		int baseWeight = baseWeights[classId];
-		int addedWeight = addedWeights[classId];
+		float baseWeights[] =  {30,  50,  50, 200,  30, 0, 40, 150,  80,  50, 250, 40,  50, 100, 40, 40, 150, 0, 0, 0, 500, 40, 50, 100};
+		float addedWeights[] = {40, 350, 450, 200, 300, 0, 40, 300, 120, 100, 100, 80, 100,  60, 40, 40, 100, 0, 0, 0, 300, 40, 20,  50};
+		int baseWeight = baseWeights[classId-1];
+		int addedWeight = addedWeights[classId-1];
 		float mass = (float)(rand()%addedWeight + baseWeight);
 		mass = mass/1000;
-		sprintf(tmp, "mass=\"%f\"", mass);
 
-		// Replace mass
-		replaceAll(objectStr, std::string("mass=\"\""), std::string(tmp));
+		// We find and save relative mass of each file.
+		float multiply = mass / totalMass;
+		for (int itr = 0; itr < numberOfParts; itr++)
+		{
+			char tmpStr[100], tmpStr2[100], tmpStr3[100];
+			sprintf(tmpStr2, "%d", itr+1);
+			strcpy(tmpStr, "mass=\"");
+			strcat(tmpStr, tmpStr2);
+			strcat(tmpStr, "\"");
+
+			sprintf(tmpStr2, "%f", multiply * partMasses[itr]);
+			strcpy(tmpStr3, "mass=\"");
+			strcat(tmpStr3, tmpStr2);
+			strcat(tmpStr3, "\"");
+			replaceAll(objectStr, std::string(tmpStr), std::string(tmpStr3));
+		}
 
 		// Create random orientation
 		sprintf(tmp, "euler=\"%f %f %f\"", eulerx, eulery, eulerz);
 		replaceAll(objectStr, std::string("euler=\"\""), std::string(tmp));
 
 		// Lower the object's initial position
-		if (lowerObject)
-		{
-			replaceAll(objectStr, std::string("pos=\"0 0 0\""), std::string(lowerStr));
-		}
+		replaceAll(objectStr, std::string("pos=\"0 0 0\""), std::string(lowerStr));
 
 		// Create random object colour
 		float red = ((float)(rand()%255))/255.0, green = ((float)(rand()%255))/255.0, blue = ((float)(rand()%255))/255.0;
@@ -545,11 +494,6 @@ void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int ba
         boost::filesystem::remove(zipFile);
     }
 
-    // delete tmp folder
-    if(boost::filesystem::exists(planner->baseFolder))
-    {
-       boost::filesystem::remove_all(planner->baseFolder);
-    }
 }
 
 void DistributePoints(const char * dropboxBase){

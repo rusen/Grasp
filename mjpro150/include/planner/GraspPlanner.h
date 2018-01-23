@@ -73,6 +73,8 @@ public:
 	// Grasp output array
 	GraspResult* resultArr = NULL;
 	std::vector<std::vector<float>> graspParams;
+	std::vector<int> validViews;
+	int validViewPixels = 250;
 
 	// Grasp state variables
 	state graspState = collectingData; //initial for full scenario
