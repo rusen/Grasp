@@ -17,10 +17,5 @@
         <mesh name="D_61_15" file="objects/D_61/D_61_15.stl"/>
         <mesh name="D_61_16" file="objects/D_61/D_61_16.stl"/>
         <mesh name="D_61_17" file="objects/D_61/D_61_17.stl"/>
-        <mesh name="D_61_18" file="objects/D_61/D_61_18.stl"/>
-        <mesh name="D_61_19" file="objects/D_61/D_61_19.stl"/>
-        <mesh name="D_61_20" file="objects/D_61/D_61_20.stl"/>
-        <mesh name="D_61_21" file="objects/D_61/D_61_21.stl"/>
-        <mesh name="D_61_visual" file="objects/D_61/D_61_full.stl"/>
     </asset>
 </mujoco>

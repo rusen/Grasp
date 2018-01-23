@@ -48,6 +48,10 @@
         <mesh name="D_29_46" file="objects/D_29/D_29_46.stl"/>
         <mesh name="D_29_47" file="objects/D_29/D_29_47.stl"/>
         <mesh name="D_29_48" file="objects/D_29/D_29_48.stl"/>
-        <mesh name="D_29_visual" file="objects/D_29/D_29_full.stl"/>
+        <mesh name="D_29_49" file="objects/D_29/D_29_49.stl"/>
+        <mesh name="D_29_50" file="objects/D_29/D_29_50.stl"/>
+        <mesh name="D_29_51" file="objects/D_29/D_29_51.stl"/>
+        <mesh name="D_29_52" file="objects/D_29/D_29_52.stl"/>
+        <mesh name="D_29_53" file="objects/D_29/D_29_53.stl"/>
     </asset>
 </mujoco>

@@ -28,6 +28,34 @@
         <mesh name="D_39_26" file="objects/D_39/D_39_26.stl"/>
         <mesh name="D_39_27" file="objects/D_39/D_39_27.stl"/>
         <mesh name="D_39_28" file="objects/D_39/D_39_28.stl"/>
-        <mesh name="D_39_visual" file="objects/D_39/D_39_full.stl"/>
+        <mesh name="D_39_29" file="objects/D_39/D_39_29.stl"/>
+        <mesh name="D_39_30" file="objects/D_39/D_39_30.stl"/>
+        <mesh name="D_39_31" file="objects/D_39/D_39_31.stl"/>
+        <mesh name="D_39_32" file="objects/D_39/D_39_32.stl"/>
+        <mesh name="D_39_33" file="objects/D_39/D_39_33.stl"/>
+        <mesh name="D_39_34" file="objects/D_39/D_39_34.stl"/>
+        <mesh name="D_39_35" file="objects/D_39/D_39_35.stl"/>
+        <mesh name="D_39_36" file="objects/D_39/D_39_36.stl"/>
+        <mesh name="D_39_37" file="objects/D_39/D_39_37.stl"/>
+        <mesh name="D_39_38" file="objects/D_39/D_39_38.stl"/>
+        <mesh name="D_39_39" file="objects/D_39/D_39_39.stl"/>
+        <mesh name="D_39_40" file="objects/D_39/D_39_40.stl"/>
+        <mesh name="D_39_41" file="objects/D_39/D_39_41.stl"/>
+        <mesh name="D_39_42" file="objects/D_39/D_39_42.stl"/>
+        <mesh name="D_39_43" file="objects/D_39/D_39_43.stl"/>
+        <mesh name="D_39_44" file="objects/D_39/D_39_44.stl"/>
+        <mesh name="D_39_45" file="objects/D_39/D_39_45.stl"/>
+        <mesh name="D_39_46" file="objects/D_39/D_39_46.stl"/>
+        <mesh name="D_39_47" file="objects/D_39/D_39_47.stl"/>
+        <mesh name="D_39_48" file="objects/D_39/D_39_48.stl"/>
+        <mesh name="D_39_49" file="objects/D_39/D_39_49.stl"/>
+        <mesh name="D_39_50" file="objects/D_39/D_39_50.stl"/>
+        <mesh name="D_39_51" file="objects/D_39/D_39_51.stl"/>
+        <mesh name="D_39_52" file="objects/D_39/D_39_52.stl"/>
+        <mesh name="D_39_53" file="objects/D_39/D_39_53.stl"/>
+        <mesh name="D_39_54" file="objects/D_39/D_39_54.stl"/>
+        <mesh name="D_39_55" file="objects/D_39/D_39_55.stl"/>
+        <mesh name="D_39_56" file="objects/D_39/D_39_56.stl"/>
+        <mesh name="D_39_57" file="objects/D_39/D_39_57.stl"/>
     </asset>
 </mujoco>

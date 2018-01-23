@@ -17,23 +17,5 @@
         <mesh name="D_216_15" file="objects/D_216/D_216_15.stl"/>
         <mesh name="D_216_16" file="objects/D_216/D_216_16.stl"/>
         <mesh name="D_216_17" file="objects/D_216/D_216_17.stl"/>
-        <mesh name="D_216_18" file="objects/D_216/D_216_18.stl"/>
-        <mesh name="D_216_19" file="objects/D_216/D_216_19.stl"/>
-        <mesh name="D_216_20" file="objects/D_216/D_216_20.stl"/>
-        <mesh name="D_216_21" file="objects/D_216/D_216_21.stl"/>
-        <mesh name="D_216_22" file="objects/D_216/D_216_22.stl"/>
-        <mesh name="D_216_23" file="objects/D_216/D_216_23.stl"/>
-        <mesh name="D_216_24" file="objects/D_216/D_216_24.stl"/>
-        <mesh name="D_216_25" file="objects/D_216/D_216_25.stl"/>
-        <mesh name="D_216_26" file="objects/D_216/D_216_26.stl"/>
-        <mesh name="D_216_27" file="objects/D_216/D_216_27.stl"/>
-        <mesh name="D_216_28" file="objects/D_216/D_216_28.stl"/>
-        <mesh name="D_216_29" file="objects/D_216/D_216_29.stl"/>
-        <mesh name="D_216_30" file="objects/D_216/D_216_30.stl"/>
-        <mesh name="D_216_31" file="objects/D_216/D_216_31.stl"/>
-        <mesh name="D_216_32" file="objects/D_216/D_216_32.stl"/>
-        <mesh name="D_216_33" file="objects/D_216/D_216_33.stl"/>
-        <mesh name="D_216_34" file="objects/D_216/D_216_34.stl"/>
-        <mesh name="D_216_visual" file="objects/D_216/D_216_full.stl"/>
     </asset>
 </mujoco>

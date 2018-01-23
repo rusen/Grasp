@@ -59,55 +59,5 @@
         <mesh name="D_247_57" file="objects/D_247/D_247_57.stl"/>
         <mesh name="D_247_58" file="objects/D_247/D_247_58.stl"/>
         <mesh name="D_247_59" file="objects/D_247/D_247_59.stl"/>
-        <mesh name="D_247_60" file="objects/D_247/D_247_60.stl"/>
-        <mesh name="D_247_61" file="objects/D_247/D_247_61.stl"/>
-        <mesh name="D_247_62" file="objects/D_247/D_247_62.stl"/>
-        <mesh name="D_247_63" file="objects/D_247/D_247_63.stl"/>
-        <mesh name="D_247_64" file="objects/D_247/D_247_64.stl"/>
-        <mesh name="D_247_65" file="objects/D_247/D_247_65.stl"/>
-        <mesh name="D_247_66" file="objects/D_247/D_247_66.stl"/>
-        <mesh name="D_247_67" file="objects/D_247/D_247_67.stl"/>
-        <mesh name="D_247_68" file="objects/D_247/D_247_68.stl"/>
-        <mesh name="D_247_69" file="objects/D_247/D_247_69.stl"/>
-        <mesh name="D_247_70" file="objects/D_247/D_247_70.stl"/>
-        <mesh name="D_247_71" file="objects/D_247/D_247_71.stl"/>
-        <mesh name="D_247_72" file="objects/D_247/D_247_72.stl"/>
-        <mesh name="D_247_73" file="objects/D_247/D_247_73.stl"/>
-        <mesh name="D_247_74" file="objects/D_247/D_247_74.stl"/>
-        <mesh name="D_247_75" file="objects/D_247/D_247_75.stl"/>
-        <mesh name="D_247_76" file="objects/D_247/D_247_76.stl"/>
-        <mesh name="D_247_77" file="objects/D_247/D_247_77.stl"/>
-        <mesh name="D_247_78" file="objects/D_247/D_247_78.stl"/>
-        <mesh name="D_247_79" file="objects/D_247/D_247_79.stl"/>
-        <mesh name="D_247_80" file="objects/D_247/D_247_80.stl"/>
-        <mesh name="D_247_81" file="objects/D_247/D_247_81.stl"/>
-        <mesh name="D_247_82" file="objects/D_247/D_247_82.stl"/>
-        <mesh name="D_247_83" file="objects/D_247/D_247_83.stl"/>
-        <mesh name="D_247_84" file="objects/D_247/D_247_84.stl"/>
-        <mesh name="D_247_85" file="objects/D_247/D_247_85.stl"/>
-        <mesh name="D_247_86" file="objects/D_247/D_247_86.stl"/>
-        <mesh name="D_247_87" file="objects/D_247/D_247_87.stl"/>
-        <mesh name="D_247_88" file="objects/D_247/D_247_88.stl"/>
-        <mesh name="D_247_89" file="objects/D_247/D_247_89.stl"/>
-        <mesh name="D_247_90" file="objects/D_247/D_247_90.stl"/>
-        <mesh name="D_247_91" file="objects/D_247/D_247_91.stl"/>
-        <mesh name="D_247_92" file="objects/D_247/D_247_92.stl"/>
-        <mesh name="D_247_93" file="objects/D_247/D_247_93.stl"/>
-        <mesh name="D_247_94" file="objects/D_247/D_247_94.stl"/>
-        <mesh name="D_247_95" file="objects/D_247/D_247_95.stl"/>
-        <mesh name="D_247_96" file="objects/D_247/D_247_96.stl"/>
-        <mesh name="D_247_97" file="objects/D_247/D_247_97.stl"/>
-        <mesh name="D_247_98" file="objects/D_247/D_247_98.stl"/>
-        <mesh name="D_247_99" file="objects/D_247/D_247_99.stl"/>
-        <mesh name="D_247_100" file="objects/D_247/D_247_100.stl"/>
-        <mesh name="D_247_101" file="objects/D_247/D_247_101.stl"/>
-        <mesh name="D_247_102" file="objects/D_247/D_247_102.stl"/>
-        <mesh name="D_247_103" file="objects/D_247/D_247_103.stl"/>
-        <mesh name="D_247_104" file="objects/D_247/D_247_104.stl"/>
-        <mesh name="D_247_105" file="objects/D_247/D_247_105.stl"/>
-        <mesh name="D_247_106" file="objects/D_247/D_247_106.stl"/>
-        <mesh name="D_247_107" file="objects/D_247/D_247_107.stl"/>
-        <mesh name="D_247_108" file="objects/D_247/D_247_108.stl"/>
-        <mesh name="D_247_visual" file="objects/D_247/D_247_full.stl"/>
     </asset>
 </mujoco>

@@ -43,20 +43,5 @@
         <mesh name="D_27_41" file="objects/D_27/D_27_41.stl"/>
         <mesh name="D_27_42" file="objects/D_27/D_27_42.stl"/>
         <mesh name="D_27_43" file="objects/D_27/D_27_43.stl"/>
-        <mesh name="D_27_44" file="objects/D_27/D_27_44.stl"/>
-        <mesh name="D_27_45" file="objects/D_27/D_27_45.stl"/>
-        <mesh name="D_27_46" file="objects/D_27/D_27_46.stl"/>
-        <mesh name="D_27_47" file="objects/D_27/D_27_47.stl"/>
-        <mesh name="D_27_48" file="objects/D_27/D_27_48.stl"/>
-        <mesh name="D_27_49" file="objects/D_27/D_27_49.stl"/>
-        <mesh name="D_27_50" file="objects/D_27/D_27_50.stl"/>
-        <mesh name="D_27_51" file="objects/D_27/D_27_51.stl"/>
-        <mesh name="D_27_52" file="objects/D_27/D_27_52.stl"/>
-        <mesh name="D_27_53" file="objects/D_27/D_27_53.stl"/>
-        <mesh name="D_27_54" file="objects/D_27/D_27_54.stl"/>
-        <mesh name="D_27_55" file="objects/D_27/D_27_55.stl"/>
-        <mesh name="D_27_56" file="objects/D_27/D_27_56.stl"/>
-        <mesh name="D_27_57" file="objects/D_27/D_27_57.stl"/>
-        <mesh name="D_27_visual" file="objects/D_27/D_27_full.stl"/>
     </asset>
 </mujoco>

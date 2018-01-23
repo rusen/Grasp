@@ -49,10 +49,5 @@
         <mesh name="D_87_47" file="objects/D_87/D_87_47.stl"/>
         <mesh name="D_87_48" file="objects/D_87/D_87_48.stl"/>
         <mesh name="D_87_49" file="objects/D_87/D_87_49.stl"/>
-        <mesh name="D_87_50" file="objects/D_87/D_87_50.stl"/>
-        <mesh name="D_87_51" file="objects/D_87/D_87_51.stl"/>
-        <mesh name="D_87_52" file="objects/D_87/D_87_52.stl"/>
-        <mesh name="D_87_53" file="objects/D_87/D_87_53.stl"/>
-        <mesh name="D_87_visual" file="objects/D_87/D_87_full.stl"/>
     </asset>
 </mujoco>

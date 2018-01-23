@@ -15,6 +15,24 @@
         <mesh name="D_187_13" file="objects/D_187/D_187_13.stl"/>
         <mesh name="D_187_14" file="objects/D_187/D_187_14.stl"/>
         <mesh name="D_187_15" file="objects/D_187/D_187_15.stl"/>
-        <mesh name="D_187_visual" file="objects/D_187/D_187_full.stl"/>
+        <mesh name="D_187_16" file="objects/D_187/D_187_16.stl"/>
+        <mesh name="D_187_17" file="objects/D_187/D_187_17.stl"/>
+        <mesh name="D_187_18" file="objects/D_187/D_187_18.stl"/>
+        <mesh name="D_187_19" file="objects/D_187/D_187_19.stl"/>
+        <mesh name="D_187_20" file="objects/D_187/D_187_20.stl"/>
+        <mesh name="D_187_21" file="objects/D_187/D_187_21.stl"/>
+        <mesh name="D_187_22" file="objects/D_187/D_187_22.stl"/>
+        <mesh name="D_187_23" file="objects/D_187/D_187_23.stl"/>
+        <mesh name="D_187_24" file="objects/D_187/D_187_24.stl"/>
+        <mesh name="D_187_25" file="objects/D_187/D_187_25.stl"/>
+        <mesh name="D_187_26" file="objects/D_187/D_187_26.stl"/>
+        <mesh name="D_187_27" file="objects/D_187/D_187_27.stl"/>
+        <mesh name="D_187_28" file="objects/D_187/D_187_28.stl"/>
+        <mesh name="D_187_29" file="objects/D_187/D_187_29.stl"/>
+        <mesh name="D_187_30" file="objects/D_187/D_187_30.stl"/>
+        <mesh name="D_187_31" file="objects/D_187/D_187_31.stl"/>
+        <mesh name="D_187_32" file="objects/D_187/D_187_32.stl"/>
+        <mesh name="D_187_33" file="objects/D_187/D_187_33.stl"/>
+        <mesh name="D_187_34" file="objects/D_187/D_187_34.stl"/>
     </asset>
 </mujoco>

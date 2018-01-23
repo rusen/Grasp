@@ -9,6 +9,29 @@
         <mesh name="D_250_7" file="objects/D_250/D_250_7.stl"/>
         <mesh name="D_250_8" file="objects/D_250/D_250_8.stl"/>
         <mesh name="D_250_9" file="objects/D_250/D_250_9.stl"/>
-        <mesh name="D_250_visual" file="objects/D_250/D_250_full.stl"/>
+        <mesh name="D_250_10" file="objects/D_250/D_250_10.stl"/>
+        <mesh name="D_250_11" file="objects/D_250/D_250_11.stl"/>
+        <mesh name="D_250_12" file="objects/D_250/D_250_12.stl"/>
+        <mesh name="D_250_13" file="objects/D_250/D_250_13.stl"/>
+        <mesh name="D_250_14" file="objects/D_250/D_250_14.stl"/>
+        <mesh name="D_250_15" file="objects/D_250/D_250_15.stl"/>
+        <mesh name="D_250_16" file="objects/D_250/D_250_16.stl"/>
+        <mesh name="D_250_17" file="objects/D_250/D_250_17.stl"/>
+        <mesh name="D_250_18" file="objects/D_250/D_250_18.stl"/>
+        <mesh name="D_250_19" file="objects/D_250/D_250_19.stl"/>
+        <mesh name="D_250_20" file="objects/D_250/D_250_20.stl"/>
+        <mesh name="D_250_21" file="objects/D_250/D_250_21.stl"/>
+        <mesh name="D_250_22" file="objects/D_250/D_250_22.stl"/>
+        <mesh name="D_250_23" file="objects/D_250/D_250_23.stl"/>
+        <mesh name="D_250_24" file="objects/D_250/D_250_24.stl"/>
+        <mesh name="D_250_25" file="objects/D_250/D_250_25.stl"/>
+        <mesh name="D_250_26" file="objects/D_250/D_250_26.stl"/>
+        <mesh name="D_250_27" file="objects/D_250/D_250_27.stl"/>
+        <mesh name="D_250_28" file="objects/D_250/D_250_28.stl"/>
+        <mesh name="D_250_29" file="objects/D_250/D_250_29.stl"/>
+        <mesh name="D_250_30" file="objects/D_250/D_250_30.stl"/>
+        <mesh name="D_250_31" file="objects/D_250/D_250_31.stl"/>
+        <mesh name="D_250_32" file="objects/D_250/D_250_32.stl"/>
+        <mesh name="D_250_33" file="objects/D_250/D_250_33.stl"/>
     </asset>
 </mujoco>

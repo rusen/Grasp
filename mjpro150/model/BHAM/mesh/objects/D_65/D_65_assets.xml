@@ -20,30 +20,5 @@
         <mesh name="D_65_18" file="objects/D_65/D_65_18.stl"/>
         <mesh name="D_65_19" file="objects/D_65/D_65_19.stl"/>
         <mesh name="D_65_20" file="objects/D_65/D_65_20.stl"/>
-        <mesh name="D_65_21" file="objects/D_65/D_65_21.stl"/>
-        <mesh name="D_65_22" file="objects/D_65/D_65_22.stl"/>
-        <mesh name="D_65_23" file="objects/D_65/D_65_23.stl"/>
-        <mesh name="D_65_24" file="objects/D_65/D_65_24.stl"/>
-        <mesh name="D_65_25" file="objects/D_65/D_65_25.stl"/>
-        <mesh name="D_65_26" file="objects/D_65/D_65_26.stl"/>
-        <mesh name="D_65_27" file="objects/D_65/D_65_27.stl"/>
-        <mesh name="D_65_28" file="objects/D_65/D_65_28.stl"/>
-        <mesh name="D_65_29" file="objects/D_65/D_65_29.stl"/>
-        <mesh name="D_65_30" file="objects/D_65/D_65_30.stl"/>
-        <mesh name="D_65_31" file="objects/D_65/D_65_31.stl"/>
-        <mesh name="D_65_32" file="objects/D_65/D_65_32.stl"/>
-        <mesh name="D_65_33" file="objects/D_65/D_65_33.stl"/>
-        <mesh name="D_65_34" file="objects/D_65/D_65_34.stl"/>
-        <mesh name="D_65_35" file="objects/D_65/D_65_35.stl"/>
-        <mesh name="D_65_36" file="objects/D_65/D_65_36.stl"/>
-        <mesh name="D_65_37" file="objects/D_65/D_65_37.stl"/>
-        <mesh name="D_65_38" file="objects/D_65/D_65_38.stl"/>
-        <mesh name="D_65_39" file="objects/D_65/D_65_39.stl"/>
-        <mesh name="D_65_40" file="objects/D_65/D_65_40.stl"/>
-        <mesh name="D_65_41" file="objects/D_65/D_65_41.stl"/>
-        <mesh name="D_65_42" file="objects/D_65/D_65_42.stl"/>
-        <mesh name="D_65_43" file="objects/D_65/D_65_43.stl"/>
-        <mesh name="D_65_44" file="objects/D_65/D_65_44.stl"/>
-        <mesh name="D_65_visual" file="objects/D_65/D_65_full.stl"/>
     </asset>
 </mujoco>

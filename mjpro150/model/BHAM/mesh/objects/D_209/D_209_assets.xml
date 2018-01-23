@@ -2,51 +2,5 @@
     <asset>
         <mesh name="D_209_1" file="objects/D_209/D_209_1.stl"/>
         <mesh name="D_209_2" file="objects/D_209/D_209_2.stl"/>
-        <mesh name="D_209_3" file="objects/D_209/D_209_3.stl"/>
-        <mesh name="D_209_4" file="objects/D_209/D_209_4.stl"/>
-        <mesh name="D_209_5" file="objects/D_209/D_209_5.stl"/>
-        <mesh name="D_209_6" file="objects/D_209/D_209_6.stl"/>
-        <mesh name="D_209_7" file="objects/D_209/D_209_7.stl"/>
-        <mesh name="D_209_8" file="objects/D_209/D_209_8.stl"/>
-        <mesh name="D_209_9" file="objects/D_209/D_209_9.stl"/>
-        <mesh name="D_209_10" file="objects/D_209/D_209_10.stl"/>
-        <mesh name="D_209_11" file="objects/D_209/D_209_11.stl"/>
-        <mesh name="D_209_12" file="objects/D_209/D_209_12.stl"/>
-        <mesh name="D_209_13" file="objects/D_209/D_209_13.stl"/>
-        <mesh name="D_209_14" file="objects/D_209/D_209_14.stl"/>
-        <mesh name="D_209_15" file="objects/D_209/D_209_15.stl"/>
-        <mesh name="D_209_16" file="objects/D_209/D_209_16.stl"/>
-        <mesh name="D_209_17" file="objects/D_209/D_209_17.stl"/>
-        <mesh name="D_209_18" file="objects/D_209/D_209_18.stl"/>
-        <mesh name="D_209_19" file="objects/D_209/D_209_19.stl"/>
-        <mesh name="D_209_20" file="objects/D_209/D_209_20.stl"/>
-        <mesh name="D_209_21" file="objects/D_209/D_209_21.stl"/>
-        <mesh name="D_209_22" file="objects/D_209/D_209_22.stl"/>
-        <mesh name="D_209_23" file="objects/D_209/D_209_23.stl"/>
-        <mesh name="D_209_24" file="objects/D_209/D_209_24.stl"/>
-        <mesh name="D_209_25" file="objects/D_209/D_209_25.stl"/>
-        <mesh name="D_209_26" file="objects/D_209/D_209_26.stl"/>
-        <mesh name="D_209_27" file="objects/D_209/D_209_27.stl"/>
-        <mesh name="D_209_28" file="objects/D_209/D_209_28.stl"/>
-        <mesh name="D_209_29" file="objects/D_209/D_209_29.stl"/>
-        <mesh name="D_209_30" file="objects/D_209/D_209_30.stl"/>
-        <mesh name="D_209_31" file="objects/D_209/D_209_31.stl"/>
-        <mesh name="D_209_32" file="objects/D_209/D_209_32.stl"/>
-        <mesh name="D_209_33" file="objects/D_209/D_209_33.stl"/>
-        <mesh name="D_209_34" file="objects/D_209/D_209_34.stl"/>
-        <mesh name="D_209_35" file="objects/D_209/D_209_35.stl"/>
-        <mesh name="D_209_36" file="objects/D_209/D_209_36.stl"/>
-        <mesh name="D_209_37" file="objects/D_209/D_209_37.stl"/>
-        <mesh name="D_209_38" file="objects/D_209/D_209_38.stl"/>
-        <mesh name="D_209_39" file="objects/D_209/D_209_39.stl"/>
-        <mesh name="D_209_40" file="objects/D_209/D_209_40.stl"/>
-        <mesh name="D_209_41" file="objects/D_209/D_209_41.stl"/>
-        <mesh name="D_209_42" file="objects/D_209/D_209_42.stl"/>
-        <mesh name="D_209_43" file="objects/D_209/D_209_43.stl"/>
-        <mesh name="D_209_44" file="objects/D_209/D_209_44.stl"/>
-        <mesh name="D_209_45" file="objects/D_209/D_209_45.stl"/>
-        <mesh name="D_209_46" file="objects/D_209/D_209_46.stl"/>
-        <mesh name="D_209_47" file="objects/D_209/D_209_47.stl"/>
-        <mesh name="D_209_visual" file="objects/D_209/D_209_full.stl"/>
     </asset>
 </mujoco>

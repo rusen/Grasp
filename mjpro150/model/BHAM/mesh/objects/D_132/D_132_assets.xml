@@ -41,17 +41,5 @@
         <mesh name="D_132_39" file="objects/D_132/D_132_39.stl"/>
         <mesh name="D_132_40" file="objects/D_132/D_132_40.stl"/>
         <mesh name="D_132_41" file="objects/D_132/D_132_41.stl"/>
-        <mesh name="D_132_42" file="objects/D_132/D_132_42.stl"/>
-        <mesh name="D_132_43" file="objects/D_132/D_132_43.stl"/>
-        <mesh name="D_132_44" file="objects/D_132/D_132_44.stl"/>
-        <mesh name="D_132_45" file="objects/D_132/D_132_45.stl"/>
-        <mesh name="D_132_46" file="objects/D_132/D_132_46.stl"/>
-        <mesh name="D_132_47" file="objects/D_132/D_132_47.stl"/>
-        <mesh name="D_132_48" file="objects/D_132/D_132_48.stl"/>
-        <mesh name="D_132_49" file="objects/D_132/D_132_49.stl"/>
-        <mesh name="D_132_50" file="objects/D_132/D_132_50.stl"/>
-        <mesh name="D_132_51" file="objects/D_132/D_132_51.stl"/>
-        <mesh name="D_132_52" file="objects/D_132/D_132_52.stl"/>
-        <mesh name="D_132_visual" file="objects/D_132/D_132_full.stl"/>
     </asset>
 </mujoco>

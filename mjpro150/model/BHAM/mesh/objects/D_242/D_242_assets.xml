@@ -22,6 +22,18 @@
         <mesh name="D_242_20" file="objects/D_242/D_242_20.stl"/>
         <mesh name="D_242_21" file="objects/D_242/D_242_21.stl"/>
         <mesh name="D_242_22" file="objects/D_242/D_242_22.stl"/>
-        <mesh name="D_242_visual" file="objects/D_242/D_242_full.stl"/>
+        <mesh name="D_242_23" file="objects/D_242/D_242_23.stl"/>
+        <mesh name="D_242_24" file="objects/D_242/D_242_24.stl"/>
+        <mesh name="D_242_25" file="objects/D_242/D_242_25.stl"/>
+        <mesh name="D_242_26" file="objects/D_242/D_242_26.stl"/>
+        <mesh name="D_242_27" file="objects/D_242/D_242_27.stl"/>
+        <mesh name="D_242_28" file="objects/D_242/D_242_28.stl"/>
+        <mesh name="D_242_29" file="objects/D_242/D_242_29.stl"/>
+        <mesh name="D_242_30" file="objects/D_242/D_242_30.stl"/>
+        <mesh name="D_242_31" file="objects/D_242/D_242_31.stl"/>
+        <mesh name="D_242_32" file="objects/D_242/D_242_32.stl"/>
+        <mesh name="D_242_33" file="objects/D_242/D_242_33.stl"/>
+        <mesh name="D_242_34" file="objects/D_242/D_242_34.stl"/>
+        <mesh name="D_242_35" file="objects/D_242/D_242_35.stl"/>
     </asset>
 </mujoco>

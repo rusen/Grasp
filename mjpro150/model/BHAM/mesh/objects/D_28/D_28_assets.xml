@@ -29,6 +29,12 @@
         <mesh name="D_28_27" file="objects/D_28/D_28_27.stl"/>
         <mesh name="D_28_28" file="objects/D_28/D_28_28.stl"/>
         <mesh name="D_28_29" file="objects/D_28/D_28_29.stl"/>
-        <mesh name="D_28_visual" file="objects/D_28/D_28_full.stl"/>
+        <mesh name="D_28_30" file="objects/D_28/D_28_30.stl"/>
+        <mesh name="D_28_31" file="objects/D_28/D_28_31.stl"/>
+        <mesh name="D_28_32" file="objects/D_28/D_28_32.stl"/>
+        <mesh name="D_28_33" file="objects/D_28/D_28_33.stl"/>
+        <mesh name="D_28_34" file="objects/D_28/D_28_34.stl"/>
+        <mesh name="D_28_35" file="objects/D_28/D_28_35.stl"/>
+        <mesh name="D_28_36" file="objects/D_28/D_28_36.stl"/>
     </asset>
 </mujoco>

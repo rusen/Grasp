@@ -2,6 +2,22 @@
     <asset>
         <mesh name="D_5_1" file="objects/D_5/D_5_1.stl"/>
         <mesh name="D_5_2" file="objects/D_5/D_5_2.stl"/>
-        <mesh name="D_5_visual" file="objects/D_5/D_5_full.stl"/>
+        <mesh name="D_5_3" file="objects/D_5/D_5_3.stl"/>
+        <mesh name="D_5_4" file="objects/D_5/D_5_4.stl"/>
+        <mesh name="D_5_5" file="objects/D_5/D_5_5.stl"/>
+        <mesh name="D_5_6" file="objects/D_5/D_5_6.stl"/>
+        <mesh name="D_5_7" file="objects/D_5/D_5_7.stl"/>
+        <mesh name="D_5_8" file="objects/D_5/D_5_8.stl"/>
+        <mesh name="D_5_9" file="objects/D_5/D_5_9.stl"/>
+        <mesh name="D_5_10" file="objects/D_5/D_5_10.stl"/>
+        <mesh name="D_5_11" file="objects/D_5/D_5_11.stl"/>
+        <mesh name="D_5_12" file="objects/D_5/D_5_12.stl"/>
+        <mesh name="D_5_13" file="objects/D_5/D_5_13.stl"/>
+        <mesh name="D_5_14" file="objects/D_5/D_5_14.stl"/>
+        <mesh name="D_5_15" file="objects/D_5/D_5_15.stl"/>
+        <mesh name="D_5_16" file="objects/D_5/D_5_16.stl"/>
+        <mesh name="D_5_17" file="objects/D_5/D_5_17.stl"/>
+        <mesh name="D_5_18" file="objects/D_5/D_5_18.stl"/>
+        <mesh name="D_5_19" file="objects/D_5/D_5_19.stl"/>
     </asset>
 </mujoco>

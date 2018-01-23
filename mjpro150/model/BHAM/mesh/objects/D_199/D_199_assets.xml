@@ -5,30 +5,5 @@
         <mesh name="D_199_3" file="objects/D_199/D_199_3.stl"/>
         <mesh name="D_199_4" file="objects/D_199/D_199_4.stl"/>
         <mesh name="D_199_5" file="objects/D_199/D_199_5.stl"/>
-        <mesh name="D_199_6" file="objects/D_199/D_199_6.stl"/>
-        <mesh name="D_199_7" file="objects/D_199/D_199_7.stl"/>
-        <mesh name="D_199_8" file="objects/D_199/D_199_8.stl"/>
-        <mesh name="D_199_9" file="objects/D_199/D_199_9.stl"/>
-        <mesh name="D_199_10" file="objects/D_199/D_199_10.stl"/>
-        <mesh name="D_199_11" file="objects/D_199/D_199_11.stl"/>
-        <mesh name="D_199_12" file="objects/D_199/D_199_12.stl"/>
-        <mesh name="D_199_13" file="objects/D_199/D_199_13.stl"/>
-        <mesh name="D_199_14" file="objects/D_199/D_199_14.stl"/>
-        <mesh name="D_199_15" file="objects/D_199/D_199_15.stl"/>
-        <mesh name="D_199_16" file="objects/D_199/D_199_16.stl"/>
-        <mesh name="D_199_17" file="objects/D_199/D_199_17.stl"/>
-        <mesh name="D_199_18" file="objects/D_199/D_199_18.stl"/>
-        <mesh name="D_199_19" file="objects/D_199/D_199_19.stl"/>
-        <mesh name="D_199_20" file="objects/D_199/D_199_20.stl"/>
-        <mesh name="D_199_21" file="objects/D_199/D_199_21.stl"/>
-        <mesh name="D_199_22" file="objects/D_199/D_199_22.stl"/>
-        <mesh name="D_199_23" file="objects/D_199/D_199_23.stl"/>
-        <mesh name="D_199_24" file="objects/D_199/D_199_24.stl"/>
-        <mesh name="D_199_25" file="objects/D_199/D_199_25.stl"/>
-        <mesh name="D_199_26" file="objects/D_199/D_199_26.stl"/>
-        <mesh name="D_199_27" file="objects/D_199/D_199_27.stl"/>
-        <mesh name="D_199_28" file="objects/D_199/D_199_28.stl"/>
-        <mesh name="D_199_29" file="objects/D_199/D_199_29.stl"/>
-        <mesh name="D_199_visual" file="objects/D_199/D_199_full.stl"/>
     </asset>
 </mujoco>

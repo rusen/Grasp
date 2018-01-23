@@ -1,0 +1,8 @@
+<mujoco>
+    <worldbody>
+        <body name="object" pos="0 0 0" euler="">
+            <geom type="mesh" group="1" mesh="D_293_1" condim="6" mass="1" friction="" solimp="0.99 0.999 0.001" margin="0.0005" solref="0.008 1.0"/>
+            <joint class="free"/>
+        </body>
+    </worldbody>
+</mujoco>

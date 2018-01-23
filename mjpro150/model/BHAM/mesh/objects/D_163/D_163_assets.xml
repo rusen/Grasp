@@ -30,8 +30,5 @@
         <mesh name="D_163_28" file="objects/D_163/D_163_28.stl"/>
         <mesh name="D_163_29" file="objects/D_163/D_163_29.stl"/>
         <mesh name="D_163_30" file="objects/D_163/D_163_30.stl"/>
-        <mesh name="D_163_31" file="objects/D_163/D_163_31.stl"/>
-        <mesh name="D_163_32" file="objects/D_163/D_163_32.stl"/>
-        <mesh name="D_163_visual" file="objects/D_163/D_163_full.stl"/>
     </asset>
 </mujoco>

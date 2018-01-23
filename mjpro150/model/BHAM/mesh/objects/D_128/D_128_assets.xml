@@ -73,26 +73,5 @@
         <mesh name="D_128_71" file="objects/D_128/D_128_71.stl"/>
         <mesh name="D_128_72" file="objects/D_128/D_128_72.stl"/>
         <mesh name="D_128_73" file="objects/D_128/D_128_73.stl"/>
-        <mesh name="D_128_74" file="objects/D_128/D_128_74.stl"/>
-        <mesh name="D_128_75" file="objects/D_128/D_128_75.stl"/>
-        <mesh name="D_128_76" file="objects/D_128/D_128_76.stl"/>
-        <mesh name="D_128_77" file="objects/D_128/D_128_77.stl"/>
-        <mesh name="D_128_78" file="objects/D_128/D_128_78.stl"/>
-        <mesh name="D_128_79" file="objects/D_128/D_128_79.stl"/>
-        <mesh name="D_128_80" file="objects/D_128/D_128_80.stl"/>
-        <mesh name="D_128_81" file="objects/D_128/D_128_81.stl"/>
-        <mesh name="D_128_82" file="objects/D_128/D_128_82.stl"/>
-        <mesh name="D_128_83" file="objects/D_128/D_128_83.stl"/>
-        <mesh name="D_128_84" file="objects/D_128/D_128_84.stl"/>
-        <mesh name="D_128_85" file="objects/D_128/D_128_85.stl"/>
-        <mesh name="D_128_86" file="objects/D_128/D_128_86.stl"/>
-        <mesh name="D_128_87" file="objects/D_128/D_128_87.stl"/>
-        <mesh name="D_128_88" file="objects/D_128/D_128_88.stl"/>
-        <mesh name="D_128_89" file="objects/D_128/D_128_89.stl"/>
-        <mesh name="D_128_90" file="objects/D_128/D_128_90.stl"/>
-        <mesh name="D_128_91" file="objects/D_128/D_128_91.stl"/>
-        <mesh name="D_128_92" file="objects/D_128/D_128_92.stl"/>
-        <mesh name="D_128_93" file="objects/D_128/D_128_93.stl"/>
-        <mesh name="D_128_visual" file="objects/D_128/D_128_full.stl"/>
     </asset>
 </mujoco>

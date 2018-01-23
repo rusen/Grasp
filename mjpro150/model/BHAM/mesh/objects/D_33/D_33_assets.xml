@@ -60,6 +60,36 @@
         <mesh name="D_33_58" file="objects/D_33/D_33_58.stl"/>
         <mesh name="D_33_59" file="objects/D_33/D_33_59.stl"/>
         <mesh name="D_33_60" file="objects/D_33/D_33_60.stl"/>
-        <mesh name="D_33_visual" file="objects/D_33/D_33_full.stl"/>
+        <mesh name="D_33_61" file="objects/D_33/D_33_61.stl"/>
+        <mesh name="D_33_62" file="objects/D_33/D_33_62.stl"/>
+        <mesh name="D_33_63" file="objects/D_33/D_33_63.stl"/>
+        <mesh name="D_33_64" file="objects/D_33/D_33_64.stl"/>
+        <mesh name="D_33_65" file="objects/D_33/D_33_65.stl"/>
+        <mesh name="D_33_66" file="objects/D_33/D_33_66.stl"/>
+        <mesh name="D_33_67" file="objects/D_33/D_33_67.stl"/>
+        <mesh name="D_33_68" file="objects/D_33/D_33_68.stl"/>
+        <mesh name="D_33_69" file="objects/D_33/D_33_69.stl"/>
+        <mesh name="D_33_70" file="objects/D_33/D_33_70.stl"/>
+        <mesh name="D_33_71" file="objects/D_33/D_33_71.stl"/>
+        <mesh name="D_33_72" file="objects/D_33/D_33_72.stl"/>
+        <mesh name="D_33_73" file="objects/D_33/D_33_73.stl"/>
+        <mesh name="D_33_74" file="objects/D_33/D_33_74.stl"/>
+        <mesh name="D_33_75" file="objects/D_33/D_33_75.stl"/>
+        <mesh name="D_33_76" file="objects/D_33/D_33_76.stl"/>
+        <mesh name="D_33_77" file="objects/D_33/D_33_77.stl"/>
+        <mesh name="D_33_78" file="objects/D_33/D_33_78.stl"/>
+        <mesh name="D_33_79" file="objects/D_33/D_33_79.stl"/>
+        <mesh name="D_33_80" file="objects/D_33/D_33_80.stl"/>
+        <mesh name="D_33_81" file="objects/D_33/D_33_81.stl"/>
+        <mesh name="D_33_82" file="objects/D_33/D_33_82.stl"/>
+        <mesh name="D_33_83" file="objects/D_33/D_33_83.stl"/>
+        <mesh name="D_33_84" file="objects/D_33/D_33_84.stl"/>
+        <mesh name="D_33_85" file="objects/D_33/D_33_85.stl"/>
+        <mesh name="D_33_86" file="objects/D_33/D_33_86.stl"/>
+        <mesh name="D_33_87" file="objects/D_33/D_33_87.stl"/>
+        <mesh name="D_33_88" file="objects/D_33/D_33_88.stl"/>
+        <mesh name="D_33_89" file="objects/D_33/D_33_89.stl"/>
+        <mesh name="D_33_90" file="objects/D_33/D_33_90.stl"/>
+        <mesh name="D_33_91" file="objects/D_33/D_33_91.stl"/>
     </asset>
 </mujoco>

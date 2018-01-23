@@ -39,6 +39,20 @@
         <mesh name="D_2_37" file="objects/D_2/D_2_37.stl"/>
         <mesh name="D_2_38" file="objects/D_2/D_2_38.stl"/>
         <mesh name="D_2_39" file="objects/D_2/D_2_39.stl"/>
-        <mesh name="D_2_visual" file="objects/D_2/D_2_full.stl"/>
+        <mesh name="D_2_40" file="objects/D_2/D_2_40.stl"/>
+        <mesh name="D_2_41" file="objects/D_2/D_2_41.stl"/>
+        <mesh name="D_2_42" file="objects/D_2/D_2_42.stl"/>
+        <mesh name="D_2_43" file="objects/D_2/D_2_43.stl"/>
+        <mesh name="D_2_44" file="objects/D_2/D_2_44.stl"/>
+        <mesh name="D_2_45" file="objects/D_2/D_2_45.stl"/>
+        <mesh name="D_2_46" file="objects/D_2/D_2_46.stl"/>
+        <mesh name="D_2_47" file="objects/D_2/D_2_47.stl"/>
+        <mesh name="D_2_48" file="objects/D_2/D_2_48.stl"/>
+        <mesh name="D_2_49" file="objects/D_2/D_2_49.stl"/>
+        <mesh name="D_2_50" file="objects/D_2/D_2_50.stl"/>
+        <mesh name="D_2_51" file="objects/D_2/D_2_51.stl"/>
+        <mesh name="D_2_52" file="objects/D_2/D_2_52.stl"/>
+        <mesh name="D_2_53" file="objects/D_2/D_2_53.stl"/>
+        <mesh name="D_2_54" file="objects/D_2/D_2_54.stl"/>
     </asset>
 </mujoco>

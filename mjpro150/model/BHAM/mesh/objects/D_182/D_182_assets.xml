@@ -62,41 +62,5 @@
         <mesh name="D_182_60" file="objects/D_182/D_182_60.stl"/>
         <mesh name="D_182_61" file="objects/D_182/D_182_61.stl"/>
         <mesh name="D_182_62" file="objects/D_182/D_182_62.stl"/>
-        <mesh name="D_182_63" file="objects/D_182/D_182_63.stl"/>
-        <mesh name="D_182_64" file="objects/D_182/D_182_64.stl"/>
-        <mesh name="D_182_65" file="objects/D_182/D_182_65.stl"/>
-        <mesh name="D_182_66" file="objects/D_182/D_182_66.stl"/>
-        <mesh name="D_182_67" file="objects/D_182/D_182_67.stl"/>
-        <mesh name="D_182_68" file="objects/D_182/D_182_68.stl"/>
-        <mesh name="D_182_69" file="objects/D_182/D_182_69.stl"/>
-        <mesh name="D_182_70" file="objects/D_182/D_182_70.stl"/>
-        <mesh name="D_182_71" file="objects/D_182/D_182_71.stl"/>
-        <mesh name="D_182_72" file="objects/D_182/D_182_72.stl"/>
-        <mesh name="D_182_73" file="objects/D_182/D_182_73.stl"/>
-        <mesh name="D_182_74" file="objects/D_182/D_182_74.stl"/>
-        <mesh name="D_182_75" file="objects/D_182/D_182_75.stl"/>
-        <mesh name="D_182_76" file="objects/D_182/D_182_76.stl"/>
-        <mesh name="D_182_77" file="objects/D_182/D_182_77.stl"/>
-        <mesh name="D_182_78" file="objects/D_182/D_182_78.stl"/>
-        <mesh name="D_182_79" file="objects/D_182/D_182_79.stl"/>
-        <mesh name="D_182_80" file="objects/D_182/D_182_80.stl"/>
-        <mesh name="D_182_81" file="objects/D_182/D_182_81.stl"/>
-        <mesh name="D_182_82" file="objects/D_182/D_182_82.stl"/>
-        <mesh name="D_182_83" file="objects/D_182/D_182_83.stl"/>
-        <mesh name="D_182_84" file="objects/D_182/D_182_84.stl"/>
-        <mesh name="D_182_85" file="objects/D_182/D_182_85.stl"/>
-        <mesh name="D_182_86" file="objects/D_182/D_182_86.stl"/>
-        <mesh name="D_182_87" file="objects/D_182/D_182_87.stl"/>
-        <mesh name="D_182_88" file="objects/D_182/D_182_88.stl"/>
-        <mesh name="D_182_89" file="objects/D_182/D_182_89.stl"/>
-        <mesh name="D_182_90" file="objects/D_182/D_182_90.stl"/>
-        <mesh name="D_182_91" file="objects/D_182/D_182_91.stl"/>
-        <mesh name="D_182_92" file="objects/D_182/D_182_92.stl"/>
-        <mesh name="D_182_93" file="objects/D_182/D_182_93.stl"/>
-        <mesh name="D_182_94" file="objects/D_182/D_182_94.stl"/>
-        <mesh name="D_182_95" file="objects/D_182/D_182_95.stl"/>
-        <mesh name="D_182_96" file="objects/D_182/D_182_96.stl"/>
-        <mesh name="D_182_97" file="objects/D_182/D_182_97.stl"/>
-        <mesh name="D_182_visual" file="objects/D_182/D_182_full.stl"/>
     </asset>
 </mujoco>

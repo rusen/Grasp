@@ -10,39 +10,5 @@
         <mesh name="D_23_8" file="objects/D_23/D_23_8.stl"/>
         <mesh name="D_23_9" file="objects/D_23/D_23_9.stl"/>
         <mesh name="D_23_10" file="objects/D_23/D_23_10.stl"/>
-        <mesh name="D_23_11" file="objects/D_23/D_23_11.stl"/>
-        <mesh name="D_23_12" file="objects/D_23/D_23_12.stl"/>
-        <mesh name="D_23_13" file="objects/D_23/D_23_13.stl"/>
-        <mesh name="D_23_14" file="objects/D_23/D_23_14.stl"/>
-        <mesh name="D_23_15" file="objects/D_23/D_23_15.stl"/>
-        <mesh name="D_23_16" file="objects/D_23/D_23_16.stl"/>
-        <mesh name="D_23_17" file="objects/D_23/D_23_17.stl"/>
-        <mesh name="D_23_18" file="objects/D_23/D_23_18.stl"/>
-        <mesh name="D_23_19" file="objects/D_23/D_23_19.stl"/>
-        <mesh name="D_23_20" file="objects/D_23/D_23_20.stl"/>
-        <mesh name="D_23_21" file="objects/D_23/D_23_21.stl"/>
-        <mesh name="D_23_22" file="objects/D_23/D_23_22.stl"/>
-        <mesh name="D_23_23" file="objects/D_23/D_23_23.stl"/>
-        <mesh name="D_23_24" file="objects/D_23/D_23_24.stl"/>
-        <mesh name="D_23_25" file="objects/D_23/D_23_25.stl"/>
-        <mesh name="D_23_26" file="objects/D_23/D_23_26.stl"/>
-        <mesh name="D_23_27" file="objects/D_23/D_23_27.stl"/>
-        <mesh name="D_23_28" file="objects/D_23/D_23_28.stl"/>
-        <mesh name="D_23_29" file="objects/D_23/D_23_29.stl"/>
-        <mesh name="D_23_30" file="objects/D_23/D_23_30.stl"/>
-        <mesh name="D_23_31" file="objects/D_23/D_23_31.stl"/>
-        <mesh name="D_23_32" file="objects/D_23/D_23_32.stl"/>
-        <mesh name="D_23_33" file="objects/D_23/D_23_33.stl"/>
-        <mesh name="D_23_34" file="objects/D_23/D_23_34.stl"/>
-        <mesh name="D_23_35" file="objects/D_23/D_23_35.stl"/>
-        <mesh name="D_23_36" file="objects/D_23/D_23_36.stl"/>
-        <mesh name="D_23_37" file="objects/D_23/D_23_37.stl"/>
-        <mesh name="D_23_38" file="objects/D_23/D_23_38.stl"/>
-        <mesh name="D_23_39" file="objects/D_23/D_23_39.stl"/>
-        <mesh name="D_23_40" file="objects/D_23/D_23_40.stl"/>
-        <mesh name="D_23_41" file="objects/D_23/D_23_41.stl"/>
-        <mesh name="D_23_42" file="objects/D_23/D_23_42.stl"/>
-        <mesh name="D_23_43" file="objects/D_23/D_23_43.stl"/>
-        <mesh name="D_23_visual" file="objects/D_23/D_23_full.stl"/>
     </asset>
 </mujoco>

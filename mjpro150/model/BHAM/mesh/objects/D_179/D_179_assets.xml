@@ -93,7 +93,5 @@
         <mesh name="D_179_91" file="objects/D_179/D_179_91.stl"/>
         <mesh name="D_179_92" file="objects/D_179/D_179_92.stl"/>
         <mesh name="D_179_93" file="objects/D_179/D_179_93.stl"/>
-        <mesh name="D_179_94" file="objects/D_179/D_179_94.stl"/>
-        <mesh name="D_179_visual" file="objects/D_179/D_179_full.stl"/>
     </asset>
 </mujoco>

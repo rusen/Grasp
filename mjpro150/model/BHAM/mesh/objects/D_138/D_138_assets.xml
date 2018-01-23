@@ -54,6 +54,40 @@
         <mesh name="D_138_52" file="objects/D_138/D_138_52.stl"/>
         <mesh name="D_138_53" file="objects/D_138/D_138_53.stl"/>
         <mesh name="D_138_54" file="objects/D_138/D_138_54.stl"/>
-        <mesh name="D_138_visual" file="objects/D_138/D_138_full.stl"/>
+        <mesh name="D_138_55" file="objects/D_138/D_138_55.stl"/>
+        <mesh name="D_138_56" file="objects/D_138/D_138_56.stl"/>
+        <mesh name="D_138_57" file="objects/D_138/D_138_57.stl"/>
+        <mesh name="D_138_58" file="objects/D_138/D_138_58.stl"/>
+        <mesh name="D_138_59" file="objects/D_138/D_138_59.stl"/>
+        <mesh name="D_138_60" file="objects/D_138/D_138_60.stl"/>
+        <mesh name="D_138_61" file="objects/D_138/D_138_61.stl"/>
+        <mesh name="D_138_62" file="objects/D_138/D_138_62.stl"/>
+        <mesh name="D_138_63" file="objects/D_138/D_138_63.stl"/>
+        <mesh name="D_138_64" file="objects/D_138/D_138_64.stl"/>
+        <mesh name="D_138_65" file="objects/D_138/D_138_65.stl"/>
+        <mesh name="D_138_66" file="objects/D_138/D_138_66.stl"/>
+        <mesh name="D_138_67" file="objects/D_138/D_138_67.stl"/>
+        <mesh name="D_138_68" file="objects/D_138/D_138_68.stl"/>
+        <mesh name="D_138_69" file="objects/D_138/D_138_69.stl"/>
+        <mesh name="D_138_70" file="objects/D_138/D_138_70.stl"/>
+        <mesh name="D_138_71" file="objects/D_138/D_138_71.stl"/>
+        <mesh name="D_138_72" file="objects/D_138/D_138_72.stl"/>
+        <mesh name="D_138_73" file="objects/D_138/D_138_73.stl"/>
+        <mesh name="D_138_74" file="objects/D_138/D_138_74.stl"/>
+        <mesh name="D_138_75" file="objects/D_138/D_138_75.stl"/>
+        <mesh name="D_138_76" file="objects/D_138/D_138_76.stl"/>
+        <mesh name="D_138_77" file="objects/D_138/D_138_77.stl"/>
+        <mesh name="D_138_78" file="objects/D_138/D_138_78.stl"/>
+        <mesh name="D_138_79" file="objects/D_138/D_138_79.stl"/>
+        <mesh name="D_138_80" file="objects/D_138/D_138_80.stl"/>
+        <mesh name="D_138_81" file="objects/D_138/D_138_81.stl"/>
+        <mesh name="D_138_82" file="objects/D_138/D_138_82.stl"/>
+        <mesh name="D_138_83" file="objects/D_138/D_138_83.stl"/>
+        <mesh name="D_138_84" file="objects/D_138/D_138_84.stl"/>
+        <mesh name="D_138_85" file="objects/D_138/D_138_85.stl"/>
+        <mesh name="D_138_86" file="objects/D_138/D_138_86.stl"/>
+        <mesh name="D_138_87" file="objects/D_138/D_138_87.stl"/>
+        <mesh name="D_138_88" file="objects/D_138/D_138_88.stl"/>
+        <mesh name="D_138_89" file="objects/D_138/D_138_89.stl"/>
     </asset>
 </mujoco>

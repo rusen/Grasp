@@ -21,6 +21,9 @@
         <mesh name="D_55_19" file="objects/D_55/D_55_19.stl"/>
         <mesh name="D_55_20" file="objects/D_55/D_55_20.stl"/>
         <mesh name="D_55_21" file="objects/D_55/D_55_21.stl"/>
-        <mesh name="D_55_visual" file="objects/D_55/D_55_full.stl"/>
+        <mesh name="D_55_22" file="objects/D_55/D_55_22.stl"/>
+        <mesh name="D_55_23" file="objects/D_55/D_55_23.stl"/>
+        <mesh name="D_55_24" file="objects/D_55/D_55_24.stl"/>
+        <mesh name="D_55_25" file="objects/D_55/D_55_25.stl"/>
     </asset>
 </mujoco>

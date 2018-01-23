@@ -6,6 +6,50 @@
         <mesh name="D_122_4" file="objects/D_122/D_122_4.stl"/>
         <mesh name="D_122_5" file="objects/D_122/D_122_5.stl"/>
         <mesh name="D_122_6" file="objects/D_122/D_122_6.stl"/>
-        <mesh name="D_122_visual" file="objects/D_122/D_122_full.stl"/>
+        <mesh name="D_122_7" file="objects/D_122/D_122_7.stl"/>
+        <mesh name="D_122_8" file="objects/D_122/D_122_8.stl"/>
+        <mesh name="D_122_9" file="objects/D_122/D_122_9.stl"/>
+        <mesh name="D_122_10" file="objects/D_122/D_122_10.stl"/>
+        <mesh name="D_122_11" file="objects/D_122/D_122_11.stl"/>
+        <mesh name="D_122_12" file="objects/D_122/D_122_12.stl"/>
+        <mesh name="D_122_13" file="objects/D_122/D_122_13.stl"/>
+        <mesh name="D_122_14" file="objects/D_122/D_122_14.stl"/>
+        <mesh name="D_122_15" file="objects/D_122/D_122_15.stl"/>
+        <mesh name="D_122_16" file="objects/D_122/D_122_16.stl"/>
+        <mesh name="D_122_17" file="objects/D_122/D_122_17.stl"/>
+        <mesh name="D_122_18" file="objects/D_122/D_122_18.stl"/>
+        <mesh name="D_122_19" file="objects/D_122/D_122_19.stl"/>
+        <mesh name="D_122_20" file="objects/D_122/D_122_20.stl"/>
+        <mesh name="D_122_21" file="objects/D_122/D_122_21.stl"/>
+        <mesh name="D_122_22" file="objects/D_122/D_122_22.stl"/>
+        <mesh name="D_122_23" file="objects/D_122/D_122_23.stl"/>
+        <mesh name="D_122_24" file="objects/D_122/D_122_24.stl"/>
+        <mesh name="D_122_25" file="objects/D_122/D_122_25.stl"/>
+        <mesh name="D_122_26" file="objects/D_122/D_122_26.stl"/>
+        <mesh name="D_122_27" file="objects/D_122/D_122_27.stl"/>
+        <mesh name="D_122_28" file="objects/D_122/D_122_28.stl"/>
+        <mesh name="D_122_29" file="objects/D_122/D_122_29.stl"/>
+        <mesh name="D_122_30" file="objects/D_122/D_122_30.stl"/>
+        <mesh name="D_122_31" file="objects/D_122/D_122_31.stl"/>
+        <mesh name="D_122_32" file="objects/D_122/D_122_32.stl"/>
+        <mesh name="D_122_33" file="objects/D_122/D_122_33.stl"/>
+        <mesh name="D_122_34" file="objects/D_122/D_122_34.stl"/>
+        <mesh name="D_122_35" file="objects/D_122/D_122_35.stl"/>
+        <mesh name="D_122_36" file="objects/D_122/D_122_36.stl"/>
+        <mesh name="D_122_37" file="objects/D_122/D_122_37.stl"/>
+        <mesh name="D_122_38" file="objects/D_122/D_122_38.stl"/>
+        <mesh name="D_122_39" file="objects/D_122/D_122_39.stl"/>
+        <mesh name="D_122_40" file="objects/D_122/D_122_40.stl"/>
+        <mesh name="D_122_41" file="objects/D_122/D_122_41.stl"/>
+        <mesh name="D_122_42" file="objects/D_122/D_122_42.stl"/>
+        <mesh name="D_122_43" file="objects/D_122/D_122_43.stl"/>
+        <mesh name="D_122_44" file="objects/D_122/D_122_44.stl"/>
+        <mesh name="D_122_45" file="objects/D_122/D_122_45.stl"/>
+        <mesh name="D_122_46" file="objects/D_122/D_122_46.stl"/>
+        <mesh name="D_122_47" file="objects/D_122/D_122_47.stl"/>
+        <mesh name="D_122_48" file="objects/D_122/D_122_48.stl"/>
+        <mesh name="D_122_49" file="objects/D_122/D_122_49.stl"/>
+        <mesh name="D_122_50" file="objects/D_122/D_122_50.stl"/>
+        <mesh name="D_122_51" file="objects/D_122/D_122_51.stl"/>
     </asset>
 </mujoco>

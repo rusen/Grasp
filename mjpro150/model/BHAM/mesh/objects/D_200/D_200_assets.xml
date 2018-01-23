@@ -41,6 +41,9 @@
         <mesh name="D_200_39" file="objects/D_200/D_200_39.stl"/>
         <mesh name="D_200_40" file="objects/D_200/D_200_40.stl"/>
         <mesh name="D_200_41" file="objects/D_200/D_200_41.stl"/>
-        <mesh name="D_200_visual" file="objects/D_200/D_200_full.stl"/>
+        <mesh name="D_200_42" file="objects/D_200/D_200_42.stl"/>
+        <mesh name="D_200_43" file="objects/D_200/D_200_43.stl"/>
+        <mesh name="D_200_44" file="objects/D_200/D_200_44.stl"/>
+        <mesh name="D_200_45" file="objects/D_200/D_200_45.stl"/>
     </asset>
 </mujoco>

@@ -14,15 +14,5 @@
         <mesh name="D_133_12" file="objects/D_133/D_133_12.stl"/>
         <mesh name="D_133_13" file="objects/D_133/D_133_13.stl"/>
         <mesh name="D_133_14" file="objects/D_133/D_133_14.stl"/>
-        <mesh name="D_133_15" file="objects/D_133/D_133_15.stl"/>
-        <mesh name="D_133_16" file="objects/D_133/D_133_16.stl"/>
-        <mesh name="D_133_17" file="objects/D_133/D_133_17.stl"/>
-        <mesh name="D_133_18" file="objects/D_133/D_133_18.stl"/>
-        <mesh name="D_133_19" file="objects/D_133/D_133_19.stl"/>
-        <mesh name="D_133_20" file="objects/D_133/D_133_20.stl"/>
-        <mesh name="D_133_21" file="objects/D_133/D_133_21.stl"/>
-        <mesh name="D_133_22" file="objects/D_133/D_133_22.stl"/>
-        <mesh name="D_133_23" file="objects/D_133/D_133_23.stl"/>
-        <mesh name="D_133_visual" file="objects/D_133/D_133_full.stl"/>
     </asset>
 </mujoco>

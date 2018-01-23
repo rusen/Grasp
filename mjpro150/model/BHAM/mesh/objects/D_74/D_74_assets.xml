@@ -4,50 +4,5 @@
         <mesh name="D_74_2" file="objects/D_74/D_74_2.stl"/>
         <mesh name="D_74_3" file="objects/D_74/D_74_3.stl"/>
         <mesh name="D_74_4" file="objects/D_74/D_74_4.stl"/>
-        <mesh name="D_74_5" file="objects/D_74/D_74_5.stl"/>
-        <mesh name="D_74_6" file="objects/D_74/D_74_6.stl"/>
-        <mesh name="D_74_7" file="objects/D_74/D_74_7.stl"/>
-        <mesh name="D_74_8" file="objects/D_74/D_74_8.stl"/>
-        <mesh name="D_74_9" file="objects/D_74/D_74_9.stl"/>
-        <mesh name="D_74_10" file="objects/D_74/D_74_10.stl"/>
-        <mesh name="D_74_11" file="objects/D_74/D_74_11.stl"/>
-        <mesh name="D_74_12" file="objects/D_74/D_74_12.stl"/>
-        <mesh name="D_74_13" file="objects/D_74/D_74_13.stl"/>
-        <mesh name="D_74_14" file="objects/D_74/D_74_14.stl"/>
-        <mesh name="D_74_15" file="objects/D_74/D_74_15.stl"/>
-        <mesh name="D_74_16" file="objects/D_74/D_74_16.stl"/>
-        <mesh name="D_74_17" file="objects/D_74/D_74_17.stl"/>
-        <mesh name="D_74_18" file="objects/D_74/D_74_18.stl"/>
-        <mesh name="D_74_19" file="objects/D_74/D_74_19.stl"/>
-        <mesh name="D_74_20" file="objects/D_74/D_74_20.stl"/>
-        <mesh name="D_74_21" file="objects/D_74/D_74_21.stl"/>
-        <mesh name="D_74_22" file="objects/D_74/D_74_22.stl"/>
-        <mesh name="D_74_23" file="objects/D_74/D_74_23.stl"/>
-        <mesh name="D_74_24" file="objects/D_74/D_74_24.stl"/>
-        <mesh name="D_74_25" file="objects/D_74/D_74_25.stl"/>
-        <mesh name="D_74_26" file="objects/D_74/D_74_26.stl"/>
-        <mesh name="D_74_27" file="objects/D_74/D_74_27.stl"/>
-        <mesh name="D_74_28" file="objects/D_74/D_74_28.stl"/>
-        <mesh name="D_74_29" file="objects/D_74/D_74_29.stl"/>
-        <mesh name="D_74_30" file="objects/D_74/D_74_30.stl"/>
-        <mesh name="D_74_31" file="objects/D_74/D_74_31.stl"/>
-        <mesh name="D_74_32" file="objects/D_74/D_74_32.stl"/>
-        <mesh name="D_74_33" file="objects/D_74/D_74_33.stl"/>
-        <mesh name="D_74_34" file="objects/D_74/D_74_34.stl"/>
-        <mesh name="D_74_35" file="objects/D_74/D_74_35.stl"/>
-        <mesh name="D_74_36" file="objects/D_74/D_74_36.stl"/>
-        <mesh name="D_74_37" file="objects/D_74/D_74_37.stl"/>
-        <mesh name="D_74_38" file="objects/D_74/D_74_38.stl"/>
-        <mesh name="D_74_39" file="objects/D_74/D_74_39.stl"/>
-        <mesh name="D_74_40" file="objects/D_74/D_74_40.stl"/>
-        <mesh name="D_74_41" file="objects/D_74/D_74_41.stl"/>
-        <mesh name="D_74_42" file="objects/D_74/D_74_42.stl"/>
-        <mesh name="D_74_43" file="objects/D_74/D_74_43.stl"/>
-        <mesh name="D_74_44" file="objects/D_74/D_74_44.stl"/>
-        <mesh name="D_74_45" file="objects/D_74/D_74_45.stl"/>
-        <mesh name="D_74_46" file="objects/D_74/D_74_46.stl"/>
-        <mesh name="D_74_47" file="objects/D_74/D_74_47.stl"/>
-        <mesh name="D_74_48" file="objects/D_74/D_74_48.stl"/>
-        <mesh name="D_74_visual" file="objects/D_74/D_74_full.stl"/>
     </asset>
 </mujoco>

@@ -22,50 +22,5 @@
         <mesh name="D_73_20" file="objects/D_73/D_73_20.stl"/>
         <mesh name="D_73_21" file="objects/D_73/D_73_21.stl"/>
         <mesh name="D_73_22" file="objects/D_73/D_73_22.stl"/>
-        <mesh name="D_73_23" file="objects/D_73/D_73_23.stl"/>
-        <mesh name="D_73_24" file="objects/D_73/D_73_24.stl"/>
-        <mesh name="D_73_25" file="objects/D_73/D_73_25.stl"/>
-        <mesh name="D_73_26" file="objects/D_73/D_73_26.stl"/>
-        <mesh name="D_73_27" file="objects/D_73/D_73_27.stl"/>
-        <mesh name="D_73_28" file="objects/D_73/D_73_28.stl"/>
-        <mesh name="D_73_29" file="objects/D_73/D_73_29.stl"/>
-        <mesh name="D_73_30" file="objects/D_73/D_73_30.stl"/>
-        <mesh name="D_73_31" file="objects/D_73/D_73_31.stl"/>
-        <mesh name="D_73_32" file="objects/D_73/D_73_32.stl"/>
-        <mesh name="D_73_33" file="objects/D_73/D_73_33.stl"/>
-        <mesh name="D_73_34" file="objects/D_73/D_73_34.stl"/>
-        <mesh name="D_73_35" file="objects/D_73/D_73_35.stl"/>
-        <mesh name="D_73_36" file="objects/D_73/D_73_36.stl"/>
-        <mesh name="D_73_37" file="objects/D_73/D_73_37.stl"/>
-        <mesh name="D_73_38" file="objects/D_73/D_73_38.stl"/>
-        <mesh name="D_73_39" file="objects/D_73/D_73_39.stl"/>
-        <mesh name="D_73_40" file="objects/D_73/D_73_40.stl"/>
-        <mesh name="D_73_41" file="objects/D_73/D_73_41.stl"/>
-        <mesh name="D_73_42" file="objects/D_73/D_73_42.stl"/>
-        <mesh name="D_73_43" file="objects/D_73/D_73_43.stl"/>
-        <mesh name="D_73_44" file="objects/D_73/D_73_44.stl"/>
-        <mesh name="D_73_45" file="objects/D_73/D_73_45.stl"/>
-        <mesh name="D_73_46" file="objects/D_73/D_73_46.stl"/>
-        <mesh name="D_73_47" file="objects/D_73/D_73_47.stl"/>
-        <mesh name="D_73_48" file="objects/D_73/D_73_48.stl"/>
-        <mesh name="D_73_49" file="objects/D_73/D_73_49.stl"/>
-        <mesh name="D_73_50" file="objects/D_73/D_73_50.stl"/>
-        <mesh name="D_73_51" file="objects/D_73/D_73_51.stl"/>
-        <mesh name="D_73_52" file="objects/D_73/D_73_52.stl"/>
-        <mesh name="D_73_53" file="objects/D_73/D_73_53.stl"/>
-        <mesh name="D_73_54" file="objects/D_73/D_73_54.stl"/>
-        <mesh name="D_73_55" file="objects/D_73/D_73_55.stl"/>
-        <mesh name="D_73_56" file="objects/D_73/D_73_56.stl"/>
-        <mesh name="D_73_57" file="objects/D_73/D_73_57.stl"/>
-        <mesh name="D_73_58" file="objects/D_73/D_73_58.stl"/>
-        <mesh name="D_73_59" file="objects/D_73/D_73_59.stl"/>
-        <mesh name="D_73_60" file="objects/D_73/D_73_60.stl"/>
-        <mesh name="D_73_61" file="objects/D_73/D_73_61.stl"/>
-        <mesh name="D_73_62" file="objects/D_73/D_73_62.stl"/>
-        <mesh name="D_73_63" file="objects/D_73/D_73_63.stl"/>
-        <mesh name="D_73_64" file="objects/D_73/D_73_64.stl"/>
-        <mesh name="D_73_65" file="objects/D_73/D_73_65.stl"/>
-        <mesh name="D_73_66" file="objects/D_73/D_73_66.stl"/>
-        <mesh name="D_73_visual" file="objects/D_73/D_73_full.stl"/>
     </asset>
 </mujoco>

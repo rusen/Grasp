@@ -31,24 +31,5 @@
         <mesh name="D_82_29" file="objects/D_82/D_82_29.stl"/>
         <mesh name="D_82_30" file="objects/D_82/D_82_30.stl"/>
         <mesh name="D_82_31" file="objects/D_82/D_82_31.stl"/>
-        <mesh name="D_82_32" file="objects/D_82/D_82_32.stl"/>
-        <mesh name="D_82_33" file="objects/D_82/D_82_33.stl"/>
-        <mesh name="D_82_34" file="objects/D_82/D_82_34.stl"/>
-        <mesh name="D_82_35" file="objects/D_82/D_82_35.stl"/>
-        <mesh name="D_82_36" file="objects/D_82/D_82_36.stl"/>
-        <mesh name="D_82_37" file="objects/D_82/D_82_37.stl"/>
-        <mesh name="D_82_38" file="objects/D_82/D_82_38.stl"/>
-        <mesh name="D_82_39" file="objects/D_82/D_82_39.stl"/>
-        <mesh name="D_82_40" file="objects/D_82/D_82_40.stl"/>
-        <mesh name="D_82_41" file="objects/D_82/D_82_41.stl"/>
-        <mesh name="D_82_42" file="objects/D_82/D_82_42.stl"/>
-        <mesh name="D_82_43" file="objects/D_82/D_82_43.stl"/>
-        <mesh name="D_82_44" file="objects/D_82/D_82_44.stl"/>
-        <mesh name="D_82_45" file="objects/D_82/D_82_45.stl"/>
-        <mesh name="D_82_46" file="objects/D_82/D_82_46.stl"/>
-        <mesh name="D_82_47" file="objects/D_82/D_82_47.stl"/>
-        <mesh name="D_82_48" file="objects/D_82/D_82_48.stl"/>
-        <mesh name="D_82_49" file="objects/D_82/D_82_49.stl"/>
-        <mesh name="D_82_visual" file="objects/D_82/D_82_full.stl"/>
     </asset>
 </mujoco>

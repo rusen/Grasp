@@ -55,8 +55,5 @@
         <mesh name="D_151_53" file="objects/D_151/D_151_53.stl"/>
         <mesh name="D_151_54" file="objects/D_151/D_151_54.stl"/>
         <mesh name="D_151_55" file="objects/D_151/D_151_55.stl"/>
-        <mesh name="D_151_56" file="objects/D_151/D_151_56.stl"/>
-        <mesh name="D_151_57" file="objects/D_151/D_151_57.stl"/>
-        <mesh name="D_151_visual" file="objects/D_151/D_151_full.stl"/>
     </asset>
 </mujoco>

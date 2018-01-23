@@ -5,6 +5,14 @@
         <mesh name="D_13_3" file="objects/D_13/D_13_3.stl"/>
         <mesh name="D_13_4" file="objects/D_13/D_13_4.stl"/>
         <mesh name="D_13_5" file="objects/D_13/D_13_5.stl"/>
-        <mesh name="D_13_visual" file="objects/D_13/D_13_full.stl"/>
+        <mesh name="D_13_6" file="objects/D_13/D_13_6.stl"/>
+        <mesh name="D_13_7" file="objects/D_13/D_13_7.stl"/>
+        <mesh name="D_13_8" file="objects/D_13/D_13_8.stl"/>
+        <mesh name="D_13_9" file="objects/D_13/D_13_9.stl"/>
+        <mesh name="D_13_10" file="objects/D_13/D_13_10.stl"/>
+        <mesh name="D_13_11" file="objects/D_13/D_13_11.stl"/>
+        <mesh name="D_13_12" file="objects/D_13/D_13_12.stl"/>
+        <mesh name="D_13_13" file="objects/D_13/D_13_13.stl"/>
+        <mesh name="D_13_14" file="objects/D_13/D_13_14.stl"/>
     </asset>
 </mujoco>

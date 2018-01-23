@@ -1,0 +1,16 @@
+<mujoco>
+    <asset>
+        <mesh name="D_279_1" file="objects/D_279/D_279_1.stl"/>
+        <mesh name="D_279_2" file="objects/D_279/D_279_2.stl"/>
+        <mesh name="D_279_3" file="objects/D_279/D_279_3.stl"/>
+        <mesh name="D_279_4" file="objects/D_279/D_279_4.stl"/>
+        <mesh name="D_279_5" file="objects/D_279/D_279_5.stl"/>
+        <mesh name="D_279_6" file="objects/D_279/D_279_6.stl"/>
+        <mesh name="D_279_7" file="objects/D_279/D_279_7.stl"/>
+        <mesh name="D_279_8" file="objects/D_279/D_279_8.stl"/>
+        <mesh name="D_279_9" file="objects/D_279/D_279_9.stl"/>
+        <mesh name="D_279_10" file="objects/D_279/D_279_10.stl"/>
+        <mesh name="D_279_11" file="objects/D_279/D_279_11.stl"/>
+        <mesh name="D_279_12" file="objects/D_279/D_279_12.stl"/>
+    </asset>
+</mujoco>

@@ -32,42 +32,5 @@
         <mesh name="D_78_30" file="objects/D_78/D_78_30.stl"/>
         <mesh name="D_78_31" file="objects/D_78/D_78_31.stl"/>
         <mesh name="D_78_32" file="objects/D_78/D_78_32.stl"/>
-        <mesh name="D_78_33" file="objects/D_78/D_78_33.stl"/>
-        <mesh name="D_78_34" file="objects/D_78/D_78_34.stl"/>
-        <mesh name="D_78_35" file="objects/D_78/D_78_35.stl"/>
-        <mesh name="D_78_36" file="objects/D_78/D_78_36.stl"/>
-        <mesh name="D_78_37" file="objects/D_78/D_78_37.stl"/>
-        <mesh name="D_78_38" file="objects/D_78/D_78_38.stl"/>
-        <mesh name="D_78_39" file="objects/D_78/D_78_39.stl"/>
-        <mesh name="D_78_40" file="objects/D_78/D_78_40.stl"/>
-        <mesh name="D_78_41" file="objects/D_78/D_78_41.stl"/>
-        <mesh name="D_78_42" file="objects/D_78/D_78_42.stl"/>
-        <mesh name="D_78_43" file="objects/D_78/D_78_43.stl"/>
-        <mesh name="D_78_44" file="objects/D_78/D_78_44.stl"/>
-        <mesh name="D_78_45" file="objects/D_78/D_78_45.stl"/>
-        <mesh name="D_78_46" file="objects/D_78/D_78_46.stl"/>
-        <mesh name="D_78_47" file="objects/D_78/D_78_47.stl"/>
-        <mesh name="D_78_48" file="objects/D_78/D_78_48.stl"/>
-        <mesh name="D_78_49" file="objects/D_78/D_78_49.stl"/>
-        <mesh name="D_78_50" file="objects/D_78/D_78_50.stl"/>
-        <mesh name="D_78_51" file="objects/D_78/D_78_51.stl"/>
-        <mesh name="D_78_52" file="objects/D_78/D_78_52.stl"/>
-        <mesh name="D_78_53" file="objects/D_78/D_78_53.stl"/>
-        <mesh name="D_78_54" file="objects/D_78/D_78_54.stl"/>
-        <mesh name="D_78_55" file="objects/D_78/D_78_55.stl"/>
-        <mesh name="D_78_56" file="objects/D_78/D_78_56.stl"/>
-        <mesh name="D_78_57" file="objects/D_78/D_78_57.stl"/>
-        <mesh name="D_78_58" file="objects/D_78/D_78_58.stl"/>
-        <mesh name="D_78_59" file="objects/D_78/D_78_59.stl"/>
-        <mesh name="D_78_60" file="objects/D_78/D_78_60.stl"/>
-        <mesh name="D_78_61" file="objects/D_78/D_78_61.stl"/>
-        <mesh name="D_78_62" file="objects/D_78/D_78_62.stl"/>
-        <mesh name="D_78_63" file="objects/D_78/D_78_63.stl"/>
-        <mesh name="D_78_64" file="objects/D_78/D_78_64.stl"/>
-        <mesh name="D_78_65" file="objects/D_78/D_78_65.stl"/>
-        <mesh name="D_78_66" file="objects/D_78/D_78_66.stl"/>
-        <mesh name="D_78_67" file="objects/D_78/D_78_67.stl"/>
-        <mesh name="D_78_68" file="objects/D_78/D_78_68.stl"/>
-        <mesh name="D_78_visual" file="objects/D_78/D_78_full.stl"/>
     </asset>
 </mujoco>

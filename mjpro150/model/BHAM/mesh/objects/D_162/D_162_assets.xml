@@ -70,6 +70,26 @@
         <mesh name="D_162_68" file="objects/D_162/D_162_68.stl"/>
         <mesh name="D_162_69" file="objects/D_162/D_162_69.stl"/>
         <mesh name="D_162_70" file="objects/D_162/D_162_70.stl"/>
-        <mesh name="D_162_visual" file="objects/D_162/D_162_full.stl"/>
+        <mesh name="D_162_71" file="objects/D_162/D_162_71.stl"/>
+        <mesh name="D_162_72" file="objects/D_162/D_162_72.stl"/>
+        <mesh name="D_162_73" file="objects/D_162/D_162_73.stl"/>
+        <mesh name="D_162_74" file="objects/D_162/D_162_74.stl"/>
+        <mesh name="D_162_75" file="objects/D_162/D_162_75.stl"/>
+        <mesh name="D_162_76" file="objects/D_162/D_162_76.stl"/>
+        <mesh name="D_162_77" file="objects/D_162/D_162_77.stl"/>
+        <mesh name="D_162_78" file="objects/D_162/D_162_78.stl"/>
+        <mesh name="D_162_79" file="objects/D_162/D_162_79.stl"/>
+        <mesh name="D_162_80" file="objects/D_162/D_162_80.stl"/>
+        <mesh name="D_162_81" file="objects/D_162/D_162_81.stl"/>
+        <mesh name="D_162_82" file="objects/D_162/D_162_82.stl"/>
+        <mesh name="D_162_83" file="objects/D_162/D_162_83.stl"/>
+        <mesh name="D_162_84" file="objects/D_162/D_162_84.stl"/>
+        <mesh name="D_162_85" file="objects/D_162/D_162_85.stl"/>
+        <mesh name="D_162_86" file="objects/D_162/D_162_86.stl"/>
+        <mesh name="D_162_87" file="objects/D_162/D_162_87.stl"/>
+        <mesh name="D_162_88" file="objects/D_162/D_162_88.stl"/>
+        <mesh name="D_162_89" file="objects/D_162/D_162_89.stl"/>
+        <mesh name="D_162_90" file="objects/D_162/D_162_90.stl"/>
+        <mesh name="D_162_91" file="objects/D_162/D_162_91.stl"/>
     </asset>
 </mujoco>

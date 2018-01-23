@@ -1,0 +1,5 @@
+<mujoco>
+    <asset>
+        <mesh name="D_294_1" file="objects/D_294/D_294_1.stl"/>
+    </asset>
+</mujoco>

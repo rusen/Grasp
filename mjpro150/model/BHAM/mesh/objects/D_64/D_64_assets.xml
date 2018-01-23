@@ -17,6 +17,11 @@
         <mesh name="D_64_15" file="objects/D_64/D_64_15.stl"/>
         <mesh name="D_64_16" file="objects/D_64/D_64_16.stl"/>
         <mesh name="D_64_17" file="objects/D_64/D_64_17.stl"/>
-        <mesh name="D_64_visual" file="objects/D_64/D_64_full.stl"/>
+        <mesh name="D_64_18" file="objects/D_64/D_64_18.stl"/>
+        <mesh name="D_64_19" file="objects/D_64/D_64_19.stl"/>
+        <mesh name="D_64_20" file="objects/D_64/D_64_20.stl"/>
+        <mesh name="D_64_21" file="objects/D_64/D_64_21.stl"/>
+        <mesh name="D_64_22" file="objects/D_64/D_64_22.stl"/>
+        <mesh name="D_64_23" file="objects/D_64/D_64_23.stl"/>
     </asset>
 </mujoco>

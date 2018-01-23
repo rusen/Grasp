@@ -7,6 +7,47 @@
         <mesh name="D_114_5" file="objects/D_114/D_114_5.stl"/>
         <mesh name="D_114_6" file="objects/D_114/D_114_6.stl"/>
         <mesh name="D_114_7" file="objects/D_114/D_114_7.stl"/>
-        <mesh name="D_114_visual" file="objects/D_114/D_114_full.stl"/>
+        <mesh name="D_114_8" file="objects/D_114/D_114_8.stl"/>
+        <mesh name="D_114_9" file="objects/D_114/D_114_9.stl"/>
+        <mesh name="D_114_10" file="objects/D_114/D_114_10.stl"/>
+        <mesh name="D_114_11" file="objects/D_114/D_114_11.stl"/>
+        <mesh name="D_114_12" file="objects/D_114/D_114_12.stl"/>
+        <mesh name="D_114_13" file="objects/D_114/D_114_13.stl"/>
+        <mesh name="D_114_14" file="objects/D_114/D_114_14.stl"/>
+        <mesh name="D_114_15" file="objects/D_114/D_114_15.stl"/>
+        <mesh name="D_114_16" file="objects/D_114/D_114_16.stl"/>
+        <mesh name="D_114_17" file="objects/D_114/D_114_17.stl"/>
+        <mesh name="D_114_18" file="objects/D_114/D_114_18.stl"/>
+        <mesh name="D_114_19" file="objects/D_114/D_114_19.stl"/>
+        <mesh name="D_114_20" file="objects/D_114/D_114_20.stl"/>
+        <mesh name="D_114_21" file="objects/D_114/D_114_21.stl"/>
+        <mesh name="D_114_22" file="objects/D_114/D_114_22.stl"/>
+        <mesh name="D_114_23" file="objects/D_114/D_114_23.stl"/>
+        <mesh name="D_114_24" file="objects/D_114/D_114_24.stl"/>
+        <mesh name="D_114_25" file="objects/D_114/D_114_25.stl"/>
+        <mesh name="D_114_26" file="objects/D_114/D_114_26.stl"/>
+        <mesh name="D_114_27" file="objects/D_114/D_114_27.stl"/>
+        <mesh name="D_114_28" file="objects/D_114/D_114_28.stl"/>
+        <mesh name="D_114_29" file="objects/D_114/D_114_29.stl"/>
+        <mesh name="D_114_30" file="objects/D_114/D_114_30.stl"/>
+        <mesh name="D_114_31" file="objects/D_114/D_114_31.stl"/>
+        <mesh name="D_114_32" file="objects/D_114/D_114_32.stl"/>
+        <mesh name="D_114_33" file="objects/D_114/D_114_33.stl"/>
+        <mesh name="D_114_34" file="objects/D_114/D_114_34.stl"/>
+        <mesh name="D_114_35" file="objects/D_114/D_114_35.stl"/>
+        <mesh name="D_114_36" file="objects/D_114/D_114_36.stl"/>
+        <mesh name="D_114_37" file="objects/D_114/D_114_37.stl"/>
+        <mesh name="D_114_38" file="objects/D_114/D_114_38.stl"/>
+        <mesh name="D_114_39" file="objects/D_114/D_114_39.stl"/>
+        <mesh name="D_114_40" file="objects/D_114/D_114_40.stl"/>
+        <mesh name="D_114_41" file="objects/D_114/D_114_41.stl"/>
+        <mesh name="D_114_42" file="objects/D_114/D_114_42.stl"/>
+        <mesh name="D_114_43" file="objects/D_114/D_114_43.stl"/>
+        <mesh name="D_114_44" file="objects/D_114/D_114_44.stl"/>
+        <mesh name="D_114_45" file="objects/D_114/D_114_45.stl"/>
+        <mesh name="D_114_46" file="objects/D_114/D_114_46.stl"/>
+        <mesh name="D_114_47" file="objects/D_114/D_114_47.stl"/>
+        <mesh name="D_114_48" file="objects/D_114/D_114_48.stl"/>
+        <mesh name="D_114_49" file="objects/D_114/D_114_49.stl"/>
     </asset>
 </mujoco>

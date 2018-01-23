@@ -1,20 +1,5 @@
 <mujoco>
     <asset>
         <mesh name="D_53_1" file="objects/D_53/D_53_1.stl"/>
-        <mesh name="D_53_2" file="objects/D_53/D_53_2.stl"/>
-        <mesh name="D_53_3" file="objects/D_53/D_53_3.stl"/>
-        <mesh name="D_53_4" file="objects/D_53/D_53_4.stl"/>
-        <mesh name="D_53_5" file="objects/D_53/D_53_5.stl"/>
-        <mesh name="D_53_6" file="objects/D_53/D_53_6.stl"/>
-        <mesh name="D_53_7" file="objects/D_53/D_53_7.stl"/>
-        <mesh name="D_53_8" file="objects/D_53/D_53_8.stl"/>
-        <mesh name="D_53_9" file="objects/D_53/D_53_9.stl"/>
-        <mesh name="D_53_10" file="objects/D_53/D_53_10.stl"/>
-        <mesh name="D_53_11" file="objects/D_53/D_53_11.stl"/>
-        <mesh name="D_53_12" file="objects/D_53/D_53_12.stl"/>
-        <mesh name="D_53_13" file="objects/D_53/D_53_13.stl"/>
-        <mesh name="D_53_14" file="objects/D_53/D_53_14.stl"/>
-        <mesh name="D_53_15" file="objects/D_53/D_53_15.stl"/>
-        <mesh name="D_53_visual" file="objects/D_53/D_53_full.stl"/>
     </asset>
 </mujoco>

@@ -1,0 +1,29 @@
+<mujoco>
+    <asset>
+        <mesh name="D_276_1" file="objects/D_276/D_276_1.stl"/>
+        <mesh name="D_276_2" file="objects/D_276/D_276_2.stl"/>
+        <mesh name="D_276_3" file="objects/D_276/D_276_3.stl"/>
+        <mesh name="D_276_4" file="objects/D_276/D_276_4.stl"/>
+        <mesh name="D_276_5" file="objects/D_276/D_276_5.stl"/>
+        <mesh name="D_276_6" file="objects/D_276/D_276_6.stl"/>
+        <mesh name="D_276_7" file="objects/D_276/D_276_7.stl"/>
+        <mesh name="D_276_8" file="objects/D_276/D_276_8.stl"/>
+        <mesh name="D_276_9" file="objects/D_276/D_276_9.stl"/>
+        <mesh name="D_276_10" file="objects/D_276/D_276_10.stl"/>
+        <mesh name="D_276_11" file="objects/D_276/D_276_11.stl"/>
+        <mesh name="D_276_12" file="objects/D_276/D_276_12.stl"/>
+        <mesh name="D_276_13" file="objects/D_276/D_276_13.stl"/>
+        <mesh name="D_276_14" file="objects/D_276/D_276_14.stl"/>
+        <mesh name="D_276_15" file="objects/D_276/D_276_15.stl"/>
+        <mesh name="D_276_16" file="objects/D_276/D_276_16.stl"/>
+        <mesh name="D_276_17" file="objects/D_276/D_276_17.stl"/>
+        <mesh name="D_276_18" file="objects/D_276/D_276_18.stl"/>
+        <mesh name="D_276_19" file="objects/D_276/D_276_19.stl"/>
+        <mesh name="D_276_20" file="objects/D_276/D_276_20.stl"/>
+        <mesh name="D_276_21" file="objects/D_276/D_276_21.stl"/>
+        <mesh name="D_276_22" file="objects/D_276/D_276_22.stl"/>
+        <mesh name="D_276_23" file="objects/D_276/D_276_23.stl"/>
+        <mesh name="D_276_24" file="objects/D_276/D_276_24.stl"/>
+        <mesh name="D_276_25" file="objects/D_276/D_276_25.stl"/>
+    </asset>
+</mujoco>

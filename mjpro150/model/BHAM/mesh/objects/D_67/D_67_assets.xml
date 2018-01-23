@@ -13,15 +13,5 @@
         <mesh name="D_67_11" file="objects/D_67/D_67_11.stl"/>
         <mesh name="D_67_12" file="objects/D_67/D_67_12.stl"/>
         <mesh name="D_67_13" file="objects/D_67/D_67_13.stl"/>
-        <mesh name="D_67_14" file="objects/D_67/D_67_14.stl"/>
-        <mesh name="D_67_15" file="objects/D_67/D_67_15.stl"/>
-        <mesh name="D_67_16" file="objects/D_67/D_67_16.stl"/>
-        <mesh name="D_67_17" file="objects/D_67/D_67_17.stl"/>
-        <mesh name="D_67_18" file="objects/D_67/D_67_18.stl"/>
-        <mesh name="D_67_19" file="objects/D_67/D_67_19.stl"/>
-        <mesh name="D_67_20" file="objects/D_67/D_67_20.stl"/>
-        <mesh name="D_67_21" file="objects/D_67/D_67_21.stl"/>
-        <mesh name="D_67_22" file="objects/D_67/D_67_22.stl"/>
-        <mesh name="D_67_visual" file="objects/D_67/D_67_full.stl"/>
     </asset>
 </mujoco>

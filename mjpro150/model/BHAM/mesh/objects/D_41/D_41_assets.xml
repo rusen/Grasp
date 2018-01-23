@@ -6,29 +6,5 @@
         <mesh name="D_41_4" file="objects/D_41/D_41_4.stl"/>
         <mesh name="D_41_5" file="objects/D_41/D_41_5.stl"/>
         <mesh name="D_41_6" file="objects/D_41/D_41_6.stl"/>
-        <mesh name="D_41_7" file="objects/D_41/D_41_7.stl"/>
-        <mesh name="D_41_8" file="objects/D_41/D_41_8.stl"/>
-        <mesh name="D_41_9" file="objects/D_41/D_41_9.stl"/>
-        <mesh name="D_41_10" file="objects/D_41/D_41_10.stl"/>
-        <mesh name="D_41_11" file="objects/D_41/D_41_11.stl"/>
-        <mesh name="D_41_12" file="objects/D_41/D_41_12.stl"/>
-        <mesh name="D_41_13" file="objects/D_41/D_41_13.stl"/>
-        <mesh name="D_41_14" file="objects/D_41/D_41_14.stl"/>
-        <mesh name="D_41_15" file="objects/D_41/D_41_15.stl"/>
-        <mesh name="D_41_16" file="objects/D_41/D_41_16.stl"/>
-        <mesh name="D_41_17" file="objects/D_41/D_41_17.stl"/>
-        <mesh name="D_41_18" file="objects/D_41/D_41_18.stl"/>
-        <mesh name="D_41_19" file="objects/D_41/D_41_19.stl"/>
-        <mesh name="D_41_20" file="objects/D_41/D_41_20.stl"/>
-        <mesh name="D_41_21" file="objects/D_41/D_41_21.stl"/>
-        <mesh name="D_41_22" file="objects/D_41/D_41_22.stl"/>
-        <mesh name="D_41_23" file="objects/D_41/D_41_23.stl"/>
-        <mesh name="D_41_24" file="objects/D_41/D_41_24.stl"/>
-        <mesh name="D_41_25" file="objects/D_41/D_41_25.stl"/>
-        <mesh name="D_41_26" file="objects/D_41/D_41_26.stl"/>
-        <mesh name="D_41_27" file="objects/D_41/D_41_27.stl"/>
-        <mesh name="D_41_28" file="objects/D_41/D_41_28.stl"/>
-        <mesh name="D_41_29" file="objects/D_41/D_41_29.stl"/>
-        <mesh name="D_41_visual" file="objects/D_41/D_41_full.stl"/>
     </asset>
 </mujoco>

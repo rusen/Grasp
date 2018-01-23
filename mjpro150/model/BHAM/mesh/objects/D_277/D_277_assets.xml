@@ -1,0 +1,20 @@
+<mujoco>
+    <asset>
+        <mesh name="D_277_1" file="objects/D_277/D_277_1.stl"/>
+        <mesh name="D_277_2" file="objects/D_277/D_277_2.stl"/>
+        <mesh name="D_277_3" file="objects/D_277/D_277_3.stl"/>
+        <mesh name="D_277_4" file="objects/D_277/D_277_4.stl"/>
+        <mesh name="D_277_5" file="objects/D_277/D_277_5.stl"/>
+        <mesh name="D_277_6" file="objects/D_277/D_277_6.stl"/>
+        <mesh name="D_277_7" file="objects/D_277/D_277_7.stl"/>
+        <mesh name="D_277_8" file="objects/D_277/D_277_8.stl"/>
+        <mesh name="D_277_9" file="objects/D_277/D_277_9.stl"/>
+        <mesh name="D_277_10" file="objects/D_277/D_277_10.stl"/>
+        <mesh name="D_277_11" file="objects/D_277/D_277_11.stl"/>
+        <mesh name="D_277_12" file="objects/D_277/D_277_12.stl"/>
+        <mesh name="D_277_13" file="objects/D_277/D_277_13.stl"/>
+        <mesh name="D_277_14" file="objects/D_277/D_277_14.stl"/>
+        <mesh name="D_277_15" file="objects/D_277/D_277_15.stl"/>
+        <mesh name="D_277_16" file="objects/D_277/D_277_16.stl"/>
+    </asset>
+</mujoco>

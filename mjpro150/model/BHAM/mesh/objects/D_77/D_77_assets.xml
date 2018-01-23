@@ -53,18 +53,5 @@
         <mesh name="D_77_51" file="objects/D_77/D_77_51.stl"/>
         <mesh name="D_77_52" file="objects/D_77/D_77_52.stl"/>
         <mesh name="D_77_53" file="objects/D_77/D_77_53.stl"/>
-        <mesh name="D_77_54" file="objects/D_77/D_77_54.stl"/>
-        <mesh name="D_77_55" file="objects/D_77/D_77_55.stl"/>
-        <mesh name="D_77_56" file="objects/D_77/D_77_56.stl"/>
-        <mesh name="D_77_57" file="objects/D_77/D_77_57.stl"/>
-        <mesh name="D_77_58" file="objects/D_77/D_77_58.stl"/>
-        <mesh name="D_77_59" file="objects/D_77/D_77_59.stl"/>
-        <mesh name="D_77_60" file="objects/D_77/D_77_60.stl"/>
-        <mesh name="D_77_61" file="objects/D_77/D_77_61.stl"/>
-        <mesh name="D_77_62" file="objects/D_77/D_77_62.stl"/>
-        <mesh name="D_77_63" file="objects/D_77/D_77_63.stl"/>
-        <mesh name="D_77_64" file="objects/D_77/D_77_64.stl"/>
-        <mesh name="D_77_65" file="objects/D_77/D_77_65.stl"/>
-        <mesh name="D_77_visual" file="objects/D_77/D_77_full.stl"/>
     </asset>
 </mujoco>

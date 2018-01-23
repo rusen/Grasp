@@ -46,38 +46,5 @@
         <mesh name="D_248_44" file="objects/D_248/D_248_44.stl"/>
         <mesh name="D_248_45" file="objects/D_248/D_248_45.stl"/>
         <mesh name="D_248_46" file="objects/D_248/D_248_46.stl"/>
-        <mesh name="D_248_47" file="objects/D_248/D_248_47.stl"/>
-        <mesh name="D_248_48" file="objects/D_248/D_248_48.stl"/>
-        <mesh name="D_248_49" file="objects/D_248/D_248_49.stl"/>
-        <mesh name="D_248_50" file="objects/D_248/D_248_50.stl"/>
-        <mesh name="D_248_51" file="objects/D_248/D_248_51.stl"/>
-        <mesh name="D_248_52" file="objects/D_248/D_248_52.stl"/>
-        <mesh name="D_248_53" file="objects/D_248/D_248_53.stl"/>
-        <mesh name="D_248_54" file="objects/D_248/D_248_54.stl"/>
-        <mesh name="D_248_55" file="objects/D_248/D_248_55.stl"/>
-        <mesh name="D_248_56" file="objects/D_248/D_248_56.stl"/>
-        <mesh name="D_248_57" file="objects/D_248/D_248_57.stl"/>
-        <mesh name="D_248_58" file="objects/D_248/D_248_58.stl"/>
-        <mesh name="D_248_59" file="objects/D_248/D_248_59.stl"/>
-        <mesh name="D_248_60" file="objects/D_248/D_248_60.stl"/>
-        <mesh name="D_248_61" file="objects/D_248/D_248_61.stl"/>
-        <mesh name="D_248_62" file="objects/D_248/D_248_62.stl"/>
-        <mesh name="D_248_63" file="objects/D_248/D_248_63.stl"/>
-        <mesh name="D_248_64" file="objects/D_248/D_248_64.stl"/>
-        <mesh name="D_248_65" file="objects/D_248/D_248_65.stl"/>
-        <mesh name="D_248_66" file="objects/D_248/D_248_66.stl"/>
-        <mesh name="D_248_67" file="objects/D_248/D_248_67.stl"/>
-        <mesh name="D_248_68" file="objects/D_248/D_248_68.stl"/>
-        <mesh name="D_248_69" file="objects/D_248/D_248_69.stl"/>
-        <mesh name="D_248_70" file="objects/D_248/D_248_70.stl"/>
-        <mesh name="D_248_71" file="objects/D_248/D_248_71.stl"/>
-        <mesh name="D_248_72" file="objects/D_248/D_248_72.stl"/>
-        <mesh name="D_248_73" file="objects/D_248/D_248_73.stl"/>
-        <mesh name="D_248_74" file="objects/D_248/D_248_74.stl"/>
-        <mesh name="D_248_75" file="objects/D_248/D_248_75.stl"/>
-        <mesh name="D_248_76" file="objects/D_248/D_248_76.stl"/>
-        <mesh name="D_248_77" file="objects/D_248/D_248_77.stl"/>
-        <mesh name="D_248_78" file="objects/D_248/D_248_78.stl"/>
-        <mesh name="D_248_visual" file="objects/D_248/D_248_full.stl"/>
     </asset>
 </mujoco>

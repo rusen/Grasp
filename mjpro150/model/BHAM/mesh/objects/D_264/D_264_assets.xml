@@ -1,0 +1,15 @@
+<mujoco>
+    <asset>
+        <mesh name="D_264_1" file="objects/D_264/D_264_1.stl"/>
+        <mesh name="D_264_2" file="objects/D_264/D_264_2.stl"/>
+        <mesh name="D_264_3" file="objects/D_264/D_264_3.stl"/>
+        <mesh name="D_264_4" file="objects/D_264/D_264_4.stl"/>
+        <mesh name="D_264_5" file="objects/D_264/D_264_5.stl"/>
+        <mesh name="D_264_6" file="objects/D_264/D_264_6.stl"/>
+        <mesh name="D_264_7" file="objects/D_264/D_264_7.stl"/>
+        <mesh name="D_264_8" file="objects/D_264/D_264_8.stl"/>
+        <mesh name="D_264_9" file="objects/D_264/D_264_9.stl"/>
+        <mesh name="D_264_10" file="objects/D_264/D_264_10.stl"/>
+        <mesh name="D_264_11" file="objects/D_264/D_264_11.stl"/>
+    </asset>
+</mujoco>

@@ -61,6 +61,13 @@
         <mesh name="D_194_59" file="objects/D_194/D_194_59.stl"/>
         <mesh name="D_194_60" file="objects/D_194/D_194_60.stl"/>
         <mesh name="D_194_61" file="objects/D_194/D_194_61.stl"/>
-        <mesh name="D_194_visual" file="objects/D_194/D_194_full.stl"/>
+        <mesh name="D_194_62" file="objects/D_194/D_194_62.stl"/>
+        <mesh name="D_194_63" file="objects/D_194/D_194_63.stl"/>
+        <mesh name="D_194_64" file="objects/D_194/D_194_64.stl"/>
+        <mesh name="D_194_65" file="objects/D_194/D_194_65.stl"/>
+        <mesh name="D_194_66" file="objects/D_194/D_194_66.stl"/>
+        <mesh name="D_194_67" file="objects/D_194/D_194_67.stl"/>
+        <mesh name="D_194_68" file="objects/D_194/D_194_68.stl"/>
+        <mesh name="D_194_69" file="objects/D_194/D_194_69.stl"/>
     </asset>
 </mujoco>

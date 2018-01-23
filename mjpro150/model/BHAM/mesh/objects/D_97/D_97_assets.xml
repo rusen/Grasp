@@ -14,18 +14,5 @@
         <mesh name="D_97_12" file="objects/D_97/D_97_12.stl"/>
         <mesh name="D_97_13" file="objects/D_97/D_97_13.stl"/>
         <mesh name="D_97_14" file="objects/D_97/D_97_14.stl"/>
-        <mesh name="D_97_15" file="objects/D_97/D_97_15.stl"/>
-        <mesh name="D_97_16" file="objects/D_97/D_97_16.stl"/>
-        <mesh name="D_97_17" file="objects/D_97/D_97_17.stl"/>
-        <mesh name="D_97_18" file="objects/D_97/D_97_18.stl"/>
-        <mesh name="D_97_19" file="objects/D_97/D_97_19.stl"/>
-        <mesh name="D_97_20" file="objects/D_97/D_97_20.stl"/>
-        <mesh name="D_97_21" file="objects/D_97/D_97_21.stl"/>
-        <mesh name="D_97_22" file="objects/D_97/D_97_22.stl"/>
-        <mesh name="D_97_23" file="objects/D_97/D_97_23.stl"/>
-        <mesh name="D_97_24" file="objects/D_97/D_97_24.stl"/>
-        <mesh name="D_97_25" file="objects/D_97/D_97_25.stl"/>
-        <mesh name="D_97_26" file="objects/D_97/D_97_26.stl"/>
-        <mesh name="D_97_visual" file="objects/D_97/D_97_full.stl"/>
     </asset>
 </mujoco>

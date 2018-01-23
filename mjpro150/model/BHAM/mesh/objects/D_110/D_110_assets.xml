@@ -7,6 +7,20 @@
         <mesh name="D_110_5" file="objects/D_110/D_110_5.stl"/>
         <mesh name="D_110_6" file="objects/D_110/D_110_6.stl"/>
         <mesh name="D_110_7" file="objects/D_110/D_110_7.stl"/>
-        <mesh name="D_110_visual" file="objects/D_110/D_110_full.stl"/>
+        <mesh name="D_110_8" file="objects/D_110/D_110_8.stl"/>
+        <mesh name="D_110_9" file="objects/D_110/D_110_9.stl"/>
+        <mesh name="D_110_10" file="objects/D_110/D_110_10.stl"/>
+        <mesh name="D_110_11" file="objects/D_110/D_110_11.stl"/>
+        <mesh name="D_110_12" file="objects/D_110/D_110_12.stl"/>
+        <mesh name="D_110_13" file="objects/D_110/D_110_13.stl"/>
+        <mesh name="D_110_14" file="objects/D_110/D_110_14.stl"/>
+        <mesh name="D_110_15" file="objects/D_110/D_110_15.stl"/>
+        <mesh name="D_110_16" file="objects/D_110/D_110_16.stl"/>
+        <mesh name="D_110_17" file="objects/D_110/D_110_17.stl"/>
+        <mesh name="D_110_18" file="objects/D_110/D_110_18.stl"/>
+        <mesh name="D_110_19" file="objects/D_110/D_110_19.stl"/>
+        <mesh name="D_110_20" file="objects/D_110/D_110_20.stl"/>
+        <mesh name="D_110_21" file="objects/D_110/D_110_21.stl"/>
+        <mesh name="D_110_22" file="objects/D_110/D_110_22.stl"/>
     </asset>
 </mujoco>

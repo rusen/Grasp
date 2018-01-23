@@ -142,11 +142,5 @@
         <mesh name="D_183_140" file="objects/D_183/D_183_140.stl"/>
         <mesh name="D_183_141" file="objects/D_183/D_183_141.stl"/>
         <mesh name="D_183_142" file="objects/D_183/D_183_142.stl"/>
-        <mesh name="D_183_143" file="objects/D_183/D_183_143.stl"/>
-        <mesh name="D_183_144" file="objects/D_183/D_183_144.stl"/>
-        <mesh name="D_183_145" file="objects/D_183/D_183_145.stl"/>
-        <mesh name="D_183_146" file="objects/D_183/D_183_146.stl"/>
-        <mesh name="D_183_147" file="objects/D_183/D_183_147.stl"/>
-        <mesh name="D_183_visual" file="objects/D_183/D_183_full.stl"/>
     </asset>
 </mujoco>

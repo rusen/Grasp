@@ -17,6 +17,15 @@
         <mesh name="D_192_15" file="objects/D_192/D_192_15.stl"/>
         <mesh name="D_192_16" file="objects/D_192/D_192_16.stl"/>
         <mesh name="D_192_17" file="objects/D_192/D_192_17.stl"/>
-        <mesh name="D_192_visual" file="objects/D_192/D_192_full.stl"/>
+        <mesh name="D_192_18" file="objects/D_192/D_192_18.stl"/>
+        <mesh name="D_192_19" file="objects/D_192/D_192_19.stl"/>
+        <mesh name="D_192_20" file="objects/D_192/D_192_20.stl"/>
+        <mesh name="D_192_21" file="objects/D_192/D_192_21.stl"/>
+        <mesh name="D_192_22" file="objects/D_192/D_192_22.stl"/>
+        <mesh name="D_192_23" file="objects/D_192/D_192_23.stl"/>
+        <mesh name="D_192_24" file="objects/D_192/D_192_24.stl"/>
+        <mesh name="D_192_25" file="objects/D_192/D_192_25.stl"/>
+        <mesh name="D_192_26" file="objects/D_192/D_192_26.stl"/>
+        <mesh name="D_192_27" file="objects/D_192/D_192_27.stl"/>
     </asset>
 </mujoco>

@@ -55,19 +55,5 @@
         <mesh name="D_232_53" file="objects/D_232/D_232_53.stl"/>
         <mesh name="D_232_54" file="objects/D_232/D_232_54.stl"/>
         <mesh name="D_232_55" file="objects/D_232/D_232_55.stl"/>
-        <mesh name="D_232_56" file="objects/D_232/D_232_56.stl"/>
-        <mesh name="D_232_57" file="objects/D_232/D_232_57.stl"/>
-        <mesh name="D_232_58" file="objects/D_232/D_232_58.stl"/>
-        <mesh name="D_232_59" file="objects/D_232/D_232_59.stl"/>
-        <mesh name="D_232_60" file="objects/D_232/D_232_60.stl"/>
-        <mesh name="D_232_61" file="objects/D_232/D_232_61.stl"/>
-        <mesh name="D_232_62" file="objects/D_232/D_232_62.stl"/>
-        <mesh name="D_232_63" file="objects/D_232/D_232_63.stl"/>
-        <mesh name="D_232_64" file="objects/D_232/D_232_64.stl"/>
-        <mesh name="D_232_65" file="objects/D_232/D_232_65.stl"/>
-        <mesh name="D_232_66" file="objects/D_232/D_232_66.stl"/>
-        <mesh name="D_232_67" file="objects/D_232/D_232_67.stl"/>
-        <mesh name="D_232_68" file="objects/D_232/D_232_68.stl"/>
-        <mesh name="D_232_visual" file="objects/D_232/D_232_full.stl"/>
     </asset>
 </mujoco>

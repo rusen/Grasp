@@ -26,51 +26,5 @@
         <mesh name="D_79_24" file="objects/D_79/D_79_24.stl"/>
         <mesh name="D_79_25" file="objects/D_79/D_79_25.stl"/>
         <mesh name="D_79_26" file="objects/D_79/D_79_26.stl"/>
-        <mesh name="D_79_27" file="objects/D_79/D_79_27.stl"/>
-        <mesh name="D_79_28" file="objects/D_79/D_79_28.stl"/>
-        <mesh name="D_79_29" file="objects/D_79/D_79_29.stl"/>
-        <mesh name="D_79_30" file="objects/D_79/D_79_30.stl"/>
-        <mesh name="D_79_31" file="objects/D_79/D_79_31.stl"/>
-        <mesh name="D_79_32" file="objects/D_79/D_79_32.stl"/>
-        <mesh name="D_79_33" file="objects/D_79/D_79_33.stl"/>
-        <mesh name="D_79_34" file="objects/D_79/D_79_34.stl"/>
-        <mesh name="D_79_35" file="objects/D_79/D_79_35.stl"/>
-        <mesh name="D_79_36" file="objects/D_79/D_79_36.stl"/>
-        <mesh name="D_79_37" file="objects/D_79/D_79_37.stl"/>
-        <mesh name="D_79_38" file="objects/D_79/D_79_38.stl"/>
-        <mesh name="D_79_39" file="objects/D_79/D_79_39.stl"/>
-        <mesh name="D_79_40" file="objects/D_79/D_79_40.stl"/>
-        <mesh name="D_79_41" file="objects/D_79/D_79_41.stl"/>
-        <mesh name="D_79_42" file="objects/D_79/D_79_42.stl"/>
-        <mesh name="D_79_43" file="objects/D_79/D_79_43.stl"/>
-        <mesh name="D_79_44" file="objects/D_79/D_79_44.stl"/>
-        <mesh name="D_79_45" file="objects/D_79/D_79_45.stl"/>
-        <mesh name="D_79_46" file="objects/D_79/D_79_46.stl"/>
-        <mesh name="D_79_47" file="objects/D_79/D_79_47.stl"/>
-        <mesh name="D_79_48" file="objects/D_79/D_79_48.stl"/>
-        <mesh name="D_79_49" file="objects/D_79/D_79_49.stl"/>
-        <mesh name="D_79_50" file="objects/D_79/D_79_50.stl"/>
-        <mesh name="D_79_51" file="objects/D_79/D_79_51.stl"/>
-        <mesh name="D_79_52" file="objects/D_79/D_79_52.stl"/>
-        <mesh name="D_79_53" file="objects/D_79/D_79_53.stl"/>
-        <mesh name="D_79_54" file="objects/D_79/D_79_54.stl"/>
-        <mesh name="D_79_55" file="objects/D_79/D_79_55.stl"/>
-        <mesh name="D_79_56" file="objects/D_79/D_79_56.stl"/>
-        <mesh name="D_79_57" file="objects/D_79/D_79_57.stl"/>
-        <mesh name="D_79_58" file="objects/D_79/D_79_58.stl"/>
-        <mesh name="D_79_59" file="objects/D_79/D_79_59.stl"/>
-        <mesh name="D_79_60" file="objects/D_79/D_79_60.stl"/>
-        <mesh name="D_79_61" file="objects/D_79/D_79_61.stl"/>
-        <mesh name="D_79_62" file="objects/D_79/D_79_62.stl"/>
-        <mesh name="D_79_63" file="objects/D_79/D_79_63.stl"/>
-        <mesh name="D_79_64" file="objects/D_79/D_79_64.stl"/>
-        <mesh name="D_79_65" file="objects/D_79/D_79_65.stl"/>
-        <mesh name="D_79_66" file="objects/D_79/D_79_66.stl"/>
-        <mesh name="D_79_67" file="objects/D_79/D_79_67.stl"/>
-        <mesh name="D_79_68" file="objects/D_79/D_79_68.stl"/>
-        <mesh name="D_79_69" file="objects/D_79/D_79_69.stl"/>
-        <mesh name="D_79_70" file="objects/D_79/D_79_70.stl"/>
-        <mesh name="D_79_71" file="objects/D_79/D_79_71.stl"/>
-        <mesh name="D_79_visual" file="objects/D_79/D_79_full.stl"/>
     </asset>
 </mujoco>

@@ -1,0 +1,15 @@
+<mujoco>
+    <asset>
+        <mesh name="D_267_1" file="objects/D_267/D_267_1.stl"/>
+        <mesh name="D_267_2" file="objects/D_267/D_267_2.stl"/>
+        <mesh name="D_267_3" file="objects/D_267/D_267_3.stl"/>
+        <mesh name="D_267_4" file="objects/D_267/D_267_4.stl"/>
+        <mesh name="D_267_5" file="objects/D_267/D_267_5.stl"/>
+        <mesh name="D_267_6" file="objects/D_267/D_267_6.stl"/>
+        <mesh name="D_267_7" file="objects/D_267/D_267_7.stl"/>
+        <mesh name="D_267_8" file="objects/D_267/D_267_8.stl"/>
+        <mesh name="D_267_9" file="objects/D_267/D_267_9.stl"/>
+        <mesh name="D_267_10" file="objects/D_267/D_267_10.stl"/>
+        <mesh name="D_267_11" file="objects/D_267/D_267_11.stl"/>
+    </asset>
+</mujoco>

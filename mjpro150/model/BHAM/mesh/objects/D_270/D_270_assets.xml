@@ -1,0 +1,17 @@
+<mujoco>
+    <asset>
+        <mesh name="D_270_1" file="objects/D_270/D_270_1.stl"/>
+        <mesh name="D_270_2" file="objects/D_270/D_270_2.stl"/>
+        <mesh name="D_270_3" file="objects/D_270/D_270_3.stl"/>
+        <mesh name="D_270_4" file="objects/D_270/D_270_4.stl"/>
+        <mesh name="D_270_5" file="objects/D_270/D_270_5.stl"/>
+        <mesh name="D_270_6" file="objects/D_270/D_270_6.stl"/>
+        <mesh name="D_270_7" file="objects/D_270/D_270_7.stl"/>
+        <mesh name="D_270_8" file="objects/D_270/D_270_8.stl"/>
+        <mesh name="D_270_9" file="objects/D_270/D_270_9.stl"/>
+        <mesh name="D_270_10" file="objects/D_270/D_270_10.stl"/>
+        <mesh name="D_270_11" file="objects/D_270/D_270_11.stl"/>
+        <mesh name="D_270_12" file="objects/D_270/D_270_12.stl"/>
+        <mesh name="D_270_13" file="objects/D_270/D_270_13.stl"/>
+    </asset>
+</mujoco>

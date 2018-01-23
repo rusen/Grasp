@@ -14,6 +14,10 @@
         <mesh name="D_59_12" file="objects/D_59/D_59_12.stl"/>
         <mesh name="D_59_13" file="objects/D_59/D_59_13.stl"/>
         <mesh name="D_59_14" file="objects/D_59/D_59_14.stl"/>
-        <mesh name="D_59_visual" file="objects/D_59/D_59_full.stl"/>
+        <mesh name="D_59_15" file="objects/D_59/D_59_15.stl"/>
+        <mesh name="D_59_16" file="objects/D_59/D_59_16.stl"/>
+        <mesh name="D_59_17" file="objects/D_59/D_59_17.stl"/>
+        <mesh name="D_59_18" file="objects/D_59/D_59_18.stl"/>
+        <mesh name="D_59_19" file="objects/D_59/D_59_19.stl"/>
     </asset>
 </mujoco>

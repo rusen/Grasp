@@ -2,6 +2,55 @@
     <asset>
         <mesh name="D_175_1" file="objects/D_175/D_175_1.stl"/>
         <mesh name="D_175_2" file="objects/D_175/D_175_2.stl"/>
-        <mesh name="D_175_visual" file="objects/D_175/D_175_full.stl"/>
+        <mesh name="D_175_3" file="objects/D_175/D_175_3.stl"/>
+        <mesh name="D_175_4" file="objects/D_175/D_175_4.stl"/>
+        <mesh name="D_175_5" file="objects/D_175/D_175_5.stl"/>
+        <mesh name="D_175_6" file="objects/D_175/D_175_6.stl"/>
+        <mesh name="D_175_7" file="objects/D_175/D_175_7.stl"/>
+        <mesh name="D_175_8" file="objects/D_175/D_175_8.stl"/>
+        <mesh name="D_175_9" file="objects/D_175/D_175_9.stl"/>
+        <mesh name="D_175_10" file="objects/D_175/D_175_10.stl"/>
+        <mesh name="D_175_11" file="objects/D_175/D_175_11.stl"/>
+        <mesh name="D_175_12" file="objects/D_175/D_175_12.stl"/>
+        <mesh name="D_175_13" file="objects/D_175/D_175_13.stl"/>
+        <mesh name="D_175_14" file="objects/D_175/D_175_14.stl"/>
+        <mesh name="D_175_15" file="objects/D_175/D_175_15.stl"/>
+        <mesh name="D_175_16" file="objects/D_175/D_175_16.stl"/>
+        <mesh name="D_175_17" file="objects/D_175/D_175_17.stl"/>
+        <mesh name="D_175_18" file="objects/D_175/D_175_18.stl"/>
+        <mesh name="D_175_19" file="objects/D_175/D_175_19.stl"/>
+        <mesh name="D_175_20" file="objects/D_175/D_175_20.stl"/>
+        <mesh name="D_175_21" file="objects/D_175/D_175_21.stl"/>
+        <mesh name="D_175_22" file="objects/D_175/D_175_22.stl"/>
+        <mesh name="D_175_23" file="objects/D_175/D_175_23.stl"/>
+        <mesh name="D_175_24" file="objects/D_175/D_175_24.stl"/>
+        <mesh name="D_175_25" file="objects/D_175/D_175_25.stl"/>
+        <mesh name="D_175_26" file="objects/D_175/D_175_26.stl"/>
+        <mesh name="D_175_27" file="objects/D_175/D_175_27.stl"/>
+        <mesh name="D_175_28" file="objects/D_175/D_175_28.stl"/>
+        <mesh name="D_175_29" file="objects/D_175/D_175_29.stl"/>
+        <mesh name="D_175_30" file="objects/D_175/D_175_30.stl"/>
+        <mesh name="D_175_31" file="objects/D_175/D_175_31.stl"/>
+        <mesh name="D_175_32" file="objects/D_175/D_175_32.stl"/>
+        <mesh name="D_175_33" file="objects/D_175/D_175_33.stl"/>
+        <mesh name="D_175_34" file="objects/D_175/D_175_34.stl"/>
+        <mesh name="D_175_35" file="objects/D_175/D_175_35.stl"/>
+        <mesh name="D_175_36" file="objects/D_175/D_175_36.stl"/>
+        <mesh name="D_175_37" file="objects/D_175/D_175_37.stl"/>
+        <mesh name="D_175_38" file="objects/D_175/D_175_38.stl"/>
+        <mesh name="D_175_39" file="objects/D_175/D_175_39.stl"/>
+        <mesh name="D_175_40" file="objects/D_175/D_175_40.stl"/>
+        <mesh name="D_175_41" file="objects/D_175/D_175_41.stl"/>
+        <mesh name="D_175_42" file="objects/D_175/D_175_42.stl"/>
+        <mesh name="D_175_43" file="objects/D_175/D_175_43.stl"/>
+        <mesh name="D_175_44" file="objects/D_175/D_175_44.stl"/>
+        <mesh name="D_175_45" file="objects/D_175/D_175_45.stl"/>
+        <mesh name="D_175_46" file="objects/D_175/D_175_46.stl"/>
+        <mesh name="D_175_47" file="objects/D_175/D_175_47.stl"/>
+        <mesh name="D_175_48" file="objects/D_175/D_175_48.stl"/>
+        <mesh name="D_175_49" file="objects/D_175/D_175_49.stl"/>
+        <mesh name="D_175_50" file="objects/D_175/D_175_50.stl"/>
+        <mesh name="D_175_51" file="objects/D_175/D_175_51.stl"/>
+        <mesh name="D_175_52" file="objects/D_175/D_175_52.stl"/>
     </asset>
 </mujoco>

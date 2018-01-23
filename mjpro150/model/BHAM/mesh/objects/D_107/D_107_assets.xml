@@ -21,10 +21,5 @@
         <mesh name="D_107_19" file="objects/D_107/D_107_19.stl"/>
         <mesh name="D_107_20" file="objects/D_107/D_107_20.stl"/>
         <mesh name="D_107_21" file="objects/D_107/D_107_21.stl"/>
-        <mesh name="D_107_22" file="objects/D_107/D_107_22.stl"/>
-        <mesh name="D_107_23" file="objects/D_107/D_107_23.stl"/>
-        <mesh name="D_107_24" file="objects/D_107/D_107_24.stl"/>
-        <mesh name="D_107_25" file="objects/D_107/D_107_25.stl"/>
-        <mesh name="D_107_visual" file="objects/D_107/D_107_full.stl"/>
     </asset>
 </mujoco>

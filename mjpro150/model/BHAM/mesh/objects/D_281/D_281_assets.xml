@@ -1,0 +1,17 @@
+<mujoco>
+    <asset>
+        <mesh name="D_281_1" file="objects/D_281/D_281_1.stl"/>
+        <mesh name="D_281_2" file="objects/D_281/D_281_2.stl"/>
+        <mesh name="D_281_3" file="objects/D_281/D_281_3.stl"/>
+        <mesh name="D_281_4" file="objects/D_281/D_281_4.stl"/>
+        <mesh name="D_281_5" file="objects/D_281/D_281_5.stl"/>
+        <mesh name="D_281_6" file="objects/D_281/D_281_6.stl"/>
+        <mesh name="D_281_7" file="objects/D_281/D_281_7.stl"/>
+        <mesh name="D_281_8" file="objects/D_281/D_281_8.stl"/>
+        <mesh name="D_281_9" file="objects/D_281/D_281_9.stl"/>
+        <mesh name="D_281_10" file="objects/D_281/D_281_10.stl"/>
+        <mesh name="D_281_11" file="objects/D_281/D_281_11.stl"/>
+        <mesh name="D_281_12" file="objects/D_281/D_281_12.stl"/>
+        <mesh name="D_281_13" file="objects/D_281/D_281_13.stl"/>
+    </asset>
+</mujoco>

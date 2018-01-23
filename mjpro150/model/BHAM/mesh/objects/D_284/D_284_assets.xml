@@ -1,0 +1,30 @@
+<mujoco>
+    <asset>
+        <mesh name="D_284_1" file="objects/D_284/D_284_1.stl"/>
+        <mesh name="D_284_2" file="objects/D_284/D_284_2.stl"/>
+        <mesh name="D_284_3" file="objects/D_284/D_284_3.stl"/>
+        <mesh name="D_284_4" file="objects/D_284/D_284_4.stl"/>
+        <mesh name="D_284_5" file="objects/D_284/D_284_5.stl"/>
+        <mesh name="D_284_6" file="objects/D_284/D_284_6.stl"/>
+        <mesh name="D_284_7" file="objects/D_284/D_284_7.stl"/>
+        <mesh name="D_284_8" file="objects/D_284/D_284_8.stl"/>
+        <mesh name="D_284_9" file="objects/D_284/D_284_9.stl"/>
+        <mesh name="D_284_10" file="objects/D_284/D_284_10.stl"/>
+        <mesh name="D_284_11" file="objects/D_284/D_284_11.stl"/>
+        <mesh name="D_284_12" file="objects/D_284/D_284_12.stl"/>
+        <mesh name="D_284_13" file="objects/D_284/D_284_13.stl"/>
+        <mesh name="D_284_14" file="objects/D_284/D_284_14.stl"/>
+        <mesh name="D_284_15" file="objects/D_284/D_284_15.stl"/>
+        <mesh name="D_284_16" file="objects/D_284/D_284_16.stl"/>
+        <mesh name="D_284_17" file="objects/D_284/D_284_17.stl"/>
+        <mesh name="D_284_18" file="objects/D_284/D_284_18.stl"/>
+        <mesh name="D_284_19" file="objects/D_284/D_284_19.stl"/>
+        <mesh name="D_284_20" file="objects/D_284/D_284_20.stl"/>
+        <mesh name="D_284_21" file="objects/D_284/D_284_21.stl"/>
+        <mesh name="D_284_22" file="objects/D_284/D_284_22.stl"/>
+        <mesh name="D_284_23" file="objects/D_284/D_284_23.stl"/>
+        <mesh name="D_284_24" file="objects/D_284/D_284_24.stl"/>
+        <mesh name="D_284_25" file="objects/D_284/D_284_25.stl"/>
+        <mesh name="D_284_26" file="objects/D_284/D_284_26.stl"/>
+    </asset>
+</mujoco>

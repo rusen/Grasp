@@ -3,6 +3,5 @@
         <mesh name="D_4_1" file="objects/D_4/D_4_1.stl"/>
         <mesh name="D_4_2" file="objects/D_4/D_4_2.stl"/>
         <mesh name="D_4_3" file="objects/D_4/D_4_3.stl"/>
-        <mesh name="D_4_visual" file="objects/D_4/D_4_full.stl"/>
     </asset>
 </mujoco>

@@ -83,21 +83,5 @@
         <mesh name="D_170_81" file="objects/D_170/D_170_81.stl"/>
         <mesh name="D_170_82" file="objects/D_170/D_170_82.stl"/>
         <mesh name="D_170_83" file="objects/D_170/D_170_83.stl"/>
-        <mesh name="D_170_84" file="objects/D_170/D_170_84.stl"/>
-        <mesh name="D_170_85" file="objects/D_170/D_170_85.stl"/>
-        <mesh name="D_170_86" file="objects/D_170/D_170_86.stl"/>
-        <mesh name="D_170_87" file="objects/D_170/D_170_87.stl"/>
-        <mesh name="D_170_88" file="objects/D_170/D_170_88.stl"/>
-        <mesh name="D_170_89" file="objects/D_170/D_170_89.stl"/>
-        <mesh name="D_170_90" file="objects/D_170/D_170_90.stl"/>
-        <mesh name="D_170_91" file="objects/D_170/D_170_91.stl"/>
-        <mesh name="D_170_92" file="objects/D_170/D_170_92.stl"/>
-        <mesh name="D_170_93" file="objects/D_170/D_170_93.stl"/>
-        <mesh name="D_170_94" file="objects/D_170/D_170_94.stl"/>
-        <mesh name="D_170_95" file="objects/D_170/D_170_95.stl"/>
-        <mesh name="D_170_96" file="objects/D_170/D_170_96.stl"/>
-        <mesh name="D_170_97" file="objects/D_170/D_170_97.stl"/>
-        <mesh name="D_170_98" file="objects/D_170/D_170_98.stl"/>
-        <mesh name="D_170_visual" file="objects/D_170/D_170_full.stl"/>
     </asset>
 </mujoco>

@@ -59,6 +59,21 @@
         <mesh name="D_173_57" file="objects/D_173/D_173_57.stl"/>
         <mesh name="D_173_58" file="objects/D_173/D_173_58.stl"/>
         <mesh name="D_173_59" file="objects/D_173/D_173_59.stl"/>
-        <mesh name="D_173_visual" file="objects/D_173/D_173_full.stl"/>
+        <mesh name="D_173_60" file="objects/D_173/D_173_60.stl"/>
+        <mesh name="D_173_61" file="objects/D_173/D_173_61.stl"/>
+        <mesh name="D_173_62" file="objects/D_173/D_173_62.stl"/>
+        <mesh name="D_173_63" file="objects/D_173/D_173_63.stl"/>
+        <mesh name="D_173_64" file="objects/D_173/D_173_64.stl"/>
+        <mesh name="D_173_65" file="objects/D_173/D_173_65.stl"/>
+        <mesh name="D_173_66" file="objects/D_173/D_173_66.stl"/>
+        <mesh name="D_173_67" file="objects/D_173/D_173_67.stl"/>
+        <mesh name="D_173_68" file="objects/D_173/D_173_68.stl"/>
+        <mesh name="D_173_69" file="objects/D_173/D_173_69.stl"/>
+        <mesh name="D_173_70" file="objects/D_173/D_173_70.stl"/>
+        <mesh name="D_173_71" file="objects/D_173/D_173_71.stl"/>
+        <mesh name="D_173_72" file="objects/D_173/D_173_72.stl"/>
+        <mesh name="D_173_73" file="objects/D_173/D_173_73.stl"/>
+        <mesh name="D_173_74" file="objects/D_173/D_173_74.stl"/>
+        <mesh name="D_173_75" file="objects/D_173/D_173_75.stl"/>
     </asset>
 </mujoco>

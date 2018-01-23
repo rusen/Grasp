@@ -45,6 +45,21 @@
         <mesh name="D_213_43" file="objects/D_213/D_213_43.stl"/>
         <mesh name="D_213_44" file="objects/D_213/D_213_44.stl"/>
         <mesh name="D_213_45" file="objects/D_213/D_213_45.stl"/>
-        <mesh name="D_213_visual" file="objects/D_213/D_213_full.stl"/>
+        <mesh name="D_213_46" file="objects/D_213/D_213_46.stl"/>
+        <mesh name="D_213_47" file="objects/D_213/D_213_47.stl"/>
+        <mesh name="D_213_48" file="objects/D_213/D_213_48.stl"/>
+        <mesh name="D_213_49" file="objects/D_213/D_213_49.stl"/>
+        <mesh name="D_213_50" file="objects/D_213/D_213_50.stl"/>
+        <mesh name="D_213_51" file="objects/D_213/D_213_51.stl"/>
+        <mesh name="D_213_52" file="objects/D_213/D_213_52.stl"/>
+        <mesh name="D_213_53" file="objects/D_213/D_213_53.stl"/>
+        <mesh name="D_213_54" file="objects/D_213/D_213_54.stl"/>
+        <mesh name="D_213_55" file="objects/D_213/D_213_55.stl"/>
+        <mesh name="D_213_56" file="objects/D_213/D_213_56.stl"/>
+        <mesh name="D_213_57" file="objects/D_213/D_213_57.stl"/>
+        <mesh name="D_213_58" file="objects/D_213/D_213_58.stl"/>
+        <mesh name="D_213_59" file="objects/D_213/D_213_59.stl"/>
+        <mesh name="D_213_60" file="objects/D_213/D_213_60.stl"/>
+        <mesh name="D_213_61" file="objects/D_213/D_213_61.stl"/>
     </asset>
 </mujoco>

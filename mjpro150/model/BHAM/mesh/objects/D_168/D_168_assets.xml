@@ -40,6 +40,7 @@
         <mesh name="D_168_38" file="objects/D_168/D_168_38.stl"/>
         <mesh name="D_168_39" file="objects/D_168/D_168_39.stl"/>
         <mesh name="D_168_40" file="objects/D_168/D_168_40.stl"/>
-        <mesh name="D_168_visual" file="objects/D_168/D_168_full.stl"/>
+        <mesh name="D_168_41" file="objects/D_168/D_168_41.stl"/>
+        <mesh name="D_168_42" file="objects/D_168/D_168_42.stl"/>
     </asset>
 </mujoco>

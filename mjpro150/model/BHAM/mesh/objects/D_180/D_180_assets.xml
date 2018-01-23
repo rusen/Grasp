@@ -87,6 +87,10 @@
         <mesh name="D_180_85" file="objects/D_180/D_180_85.stl"/>
         <mesh name="D_180_86" file="objects/D_180/D_180_86.stl"/>
         <mesh name="D_180_87" file="objects/D_180/D_180_87.stl"/>
-        <mesh name="D_180_visual" file="objects/D_180/D_180_full.stl"/>
+        <mesh name="D_180_88" file="objects/D_180/D_180_88.stl"/>
+        <mesh name="D_180_89" file="objects/D_180/D_180_89.stl"/>
+        <mesh name="D_180_90" file="objects/D_180/D_180_90.stl"/>
+        <mesh name="D_180_91" file="objects/D_180/D_180_91.stl"/>
+        <mesh name="D_180_92" file="objects/D_180/D_180_92.stl"/>
     </asset>
 </mujoco>

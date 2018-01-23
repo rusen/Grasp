@@ -3,33 +3,5 @@
         <mesh name="D_208_1" file="objects/D_208/D_208_1.stl"/>
         <mesh name="D_208_2" file="objects/D_208/D_208_2.stl"/>
         <mesh name="D_208_3" file="objects/D_208/D_208_3.stl"/>
-        <mesh name="D_208_4" file="objects/D_208/D_208_4.stl"/>
-        <mesh name="D_208_5" file="objects/D_208/D_208_5.stl"/>
-        <mesh name="D_208_6" file="objects/D_208/D_208_6.stl"/>
-        <mesh name="D_208_7" file="objects/D_208/D_208_7.stl"/>
-        <mesh name="D_208_8" file="objects/D_208/D_208_8.stl"/>
-        <mesh name="D_208_9" file="objects/D_208/D_208_9.stl"/>
-        <mesh name="D_208_10" file="objects/D_208/D_208_10.stl"/>
-        <mesh name="D_208_11" file="objects/D_208/D_208_11.stl"/>
-        <mesh name="D_208_12" file="objects/D_208/D_208_12.stl"/>
-        <mesh name="D_208_13" file="objects/D_208/D_208_13.stl"/>
-        <mesh name="D_208_14" file="objects/D_208/D_208_14.stl"/>
-        <mesh name="D_208_15" file="objects/D_208/D_208_15.stl"/>
-        <mesh name="D_208_16" file="objects/D_208/D_208_16.stl"/>
-        <mesh name="D_208_17" file="objects/D_208/D_208_17.stl"/>
-        <mesh name="D_208_18" file="objects/D_208/D_208_18.stl"/>
-        <mesh name="D_208_19" file="objects/D_208/D_208_19.stl"/>
-        <mesh name="D_208_20" file="objects/D_208/D_208_20.stl"/>
-        <mesh name="D_208_21" file="objects/D_208/D_208_21.stl"/>
-        <mesh name="D_208_22" file="objects/D_208/D_208_22.stl"/>
-        <mesh name="D_208_23" file="objects/D_208/D_208_23.stl"/>
-        <mesh name="D_208_24" file="objects/D_208/D_208_24.stl"/>
-        <mesh name="D_208_25" file="objects/D_208/D_208_25.stl"/>
-        <mesh name="D_208_26" file="objects/D_208/D_208_26.stl"/>
-        <mesh name="D_208_27" file="objects/D_208/D_208_27.stl"/>
-        <mesh name="D_208_28" file="objects/D_208/D_208_28.stl"/>
-        <mesh name="D_208_29" file="objects/D_208/D_208_29.stl"/>
-        <mesh name="D_208_30" file="objects/D_208/D_208_30.stl"/>
-        <mesh name="D_208_visual" file="objects/D_208/D_208_full.stl"/>
     </asset>
 </mujoco>

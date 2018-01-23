@@ -15,43 +15,5 @@
         <mesh name="D_40_13" file="objects/D_40/D_40_13.stl"/>
         <mesh name="D_40_14" file="objects/D_40/D_40_14.stl"/>
         <mesh name="D_40_15" file="objects/D_40/D_40_15.stl"/>
-        <mesh name="D_40_16" file="objects/D_40/D_40_16.stl"/>
-        <mesh name="D_40_17" file="objects/D_40/D_40_17.stl"/>
-        <mesh name="D_40_18" file="objects/D_40/D_40_18.stl"/>
-        <mesh name="D_40_19" file="objects/D_40/D_40_19.stl"/>
-        <mesh name="D_40_20" file="objects/D_40/D_40_20.stl"/>
-        <mesh name="D_40_21" file="objects/D_40/D_40_21.stl"/>
-        <mesh name="D_40_22" file="objects/D_40/D_40_22.stl"/>
-        <mesh name="D_40_23" file="objects/D_40/D_40_23.stl"/>
-        <mesh name="D_40_24" file="objects/D_40/D_40_24.stl"/>
-        <mesh name="D_40_25" file="objects/D_40/D_40_25.stl"/>
-        <mesh name="D_40_26" file="objects/D_40/D_40_26.stl"/>
-        <mesh name="D_40_27" file="objects/D_40/D_40_27.stl"/>
-        <mesh name="D_40_28" file="objects/D_40/D_40_28.stl"/>
-        <mesh name="D_40_29" file="objects/D_40/D_40_29.stl"/>
-        <mesh name="D_40_30" file="objects/D_40/D_40_30.stl"/>
-        <mesh name="D_40_31" file="objects/D_40/D_40_31.stl"/>
-        <mesh name="D_40_32" file="objects/D_40/D_40_32.stl"/>
-        <mesh name="D_40_33" file="objects/D_40/D_40_33.stl"/>
-        <mesh name="D_40_34" file="objects/D_40/D_40_34.stl"/>
-        <mesh name="D_40_35" file="objects/D_40/D_40_35.stl"/>
-        <mesh name="D_40_36" file="objects/D_40/D_40_36.stl"/>
-        <mesh name="D_40_37" file="objects/D_40/D_40_37.stl"/>
-        <mesh name="D_40_38" file="objects/D_40/D_40_38.stl"/>
-        <mesh name="D_40_39" file="objects/D_40/D_40_39.stl"/>
-        <mesh name="D_40_40" file="objects/D_40/D_40_40.stl"/>
-        <mesh name="D_40_41" file="objects/D_40/D_40_41.stl"/>
-        <mesh name="D_40_42" file="objects/D_40/D_40_42.stl"/>
-        <mesh name="D_40_43" file="objects/D_40/D_40_43.stl"/>
-        <mesh name="D_40_44" file="objects/D_40/D_40_44.stl"/>
-        <mesh name="D_40_45" file="objects/D_40/D_40_45.stl"/>
-        <mesh name="D_40_46" file="objects/D_40/D_40_46.stl"/>
-        <mesh name="D_40_47" file="objects/D_40/D_40_47.stl"/>
-        <mesh name="D_40_48" file="objects/D_40/D_40_48.stl"/>
-        <mesh name="D_40_49" file="objects/D_40/D_40_49.stl"/>
-        <mesh name="D_40_50" file="objects/D_40/D_40_50.stl"/>
-        <mesh name="D_40_51" file="objects/D_40/D_40_51.stl"/>
-        <mesh name="D_40_52" file="objects/D_40/D_40_52.stl"/>
-        <mesh name="D_40_visual" file="objects/D_40/D_40_full.stl"/>
     </asset>
 </mujoco>

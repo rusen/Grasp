@@ -22,6 +22,10 @@
         <mesh name="D_100_20" file="objects/D_100/D_100_20.stl"/>
         <mesh name="D_100_21" file="objects/D_100/D_100_21.stl"/>
         <mesh name="D_100_22" file="objects/D_100/D_100_22.stl"/>
-        <mesh name="D_100_visual" file="objects/D_100/D_100_full.stl"/>
+        <mesh name="D_100_23" file="objects/D_100/D_100_23.stl"/>
+        <mesh name="D_100_24" file="objects/D_100/D_100_24.stl"/>
+        <mesh name="D_100_25" file="objects/D_100/D_100_25.stl"/>
+        <mesh name="D_100_26" file="objects/D_100/D_100_26.stl"/>
+        <mesh name="D_100_27" file="objects/D_100/D_100_27.stl"/>
     </asset>
 </mujoco>

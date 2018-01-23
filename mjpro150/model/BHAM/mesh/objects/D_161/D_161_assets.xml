@@ -14,14 +14,5 @@
         <mesh name="D_161_12" file="objects/D_161/D_161_12.stl"/>
         <mesh name="D_161_13" file="objects/D_161/D_161_13.stl"/>
         <mesh name="D_161_14" file="objects/D_161/D_161_14.stl"/>
-        <mesh name="D_161_15" file="objects/D_161/D_161_15.stl"/>
-        <mesh name="D_161_16" file="objects/D_161/D_161_16.stl"/>
-        <mesh name="D_161_17" file="objects/D_161/D_161_17.stl"/>
-        <mesh name="D_161_18" file="objects/D_161/D_161_18.stl"/>
-        <mesh name="D_161_19" file="objects/D_161/D_161_19.stl"/>
-        <mesh name="D_161_20" file="objects/D_161/D_161_20.stl"/>
-        <mesh name="D_161_21" file="objects/D_161/D_161_21.stl"/>
-        <mesh name="D_161_22" file="objects/D_161/D_161_22.stl"/>
-        <mesh name="D_161_visual" file="objects/D_161/D_161_full.stl"/>
     </asset>
 </mujoco>

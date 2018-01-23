@@ -58,6 +58,28 @@
         <mesh name="D_181_56" file="objects/D_181/D_181_56.stl"/>
         <mesh name="D_181_57" file="objects/D_181/D_181_57.stl"/>
         <mesh name="D_181_58" file="objects/D_181/D_181_58.stl"/>
-        <mesh name="D_181_visual" file="objects/D_181/D_181_full.stl"/>
+        <mesh name="D_181_59" file="objects/D_181/D_181_59.stl"/>
+        <mesh name="D_181_60" file="objects/D_181/D_181_60.stl"/>
+        <mesh name="D_181_61" file="objects/D_181/D_181_61.stl"/>
+        <mesh name="D_181_62" file="objects/D_181/D_181_62.stl"/>
+        <mesh name="D_181_63" file="objects/D_181/D_181_63.stl"/>
+        <mesh name="D_181_64" file="objects/D_181/D_181_64.stl"/>
+        <mesh name="D_181_65" file="objects/D_181/D_181_65.stl"/>
+        <mesh name="D_181_66" file="objects/D_181/D_181_66.stl"/>
+        <mesh name="D_181_67" file="objects/D_181/D_181_67.stl"/>
+        <mesh name="D_181_68" file="objects/D_181/D_181_68.stl"/>
+        <mesh name="D_181_69" file="objects/D_181/D_181_69.stl"/>
+        <mesh name="D_181_70" file="objects/D_181/D_181_70.stl"/>
+        <mesh name="D_181_71" file="objects/D_181/D_181_71.stl"/>
+        <mesh name="D_181_72" file="objects/D_181/D_181_72.stl"/>
+        <mesh name="D_181_73" file="objects/D_181/D_181_73.stl"/>
+        <mesh name="D_181_74" file="objects/D_181/D_181_74.stl"/>
+        <mesh name="D_181_75" file="objects/D_181/D_181_75.stl"/>
+        <mesh name="D_181_76" file="objects/D_181/D_181_76.stl"/>
+        <mesh name="D_181_77" file="objects/D_181/D_181_77.stl"/>
+        <mesh name="D_181_78" file="objects/D_181/D_181_78.stl"/>
+        <mesh name="D_181_79" file="objects/D_181/D_181_79.stl"/>
+        <mesh name="D_181_80" file="objects/D_181/D_181_80.stl"/>
+        <mesh name="D_181_81" file="objects/D_181/D_181_81.stl"/>
     </asset>
 </mujoco>

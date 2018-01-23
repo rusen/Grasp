@@ -46,6 +46,36 @@
         <mesh name="D_123_44" file="objects/D_123/D_123_44.stl"/>
         <mesh name="D_123_45" file="objects/D_123/D_123_45.stl"/>
         <mesh name="D_123_46" file="objects/D_123/D_123_46.stl"/>
-        <mesh name="D_123_visual" file="objects/D_123/D_123_full.stl"/>
+        <mesh name="D_123_47" file="objects/D_123/D_123_47.stl"/>
+        <mesh name="D_123_48" file="objects/D_123/D_123_48.stl"/>
+        <mesh name="D_123_49" file="objects/D_123/D_123_49.stl"/>
+        <mesh name="D_123_50" file="objects/D_123/D_123_50.stl"/>
+        <mesh name="D_123_51" file="objects/D_123/D_123_51.stl"/>
+        <mesh name="D_123_52" file="objects/D_123/D_123_52.stl"/>
+        <mesh name="D_123_53" file="objects/D_123/D_123_53.stl"/>
+        <mesh name="D_123_54" file="objects/D_123/D_123_54.stl"/>
+        <mesh name="D_123_55" file="objects/D_123/D_123_55.stl"/>
+        <mesh name="D_123_56" file="objects/D_123/D_123_56.stl"/>
+        <mesh name="D_123_57" file="objects/D_123/D_123_57.stl"/>
+        <mesh name="D_123_58" file="objects/D_123/D_123_58.stl"/>
+        <mesh name="D_123_59" file="objects/D_123/D_123_59.stl"/>
+        <mesh name="D_123_60" file="objects/D_123/D_123_60.stl"/>
+        <mesh name="D_123_61" file="objects/D_123/D_123_61.stl"/>
+        <mesh name="D_123_62" file="objects/D_123/D_123_62.stl"/>
+        <mesh name="D_123_63" file="objects/D_123/D_123_63.stl"/>
+        <mesh name="D_123_64" file="objects/D_123/D_123_64.stl"/>
+        <mesh name="D_123_65" file="objects/D_123/D_123_65.stl"/>
+        <mesh name="D_123_66" file="objects/D_123/D_123_66.stl"/>
+        <mesh name="D_123_67" file="objects/D_123/D_123_67.stl"/>
+        <mesh name="D_123_68" file="objects/D_123/D_123_68.stl"/>
+        <mesh name="D_123_69" file="objects/D_123/D_123_69.stl"/>
+        <mesh name="D_123_70" file="objects/D_123/D_123_70.stl"/>
+        <mesh name="D_123_71" file="objects/D_123/D_123_71.stl"/>
+        <mesh name="D_123_72" file="objects/D_123/D_123_72.stl"/>
+        <mesh name="D_123_73" file="objects/D_123/D_123_73.stl"/>
+        <mesh name="D_123_74" file="objects/D_123/D_123_74.stl"/>
+        <mesh name="D_123_75" file="objects/D_123/D_123_75.stl"/>
+        <mesh name="D_123_76" file="objects/D_123/D_123_76.stl"/>
+        <mesh name="D_123_77" file="objects/D_123/D_123_77.stl"/>
     </asset>
 </mujoco>

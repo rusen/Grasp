@@ -9,20 +9,5 @@
         <mesh name="D_70_7" file="objects/D_70/D_70_7.stl"/>
         <mesh name="D_70_8" file="objects/D_70/D_70_8.stl"/>
         <mesh name="D_70_9" file="objects/D_70/D_70_9.stl"/>
-        <mesh name="D_70_10" file="objects/D_70/D_70_10.stl"/>
-        <mesh name="D_70_11" file="objects/D_70/D_70_11.stl"/>
-        <mesh name="D_70_12" file="objects/D_70/D_70_12.stl"/>
-        <mesh name="D_70_13" file="objects/D_70/D_70_13.stl"/>
-        <mesh name="D_70_14" file="objects/D_70/D_70_14.stl"/>
-        <mesh name="D_70_15" file="objects/D_70/D_70_15.stl"/>
-        <mesh name="D_70_16" file="objects/D_70/D_70_16.stl"/>
-        <mesh name="D_70_17" file="objects/D_70/D_70_17.stl"/>
-        <mesh name="D_70_18" file="objects/D_70/D_70_18.stl"/>
-        <mesh name="D_70_19" file="objects/D_70/D_70_19.stl"/>
-        <mesh name="D_70_20" file="objects/D_70/D_70_20.stl"/>
-        <mesh name="D_70_21" file="objects/D_70/D_70_21.stl"/>
-        <mesh name="D_70_22" file="objects/D_70/D_70_22.stl"/>
-        <mesh name="D_70_23" file="objects/D_70/D_70_23.stl"/>
-        <mesh name="D_70_visual" file="objects/D_70/D_70_full.stl"/>
     </asset>
 </mujoco>

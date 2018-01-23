@@ -1,0 +1,19 @@
+<mujoco>
+    <asset>
+        <mesh name="D_265_1" file="objects/D_265/D_265_1.stl"/>
+        <mesh name="D_265_2" file="objects/D_265/D_265_2.stl"/>
+        <mesh name="D_265_3" file="objects/D_265/D_265_3.stl"/>
+        <mesh name="D_265_4" file="objects/D_265/D_265_4.stl"/>
+        <mesh name="D_265_5" file="objects/D_265/D_265_5.stl"/>
+        <mesh name="D_265_6" file="objects/D_265/D_265_6.stl"/>
+        <mesh name="D_265_7" file="objects/D_265/D_265_7.stl"/>
+        <mesh name="D_265_8" file="objects/D_265/D_265_8.stl"/>
+        <mesh name="D_265_9" file="objects/D_265/D_265_9.stl"/>
+        <mesh name="D_265_10" file="objects/D_265/D_265_10.stl"/>
+        <mesh name="D_265_11" file="objects/D_265/D_265_11.stl"/>
+        <mesh name="D_265_12" file="objects/D_265/D_265_12.stl"/>
+        <mesh name="D_265_13" file="objects/D_265/D_265_13.stl"/>
+        <mesh name="D_265_14" file="objects/D_265/D_265_14.stl"/>
+        <mesh name="D_265_15" file="objects/D_265/D_265_15.stl"/>
+    </asset>
+</mujoco>

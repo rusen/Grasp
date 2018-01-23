@@ -99,6 +99,7 @@
         <mesh name="D_10_97" file="objects/D_10/D_10_97.stl"/>
         <mesh name="D_10_98" file="objects/D_10/D_10_98.stl"/>
         <mesh name="D_10_99" file="objects/D_10/D_10_99.stl"/>
-        <mesh name="D_10_visual" file="objects/D_10/D_10_full.stl"/>
+        <mesh name="D_10_100" file="objects/D_10/D_10_100.stl"/>
+        <mesh name="D_10_101" file="objects/D_10/D_10_101.stl"/>
     </asset>
 </mujoco>

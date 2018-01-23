@@ -7,6 +7,6 @@
         <mesh name="D_3_5" file="objects/D_3/D_3_5.stl"/>
         <mesh name="D_3_6" file="objects/D_3/D_3_6.stl"/>
         <mesh name="D_3_7" file="objects/D_3/D_3_7.stl"/>
-        <mesh name="D_3_visual" file="objects/D_3/D_3_full.stl"/>
+        <mesh name="D_3_8" file="objects/D_3/D_3_8.stl"/>
     </asset>
 </mujoco>

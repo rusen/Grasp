@@ -75,6 +75,16 @@
         <mesh name="D_30_73" file="objects/D_30/D_30_73.stl"/>
         <mesh name="D_30_74" file="objects/D_30/D_30_74.stl"/>
         <mesh name="D_30_75" file="objects/D_30/D_30_75.stl"/>
-        <mesh name="D_30_visual" file="objects/D_30/D_30_full.stl"/>
+        <mesh name="D_30_76" file="objects/D_30/D_30_76.stl"/>
+        <mesh name="D_30_77" file="objects/D_30/D_30_77.stl"/>
+        <mesh name="D_30_78" file="objects/D_30/D_30_78.stl"/>
+        <mesh name="D_30_79" file="objects/D_30/D_30_79.stl"/>
+        <mesh name="D_30_80" file="objects/D_30/D_30_80.stl"/>
+        <mesh name="D_30_81" file="objects/D_30/D_30_81.stl"/>
+        <mesh name="D_30_82" file="objects/D_30/D_30_82.stl"/>
+        <mesh name="D_30_83" file="objects/D_30/D_30_83.stl"/>
+        <mesh name="D_30_84" file="objects/D_30/D_30_84.stl"/>
+        <mesh name="D_30_85" file="objects/D_30/D_30_85.stl"/>
+        <mesh name="D_30_86" file="objects/D_30/D_30_86.stl"/>
     </asset>
 </mujoco>

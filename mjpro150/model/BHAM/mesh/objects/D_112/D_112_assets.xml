@@ -19,6 +19,10 @@
         <mesh name="D_112_17" file="objects/D_112/D_112_17.stl"/>
         <mesh name="D_112_18" file="objects/D_112/D_112_18.stl"/>
         <mesh name="D_112_19" file="objects/D_112/D_112_19.stl"/>
-        <mesh name="D_112_visual" file="objects/D_112/D_112_full.stl"/>
+        <mesh name="D_112_20" file="objects/D_112/D_112_20.stl"/>
+        <mesh name="D_112_21" file="objects/D_112/D_112_21.stl"/>
+        <mesh name="D_112_22" file="objects/D_112/D_112_22.stl"/>
+        <mesh name="D_112_23" file="objects/D_112/D_112_23.stl"/>
+        <mesh name="D_112_24" file="objects/D_112/D_112_24.stl"/>
     </asset>
 </mujoco>

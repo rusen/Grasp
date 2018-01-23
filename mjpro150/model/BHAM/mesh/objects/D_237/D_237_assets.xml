@@ -46,37 +46,5 @@
         <mesh name="D_237_44" file="objects/D_237/D_237_44.stl"/>
         <mesh name="D_237_45" file="objects/D_237/D_237_45.stl"/>
         <mesh name="D_237_46" file="objects/D_237/D_237_46.stl"/>
-        <mesh name="D_237_47" file="objects/D_237/D_237_47.stl"/>
-        <mesh name="D_237_48" file="objects/D_237/D_237_48.stl"/>
-        <mesh name="D_237_49" file="objects/D_237/D_237_49.stl"/>
-        <mesh name="D_237_50" file="objects/D_237/D_237_50.stl"/>
-        <mesh name="D_237_51" file="objects/D_237/D_237_51.stl"/>
-        <mesh name="D_237_52" file="objects/D_237/D_237_52.stl"/>
-        <mesh name="D_237_53" file="objects/D_237/D_237_53.stl"/>
-        <mesh name="D_237_54" file="objects/D_237/D_237_54.stl"/>
-        <mesh name="D_237_55" file="objects/D_237/D_237_55.stl"/>
-        <mesh name="D_237_56" file="objects/D_237/D_237_56.stl"/>
-        <mesh name="D_237_57" file="objects/D_237/D_237_57.stl"/>
-        <mesh name="D_237_58" file="objects/D_237/D_237_58.stl"/>
-        <mesh name="D_237_59" file="objects/D_237/D_237_59.stl"/>
-        <mesh name="D_237_60" file="objects/D_237/D_237_60.stl"/>
-        <mesh name="D_237_61" file="objects/D_237/D_237_61.stl"/>
-        <mesh name="D_237_62" file="objects/D_237/D_237_62.stl"/>
-        <mesh name="D_237_63" file="objects/D_237/D_237_63.stl"/>
-        <mesh name="D_237_64" file="objects/D_237/D_237_64.stl"/>
-        <mesh name="D_237_65" file="objects/D_237/D_237_65.stl"/>
-        <mesh name="D_237_66" file="objects/D_237/D_237_66.stl"/>
-        <mesh name="D_237_67" file="objects/D_237/D_237_67.stl"/>
-        <mesh name="D_237_68" file="objects/D_237/D_237_68.stl"/>
-        <mesh name="D_237_69" file="objects/D_237/D_237_69.stl"/>
-        <mesh name="D_237_70" file="objects/D_237/D_237_70.stl"/>
-        <mesh name="D_237_71" file="objects/D_237/D_237_71.stl"/>
-        <mesh name="D_237_72" file="objects/D_237/D_237_72.stl"/>
-        <mesh name="D_237_73" file="objects/D_237/D_237_73.stl"/>
-        <mesh name="D_237_74" file="objects/D_237/D_237_74.stl"/>
-        <mesh name="D_237_75" file="objects/D_237/D_237_75.stl"/>
-        <mesh name="D_237_76" file="objects/D_237/D_237_76.stl"/>
-        <mesh name="D_237_77" file="objects/D_237/D_237_77.stl"/>
-        <mesh name="D_237_visual" file="objects/D_237/D_237_full.stl"/>
     </asset>
 </mujoco>

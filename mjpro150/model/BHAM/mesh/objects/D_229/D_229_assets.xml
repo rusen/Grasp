@@ -44,6 +44,22 @@
         <mesh name="D_229_42" file="objects/D_229/D_229_42.stl"/>
         <mesh name="D_229_43" file="objects/D_229/D_229_43.stl"/>
         <mesh name="D_229_44" file="objects/D_229/D_229_44.stl"/>
-        <mesh name="D_229_visual" file="objects/D_229/D_229_full.stl"/>
+        <mesh name="D_229_45" file="objects/D_229/D_229_45.stl"/>
+        <mesh name="D_229_46" file="objects/D_229/D_229_46.stl"/>
+        <mesh name="D_229_47" file="objects/D_229/D_229_47.stl"/>
+        <mesh name="D_229_48" file="objects/D_229/D_229_48.stl"/>
+        <mesh name="D_229_49" file="objects/D_229/D_229_49.stl"/>
+        <mesh name="D_229_50" file="objects/D_229/D_229_50.stl"/>
+        <mesh name="D_229_51" file="objects/D_229/D_229_51.stl"/>
+        <mesh name="D_229_52" file="objects/D_229/D_229_52.stl"/>
+        <mesh name="D_229_53" file="objects/D_229/D_229_53.stl"/>
+        <mesh name="D_229_54" file="objects/D_229/D_229_54.stl"/>
+        <mesh name="D_229_55" file="objects/D_229/D_229_55.stl"/>
+        <mesh name="D_229_56" file="objects/D_229/D_229_56.stl"/>
+        <mesh name="D_229_57" file="objects/D_229/D_229_57.stl"/>
+        <mesh name="D_229_58" file="objects/D_229/D_229_58.stl"/>
+        <mesh name="D_229_59" file="objects/D_229/D_229_59.stl"/>
+        <mesh name="D_229_60" file="objects/D_229/D_229_60.stl"/>
+        <mesh name="D_229_61" file="objects/D_229/D_229_61.stl"/>
     </asset>
 </mujoco>

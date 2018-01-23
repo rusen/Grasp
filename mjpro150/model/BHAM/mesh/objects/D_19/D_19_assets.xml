@@ -41,6 +41,48 @@
         <mesh name="D_19_39" file="objects/D_19/D_19_39.stl"/>
         <mesh name="D_19_40" file="objects/D_19/D_19_40.stl"/>
         <mesh name="D_19_41" file="objects/D_19/D_19_41.stl"/>
-        <mesh name="D_19_visual" file="objects/D_19/D_19_full.stl"/>
+        <mesh name="D_19_42" file="objects/D_19/D_19_42.stl"/>
+        <mesh name="D_19_43" file="objects/D_19/D_19_43.stl"/>
+        <mesh name="D_19_44" file="objects/D_19/D_19_44.stl"/>
+        <mesh name="D_19_45" file="objects/D_19/D_19_45.stl"/>
+        <mesh name="D_19_46" file="objects/D_19/D_19_46.stl"/>
+        <mesh name="D_19_47" file="objects/D_19/D_19_47.stl"/>
+        <mesh name="D_19_48" file="objects/D_19/D_19_48.stl"/>
+        <mesh name="D_19_49" file="objects/D_19/D_19_49.stl"/>
+        <mesh name="D_19_50" file="objects/D_19/D_19_50.stl"/>
+        <mesh name="D_19_51" file="objects/D_19/D_19_51.stl"/>
+        <mesh name="D_19_52" file="objects/D_19/D_19_52.stl"/>
+        <mesh name="D_19_53" file="objects/D_19/D_19_53.stl"/>
+        <mesh name="D_19_54" file="objects/D_19/D_19_54.stl"/>
+        <mesh name="D_19_55" file="objects/D_19/D_19_55.stl"/>
+        <mesh name="D_19_56" file="objects/D_19/D_19_56.stl"/>
+        <mesh name="D_19_57" file="objects/D_19/D_19_57.stl"/>
+        <mesh name="D_19_58" file="objects/D_19/D_19_58.stl"/>
+        <mesh name="D_19_59" file="objects/D_19/D_19_59.stl"/>
+        <mesh name="D_19_60" file="objects/D_19/D_19_60.stl"/>
+        <mesh name="D_19_61" file="objects/D_19/D_19_61.stl"/>
+        <mesh name="D_19_62" file="objects/D_19/D_19_62.stl"/>
+        <mesh name="D_19_63" file="objects/D_19/D_19_63.stl"/>
+        <mesh name="D_19_64" file="objects/D_19/D_19_64.stl"/>
+        <mesh name="D_19_65" file="objects/D_19/D_19_65.stl"/>
+        <mesh name="D_19_66" file="objects/D_19/D_19_66.stl"/>
+        <mesh name="D_19_67" file="objects/D_19/D_19_67.stl"/>
+        <mesh name="D_19_68" file="objects/D_19/D_19_68.stl"/>
+        <mesh name="D_19_69" file="objects/D_19/D_19_69.stl"/>
+        <mesh name="D_19_70" file="objects/D_19/D_19_70.stl"/>
+        <mesh name="D_19_71" file="objects/D_19/D_19_71.stl"/>
+        <mesh name="D_19_72" file="objects/D_19/D_19_72.stl"/>
+        <mesh name="D_19_73" file="objects/D_19/D_19_73.stl"/>
+        <mesh name="D_19_74" file="objects/D_19/D_19_74.stl"/>
+        <mesh name="D_19_75" file="objects/D_19/D_19_75.stl"/>
+        <mesh name="D_19_76" file="objects/D_19/D_19_76.stl"/>
+        <mesh name="D_19_77" file="objects/D_19/D_19_77.stl"/>
+        <mesh name="D_19_78" file="objects/D_19/D_19_78.stl"/>
+        <mesh name="D_19_79" file="objects/D_19/D_19_79.stl"/>
+        <mesh name="D_19_80" file="objects/D_19/D_19_80.stl"/>
+        <mesh name="D_19_81" file="objects/D_19/D_19_81.stl"/>
+        <mesh name="D_19_82" file="objects/D_19/D_19_82.stl"/>
+        <mesh name="D_19_83" file="objects/D_19/D_19_83.stl"/>
+        <mesh name="D_19_84" file="objects/D_19/D_19_84.stl"/>
     </asset>
 </mujoco>

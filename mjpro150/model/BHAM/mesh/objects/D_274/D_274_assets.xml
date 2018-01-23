@@ -1,0 +1,16 @@
+<mujoco>
+    <asset>
+        <mesh name="D_274_1" file="objects/D_274/D_274_1.stl"/>
+        <mesh name="D_274_2" file="objects/D_274/D_274_2.stl"/>
+        <mesh name="D_274_3" file="objects/D_274/D_274_3.stl"/>
+        <mesh name="D_274_4" file="objects/D_274/D_274_4.stl"/>
+        <mesh name="D_274_5" file="objects/D_274/D_274_5.stl"/>
+        <mesh name="D_274_6" file="objects/D_274/D_274_6.stl"/>
+        <mesh name="D_274_7" file="objects/D_274/D_274_7.stl"/>
+        <mesh name="D_274_8" file="objects/D_274/D_274_8.stl"/>
+        <mesh name="D_274_9" file="objects/D_274/D_274_9.stl"/>
+        <mesh name="D_274_10" file="objects/D_274/D_274_10.stl"/>
+        <mesh name="D_274_11" file="objects/D_274/D_274_11.stl"/>
+        <mesh name="D_274_12" file="objects/D_274/D_274_12.stl"/>
+    </asset>
+</mujoco>

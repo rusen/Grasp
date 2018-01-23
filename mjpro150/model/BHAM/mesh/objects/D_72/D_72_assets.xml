@@ -24,6 +24,9 @@
         <mesh name="D_72_22" file="objects/D_72/D_72_22.stl"/>
         <mesh name="D_72_23" file="objects/D_72/D_72_23.stl"/>
         <mesh name="D_72_24" file="objects/D_72/D_72_24.stl"/>
-        <mesh name="D_72_visual" file="objects/D_72/D_72_full.stl"/>
+        <mesh name="D_72_25" file="objects/D_72/D_72_25.stl"/>
+        <mesh name="D_72_26" file="objects/D_72/D_72_26.stl"/>
+        <mesh name="D_72_27" file="objects/D_72/D_72_27.stl"/>
+        <mesh name="D_72_28" file="objects/D_72/D_72_28.stl"/>
     </asset>
 </mujoco>

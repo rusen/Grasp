@@ -1,47 +1,5 @@
 <mujoco>
     <asset>
         <mesh name="D_204_1" file="objects/D_204/D_204_1.stl"/>
-        <mesh name="D_204_2" file="objects/D_204/D_204_2.stl"/>
-        <mesh name="D_204_3" file="objects/D_204/D_204_3.stl"/>
-        <mesh name="D_204_4" file="objects/D_204/D_204_4.stl"/>
-        <mesh name="D_204_5" file="objects/D_204/D_204_5.stl"/>
-        <mesh name="D_204_6" file="objects/D_204/D_204_6.stl"/>
-        <mesh name="D_204_7" file="objects/D_204/D_204_7.stl"/>
-        <mesh name="D_204_8" file="objects/D_204/D_204_8.stl"/>
-        <mesh name="D_204_9" file="objects/D_204/D_204_9.stl"/>
-        <mesh name="D_204_10" file="objects/D_204/D_204_10.stl"/>
-        <mesh name="D_204_11" file="objects/D_204/D_204_11.stl"/>
-        <mesh name="D_204_12" file="objects/D_204/D_204_12.stl"/>
-        <mesh name="D_204_13" file="objects/D_204/D_204_13.stl"/>
-        <mesh name="D_204_14" file="objects/D_204/D_204_14.stl"/>
-        <mesh name="D_204_15" file="objects/D_204/D_204_15.stl"/>
-        <mesh name="D_204_16" file="objects/D_204/D_204_16.stl"/>
-        <mesh name="D_204_17" file="objects/D_204/D_204_17.stl"/>
-        <mesh name="D_204_18" file="objects/D_204/D_204_18.stl"/>
-        <mesh name="D_204_19" file="objects/D_204/D_204_19.stl"/>
-        <mesh name="D_204_20" file="objects/D_204/D_204_20.stl"/>
-        <mesh name="D_204_21" file="objects/D_204/D_204_21.stl"/>
-        <mesh name="D_204_22" file="objects/D_204/D_204_22.stl"/>
-        <mesh name="D_204_23" file="objects/D_204/D_204_23.stl"/>
-        <mesh name="D_204_24" file="objects/D_204/D_204_24.stl"/>
-        <mesh name="D_204_25" file="objects/D_204/D_204_25.stl"/>
-        <mesh name="D_204_26" file="objects/D_204/D_204_26.stl"/>
-        <mesh name="D_204_27" file="objects/D_204/D_204_27.stl"/>
-        <mesh name="D_204_28" file="objects/D_204/D_204_28.stl"/>
-        <mesh name="D_204_29" file="objects/D_204/D_204_29.stl"/>
-        <mesh name="D_204_30" file="objects/D_204/D_204_30.stl"/>
-        <mesh name="D_204_31" file="objects/D_204/D_204_31.stl"/>
-        <mesh name="D_204_32" file="objects/D_204/D_204_32.stl"/>
-        <mesh name="D_204_33" file="objects/D_204/D_204_33.stl"/>
-        <mesh name="D_204_34" file="objects/D_204/D_204_34.stl"/>
-        <mesh name="D_204_35" file="objects/D_204/D_204_35.stl"/>
-        <mesh name="D_204_36" file="objects/D_204/D_204_36.stl"/>
-        <mesh name="D_204_37" file="objects/D_204/D_204_37.stl"/>
-        <mesh name="D_204_38" file="objects/D_204/D_204_38.stl"/>
-        <mesh name="D_204_39" file="objects/D_204/D_204_39.stl"/>
-        <mesh name="D_204_40" file="objects/D_204/D_204_40.stl"/>
-        <mesh name="D_204_41" file="objects/D_204/D_204_41.stl"/>
-        <mesh name="D_204_42" file="objects/D_204/D_204_42.stl"/>
-        <mesh name="D_204_visual" file="objects/D_204/D_204_full.stl"/>
     </asset>
 </mujoco>

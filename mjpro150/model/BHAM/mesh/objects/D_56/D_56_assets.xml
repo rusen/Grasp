@@ -15,8 +15,5 @@
         <mesh name="D_56_13" file="objects/D_56/D_56_13.stl"/>
         <mesh name="D_56_14" file="objects/D_56/D_56_14.stl"/>
         <mesh name="D_56_15" file="objects/D_56/D_56_15.stl"/>
-        <mesh name="D_56_16" file="objects/D_56/D_56_16.stl"/>
-        <mesh name="D_56_17" file="objects/D_56/D_56_17.stl"/>
-        <mesh name="D_56_visual" file="objects/D_56/D_56_full.stl"/>
     </asset>
 </mujoco>

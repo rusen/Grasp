@@ -23,8 +23,5 @@
         <mesh name="D_60_21" file="objects/D_60/D_60_21.stl"/>
         <mesh name="D_60_22" file="objects/D_60/D_60_22.stl"/>
         <mesh name="D_60_23" file="objects/D_60/D_60_23.stl"/>
-        <mesh name="D_60_24" file="objects/D_60/D_60_24.stl"/>
-        <mesh name="D_60_25" file="objects/D_60/D_60_25.stl"/>
-        <mesh name="D_60_visual" file="objects/D_60/D_60_full.stl"/>
     </asset>
 </mujoco>

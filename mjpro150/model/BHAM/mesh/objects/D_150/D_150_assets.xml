@@ -5,10 +5,5 @@
         <mesh name="D_150_3" file="objects/D_150/D_150_3.stl"/>
         <mesh name="D_150_4" file="objects/D_150/D_150_4.stl"/>
         <mesh name="D_150_5" file="objects/D_150/D_150_5.stl"/>
-        <mesh name="D_150_6" file="objects/D_150/D_150_6.stl"/>
-        <mesh name="D_150_7" file="objects/D_150/D_150_7.stl"/>
-        <mesh name="D_150_8" file="objects/D_150/D_150_8.stl"/>
-        <mesh name="D_150_9" file="objects/D_150/D_150_9.stl"/>
-        <mesh name="D_150_visual" file="objects/D_150/D_150_full.stl"/>
     </asset>
 </mujoco>

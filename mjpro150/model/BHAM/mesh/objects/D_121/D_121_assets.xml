@@ -2,6 +2,53 @@
     <asset>
         <mesh name="D_121_1" file="objects/D_121/D_121_1.stl"/>
         <mesh name="D_121_2" file="objects/D_121/D_121_2.stl"/>
-        <mesh name="D_121_visual" file="objects/D_121/D_121_full.stl"/>
+        <mesh name="D_121_3" file="objects/D_121/D_121_3.stl"/>
+        <mesh name="D_121_4" file="objects/D_121/D_121_4.stl"/>
+        <mesh name="D_121_5" file="objects/D_121/D_121_5.stl"/>
+        <mesh name="D_121_6" file="objects/D_121/D_121_6.stl"/>
+        <mesh name="D_121_7" file="objects/D_121/D_121_7.stl"/>
+        <mesh name="D_121_8" file="objects/D_121/D_121_8.stl"/>
+        <mesh name="D_121_9" file="objects/D_121/D_121_9.stl"/>
+        <mesh name="D_121_10" file="objects/D_121/D_121_10.stl"/>
+        <mesh name="D_121_11" file="objects/D_121/D_121_11.stl"/>
+        <mesh name="D_121_12" file="objects/D_121/D_121_12.stl"/>
+        <mesh name="D_121_13" file="objects/D_121/D_121_13.stl"/>
+        <mesh name="D_121_14" file="objects/D_121/D_121_14.stl"/>
+        <mesh name="D_121_15" file="objects/D_121/D_121_15.stl"/>
+        <mesh name="D_121_16" file="objects/D_121/D_121_16.stl"/>
+        <mesh name="D_121_17" file="objects/D_121/D_121_17.stl"/>
+        <mesh name="D_121_18" file="objects/D_121/D_121_18.stl"/>
+        <mesh name="D_121_19" file="objects/D_121/D_121_19.stl"/>
+        <mesh name="D_121_20" file="objects/D_121/D_121_20.stl"/>
+        <mesh name="D_121_21" file="objects/D_121/D_121_21.stl"/>
+        <mesh name="D_121_22" file="objects/D_121/D_121_22.stl"/>
+        <mesh name="D_121_23" file="objects/D_121/D_121_23.stl"/>
+        <mesh name="D_121_24" file="objects/D_121/D_121_24.stl"/>
+        <mesh name="D_121_25" file="objects/D_121/D_121_25.stl"/>
+        <mesh name="D_121_26" file="objects/D_121/D_121_26.stl"/>
+        <mesh name="D_121_27" file="objects/D_121/D_121_27.stl"/>
+        <mesh name="D_121_28" file="objects/D_121/D_121_28.stl"/>
+        <mesh name="D_121_29" file="objects/D_121/D_121_29.stl"/>
+        <mesh name="D_121_30" file="objects/D_121/D_121_30.stl"/>
+        <mesh name="D_121_31" file="objects/D_121/D_121_31.stl"/>
+        <mesh name="D_121_32" file="objects/D_121/D_121_32.stl"/>
+        <mesh name="D_121_33" file="objects/D_121/D_121_33.stl"/>
+        <mesh name="D_121_34" file="objects/D_121/D_121_34.stl"/>
+        <mesh name="D_121_35" file="objects/D_121/D_121_35.stl"/>
+        <mesh name="D_121_36" file="objects/D_121/D_121_36.stl"/>
+        <mesh name="D_121_37" file="objects/D_121/D_121_37.stl"/>
+        <mesh name="D_121_38" file="objects/D_121/D_121_38.stl"/>
+        <mesh name="D_121_39" file="objects/D_121/D_121_39.stl"/>
+        <mesh name="D_121_40" file="objects/D_121/D_121_40.stl"/>
+        <mesh name="D_121_41" file="objects/D_121/D_121_41.stl"/>
+        <mesh name="D_121_42" file="objects/D_121/D_121_42.stl"/>
+        <mesh name="D_121_43" file="objects/D_121/D_121_43.stl"/>
+        <mesh name="D_121_44" file="objects/D_121/D_121_44.stl"/>
+        <mesh name="D_121_45" file="objects/D_121/D_121_45.stl"/>
+        <mesh name="D_121_46" file="objects/D_121/D_121_46.stl"/>
+        <mesh name="D_121_47" file="objects/D_121/D_121_47.stl"/>
+        <mesh name="D_121_48" file="objects/D_121/D_121_48.stl"/>
+        <mesh name="D_121_49" file="objects/D_121/D_121_49.stl"/>
+        <mesh name="D_121_50" file="objects/D_121/D_121_50.stl"/>
     </asset>
 </mujoco>
