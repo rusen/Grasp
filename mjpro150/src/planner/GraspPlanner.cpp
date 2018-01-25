@@ -83,41 +83,56 @@ GraspPlanner::GraspPlanner(const char * dropboxBase, bool testFlag, int baseType
     	collisionState[i] = -1;
     }
 
+    // Set scene center.
+    sceneCenter[0] = 0.6, sceneCenter[1] = -0.45, sceneCenter[2] = -0.35;
+
     // Find camera and gaze locations
-    for (int i = 0; i<numberOfAngles; i++)
+    if (numberOfAngles > 1)
     {
-		// Calculate a location and orientation for placing the depth cam.
-		glm::vec3 camPosition, gazePosition = {(RF-0.5) * 0.06, (RF-0.5) * 0.06, (-(0.25 + RF * 0.06))};
-		float lookAngle = 0.64 + 0.4 * RF; //(37-60 degrees)
-		float distanceFromCenter = 0.4 + 0.35 * RF; // 0.45-0.75 meter distance!
-		float horzAngle = RF * 2 * M_PI;
-		float horzDistance = cos(lookAngle) * distanceFromCenter;
-		camPosition[0] = cos(horzAngle) * horzDistance;
-		camPosition[1] = sin(horzAngle) * horzDistance;
-		camPosition[2] = sin(lookAngle) * distanceFromCenter + gazePosition[2];
-
-		// Calculate gaze dir.
-		glm::vec3 tempGaze = normalize(gazePosition - camPosition);
-
-		// Next, we find the view-right vector (right hand vector)
-		glm::vec3 tempUp(0, 0, 1), rightDir, upDir;
-		rightDir = normalize(glm::cross(tempGaze, tempUp));
-		upDir = normalize(glm::cross(rightDir, tempGaze));
-
-		// Find camera pos.
-		glm::vec3 tempCameraPos = camPosition;
-
-		// Add camera information to the arrays.
-		cameraPosArr.push_back(tempCameraPos);
-		gazeDirArr.push_back(tempGaze);
-
-		// First point is the one shown to the camera.
-		if (!i)
+		for (int i = 0; i<numberOfAngles; i++)
 		{
-			gazeDir = tempGaze;
-			cameraPos = tempCameraPos;
+			// Calculate a location and orientation for placing the depth cam.
+			glm::vec3 camPosition, gazePosition = {(RF-0.5) * 0.06 + sceneCenter[0], (RF-0.5) * 0.06 + sceneCenter[1], (-(0.25 + RF * 0.06))};
+			float lookAngle = 0.64 + 0.4 * RF; //(37-60 degrees)
+			float distanceFromCenter = 0.4 + 0.35 * RF; // 0.45-0.75 meter distance!
+			float horzAngle = RF * 2 * M_PI;
+			float horzDistance = cos(lookAngle) * distanceFromCenter;
+			camPosition[0] = cos(horzAngle) * horzDistance + sceneCenter[0];
+			camPosition[1] = sin(horzAngle) * horzDistance + sceneCenter[1];
+			camPosition[2] = sin(lookAngle) * distanceFromCenter + gazePosition[2];
+
+			// Calculate gaze dir.
+			glm::vec3 tempGaze = normalize(gazePosition - camPosition);
+
+			// Next, we find the view-right vector (right hand vector)
+			glm::vec3 tempUp(0, 0, 1), rightDir, upDir;
+			rightDir = normalize(glm::cross(tempGaze, tempUp));
+			upDir = normalize(glm::cross(rightDir, tempGaze));
+
+			// Find camera pos.
+			glm::vec3 tempCameraPos = camPosition;
+
+			// Add camera information to the arrays.
+			cameraPosArr.push_back(tempCameraPos);
+			gazeDirArr.push_back(tempGaze);
+
+			// First point is the one shown to the camera.
+			if (!i)
+			{
+				gazeDir = tempGaze;
+				cameraPos = tempCameraPos;
+			}
 		}
     }
+    else
+    {
+    	// Use Golem's configuration
+    	cameraPos = glm::vec3(0.708134, -0.748057, 0.061557);
+    	gazeDir = glm::vec3(-0.4073, 0.5730, -0.7112);
+    	cameraPosArr.push_back(cameraPos);
+    	gazeDirArr.push_back(gazeDir);
+    }
+
 }
 
 GraspPlanner::~GraspPlanner() {
@@ -203,7 +218,7 @@ void GraspPlanner::ReadTrajectories(int numberOfGrasps){
 			}
 
 			// Read waypoints.
-			finalApproachArr[readCtr]->waypoints[i].pos[0] = wristPos[0] - 0.5, finalApproachArr[readCtr]->waypoints[i].pos[1] = wristPos[1], finalApproachArr[readCtr]->waypoints[i].pos[2] = wristPos[2];
+			finalApproachArr[readCtr]->waypoints[i].pos[0] = wristPos[0], finalApproachArr[readCtr]->waypoints[i].pos[1] = wristPos[1], finalApproachArr[readCtr]->waypoints[i].pos[2] = wristPos[2];
 			finalApproachArr[readCtr]->waypoints[i].quat.x = wristQuat[0];
 			finalApproachArr[readCtr]->waypoints[i].quat.y = wristQuat[1];
 			finalApproachArr[readCtr]->waypoints[i].quat.z = wristQuat[2];
@@ -251,9 +266,9 @@ void GraspPlanner::ReadTrajectories(int numberOfGrasps){
 		}
 
 		// Set the first waypoint as an initial approach from outside.
-		finalApproachArr[readCtr]->waypoints[0].pos[0] = 2 * finalApproachArr[readCtr]->waypoints[1].pos[0];
-		finalApproachArr[readCtr]->waypoints[0].pos[1] = 2 * finalApproachArr[readCtr]->waypoints[1].pos[1];
-		finalApproachArr[readCtr]->waypoints[0].pos[2] = 2 * (finalApproachArr[readCtr]->waypoints[1].pos[2] + 0.35) - 0.35;
+		finalApproachArr[readCtr]->waypoints[0].pos[0] = 2 * finalApproachArr[readCtr]->waypoints[1].pos[0] - sceneCenter[0];
+		finalApproachArr[readCtr]->waypoints[0].pos[1] = 2 * finalApproachArr[readCtr]->waypoints[1].pos[1] - sceneCenter[1];
+		finalApproachArr[readCtr]->waypoints[0].pos[2] = 2 * finalApproachArr[readCtr]->waypoints[1].pos[2] - sceneCenter[2];
 		finalApproachArr[readCtr]->waypoints[0].quat.x = finalApproachArr[readCtr]->waypoints[1].quat.x;
 		finalApproachArr[readCtr]->waypoints[0].quat.y = finalApproachArr[readCtr]->waypoints[1].quat.y;
 		finalApproachArr[readCtr]->waypoints[0].quat.z = finalApproachArr[readCtr]->waypoints[1].quat.z;
@@ -264,7 +279,7 @@ void GraspPlanner::ReadTrajectories(int numberOfGrasps){
 		// Finally, save grasp parameter data
 		Eigen::Vector3f gazeDir(resultArr[readCtr].gazeDir[0], resultArr[readCtr].gazeDir[1], resultArr[readCtr].gazeDir[2]);
 		Eigen::Vector3f camPos(resultArr[readCtr].camPos[0], resultArr[readCtr].camPos[1], resultArr[readCtr].camPos[2]);
-		std::vector<float> curParams = finalApproachArr[readCtr]->getGraspParams(gazeDir, camPos);
+		std::vector<float> curParams = finalApproachArr[readCtr]->getGraspParams(gazeDir, camPos, wpCount);
 		graspParams.push_back(curParams);
 	}
 	fclose(trjFP);
@@ -339,10 +354,10 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 
 				// Crop and save file.
 			    cv::Rect roi;
-			    roi.x = 90;
-			    roi.y = 10;
-			    roi.width = 460;
-			    roi.height = 460;
+			    roi.x = 0;
+			    roi.y = 0;
+			    roi.width = 480;
+			    roi.height = 480;
 
 				// RGB
 			    /*
@@ -596,7 +611,10 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 	case lifting:
 		if (testFlag)
 			break;
-		d->mocap_pos[2] += 0.000625;
+		if (counter > 500)
+			d->mocap_pos[2] += 0.0008;
+		else if (counter > 100)
+			d->mocap_pos[2] += 0.0005;
 		counter++;
 		if (counter > 1600){
 			counter = 0;

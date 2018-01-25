@@ -27,7 +27,9 @@
 #include <vector>
 #include <thread>
 
+#ifndef RF
 #define RF (static_cast <float> (rand()) / static_cast <float> (RAND_MAX))
+#endif  /* RF */
 #define PI 3.14159265
 
 namespace Grasp {
@@ -59,6 +61,10 @@ public:
 	int baseType = 0; // Type of base for current object
 	FILE * trjFP = NULL;
 
+	// Location-based variables
+	float xLow = 0, xRange = 0, xPos = 0, yLow = 0, yRange = 0, yPos = 0;
+	glm::vec3 sceneCenter;
+
 	// Grasp-related variables.
 	int numberOfGrasps = 0;
 	int numberOfTrials = 1;
@@ -83,7 +89,7 @@ public:
 	// Info for camera capture.
 	glm::vec3 cameraPos, gazeDir;
 	std::vector <glm::vec3> cameraPosArr, gazeDirArr;
-	int numberOfAngles = 20;
+	int numberOfAngles = 1;
 
 	// Upload and timeout time
 	time_t uploadTime = 0;
@@ -113,7 +119,7 @@ public:
 
 	// Gets the trajectory from the data trajectory file,
 	// and assigns it as next trajectory.
-	void ReadTrajectories( int numberOfGrasps );
+	void ReadTrajectories( int numberOfGrasps);
 
 	// CheckCollision checks the collision of
 	// the next trajectory with the table.

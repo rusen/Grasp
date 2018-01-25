@@ -13,7 +13,9 @@
 #include <pcl/point_types.h>
 #include <pcl/io/pcd_io.h>
 #include <pcl/features/normal_3d.h>
+#ifndef RF
 #define RF (static_cast <float> (rand()) / static_cast <float> (RAND_MAX))
+#endif  /* RF */
 
 namespace Grasp {
 

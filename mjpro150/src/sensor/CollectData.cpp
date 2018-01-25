@@ -26,11 +26,14 @@ void CollectData(Simulate* Simulator, const mjModel* m, mjData* d, unsigned char
 	glm::quat q;
 
 	// Get image from kinect camera.
+	std::cout<<"CAMERA POS FOR SIMULATE MEASUREMENT:"<<cameraPos[0]<<" "<<cameraPos[1]<<" "<<cameraPos[2]<<std::endl;
+	std::cout<<"GAZE DIR FOR SIMULATE MEASUREMENT:"<<gazeDir[0]<<" "<<gazeDir[1]<<" "<<gazeDir[2]<<std::endl;
 	Simulator->simulateMeasurement(m, d, cameraPos, gazeDir, minPointZ, out, &q);
+	std::cout<<"QUAT:"<<q.w<<" "<<q.x<<" "<<q.y<<" "<<q.z<<std::endl;
 
 	// Find camera frame and write the point cloud into a file.
 	Eigen::Vector3f newGaze;
-	Eigen::Vector4f cameraOrigin(cameraPos[0] + 0.5, cameraPos[1], cameraPos[2], 0);
+	Eigen::Vector4f cameraOrigin(cameraPos[0], cameraPos[1], cameraPos[2], 0);
 	Eigen::Quaternionf cameraRot(q.w, q.x, q.y, q.z), newCameraRot;
 	newCameraRot = cameraRot;
 	pcl::PCLPointCloud2 pc2;
@@ -38,13 +41,8 @@ void CollectData(Simulate* Simulator, const mjModel* m, mjData* d, unsigned char
 
 	// Reproject the point cloud
 	Grasp::VirtualCamera cam;
-	bool findNewCamera = true;
-	std::cout<<"NEW GAZE BEFORE CHANGE::"<<newGaze[0]<<" "<<newGaze[1]<<" "<<newGaze[2]<<std::endl;
+	bool findNewCamera = false;
 	cam.ReprojectPointCloud(Simulator->cloud, Simulator->scaled_im_, cameraOrigin, newGaze, cameraRot, newCameraRot, findNewCamera);
-
-	std::cout<<"NEW GAZE AFTER CHANGE::"<<newGaze[0]<<" "<<newGaze[1]<<" "<<newGaze[2]<<std::endl;
-	// Update gaze
-	gazeDir = glm::vec3(newGaze[0],newGaze[1],newGaze[2]);
 
 	// Capture RGB
 //	Simulator->object_model_->captureRGB(m, d, scn, con, Simulator->rgbIm, cameraPos, gazeDir , Simulator->rgbFile);

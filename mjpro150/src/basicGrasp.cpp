@@ -231,14 +231,11 @@ void graspObject(const mjModel* m, mjData* d){
 				// we put it in a random location in this square.
 				bool relocated = false;
 				std::cout<<"Object position: "<<d->qpos[m->nq-7]<<" "<<d->qpos[m->nq-6]<<std::endl;
-				if ((fabs(d->qpos[m->nq-7]) > 0.05 || fabs(d->qpos[m->nq-6]) > 0.05) && planner->baseType != 1)
+				if ((fabs(d->qpos[m->nq-7] - planner->xPos) > 0.05 || fabs(d->qpos[m->nq-6] - planner->yPos) > 0.05) && planner->baseType != 1)
 				{
 					std::cout<<"Object has moved outside!"<<std::endl;
-					// The object moved outside! Put it in a 10cmx10cm area in the middle.
-					float newX = (RF - 0.5) * 0.09;
-					float newY = (RF - 0.5) * 0.09;
-					d->qpos[m->nq-7] = newX;
-					d->qpos[m->nq-6] = newY;
+					d->qpos[m->nq-7] = planner->xPos;
+					d->qpos[m->nq-6] = planner->yPos;
 					relocated = true;
 					runCounter ++;
 					stableCounter = 0;
@@ -418,7 +415,7 @@ void render(GLFWwindow* window, const mjModel* m, mjData* d)
 
 		glBegin(GL_POINTS);
 		for (int i = 0; i < planner->Simulator->cloud->size(); i++) {
-			  glVertex3f(planner->Simulator->cloud->points[i].x - 0.5, //.x
+			  glVertex3f(planner->Simulator->cloud->points[i].x, //.x
 						  planner->Simulator->cloud->points[i].y, //.y
 						  planner->Simulator->cloud->points[i].z);
 		}
@@ -603,6 +600,7 @@ int main(int argc, const char** argv)
 
 	// initialize visualization data structures
 	mjv_defaultCamera(&cam);
+	cam.lookat[0] = 0.6, cam.lookat[1] = -0.45;
 	mjv_defaultCamera(&wristCam);
 	mjv_defaultOption(&opt);
 	opt.geomgroup[0] = 1;

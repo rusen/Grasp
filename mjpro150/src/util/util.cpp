@@ -189,23 +189,48 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 	float xScale = RF*0.1+0.95;
 	float yScale = xScale;
 	float zScale = xScale;
+
+	// Default area is bigger for small objects
+	planner->xLow = 0.48;
+	planner->xRange = 0.21;
+	planner->yLow = -0.33;
+	planner->yRange = -0.28;
+
+	// Fall from -0.15
+	float zPos = -0.15;
 	float eulerx = 0, eulery = 0, eulerz = RF * 2 * M_PI;
 	char lowerStr[20];
-	strcpy(lowerStr, "pos=\"0 0 -0.15\"");
 
+	// Utensils fall from higher up into cups.
 	if (classId == 7 || classId == 10 || classId == 13 || classId == 15 || classId == 16 )
 	{
-		strcpy(lowerStr, "pos=\"0 0 0\"");
+		zPos = 0;
 	}
-	if (classId == 5) // Cup and Funnel can be of any direction.
+
+	// Big objects go towards the middle of the scene, they can appear in a smaller area
+	if (classId == 3 || classId == 7 || classId == 8 || classId == 9 || classId == 10
+			|| classId == 13 || classId == 15 || classId == 16 || classId == 21 || classId == 24 )
+	{
+		planner->xLow = 0.55, planner->xRange = 0.12, planner->yLow = -0.38, planner->yRange = -0.1;
+	}
+
+	// Cup, with %50 chance, can be of any direction
+	if (classId == 5)
 	{
 		if (rand()%2 == 1)
 			eulerx = RF * 2 * M_PI, eulery = RF * 2 * M_PI;
 	}
+
+	// Funnels fall in every angle
 	if (classId == 22)
 	{
 		eulerx = RF * 2 * M_PI, eulery = RF * 2 * M_PI;
 	}
+
+	// Set position
+	planner->xPos = planner->xLow + RF * planner->xRange;
+	planner->yPos = planner->yLow + RF * planner->yRange;
+	sprintf(lowerStr, "pos=\"%f %f %f\"", planner->xPos, planner->yPos, zPos);
 
 	// Scale the object randomly.
 	std::ifstream tAsset(newAssetFile);
@@ -354,9 +379,16 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 		std::string baseStr((std::istreambuf_iterator<char>(tBase)),
 						 std::istreambuf_iterator<char>());
 		tBase.close();
+
+		// Change base colour
 		float red = ((float)(rand()%255))/255.0, green = ((float)(rand()%255))/255.0, blue = ((float)(rand()%255))/255.0;
 		sprintf(tmp, "rgba=\"%f %f %f 1\"", red, green, blue);
 		replaceAll(baseStr, std::string("rgba=\"\""), std::string(tmp));
+
+		// Change base location
+		char baseLocStr[100];
+		sprintf(baseLocStr, "pos=\"%f %f -0.305\"", planner->xPos, planner->yPos);
+		replaceAll(baseStr, std::string("pos=\"0 0 -0.305\""), std::string(baseLocStr));
 
 		// Write table string.
 		std::ofstream tBaseOut(newBaseFile);

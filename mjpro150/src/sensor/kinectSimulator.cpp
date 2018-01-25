@@ -441,7 +441,7 @@ pcl::PointCloud<pcl::PointXYZ> * KinectSimulator::intersect(const mjModel* m, mj
 	  if (p.z >= minPointZ)
 	  {
 		  // Save point
-		  tempCloud->points[r*640+c].x = (float) p.x + 0.5;
+		  tempCloud->points[r*640+c].x = (float) p.x;
 		  tempCloud->points[r*640+c].y = (float) p.y;
 		  tempCloud->points[r*640+c].z = (float) p.z;
 	  }
