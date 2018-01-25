@@ -199,7 +199,7 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 	// Fall from -0.15
 	float zPos = -0.15;
 	float eulerx = 0, eulery = 0, eulerz = RF * 2 * M_PI;
-	char lowerStr[20];
+	char lowerStr[1000];
 
 	// Utensils fall from higher up into cups.
 	if (classId == 7 || classId == 10 || classId == 13 || classId == 15 || classId == 16 )
@@ -386,7 +386,7 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 		replaceAll(baseStr, std::string("rgba=\"\""), std::string(tmp));
 
 		// Change base location
-		char baseLocStr[100];
+		char baseLocStr[1000];
 		sprintf(baseLocStr, "pos=\"%f %f -0.305\"", planner->xPos, planner->yPos);
 		replaceAll(baseStr, std::string("pos=\"0 0 -0.305\""), std::string(baseLocStr));
 
