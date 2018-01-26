@@ -532,8 +532,8 @@ void DistributePoints(const char * dropboxBase){
 	time_t curTime = time(NULL);
 	std::vector<std::string> emptyDirs;
 
-	// Create folders for up to 6 servers, if they don't exist
-	for (int i = 0; i<6; i++)
+	// Create folders for up to 8 servers, if they don't exist
+	for (int i = 0; i<8; i++)
 	{
 		char tmp[1000];
 		strcpy(tmp, dropboxBase);
