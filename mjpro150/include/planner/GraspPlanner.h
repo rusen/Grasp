@@ -69,6 +69,7 @@ public:
 	int numberOfGrasps = 0;
 	int numberOfTrials = 1;
 	int varItr = 0;
+	int maxAllowedGrasps = 500;
 	int collisionPoints = 50, collisionCounter = 0;
 	bool collisionSet = false, collisionRun = true, hasCollided = false;
 	bool testFlag = false;

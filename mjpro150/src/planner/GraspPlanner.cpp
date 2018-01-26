@@ -78,7 +78,7 @@ GraspPlanner::GraspPlanner(const char * dropboxBase, bool testFlag, int baseType
     	numberOfAngles = 1;
 
     // Fill collision state/grasp params array.
-    for (int i = 0; i < 500; i++)
+    for (int i = 0; i < maxAllowedGrasps; i++)
     {
     	collisionState[i] = -1;
     }
@@ -450,6 +450,10 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 			{
 				trjFP = fopen(trajectoryFile, "rb");
 				fread(&numberOfGrasps, 4, 1, trjFP);
+
+				// If total number of grasps is too high, we set an upper threshold.
+				if (numberOfGrasps > maxAllowedGrasps)
+					numberOfGrasps = maxAllowedGrasps;
 
 				// Allocate output array
 				resultArr = new Grasp::GraspResult[numberOfGrasps];

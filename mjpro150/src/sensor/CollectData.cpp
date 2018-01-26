@@ -44,9 +44,6 @@ void CollectData(Simulate* Simulator, const mjModel* m, mjData* d, unsigned char
 	bool findNewCamera = false;
 	cam.ReprojectPointCloud(Simulator->cloud, Simulator->scaled_im_, cameraOrigin, newGaze, cameraRot, newCameraRot, findNewCamera);
 
-	// Capture RGB
-//	Simulator->object_model_->captureRGB(m, d, scn, con, Simulator->rgbIm, cameraPos, gazeDir , Simulator->rgbFile);
-
 	// Write the point cloud to a file
 	pcl::PCDWriter().writeBinaryCompressed(Simulator->cloudFile, pc2, cameraOrigin, newCameraRot);
 
@@ -64,9 +61,6 @@ void CollectData(Simulate* Simulator, const mjModel* m, mjData* d, unsigned char
 			depthBuffer[offset * 3] = depthBuffer[offset * 3 + 1] = depthBuffer[offset * 3 + 2] =
 					(unsigned char) round((double)(Simulator->scaled_im_.at<uint16_t>(rowId, colId))/255.0); //input[offset];
 
-//			rgbBuffer[offset * 3] = Simulator->rgbIm.data[offset * 3];
-//			rgbBuffer[offset * 3 + 1] = Simulator->rgbIm.data[offset * 3 + 1];
-//			rgbBuffer[offset * 3 + 2] = Simulator->rgbIm.data[offset * 3 + 2];
 		}
 	}
 	*finishFlag = true;
