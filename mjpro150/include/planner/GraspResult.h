@@ -17,7 +17,7 @@ public:
 	int counter = 0, successCounter = 0;
 	int viewId = 0;
 	int graspType = 0;
-	glm::vec3 gazeDir, camPos;
+	glm::vec3 gazeDir, camPos; // centerPos is center of gravity of point cloud.
 	GraspResult(){}
 	virtual ~GraspResult(){}
 };

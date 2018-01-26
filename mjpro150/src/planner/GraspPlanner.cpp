@@ -253,7 +253,7 @@ void GraspPlanner::ReadTrajectories(int numberOfGrasps){
 		// Set the first waypoint as an initial approach from outside.
 		finalApproachArr[readCtr]->waypoints[0].pos[0] = 2 * finalApproachArr[readCtr]->waypoints[1].pos[0];
 		finalApproachArr[readCtr]->waypoints[0].pos[1] = 2 * finalApproachArr[readCtr]->waypoints[1].pos[1];
-		finalApproachArr[readCtr]->waypoints[0].pos[2] = 2 * (finalApproachArr[readCtr]->waypoints[1].pos[2] + 0.35) - 0.35;
+		finalApproachArr[readCtr]->waypoints[0].pos[2] = 2 * finalApproachArr[readCtr]->waypoints[1].pos[2] + 0.35;
 		finalApproachArr[readCtr]->waypoints[0].quat.x = finalApproachArr[readCtr]->waypoints[1].quat.x;
 		finalApproachArr[readCtr]->waypoints[0].quat.y = finalApproachArr[readCtr]->waypoints[1].quat.y;
 		finalApproachArr[readCtr]->waypoints[0].quat.z = finalApproachArr[readCtr]->waypoints[1].quat.z;
@@ -264,7 +264,7 @@ void GraspPlanner::ReadTrajectories(int numberOfGrasps){
 		// Finally, save grasp parameter data
 		Eigen::Vector3f gazeDir(resultArr[readCtr].gazeDir[0], resultArr[readCtr].gazeDir[1], resultArr[readCtr].gazeDir[2]);
 		Eigen::Vector3f camPos(resultArr[readCtr].camPos[0], resultArr[readCtr].camPos[1], resultArr[readCtr].camPos[2]);
-		std::vector<float> curParams = finalApproachArr[readCtr]->getGraspParams(gazeDir, camPos);
+		std::vector<float> curParams = finalApproachArr[readCtr]->getGraspParams(gazeDir, camPos, wpCount);
 		graspParams.push_back(curParams);
 	}
 	fclose(trjFP);
@@ -328,9 +328,9 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 			for (int i = numberOfAngles-1; i>-1; i--)
 			{
 				// Collect data
-		//		std::cout<<"Gaze:"<<gazeDirArr[i][0]<<" "<<gazeDirArr[i][1]<<" "<<gazeDirArr[i][2]<<std::endl;
+				std::cout<<"Gaze:"<<gazeDirArr[i][0]<<" "<<gazeDirArr[i][1]<<" "<<gazeDirArr[i][2]<<std::endl;
 				CollectData(Simulator, m, d, depthBuffer, cameraPosArr[i], gazeDirArr[i], camSize, minPointZ, &finishFlag, logStream, i);
-		//		std::cout<<"New Gaze:"<<gazeDirArr[i][0]<<" "<<gazeDirArr[i][1]<<" "<<gazeDirArr[i][2]<<std::endl;
+				std::cout<<"New Gaze:"<<gazeDirArr[i][0]<<" "<<gazeDirArr[i][1]<<" "<<gazeDirArr[i][2]<<std::endl;
 
 				// Print aux info
 		//		std::cout<<"Getting data from "<<i<<"th location."<<std::endl;
@@ -435,6 +435,9 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 			{
 				trjFP = fopen(trajectoryFile, "rb");
 				fread(&numberOfGrasps, 4, 1, trjFP);
+
+				if (numberOfGrasps > numberOfMaximumGrasps)
+					numberOfGrasps = numberOfMaximumGrasps;
 
 				// Allocate output array
 				resultArr = new Grasp::GraspResult[numberOfGrasps];

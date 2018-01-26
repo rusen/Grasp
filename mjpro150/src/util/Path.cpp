@@ -69,7 +69,7 @@ Waypoint Path::Interpolate(int step){
 	}
 }
 
-std::vector<float> Path::getGraspParams(Eigen::Vector3f gazeDir, Eigen::Vector3f camPos){
+std::vector<float> Path::getGraspParams(Eigen::Vector3f gazeDir, Eigen::Vector3f camPos, int wpCount){
 	// Get up, right vectors as well.
     // Find right and up vectors
 	gazeDir.normalize();
@@ -100,6 +100,7 @@ std::vector<float> Path::getGraspParams(Eigen::Vector3f gazeDir, Eigen::Vector3f
 
 	// Final transformation matrices/quats
 	Eigen::Quaternionf tQuat = Eigen::Quaternionf(camFrame).inverse();
+	tQuat.normalize();
 	Eigen::Matrix4f tM = cameraRotM * cameraTraM;
 
 	// Interpolate waypoints to 10 separate points.
@@ -108,12 +109,16 @@ std::vector<float> Path::getGraspParams(Eigen::Vector3f gazeDir, Eigen::Vector3f
 	for (int i = 0; i<limit * 27 + 10; i++)
 		outputData.push_back(0);
 
+	// Set start offset for outputting parameters.
+	int startOffset = ceil(((double)steps) / (wpCount+1));
+	int range = steps - startOffset;
+
 	// Set grasp type in data
 	outputData[graspType] = 1;
 
 	int currentOffset = 0;
 	for (int k = 0; k<limit; k++){
-		int cnt = round(k * (((double)steps) / (limit-1)));
+		int cnt = round(k * (((double)range) / (limit-1))) + startOffset;
 		Grasp::Waypoint wp = Interpolate(cnt);
 
 		// Convert to view coordinates.
@@ -122,7 +127,12 @@ std::vector<float> Path::getGraspParams(Eigen::Vector3f gazeDir, Eigen::Vector3f
 		// Transform wrist point
 		pos = tM * pos;
 		Eigen::Quaternionf wristQuat = Eigen::Quaternionf(wp.quat.w, wp.quat.x, wp.quat.y, wp.quat.z);
+		wristQuat.normalize();
 		wristQuat = tQuat * wristQuat;
+		wristQuat.normalize();
+
+		// Print
+//		std::cout<<"Wrist pos and quat for step:"<< cnt << ": "<<pos[0]<<" "<<pos[1]<<" "<<pos[2]<<" "<<wristQuat.w()<<" "<<wristQuat.x()<<" "<<wristQuat.y()<<" "<<wristQuat.z()<<std::endl;
 
 		// Write back the data
 		outputData[currentOffset + k * 27 + 10] = pos[0];
@@ -134,7 +144,9 @@ std::vector<float> Path::getGraspParams(Eigen::Vector3f gazeDir, Eigen::Vector3f
 		outputData[currentOffset + k * 27 + 16] = wristQuat.z();
 
 		for (int i = 0; i<20; i++)
+		{
 			outputData[currentOffset + k * 27 + 17 + i] = wp.jointAngles[i];
+		}
 	}
 
 	return outputData;

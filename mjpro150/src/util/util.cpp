@@ -25,6 +25,7 @@ void replaceAll(std::string& str, const std::string& from, const std::string& to
 std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, int baseId, int runCount){
 	// Templates for model, base and assets files are already there.
 	// We just need to modify them by adding the variations.
+	srand(time(NULL));
 
 	// Allocate space for model xml.
 	char modelXMLStr[10000];
@@ -122,8 +123,6 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
     	totalMass += partMasses[itr];
     }
     fclose(massFileID);
-    for (int itr = 0; itr<numberOfParts; itr++)
-        std::cout<<"New mass:"<<partMasses[itr]<<std::endl;
 
     // Object assets
     strcpy(newAssetFile, modelPrefix);
@@ -225,8 +224,34 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 	// For each run, we create a different object with varying friction and weight.
 	for (int runItr = 0; runItr<runCount; runItr++)
 	{
+		float frictionRange = RF, weightRange = RF;
+		if (runCount == 4)
+		{
+			switch(runItr)
+			{
+				case 0:
+					frictionRange = 0;
+					weightRange = 1;
+					break;
+				case 1:
+					frictionRange = 1;
+					weightRange = 1;
+					break;
+
+				case 2:
+					frictionRange = 0;
+					weightRange = 0;
+					break;
+
+				case 3:
+					frictionRange = 1;
+					weightRange = 0;
+					break;
+			}
+		}
+
 		// Create random parameters
-		float friction = RF * (frictionUpperLimit - frictionLowerLimit) + frictionLowerLimit;
+		float friction = frictionRange * (frictionUpperLimit - frictionLowerLimit) + frictionLowerLimit;
 
 		// Get the right object file.
 		boost::filesystem::copy_file(oldObjectFile, newObjectFile, boost::filesystem::copy_option::overwrite_if_exists);
@@ -245,7 +270,11 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 		float addedWeights[] = {40, 350, 450, 200, 300, 0, 40, 300, 120, 100, 100, 80, 100,  60, 40, 40, 100, 0, 0, 0, 300, 40, 20,  50};
 		int baseWeight = baseWeights[classId-1];
 		int addedWeight = addedWeights[classId-1];
-		float mass = (float)(rand()%addedWeight + baseWeight);
+		float mass = (float)( weightRange*(float)addedWeight + (float)baseWeight);
+
+		std::cout<<"MASS OF THE OBJECT:"<<mass<<std::endl;
+
+
 		mass = mass/1000;
 
 		// We find and save relative mass of each file.
@@ -379,7 +408,6 @@ void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int ba
 	if (!boost::filesystem::exists(imageFolder))
 		boost::filesystem::create_directories(imageFolder);
 
-	int ctr = 0;
 	// First, we need to prepare the grasp data and images.
 	// We will create a bin file that includes object class,
 	// object id, grasp output (success, stability) and
@@ -406,10 +434,6 @@ void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int ba
 		fread(&wpCount, 4, 1, trjFP1);
 		fread(buffer, 4, 27*wpCount, trjFP1);
 
-		// If no trials have been performed, move on.
-		if (!planner->resultArr[i].counter)
-			continue;
-
 		// Write original trajectory data
 		fwrite(&likelihood, 4, 1, trjFP2);
 		fwrite(&graspType, 4, 1, trjFP2);
@@ -418,11 +442,14 @@ void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int ba
 
 		// Get image from views and save into images folder
 		std::string imDepth = std::string(viewFolder) + std::string(std::to_string(planner->resultArr[i].viewId)) + std::string(".png");
-		std::string destImDepth = std::string(imageFolder) + std::string(std::to_string(ctr)) + std::string(".png");
+		std::string destImDepth = std::string(imageFolder) + std::string(std::to_string(i)) + std::string(".png");
 		boost::filesystem::copy_file(imDepth, destImDepth, boost::filesystem::copy_option::overwrite_if_exists);
 
 		// Get object id, grasp params, output parameters etc print in a file.
-		float success = planner->resultArr[i].successProbability/(double)planner->resultArr[i].counter;
+		float success = 0;
+		if (!(planner->resultArr[i].counter))
+			success = -1;
+		else success = planner->resultArr[i].successProbability/(double)planner->resultArr[i].counter;
 		float stabilityArr[4];
 		stabilityArr[0] = planner->resultArr[i].x1/(double)planner->resultArr[i].counter;
 		stabilityArr[1] = planner->resultArr[i].r1/(double)planner->resultArr[i].counter;
@@ -435,9 +462,6 @@ void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int ba
 		for (int k = 0; k<tmpVec.size(); k++)
 			tmpArr[k] = planner->graspParams[i][k];
 		fwrite(tmpArr, 4, tmpVec.size(), dataFP); // Writing grasp parameters
-
-		// Increase counter.
-		ctr++;
 	}
 	fclose(dataFP);
 	fclose(trjFP1);

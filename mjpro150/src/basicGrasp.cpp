@@ -46,7 +46,7 @@ double lasty = 0;
 
 // Dataset related variables.
 int objectCount = 0;
-int nonCollidingGraspLimit = 10;
+int nonCollidingGraspLimit = 0;
 bool firstTimeFlag = true; // True in the first run, false otherwise.
 int baseIds[1000];
 bool utensilFlag = false;
@@ -399,7 +399,6 @@ void render(GLFWwindow* window, const mjModel* m, mjData* d)
 	glVertex3f(0.1, 0, 0);
 	glEnd();
 
-	*/
 
     glLineWidth(5);
 	glBegin(GL_LINES);
@@ -412,6 +411,7 @@ void render(GLFWwindow* window, const mjModel* m, mjData* d)
 	glVertex3f(planner->cameraPos[0], planner->cameraPos[1], planner->cameraPos[2]);
 	glVertex3f(planner->cameraPos[0]+(up[0]*0.15), planner->cameraPos[1]+(up[1]*0.15), planner->cameraPos[2]+(up[2]*0.15));
 	glEnd();
+	*/
 
 	// Fill in relevant pixels with point cloud data.
 	if (planner->Simulator->cloud != nullptr){
@@ -425,7 +425,6 @@ void render(GLFWwindow* window, const mjModel* m, mjData* d)
 		glEnd();
 
 	}
-
 }
 
 bool ismember(std::vector<int> vec, int query)
@@ -461,6 +460,7 @@ int main(int argc, const char** argv)
 	randSeed = randSeed + (time_t) tmpNo;
     srand(randSeed);
     std::cout<<" RANDOM SEED: "<<randSeed << std::endl;
+    std::cout<<"First random no:"<<rand()<<std::endl;
 
     // Read class selection parameter.
 	sscanf(argv[4], "%ud", &classSelection);
@@ -528,7 +528,6 @@ int main(int argc, const char** argv)
         	fscanf(fid, "%d\n", &tmpNo);
         	if (tmpNo == classSelection && !ismember(excludedObjects, i + 1))
         	{
-        		std::cout<<"Object added to class:"<<i+1<<std::endl;
         		objectIdx.push_back(i + 1);
         	}
         }
@@ -540,6 +539,7 @@ int main(int argc, const char** argv)
         	std::cout<<"This class has no objects! Pick a number between 0-15, with 0 allocated for all classes."<<std::endl;
         	return -1;
         }
+        else std::cout<<"This class has "<<objectIdx.size()<<" objects."<<std::endl;
 
         // Select a random element of this class.
         objectId = objectIdx[rand()%(objectIdx.size())];
@@ -655,11 +655,8 @@ int main(int argc, const char** argv)
 		if( !m )
 			mju_error_s("Load model error: %s", error);
 
-		std::cout<<"DATA TO BE MADE"<<std::endl;
-
 		// Make data, save space for stable position info, start visual structures.
 		d = mj_makeData(m);
-		std::cout<<"DATA MADE. MOVING to CONTEXT                                                                                                                                                                                                                                                                                                                                                                                                                                 "<<std::endl;
 		if (!planner->varItr)
 		{
 			lastQpos = new mjtNum[m->nq], stableQpos = new mjtNum[m->nq], stableQvel = new mjtNum[m->nv], stableCtrl = new mjtNum[m->nu];

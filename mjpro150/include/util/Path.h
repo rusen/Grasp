@@ -36,7 +36,7 @@ public:
 	}
 
 	// Function to extract grasp parameters.
-	std::vector<float> getGraspParams(Eigen::Vector3f gazeDir, Eigen::Vector3f camPos);
+	std::vector<float> getGraspParams(Eigen::Vector3f gazeDir, Eigen::Vector3f camPos, int wpCount);
 
 private:
 	int waypointCount = 0;

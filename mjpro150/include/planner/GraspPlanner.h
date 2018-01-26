@@ -61,6 +61,7 @@ public:
 
 	// Grasp-related variables.
 	int numberOfGrasps = 0;
+	int numberOfMaximumGrasps = 200;
 	int numberOfTrials = 1;
 	int varItr = 0;
 	int collisionPoints = 50, collisionCounter = 0;
@@ -83,7 +84,7 @@ public:
 	// Info for camera capture.
 	glm::vec3 cameraPos, gazeDir;
 	std::vector <glm::vec3> cameraPosArr, gazeDirArr;
-	int numberOfAngles = 20;
+	int numberOfAngles = 10;
 
 	// Upload and timeout time
 	time_t uploadTime = 0;
