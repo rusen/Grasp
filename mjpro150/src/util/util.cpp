@@ -25,7 +25,8 @@ void replaceAll(std::string& str, const std::string& from, const std::string& to
 std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, int baseId, int runCount){
 	// Templates for model, base and assets files are already there.
 	// We just need to modify them by adding the variations.
-	srand(time(NULL));
+//	std::cout<<"RANDOM NO BEFORE SRAND"<<rand()<<std::endl;
+//	srand(time(NULL));
 
 	// Allocate space for model xml.
 	char modelXMLStr[10000];
