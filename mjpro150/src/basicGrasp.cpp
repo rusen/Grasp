@@ -46,7 +46,7 @@ double lasty = 0;
 
 // Dataset related variables.
 int objectCount = 0;
-int nonCollidingGraspLimit = 0;
+int nonCollidingGraspLimit = 10;
 bool firstTimeFlag = true; // True in the first run, false otherwise.
 int baseIds[1000];
 bool utensilFlag = false;

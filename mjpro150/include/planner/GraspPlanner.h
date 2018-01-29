@@ -98,7 +98,7 @@ public:
 	int graspCounter = 0;
 	int stableCounter = 0;
 	int stableLimit = 25;
-	int numberOfNoncollidingGrasps = 10;
+	int numberOfNoncollidingGrasps = 0;
 
 	// Simulator allocation
 	Simulate* Simulator = NULL;
