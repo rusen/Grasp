@@ -1,53 +1,53 @@
 <mujoco>
     <worldbody>
         <body name="base">
-            <geom type="mesh" group="1" mesh="D_10_1" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_2" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_3" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_4" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_5" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_6" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_7" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_8" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_9" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_10" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_11" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_12" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_13" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_14" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_15" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_16" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_17" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_18" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_19" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_20" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_21" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_22" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_23" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_24" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_25" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_26" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_27" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_28" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_29" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_30" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_31" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_32" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_33" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_34" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_35" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_36" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_37" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_38" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_39" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_40" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_41" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_42" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_43" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_44" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_45" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_46" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
-            <geom type="mesh" group="1" mesh="D_10_47" density ="5000" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_1" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_2" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_3" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_4" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_5" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_6" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_7" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_8" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_9" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_10" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_11" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_12" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_13" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_14" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_15" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_16" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_17" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_18" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_19" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_20" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_21" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_22" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_23" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_24" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_25" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_26" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_27" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_28" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_29" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_30" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_31" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_32" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_33" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_34" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_35" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_36" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_37" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_38" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_39" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_40" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_41" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_42" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_43" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_44" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_45" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_46" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+            <geom type="mesh" group="1" mesh="D_10_47" density="5000" rgba="0 0 0 0" pos="0 0 -0.305" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
         <geom type="mesh" rgba="" pos="0 0 -0.305" group ="2" mass="0" contype="0" conaffinity="0" mesh="D_10_visual"/>
         </body>
     </worldbody>
