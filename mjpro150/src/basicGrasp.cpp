@@ -75,8 +75,11 @@ Grasp::GraspPlanner *planner;
 // Camera stuff
 glm::vec3 camDirection, camPosition;
 glm::mat4 TM;
-unsigned char glBuffer[2400*4000*3];
+unsigned char glBuffer[2400*1800*3];
+unsigned char glBufferAfter[2400*1800*3];
 unsigned char addonBuffer[2400*4000];
+bool redPointCloud = false;
+bool getObjectImages = true;
 
 // Joint info debugging data.
 double jointArr[20][6];
@@ -222,7 +225,6 @@ void graspObject(const mjModel* m, mjData* d){
 				terminateFlag = true;
 				return;
 			}
-
 
 			// If stable, move on.
 			if ((err < stableError || stableCounter >= stableIterations) && (stableCounter >= minStableIterations))
@@ -383,7 +385,15 @@ void render(GLFWwindow* window, const mjModel* m, mjData* d)
 	};
 
 	// Render the depth buffer.
-	mjr_drawPixels(planner->depthBuffer, NULL, bottomright, &con);
+//	mjr_drawPixels(planner->depthBuffer, NULL, bottomright, &con);
+
+
+	// Read pixels from the buffer
+	mjrRect maxRect = mjr_maxViewport(&con);
+	if (getObjectImages)
+	{
+		mjr_readPixels(glBuffer, NULL, maxRect, &con);
+	}
 
 	// Render the rgb buffer.
 //	mjr_drawPixels(planner->rgbBuffer, NULL, bottomleft, &con);
@@ -415,7 +425,6 @@ void render(GLFWwindow* window, const mjModel* m, mjData* d)
 
 	// Fill in relevant pixels with point cloud data.
 	if (planner->Simulator->cloud != nullptr){
-
 		glBegin(GL_POINTS);
 		for (int i = 0; i < planner->Simulator->cloud->size(); i++) {
 			  glVertex3f(planner->Simulator->cloud->points[i].x - 0.5, //.x
@@ -423,7 +432,20 @@ void render(GLFWwindow* window, const mjModel* m, mjData* d)
 						  planner->Simulator->cloud->points[i].z);
 		}
 		glEnd();
+	}
 
+	if (getObjectImages)
+	{
+
+		mjr_readPixels(glBufferAfter, NULL, maxRect, &con);
+
+		// Pixel-by-pixel check.
+		for (int i = 0; i < maxRect.height * maxRect.width; i++)
+		{
+			if (glBuffer[i * 3] != glBufferAfter[i * 3])
+				glBufferAfter[i * 3] = 255;
+		}
+		mjr_drawPixels(glBufferAfter, NULL, maxRect, &con);
 	}
 }
 
@@ -713,6 +735,15 @@ int main(int argc, const char** argv)
 				// get framebuffer viewport
 				mjrRect viewport = {0, 0, 0, 0};
 				glfwGetFramebufferSize(window, &viewport.width, &viewport.height);
+
+				// Track object
+				if (getObjectImages)
+				{
+					cam.lookat[0] = d->qpos[m->nq-7];
+					cam.lookat[1] = d->qpos[m->nq-6];
+					cam.lookat[2] = d->qpos[m->nq-5];
+					cam.distance = 0.5;
+				}
 
 				// update scene and render
 				mjv_updateScene(m, d, &opt, NULL, &cam, mjCAT_ALL, &scn);

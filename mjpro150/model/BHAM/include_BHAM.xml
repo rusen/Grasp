@@ -25,7 +25,7 @@
 
     <default>
 		<default class="BHAM"> 
-			<geom material="MatMesh" contype="1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
+			<geom material="MatMesh" contype="1" rgba="0.44 0.54 0.565 1" conaffinity="1" condim="4" solimp="0.9 0.95 0.001" solref="0.008 1.0" margin="0.001"/>
         	<joint limited="true" damping="0.2" armature=".01"/>
         	<site material="MatTouch" type="ellipsoid" group="3"/>
             <position kp="1" ctrllimited="true" forcelimited="true" forcerange="-1.25 1.25"/>

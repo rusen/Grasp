@@ -61,7 +61,7 @@ public:
 
 	// Grasp-related variables.
 	int numberOfGrasps = 0;
-	int numberOfMaximumGrasps = 200;
+	int numberOfMaximumGrasps = 100;
 	int numberOfTrials = 1;
 	int varItr = 0;
 	int collisionPoints = 50, collisionCounter = 0;

@@ -132,7 +132,7 @@ std::vector<float> Path::getGraspParams(Eigen::Vector3f gazeDir, Eigen::Vector3f
 		wristQuat.normalize();
 
 		// Print
-//		std::cout<<"Wrist pos and quat for step:"<< cnt << ": "<<pos[0]<<" "<<pos[1]<<" "<<pos[2]<<" "<<wristQuat.w()<<" "<<wristQuat.x()<<" "<<wristQuat.y()<<" "<<wristQuat.z()<<std::endl;
+		std::cout<<"Wrist pos and quat for step:"<< cnt << ": "<<pos[0]<<" "<<pos[1]<<" "<<pos[2]<<" "<<wristQuat.w()<<" "<<wristQuat.x()<<" "<<wristQuat.y()<<" "<<wristQuat.z()<<std::endl;
 
 		// Write back the data
 		outputData[currentOffset + k * 27 + 10] = pos[0];

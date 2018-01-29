@@ -327,7 +327,7 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 	tLight.close();
 	// Assign intensity [ 0.5 - 1]
 	float intensity = (static_cast <float> (rand()) / static_cast <float> (RAND_MAX));
-	intensity = intensity/2 + 0.5;
+	intensity = 0.8;
 	sprintf(tmp, "diffuse=\"%f %f %f\"", intensity, intensity, intensity);
 	replaceAll(lightStr, std::string("diffuse=\"\""), std::string(tmp));
 
@@ -344,6 +344,7 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 	y = y - 0.5;
 	float z = (static_cast <float> (rand()) / static_cast <float> (RAND_MAX));
 	z = z + 0.9;
+	x=0, y=1, z=1;
 	sprintf(tmp, "pos=\"%f %f %f\"", x, y, z);
 	replaceAll(lightStr, std::string("pos=\"\""), std::string(tmp));
 
@@ -368,7 +369,8 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 	tTable.close();
 	intensity = (static_cast <float> (rand()) / static_cast <float> (RAND_MAX));
 	intensity = intensity/2 + 0.3; // [0.3 - 0.8]
-	sprintf(tmp, "rgba=\"%f %f %f 1\"", intensity, intensity, intensity);
+//	sprintf(tmp, "rgba=\"%f %f %f 1\"", intensity, intensity, intensity);
+	sprintf(tmp, "rgba=\"0.93 0.87 0.8 1\"");
 	replaceAll(tableStr, std::string("rgba=\"\""), std::string(tmp));
 
 	// Write table string.
