@@ -14,6 +14,7 @@
 #include <glm/gtx/quaternion.hpp>
 #include <cstdlib>
 #include <cerrno>
+#include <random>
 
 namespace Grasp {
 
@@ -264,7 +265,7 @@ void GraspPlanner::ReadTrajectories(int numberOfGrasps){
 		// Finally, save grasp parameter data
 		Eigen::Vector3f gazeDir(resultArr[readCtr].gazeDir[0], resultArr[readCtr].gazeDir[1], resultArr[readCtr].gazeDir[2]);
 		Eigen::Vector3f camPos(resultArr[readCtr].camPos[0], resultArr[readCtr].camPos[1], resultArr[readCtr].camPos[2]);
-		std::vector<float> curParams = finalApproachArr[readCtr]->getGraspParams(gazeDir, camPos, wpCount);
+		std::vector<float> curParams = finalApproachArr[readCtr]->getGraspParams(gazeDir, camPos);
 		graspParams.push_back(curParams);
 	}
 	fclose(trjFP);
@@ -433,6 +434,7 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 			success = Connector::DownloadFileFromDropbox(trajectoryFile);
 			if (success)
 			{
+
 				trjFP = fopen(trajectoryFile, "rb");
 				fread(&numberOfGrasps, 4, 1, trjFP);
 
@@ -620,7 +622,9 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 
 			// Reset everything
 			for (int i = 0; i<m->nq; i++)
+			{
 				d->qpos[i] = stableQpos[i];
+			}
 			if (testFlag)
 				d->qpos[27] = d->qpos[27] + 1;
 			for (int i = 0; i<m->nv; i++)

@@ -75,7 +75,7 @@ public:
 	GraspResult* resultArr = NULL;
 	std::vector<std::vector<float>> graspParams;
 	std::vector<int> validViews;
-	int validViewPixels = 250;
+	int validViewPixels = 300;
 
 	// Grasp state variables
 	state graspState = collectingData; //initial for full scenario
@@ -84,7 +84,7 @@ public:
 	// Info for camera capture.
 	glm::vec3 cameraPos, gazeDir;
 	std::vector <glm::vec3> cameraPosArr, gazeDirArr;
-	int numberOfAngles = 10;
+	int numberOfAngles = 20;
 
 	// Upload and timeout time
 	time_t uploadTime = 0;
@@ -98,7 +98,7 @@ public:
 	int graspCounter = 0;
 	int stableCounter = 0;
 	int stableLimit = 25;
-	int numberOfNoncollidingGrasps = 0;
+	int numberOfNoncollidingGrasps = 10;
 
 	// Simulator allocation
 	Simulate* Simulator = NULL;

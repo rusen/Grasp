@@ -79,7 +79,7 @@ unsigned char glBuffer[2400*1800*3];
 unsigned char glBufferAfter[2400*1800*3];
 unsigned char addonBuffer[2400*4000];
 bool redPointCloud = false;
-bool getObjectImages = true;
+bool getObjectImages = false;
 
 // Joint info debugging data.
 double jointArr[20][6];
@@ -742,7 +742,7 @@ int main(int argc, const char** argv)
 					cam.lookat[0] = d->qpos[m->nq-7];
 					cam.lookat[1] = d->qpos[m->nq-6];
 					cam.lookat[2] = d->qpos[m->nq-5];
-					cam.distance = 0.5;
+	//				cam.distance = 0.5;
 				}
 
 				// update scene and render

@@ -69,7 +69,7 @@ Waypoint Path::Interpolate(int step){
 	}
 }
 
-std::vector<float> Path::getGraspParams(Eigen::Vector3f gazeDir, Eigen::Vector3f camPos, int wpCount){
+std::vector<float> Path::getGraspParams(Eigen::Vector3f gazeDir, Eigen::Vector3f camPos){
 	// Get up, right vectors as well.
     // Find right and up vectors
 	gazeDir.normalize();
@@ -110,8 +110,8 @@ std::vector<float> Path::getGraspParams(Eigen::Vector3f gazeDir, Eigen::Vector3f
 		outputData.push_back(0);
 
 	// Set start offset for outputting parameters.
-	int startOffset = ceil(((double)steps) / (wpCount+1));
-	int range = steps - startOffset;
+	int startOffset = 0;
+	int range = steps;
 
 	// Set grasp type in data
 	outputData[graspType] = 1;
@@ -127,12 +127,10 @@ std::vector<float> Path::getGraspParams(Eigen::Vector3f gazeDir, Eigen::Vector3f
 		// Transform wrist point
 		pos = tM * pos;
 		Eigen::Quaternionf wristQuat = Eigen::Quaternionf(wp.quat.w, wp.quat.x, wp.quat.y, wp.quat.z);
-		wristQuat.normalize();
 		wristQuat = tQuat * wristQuat;
-		wristQuat.normalize();
 
 		// Print
-		std::cout<<"Wrist pos and quat for step:"<< cnt << ": "<<pos[0]<<" "<<pos[1]<<" "<<pos[2]<<" "<<wristQuat.w()<<" "<<wristQuat.x()<<" "<<wristQuat.y()<<" "<<wristQuat.z()<<std::endl;
+//		std::cout<<"Wrist pos and quat for step:"<< cnt << ": "<<pos[0]<<" "<<pos[1]<<" "<<pos[2]<<" "<<wristQuat.w()<<" "<<wristQuat.x()<<" "<<wristQuat.y()<<" "<<wristQuat.z()<<std::endl;
 
 		// Write back the data
 		outputData[currentOffset + k * 27 + 10] = pos[0];

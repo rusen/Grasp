@@ -66,6 +66,7 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
+#include <random>
 
 #include <Eigen/Geometry>
 #define PI 3.14159265
@@ -416,6 +417,26 @@ pcl::PointCloud<pcl::PointXYZ> * KinectSimulator::intersect(const mjModel* m, mj
     glm::mat4 T = s * (r * tOrg);
     glm::mat4 invT = glm::inverse(T);
 
+    float addedNoiseX = 0;
+    float addedNoiseY = 0;
+    float addedNoiseZ = 0;
+
+    srand(time(NULL));
+    int idx1 = rand()%1000, idx2 = rand()%1000, idx3 = rand()%1000;
+	std::default_random_engine generator;
+	std::normal_distribution<double> distribution(0.0,0.005);
+	for (int ktr = 0; ktr < 1000; ktr++)
+	{
+		float no = distribution(generator);
+		if (idx1 == ktr)
+			addedNoiseX = no;
+		if (idx2 == ktr)
+			addedNoiseY = no;
+		if (idx3 == ktr)
+			addedNoiseZ = no;
+	}
+	std::cout<<"Sampled calibration error in cms: "<<addedNoiseX*100 << " "<< addedNoiseY*100 << " "<<addedNoiseZ*100 << std::endl;
+
     //Go over disparity image and recompute depth map and point cloud after filtering and adding noise etcs
     for(int r=0; r<camera_.getHeight(); ++r) {
       float* disp_i = out_disp.ptr<float>(r);
@@ -441,9 +462,9 @@ pcl::PointCloud<pcl::PointXYZ> * KinectSimulator::intersect(const mjModel* m, mj
 	  if (p.z >= minPointZ)
 	  {
 		  // Save point
-		  tempCloud->points[r*640+c].x = (float) p.x + 0.5;
-		  tempCloud->points[r*640+c].y = (float) p.y;
-		  tempCloud->points[r*640+c].z = (float) p.z;
+		  tempCloud->points[r*640+c].x = (float) p.x + 0.5 + addedNoiseX;
+		  tempCloud->points[r*640+c].y = (float) p.y + addedNoiseY;
+		  tempCloud->points[r*640+c].z = (float) p.z + addedNoiseZ;
 	  }
 
 	  // save z to a depth map.
