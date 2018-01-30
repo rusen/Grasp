@@ -360,8 +360,8 @@
 	
 	<actuator>
         <position name="A_thumb_ABD"  class="BHAM" joint="thumb_ABD"  ctrlrange="-0.26180 0.26180"/>
-        <position name="A_thumb_IN"  class="BHAM" joint="thumb_IN"  ctrlrange="0.15 1.5708"/>
-        <position name="A_thumb_OUT"  class="BHAM" joint="thumb_OUT"  ctrlrange="0.1571 1.4835"/>
+        <position name="A_thumb_IN"  class="BHAM" joint="thumb_IN"  ctrlrange="0.17 1.5708"/>
+        <position name="A_thumb_OUT"  class="BHAM" joint="thumb_OUT"  ctrlrange="0.17 1.4835"/>
         <position name="A_thumb_TIP"  class="BHAM" joint="thumb_TIP"  ctrlrange="0.1571 1.4835"/>
         <position name="A_fore_ABD"  class="BHAM" joint="fore_ABD"  ctrlrange="-0.26180 0.26180"/>
         <position name="A_fore_IN"  class="BHAM" joint="fore_IN"  ctrlrange="0.22 1.5708"/>
