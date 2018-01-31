@@ -424,7 +424,7 @@ pcl::PointCloud<pcl::PointXYZ> * KinectSimulator::intersect(const mjModel* m, mj
     srand(time(NULL));
     int idx1 = rand()%1000, idx2 = rand()%1000, idx3 = rand()%1000;
 	std::default_random_engine generator;
-	std::normal_distribution<double> distribution(0.0,0.006);
+	std::normal_distribution<double> distribution(0.0,0.004);
 	for (int ktr = 0; ktr < 1000; ktr++)
 	{
 		float no = distribution(generator);
