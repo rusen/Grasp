@@ -265,7 +265,7 @@ void GraspPlanner::ReadTrajectories(int numberOfGrasps){
 		// Finally, save grasp parameter data
 		Eigen::Vector3f gazeDir(resultArr[readCtr].gazeDir[0], resultArr[readCtr].gazeDir[1], resultArr[readCtr].gazeDir[2]);
 		Eigen::Vector3f camPos(resultArr[readCtr].camPos[0], resultArr[readCtr].camPos[1], resultArr[readCtr].camPos[2]);
-		std::vector<float> curParams = finalApproachArr[readCtr]->getGraspParams(gazeDir, camPos);
+		std::vector<float> curParams = finalApproachArr[readCtr]->getGraspParams(gazeDir, camPos, wpCount);
 		graspParams.push_back(curParams);
 	}
 	fclose(trjFP);

@@ -69,7 +69,7 @@ Waypoint Path::Interpolate(int step){
 	}
 }
 
-std::vector<float> Path::getGraspParams(Eigen::Vector3f gazeDir, Eigen::Vector3f camPos){
+std::vector<float> Path::getGraspParams(Eigen::Vector3f gazeDir, Eigen::Vector3f camPos, int wpCount){
 	// Get up, right vectors as well.
     // Find right and up vectors
 	gazeDir.normalize();
@@ -110,8 +110,8 @@ std::vector<float> Path::getGraspParams(Eigen::Vector3f gazeDir, Eigen::Vector3f
 		outputData.push_back(0);
 
 	// Set start offset for outputting parameters.
-	int startOffset = 0;
-	int range = steps;
+	int startOffset = ceil(((double)steps) / (wpCount+1));
+	int range = steps - startOffset;
 
 	// Set grasp type in data
 	outputData[graspType] = 1;

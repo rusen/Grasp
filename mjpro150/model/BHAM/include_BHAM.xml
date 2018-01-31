@@ -364,7 +364,7 @@
         <position name="A_thumb_OUT"  class="BHAM" joint="thumb_OUT"  ctrlrange="0.17 1.4835"/>
         <position name="A_thumb_TIP"  class="BHAM" joint="thumb_TIP"  ctrlrange="0.1571 1.4835"/>
         <position name="A_fore_ABD"  class="BHAM" joint="fore_ABD"  ctrlrange="-0.26180 0.26180"/>
-        <position name="A_fore_IN"  class="BHAM" joint="fore_IN"  ctrlrange="0.22 1.5708"/>
+        <position name="A_fore_IN"  class="BHAM" joint="fore_IN"  ctrlrange="0.25 1.5708"/>
         <position name="A_fore_OUT"  class="BHAM" joint="fore_OUT"  ctrlrange="0.1571 1.4835"/>
         <position name="A_fore_TIP"  class="BHAM" joint="fore_TIP"  ctrlrange="0.1571 1.4835"/>
         <position name="A_middle_ABD"  class="BHAM" joint="middle_ABD"  ctrlrange="-0.26180 0.26180"/>
@@ -372,11 +372,11 @@
         <position name="A_middle_OUT"  class="BHAM" joint="middle_OUT"  ctrlrange="0.1571 1.4835"/>
         <position name="A_middle_TIP"  class="BHAM" joint="middle_TIP"  ctrlrange="0.1571 1.4835"/>
         <position name="A_ring_ABD"  class="BHAM" joint="ring_ABD"  ctrlrange="-0.26180 0.26180"/>
-        <position name="A_ring_IN"  class="BHAM" joint="ring_IN"  ctrlrange="0.24 1.5708"/>
+        <position name="A_ring_IN"  class="BHAM" joint="ring_IN"  ctrlrange="0.27 1.5708"/>
         <position name="A_ring_OUT"  class="BHAM" joint="ring_OUT"  ctrlrange="0.1571 1.4835"/>
         <position name="A_ring_TIP"  class="BHAM" joint="ring_TIP"  ctrlrange="0.1571 1.4835"/>
         <position name="A_little_ABD"  class="BHAM" joint="little_ABD"  ctrlrange="-0.26180 0.26180"/>
-        <position name="A_little_IN"  class="BHAM" joint="little_IN"  ctrlrange="0.22 1.5708"/>
+        <position name="A_little_IN"  class="BHAM" joint="little_IN"  ctrlrange="0.27 1.5708"/>
         <position name="A_little_OUT"  class="BHAM" joint="little_OUT"  ctrlrange="0.1571 1.4835"/>
         <position name="A_little_TIP"  class="BHAM" joint="little_TIP"  ctrlrange="0.1571 1.4835"/>
 	</actuator>
