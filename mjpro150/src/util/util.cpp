@@ -267,8 +267,8 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 		replaceAll(objectStr, std::string("friction=\"\""), std::string(tmp));
 
 		// Create random mass, depending on the object type.
-		float baseWeights[] =  {30,  50,  50, 200,  30, 0, 40, 150,  80,  50, 250, 40,  50, 100, 40, 40, 150, 0, 0, 0, 500, 40, 50, 100};
-		float addedWeights[] = {40, 350, 450, 200, 300, 0, 40, 300, 120, 100, 100, 80, 100,  60, 40, 40, 100, 0, 0, 0, 300, 40, 20,  50};
+		float baseWeights[] =  {20,  50,  50, 200,  30, 0, 40, 150,  80,  50, 250, 40,  50, 20, 40, 40, 150, 0, 0, 0, 500, 40, 50, 100};
+		float addedWeights[] = {60, 350, 450, 200, 300, 0, 60, 350, 120, 100, 100, 180, 100,  180, 60, 60, 100, 0, 0, 0, 300, 40, 20,  50};
 		int baseWeight = baseWeights[classId-1];
 		int addedWeight = addedWeights[classId-1];
 		float mass = (float)( weightRange*(float)addedWeight + (float)baseWeight);
