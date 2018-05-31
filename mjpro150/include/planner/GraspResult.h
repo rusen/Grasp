@@ -8,6 +8,9 @@
 #ifndef INCLUDE_PLANNER_GRASPRESULT_H_
 #define INCLUDE_PLANNER_GRASPRESULT_H_
 
+#include <glm/gtc/quaternion.hpp>
+#include <stdio.h>
+
 namespace Grasp {
 
 class GraspResult {
@@ -20,6 +23,11 @@ public:
 	glm::vec3 gazeDir, camPos; // centerPos is center of gravity of point cloud.
 	GraspResult(){}
 	virtual ~GraspResult(){}
+
+	// File IO
+	void read(FILE * &fp);
+	void write(FILE * &fp);
+
 };
 
 } /* namespace Grasp */

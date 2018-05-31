@@ -116,7 +116,7 @@ bool Connector::UploadFileToDropbox(const char * fileId, const char *name, const
 	strcat(newName, fileId);
 	strcat(newName, ".pcd");
 	boost::filesystem::copy_file(name, newName);
-	std::cout<<"File successfully uploaded to Dropbox."<<std::endl;
+	std::cout<<"File "<<newName<<" successfully uploaded to Dropbox."<<std::endl;
 	return true;
 }
 

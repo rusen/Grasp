@@ -68,7 +68,7 @@ public:
 	bool collisionSet = false, collisionRun = true, hasCollided = false;
 	bool testFlag = false;
 	float* data = NULL;
-	int collisionState[500];
+	int collisionState[1000];
 	std::ofstream *logStream = NULL;
 
 	// Grasp output array
@@ -103,7 +103,7 @@ public:
 	// Simulator allocation
 	Simulate* Simulator = NULL;
 
-	GraspPlanner(const char * dropboxFolder, bool testFlag, int baseType);
+	GraspPlanner(const char * dropboxFolder, bool testFlag, int baseType, bool reSimulateFlag, const char * existingId);
 	virtual ~GraspPlanner();
 
 	// Reset simulation to initial configuration
@@ -125,7 +125,7 @@ public:
 	bool FollowTrajectory(const mjModel* m, mjData* d, float yOffset);
 
 	// Perform grasp.
-	void PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos, mjtNum * stableQvel, mjtNum * stableCtrl);
+	void PerformGrasp(const mjModel* &m, mjData* &d, mjtNum * stableQpos, mjtNum * stableQvel, mjtNum * stableCtrl);
 
 	state getGraspState() const;
 	void setGraspState(state graspState);

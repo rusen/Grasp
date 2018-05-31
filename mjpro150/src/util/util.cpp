@@ -489,6 +489,56 @@ void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int ba
 	fprintf(f, "%d\n", objectId);
 	fclose(f);
 
+	// Get model files and add them to the base folder
+	char localModelFolder[1000], tmp[1000];
+	strcpy(localModelFolder, planner->baseFolder);
+	strcat(localModelFolder, "model/");
+	boost::filesystem::create_directories(localModelFolder);
+
+	// Write grasp data to a file
+	char graspDataFile[1000];
+	strcpy(graspDataFile, planner->baseFolder);
+	strcat(graspDataFile, "/graspData.data");
+	writeGraspData(planner->resultArr, numberOfGrasps, graspDataFile);
+
+	// Copy relevant files
+	boost::filesystem::path p(base);
+	for (auto i = boost::filesystem::directory_iterator(p); i != boost::filesystem::directory_iterator(); i++)
+	{
+		if ((i->path().string().find(planner->fileId) !=std::string::npos))
+		{
+			std::cout<<i->path().string()<<std::endl;
+			try{
+				strcpy(tmp, localModelFolder);
+				strcat(tmp, i->path().filename().c_str());
+				boost::filesystem::copy_file(i->path(), tmp, boost::filesystem::copy_option::overwrite_if_exists);
+			}
+			catch(const std::exception&)
+			{}
+		}
+	}
+
+
+	// Copy the object files
+	char baseTmp[1000];
+	strcpy(baseTmp, base);
+	strcat(baseTmp, "/tmp");
+	boost::filesystem::path p2(baseTmp);
+	for (auto i = boost::filesystem::directory_iterator(p2); i != boost::filesystem::directory_iterator(); i++)
+	{
+		if ((i->path().string().find(planner->fileId) !=std::string::npos))
+		{
+			std::cout<<i->path().string()<<std::endl;
+			try{
+				strcpy(tmp, localModelFolder);
+				strcat(tmp, i->path().filename().c_str());
+				boost::filesystem::copy_file(i->path(), tmp, boost::filesystem::copy_option::overwrite_if_exists);
+			}
+			catch(const std::exception&)
+			{}
+		}
+	}
+
     // Compress the folder
 	char command[1000], zipFile[1000];
 	strcpy(command, "cd ./tmp/data/");
@@ -713,7 +763,7 @@ void RemoveOldPoints(const char * dropboxBase){
 	}
 }
 
-void RemoveOldTmpFolders(const char * modelFolder){
+void RemoveOldTmpFolders(const char * modelFolder, bool reSimulateFlag){
 
 	// Remove all files from the model folder
 	boost::filesystem::path p(modelFolder);
@@ -739,6 +789,9 @@ void RemoveOldTmpFolders(const char * modelFolder){
 			{}
 		}
 	}
+
+	if (reSimulateFlag)
+		return;
 
 	char tmpModelFolder[1000];
 	strcpy(tmpModelFolder, modelFolder);
@@ -783,4 +836,86 @@ void RemoveOldTmpFolders(const char * modelFolder){
 	}
 }
 
+}
+
+void Grasp::writeGraspData(Grasp::GraspResult * arr, int numberOfGrasps, const char * fileName){
+	// Open file
+	FILE * fp = fopen(fileName, "wb");
+
+	// Error? Return
+	if (fp == NULL)
+		return;
+
+	// Write number of grasps
+	fwrite(&numberOfGrasps, sizeof(int), 1, fp);
+
+	// Write each grasp
+	for (int i = 0; i<numberOfGrasps; i++){
+		arr[i].write(fp);
+	}
+
+	// close fp
+	fclose(fp);
+}
+Grasp::GraspResult * Grasp::readGraspData(const char * fileName){
+	// Open file
+	FILE * fp = fopen(fileName, "rb");
+
+	// Error? Return
+	if (fp == NULL)
+		return NULL;
+
+	// Allocate space
+	int numberOfGrasps = 0;
+	fread(&numberOfGrasps, sizeof(int), 1, fp);
+	Grasp::GraspResult * newArr = new Grasp::GraspResult[numberOfGrasps];
+
+	// Read each grasp
+	for (int i = 0; i<numberOfGrasps; i++){
+		newArr[i].read(fp);
+	}
+
+	// close fp
+	fclose(fp);
+
+	// return
+	return newArr;
+}
+
+// File IO
+void Grasp::GraspResult::write(FILE * &fp){
+	fwrite(&successProbability, sizeof(double), 1, fp);
+	fwrite(&x1, sizeof(double), 1, fp);
+	fwrite(&r1, sizeof(double), 1, fp);
+	fwrite(&x2, sizeof(double), 1, fp);
+	fwrite(&r2, sizeof(double), 1, fp);
+	fwrite(&counter, sizeof(int), 1, fp);
+	fwrite(&successCounter, sizeof(int), 1, fp);
+	fwrite(&viewId, sizeof(int), 1, fp);
+	fwrite(&graspType, sizeof(int), 1, fp);
+	float tmp[3];
+	for (int i = 0; i<3; i++)
+		tmp[i] = gazeDir[i];
+	fwrite(&tmp, sizeof(float), 3, fp);
+	for (int i = 0; i<3; i++)
+		tmp[i] = camPos[i];
+	fwrite(&tmp, sizeof(float), 3, fp);
+}
+void Grasp::GraspResult::read(FILE * &fp){
+	fread(&successProbability, sizeof(double), 1, fp);
+	fread(&x1, sizeof(double), 1, fp);
+	fread(&r1, sizeof(double), 1, fp);
+	fread(&x2, sizeof(double), 1, fp);
+	fread(&r2, sizeof(double), 1, fp);
+	fread(&counter, sizeof(int), 1, fp);
+	fread(&successCounter, sizeof(int), 1, fp);
+	fread(&viewId, sizeof(int), 1, fp);
+	fread(&graspType, sizeof(int), 1, fp);
+	float tmp[3];
+	fread(&tmp, sizeof(float), 3, fp);
+	for (int i = 0; i<3; i++)
+		gazeDir[i] = tmp[i];
+	fread(&tmp, sizeof(float), 3, fp);
+	for (int i = 0; i<3; i++)
+		camPos[i] = tmp[i];
 }

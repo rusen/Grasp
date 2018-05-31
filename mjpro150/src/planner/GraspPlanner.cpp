@@ -36,7 +36,8 @@ void GraspPlanner::SetFrame(const mjModel* m, mjData * d)
     mju_f2n(d->sensordata, data+1+m->nq+m->nv+m->nu+7*m->nmocap, m->nsensordata);
 }
 
-GraspPlanner::GraspPlanner(const char * dropboxBase, bool testFlag, int baseType) {
+GraspPlanner::GraspPlanner(const char * dropboxBase, bool testFlag,
+		int baseType, bool reSimulateFlag, const char * existingId) {
 
 	// Save test flag and base type.
 	this->testFlag = testFlag;
@@ -44,8 +45,14 @@ GraspPlanner::GraspPlanner(const char * dropboxBase, bool testFlag, int baseType
 
 	// Create file paths.
 	fileId[0] = 0;
-    strcat(fileId, "XXXXXX");
-    mktemp(fileId);
+
+	if (!reSimulateFlag){
+		strcat(fileId, "XXXXXX");
+		mktemp(fileId);
+	}
+	else{
+		strcpy(fileId, existingId);
+	}
 	char prefix[1000];
 	strcpy(dropboxFolder, dropboxBase);
 	strcpy(prefix, dropboxBase);
@@ -59,7 +66,9 @@ GraspPlanner::GraspPlanner(const char * dropboxBase, bool testFlag, int baseType
 	char localPrefix[1000];
 	strcpy(localPrefix, baseFolder);
 	boost::filesystem::create_directories(baseFolder);
-	boost::filesystem::create_directories(prefix);
+	if (!reSimulateFlag){
+		boost::filesystem::create_directories(prefix);
+	}
 	strcat(prefix, fileId);
 	strcat(localPrefix, fileId);
 	logFile [0] = debugLogFile[0] = pointFile [0] = rgbFile [0] = depthFile[0] = resultFile[0] = trajectoryFile[0] = 0; // Set to ""
@@ -79,44 +88,46 @@ GraspPlanner::GraspPlanner(const char * dropboxBase, bool testFlag, int baseType
     	numberOfAngles = 1;
 
     // Fill collision state/grasp params array.
-    for (int i = 0; i < 500; i++)
+    for (int i = 0; i < 1000; i++)
     {
     	collisionState[i] = -1;
     }
 
-    // Find camera and gaze locations
-    for (int i = 0; i<numberOfAngles; i++)
-    {
-		// Calculate a location and orientation for placing the depth cam.
-		glm::vec3 camPosition, gazePosition = {(RF-0.5) * 0.06, (RF-0.5) * 0.06, (-(0.25 + RF * 0.06))};
-		float lookAngle = 0.64 + 0.4 * RF; //(37-60 degrees)
-		float distanceFromCenter = 0.4 + 0.35 * RF; // 0.45-0.75 meter distance!
-		float horzAngle = RF * 2 * M_PI;
-		float horzDistance = cos(lookAngle) * distanceFromCenter;
-		camPosition[0] = cos(horzAngle) * horzDistance;
-		camPosition[1] = sin(horzAngle) * horzDistance;
-		camPosition[2] = sin(lookAngle) * distanceFromCenter + gazePosition[2];
-
-		// Calculate gaze dir.
-		glm::vec3 tempGaze = normalize(gazePosition - camPosition);
-
-		// Next, we find the view-right vector (right hand vector)
-		glm::vec3 tempUp(0, 0, 1), rightDir, upDir;
-		rightDir = normalize(glm::cross(tempGaze, tempUp));
-		upDir = normalize(glm::cross(rightDir, tempGaze));
-
-		// Find camera pos.
-		glm::vec3 tempCameraPos = camPosition;
-
-		// Add camera information to the arrays.
-		cameraPosArr.push_back(tempCameraPos);
-		gazeDirArr.push_back(tempGaze);
-
-		// First point is the one shown to the camera.
-		if (!i)
+    if (!reSimulateFlag){
+		// Find camera and gaze locations
+		for (int i = 0; i<numberOfAngles; i++)
 		{
-			gazeDir = tempGaze;
-			cameraPos = tempCameraPos;
+			// Calculate a location and orientation for placing the depth cam.
+			glm::vec3 camPosition, gazePosition = {(RF-0.5) * 0.06, (RF-0.5) * 0.06, (-(0.25 + RF * 0.06))};
+			float lookAngle = 0.64 + 0.4 * RF; //(37-60 degrees)
+			float distanceFromCenter = 0.4 + 0.35 * RF; // 0.45-0.75 meter distance!
+			float horzAngle = RF * 2 * M_PI;
+			float horzDistance = cos(lookAngle) * distanceFromCenter;
+			camPosition[0] = cos(horzAngle) * horzDistance;
+			camPosition[1] = sin(horzAngle) * horzDistance;
+			camPosition[2] = sin(lookAngle) * distanceFromCenter + gazePosition[2];
+
+			// Calculate gaze dir.
+			glm::vec3 tempGaze = normalize(gazePosition - camPosition);
+
+			// Next, we find the view-right vector (right hand vector)
+			glm::vec3 tempUp(0, 0, 1), rightDir, upDir;
+			rightDir = normalize(glm::cross(tempGaze, tempUp));
+			upDir = normalize(glm::cross(rightDir, tempGaze));
+
+			// Find camera pos.
+			glm::vec3 tempCameraPos = camPosition;
+
+			// Add camera information to the arrays.
+			cameraPosArr.push_back(tempCameraPos);
+			gazeDirArr.push_back(tempGaze);
+
+			// First point is the one shown to the camera.
+			if (!i)
+			{
+				gazeDir = tempGaze;
+				cameraPos = tempCameraPos;
+			}
 		}
     }
 }
@@ -302,7 +313,7 @@ void GraspPlanner::setGraspState(state graspState = collectingData) {
 
 // Main function that plans a grasp from initial position to the final trajectory.
 // It's a state driven function since it is called in every simulation step.
-void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos, mjtNum * stableQvel, mjtNum * stableCtrl){
+void GraspPlanner::PerformGrasp(const mjModel* &m, mjData* &d, mjtNum * stableQpos, mjtNum * stableQvel, mjtNum * stableCtrl){
 
 	bool success = false;
 	switch (graspState)
@@ -435,6 +446,7 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 			if (success)
 			{
 
+				// Read trajectory count
 				trjFP = fopen(trajectoryFile, "rb");
 				fread(&numberOfGrasps, 4, 1, trjFP);
 
@@ -619,7 +631,6 @@ void GraspPlanner::PerformGrasp(const mjModel* m, mjData* d, mjtNum * stableQpos
 	case reset:
 		if (counter < 50)
 		{
-
 			// Reset everything
 			for (int i = 0; i<m->nq; i++)
 			{

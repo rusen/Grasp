@@ -49,12 +49,7 @@ int objectCount = 0;
 int nonCollidingGraspLimit = 10;
 bool firstTimeFlag = true; // True in the first run, false otherwise.
 int baseIds[1000];
-bool utensilFlag = false;
 bool pauseFlag = true;
-bool findStableFlag = true;
-bool stableFlag = false;
-int counter = 0;
-mjtNum *lastQpos, *stableQpos = NULL, *stableQvel = NULL, *stableCtrl = NULL;
 double stableError = 0.000005;
 mjtNum lastPose[4], lastPos[3]; // For keeping track of pose after object is gripped.
 int stableCounter = 0, stableIterations = 4000, minStableIterations = 100, stableRuns = 3, runCounter = 0;
@@ -62,6 +57,15 @@ bool visualFlag = true;
 bool testFlag = false;
 bool terminateFlag = false;
 int classSelection = 0;
+
+// True, if we need to re-create the simulation
+bool reSimulateFlag = false;
+char existingId[] = "ks0ZA6";
+
+// The variables that depend on the initialisation of the simulation
+bool findStableFlag = true;
+bool stableFlag = false;
+mjtNum *lastQpos, *stableQpos = NULL, *stableQvel = NULL, *stableCtrl = NULL;
 
 // Save latest grasp data
 Grasp::GraspResult latestGrasp;
@@ -257,6 +261,16 @@ void graspObject(const mjModel* m, mjData* d){
 					copyArray(d->ctrl, stableCtrl, m->nu);
 					stableFlag = true;
 					findStableFlag = false;
+
+					// We save the stability data at this point.
+					char tmp[1000];
+					strcpy(tmp, planner->baseFolder);
+					strcat(tmp, "stable.data");
+					std::ofstream f1(tmp, std::ios::out | std::ios::binary);
+					f1.write((char * ) stableQpos, m->nq * sizeof(mjtNum));
+					f1.write((char * ) stableQvel, m->nv * sizeof(mjtNum));
+					f1.write((char * ) stableCtrl, m->nu * sizeof(mjtNum));
+					f1.close();
 
 					// Print data.
 					(*(planner->logStream))<<"QPOS STABLE"<<std::endl;
@@ -473,7 +487,7 @@ int main(int argc, const char** argv)
     // check command-line arguments
     if( argc < 6 )
     {
-        printf(" USAGE:  basicGrasp ModelFolder dropboxFolder <visualOn/visualOff> classSelection (RandomInt)\n");
+        printf(" USAGE:  basicGrasp outputFolder ModelFolder dropboxFolder <visualOn/visualOff> classSelection (RandomInt)\n");
         return 0;
     }
 
@@ -511,6 +525,25 @@ int main(int argc, const char** argv)
 
 	// Count number of objects
     // Get base id file name
+	char setsFile[1000];
+    strcpy(setsFile, argv[1]);
+    strcat(setsFile, "/sets.txt");
+
+    // Read class id
+    FILE * setsFid = fopen(setsFile, "r");
+    for (int i = 0; i<10000; i++)
+    {
+    	int setId;
+    	int charsRead = fscanf(setsFid, "%d\n", &setId);
+    	if (charsRead < 1)
+    		break;
+    	if (setId < 2) // Only work with validation and test data for now
+    		excludedObjects.push_back(i+1);
+    }
+    fclose(setsFid);
+
+	// Count number of objects
+    // Get base id file name
 	char classIdFile[1000];
     strcpy(classIdFile, argv[1]);
     strcat(classIdFile, "/classIds.txt");
@@ -530,43 +563,55 @@ int main(int argc, const char** argv)
 
     // Depending on requested class, get relevant objects.
     int objectId = 0;
-    if (!classSelection)
+    if (!reSimulateFlag)
     {
-    	while(ismember(excludedObjects, objectId))
-    		objectId = rand()%objectCount + 1;
+		if (!classSelection)
+		{
+			while(ismember(excludedObjects, objectId))
+				objectId = rand()%objectCount + 1;
+		}
+		else
+		{
+			std::vector<int> objectIdx;
+			char tmpStr[1000];
+			strcpy(tmpStr, argv[1]);
+			strcat(tmpStr, "/classIds.txt");
+
+			// Read relevant numbers into an array.
+			int tmpNo;
+			FILE * fid = fopen(tmpStr, "r");
+			for (int i = 0; i<objectCount; i++)
+			{
+				fscanf(fid, "%d\n", &tmpNo);
+				if (tmpNo == classSelection && !ismember(excludedObjects, i + 1))
+				{
+					objectIdx.push_back(i + 1);
+				}
+			}
+			fclose(fid);
+
+			// Check if we have any examples of this class
+			if (!objectIdx.size())
+			{
+				std::cout<<"This class has no objects! Pick a number between 0-15, with 0 allocated for all classes."<<std::endl;
+				return -1;
+			}
+			else std::cout<<"This class has "<<objectIdx.size()<<" objects."<<std::endl;
+
+			// Select a random element of this class.
+			objectId = objectIdx[rand()%(objectIdx.size())];
+		}
+		std::cout<<"Selected object:"<<objectId<<std::endl;
     }
     else
     {
-    	std::vector<int> objectIdx;
-    	char tmpStr[1000];
-    	strcpy(tmpStr, argv[1]);
-    	strcat(tmpStr, "/classIds.txt");
-
-    	// Read relevant numbers into an array.
-    	int tmpNo;
-        FILE * fid = fopen(tmpStr, "r");
-        for (int i = 0; i<objectCount; i++)
-        {
-        	fscanf(fid, "%d\n", &tmpNo);
-        	if (tmpNo == classSelection && !ismember(excludedObjects, i + 1))
-        	{
-        		objectIdx.push_back(i + 1);
-        	}
-        }
+    	char objectIdOutput[1000];
+    	strcpy(objectIdOutput, planner->baseFolder);
+    	strcat(objectIdOutput, "/objectId.txt");
+        FILE * fid = fopen(objectIdOutput, "r");
+        fscanf(fid, "%d", &objectId);
         fclose(fid);
-
-        // Check if we have any examples of this class
-        if (!objectIdx.size())
-        {
-        	std::cout<<"This class has no objects! Pick a number between 0-15, with 0 allocated for all classes."<<std::endl;
-        	return -1;
-        }
-        else std::cout<<"This class has "<<objectIdx.size()<<" objects."<<std::endl;
-
-        // Select a random element of this class.
-        objectId = objectIdx[rand()%(objectIdx.size())];
     }
-    std::cout<<"Selected object:"<<objectId<<std::endl;
 
     char baseIdFile[1000];
     strcpy(baseIdFile, argv[1]);
@@ -578,11 +623,29 @@ int main(int argc, const char** argv)
     for (int i = 0; i<objectId; i++)
     	fscanf(fid, "%d\n", &baseType);
     fclose(fid);
-    int baseId = rand()%13 + 1;
 
     // Allocate planner
-    planner = new Grasp::GraspPlanner(argv[2], testFlag, baseType);
+    planner = new Grasp::GraspPlanner(argv[2], testFlag, baseType, reSimulateFlag, existingId);
     planner->randSeed = randSeed;
+
+	// Get baseId
+    int baseId;
+	char baseIdOutput[1000];
+	strcpy(baseIdOutput, planner->baseFolder);
+	strcat(baseIdOutput, "/baseId.txt");
+	FILE * fBase = NULL;
+    if (!reSimulateFlag)
+    {
+    	fBase = fopen(baseIdOutput, "w");
+    	baseId = rand()%13 + 1;
+    	fprintf(fBase, "%d\n", baseId);
+    }
+    else
+    {
+    	fBase = fopen(baseIdOutput, "r");
+    	fscanf(fBase, "%d\n", &baseId);
+    }
+	fclose(fBase);
 
     // Activate software
     mj_activate("mjkey.txt");
@@ -594,10 +657,13 @@ int main(int argc, const char** argv)
     	visualFlag = false;
 
     // Remove old files
-    Grasp::RemoveOldTmpFolders(argv[1]);
+    Grasp::RemoveOldTmpFolders(argv[1], reSimulateFlag);
 
     // install control callback
     mjcb_control = graspObject;
+
+    std::cout<<"Object and base ID:"<<objectId<<" "<<baseId<<std::endl;
+ //   return 0;
 
     // Create random xml files.
     std::string modelPath = Grasp::CreateXMLs(argv[1], planner, objectId, baseId, planner->numberOfTrials);
@@ -702,7 +768,6 @@ int main(int argc, const char** argv)
 			planner->hasCollided = false;
 			planner->graspState = Grasp::reset;
 		}
-		std::cout<<"DATA MADE"<<std::endl;
 
 		// Unset pause flag.
 		pauseFlag = false;
@@ -786,7 +851,7 @@ int main(int argc, const char** argv)
     // delete tmp folder
     if(boost::filesystem::exists(planner->baseFolder))
     {
-       boost::filesystem::remove_all(planner->baseFolder);
+//       boost::filesystem::remove_all(planner->baseFolder);
     }
 
     // close GLFW, free visualization storage
