@@ -103,7 +103,7 @@ public:
 	// Simulator allocation
 	Simulate* Simulator = NULL;
 
-	GraspPlanner(const char * dropboxFolder, bool testFlag, int baseType, bool reSimulateFlag, const char * existingId);
+	GraspPlanner(const char * dropboxFolder, bool testFlag, bool reSimulateFlag, const char * existingId);
 	virtual ~GraspPlanner();
 
 	// Reset simulation to initial configuration

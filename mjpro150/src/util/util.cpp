@@ -22,11 +22,52 @@ void replaceAll(std::string& str, const std::string& from, const std::string& to
 }
 
 // Function to create relevant XMLs with random parameters.
-std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, int baseId, int runCount){
+std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, int baseId, int runCount, bool reSimulateFlag){
 	// Templates for model, base and assets files are already there.
 	// We just need to modify them by adding the variations.
 //	std::cout<<"RANDOM NO BEFORE SRAND"<<rand()<<std::endl;
 //	srand(time(NULL));
+
+	// IF this folder exists already, we can assume that the relevant xml files should already exist.
+	// We just need to copy them to the relevant folders.
+	if (reSimulateFlag)
+	{
+		std::string outputStr;
+		char modelFolder[1000];
+		strcpy(modelFolder, planner->baseFolder);
+		strcat(modelFolder, "/model");
+
+		boost::filesystem::path p(modelFolder);
+
+		// Go over the files and delete them one by one.
+		for (auto i = boost::filesystem::directory_iterator(p); i != boost::filesystem::directory_iterator(); i++)
+		{
+			if (i->path().string().find("_include_object") !=std::string::npos &&
+					!(i->path().string().find("_include_object.xml") !=std::string::npos ||
+						i->path().string().find("_include_object_assets") !=std::string::npos ))
+			{
+				char tmp[1000];
+				strcpy(tmp, base);
+				strcat(tmp, "/tmp/");
+				strcat(tmp, i->path().filename().c_str());
+				boost::filesystem::copy_file(i->path(), tmp, boost::filesystem::copy_option::overwrite_if_exists);
+			}
+			else if (i->path().string().find(planner->fileId) !=std::string::npos)
+			{
+				char tmp[1000];
+				strcpy(tmp, base);
+				strcat(tmp, "/");
+				strcat(tmp, i->path().filename().c_str());
+				boost::filesystem::copy_file(i->path(), tmp, boost::filesystem::copy_option::overwrite_if_exists);
+
+				if (i->path().string().find("Test"))
+					outputStr = std::string(tmp);
+			}
+		}
+
+		// Return test file path
+		return outputStr;
+	}
 
 	// Allocate space for model xml.
 	char modelXMLStr[10000];
@@ -71,7 +112,6 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
     strcat(tmpModelPrefix, "/tmp");
 
     // Create tmp folder if it doesn't exist
-    std::cout.flush();
     if (!boost::filesystem::exists(tmpModelPrefix))
     	boost::filesystem::create_directories(tmpModelPrefix);
 
@@ -274,7 +314,6 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 		float mass = (float)( weightRange*(float)addedWeight + (float)baseWeight);
 
 		std::cout<<"MASS OF THE OBJECT:"<<mass<<std::endl;
-
 
 		mass = mass/1000;
 
@@ -790,9 +829,6 @@ void RemoveOldTmpFolders(const char * modelFolder, bool reSimulateFlag){
 		}
 	}
 
-	if (reSimulateFlag)
-		return;
-
 	char tmpModelFolder[1000];
 	strcpy(tmpModelFolder, modelFolder);
 	strcat(tmpModelFolder, "/tmp");
@@ -817,6 +853,9 @@ void RemoveOldTmpFolders(const char * modelFolder, bool reSimulateFlag){
 			}
 		}
 	}
+
+	if (reSimulateFlag)
+		return;
 
 	// Remove all files from the tmp folder
 	boost::filesystem::path p2("./tmp/data");

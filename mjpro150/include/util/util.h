@@ -13,7 +13,7 @@
 #include <string>
 
 namespace Grasp{
-std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, int baseId, int runCount);
+std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, int baseId, int runCount, bool reSimulateFlag);
 void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int baseId);
 void UploadExtraFiles(const char * path);
 void DistributePoints(const char * path);

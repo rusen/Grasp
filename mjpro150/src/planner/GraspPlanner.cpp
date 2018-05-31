@@ -37,11 +37,10 @@ void GraspPlanner::SetFrame(const mjModel* m, mjData * d)
 }
 
 GraspPlanner::GraspPlanner(const char * dropboxBase, bool testFlag,
-		int baseType, bool reSimulateFlag, const char * existingId) {
+		bool reSimulateFlag, const char * existingId) {
 
 	// Save test flag and base type.
 	this->testFlag = testFlag;
-	this->baseType = baseType;
 
 	// Create file paths.
 	fileId[0] = 0;

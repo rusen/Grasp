@@ -59,8 +59,8 @@ bool terminateFlag = false;
 int classSelection = 0;
 
 // True, if we need to re-create the simulation
-bool reSimulateFlag = false;
-char existingId[] = "ks0ZA6";
+bool reSimulateFlag = true;
+char existingId[] = "SKxb4i";
 
 // The variables that depend on the initialisation of the simulation
 bool findStableFlag = true;
@@ -561,6 +561,9 @@ int main(int argc, const char** argv)
     fclose(classFid);
     std::cout<<"Object count:"<<objectCount<<std::endl;
 
+    // Allocate planner
+    planner = new Grasp::GraspPlanner(argv[2], testFlag, reSimulateFlag, existingId);
+
     // Depending on requested class, get relevant objects.
     int objectId = 0;
     if (!reSimulateFlag)
@@ -601,7 +604,6 @@ int main(int argc, const char** argv)
 			// Select a random element of this class.
 			objectId = objectIdx[rand()%(objectIdx.size())];
 		}
-		std::cout<<"Selected object:"<<objectId<<std::endl;
     }
     else
     {
@@ -612,6 +614,7 @@ int main(int argc, const char** argv)
         fscanf(fid, "%d", &objectId);
         fclose(fid);
     }
+    std::cout<<"Selected object:"<<objectId<<std::endl;
 
     char baseIdFile[1000];
     strcpy(baseIdFile, argv[1]);
@@ -624,9 +627,9 @@ int main(int argc, const char** argv)
     	fscanf(fid, "%d\n", &baseType);
     fclose(fid);
 
-    // Allocate planner
-    planner = new Grasp::GraspPlanner(argv[2], testFlag, baseType, reSimulateFlag, existingId);
+    // Update planner
     planner->randSeed = randSeed;
+    planner->baseType = baseType;
 
 	// Get baseId
     int baseId;
@@ -663,10 +666,16 @@ int main(int argc, const char** argv)
     mjcb_control = graspObject;
 
     std::cout<<"Object and base ID:"<<objectId<<" "<<baseId<<std::endl;
- //   return 0;
+
+    // Read stable parameters
+    if (reSimulateFlag)
+    {
+		findStableFlag = false;
+		stableFlag = true;
+    }
 
     // Create random xml files.
-    std::string modelPath = Grasp::CreateXMLs(argv[1], planner, objectId, baseId, planner->numberOfTrials);
+    std::string modelPath = Grasp::CreateXMLs(argv[1], planner, objectId, baseId, planner->numberOfTrials, reSimulateFlag);
 
     // Visual operations
 	GLFWwindow* window = NULL;
@@ -734,6 +743,8 @@ int main(int argc, const char** argv)
 		strcat(currentFile, ".xml");
         boost::filesystem::copy_file(currentFile, objectFile, boost::filesystem::copy_option::overwrite_if_exists);
 
+        std::cout<<"OBJ COPIED"<<std::endl;
+
 		// load and compile model
 		char error[1000] = "Could not load binary model";
 		if( strlen(modelPath.c_str())>4 && !strcmp(modelPath.c_str()+strlen(modelPath.c_str())-4, ".mjb") )
@@ -742,6 +753,11 @@ int main(int argc, const char** argv)
 			m = mj_loadXML(modelPath.c_str(), 0, error, 1000);
 		if( !m )
 			mju_error_s("Load model error: %s", error);
+
+
+        std::cout<<"MODEL READ"<<std::endl;
+
+		// If this simulation is a re-run, we advance it to a later stage.
 
 		// Make data, save space for stable position info, start visual structures.
 		d = mj_makeData(m);
@@ -768,6 +784,19 @@ int main(int argc, const char** argv)
 			planner->hasCollided = false;
 			planner->graspState = Grasp::reset;
 		}
+
+		// Read stable object position from the file, if we're re-running
+	    if (reSimulateFlag)
+	    {
+			char tmp[1000];
+			strcpy(tmp, planner->baseFolder);
+			strcat(tmp, "stable.data");
+			FILE * fp = fopen(tmp, "rb");
+			fread(stableQpos, sizeof(mjtNum), m->nq, fp);
+			fread(stableQvel, sizeof(mjtNum), m->nv, fp);
+			fread(stableCtrl, sizeof(mjtNum), m->nu, fp);
+			fclose(fp);
+	    }
 
 		// Unset pause flag.
 		pauseFlag = false;
