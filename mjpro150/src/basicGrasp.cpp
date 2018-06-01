@@ -59,7 +59,7 @@ bool terminateFlag = false;
 int classSelection = 0;
 
 // True, if we need to re-create the simulation
-bool reSimulateFlag = true;
+bool reSimulateFlag = false;
 char existingId[] = "SKxb4i";
 
 // The variables that depend on the initialisation of the simulation
