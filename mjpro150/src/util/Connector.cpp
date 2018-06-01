@@ -79,6 +79,7 @@ bool Connector::UploadFile(const char *name){
 
 		// Create header.
 		request.setOpt(new curlpp::options::HttpHeader(headers));
+	    std::cout<<"Set everything: "<<std::endl;
 
 		// Arguments.
 		request.perform();
@@ -89,6 +90,7 @@ bool Connector::UploadFile(const char *name){
 			std::cout<<"Connector Upload failed: "<<code<<", filename: "<<name<<std::endl;
 			return false;
 		}
+		std::cout<<code<<std::endl;
 
 		// Close mystream and remove file.
 		myStream.close();
