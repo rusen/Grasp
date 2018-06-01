@@ -5,7 +5,7 @@
 #include <stdio.h>      /* printf, NULL */
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>       /* time */
-#include <iostream>
+#include <fstream>
 #include <algorithm>    // std::copy
 #include <vector>
 #include <thread>
