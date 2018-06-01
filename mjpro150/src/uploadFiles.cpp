@@ -1,5 +1,4 @@
 // Application that uploads anything in current data folder to the web server.
-#include <util/Connector.h>
 #include <iostream>
 #include <time.h>
 #include <string>
@@ -11,7 +10,17 @@
 #include <vector>
 #include <thread>
 #include <boost/filesystem.hpp>
+#include <curlpp/cURLpp.hpp>
+#include <curlpp/Easy.hpp>
+#include <curlpp/Options.hpp>
+#include <curlpp/Exception.hpp>
+#include <curlpp/Infos.hpp>
 
+#define SERVER_ADDRESS "http://52.14.167.90:8000/"
+
+// Function to send files to server (Blocking)
+// name should be the absolute path (client side).
+bool UploadFile(const char *name);
 void DistributePoints(const char * path);
 void UploadExtraFiles(const char * path);
 void RemoveOldFolders(const char * path);
@@ -174,7 +183,7 @@ void UploadExtraFiles(const char * dropboxBase){
 		if (i->path().extension().string() == ".zip")
 		{
 			std::cout<<"Uploading "<<i->path().string().c_str()<<std::endl;
-			uploadFlag = uploadFlag && Grasp::Connector::UploadFile(i->path().string().c_str());
+			uploadFlag = uploadFlag && UploadFile(i->path().string().c_str());
 			if (uploadFlag)
 			{
 				boost::filesystem::remove(i->path().string().c_str());
@@ -234,4 +243,76 @@ void RemoveOldPoints(const char * dropboxBase){
 			boost::filesystem::remove_all(i->path());
 		}
 	}
+}
+
+bool UploadFile(const char *name){
+
+	if (!boost::filesystem::exists(name))
+	{
+		std::cout<<"File "<<name<<" does not exist!"<<std::endl;
+ 		return true;
+	}
+
+	bool flag = false;
+	try{
+		curlpp::Cleanup cleaner;
+		curlpp::Easy request;
+		char buf[1000];
+		buf[0] = 0;
+
+	    // Get file size.
+	    std::ifstream sizeStream( name, std::ios::binary | std::ios::ate);
+	    int contentLength = sizeStream.tellg();
+	    sizeStream.close();
+
+	    // Create header.
+		std::list< std::string > headers;
+		headers.push_back("Content-Type: application/octet-stream");
+		sprintf(buf, "Content-Length: %d", contentLength);
+		headers.push_back(buf);
+
+		// Set up request options.
+		char remotePath[1000];
+		remotePath[0] = 0;
+		strcat(remotePath, SERVER_ADDRESS);
+
+		// Get filename and extension.
+		char tempName[1000];
+		strcpy(tempName, name);
+		char * fn = strrchr(tempName, '/') + 1;
+		strcat(remotePath, fn);
+		std::cout<<"Remote path:"<<remotePath<<std::endl;
+	    std::ifstream myStream( name, std::ios::binary);
+
+		request.setOpt(new curlpp::options::Url(remotePath));
+		request.setOpt(new curlpp::options::Verbose(true));
+		request.setOpt(new curlpp::options::ReadStream(&myStream));
+		request.setOpt(new curlpp::options::InfileSize(contentLength));
+		request.setOpt(new curlpp::options::Upload(true));
+
+		// Create header.
+		request.setOpt(new curlpp::options::HttpHeader(headers));
+	    std::cout<<"Set everything: "<<std::endl;
+
+		// Arguments.
+		request.perform();
+		int code = curlpp::infos::ResponseCode::get(request);
+		if (code == 200)
+			flag = true;
+		else{
+			std::cout<<"Connector Upload failed: "<<code<<", filename: "<<name<<std::endl;
+			return false;
+		}
+		std::cout<<code<<std::endl;
+
+		// Close mystream and remove file.
+		myStream.close();
+	}
+    catch ( curlpp::LogicError & e ) {
+      std::cout << e.what() << std::endl;
+    }
+    catch ( curlpp::RuntimeError & e ) {
+      std::cout << e.what() << std::endl;
+    }
+    return flag;
 }
