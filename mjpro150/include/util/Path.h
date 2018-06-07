@@ -14,6 +14,17 @@
 
 namespace Grasp {
 
+class Transformation{
+public:
+	Eigen::Quaternionf tQuat;
+	Eigen::Matrix4f tM;
+
+	// Constructor
+	Transformation(Eigen::Vector3f gazeDir, Eigen::Vector3f camPos, bool forward);
+	~Transformation();
+};
+
+
 class Path {
 public:
 	Path(int count = 0);

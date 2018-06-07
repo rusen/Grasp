@@ -60,7 +60,7 @@ int classSelection = 0;
 
 // True, if we need to re-create the simulation
 bool reSimulateFlag = false;
-char existingId[] = "SKxb4i";
+char existingId[] = "KsBSEd";
 
 // The variables that depend on the initialisation of the simulation
 bool findStableFlag = true;
@@ -369,7 +369,10 @@ void graspObject(const mjModel* m, mjData* d){
 		// Perform grasping loop.
 		if (stableFlag)
 		{
+
+			std::cout.flush();
 			// Perform grasp loop
+//			std::cout<<"Grasp state:"<<planner->graspState<<std::endl;
 			planner->PerformGrasp(m, d, stableQpos, stableQvel, stableCtrl);
 		}
 	}
@@ -785,6 +788,8 @@ int main(int argc, const char** argv)
 			planner->graspState = Grasp::reset;
 		}
 
+		std::cout<<"DATA MADE"<<std::endl;
+
 		// Read stable object position from the file, if we're re-running
 	    if (reSimulateFlag)
 	    {
@@ -796,6 +801,9 @@ int main(int argc, const char** argv)
 			fread(stableQvel, sizeof(mjtNum), m->nv, fp);
 			fread(stableCtrl, sizeof(mjtNum), m->nu, fp);
 			fclose(fp);
+			std::cout<<"STABLE DATA READ"<<std::endl;
+			planner->graspState = Grasp::planning;
+			planner->reSimulateFlag = true;
 	    }
 
 		// Unset pause flag.

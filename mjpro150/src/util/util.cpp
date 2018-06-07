@@ -557,7 +557,6 @@ void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int ba
 		}
 	}
 
-
 	// Copy the object files
 	char baseTmp[1000];
 	strcpy(baseTmp, base);
@@ -733,13 +732,6 @@ Grasp::GraspResult * Grasp::readGraspData(const char * fileName){
 
 // File IO
 void Grasp::GraspResult::write(FILE * &fp){
-	fwrite(&successProbability, sizeof(double), 1, fp);
-	fwrite(&x1, sizeof(double), 1, fp);
-	fwrite(&r1, sizeof(double), 1, fp);
-	fwrite(&x2, sizeof(double), 1, fp);
-	fwrite(&r2, sizeof(double), 1, fp);
-	fwrite(&counter, sizeof(int), 1, fp);
-	fwrite(&successCounter, sizeof(int), 1, fp);
 	fwrite(&viewId, sizeof(int), 1, fp);
 	fwrite(&graspType, sizeof(int), 1, fp);
 	float tmp[3];
@@ -751,13 +743,6 @@ void Grasp::GraspResult::write(FILE * &fp){
 	fwrite(&tmp, sizeof(float), 3, fp);
 }
 void Grasp::GraspResult::read(FILE * &fp){
-	fread(&successProbability, sizeof(double), 1, fp);
-	fread(&x1, sizeof(double), 1, fp);
-	fread(&r1, sizeof(double), 1, fp);
-	fread(&x2, sizeof(double), 1, fp);
-	fread(&r2, sizeof(double), 1, fp);
-	fread(&counter, sizeof(int), 1, fp);
-	fread(&successCounter, sizeof(int), 1, fp);
 	fread(&viewId, sizeof(int), 1, fp);
 	fread(&graspType, sizeof(int), 1, fp);
 	float tmp[3];

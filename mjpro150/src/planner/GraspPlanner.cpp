@@ -7,6 +7,7 @@
 
 #include "mujoco.h"
 #include <util/Connector.h>
+#include <util/util.h>
 #include <opencv2/opencv.hpp>
 #include <planner/GraspPlanner.h>
 #include <glm/gtc/matrix_transform.hpp>
@@ -162,6 +163,19 @@ glm::vec3 getPt( glm::vec3 n1 , glm::vec3 n2 , float perc )
 {
     glm::vec3 diff = n2 - n1;
     return n1 + ( diff * perc );
+}
+
+void GraspPlanner::ReadPreMadeTrajectories(int numberOfGrasps){
+	finalApproachArr = new Path* [numberOfGrasps];
+	int wpCount = 10;
+	float wristPos[3];
+	float wristQuat[4];
+	float fingerPos[20];
+
+	for (int readCtr = 0; readCtr<numberOfGrasps; readCtr++)
+	{
+		finalApproachArr[readCtr] = new Path(wpCount);
+	}
 }
 
 void GraspPlanner::ReadTrajectories(int numberOfGrasps){
@@ -413,7 +427,7 @@ void GraspPlanner::PerformGrasp(const mjModel* &m, mjData* &d, mjtNum * stableQp
 		}
 		break;
 	case planning:
-		if (!startFlag){
+		if (!startFlag && !reSimulateFlag){
 
 			// Not enough points?
 			if (Simulator->cloud->size() < minPointCount)
@@ -440,36 +454,61 @@ void GraspPlanner::PerformGrasp(const mjModel* &m, mjData* &d, mjtNum * stableQp
 		}
 		else
 		{
-			// Get trajectory data from server.
-			success = Connector::DownloadFileFromDropbox(trajectoryFile);
+			if (!reSimulateFlag)
+			{
+				// Get trajectory data from server.
+				success = Connector::DownloadFileFromDropbox(trajectoryFile);
+			}
+			else
+			{
+				success = true;
+				strcpy(trajectoryFile, baseFolder);
+				strcat(trajectoryFile, "data.bin");
+			}
 			if (success)
 			{
 
 				// Read trajectory count
 				trjFP = fopen(trajectoryFile, "rb");
-				fread(&numberOfGrasps, 4, 1, trjFP);
+
+				if (!reSimulateFlag){
+					fread(&numberOfGrasps, 4, 1, trjFP);
+				}
+				else
+				{
+					numberOfGrasps = boost::filesystem::file_size(trajectoryFile) / (285 * sizeof(float));
+				}
 
 				if (numberOfGrasps > numberOfMaximumGrasps)
 					numberOfGrasps = numberOfMaximumGrasps;
 
 				// Allocate output array
-				resultArr = new Grasp::GraspResult[numberOfGrasps];
-
-				// Allocate a view for each grasp
-				for (int i = 0; i<numberOfGrasps; i++)
+				if (!reSimulateFlag)
 				{
-					int id = validViews[rand()%validViews.size()];
-					resultArr[i].viewId = id;
-					resultArr[i].camPos = cameraPosArr[id];
-					resultArr[i].gazeDir = gazeDirArr[id];
+					resultArr = new Grasp::GraspResult[numberOfGrasps];
+
+					// Allocate a view for each grasp
+					for (int i = 0; i<numberOfGrasps; i++)
+					{
+						int id = validViews[rand()%validViews.size()];
+						resultArr[i].viewId = id;
+						resultArr[i].camPos = cameraPosArr[id];
+						resultArr[i].gazeDir = gazeDirArr[id];
+					}
+
+					// Read trajectories
+					ReadTrajectories(numberOfGrasps);
 				}
+				else
+				{
+					char tmpStr[1000];
+					strcpy(tmpStr, baseFolder);
+					strcat(tmpStr, "graspData.data");
+					resultArr = Grasp::readGraspData(tmpStr);
 
-				// Read trajectories
-				ReadTrajectories(numberOfGrasps);
-
-				// Log/output
-				(*logStream)<< "Number of grasps:" << numberOfGrasps << std::endl;
-				std::cout<< "Number of grasps:" << numberOfGrasps << std::endl;
+					// Read trajectories
+					ReadPreMadeTrajectories(numberOfGrasps);
+				}
 			}
 			else
 			{

@@ -67,6 +67,7 @@ public:
 	int collisionPoints = 50, collisionCounter = 0;
 	bool collisionSet = false, collisionRun = true, hasCollided = false;
 	bool testFlag = false;
+	bool reSimulateFlag = false;
 	float* data = NULL;
 	int collisionState[1000];
 	std::ofstream *logStream = NULL;
@@ -115,6 +116,10 @@ public:
 	// Gets the trajectory from the data trajectory file,
 	// and assigns it as next trajectory.
 	void ReadTrajectories( int numberOfGrasps );
+
+	// Gets the trajectory from the data trajectory file,
+	// and assigns it as next trajectory.
+	void ReadPreMadeTrajectories( int numberOfGrasps );
 
 	// CheckCollision checks the collision of
 	// the next trajectory with the table.
