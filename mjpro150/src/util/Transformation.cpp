@@ -41,8 +41,8 @@ Transformation::Transformation(Eigen::Vector3f gazeDir, Eigen::Vector3f camPos, 
 	// If the calculation needs to be backwards, take inverse
 	if (!forward)
 	{
-		tQuat = tQuat.inverse();
-		tM = tM.inverse();
+		tQuat.inverse();
+		tM.inverse();
 	}
 }
 

@@ -33,7 +33,6 @@ Waypoint Path::Interpolate(int step){
 
 	// Find relevant waypoints and return the interpolation.
 	float stepSize = ((float) steps) / (waypointCount-1);
-//	std::cout<<"Step Size: "<<stepSize<<std::endl;
 	float val = (float) step / stepSize;
 	int startPoint = floor(val);
 	int endPoint = ceil(val);
@@ -112,7 +111,6 @@ std::vector<float> Path::getGraspParams(Eigen::Vector3f gazeDir, Eigen::Vector3f
 		for (int i = 0; i<20; i++)
 		{
 			outputData[currentOffset + k * 27 + 17 + i] = wp.jointAngles[i];
-
 		}
 	}
 

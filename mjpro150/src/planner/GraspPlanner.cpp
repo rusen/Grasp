@@ -71,9 +71,9 @@ GraspPlanner::GraspPlanner(const char * dropboxBase, bool testFlag,
 	}
 	strcat(prefix, fileId);
 	strcat(localPrefix, fileId);
-	logFile [0] = debugLogFile[0] = pointFile [0] = rgbFile [0] = depthFile[0] = resultFile[0] = trajectoryFile[0] = 0; // Set to ""
-	strcat(logFile, localPrefix); strcat(debugLogFile, localPrefix); strcat(pointFile, localPrefix); strcat(rgbFile, localPrefix); strcat(depthFile, localPrefix); strcat(resultFile, localPrefix); strcat(trajectoryFile, prefix);
-	strcat(logFile, ".log"); strcat(debugLogFile, "_debug.log"); strcat(pointFile, ".pcd"); strcat(rgbFile, "_rgb.png"); strcat(depthFile, "_depth.png"); strcat(resultFile, ".gd"); strcat(trajectoryFile, ".trj");
+	logFile [0] = dataFile[0] = debugLogFile[0] = pointFile [0] = rgbFile [0] = depthFile[0] = resultFile[0] = trajectoryFile[0] = 0; // Set to ""
+	strcat(logFile, localPrefix); strcat(dataFile, baseFolder); strcat(debugLogFile, localPrefix); strcat(pointFile, localPrefix); strcat(rgbFile, localPrefix); strcat(depthFile, localPrefix); strcat(resultFile, localPrefix); strcat(trajectoryFile, prefix);
+	strcat(logFile, ".log"); strcat(dataFile, "data.bin"); strcat(debugLogFile, "_debug.log"); strcat(pointFile, ".pcd"); strcat(rgbFile, "_rgb.png"); strcat(depthFile, "_depth.png"); strcat(resultFile, ".gd"); strcat(trajectoryFile, ".trj");
 	logStream = new std::ofstream(debugLogFile);
 
     // Create and start kinect simulator.
@@ -174,8 +174,52 @@ void GraspPlanner::ReadPreMadeTrajectories(int numberOfGrasps){
 
 	for (int readCtr = 0; readCtr<numberOfGrasps; readCtr++)
 	{
+		float tmp[15];
 		finalApproachArr[readCtr] = new Path(wpCount);
+		fread(tmp, 4, 15, trjFP);
+
+		// We know the forward transformation used to obtain the wrist position and orientation.
+		// At this stage, we will revert the transformation.
+		Eigen::Vector3f gazeDir(resultArr[readCtr].gazeDir[0], resultArr[readCtr].gazeDir[1], resultArr[readCtr].gazeDir[2]);
+		Eigen::Vector3f camPos(resultArr[readCtr].camPos[0], resultArr[readCtr].camPos[1], resultArr[readCtr].camPos[2]);
+
+		// Read each waypoint.
+		for (int wpItr = 0; wpItr < wpCount; wpItr++){
+
+			// Read the waypoint parameters.
+			float wristPos[3];
+			float wristQuat[4];
+			float fingerPos[20];
+			fread(wristPos, 4, 3, trjFP);
+			fread(wristQuat, 4, 4, trjFP);
+			fread(fingerPos, 4, 20, trjFP);
+
+			// Obtain transformation matrices
+			Transformation trans(gazeDir, camPos, false);
+			Eigen::Vector4f pos(wristPos[0], wristPos[1], wristPos[2], 1);
+
+			// Transform wrist point
+			pos = trans.tM * pos;
+			Eigen::Quaternionf wQuat = trans.tQuat * Eigen::Quaternionf(wristQuat[0], wristQuat[1], wristQuat[2], wristQuat[3]);
+			wQuat.normalize();
+
+			// Assign wrist position and orientation
+			finalApproachArr[readCtr]->waypoints[wpItr].pos[0] = pos[0];
+			finalApproachArr[readCtr]->waypoints[wpItr].pos[1] = pos[1];
+			finalApproachArr[readCtr]->waypoints[wpItr].pos[2] = pos[2];
+			finalApproachArr[readCtr]->waypoints[wpItr].quat.x = wQuat.x();
+			finalApproachArr[readCtr]->waypoints[wpItr].quat.y = wQuat.y();
+			finalApproachArr[readCtr]->waypoints[wpItr].quat.z = wQuat.z();
+			finalApproachArr[readCtr]->waypoints[wpItr].quat.w = wQuat.w();
+
+			// Assign joints.
+			for (int i = 0; i < 20; i++)
+			{
+				finalApproachArr[readCtr]->waypoints[wpItr].jointAngles[i] = fingerPos[i];
+			}
+		}
 	}
+	fclose(trjFP);
 }
 
 void GraspPlanner::ReadTrajectories(int numberOfGrasps){
@@ -296,6 +340,15 @@ void GraspPlanner::ReadTrajectories(int numberOfGrasps){
 }
 
 bool GraspPlanner::FollowTrajectory(const mjModel* m, mjData* d, float yOffset){
+
+	/*
+	for (int i = 0; i<10; i++)
+	{
+		std::cout<<"Waypoint "<<i<<" for grasp counter "<<graspCounter-1<<std::endl;
+		finalApproachArr[graspCounter-1]->waypoints->print();
+	}
+	return false;
+	*/
 
 	// Set pose of the hand.
 	Waypoint wp = finalApproachArr[graspCounter-1]->Interpolate(counter);
@@ -462,12 +515,12 @@ void GraspPlanner::PerformGrasp(const mjModel* &m, mjData* &d, mjtNum * stableQp
 			else
 			{
 				success = true;
-				strcpy(trajectoryFile, baseFolder);
-				strcat(trajectoryFile, "data.bin");
+				strcpy(trajectoryFile, dataFile);
 			}
 			if (success)
 			{
 
+				std::cout<<"Reading trajectories from the file "<<trajectoryFile<<std::endl;
 				// Read trajectory count
 				trjFP = fopen(trajectoryFile, "rb");
 
@@ -493,7 +546,9 @@ void GraspPlanner::PerformGrasp(const mjModel* &m, mjData* &d, mjtNum * stableQp
 						int id = validViews[rand()%validViews.size()];
 						resultArr[i].viewId = id;
 						resultArr[i].camPos = cameraPosArr[id];
+						std::cout<<"Camera pos for grasp "<<i<<resultArr[i].camPos[0]<<" "<<resultArr[i].camPos[1]<<" "<<resultArr[i].camPos[2]<<std::endl;
 						resultArr[i].gazeDir = gazeDirArr[id];
+						std::cout<<"Camera gaze for grasp "<<i<<resultArr[i].gazeDir[0]<<" "<<resultArr[i].gazeDir[1]<<" "<<resultArr[i].gazeDir[2]<<std::endl;
 					}
 
 					// Read trajectories
@@ -525,7 +580,6 @@ void GraspPlanner::PerformGrasp(const mjModel* &m, mjData* &d, mjtNum * stableQp
 		{
 			startFlag = false;
 			std::cout<<"Moving on to grasping."<<std::endl;
-			(*logStream)<<"Moving on to grasping."<<std::endl;
 
 			// Switch to grasping state.
 			prevState = stand;
@@ -549,7 +603,6 @@ void GraspPlanner::PerformGrasp(const mjModel* &m, mjData* &d, mjtNum * stableQp
 		finishFlag = false;
 		break;
 	case checkingCollision:
-
 		// If collision has already been checked for this one, move on.
 		if (collisionState[graspCounter-1] > -1)
 		{

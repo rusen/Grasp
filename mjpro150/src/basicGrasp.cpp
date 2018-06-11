@@ -60,7 +60,7 @@ int classSelection = 0;
 
 // True, if we need to re-create the simulation
 bool reSimulateFlag = false;
-char existingId[] = "KsBSEd";
+char existingId[] = "SMSxsd";
 
 // The variables that depend on the initialisation of the simulation
 bool findStableFlag = true;
@@ -746,7 +746,7 @@ int main(int argc, const char** argv)
 		strcat(currentFile, ".xml");
         boost::filesystem::copy_file(currentFile, objectFile, boost::filesystem::copy_option::overwrite_if_exists);
 
-        std::cout<<"OBJ COPIED"<<std::endl;
+        std::cout<<objectFile<<" COPIED"<<std::endl;
 
 		// load and compile model
 		char error[1000] = "Could not load binary model";
@@ -758,7 +758,7 @@ int main(int argc, const char** argv)
 			mju_error_s("Load model error: %s", error);
 
 
-        std::cout<<"MODEL READ"<<std::endl;
+        std::cout<<modelPath.c_str()<<" MODEL READ"<<std::endl;
 
 		// If this simulation is a re-run, we advance it to a later stage.
 

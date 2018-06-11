@@ -60,7 +60,7 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 				strcat(tmp, i->path().filename().c_str());
 				boost::filesystem::copy_file(i->path(), tmp, boost::filesystem::copy_option::overwrite_if_exists);
 
-				if (i->path().string().find("Test"))
+				if (i->path().string().find("Test") != std::string::npos)
 					outputStr = std::string(tmp);
 			}
 		}
@@ -455,8 +455,6 @@ void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int ba
 	// object id, grasp output (success, stability) and
 	// grasp parameters (wrist, joint).
 
-	strcpy(dataFile, planner->baseFolder);
-	strcat(dataFile, "data.bin");
 	strcpy(trjFile, planner->baseFolder);
 	strcat(trjFile, planner->fileId);
 	strcat(trjFile, ".trj");
@@ -466,7 +464,7 @@ void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int ba
 	float likelihood, buffer[1000];
 	fread(&numberOfGrasps, 4, 1, trjFP1);
 
-	FILE * dataFP = fopen(dataFile, "wb");
+	FILE * dataFP = fopen(planner->dataFile, "wb");
 
 	for (int i = 0; i<planner->numberOfGrasps; i++)
 	{
@@ -716,6 +714,7 @@ Grasp::GraspResult * Grasp::readGraspData(const char * fileName){
 	// Allocate space
 	int numberOfGrasps = 0;
 	fread(&numberOfGrasps, sizeof(int), 1, fp);
+	std::cout<<numberOfGrasps<<" grasp parameters are read!"<<std::endl;
 	Grasp::GraspResult * newArr = new Grasp::GraspResult[numberOfGrasps];
 
 	// Read each grasp
@@ -737,19 +736,19 @@ void Grasp::GraspResult::write(FILE * &fp){
 	float tmp[3];
 	for (int i = 0; i<3; i++)
 		tmp[i] = gazeDir[i];
-	fwrite(&tmp, sizeof(float), 3, fp);
+	fwrite(tmp, sizeof(float), 3, fp);
 	for (int i = 0; i<3; i++)
 		tmp[i] = camPos[i];
-	fwrite(&tmp, sizeof(float), 3, fp);
+	fwrite(tmp, sizeof(float), 3, fp);
 }
 void Grasp::GraspResult::read(FILE * &fp){
 	fread(&viewId, sizeof(int), 1, fp);
 	fread(&graspType, sizeof(int), 1, fp);
 	float tmp[3];
-	fread(&tmp, sizeof(float), 3, fp);
+	fread(tmp, sizeof(float), 3, fp);
 	for (int i = 0; i<3; i++)
 		gazeDir[i] = tmp[i];
-	fread(&tmp, sizeof(float), 3, fp);
+	fread(tmp, sizeof(float), 3, fp);
 	for (int i = 0; i<3; i++)
 		camPos[i] = tmp[i];
 }
