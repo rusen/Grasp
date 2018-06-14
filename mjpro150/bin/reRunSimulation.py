@@ -9,9 +9,7 @@ from threading import Lock
 folders = {}
 dataFile = "data.bin"
 dropboxFolder = "~/Dropbox"
-numberOfScenes = 0
-completedScenes = 0
-mutex = Lock()
+
 
 def get_scenes(setText):
    d = './allData'
@@ -36,12 +34,8 @@ def get_scenes(setText):
               out.write(objectId)
               out.close()
               counter = counter + 1
-#              newName = ''
-#              for fil in os.listdir(itemScene):
-#                  if fil.endswith(".pcd"):
-#                      newName = os.path.splitext(fil)[0]
-#                      print(newName)
    return
+
 
 def f(x):
     itemScene = folders[x]
@@ -49,15 +43,12 @@ def f(x):
     for fil in os.listdir(itemScene):
         if fil.endswith(".pcd"):
             newName = os.path.splitext(fil)[0]
-  #          print('Processing ' + newName)
+            print('Processing ' + newName)
     newFolder = './tmp/data/' + newName
     shutil.move(itemScene, newFolder)
     command = "./basicGrasp " + newName + " " + dataFile + " ../model/BHAM " + dropboxFolder + " visualOff 0 0 > /dev/null"
 #    print(command)
     os.system(command)
-
- #   completedScenes = completedScenes + 1
-    print(str(numberOfScenes) + " out of " + str(numberOfScenes) + " scenes have been completed.")
 
     # DO SOME PROCESS
     shutil.move(newFolder, itemScene)
@@ -68,5 +59,4 @@ numberOfScenes = len(folders)
 dataFile = sys.argv[3]
 dropboxFolder = sys.argv[4]
 pool = multiprocessing.Pool(int(sys.argv[2]))
-#pool.map(f, range(0, len(folders)))
-pool.map(f, range(0, 10))
+pool.map(f, range(0, len(folders)))
