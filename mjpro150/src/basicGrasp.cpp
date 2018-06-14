@@ -60,7 +60,8 @@ int classSelection = 0;
 
 // True, if we need to re-create the simulation
 bool reSimulateFlag = false;
-char existingId[] = "SMSxsd";
+char existingId[] = "3vWRed";
+bool keepCollidingGrasps = false;
 
 // The variables that depend on the initialisation of the simulation
 bool findStableFlag = true;
@@ -882,11 +883,11 @@ int main(int argc, const char** argv)
     std::cout<<"Out of "<<planner->numberOfGrasps<<", "<< planner->numberOfNoncollidingGrasps<< " are non-colliding!"<<std::endl;
     if (!testFlag && planner->numberOfGrasps > 0 && successFlag && planner->numberOfNoncollidingGrasps >= nonCollidingGraspLimit)
     {
-    	UploadFiles(argv[1], planner, objectId, baseId);
+    	UploadFiles(argv[1], planner, objectId, baseId, keepCollidingGrasps || reSimulateFlag);
     }
 
     // delete tmp folder
-    if(boost::filesystem::exists(planner->baseFolder))
+    if(boost::filesystem::exists(planner->baseFolder) && !reSimulateFlag)
     {
 //       boost::filesystem::remove_all(planner->baseFolder);
     }

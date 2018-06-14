@@ -187,9 +187,6 @@ void GraspPlanner::ReadPreMadeTrajectories(int numberOfGrasps){
 		for (int wpItr = 0; wpItr < wpCount; wpItr++){
 
 			// Read the waypoint parameters.
-			float wristPos[3];
-			float wristQuat[4];
-			float fingerPos[20];
 			fread(wristPos, 4, 3, trjFP);
 			fread(wristQuat, 4, 4, trjFP);
 			fread(fingerPos, 4, 20, trjFP);
@@ -217,6 +214,10 @@ void GraspPlanner::ReadPreMadeTrajectories(int numberOfGrasps){
 			{
 				finalApproachArr[readCtr]->waypoints[wpItr].jointAngles[i] = fingerPos[i];
 			}
+
+			// Finally, save grasp parameter data
+			std::vector<float> curParams = finalApproachArr[readCtr]->getGraspParams(gazeDir, camPos, wpCount);
+			graspParams.push_back(curParams);
 		}
 	}
 	fclose(trjFP);
@@ -458,7 +459,6 @@ void GraspPlanner::PerformGrasp(const mjModel* &m, mjData* &d, mjtNum * stableQp
 			    			counter++;
 			    	}
 			    }
-			    std::cout<<"Valid pixel count for "<<i<<" : "<<counter<<std::endl;
 			    if (counter >= validViewPixels)
 			    {
 			    	validViews.push_back(i);
@@ -520,16 +520,17 @@ void GraspPlanner::PerformGrasp(const mjModel* &m, mjData* &d, mjtNum * stableQp
 			if (success)
 			{
 
-				std::cout<<"Reading trajectories from the file "<<trajectoryFile<<std::endl;
+				std::cout<<"Reading trajectories from the file "<<trajectoryFile<<" "<<std::endl;
 				// Read trajectory count
-				trjFP = fopen(trajectoryFile, "rb");
 
 				if (!reSimulateFlag){
+					trjFP = fopen(trajectoryFile, "rb");
 					fread(&numberOfGrasps, 4, 1, trjFP);
 				}
 				else
 				{
 					numberOfGrasps = boost::filesystem::file_size(trajectoryFile) / (285 * sizeof(float));
+					trjFP = fopen(trajectoryFile, "rb");
 				}
 
 				if (numberOfGrasps > numberOfMaximumGrasps)
@@ -546,9 +547,7 @@ void GraspPlanner::PerformGrasp(const mjModel* &m, mjData* &d, mjtNum * stableQp
 						int id = validViews[rand()%validViews.size()];
 						resultArr[i].viewId = id;
 						resultArr[i].camPos = cameraPosArr[id];
-						std::cout<<"Camera pos for grasp "<<i<<resultArr[i].camPos[0]<<" "<<resultArr[i].camPos[1]<<" "<<resultArr[i].camPos[2]<<std::endl;
 						resultArr[i].gazeDir = gazeDirArr[id];
-						std::cout<<"Camera gaze for grasp "<<i<<resultArr[i].gazeDir[0]<<" "<<resultArr[i].gazeDir[1]<<" "<<resultArr[i].gazeDir[2]<<std::endl;
 					}
 
 					// Read trajectories

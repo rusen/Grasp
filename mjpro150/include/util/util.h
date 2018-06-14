@@ -14,9 +14,8 @@
 
 namespace Grasp{
 std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, int baseId, int runCount, bool reSimulateFlag);
-void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int baseId);
+void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int baseId, bool keepCollidingGrasps);
 void RemoveOldTmpFolders(const char * modelFolder, bool reSimulateFlag);
-void writeGraspData(GraspResult * arr, int numberOfGrasps, const char * fileName);
 GraspResult * readGraspData(const char * fileName);
 }
 

@@ -439,7 +439,7 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 	return outputStr;
 }
 
-void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int baseId){
+void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int baseId, bool keepCollidingGrasps){
 
 	std::cout<<"BASE FOLDER:"<<planner->baseFolder<<std::endl;
 	char viewFolder[1000], imageFolder[1000], dataFile[1000], trjFile[1000];
@@ -454,58 +454,64 @@ void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int ba
 	// We will create a bin file that includes object class,
 	// object id, grasp output (success, stability) and
 	// grasp parameters (wrist, joint).
-
-	strcpy(trjFile, planner->baseFolder);
-	strcat(trjFile, planner->fileId);
-	strcat(trjFile, ".trj");
-	FILE * trjFP1 = fopen(planner->trajectoryFile, "rb");
-	FILE * trjFP2 = fopen(trjFile, "wb");
-	int numberOfGrasps, graspType, wpCount;
-	float likelihood, buffer[1000];
-	fread(&numberOfGrasps, 4, 1, trjFP1);
-
+	int numberOfGrasps;
+	float buffer[1000];
 	FILE * dataFP = fopen(planner->dataFile, "wb");
+
+	// Write grasp data to a file
+	char graspDataFile[1000];
+	strcpy(graspDataFile, planner->baseFolder);
+	strcat(graspDataFile, "/graspData.data");
+	FILE * gdf = fopen(graspDataFile, "wb");
+	// Write number of grasps
+	fwrite(&numberOfGrasps, sizeof(int), 1, gdf);
+	int imgCounter = 0;
 
 	for (int i = 0; i<planner->numberOfGrasps; i++)
 	{
-		// Read original trajectory data
-		fread(&likelihood, 4, 1, trjFP1);
-		fread(&graspType, 4, 1, trjFP1);
-		fread(&wpCount, 4, 1, trjFP1);
-		fread(buffer, 4, 27*wpCount, trjFP1);
 
-		// Write original trajectory data
-		fwrite(&likelihood, 4, 1, trjFP2);
-		fwrite(&graspType, 4, 1, trjFP2);
-		fwrite(&wpCount, 4, 1, trjFP2);
-		fwrite(buffer, 4, 27*wpCount, trjFP2);
+		// In the re-simulation environment, we do not write back those colliding with the table.
+		if (!keepCollidingGrasps)
+			if (!(planner->resultArr[i].counter))
+				continue;
 
 		// Get image from views and save into images folder
 		std::string imDepth = std::string(viewFolder) + std::string(std::to_string(planner->resultArr[i].viewId)) + std::string(".png");
-		std::string destImDepth = std::string(imageFolder) + std::string(std::to_string(i)) + std::string(".png");
-		boost::filesystem::copy_file(imDepth, destImDepth, boost::filesystem::copy_option::overwrite_if_exists);
+		std::string destImDepth = std::string(imageFolder) + std::string(std::to_string(imgCounter)) + std::string(".png");
+		if (boost::filesystem::exists(imDepth)){
+			boost::filesystem::copy_file(imDepth, destImDepth, boost::filesystem::copy_option::overwrite_if_exists);
+		}
 
 		// Get object id, grasp params, output parameters etc print in a file.
 		float success = 0;
 		if (!(planner->resultArr[i].counter))
 			success = -1;
 		else success = planner->resultArr[i].successProbability/(double)planner->resultArr[i].counter;
+
 		float stabilityArr[4];
 		stabilityArr[0] = planner->resultArr[i].x1/(double)planner->resultArr[i].counter;
 		stabilityArr[1] = planner->resultArr[i].r1/(double)planner->resultArr[i].counter;
 		stabilityArr[2] = planner->resultArr[i].x2/(double)planner->resultArr[i].counter;
 		stabilityArr[3] = planner->resultArr[i].r2/(double)planner->resultArr[i].counter;
+
 		fwrite(&success, 4, 1, dataFP); // Writing success probability
 		fwrite(stabilityArr, 4, 4, dataFP); // Writing stability values
-		std::vector<float> tmpVec = planner->graspParams[i];
+		std::vector<float> tmpVec = planner->graspParams[i]; // TODO: graspParams is empty. We need to fill that in.
 		float * tmpArr = new float[tmpVec.size()];
 		for (int k = 0; k<tmpVec.size(); k++)
+		{
 			tmpArr[k] = planner->graspParams[i][k];
+		}
 		fwrite(tmpArr, 4, tmpVec.size(), dataFP); // Writing grasp parameters
+
+		// Write grasp view and type data
+		planner->resultArr[i].write(gdf);
+		imgCounter++;
 	}
 	fclose(dataFP);
-	fclose(trjFP1);
-	fclose(trjFP2);
+	fseek ( gdf , 0 , SEEK_SET );
+	fwrite(&(planner->numberOfNoncollidingGrasps), sizeof(int), 1, gdf);
+	fclose(gdf);
 
 	if (system(NULL)) puts ("Ok");
     	else exit (EXIT_FAILURE);
@@ -531,12 +537,6 @@ void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int ba
 	strcpy(localModelFolder, planner->baseFolder);
 	strcat(localModelFolder, "model/");
 	boost::filesystem::create_directories(localModelFolder);
-
-	// Write grasp data to a file
-	char graspDataFile[1000];
-	strcpy(graspDataFile, planner->baseFolder);
-	strcat(graspDataFile, "/graspData.data");
-	writeGraspData(planner->resultArr, numberOfGrasps, graspDataFile);
 
 	// Copy relevant files
 	boost::filesystem::path p(base);
@@ -684,25 +684,6 @@ void RemoveOldTmpFolders(const char * modelFolder, bool reSimulateFlag){
 
 }
 
-void Grasp::writeGraspData(Grasp::GraspResult * arr, int numberOfGrasps, const char * fileName){
-	// Open file
-	FILE * fp = fopen(fileName, "wb");
-
-	// Error? Return
-	if (fp == NULL)
-		return;
-
-	// Write number of grasps
-	fwrite(&numberOfGrasps, sizeof(int), 1, fp);
-
-	// Write each grasp
-	for (int i = 0; i<numberOfGrasps; i++){
-		arr[i].write(fp);
-	}
-
-	// close fp
-	fclose(fp);
-}
 Grasp::GraspResult * Grasp::readGraspData(const char * fileName){
 	// Open file
 	FILE * fp = fopen(fileName, "rb");
@@ -751,4 +732,13 @@ void Grasp::GraspResult::read(FILE * &fp){
 	fread(tmp, sizeof(float), 3, fp);
 	for (int i = 0; i<3; i++)
 		camPos[i] = tmp[i];
+}
+
+void Grasp::GraspResult::print(){
+	std::cout<<"Grasp result"<<std::endl;
+	std::cout<<"Success: "<<successProbability<<std::endl;
+	std::cout<<"Stability: "<<x1<<" "<<r1<<" "<<x2<<" "<<r2<<" "<<std::endl;
+	std::cout<<"Counters: "<<counter<<" "<<successCounter<<std::endl;
+	std::cout<<"View id and grasp type: "<<viewId<<" "<<graspType<<std::endl;
+	std::cout<<"Gaze dir and cam pos: "<<gazeDir[0]<<" "<<gazeDir[1]<<" "<<gazeDir[2]<<" "<<camPos[0]<<" "<<camPos[1]<<" "<<camPos[2]<<std::endl;
 }

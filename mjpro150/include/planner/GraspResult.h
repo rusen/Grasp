@@ -27,6 +27,7 @@ public:
 	// File IO
 	void read(FILE * &fp);
 	void write(FILE * &fp);
+	void print();
 
 };
 

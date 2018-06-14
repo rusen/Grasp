@@ -72,6 +72,7 @@ std::vector<float> Path::getGraspParams(Eigen::Vector3f gazeDir, Eigen::Vector3f
 
 	// Obtain transformation matrices
 	Transformation trans(gazeDir, camPos, true);
+	Transformation transInv(gazeDir, camPos, false);
 
 	// Interpolate waypoints to 10 separate points.
 	int limit = 10;
@@ -96,6 +97,8 @@ std::vector<float> Path::getGraspParams(Eigen::Vector3f gazeDir, Eigen::Vector3f
 
 		// Transform wrist point
 		pos = trans.tM * pos;
+		Eigen::Vector4f pos2 = transInv.tM * pos;
+		Eigen::Matrix4f id = transInv.tM * trans.tM;
 		Eigen::Quaternionf wristQuat = Eigen::Quaternionf(wp.quat.w, wp.quat.x, wp.quat.y, wp.quat.z);
 		wristQuat = trans.tQuat * wristQuat;
 

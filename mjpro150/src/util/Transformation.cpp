@@ -34,15 +34,20 @@ Transformation::Transformation(Eigen::Vector3f gazeDir, Eigen::Vector3f camPos, 
 	camFrame(2,0) = cameraRotM(2,0), camFrame(2,1) = cameraRotM(2,1), camFrame(2,2) = cameraRotM(2,2);
 
 	// Final transformation matrices/quats
-	tQuat = Eigen::Quaternionf(camFrame).inverse();
-	tQuat.normalize();
-	tM = cameraRotM * cameraTraM;
+	Eigen::Quaternionf trQuat = Eigen::Quaternionf(camFrame).inverse();
+	trQuat.normalize();
+	Eigen::Matrix4f trM = cameraRotM * cameraTraM;
 
 	// If the calculation needs to be backwards, take inverse
 	if (!forward)
 	{
-		tQuat.inverse();
-		tM.inverse();
+		tQuat = trQuat.inverse();
+		tM = trM.inverse();
+	}
+	else
+	{
+		tM = trM;
+		tQuat = trQuat;
 	}
 }
 
