@@ -462,9 +462,15 @@ void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int ba
 	char graspDataFile[1000];
 	strcpy(graspDataFile, planner->baseFolder);
 	strcat(graspDataFile, "/graspData.data");
-	FILE * gdf = fopen(graspDataFile, "wb");
+	FILE * gdf = NULL;
+
+	if (!boost::filesystem::exists(graspDataFile))
+	{
+		gdf = fopen(graspDataFile, "wb");
+		fwrite(&numberOfGrasps, sizeof(int), 1, gdf);
+	}
+
 	// Write number of grasps
-	fwrite(&numberOfGrasps, sizeof(int), 1, gdf);
 	int imgCounter = 0;
 
 	for (int i = 0; i<planner->numberOfGrasps; i++)
@@ -509,9 +515,11 @@ void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int ba
 		imgCounter++;
 	}
 	fclose(dataFP);
-	fseek ( gdf , 0 , SEEK_SET );
-	fwrite(&(planner->numberOfNoncollidingGrasps), sizeof(int), 1, gdf);
-	fclose(gdf);
+	if (gdf != NULL){
+		fseek ( gdf , 0 , SEEK_SET );
+		fwrite(&(planner->numberOfNoncollidingGrasps), sizeof(int), 1, gdf);
+		fclose(gdf);
+	}
 
 	if (system(NULL)) puts ("Ok");
     	else exit (EXIT_FAILURE);
@@ -712,6 +720,10 @@ Grasp::GraspResult * Grasp::readGraspData(const char * fileName){
 
 // File IO
 void Grasp::GraspResult::write(FILE * &fp){
+	// If no grasp data file, return.
+	if (fp == NULL)
+		return;
+
 	fwrite(&viewId, sizeof(int), 1, fp);
 	fwrite(&graspType, sizeof(int), 1, fp);
 	float tmp[3];
@@ -723,6 +735,12 @@ void Grasp::GraspResult::write(FILE * &fp){
 	fwrite(tmp, sizeof(float), 3, fp);
 }
 void Grasp::GraspResult::read(FILE * &fp){
+
+	if (fp == NULL){
+		std::cerr<<"No grasp data file!"<<std::endl;
+		return;
+	}
+
 	fread(&viewId, sizeof(int), 1, fp);
 	fread(&graspType, sizeof(int), 1, fp);
 	float tmp[3];
