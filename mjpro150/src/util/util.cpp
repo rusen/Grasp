@@ -732,6 +732,7 @@ void Grasp::GraspResult::write(FILE * &fp){
 		return;
 
 	fwrite(&viewId, sizeof(int), 1, fp);
+	fwrite(&wpCount, sizeof(int), 1, fp);
 	fwrite(&graspType, sizeof(int), 1, fp);
 	float tmp[3];
 	for (int i = 0; i<3; i++)
@@ -749,6 +750,7 @@ void Grasp::GraspResult::read(FILE * &fp){
 	}
 
 	fread(&viewId, sizeof(int), 1, fp);
+	fread(&wpCount, sizeof(int), 1, fp);
 	fread(&graspType, sizeof(int), 1, fp);
 	float tmp[3];
 	fread(tmp, sizeof(float), 3, fp);
