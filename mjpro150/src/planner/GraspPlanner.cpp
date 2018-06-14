@@ -38,13 +38,15 @@ void GraspPlanner::SetFrame(const mjModel* m, mjData * d)
 }
 
 GraspPlanner::GraspPlanner(const char * dropboxBase, bool testFlag,
-		bool reSimulateFlag, const char * existingId) {
+		bool reSimulateFlag, const char * existingId, char * dataFileName) {
 
 	// Save test flag and base type.
 	this->testFlag = testFlag;
 
 	// Create file paths.
 	fileId[0] = 0;
+	char dataStr[20];
+	strcpy(dataStr, "data.bin");
 
 	if (!reSimulateFlag){
 		strcat(fileId, "XXXXXX");
@@ -52,6 +54,7 @@ GraspPlanner::GraspPlanner(const char * dropboxBase, bool testFlag,
 	}
 	else{
 		strcpy(fileId, existingId);
+		strcpy(dataStr, dataFileName);
 	}
 	char prefix[1000];
 	strcpy(dropboxFolder, dropboxBase);
@@ -73,7 +76,7 @@ GraspPlanner::GraspPlanner(const char * dropboxBase, bool testFlag,
 	strcat(localPrefix, fileId);
 	logFile [0] = dataFile[0] = debugLogFile[0] = pointFile [0] = rgbFile [0] = depthFile[0] = resultFile[0] = trajectoryFile[0] = 0; // Set to ""
 	strcat(logFile, localPrefix); strcat(dataFile, baseFolder); strcat(debugLogFile, localPrefix); strcat(pointFile, localPrefix); strcat(rgbFile, localPrefix); strcat(depthFile, localPrefix); strcat(resultFile, localPrefix); strcat(trajectoryFile, prefix);
-	strcat(logFile, ".log"); strcat(dataFile, "data.bin"); strcat(debugLogFile, "_debug.log"); strcat(pointFile, ".pcd"); strcat(rgbFile, "_rgb.png"); strcat(depthFile, "_depth.png"); strcat(resultFile, ".gd"); strcat(trajectoryFile, ".trj");
+	strcat(logFile, ".log"); strcat(dataFile, dataStr); strcat(debugLogFile, "_debug.log"); strcat(pointFile, ".pcd"); strcat(rgbFile, "_rgb.png"); strcat(depthFile, "_depth.png"); strcat(resultFile, ".gd"); strcat(trajectoryFile, ".trj");
 	logStream = new std::ofstream(debugLogFile);
 
     // Create and start kinect simulator.

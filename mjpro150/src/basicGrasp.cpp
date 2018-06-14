@@ -60,7 +60,8 @@ int classSelection = 0;
 
 // True, if we need to re-create the simulation
 bool reSimulateFlag = false;
-char existingId[] = "3vWRed";
+char existingId[10];
+char dataFileName[20];
 bool keepCollidingGrasps = false;
 
 // The variables that depend on the initialisation of the simulation
@@ -489,35 +490,41 @@ int main(int argc, const char** argv)
 	unsigned int randSeed = time(NULL);
 
     // check command-line arguments
-    if( argc < 6 )
+    if( argc != 8 )
     {
-        printf(" USAGE:  basicGrasp outputFolder ModelFolder dropboxFolder <visualOn/visualOff> classSelection (RandomInt)\n");
+        printf(" USAGE:  basicGrasp folderId dataFile ModelFolder dropboxFolder <visualOn/visualOff> classSelection (RandomInt)\n");
         return 0;
     }
 
+    // Read folder ID and data file name.
+    strcpy(existingId, argv[1]);
+    if (strcmp(existingId, "dummy"))
+    	reSimulateFlag = true;
+    strcpy(dataFileName, argv[2]);
+
     // If random seed provided, use it
-	sscanf(argv[5], "%ud", &tmpNo);
+	sscanf(argv[7], "%ud", &tmpNo);
 	randSeed = randSeed + (time_t) tmpNo;
     srand(randSeed);
     std::cout<<" RANDOM SEED: "<<randSeed << std::endl;
     std::cout<<"First random no:"<<rand()<<std::endl;
 
     // Read class selection parameter.
-	sscanf(argv[4], "%ud", &classSelection);
+	sscanf(argv[6], "%ud", &classSelection);
 
     // Create dropbox directories
     char tmpDropboxFolder[1000];
-    strcpy(tmpDropboxFolder, argv[2]);
+    strcpy(tmpDropboxFolder, argv[4]);
     strcat(tmpDropboxFolder, "/");
     strcat(tmpDropboxFolder, "/points");
 	if (!boost::filesystem::is_directory(tmpDropboxFolder))
 		boost::filesystem::create_directories(tmpDropboxFolder);
-    strcpy(tmpDropboxFolder, argv[2]);
+    strcpy(tmpDropboxFolder, argv[4]);
     strcat(tmpDropboxFolder, "/");
     strcat(tmpDropboxFolder, "/data");
 	if (!boost::filesystem::is_directory(tmpDropboxFolder))
 		boost::filesystem::create_directories(tmpDropboxFolder);
-    strcpy(tmpDropboxFolder, argv[2]);
+    strcpy(tmpDropboxFolder, argv[4]);
     strcat(tmpDropboxFolder, "/");
     strcat(tmpDropboxFolder, "/upload");
 	if (!boost::filesystem::is_directory(tmpDropboxFolder))
@@ -530,7 +537,7 @@ int main(int argc, const char** argv)
 	// Count number of objects
     // Get base id file name
 	char setsFile[1000];
-    strcpy(setsFile, argv[1]);
+    strcpy(setsFile, argv[3]);
     strcat(setsFile, "/sets.txt");
 
     // Read class id
@@ -549,7 +556,7 @@ int main(int argc, const char** argv)
 	// Count number of objects
     // Get base id file name
 	char classIdFile[1000];
-    strcpy(classIdFile, argv[1]);
+    strcpy(classIdFile, argv[3]);
     strcat(classIdFile, "/classIds.txt");
 
     // Read class id
@@ -566,7 +573,7 @@ int main(int argc, const char** argv)
     std::cout<<"Object count:"<<objectCount<<std::endl;
 
     // Allocate planner
-    planner = new Grasp::GraspPlanner(argv[2], testFlag, reSimulateFlag, existingId);
+    planner = new Grasp::GraspPlanner(argv[4], testFlag, reSimulateFlag, existingId, dataFileName);
 
     // Depending on requested class, get relevant objects.
     int objectId = 0;
@@ -574,6 +581,10 @@ int main(int argc, const char** argv)
     {
 		if (!classSelection)
 		{
+			std::cout<<"Excluded objects"<<std::endl;
+			for (int k = 0; k<excludedObjects.size(); k++)
+				std::cout<<excludedObjects[k]<<" ";
+			std::cout<<std::endl;
 			while(ismember(excludedObjects, objectId))
 				objectId = rand()%objectCount + 1;
 		}
@@ -581,7 +592,7 @@ int main(int argc, const char** argv)
 		{
 			std::vector<int> objectIdx;
 			char tmpStr[1000];
-			strcpy(tmpStr, argv[1]);
+			strcpy(tmpStr, argv[3]);
 			strcat(tmpStr, "/classIds.txt");
 
 			// Read relevant numbers into an array.
@@ -621,7 +632,7 @@ int main(int argc, const char** argv)
     std::cout<<"Selected object:"<<objectId<<std::endl;
 
     char baseIdFile[1000];
-    strcpy(baseIdFile, argv[1]);
+    strcpy(baseIdFile, argv[3]);
     strcat(baseIdFile, "/baseIds.txt");
 
     // Read base id
@@ -658,13 +669,13 @@ int main(int argc, const char** argv)
     mj_activate("mjkey.txt");
 
     // Set visual flag based on input.
-    if (!strcmp(argv[3], "visualOn"))
+    if (!strcmp(argv[5], "visualOn"))
     	visualFlag = true;
     else
     	visualFlag = false;
 
     // Remove old files
-    Grasp::RemoveOldTmpFolders(argv[1], reSimulateFlag);
+    Grasp::RemoveOldTmpFolders(argv[3], reSimulateFlag);
 
     // install control callback
     mjcb_control = graspObject;
@@ -679,7 +690,7 @@ int main(int argc, const char** argv)
     }
 
     // Create random xml files.
-    std::string modelPath = Grasp::CreateXMLs(argv[1], planner, objectId, baseId, planner->numberOfTrials, reSimulateFlag);
+    std::string modelPath = Grasp::CreateXMLs(argv[3], planner, objectId, baseId, planner->numberOfTrials, reSimulateFlag);
 
     // Visual operations
 	GLFWwindow* window = NULL;
@@ -740,7 +751,7 @@ int main(int argc, const char** argv)
     {
     	// Get the right object into the scene.
     	char currentFile[1000], objectFile[1000];
-    	strcpy(currentFile, argv[1]), strcpy(objectFile, argv[1]);
+    	strcpy(currentFile, argv[3]), strcpy(objectFile, argv[3]);
         strcat(objectFile, "/"), strcat(objectFile, planner->fileId), strcat(objectFile, "_include_object.xml");
         strcat(currentFile, "/tmp/"), strcat(currentFile, planner->fileId), strcat(currentFile, "_include_object");
 		strcat(currentFile, std::to_string(planner->varItr).c_str());
@@ -883,7 +894,7 @@ int main(int argc, const char** argv)
     std::cout<<"Out of "<<planner->numberOfGrasps<<", "<< planner->numberOfNoncollidingGrasps<< " are non-colliding!"<<std::endl;
     if (!testFlag && planner->numberOfGrasps > 0 && successFlag && planner->numberOfNoncollidingGrasps >= nonCollidingGraspLimit)
     {
-    	UploadFiles(argv[1], planner, objectId, baseId, keepCollidingGrasps || reSimulateFlag);
+    	UploadFiles(argv[3], planner, objectId, baseId, keepCollidingGrasps || reSimulateFlag, reSimulateFlag);
     }
 
     // delete tmp folder

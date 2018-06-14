@@ -439,7 +439,7 @@ std::string CreateXMLs(const char * base, GraspPlanner * planner, int objectId, 
 	return outputStr;
 }
 
-void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int baseId, bool keepCollidingGrasps){
+void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int baseId, bool keepCollidingGrasps, bool reSimulateFlag){
 
 	std::cout<<"BASE FOLDER:"<<planner->baseFolder<<std::endl;
 	char viewFolder[1000], imageFolder[1000], dataFile[1000], trjFile[1000];
@@ -482,10 +482,12 @@ void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int ba
 				continue;
 
 		// Get image from views and save into images folder
-		std::string imDepth = std::string(viewFolder) + std::string(std::to_string(planner->resultArr[i].viewId)) + std::string(".png");
-		std::string destImDepth = std::string(imageFolder) + std::string(std::to_string(imgCounter)) + std::string(".png");
-		if (boost::filesystem::exists(imDepth)){
-			boost::filesystem::copy_file(imDepth, destImDepth, boost::filesystem::copy_option::overwrite_if_exists);
+		if (!reSimulateFlag){
+			std::string imDepth = std::string(viewFolder) + std::string(std::to_string(planner->resultArr[i].viewId)) + std::string(".png");
+			std::string destImDepth = std::string(imageFolder) + std::string(std::to_string(imgCounter)) + std::string(".png");
+			if (boost::filesystem::exists(imDepth)){
+				boost::filesystem::copy_file(imDepth, destImDepth, boost::filesystem::copy_option::overwrite_if_exists);
+			}
 		}
 
 		// Get object id, grasp params, output parameters etc print in a file.
@@ -521,6 +523,11 @@ void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int ba
 		fclose(gdf);
 	}
 
+	// If this is a re-simulation, then we do not need to upload any files.
+	if (reSimulateFlag)
+		return;
+
+	// Test if we can run a command
 	if (system(NULL)) puts ("Ok");
     	else exit (EXIT_FAILURE);
 
