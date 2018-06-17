@@ -53,10 +53,11 @@ def f(x):
     # DO SOME PROCESS
     shutil.move(newFolder, itemScene)
 
-
+numberOfThreads = int(sys.argv[2])
 get_scenes(sys.argv[1])
 numberOfScenes = len(folders)
 dataFile = sys.argv[3]
 dropboxFolder = sys.argv[4]
 pool = multiprocessing.Pool(int(sys.argv[2]))
-pool.map(f, range(0, len(folders)))
+#pool.map(f, range(0, len(folders)))
+pool.map(f, range(0, 10))

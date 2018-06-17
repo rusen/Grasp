@@ -752,6 +752,13 @@ void Grasp::GraspResult::read(FILE * &fp){
 	fread(&viewId, sizeof(int), 1, fp);
 	fread(&wpCount, sizeof(int), 1, fp);
 	fread(&graspType, sizeof(int), 1, fp);
+	if (graspType < 4)
+		wpCount = 3;
+	else if (graspType < 9)
+		wpCount = 4;
+	else if (graspType < 10)
+		wpCount = 5;
+
 	float tmp[3];
 	fread(tmp, sizeof(float), 3, fp);
 	for (int i = 0; i<3; i++)

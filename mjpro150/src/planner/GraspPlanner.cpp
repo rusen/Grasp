@@ -170,7 +170,6 @@ glm::vec3 getPt( glm::vec3 n1 , glm::vec3 n2 , float perc )
 
 void GraspPlanner::ReadPreMadeTrajectories(int numberOfGrasps){
 	finalApproachArr = new Path* [numberOfGrasps];
-	int wpCount = 10;
 	float wristPos[3];
 	float wristQuat[4];
 	float fingerPos[20];
@@ -178,7 +177,8 @@ void GraspPlanner::ReadPreMadeTrajectories(int numberOfGrasps){
 	for (int readCtr = 0; readCtr<numberOfGrasps; readCtr++)
 	{
 		float tmp[15];
-		finalApproachArr[readCtr] = new Path(wpCount);
+		int wpCount = 10;
+		Path* tmpPath = new Path(wpCount);
 		fread(tmp, 4, 15, trjFP);
 
 		// We know the forward transformation used to obtain the wrist position and orientation.
@@ -204,24 +204,61 @@ void GraspPlanner::ReadPreMadeTrajectories(int numberOfGrasps){
 			wQuat.normalize();
 
 			// Assign wrist position and orientation
-			finalApproachArr[readCtr]->waypoints[wpItr].pos[0] = pos[0];
-			finalApproachArr[readCtr]->waypoints[wpItr].pos[1] = pos[1];
-			finalApproachArr[readCtr]->waypoints[wpItr].pos[2] = pos[2];
-			finalApproachArr[readCtr]->waypoints[wpItr].quat.x = wQuat.x();
-			finalApproachArr[readCtr]->waypoints[wpItr].quat.y = wQuat.y();
-			finalApproachArr[readCtr]->waypoints[wpItr].quat.z = wQuat.z();
-			finalApproachArr[readCtr]->waypoints[wpItr].quat.w = wQuat.w();
+			tmpPath->waypoints[wpItr].pos[0] = pos[0];
+			tmpPath->waypoints[wpItr].pos[1] = pos[1];
+			tmpPath->waypoints[wpItr].pos[2] = pos[2];
+			tmpPath->waypoints[wpItr].quat.x = wQuat.x();
+			tmpPath->waypoints[wpItr].quat.y = wQuat.y();
+			tmpPath->waypoints[wpItr].quat.z = wQuat.z();
+			tmpPath->waypoints[wpItr].quat.w = wQuat.w();
 
 			// Assign joints.
 			for (int i = 0; i < 20; i++)
 			{
-				finalApproachArr[readCtr]->waypoints[wpItr].jointAngles[i] = fingerPos[i];
+				tmpPath->waypoints[wpItr].jointAngles[i] = fingerPos[i];
 			}
 
-			// Finally, save grasp parameter data
-			std::vector<float> curParams = finalApproachArr[readCtr]->getGraspParams(gazeDir, camPos, wpCount);
-			graspParams.push_back(curParams);
 		}
+
+		// The path has been read. Time to convert.
+		wpCount = resultArr[readCtr].wpCount + 2;
+		finalApproachArr[readCtr] = new Path(wpCount);
+		finalApproachArr[readCtr]->graspType = resultArr[readCtr].graspType;
+		for (int wpItr = 0; wpItr<wpCount; wpItr++)
+		{
+			if (!wpItr)
+			{
+				// Set the first waypoint as an initial approach from outside.
+        	        	finalApproachArr[readCtr]->waypoints[0].pos[0] = 2 * tmpPath->waypoints[0].pos[0];
+        	        	finalApproachArr[readCtr]->waypoints[0].pos[1] = 2 * tmpPath->waypoints[0].pos[1];
+        	        	finalApproachArr[readCtr]->waypoints[0].pos[2] = 2 * tmpPath->waypoints[0].pos[2] + 0.35;
+               			finalApproachArr[readCtr]->waypoints[0].quat.x = tmpPath->waypoints[0].quat.x;
+                		finalApproachArr[readCtr]->waypoints[0].quat.y = tmpPath->waypoints[0].quat.y;
+                		finalApproachArr[readCtr]->waypoints[0].quat.z = tmpPath->waypoints[0].quat.z;
+                		finalApproachArr[readCtr]->waypoints[0].quat.w = tmpPath->waypoints[0].quat.w;
+                		for (int k = 0; k<20; k++)
+                	        	finalApproachArr[readCtr]->waypoints[0].jointAngles[k] = 0;	
+			}
+			else{
+				int point = ceil((double) (wpItr * tmpPath->steps) / wpCount);
+				Grasp::Waypoint wp = tmpPath->Interpolate(point);
+        	        	
+				finalApproachArr[readCtr]->waypoints[0].pos[0] = wp.pos[0];
+        	        	finalApproachArr[readCtr]->waypoints[0].pos[1] = wp.pos[1];
+        	        	finalApproachArr[readCtr]->waypoints[0].pos[2] = wp.pos[2];
+               			finalApproachArr[readCtr]->waypoints[0].quat.x = wp.quat.x;
+                		finalApproachArr[readCtr]->waypoints[0].quat.y = wp.quat.y;
+                		finalApproachArr[readCtr]->waypoints[0].quat.z = wp.quat.z;
+                		finalApproachArr[readCtr]->waypoints[0].quat.w = wp.quat.w;
+                		for (int k = 0; k<20; k++)
+                	        	finalApproachArr[readCtr]->waypoints[0].jointAngles[k] = wp.jointAngles[k];	
+			}				
+		}
+
+
+		// Finally, save grasp parameter data
+		std::vector<float> curParams = finalApproachArr[readCtr]->getGraspParams(gazeDir, camPos, wpCount);
+		graspParams.push_back(curParams);
 	}
 	fclose(trjFP);
 }
@@ -246,6 +283,7 @@ void GraspPlanner::ReadTrajectories(int numberOfGrasps){
 		finalApproachArr[readCtr] = new Path(wpCount+2);
 		finalApproachArr[readCtr]->graspType = graspType;
 
+                std::cout<<" WP COUNT: "<<wpCount<<" GRASP TYPE: "<<graspType<<std::endl;
 		// Read trajectory waypoint by waypoint.
 		for (int i = 1; i< wpCount+2; i++)
 		{
