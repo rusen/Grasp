@@ -710,7 +710,6 @@ Grasp::GraspResult * Grasp::readGraspData(const char * fileName){
 	// Allocate space
 	int numberOfGrasps = 0;
 	fread(&numberOfGrasps, sizeof(int), 1, fp);
-	std::cout<<numberOfGrasps<<" grasp parameters are read!"<<std::endl;
 	Grasp::GraspResult * newArr = new Grasp::GraspResult[numberOfGrasps];
 
 	// Read each grasp
@@ -752,12 +751,6 @@ void Grasp::GraspResult::read(FILE * &fp){
 	fread(&viewId, sizeof(int), 1, fp);
 	fread(&wpCount, sizeof(int), 1, fp);
 	fread(&graspType, sizeof(int), 1, fp);
-	if (graspType < 4)
-		wpCount = 3;
-	else if (graspType < 9)
-		wpCount = 4;
-	else if (graspType < 10)
-		wpCount = 5;
 
 	float tmp[3];
 	fread(tmp, sizeof(float), 3, fp);
@@ -773,6 +766,6 @@ void Grasp::GraspResult::print(){
 	std::cout<<"Success: "<<successProbability<<std::endl;
 	std::cout<<"Stability: "<<x1<<" "<<r1<<" "<<x2<<" "<<r2<<" "<<std::endl;
 	std::cout<<"Counters: "<<counter<<" "<<successCounter<<std::endl;
-	std::cout<<"View id and grasp type: "<<viewId<<" "<<graspType<<std::endl;
+	std::cout<<"View id, grasp type and wpCount: "<<viewId<<" "<<graspType<<" "<<wpCount<<std::endl;
 	std::cout<<"Gaze dir and cam pos: "<<gazeDir[0]<<" "<<gazeDir[1]<<" "<<gazeDir[2]<<" "<<camPos[0]<<" "<<camPos[1]<<" "<<camPos[2]<<std::endl;
 }
