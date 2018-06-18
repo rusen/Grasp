@@ -234,41 +234,73 @@ void GraspPlanner::ReadPreMadeTrajectories(int numberOfGrasps){
 		}
 
 		// The path has been read. Time to convert.
-		wpCount = resultArr[readCtr].wpCount + 2;
-		finalApproachArr[readCtr] = new Path(wpCount);
+		finalApproachArr[readCtr] = new Path(resultArr[readCtr].wpCount + 2);
 		finalApproachArr[readCtr]->graspType = graspType;
-		for (int wpItr = 0; wpItr<wpCount; wpItr++)
-		{
-			if (!wpItr){
-				// Set the first waypoint as an initial approach from outside.
-				finalApproachArr[readCtr]->waypoints[0].pos[0] = 2 * tmpPath->waypoints[0].pos[0];
-				finalApproachArr[readCtr]->waypoints[0].pos[1] = 2 * tmpPath->waypoints[0].pos[1];
-				finalApproachArr[readCtr]->waypoints[0].pos[2] = 2 * tmpPath->waypoints[0].pos[2] + 0.35;
-				finalApproachArr[readCtr]->waypoints[0].quat.x = tmpPath->waypoints[0].quat.x;
-				finalApproachArr[readCtr]->waypoints[0].quat.y = tmpPath->waypoints[0].quat.y;
-				finalApproachArr[readCtr]->waypoints[0].quat.z = tmpPath->waypoints[0].quat.z;
-				finalApproachArr[readCtr]->waypoints[0].quat.w = tmpPath->waypoints[0].quat.w;
-				for (int k = 0; k<20; k++)
-				finalApproachArr[readCtr]->waypoints[0].jointAngles[k] = 0;
-			}
-			else{
-				int point = ceil((double) (wpItr * tmpPath->steps) / wpCount);
-				Grasp::Waypoint wp = tmpPath->Interpolate(point);
 
-				finalApproachArr[readCtr]->waypoints[wpItr].pos[0] = wp.pos[0];
-				finalApproachArr[readCtr]->waypoints[wpItr].pos[1] = wp.pos[1];
-				finalApproachArr[readCtr]->waypoints[wpItr].pos[2] = wp.pos[2];
-				finalApproachArr[readCtr]->waypoints[wpItr].quat.x = wp.quat.x;
-				finalApproachArr[readCtr]->waypoints[wpItr].quat.y = wp.quat.y;
-				finalApproachArr[readCtr]->waypoints[wpItr].quat.z = wp.quat.z;
-				finalApproachArr[readCtr]->waypoints[wpItr].quat.w = wp.quat.w;
-				for (int k = 0; k<20; k++)
-					finalApproachArr[readCtr]->waypoints[wpItr].jointAngles[k] = wp.jointAngles[k];
-			}
+		// Set the first waypoint as an initial approach from outside.
+		finalApproachArr[readCtr]->waypoints[0].pos[0] = 2 * tmpPath->waypoints[0].pos[0];
+		finalApproachArr[readCtr]->waypoints[0].pos[1] = 2 * tmpPath->waypoints[0].pos[1];
+		finalApproachArr[readCtr]->waypoints[0].pos[2] = 2 * tmpPath->waypoints[0].pos[2] + 0.35;
+		finalApproachArr[readCtr]->waypoints[0].quat.x = tmpPath->waypoints[0].quat.x;
+		finalApproachArr[readCtr]->waypoints[0].quat.y = tmpPath->waypoints[0].quat.y;
+		finalApproachArr[readCtr]->waypoints[0].quat.z = tmpPath->waypoints[0].quat.z;
+		finalApproachArr[readCtr]->waypoints[0].quat.w = tmpPath->waypoints[0].quat.w;
+		for (int k = 0; k<20; k++)
+			finalApproachArr[readCtr]->waypoints[0].jointAngles[k] = 0;
+
+		// Set the rest of the wpCount + 1 waypoints.
+		for (int wpItr = 0; wpItr<resultArr[readCtr].wpCount + 1; wpItr++)
+		{
+			int point = ceil((double) (wpItr * tmpPath->steps) / resultArr[readCtr].wpCount);
+//			std::cout<<"Point "<<wpItr<<"/"<<resultArr[readCtr].wpCount<<" : "<<point<<std::endl;
+			Grasp::Waypoint wp = tmpPath->Interpolate(point);
+			finalApproachArr[readCtr]->waypoints[wpItr+1].pos[0] = wp.pos[0];
+			finalApproachArr[readCtr]->waypoints[wpItr+1].pos[1] = wp.pos[1];
+			finalApproachArr[readCtr]->waypoints[wpItr+1].pos[2] = wp.pos[2];
+			finalApproachArr[readCtr]->waypoints[wpItr+1].quat.x = wp.quat.x;
+			finalApproachArr[readCtr]->waypoints[wpItr+1].quat.y = wp.quat.y;
+			finalApproachArr[readCtr]->waypoints[wpItr+1].quat.z = wp.quat.z;
+			finalApproachArr[readCtr]->waypoints[wpItr+1].quat.w = wp.quat.w;
+			for (int k = 0; k<20; k++)
+				finalApproachArr[readCtr]->waypoints[wpItr+1].jointAngles[k] = wp.jointAngles[k];
 		}
 
+		// Sanity check. Seek set to beginning, and load some data, and compare.
+
+//		fseek ( trjFP , -280 * 4 , SEEK_CUR );
+//		float buf[270];
+//		fread(buf, 4, 280, trjFP);
+
 		// Finally, save grasp parameter data
-		std::vector<float> curParams = finalApproachArr[readCtr]->getGraspParams(gazeDir, camPos, wpCount);
+		std::vector<float> curParams = finalApproachArr[readCtr]->getGraspParams(gazeDir, camPos, resultArr[readCtr].wpCount);
+
+		/*
+		float diff = 0;
+		float maxDiff = 0;
+		int maxDiffIdx = 0;
+		for (int j = 0; j<280; j++)
+		{
+			diff += fabs(buf[j] - curParams[j]);
+			if (fabs(buf[j] - curParams[j]) > maxDiff)
+			{
+				maxDiff = fabs(buf[j] - curParams[j]);
+				maxDiffIdx = j;
+			}
+		}
+		for (int j = 0; j<280; j++)
+		{
+			std::cout<<buf[j]<<" ";
+		}
+		std::cout<<std::endl;
+		for (int j = 0; j<280; j++)
+		{
+			std::cout<<curParams[j]<<" ";
+		}
+		std::cout<<std::endl;
+		std::cout<<"Max diff: "<<maxDiff<<" at idx "<<maxDiffIdx<<" "<<buf[maxDiffIdx]<<" "<<curParams[maxDiffIdx]<<std::endl;
+
+		std::cout<<"SANITY CHECK: SHOULD BE VERY SMALL"<<diff<<std::endl;
+*/
 		graspParams.push_back(curParams);
 	}
 	fclose(trjFP);
