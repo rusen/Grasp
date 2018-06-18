@@ -46,7 +46,8 @@ def f(x):
             print('Processing ' + newName)
     newFolder = './tmp/data/' + newName
     shutil.move(itemScene, newFolder)
-    command = "./basicGrasp " + newName + " " + dataFile + " ../model/BHAM " + dropboxFolder + " visualOff 0 0 > /dev/null"
+  #  command = "./basicGrasp " + newName + " " + dataFile + " ../model/BHAM " + dropboxFolder + " visualOff 0 0 > /dev/null"
+    command = "./basicGrasp " + newName + " " + dataFile + " ../model/BHAM " + dropboxFolder + " visualOff 0 0"
 #    print(command)
     os.system(command)
 
@@ -59,5 +60,5 @@ numberOfScenes = len(folders)
 dataFile = sys.argv[3]
 dropboxFolder = sys.argv[4]
 pool = multiprocessing.Pool(int(sys.argv[2]))
-#pool.map(f, range(0, len(folders)))
-pool.map(f, range(0, 10))
+pool.map(f, range(0, len(folders)))
+#pool.map(f, range(0, 10))
