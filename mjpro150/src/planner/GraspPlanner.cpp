@@ -45,7 +45,7 @@ GraspPlanner::GraspPlanner(const char * dropboxBase, bool testFlag,
 
 	// Create file paths.
 	fileId[0] = 0;
-	char dataStr[20];
+	char dataStr[1000];
 	strcpy(dataStr, "data.bin");
 
 	if (!reSimulateFlag){

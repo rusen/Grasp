@@ -61,7 +61,7 @@ int classSelection = 0;
 // True, if we need to re-create the simulation
 bool reSimulateFlag = false;
 char existingId[10];
-char dataFileName[20];
+char dataFileName[1000];
 bool keepCollidingGrasps = false;
 
 // The variables that depend on the initialisation of the simulation
