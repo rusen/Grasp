@@ -7,7 +7,6 @@ import multiprocessing
 import time
 from threading import Lock
 
-folders = {}
 dropboxFolder = "~/Dropbox"
 
 def get_scenes(setText, dataFile, days):

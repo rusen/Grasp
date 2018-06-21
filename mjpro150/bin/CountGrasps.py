@@ -1,11 +1,13 @@
 import os
 import sys
 import array
+import numpy as np
  
 classIds = []
 classCount = 24;
- 
-def count_grasps(setText, fileName):
+
+def count_grasps(setText, fileName, orderFile = None):
+   
    d = './allData'
    scenes = 0
    classSuccess = []
@@ -53,6 +55,14 @@ def count_grasps(setText, fileName):
               f = open(filePath, 'rb')
               graspData.fromfile(f, floatSize)
               f.close()
+
+              # Get desired order
+              topRank = 0
+              if not orderFile == None:
+                  orderFilePath = './orderFiles/' + setName + '/' + str(objectId + 1) + '/' + os.path.basename(os.path.normpath(itemScene)) + '/' + orderFile
+                  order = np.load(orderFilePath)
+                  topRank = order[0] - 1
+              
               # IGNORE SETS HAVING LESS THAN 10 GRASPS
               if (floatSize/285) < 10:
                   continue;
@@ -61,13 +71,13 @@ def count_grasps(setText, fileName):
                  # if graspData[itr * 285] > -0.5:
                   graspTotal[itr] = graspTotal[itr] + 1
                   classTotal[classId] = classTotal[classId] + 1
-                  if itr==0 and graspData[itr * 285] > -0.5:
+                  if itr==topRank:
                      firstClassTotal[classId] = firstClassTotal[classId] + 1
                   if graspData[itr * 285] >= 0.5:
                       successful = successful + 1
                       graspSuccess[itr] = graspSuccess[itr] + 1
                       classSuccess[classId] = classSuccess[classId] + 1
-                      if itr==0:
+                      if itr==topRank:
                          topSuccess = topSuccess + 1
                          firstClassSuccess[classId] = firstClassSuccess[classId] + 1
                   elif graspData[itr*285] < -0.5:
@@ -112,4 +122,4 @@ classFile = open("classIds.txt")
 for val in classFile.read().split():
     classIds.append(int(val))
 classFile.close()
-count_grasps(sys.argv[1], sys.argv[2])
+count_grasps(sys.argv[1], sys.argv[2], sys.argv[3])
