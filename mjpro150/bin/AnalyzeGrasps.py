@@ -17,6 +17,8 @@ def count_grasps(setText, fileName, orderFile = None):
    graspTotal = []
    firstClassSuccess = []
    firstClassTotal = []
+   successBins = np.zeros(20)
+   prob_step = 0.05
     
    # Initialize arrays
    for i in range(0,100):
@@ -81,7 +83,7 @@ def count_grasps(setText, fileName, orderFile = None):
                   orderFilePath = './orderFiles/' + setName + '/' + str(objectId + 1) + '/' + os.path.basename(os.path.normpath(itemScene)) + '/' + orderFile
                   order = np.load(orderFilePath)
                   topRank = order[0] - 1
-              
+
               # IGNORE SETS HAVING LESS THAN 10 GRASPS
               if (floatSize/285) < 10:
                   continue;
@@ -90,8 +92,9 @@ def count_grasps(setText, fileName, orderFile = None):
                  
                  # Record-keeping about the grasps in general.
      #            print(str(int(-orgGraspData[itr * 285] + 1)) + ':' + str(int(-graspData[itr * 285] + 1)))
-                 changes[int(-orgGraspData[itr * 285] + 1)][int(-graspData[itr * 285] + 1)] = \
-                     changes[int(-orgGraspData[itr * 285] + 1)][int(-graspData[itr * 285] + 1)] + 1
+                 if itr == topRank:
+                     changes[int(-orgGraspData[itr * 285] + 1)][int(-graspData[itr * 285] + 1)] = \
+                         changes[int(-orgGraspData[itr * 285] + 1)][int(-graspData[itr * 285] + 1)] + 1
 
                  # if graspData[itr * 285] > -0.5:
                  graspTotal[itr] = graspTotal[itr] + 1
