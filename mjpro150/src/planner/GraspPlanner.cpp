@@ -186,7 +186,6 @@ void GraspPlanner::ReadPreMadeTrajectories(int numberOfGrasps){
 			if (tmp[itr] == 1)
 				graspType = itr-5;
 		}
-		std::cout<<"Grasp type:"<<graspType<<std::endl;
 		resultArr[readCtr].graspType = graspType;
 		if (graspType < 4)
 			resultArr[readCtr].wpCount = 3;
@@ -234,6 +233,7 @@ void GraspPlanner::ReadPreMadeTrajectories(int numberOfGrasps){
 		}
 
 		// The path has been read. Time to convert.
+//		std::cout<<"Grasp path size for grasp#"<<readCtr<<" "<<resultArr[readCtr].wpCount+2<<std::endl;
 		finalApproachArr[readCtr] = new Path(resultArr[readCtr].wpCount + 2);
 		finalApproachArr[readCtr]->graspType = graspType;
 
@@ -252,8 +252,8 @@ void GraspPlanner::ReadPreMadeTrajectories(int numberOfGrasps){
 		for (int wpItr = 0; wpItr<resultArr[readCtr].wpCount + 1; wpItr++)
 		{
 			int point = ceil((double) (wpItr * tmpPath->steps) / resultArr[readCtr].wpCount);
-//			std::cout<<"Point "<<wpItr<<"/"<<resultArr[readCtr].wpCount<<" : "<<point<<std::endl;
-			Grasp::Waypoint wp = tmpPath->Interpolate(point);
+	//		std::cout<<"Point "<<wpItr<<"/"<<resultArr[readCtr].wpCount<<" : "<<point<<std::endl;
+			Grasp::Waypoint wp = tmpPath->Interpolate(point, true);
 			finalApproachArr[readCtr]->waypoints[wpItr+1].pos[0] = wp.pos[0];
 			finalApproachArr[readCtr]->waypoints[wpItr+1].pos[1] = wp.pos[1];
 			finalApproachArr[readCtr]->waypoints[wpItr+1].pos[2] = wp.pos[2];
@@ -265,42 +265,51 @@ void GraspPlanner::ReadPreMadeTrajectories(int numberOfGrasps){
 				finalApproachArr[readCtr]->waypoints[wpItr+1].jointAngles[k] = wp.jointAngles[k];
 		}
 
-		// Sanity check. Seek set to beginning, and load some data, and compare.
-
-//		fseek ( trjFP , -280 * 4 , SEEK_CUR );
-//		float buf[270];
-//		fread(buf, 4, 280, trjFP);
-
 		// Finally, save grasp parameter data
 		std::vector<float> curParams = finalApproachArr[readCtr]->getGraspParams(gazeDir, camPos, resultArr[readCtr].wpCount);
 
 		/*
+		// Sanity check. Seek set to beginning, and load some data, and compare.
+		fseek ( trjFP , -270 * 4 , SEEK_CUR );
+		float buf[270];
+		fread(buf, 4, 270, trjFP);
+
 		float diff = 0;
 		float maxDiff = 0;
-		int maxDiffIdx = 0;
-		for (int j = 0; j<280; j++)
+		int maxDiffLoc = 0;
+		for (int j = 0; j<270; j++)
 		{
-			diff += fabs(buf[j] - curParams[j]);
-			if (fabs(buf[j] - curParams[j]) > maxDiff)
+			if (fabs(buf[j] - curParams[10 + j]) > maxDiff)
 			{
-				maxDiff = fabs(buf[j] - curParams[j]);
-				maxDiffIdx = j;
+				maxDiff = fabs(buf[j] - curParams[10 + j]);
+				maxDiffLoc = j;
 			}
+			diff += fabs(buf[j] - curParams[10 + j]);
 		}
-		for (int j = 0; j<280; j++)
-		{
-			std::cout<<buf[j]<<" ";
-		}
-		std::cout<<std::endl;
-		for (int j = 0; j<280; j++)
-		{
-			std::cout<<curParams[j]<<" ";
-		}
-		std::cout<<std::endl;
-		std::cout<<"Max diff: "<<maxDiff<<" at idx "<<maxDiffIdx<<" "<<buf[maxDiffIdx]<<" "<<curParams[maxDiffIdx]<<std::endl;
 
-		std::cout<<"SANITY CHECK: SHOULD BE VERY SMALL"<<diff<<std::endl;
-*/
+		if (diff > 0.0001)
+		{
+
+			for (int j = 0; j<10; j++)
+			{
+				std::cout<<"Printing waypoint "<<j<<std::endl;
+				for (int k = 0; k < 27; k++)
+				{
+					std::cout<<buf[27 * j + k]<<" ";
+				}
+				std::cout<<std::endl;
+
+				for (int k = 0; k < 27; k++)
+				{
+					std::cout<<curParams[10 + 27 * j + k]<<" ";
+				}
+				std::cout<<std::endl;
+			}
+
+			std::cout<<"SANITY CHECK, Max diff: "<<maxDiff<<" at location "<<maxDiffLoc%27<<" of waypoint "<<floor(maxDiffLoc/27)<<". DIFF SHOULD HAVE BEEN VERY SMALL: "<<diff<<std::endl;
+		}
+		*/
+
 		graspParams.push_back(curParams);
 	}
 	fclose(trjFP);
@@ -324,6 +333,7 @@ void GraspPlanner::ReadTrajectories(int numberOfGrasps){
 		fread(&wpCount, 4, 1, trjFP);
 		if (graspType < 0 || graspType > 9)
 			graspType = 0;
+		std::cout<<"Grasp path size for grasp#"<<readCtr<<" "<<wpCount+2<<std::endl;
 		finalApproachArr[readCtr] = new Path(wpCount+2);
 		finalApproachArr[readCtr]->graspType = graspType;
 
@@ -436,7 +446,7 @@ bool GraspPlanner::FollowTrajectory(const mjModel* m, mjData* d, float yOffset){
 	*/
 
 	// Set pose of the hand.
-	Waypoint wp = finalApproachArr[graspCounter-1]->Interpolate(counter);
+	Waypoint wp = finalApproachArr[graspCounter-1]->Interpolate(counter, false);
 
 	// Add y offset, if requested
 	wp.pos[1] += yOffset;

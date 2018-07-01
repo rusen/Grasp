@@ -22,8 +22,13 @@
 
 #include <fstream>
 
-#include <libnoise/interp.h>
-#include <libnoise/mathconsts.h>
+#ifdef __APPLE__
+  #include <noise/interp.h>
+  #include <noise/mathconsts.h>
+#else
+  #include <libnoise/interp.h>
+  #include <libnoise/mathconsts.h>
+#endif
 
 #include <sensor/noiseutils.h>
 

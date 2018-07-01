@@ -36,7 +36,7 @@ public:
 	Waypoint * waypoints;
 
 	// Linear interpolation
-	Waypoint Interpolate(int step);
+	Waypoint Interpolate(int step, bool reconstruct);
 
 	int getWaypointCount() const {
 		return waypointCount;

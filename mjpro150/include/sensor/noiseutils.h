@@ -27,7 +27,12 @@
 #include <string.h>
 #include <string>
 
-#include <libnoise/noise.h>
+#ifdef __APPLE__
+  #include <noise/noise.h>
+#else
+  #include <libnoise/noise.h>
+#endif
+
 
 using namespace noise;
 

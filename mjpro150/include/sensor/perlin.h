@@ -8,7 +8,13 @@
 #include <sensor/noiseutils.h>
 
 #include <time.h>
-#include <libnoise/noise.h>
+
+#ifdef __APPLE__
+  #include <noise/noise.h>
+#else
+  #include <libnoise/noise.h>
+#endif
+
 using namespace noise;
 
 namespace Grasp
