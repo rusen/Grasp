@@ -629,6 +629,7 @@ int main(int argc, const char** argv)
         fscanf(fid, "%d", &objectId);
         fclose(fid);
     }
+    //objectId = 225;
     std::cout<<"Selected object:"<<objectId<<std::endl;
 
     char baseIdFile[1000];

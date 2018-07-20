@@ -47,6 +47,7 @@ public:
 	float yOffset = 2; // For collision detection, we try hand positions on a separate part of the table, separated by a y offset.
 	char fileId [10]; // Unique file id
 	char baseFolder [1000]; // Tmp base folder
+	char videoFolder [1000]; // Tmp base folder
 	char dataFile[1000];
 	char logFile [1000]; // Log file
 	char debugLogFile [1000]; // Log file

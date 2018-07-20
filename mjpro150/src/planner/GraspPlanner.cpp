@@ -16,6 +16,7 @@
 #include <cstdlib>
 #include <cerrno>
 #include <random>
+#include <math.h>       /* isnan, sqrt */
 
 namespace Grasp {
 
@@ -72,6 +73,22 @@ GraspPlanner::GraspPlanner(const char * dropboxBase, bool testFlag,
 	if (!reSimulateFlag){
 		boost::filesystem::create_directories(prefix);
 	}
+
+	/*
+	// create video folder, remove old vids if needed
+	strcpy(videoFolder, baseFolder);
+	if (!reSimulateFlag)
+		strcat(videoFolder, "video/org/");
+	else
+		strcat(videoFolder, "video/re-sim/");
+    if(boost::filesystem::is_directory(videoFolder))
+    {
+       boost::filesystem::remove_all(videoFolder);
+    }
+    boost::filesystem::create_directories(videoFolder);
+    */
+
+    // Create rest of the prefixes
 	strcat(prefix, fileId);
 	strcat(localPrefix, fileId);
 	logFile [0] = dataFile[0] = debugLogFile[0] = pointFile [0] = rgbFile [0] = depthFile[0] = resultFile[0] = trajectoryFile[0] = 0; // Set to ""
@@ -186,13 +203,21 @@ void GraspPlanner::ReadPreMadeTrajectories(int numberOfGrasps){
 			if (tmp[itr] == 1)
 				graspType = itr-5;
 		}
-		resultArr[readCtr].graspType = graspType;
-		if (graspType < 4)
-			resultArr[readCtr].wpCount = 3;
-		else if (graspType < 9)
-			resultArr[readCtr].wpCount = 4;
-		else if (graspType < 10)
-			resultArr[readCtr].wpCount = 5;
+		//std::cout<<"Existing grasp type and wp count:"<<resultArr[readCtr].graspType<<" "<<resultArr[readCtr].wpCount<<std::endl;
+
+		// Update grasp type and wp count for backward-compatibility.
+		// Old version of the code did not get either of these right, and they were both zero. Hence the update.
+		if (!resultArr[readCtr].graspType || !resultArr[readCtr].wpCount)
+		{
+			resultArr[readCtr].graspType = graspType;
+			if (graspType < 4)
+				resultArr[readCtr].wpCount = 3;
+			else if (graspType < 9)
+				resultArr[readCtr].wpCount = 4;
+			else if (graspType < 10)
+				resultArr[readCtr].wpCount = 5;
+		}
+		//std::cout<<"New grasp type and wp count:"<<resultArr[readCtr].graspType<<" "<<resultArr[readCtr].wpCount<<std::endl;
 
 		// We know the forward transformation used to obtain the wrist position and orientation.
 		// At this stage, we will revert the transformation.
@@ -248,11 +273,14 @@ void GraspPlanner::ReadPreMadeTrajectories(int numberOfGrasps){
 		for (int k = 0; k<20; k++)
 			finalApproachArr[readCtr]->waypoints[0].jointAngles[k] = 0;
 
+		// The path has been read. Time to convert.
+		int startIdx = ceil(((double)tmpPath->steps) / (resultArr[readCtr].wpCount+1));
+		tmpPath->steps = tmpPath->steps - startIdx;
+
 		// Set the rest of the wpCount + 1 waypoints.
 		for (int wpItr = 0; wpItr<resultArr[readCtr].wpCount + 1; wpItr++)
 		{
 			int point = ceil((double) (wpItr * tmpPath->steps) / resultArr[readCtr].wpCount);
-	//		std::cout<<"Point "<<wpItr<<"/"<<resultArr[readCtr].wpCount<<" : "<<point<<std::endl;
 			Grasp::Waypoint wp = tmpPath->Interpolate(point, true);
 			finalApproachArr[readCtr]->waypoints[wpItr+1].pos[0] = wp.pos[0];
 			finalApproachArr[readCtr]->waypoints[wpItr+1].pos[1] = wp.pos[1];
@@ -268,53 +296,82 @@ void GraspPlanner::ReadPreMadeTrajectories(int numberOfGrasps){
 		// Finally, save grasp parameter data
 		std::vector<float> curParams = finalApproachArr[readCtr]->getGraspParams(gazeDir, camPos, resultArr[readCtr].wpCount);
 
-		/*
-		// Sanity check. Seek set to beginning, and load some data, and compare.
-		fseek ( trjFP , -270 * 4 , SEEK_CUR );
-		float buf[270];
-		fread(buf, 4, 270, trjFP);
-
-		float diff = 0;
-		float maxDiff = 0;
-		int maxDiffLoc = 0;
-		for (int j = 0; j<270; j++)
+		if (readCtr < 10000)
 		{
-			if (fabs(buf[j] - curParams[10 + j]) > maxDiff)
+			// Sanity check. Seek set to beginning, and load some data, and compare.
+			fseek ( trjFP , -270 * 4 , SEEK_CUR );
+			float buf[270];
+			fread(buf, 4, 270, trjFP);
+
+			float diff = 0;
+			float maxDiff = 0;
+			int maxDiffLoc = 0;
+			for (int j = 0; j<270; j++)
 			{
-				maxDiff = fabs(buf[j] - curParams[10 + j]);
-				maxDiffLoc = j;
-			}
-			diff += fabs(buf[j] - curParams[10 + j]);
-		}
-
-		if (diff > 0.0001)
-		{
-
-			for (int j = 0; j<10; j++)
-			{
-				std::cout<<"Printing waypoint "<<j<<std::endl;
-				for (int k = 0; k < 27; k++)
+				if (fabs(buf[j] - curParams[10 + j]) > maxDiff)
 				{
-					std::cout<<buf[27 * j + k]<<" ";
+					maxDiff = fabs(buf[j] - curParams[10 + j]);
+					maxDiffLoc = j;
 				}
-				std::cout<<std::endl;
-
-				for (int k = 0; k < 27; k++)
-				{
-					std::cout<<curParams[10 + 27 * j + k]<<" ";
-				}
-				std::cout<<std::endl;
+				diff += fabs(buf[j] - curParams[10 + j]);
 			}
 
-			std::cout<<"SANITY CHECK, Max diff: "<<maxDiff<<" at location "<<maxDiffLoc%27<<" of waypoint "<<floor(maxDiffLoc/27)<<". DIFF SHOULD HAVE BEEN VERY SMALL: "<<diff<<std::endl;
-		}
-		*/
+//			// Fix the quaternions
+//			for (int j = 0; j<10; j++)
+//			{
+//				float tmpDiff = 0;
+//				for (int k = 0; k<4; k++)
+//				{
+//					tmpDiff += fabs(buf[j] - curParams[10 + j * 27 + 3 + k]);
+//				}
+//
+//				// If there's a big difference in the quaternion value, negate the closest quaternion.
+//				if (tmpDiff > 0.01)
+//				{
+//
+//				}
+//
+//				if (fabs(buf[j] - curParams[10 + j]) > 0.0001)
+//				{
+//					maxDiff = fabs(buf[j] - curParams[10 + j]);
+//					maxDiffLoc = j;
+//				}
+//				diff += fabs(buf[j] - curParams[10 + j]);
+//			}
 
-		graspParams.push_back(curParams);
+
+			if (maxDiff > 0.0001)
+			{
+
+				std::cout<<"SANITY CHECK, Max diff: "<<maxDiff<<" at location "<<maxDiffLoc%27<<" of waypoint "<<
+						floor(maxDiffLoc/27)<<". DIFF SHOULD HAVE BEEN VERY SMALL: "<<diff<<std::endl;
+
+				int curWP = floor(maxDiffLoc/27);
+
+				for (int j = curWP; j<curWP + 1; j++)
+				{
+					std::cout<<"Printing waypoint "<<j<<std::endl;
+					for (int k = 0; k < 27; k++)
+					{
+						std::cout<<buf[27 * j + k]<<" ";
+					}
+					std::cout<<std::endl;
+
+					for (int k = 0; k < 27; k++)
+					{
+						std::cout<<curParams[10 + 27 * j + k]<<" ";
+					}
+					std::cout<<std::endl;
+				}
+
+			}
+
+			graspParams.push_back(curParams);
+		}
+		delete(tmpPath);
 	}
 	fclose(trjFP);
 }
-
 
 void GraspPlanner::ReadTrajectories(int numberOfGrasps){
 	finalApproachArr = new Path* [numberOfGrasps];
@@ -333,9 +390,13 @@ void GraspPlanner::ReadTrajectories(int numberOfGrasps){
 		fread(&wpCount, 4, 1, trjFP);
 		if (graspType < 0 || graspType > 9)
 			graspType = 0;
-		std::cout<<"Grasp path size for grasp#"<<readCtr<<" "<<wpCount+2<<std::endl;
+		//std::cout<<"Grasp path size for grasp#"<<readCtr<<" "<<wpCount+2<<std::endl;
 		finalApproachArr[readCtr] = new Path(wpCount+2);
 		finalApproachArr[readCtr]->graspType = graspType;
+
+		// Assign fields for the result arr
+		resultArr[readCtr].graspType = graspType;
+		resultArr[readCtr].wpCount = wpCount;
 
 		// Read trajectory waypoint by waypoint.
 		for (int i = 1; i< wpCount+2; i++)
@@ -367,7 +428,9 @@ void GraspPlanner::ReadTrajectories(int numberOfGrasps){
 			}
 
 			// Read waypoints.
-			finalApproachArr[readCtr]->waypoints[i].pos[0] = wristPos[0] - 0.5, finalApproachArr[readCtr]->waypoints[i].pos[1] = wristPos[1], finalApproachArr[readCtr]->waypoints[i].pos[2] = wristPos[2];
+			finalApproachArr[readCtr]->waypoints[i].pos[0] = wristPos[0] - 0.5,
+					finalApproachArr[readCtr]->waypoints[i].pos[1] = wristPos[1],
+					finalApproachArr[readCtr]->waypoints[i].pos[2] = wristPos[2];
 			finalApproachArr[readCtr]->waypoints[i].quat.x = wristQuat[0];
 			finalApproachArr[readCtr]->waypoints[i].quat.y = wristQuat[1];
 			finalApproachArr[readCtr]->waypoints[i].quat.z = wristQuat[2];
@@ -430,6 +493,107 @@ void GraspPlanner::ReadTrajectories(int numberOfGrasps){
 		Eigen::Vector3f camPos(resultArr[readCtr].camPos[0], resultArr[readCtr].camPos[1], resultArr[readCtr].camPos[2]);
 		std::vector<float> curParams = finalApproachArr[readCtr]->getGraspParams(gazeDir, camPos, wpCount);
 		graspParams.push_back(curParams);
+
+		// Sanity check to reverse the transform
+		Path* tmpPath = new Path(10);
+
+		// Read each waypoint.
+		for (int wpItr = 0; wpItr < 10; wpItr++){
+
+			// Read the waypoint parameters.
+			for (int ktr = 0; ktr < 3; ktr++)
+				wristPos[ktr] = curParams[10 + wpItr * 27 + ktr];
+			for (int ktr = 0; ktr < 4; ktr++)
+				wristQuat[ktr] = curParams[10 + wpItr * 27 + 3 + ktr];
+			for (int ktr = 0; ktr < 20; ktr++)
+				fingerPos[ktr] = curParams[10 + wpItr * 27 + 7 + ktr];
+
+			// Obtain transformation matrices
+			Transformation trans(gazeDir, camPos, false);
+			Eigen::Vector4f pos(wristPos[0], wristPos[1], wristPos[2], 1);
+
+			// Transform wrist point
+//			std::cout<<"Gaze:"<<gazeDir[0]<<" "<<gazeDir[1]<<" "<<gazeDir[2]<<".";
+//			std::cout<<"camPos:"<<camPos[0]<<" "<<camPos[1]<<" "<<camPos[2]<<".";
+//			std::cout<<"Pos1:"<<pos[0]<<" "<<pos[1]<<" "<<pos[2]<<".";
+			pos = trans.tM * pos;
+//			std::cout<<"PosTr:"<<pos[0]<<" "<<pos[1]<<" "<<pos[2]<<".";
+			Eigen::Quaternionf wQuat = trans.tQuat * Eigen::Quaternionf(wristQuat[0], wristQuat[1], wristQuat[2], wristQuat[3]);
+			wQuat.normalize();
+
+			// Assign wrist position and orientation
+			tmpPath->waypoints[wpItr].pos[0] = pos[0];
+			tmpPath->waypoints[wpItr].pos[1] = pos[1];
+			tmpPath->waypoints[wpItr].pos[2] = pos[2];
+			tmpPath->waypoints[wpItr].quat.x = wQuat.x();
+			tmpPath->waypoints[wpItr].quat.y = wQuat.y();
+			tmpPath->waypoints[wpItr].quat.z = wQuat.z();
+			tmpPath->waypoints[wpItr].quat.w = wQuat.w();
+
+			// Assign joints.
+			for (int i = 0; i < 20; i++)
+			{
+				tmpPath->waypoints[wpItr].jointAngles[i] = fingerPos[i];
+			}
+		}
+
+		// The path has been read. Time to convert.
+		Path * tmpPath2 = new Path(resultArr[readCtr].wpCount + 2);
+		int startIdx = ceil(((double)tmpPath->steps) / (resultArr[readCtr].wpCount+1));
+		tmpPath->steps = tmpPath->steps - startIdx;
+
+		// Set the first waypoint as an initial approach from outside.
+		tmpPath2->waypoints[0].pos[0] = 2 * tmpPath->waypoints[0].pos[0];
+		tmpPath2->waypoints[0].pos[1] = 2 * tmpPath->waypoints[0].pos[1];
+		tmpPath2->waypoints[0].pos[2] = 2 * tmpPath->waypoints[0].pos[2] + 0.35;
+		tmpPath2->waypoints[0].quat.x = tmpPath->waypoints[0].quat.x;
+		tmpPath2->waypoints[0].quat.y = tmpPath->waypoints[0].quat.y;
+		tmpPath2->waypoints[0].quat.z = tmpPath->waypoints[0].quat.z;
+		tmpPath2->waypoints[0].quat.w = tmpPath->waypoints[0].quat.w;
+		for (int k = 0; k<20; k++)
+			tmpPath2->waypoints[0].jointAngles[k] = 0;
+
+		// Set the rest of the wpCount + 1 waypoints.
+		//std::cout<<"Reverse sampling with "<<resultArr[readCtr].wpCount<<std::endl;
+		for (int wpItr = 0; wpItr<resultArr[readCtr].wpCount + 1; wpItr++)
+		{
+			int point = ceil((double) (wpItr * tmpPath->steps) / resultArr[readCtr].wpCount);
+			//std::cout<<point + startIdx<<":";
+			Grasp::Waypoint wp = tmpPath->Interpolate(point, true);
+			tmpPath2->waypoints[wpItr+1].pos[0] = wp.pos[0];
+			tmpPath2->waypoints[wpItr+1].pos[1] = wp.pos[1];
+			tmpPath2->waypoints[wpItr+1].pos[2] = wp.pos[2];
+			tmpPath2->waypoints[wpItr+1].quat.x = wp.quat.x;
+			tmpPath2->waypoints[wpItr+1].quat.y = wp.quat.y;
+			tmpPath2->waypoints[wpItr+1].quat.z = wp.quat.z;
+			tmpPath2->waypoints[wpItr+1].quat.w = wp.quat.w;
+			for (int k = 0; k<20; k++)
+				tmpPath2->waypoints[wpItr+1].jointAngles[k] = wp.jointAngles[k];
+		}
+		//std::cout<<std::endl;
+
+		// For sanity check, we compare tmpPath2 and finalApproachArr[readCtr].
+		for (int ktr = 0; ktr < resultArr[readCtr].wpCount + 2; ktr++)
+		{
+			float totalDiff = 0;
+			for (int itr1 = 0; itr1<3; itr1++)
+				totalDiff += fabs(tmpPath2->waypoints[ktr].pos[itr1] - finalApproachArr[readCtr]->waypoints[ktr].pos[itr1]);
+
+			for (int itr1 = 0; itr1<4; itr1++)
+				totalDiff += fabs(tmpPath2->waypoints[ktr].quat[itr1] - finalApproachArr[readCtr]->waypoints[ktr].quat[itr1]);
+
+			for (int itr1 = 0; itr1<20; itr1++)
+				totalDiff += fabs(tmpPath2->waypoints[ktr].jointAngles[itr1] - finalApproachArr[readCtr]->waypoints[ktr].jointAngles[itr1]);
+
+			if (totalDiff > 0.00001){
+				finalApproachArr[readCtr]->waypoints[ktr].print();
+				tmpPath2->waypoints[ktr].print();
+			}
+//			std::cout<<"Printing "<<ktr<<" of "<<readCtr<<std::endl;
+//			finalApproachArr[readCtr]->waypoints[ktr].print();
+//			std::cout<<"Printing reconstructed "<<ktr<<" of "<<readCtr<<std::endl;
+//			tmpPath2->waypoints[ktr].print();
+		}
 	}
 	fclose(trjFP);
 }
@@ -545,18 +709,30 @@ void GraspPlanner::PerformGrasp(const mjModel* &m, mjData* &d, mjtNum * stableQp
 			    // Count non-nan pixels
 			    int counter = 0;
 			    for (int r=0; r<224; ++r) {
-			    	unsigned int* depthMapRow = dstDepth.ptr<unsigned int>(r);
-			    	for (int c = 0; c<224; c++)
-			    	{
-			    		unsigned int px = depthMapRow[224 - c];
-			    		if (px > 0)
-			    			counter++;
-			    	}
+					unsigned int* depthMapRow = dstDepth.ptr<unsigned int>(r);
+					for (int c = 0; c<224; c++)
+					{
+						unsigned int px = depthMapRow[224 - c];
+						if (px > 0)
+							counter++;
+					}
 			    }
-			    if (counter >= validViewPixels)
+
+			    // Check if we have valid views
+				Eigen::Vector3f gazeDir(gazeDirArr[i][0], gazeDirArr[i][1], gazeDirArr[i][2]);
+				Eigen::Vector3f camPos(cameraPosArr[i][0], cameraPosArr[i][1], cameraPosArr[i][2]);
+				Transformation trans(gazeDir, camPos, false);
+				Eigen::Vector4f pos(0, 0, 0, 1);
+
+				// Transform wrist point
+				pos = trans.tM * pos;
+
+				if (isnan(pos[0]))
+					std::cout<<"REMOVED VIEW"<<std::endl;
+			    if (counter >= validViewPixels && !isnan(pos[0]))
 			    {
-			    	validViews.push_back(i);
-			    	cv::imwrite(tmpStr, dstDepth);
+					validViews.push_back(i);
+					cv::imwrite(tmpStr, dstDepth);
 			    }
 			}
 			if (!boost::filesystem::exists(Simulator->cloudFile))

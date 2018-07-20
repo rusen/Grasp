@@ -73,8 +73,8 @@ Waypoint Path::Interpolate(int step, bool reconstruct){
 Waypoint Path::Interpolate(int step, bool reconstruct){
 
 	// Find relevant waypoints and return the interpolation.
-	float stepSize = ((float) steps) / (waypointCount-1);
-	float val = (float) step / stepSize;
+	double stepSize = ((double) steps) / (waypointCount-1);
+	double val = (double) step / stepSize;
 	int startPoint = floor(val);
 	int endPoint = ceil(val);
 
@@ -91,8 +91,8 @@ Waypoint Path::Interpolate(int step, bool reconstruct){
 	}
 
 	// Weights for combination
-	float endWeight = (val - startPoint);
-	float startWeight = endPoint - val;
+	double endWeight = (val - startPoint);
+	double startWeight = endPoint - val;
 
 	Waypoint point1, point2, point, *pp;
 
@@ -113,13 +113,53 @@ Waypoint Path::Interpolate(int step, bool reconstruct){
 				curEndPoint = endPoint + 1;
 				pp = &point2;
 			}
-			float curEndWeight = (val - curStartPoint);
-			float curStartWeight = curEndPoint - val;
+
+			// Sanity check: Get approximate quat
+			glm::quat tmpQuat = glm::slerp(waypoints[startPoint].quat, waypoints[endPoint].quat, float(endWeight));
+
+			// We need to calculate the weights for both endpoints.
+			// for this task, we have to go around the discretization errors (ugly code ahead)
+			int estStart = round(curStartPoint * (((double)steps) / (waypointCount-1)));
+			int estEnd = round(curEndPoint * (((double)steps) / (waypointCount-1)));
+			double endReal = val - (round(curStartPoint * (((double)steps) / (waypointCount-1))) / stepSize);
+			double startReal = (round(curEndPoint * (((double)steps) / (waypointCount-1))) / stepSize) - val;
+			double dist = (endReal + startReal);
+			endReal /= dist;
+			startReal /= dist;
+
+//			double curEndWeight = (val - curStartPoint);
+//			double curStartWeight = curEndPoint - val;
+			double curEndWeight = endReal;
+			double curStartWeight = startReal;
+//			if (!itr)
+//			{
+//				std::cout<<"New: "<<estStart<<" "<<estEnd<<" "<<startReal<<" "<<endReal<<std::endl;
+//				std::cout<<"Old: "<<curStartPoint<<" "<<curEndPoint<<" "<<curStartWeight<<" "<<curEndWeight<<std::endl;
+//				std::cout<<stepSize<<" "<<val<<std::endl;
+//				std::cout.flush();
+//			}
 
 			// Interpolate two closest waypoints.
-			pp->pos = waypoints[curStartPoint].pos * curStartWeight +
-					waypoints[curEndPoint].pos * curEndWeight;
-			pp->quat = glm::slerp(waypoints[curStartPoint].quat, waypoints[curEndPoint].quat, curEndWeight);
+			for (int ktr = 0; ktr<3; ktr++)
+				pp->pos[ktr] = waypoints[curStartPoint].pos[ktr] * curStartWeight +
+					waypoints[curEndPoint].pos[ktr] * curEndWeight;
+			pp->quat = glm::slerp(waypoints[curStartPoint].quat, waypoints[curEndPoint].quat, float(curEndWeight));
+//			std::cout<<"Q1:"<<waypoints[curStartPoint].quat.w<<" "
+//					<<waypoints[curStartPoint].quat.x<<" "
+//					<<waypoints[curStartPoint].quat.y<<" "
+//					<<waypoints[curStartPoint].quat.z<<std::endl;
+//			std::cout<<"Q2:"<<waypoints[curEndPoint].quat.w<<" "
+//					<<waypoints[curEndPoint].quat.x<<" "
+//					<<waypoints[curEndPoint].quat.y<<" "
+//					<<waypoints[curEndPoint].quat.z<<std::endl;
+//			std::cout<<"Q3:"<<pp->quat.w<<" "
+//					<<pp->quat.x<<" "
+//					<<pp->quat.y<<" "
+//					<<pp->quat.z<<std::endl;
+//			std::cout<<"QT:"<<tmpQuat.w<<" "
+//					<<tmpQuat.x<<" "
+//					<<tmpQuat.y<<" "
+//					<<tmpQuat.z<<std::endl;
 
 			// Interpolate hand joint positions as well.
 			for (int i = 0; i<waypoints[curStartPoint].jointCount; i++){
@@ -128,19 +168,34 @@ Waypoint Path::Interpolate(int step, bool reconstruct){
 			}
 		}
 
-//		std::cout<<"Both points found!"<<std::endl;
-		for (int ktr = 0; ktr<3; ktr++)
-			point.pos[ktr] = (point1.pos[ktr] + point2.pos[ktr])/2;
+		point.pos = point1.pos;
 		point.quat = point1.quat;
 		// Interpolate hand joint positions as well.
 		for (int i = 0; i<waypoints[startPoint].jointCount; i++)
-			point.jointAngles[i] = (point1.jointAngles[i] + point2.jointAngles[i])/2;
+			point.jointAngles[i] = point1.jointAngles[i];
+
+		// fix quaternion
+		float tmpDiff = 0;
+		for (int i = 0; i<4; i++){
+			tmpDiff += fabs(point1.quat[0] - point2.quat[0]);
+		}
+		if (tmpDiff > 0.1)
+			point.quat = point2.quat;
+
+
+//		for (int ktr = 0; ktr<3; ktr++)
+//			point.pos[ktr] = (point1.pos[ktr] + point2.pos[ktr])/2;
+//		point.quat = point1.quat;
+//		// Interpolate hand joint positions as well.
+//		for (int i = 0; i<waypoints[startPoint].jointCount; i++)
+//			point.jointAngles[i] = (point1.jointAngles[i] + point2.jointAngles[i])/2;
 	}
 	else{
 		// Interpolate two closest waypoints.
-		point.pos = waypoints[startPoint].pos * startWeight +
-				waypoints[endPoint].pos * endWeight;
-		point.quat = glm::slerp(waypoints[startPoint].quat, waypoints[endPoint].quat, endWeight);
+		for (int ktr = 0; ktr<3; ktr++)
+			point.pos[ktr] = float(waypoints[startPoint].pos[ktr] * startWeight +
+				waypoints[endPoint].pos[ktr] * endWeight);
+		point.quat = glm::slerp(waypoints[startPoint].quat, waypoints[endPoint].quat, float(endWeight));
 
 		// Interpolate hand joint positions as well.
 		for (int i = 0; i<waypoints[startPoint].jointCount; i++){
@@ -172,8 +227,10 @@ std::vector<float> Path::getGraspParams(Eigen::Vector3f gazeDir, Eigen::Vector3f
 	outputData[graspType] = 1;
 
 	int currentOffset = 0;
+	//std::cout<<"Forward sampling"<<std::endl;
 	for (int k = 0; k<limit; k++){
 		int cnt = round(k * (((double)range) / (limit-1))) + startOffset;
+		//std::cout<<cnt<<":";
 		Grasp::Waypoint wp = Interpolate(cnt, false);
 
 		// Convert to view coordinates.
@@ -200,6 +257,8 @@ std::vector<float> Path::getGraspParams(Eigen::Vector3f gazeDir, Eigen::Vector3f
 			outputData[currentOffset + k * 27 + 17 + i] = wp.jointAngles[i];
 		}
 	}
+
+	//std::cout<<std::endl;
 
 	return outputData;
 }

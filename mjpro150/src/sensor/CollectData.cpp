@@ -39,7 +39,6 @@ void CollectData(Simulate* Simulator, const mjModel* m, mjData* d, unsigned char
 	// Reproject the point cloud
 	Grasp::VirtualCamera cam;
 	bool findNewCamera = true;
-	std::cout<<"NEW GAZE BEFORE CHANGE::"<<newGaze[0]<<" "<<newGaze[1]<<" "<<newGaze[2]<<std::endl;
 	cam.ReprojectPointCloud(Simulator->cloud, Simulator->scaled_im_, cameraOrigin, newGaze, cameraRot, newCameraRot, findNewCamera);
 
 	std::cout<<"NEW GAZE AFTER CHANGE::"<<newGaze[0]<<" "<<newGaze[1]<<" "<<newGaze[2]<<std::endl;
