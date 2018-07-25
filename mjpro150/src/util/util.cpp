@@ -611,7 +611,8 @@ void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int ba
     strcat(dropboxZipFile, ".zip");
 
     // Upload file
-    bool uploadSuccess = Connector::UploadFile(zipFile);
+    //bool uploadSuccess = Connector::UploadFile(zipFile);
+    bool uploadSuccess = false;
     if (!uploadSuccess && boost::filesystem::exists(zipFile))
     {
         std::cout<<"Could not upload. Copying "<<zipFile<<" to "<<dropboxZipFile<<"."<<std::endl;
