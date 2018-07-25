@@ -50,6 +50,13 @@ int nonCollidingGraspLimit = 10;
 bool firstTimeFlag = true; // True in the first run, false otherwise.
 int baseIds[1000];
 bool pauseFlag = true;
+bool logFlag = true;
+FILE * videoFP = NULL;
+FILE * videoLogFP = NULL;
+int skipFrames = 20;
+int frameCtr = 0;
+int skipCtr = 0;
+int savedGraspCtr = 0;
 double stableError = 0.000005;
 mjtNum lastPose[4], lastPos[3]; // For keeping track of pose after object is gripped.
 int stableCounter = 0, stableIterations = 4000, minStableIterations = 100, stableRuns = 3, runCounter = 0;
@@ -289,6 +296,13 @@ void graspObject(const mjModel* m, mjData* d){
 			stableCounter++;
 		}
 
+     	if (logFlag && planner->getGraspState() == Grasp::grasping && planner->counter == 0 && planner->stableCounter >= planner->stableLimit)
+     	{
+     		savedGraspCtr++;
+     		skipCtr=0;
+     		fprintf(videoLogFP, "Grasp %d (%d) start frame: %d\n", savedGraspCtr, planner->graspCounter, frameCtr);
+     	}
+
 		// Calculate error after lifting
      	if (planner->getGraspState() == Grasp::lifting && planner->counter == 0)
      	{
@@ -319,7 +333,19 @@ void graspObject(const mjModel* m, mjData* d){
      		float distance = sqrt(pow(lastPos[0] - stablePos[0],2) + pow(lastPos[1] - stablePos[1],2) + pow(lastPos[2] - stablePos[2],2));
      		latestGrasp.x1 = distance;
      		latestGrasp.r1 = angle;
+     		if (logFlag)
+     		{
+				skipCtr=0;
+				fprintf(videoLogFP, "Grasp %d (%d) lift start frame: %d\n", savedGraspCtr, planner->graspCounter, frameCtr);
+     		}
      		(*(planner->logStream))<<"#Time:"<<d->time<<"# Grasp "<<planner->graspCounter<<" has "<<distance<<" shift and "<<angle<<" rotation."<<std::endl;
+     	}
+
+		// If we're at the beginning of a stand state, save log data.
+     	if (logFlag && planner->getGraspState() == Grasp::stand && planner->counter == 0)
+     	{
+			skipCtr=0;
+     		fprintf(videoLogFP, "Grasp %d (%d) stand start frame: %d\n", savedGraspCtr, planner->graspCounter, frameCtr);
      	}
 
 		// If we're at the end of a stand state, save log data.
@@ -365,8 +391,33 @@ void graspObject(const mjModel* m, mjData* d){
 
      		// Output to file.
      		std::cout<<"Latest grasp:"<<planner->graspCounter<<" "<<latestGrasp.successProbability<<std::endl;
+     		if (logFlag){
+				skipCtr = 0;
+				fprintf(videoLogFP, "Grasp %d (%d) finish frame: %d\n", savedGraspCtr, planner->graspCounter, frameCtr);
+     		}
      		(*(planner->logStream))<<"#Time:"<<d->time<<"# Finished grasp "<<planner->graspCounter<<". Grasp success: "<<graspSuccess<<". Grasp shift: "<<distance<<". In-hand rotation: "<<angle<<"."<<std::endl;
      	}
+
+     	// Save the frame
+		if (logFlag && ((planner->getGraspState() == Grasp::grasping && planner->stableCounter >= planner->stableLimit) ||
+				planner->getGraspState() == Grasp::lifting ||
+				planner->getGraspState() == Grasp::stand))
+		{
+
+			// Skip frames if necessary
+			if (skipCtr < skipFrames)
+				skipCtr++;
+			else
+				skipCtr = 0;
+
+			if (!skipCtr)
+			{
+				// Save video file
+				savelog(m, d, videoFP);
+				skipCtr++;
+				frameCtr++;
+			}
+		}
 
 		// Perform grasping loop.
 		if (stableFlag)
@@ -629,7 +680,7 @@ int main(int argc, const char** argv)
         fscanf(fid, "%d", &objectId);
         fclose(fid);
     }
-    //objectId = 225;
+    //objectId = 99;
     std::cout<<"Selected object:"<<objectId<<std::endl;
 
     char baseIdFile[1000];
@@ -747,6 +798,7 @@ int main(int argc, const char** argv)
 	if (!boost::filesystem::is_directory("./tmp"))
 		boost::filesystem::create_directories("./tmp"); // Create temp dir
 
+
     // We will grasp the object using each variation once.
     for (planner->varItr = 0; planner->varItr < planner->numberOfTrials; planner->varItr++)
     {
@@ -769,7 +821,6 @@ int main(int argc, const char** argv)
 			m = mj_loadXML(modelPath.c_str(), 0, error, 1000);
 		if( !m )
 			mju_error_s("Load model error: %s", error);
-
 
         std::cout<<modelPath.c_str()<<" MODEL READ"<<std::endl;
 
@@ -822,6 +873,36 @@ int main(int argc, const char** argv)
 		// Unset pause flag.
 		pauseFlag = false;
 
+		if (logFlag)
+		{
+			// video file path
+			// create video folder, remove old vids if needed
+			char videoFile[1000];
+			strcpy(videoFile, planner->baseFolder);
+			strcat(videoFile, "video/");
+			boost::filesystem::path dataFile(argv[2]);
+			strcat(videoFile, dataFile.stem().c_str());
+			if (!reSimulateFlag)
+				strcat(videoFile, "/original/");
+			else
+				strcat(videoFile, "/re-sim/");
+			strcat(videoFile, std::to_string(planner->varItr).c_str());
+			strcat(videoFile, "/");
+			if(boost::filesystem::is_directory(videoFile))
+			{
+			   boost::filesystem::remove_all(videoFile);
+			}
+			boost::filesystem::create_directories(videoFile);
+			char videoLogFile[1000];
+			strcpy(videoLogFile, videoFile);
+			strcat(videoFile, "video.data");
+			strcat(videoLogFile, "video.log");
+			std::cout<<"Log file "<<videoLogFile<<std::endl;
+			videoFP = fopen(videoFile, "wb");
+			videoLogFP = fopen(videoLogFile, "w");
+			writeHeader(m, d, videoFP);
+		}
+
 		// run main loop, target real-time simulation and 60 fps rendering
 		while( true )
 		{
@@ -873,6 +954,11 @@ int main(int argc, const char** argv)
 			}
 		}
 
+		if (logFlag)
+		{
+			fclose(videoFP);
+			fclose(videoLogFP);
+		}
 		// Delete existing structures and start again.
 	    mj_deleteData(d);
 	    mj_deleteModel(m);

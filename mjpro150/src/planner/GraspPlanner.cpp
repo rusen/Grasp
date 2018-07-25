@@ -74,27 +74,12 @@ GraspPlanner::GraspPlanner(const char * dropboxBase, bool testFlag,
 		boost::filesystem::create_directories(prefix);
 	}
 
-	/*
-	// create video folder, remove old vids if needed
-	strcpy(videoFolder, baseFolder);
-	if (!reSimulateFlag)
-		strcat(videoFolder, "video/org/");
-	else
-		strcat(videoFolder, "video/re-sim/");
-    if(boost::filesystem::is_directory(videoFolder))
-    {
-       boost::filesystem::remove_all(videoFolder);
-    }
-    boost::filesystem::create_directories(videoFolder);
-    */
-
     // Create rest of the prefixes
 	strcat(prefix, fileId);
 	strcat(localPrefix, fileId);
 	logFile [0] = dataFile[0] = debugLogFile[0] = pointFile [0] = rgbFile [0] = depthFile[0] = resultFile[0] = trajectoryFile[0] = 0; // Set to ""
 	strcat(logFile, localPrefix); strcat(dataFile, baseFolder); strcat(debugLogFile, localPrefix); strcat(pointFile, localPrefix); strcat(rgbFile, localPrefix); strcat(depthFile, localPrefix); strcat(resultFile, localPrefix); strcat(trajectoryFile, prefix);
 	strcat(logFile, ".log"); strcat(dataFile, dataStr); strcat(debugLogFile, "_debug.log"); strcat(pointFile, ".pcd"); strcat(rgbFile, "_rgb.png"); strcat(depthFile, "_depth.png"); strcat(resultFile, ".gd"); strcat(trajectoryFile, ".trj");
-	logStream = new std::ofstream(debugLogFile);
 
     // Create and start kinect simulator.
 	CameraInfo camInfo;
@@ -112,6 +97,36 @@ GraspPlanner::GraspPlanner(const char * dropboxBase, bool testFlag,
     {
     	collisionState[i] = -1;
     }
+
+    // Save old data
+    if (reSimulateFlag)
+    {
+    	char destFolder[1000], destFile[1000], tmpFile[1000];
+    	strcpy(destFolder, baseFolder);
+    	strcat(destFolder, "original/");
+    	if (!boost::filesystem::is_directory(destFolder))
+    	{
+    		boost::filesystem::create_directories(destFolder);
+
+    		strcpy(destFile, destFolder);
+    		strcat(destFile, fileId);
+    		strcat(destFile, "_debug.log");
+    		boost::filesystem::copy_file(debugLogFile, destFile);
+
+    		strcpy(destFile, destFolder);
+    		strcat(destFile, "data.bin");
+    		boost::filesystem::copy_file(dataFile, destFile);
+
+    		strcpy(destFile, destFolder);
+    		strcat(destFile, "graspData.data");
+    		strcpy(tmpFile, baseFolder);
+    		strcat(tmpFile, "graspData.data");
+    		boost::filesystem::copy_file(tmpFile, destFile);
+    	}
+    }
+
+    // Open log file
+	logStream = new std::ofstream(debugLogFile);
 
     if (!reSimulateFlag){
 		// Find camera and gaze locations
@@ -296,12 +311,22 @@ void GraspPlanner::ReadPreMadeTrajectories(int numberOfGrasps){
 		// Finally, save grasp parameter data
 		std::vector<float> curParams = finalApproachArr[readCtr]->getGraspParams(gazeDir, camPos, resultArr[readCtr].wpCount);
 
+		std::cout<<"Printing first params"<<std::endl;
+		for (int ktr = 0; ktr<17; ktr++)
+			std::cout<<curParams[ktr]<<" ";
+		std::cout<<std::endl;
+
 		if (readCtr < 10000)
 		{
 			// Sanity check. Seek set to beginning, and load some data, and compare.
 			fseek ( trjFP , -270 * 4 , SEEK_CUR );
 			float buf[270];
 			fread(buf, 4, 270, trjFP);
+
+			std::cout<<"Printing sec params"<<std::endl;
+			for (int ktr = 0; ktr<7; ktr++)
+				std::cout<<buf[ktr]<<" ";
+			std::cout<<std::endl;
 
 			float diff = 0;
 			float maxDiff = 0;
@@ -575,6 +600,8 @@ void GraspPlanner::ReadTrajectories(int numberOfGrasps){
 		// For sanity check, we compare tmpPath2 and finalApproachArr[readCtr].
 		for (int ktr = 0; ktr < resultArr[readCtr].wpCount + 2; ktr++)
 		{
+
+
 			float totalDiff = 0;
 			for (int itr1 = 0; itr1<3; itr1++)
 				totalDiff += fabs(tmpPath2->waypoints[ktr].pos[itr1] - finalApproachArr[readCtr]->waypoints[ktr].pos[itr1]);

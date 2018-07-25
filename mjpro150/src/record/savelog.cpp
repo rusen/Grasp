@@ -1,8 +1,11 @@
 #include "record/savelog.h"
+#include <iostream>
 
-void savelog(const mjModel *m, mjData *d, float * data, FILE *out){
+void savelog(const mjModel *m, mjData *d, FILE *out){
 	// Print out relevant data to re-create the simulation later.
     int recsz = 1 + m->nq + m->nv + m->nu + 7*m->nmocap + m->nsensordata;
+//    std::cout<<"Recsz:"<<recsz<<std::endl;
+    float * data = new float[recsz];
 
     // Create data.
     data[0] = (float) d->time;
@@ -15,4 +18,5 @@ void savelog(const mjModel *m, mjData *d, float * data, FILE *out){
 
 	// read data, print size
 	size_t nn = fwrite(data, recsz*sizeof(float), 1, out);
+	delete []data;
 }

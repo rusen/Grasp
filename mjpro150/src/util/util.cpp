@@ -464,11 +464,8 @@ void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int ba
 	strcat(graspDataFile, "/graspData.data");
 	FILE * gdf = NULL;
 
-	if (!boost::filesystem::exists(graspDataFile))
-	{
-		gdf = fopen(graspDataFile, "wb");
-		fwrite(&numberOfGrasps, sizeof(int), 1, gdf);
-	}
+	gdf = fopen(graspDataFile, "wb");
+	fwrite(&numberOfGrasps, sizeof(int), 1, gdf);
 
 	// Write number of grasps
 	int imgCounter = 0;
@@ -504,7 +501,7 @@ void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int ba
 
 		fwrite(&success, 4, 1, dataFP); // Writing success probability
 		fwrite(stabilityArr, 4, 4, dataFP); // Writing stability values
-		std::vector<float> tmpVec = planner->graspParams[i]; // TODO: graspParams is empty. We need to fill that in.
+		std::vector<float> tmpVec = planner->graspParams[i];
 		float * tmpArr = new float[tmpVec.size()];
 		for (int k = 0; k<tmpVec.size(); k++)
 		{
@@ -534,8 +531,8 @@ void UploadFiles(const char * base, GraspPlanner * planner, int objectId, int ba
 	// Remove views folder and unnecessary files
 	if (boost::filesystem::exists(viewFolder))
 		boost::filesystem::remove_all(viewFolder);
-	if (boost::filesystem::exists(planner->debugLogFile))
-		boost::filesystem::remove(planner->debugLogFile);
+//	if (boost::filesystem::exists(planner->debugLogFile))
+//		boost::filesystem::remove(planner->debugLogFile);
 	if (boost::filesystem::exists(planner->depthFile))
 		boost::filesystem::remove(planner->depthFile);
 

@@ -8,6 +8,7 @@
 #include "glfw3.h"
 #include "stdio.h"
 #include "string.h"
+#include "stdio.h"
 #include <iostream>
 
 #define _FILE_OFFSET_BITS 64
@@ -22,7 +23,6 @@ int recsz = 0;
 long long numrec = 0;
 long long frame = 0;
 mjtNum timestep = 0;
-float* rgb = 0;
 mjtNum* pointxy = 0;
 int* npoints = 0;
 
@@ -33,7 +33,7 @@ bool showoption = false;
 bool showinfo = true;
 bool showsensor = true;
 bool showfullscreen = false;
-int showhelp = 1;                   // 0: none; 1: brief; 2: full
+int showhelp = 0;                   // 0: none; 1: brief; 2: full
 
 // abstract visualization
 mjvScene scn;
@@ -57,6 +57,7 @@ double lasty = 0;
 int needselect = 0;                 // 0: none; 2: center; 3: center and track
 double window2buffer = 1;           // framebuffersize / windowsize (for scaled video modes)
 double fontscale = 1.5;
+char outFile[1000];
 
 // help strings
 const char help_title[] =
@@ -128,7 +129,7 @@ void initOpenGL(const char* filename, const char* logfile)
     glfwWindowHint(GLFW_SAMPLES, 4);
 
     // create window
-    window = glfwCreateWindow(1200, 900, "MuJoCo Playlog", NULL, NULL);
+    window = glfwCreateWindow(256, 384, "MuJoCo Playlog", NULL, NULL);
     if( !window )
     {
         glfwTerminate();
@@ -216,16 +217,6 @@ void initMuJoCo(const char* filename, const char* logfile)
     if( strlen(m->names)!=header[5] )
         namewarning = 1;
 
-    // skip name, compare
-    char c;
-    for( int n=0; n<header[5]; n++ )
-    {
-        fread(&c, 1, 1, fp);
-
-        if( n<strlen(m->names) && c!=m->names[n] )
-            namewarning = 1;
-    }
-
     // warn about name
     if( namewarning )
         mju_warning("Logfile and model contain different model names");
@@ -240,6 +231,9 @@ void initMuJoCo(const char* filename, const char* logfile)
     long long filesz = ftello(fp) - startpos;
     fseek(fp, startpos, SEEK_SET);
     numrec = filesz/recsz/sizeof(float);
+    std::cout<<"File size:"<<filesz<<std::endl;
+    std::cout<<"Frame size:"<<numrec<<std::endl;
+    std::cout<<"Record size:"<<recsz<<std::endl;
     if( numrec*recsz*sizeof(float)!=filesz )
         mju_error("Logfile size is not divisible by frame size");
 
@@ -249,7 +243,6 @@ void initMuJoCo(const char* filename, const char* logfile)
         mju_error("Could not allocate memory buffer for logfile data");
     if( m->nsensordata )
     {
-        rgb = (float*) malloc(sizeof(float)*3*(5+m->nsensordata));
         pointxy = (mjtNum*) malloc(sizeof(mjtNum)*4*(5+m->nsensordata));
         npoints = (int*) malloc(sizeof(int)*(5+m->nsensordata));
         if( !pointxy || !npoints )
@@ -290,7 +283,6 @@ void closeMuJoCo(void)
 {
     free(npoints);
     free(pointxy);
-    free(rgb);
     free(data);
     mj_deleteData(d);
     mj_deleteModel(m);
@@ -743,7 +735,8 @@ void render(GLFWwindow* window)
     // timing statistics
     if( lastrender==0 )
         lastrender = glfwGetTime();
-    int nstep = mjMAX(1, (int)((glfwGetTime()-lastrender)/m->opt.timestep));
+    int nstep = 1;
+//    int nstep = mjMAX(1, (int)((glfwGetTime()-lastrender)/m->opt.timestep)); // TODO: CHANGE BACK
     lastrender = glfwGetTime();
 
     // advance frame to keep realtime
@@ -828,6 +821,9 @@ void render(GLFWwindow* window)
     else if( showhelp==2 )
         mjr_overlay(mjFONT_NORMAL, mjGRID_TOPLEFT, rect, help_title, help_content, &con);
 
+    // Show grasp number
+    //mjr_overlay(mjFONT_NORMAL, mjGRID_TOPRIGHT, rect, "Grasp ", "F1  ", &con);
+
     // show info
     if( showinfo )
         mjr_overlay(mjFONT_NORMAL, mjGRID_BOTTOMLEFT, rect,
@@ -905,12 +901,7 @@ void render(GLFWwindow* window)
 int main(int argc, const char** argv)
 {
 
-	#ifdef __unix__
-	// activate software
-	mj_activate("mjkey_unix.txt");
-	#elif __APPLE__
-	mj_activate("mjkey_macos.txt");
-	#endif
+	mj_activate("mjkey.txt");
 
     // internal version check
     if( mjVERSION_HEADER!=mj_version() )
@@ -919,14 +910,24 @@ int main(int argc, const char** argv)
     // check arguments
     if( argc!=3 && argc!=4)
     {
-        printf(" USAGE:  playlog modelfile logfile [fontscale]\n");
+        printf(" USAGE:  playlog modelfile logfile [outFile] [fontscale]\n");
         return 1;
     }
 
-    // parse fontscale
+    // parse outFile
+    bool outFLag = false;
+    strcpy(outFile, " ");
     if( argc==4 )
     {
-        sscanf(argv[3], "%lf", &fontscale);
+        sscanf(argv[3], "%s", outFile);
+        std::cout<<"Writing to output file: "<<outFile<<std::endl;
+        outFLag = true;
+    }
+
+    // parse fontscale
+    if( argc==5 )
+    {
+        sscanf(argv[4], "%lf", &fontscale);
         if( fontscale<1.25 )
             fontscale = 1;
         else if( fontscale>1.75 )
@@ -934,7 +935,6 @@ int main(int argc, const char** argv)
         else
             fontscale = 1.5;
     }
-
 
     // init
     initOpenGL(argv[1], argv[2]);
@@ -949,17 +949,39 @@ int main(int argc, const char** argv)
     glfwSetWindowRefreshCallback(window, render);
     InitSensor();
 
+    // GEt viewport and allocate space for rgb image
+    mjrRect viewport =  mjr_maxViewport(&con);
+    int W = viewport.width;
+    int H = viewport.height;
+    unsigned char* rgb = (unsigned char*)malloc(3*W*H);
+
+    FILE * fp = NULL;
+    if (outFLag)
+    	fp = fopen(outFile, "wb");
+
     // main loop
-    while( !glfwWindowShouldClose(window) )
+    while( !glfwWindowShouldClose(window))
     {
         // simulate and render
         render(window);
+
+        // read rgb and depth buffers
+        mjr_readPixels(rgb, NULL, viewport, &con);
+
+        // write rgb image to file
+        fwrite(rgb, 3, W*H, fp);
+
+        if (frame >= (numrec-1))
+        	break;
 
         // handle events (this calls all callbacks)
         glfwPollEvents();
     }
 
     // free and terminate
+    free(rgb);
+    if (fp != NULL)
+    	fclose(fp);
     closeMuJoCo();
     glfwTerminate();
     return 0;

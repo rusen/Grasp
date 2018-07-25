@@ -1,5 +1,6 @@
 #include "record/savelog.h"
 #include "string.h"
+#include <iostream>
 
 void writeHeader(const mjModel* m, mjData* d, FILE * fp){
 	int header[6];
