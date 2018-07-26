@@ -17,8 +17,10 @@ def count_grasps(setText, fileName, orderFile = None):
    graspTotal = []
    firstClassSuccess = []
    firstClassTotal = []
-   successBins = np.zeros(20)
-   prob_step = 0.05
+   successToFail = np.zeros(100)
+   failToSuccess = np.zeros(100)
+   successToCollide = np.zeros(100)
+   failToCollide = np.zeros(100)
     
    # Initialize arrays
    for i in range(0,100):
@@ -92,10 +94,20 @@ def count_grasps(setText, fileName, orderFile = None):
                  
                  # Record-keeping about the grasps in general.
      #            print(str(int(-orgGraspData[itr * 285] + 1)) + ':' + str(int(-graspData[itr * 285] + 1)))
-                 if itr == topRank:
-                     changes[int(-orgGraspData[itr * 285] + 1)][int(-graspData[itr * 285] + 1)] = \
-                         changes[int(-orgGraspData[itr * 285] + 1)][int(-graspData[itr * 285] + 1)] + 1
-
+     #            if itr == topRank:
+                 changes[int(-orgGraspData[itr * 285] + 1)][int(-graspData[itr * 285] + 1)] = \
+                     changes[int(-orgGraspData[itr * 285] + 1)][int(-graspData[itr * 285] + 1)] + 1
+                 n1 = int(-orgGraspData[itr * 285] + 1)
+                 n2 = int(-graspData[itr * 285] + 1)
+	
+                 if n1 == 0 and n2 == 1:
+                     successToFail[itr] = successToFail[itr] + 1 
+                 if n1 == 1 and n2 == 0:
+                     failToSuccess[itr] = failToSuccess[itr] + 1 
+                 if n1 == 0 and n2 == 2:
+                     successToCollide[itr] = successToCollide[itr] + 1 
+                 if n1 == 1 and n2 == 2:
+                     failToCollide[itr] = failToCollide[itr] + 1 
                  # if graspData[itr * 285] > -0.5:
                  graspTotal[itr] = graspTotal[itr] + 1
                  classTotal[classId] = classTotal[classId] + 1
@@ -144,6 +156,10 @@ def count_grasps(setText, fileName, orderFile = None):
    print topSuccess
    print totalFirstGrasps
    print(changes) 
+
+   print "GRASP CHANGES"
+   for itr in range(0, 100):
+      print str(successToFail[itr]) + ', ' + str(failToSuccess[itr]) + ', ' + str(successToCollide[itr]) + ', ' + str(failToCollide[itr])
 
    return returnArr
  
