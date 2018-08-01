@@ -10,6 +10,9 @@
 #include "string.h"
 #include "stdio.h"
 #include <iostream>
+#include <vector>
+#include <boost/filesystem.hpp>
+#include <fstream>
 
 #define _FILE_OFFSET_BITS 64
 
@@ -30,8 +33,8 @@ int* npoints = 0;
 bool paused = false;
 bool jumped = false;
 bool showoption = false;
-bool showinfo = true;
-bool showsensor = true;
+bool showinfo = false;
+bool showsensor = false;
 bool showfullscreen = false;
 int showhelp = 0;                   // 0: none; 1: brief; 2: full
 
@@ -58,6 +61,15 @@ int needselect = 0;                 // 0: none; 2: center; 3: center and track
 double window2buffer = 1;           // framebuffersize / windowsize (for scaled video modes)
 double fontscale = 1.5;
 char outFile[1000];
+char logFile[1000];
+char frameFile[1000];
+std::vector<int> shownFrames;
+bool selectionFlag = false;
+int frameCtr = 0;
+int frameLimit = 0;
+
+int graspFrames[1000][2];
+bool resimExists = false;
 
 // help strings
 const char help_title[] =
@@ -273,7 +285,7 @@ void initMuJoCo(const char* filename, const char* logfile)
     cam.lookat[0] = m->stat.center[0];
     cam.lookat[1] = m->stat.center[1];
     cam.lookat[2] = m->stat.center[2];
-    cam.distance = 1.5 * m->stat.extent;
+    cam.distance = 2.1 * m->stat.extent;
     cam.type = mjCAMERA_FREE;
 }
 
@@ -617,6 +629,7 @@ void makeoptionstring(const char* name, char key, char* buf)
 }
 
 
+/*
 // advance simulation
 void simulation(void)
 {
@@ -633,6 +646,7 @@ void simulation(void)
         lastupdate = glfwGetTime();
     }
 }
+*/
 
 
 // init sensors figure
@@ -742,7 +756,13 @@ void render(GLFWwindow* window)
     // advance frame to keep realtime
     if( !paused && !jumped && !reposition )
     {
-        frame = mjMIN(frame+nstep, numrec-1);
+    	if (selectionFlag)
+    	{
+    		frame = shownFrames[frameCtr];
+    		frameCtr++;
+    	}
+    	else
+    		frame = mjMIN(frame+nstep, numrec-1);
         setFrame();
     }
     mj_forward(m, d);
@@ -902,32 +922,142 @@ int main(int argc, const char** argv)
 {
 
 	mj_activate("mjkey.txt");
+	char dataStr[1000];
+	strcpy(dataStr, "data");
 
     // internal version check
     if( mjVERSION_HEADER!=mj_version() )
         mju_error("MuJoCo headers and library have different versions");
 
     // check arguments
-    if( argc!=3 && argc!=4)
+    if( argc!=4 && argc!=5 && argc!=6)
     {
-        printf(" USAGE:  playlog modelfile logfile [outFile] [fontscale]\n");
+        printf(" USAGE:  playlog modelfile fileId simtype [dataFile] [fontscale]\n");
         return 1;
+    }
+    if (argc >= 5)
+    {
+    	strcpy(dataStr, argv[4]);
     }
 
     // parse outFile
-    bool outFLag = false;
-    strcpy(outFile, " ");
-    if( argc==4 )
+    bool outFLag = true;
+    char selectionFile[1000];
+    std::vector<int> selectedGrasps;
+
+    strcpy(selectionFile, "./tmp/data/");
+    strcat(selectionFile, argv[2]);
+    strcat(selectionFile, "/selectedGrasps.txt");
+    std::cout<<selectionFile<<std::endl;
+    int maxSelection = 0;
+    int maxNumberOfGrasps = 5;
+    int graspItr = 0;
+    if (boost::filesystem::exists(selectionFile))
+    	selectionFlag = true;
+    	std::ifstream infile(selectionFile);
+    	int grasp;
+    	while (infile >> grasp)
+    	{
+    		selectedGrasps.push_back(grasp);
+    		if (grasp>maxSelection)
+    			maxSelection = grasp;
+    		std::cout<<"Grasp selected:"<<grasp<<std::endl;
+    		graspItr++;
+    		if (graspItr >= maxNumberOfGrasps)
+    			break;
+    	}
+    	infile.close();
+
+    strcpy(outFile, "./tmp/data/");
+    strcat(outFile, argv[2]);
+    strcat(outFile, "/video/");
+    strcat(outFile, dataStr);
+    strcat(outFile, "/");
+    strcat(outFile, argv[3]);
+    strcat(outFile, "/0/rgb.out");
+    std::cout<<outFile<<std::endl;
+
+    strcpy(frameFile, "./tmp/data/");
+    strcat(frameFile, argv[2]);
+    strcat(frameFile, "/video/");
+    strcat(frameFile, dataStr);
+    strcat(frameFile, "/");
+    strcat(frameFile, argv[3]);
+    strcat(frameFile, "/0/video.log");
+    std::cout<<frameFile<<std::endl;
+
+    strcpy(logFile, "./tmp/data/");
+    strcat(logFile, argv[2]);
+    strcat(logFile, "/video/");
+    strcat(logFile, dataStr);
+    strcat(logFile, "/");
+    strcat(logFile, argv[3]);
+    strcat(logFile, "/0/video.data");
+    std::cout<<logFile<<std::endl;
+
+    if (selectionFlag)
     {
-        sscanf(argv[3], "%s", outFile);
-        std::cout<<"Writing to output file: "<<outFile<<std::endl;
-        outFLag = true;
+    	FILE * gfp = fopen(frameFile, "r");
+    	int graspId, tmp, frameId, startFrame;
+    	char str[100], str2[100], str3[100];
+    	int idx[4] = {0, 1, 1, 0};
+    	int itr = 0;
+    	while (true)
+    	{
+    		if (!idx[itr])
+    		{
+    			fscanf(gfp, "Grasp %d (%d) %s %s %d\n", &graspId, &tmp, str, str2, &frameId);
+    		}
+    		else
+    		{
+    			fscanf(gfp, "Grasp %d (%d) %s %s %s %d\n", &graspId, &tmp, str, str2, str3, &frameId);
+    		}
+
+    		itr++;
+    		if (itr >= 4)
+    		{
+    			itr = 0;
+    		}
+
+
+    		if (graspId > maxSelection)
+    			break;
+
+    		bool flag = false;
+    		for (int i = 0; i<selectedGrasps.size(); i++)
+    		{
+    			if (selectedGrasps[i] == graspId)
+    				flag = true;
+    		}
+    		if (!flag)
+    			continue;
+
+    		if (!strcmp(str, "start"))
+    		{
+    			std::cout<<"Grasp start "<<graspId-1<<" "<<frameId<<std::endl;
+    			graspFrames[graspId-1][0] = frameId;
+    			startFrame = frameId;
+    		}
+    		if (!strcmp(str, "finish"))
+    		{
+    			graspFrames[graspId-1][1] = frameId-1;
+    			std::cout<<"Grasp finish "<<graspId-1<<" "<<startFrame<<" "<<frameId-1<<std::endl;
+    			for (int i = startFrame; i<frameId; i++)
+    			{
+    				shownFrames.push_back(i);
+    				frameLimit++;
+    			}
+    		}
+
+    	}
+    	fclose(gfp);
     }
+    std::cout<<"frame limit:"<<frameLimit<<std::endl;
 
     // parse fontscale
-    if( argc==5 )
+    if( argc==6 )
     {
-        sscanf(argv[4], "%lf", &fontscale);
+        sscanf(argv[5], "%lf", &fontscale);
         if( fontscale<1.25 )
             fontscale = 1;
         else if( fontscale>1.75 )
@@ -936,10 +1066,11 @@ int main(int argc, const char** argv)
             fontscale = 1.5;
     }
 
+
     // init
-    initOpenGL(argv[1], argv[2]);
+    initOpenGL(argv[1], logFile);
     //
-    initMuJoCo(argv[1], argv[2]);
+    initMuJoCo(argv[1], logFile);
 
     // set GLFW callbacks
     glfwSetKeyCallback(window, keyboard);
@@ -969,10 +1100,17 @@ int main(int argc, const char** argv)
         mjr_readPixels(rgb, NULL, viewport, &con);
 
         // write rgb image to file
-        fwrite(rgb, 3, W*H, fp);
+        if (outFLag)
+        	fwrite(rgb, 3, W*H, fp);
 
         if (frame >= (numrec-1))
         	break;
+
+        if (selectionFlag)
+        {
+        	if (frameCtr >= frameLimit)
+        		break;
+        }
 
         // handle events (this calls all callbacks)
         glfwPollEvents();

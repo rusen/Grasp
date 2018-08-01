@@ -1,63 +1,36 @@
 import os
 import sys
-import shutil
-import array
-import multiprocessing
 import time
-from threading import Lock
+import shutil
+d = './tmp/data'
+fileName2 = "data_2epoch_0.01_last3"
 
-folders = {}
-dataFile = "data.bin"
-dropboxFolder = "~/Dropbox"
-
-
-def get_scenes(setText):
-   d = './allData'
-   counter = 0
-
-   folderList = filter(os.path.isdir, [os.path.join(d,f) for f in os.listdir(d)])
-   for item in folderList:
-      setName = os.path.basename(os.path.normpath(item))
-      folderList2 = filter(os.path.isdir, [os.path.join(item,f) for f in os.listdir(item)])
-      if not setName == setText:
-          continue
-      # Get object id
-      for item2 in folderList2:
-
-          # Get object id
-          objectId = os.path.basename(os.path.normpath(item2))
-
-          folderListScenes = filter(os.path.isdir, [os.path.join(item2,f) for f in os.listdir(item2)])
-          for itemScene in folderListScenes:
-              folders[counter] = itemScene
-              out = open(itemScene + "/objectId.txt", "w")
-              out.write(objectId)
-              out.close()
-              counter = counter + 1
-   return
-
-
-def f(x):
-    itemScene = folders[x]
-    newName = ''
-    for fil in os.listdir(itemScene):
-        if fil.endswith(".pcd"):
-            newName = os.path.splitext(fil)[0]
-            print('Processing ' + newName)
-    newFolder = './tmp/data/' + newName
-    shutil.move(itemScene, newFolder)
-  #  command = "./basicGrasp " + newName + " " + dataFile + " ../model/BHAM " + dropboxFolder + " visualOff 0 0 > /dev/null"
-    command = "./basicGrasp " + newName + " " + dataFile + " ../model/BHAM " + dropboxFolder + " visualOff 0 0"
-#    print(command)
-    os.system(command)
-
-    # DO SOME PROCESS
-    shutil.move(newFolder, itemScene)
-
-numberOfThreads = int(sys.argv[2])
-get_scenes(sys.argv[1])
-numberOfScenes = len(folders)
-dataFile = sys.argv[3]
-dropboxFolder = sys.argv[4]
-pool = multiprocessing.Pool(int(sys.argv[2]))
-pool.map(f, range(0, len(folders)))
+folderList = filter(os.path.isdir, [os.path.join(d,f) for f in os.listdir(d)])
+for item in folderList:
+	try:
+		setName = os.path.basename(os.path.normpath(item))
+		# Copy model files
+		d2 = item+"/model"
+		print(d2)
+		for modelItem in os.listdir(d2):
+			print(modelItem)
+			shutil.copy2(item + "/model/" + modelItem, "../model/BHAM") 
+		command1 = "./playlog ../model/BHAM/" + setName + "_Test.xml " + setName + " re-sim"
+		os.system(command1)
+		command12 = "ffmpeg -f rawvideo -pixel_format rgb24 -video_size 512x768 -framerate 30 -i " + item + "/video/data/re-sim/0/rgb.out -vf 'vflip' " + item + "/video/data/re-sim/0/video.mp4"
+		video1 = item + "/video/data/re-sim/0/video.mp4"
+		os.system(command12)
+		os.remove(item + "/video/data/re-sim/0/rgb.out")
+		command2 = "./playlog ../model/BHAM/" + setName + "_Test.xml " + setName + " re-sim" + " " + fileName2
+		os.system(command2)
+		print(command2)
+		break
+		command22 = "ffmpeg -f rawvideo -pixel_format rgb24 -video_size 512x768 -framerate 30 -i " + item + "/video/" + fileName2 + "/re-sim/0/rgb.out -vf 'vflip' " + item + "/video/" + fileName2 + "/re-sim/0/video.mp4"
+		print(command22)
+		os.system(command22)
+		os.remove(item + "/video/" + fileName2 + "/re-sim/0/rgb.out")
+		video2 = item + "/video/" + fileName2 + "/re-sim/0/video.mp4"
+		command3 = "ffmpeg -i " + video1 + " -i " + video2 + " -filter_complex '[0:v]pad=iw*2:ih[int];[int][1:v]overlay=W/2:0[vid]' -map [vid] -c:v libx264 -crf 23 -preset veryfast ./videos/" + setName + ".mp4" 
+		os.system(command3)
+	except:
+		print(item + " has not been processed")
