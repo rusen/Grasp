@@ -421,6 +421,7 @@ void GraspPlanner::ReadTrajectories(int numberOfGrasps){
 
 		// Assign fields for the result arr
 		resultArr[readCtr].graspType = graspType;
+		resultArr[readCtr].likelihood = wpCount;
 		resultArr[readCtr].wpCount = wpCount;
 
 		// Read trajectory waypoint by waypoint.
@@ -600,8 +601,6 @@ void GraspPlanner::ReadTrajectories(int numberOfGrasps){
 		// For sanity check, we compare tmpPath2 and finalApproachArr[readCtr].
 		for (int ktr = 0; ktr < resultArr[readCtr].wpCount + 2; ktr++)
 		{
-
-
 			float totalDiff = 0;
 			for (int itr1 = 0; itr1<3; itr1++)
 				totalDiff += fabs(tmpPath2->waypoints[ktr].pos[itr1] - finalApproachArr[readCtr]->waypoints[ktr].pos[itr1]);

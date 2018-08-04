@@ -953,6 +953,7 @@ int main(int argc, const char** argv)
     int maxNumberOfGrasps = 5;
     int graspItr = 0;
     if (boost::filesystem::exists(selectionFile))
+    {
     	selectionFlag = true;
     	std::ifstream infile(selectionFile);
     	int grasp;
@@ -967,6 +968,7 @@ int main(int argc, const char** argv)
     			break;
     	}
     	infile.close();
+    }
 
     strcpy(outFile, "./tmp/data/");
     strcat(outFile, argv[2]);

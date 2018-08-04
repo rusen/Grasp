@@ -23,10 +23,7 @@ for item in folderList:
 		os.remove(item + "/video/data/re-sim/0/rgb.out")
 		command2 = "./playlog ../model/BHAM/" + setName + "_Test.xml " + setName + " re-sim" + " " + fileName2
 		os.system(command2)
-		print(command2)
-		break
 		command22 = "ffmpeg -f rawvideo -pixel_format rgb24 -video_size 512x768 -framerate 30 -i " + item + "/video/" + fileName2 + "/re-sim/0/rgb.out -vf 'vflip' " + item + "/video/" + fileName2 + "/re-sim/0/video.mp4"
-		print(command22)
 		os.system(command22)
 		os.remove(item + "/video/" + fileName2 + "/re-sim/0/rgb.out")
 		video2 = item + "/video/" + fileName2 + "/re-sim/0/video.mp4"

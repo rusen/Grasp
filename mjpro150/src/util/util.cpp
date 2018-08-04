@@ -730,6 +730,7 @@ void Grasp::GraspResult::write(FILE * &fp){
 
 	fwrite(&viewId, sizeof(int), 1, fp);
 	fwrite(&wpCount, sizeof(int), 1, fp);
+	fwrite(&likelihood, sizeof(float), 1, fp);
 	fwrite(&graspType, sizeof(int), 1, fp);
 	float tmp[3];
 	for (int i = 0; i<3; i++)
@@ -748,6 +749,7 @@ void Grasp::GraspResult::read(FILE * &fp){
 
 	fread(&viewId, sizeof(int), 1, fp);
 	fread(&wpCount, sizeof(int), 1, fp);
+	fread(&likelihood, sizeof(float), 1, fp);
 	fread(&graspType, sizeof(int), 1, fp);
 
 	float tmp[3];
@@ -762,6 +764,7 @@ void Grasp::GraspResult::read(FILE * &fp){
 void Grasp::GraspResult::print(){
 	std::cout<<"Grasp result"<<std::endl;
 	std::cout<<"Success: "<<successProbability<<std::endl;
+	std::cout<<"Likelihood: "<<likelihood<<std::endl;
 	std::cout<<"Stability: "<<x1<<" "<<r1<<" "<<x2<<" "<<r2<<" "<<std::endl;
 	std::cout<<"Counters: "<<counter<<" "<<successCounter<<std::endl;
 	std::cout<<"View id, grasp type and wpCount: "<<viewId<<" "<<graspType<<" "<<wpCount<<std::endl;
