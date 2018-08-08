@@ -753,9 +753,9 @@ void GraspPlanner::PerformGrasp(const mjModel* &m, mjData* &d, mjtNum * stableQp
 				// Transform wrist point
 				pos = trans.tM * pos;
 
-				if (isnan(pos[0]))
+				if (std::isnan(pos[0]))
 					std::cout<<"REMOVED VIEW"<<std::endl;
-			    if (counter >= validViewPixels && !isnan(pos[0]))
+			    if (counter >= validViewPixels && !std::isnan(pos[0]))
 			    {
 					validViews.push_back(i);
 					cv::imwrite(tmpStr, dstDepth);
