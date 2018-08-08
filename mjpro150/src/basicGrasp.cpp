@@ -50,7 +50,7 @@ int nonCollidingGraspLimit = 10;
 bool firstTimeFlag = true; // True in the first run, false otherwise.
 int baseIds[1000];
 bool pauseFlag = true;
-bool logFlag = true;
+bool logFlag = false; // for recording video
 FILE * videoFP = NULL;
 FILE * videoLogFP = NULL;
 int skipFrames = 20;
@@ -599,8 +599,8 @@ int main(int argc, const char** argv)
     	int charsRead = fscanf(setsFid, "%d\n", &setId);
     	if (charsRead < 1)
     		break;
-    	if (setId < 2) // Only work with validation and test data for now
-    		excludedObjects.push_back(i+1);
+//    	if (setId < 2) // Only work with validation and test data for now
+//    		excludedObjects.push_back(i+1);
     }
     fclose(setsFid);
 
@@ -797,7 +797,6 @@ int main(int argc, const char** argv)
 	// Filename operations
 	if (!boost::filesystem::is_directory("./tmp"))
 		boost::filesystem::create_directories("./tmp"); // Create temp dir
-
 
     // We will grasp the object using each variation once.
     for (planner->varItr = 0; planner->varItr < planner->numberOfTrials; planner->varItr++)

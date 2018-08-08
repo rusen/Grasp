@@ -713,6 +713,7 @@ Grasp::GraspResult * Grasp::readGraspData(const char * fileName){
 	// Read each grasp
 	for (int i = 0; i<numberOfGrasps; i++){
 		newArr[i].read(fp);
+		newArr[i].print();
 	}
 
 	// close fp

@@ -421,7 +421,7 @@ void GraspPlanner::ReadTrajectories(int numberOfGrasps){
 
 		// Assign fields for the result arr
 		resultArr[readCtr].graspType = graspType;
-		resultArr[readCtr].likelihood = wpCount;
+		resultArr[readCtr].likelihood = likelihood;
 		resultArr[readCtr].wpCount = wpCount;
 
 		// Read trajectory waypoint by waypoint.
