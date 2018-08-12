@@ -91,7 +91,7 @@ public:
 
 	// Upload and timeout time
 	time_t uploadTime = 0;
-	time_t trajectoryTimeout = 600; // seconds. If trajectory doesn't arrive within this timeframe, operation aborted.
+	time_t trajectoryTimeout = 1200; // seconds. If trajectory doesn't arrive within this timeframe, operation aborted.
 
 	// Random seed (for srand)
 	time_t randSeed = 0;

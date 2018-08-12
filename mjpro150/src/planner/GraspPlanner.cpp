@@ -421,6 +421,7 @@ void GraspPlanner::ReadTrajectories(int numberOfGrasps){
 
 		// Assign fields for the result arr
 		resultArr[readCtr].graspType = graspType;
+		resultArr[readCtr].likelihood = likelihood;
 		resultArr[readCtr].wpCount = wpCount;
 
 		// Read trajectory waypoint by waypoint.
@@ -600,8 +601,6 @@ void GraspPlanner::ReadTrajectories(int numberOfGrasps){
 		// For sanity check, we compare tmpPath2 and finalApproachArr[readCtr].
 		for (int ktr = 0; ktr < resultArr[readCtr].wpCount + 2; ktr++)
 		{
-
-
 			float totalDiff = 0;
 			for (int itr1 = 0; itr1<3; itr1++)
 				totalDiff += fabs(tmpPath2->waypoints[ktr].pos[itr1] - finalApproachArr[readCtr]->waypoints[ktr].pos[itr1]);
@@ -754,9 +753,9 @@ void GraspPlanner::PerformGrasp(const mjModel* &m, mjData* &d, mjtNum * stableQp
 				// Transform wrist point
 				pos = trans.tM * pos;
 
-				if (isnan(pos[0]))
+				if (std::isnan(pos[0]))
 					std::cout<<"REMOVED VIEW"<<std::endl;
-			    if (counter >= validViewPixels && !isnan(pos[0]))
+			    if (counter >= validViewPixels && !std::isnan(pos[0]))
 			    {
 					validViews.push_back(i);
 					cv::imwrite(tmpStr, dstDepth);
