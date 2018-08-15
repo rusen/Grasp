@@ -13,6 +13,7 @@ dropboxFolder = "~/Dropbox"
 
 def get_scenes(setText):
    d = './allData'
+   dTest = './testTrj'
    counter = 0
 
    folderList = filter(os.path.isdir, [os.path.join(d,f) for f in os.listdir(d)])
@@ -29,10 +30,17 @@ def get_scenes(setText):
 
           folderListScenes = filter(os.path.isdir, [os.path.join(item2,f) for f in os.listdir(item2)])
           for itemScene in folderListScenes:
+              sceneId = os.path.basename(os.path.normpath(itemScene))
               folders[counter] = itemScene
               out = open(itemScene + "/objectId.txt", "w")
               out.write(objectId)
               out.close()
+
+              if dataFile is not 'data.bin':
+                  fileToCopy = dTest + '/' + '/' + objectId + '/' + sceneId + '/' + dataFile 
+                  fileDest = itemScene + "/" + dataFile
+                  if not os.path.exists(fileDest):
+                      shutil.copyfile(fileToCopy, fileDest)
               counter = counter + 1
    return
 
@@ -55,9 +63,9 @@ def f(x):
     shutil.move(newFolder, itemScene)
 
 numberOfThreads = int(sys.argv[2])
+dataFile = sys.argv[3]
 get_scenes(sys.argv[1])
 numberOfScenes = len(folders)
-dataFile = sys.argv[3]
 dropboxFolder = sys.argv[4]
 pool = multiprocessing.Pool(int(sys.argv[2]))
 pool.map(f, range(0, len(folders)))
