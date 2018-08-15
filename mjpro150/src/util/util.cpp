@@ -700,6 +700,7 @@ void RemoveOldTmpFolders(const char * modelFolder, bool reSimulateFlag){
 Grasp::GraspResult * Grasp::readGraspData(const char * fileName){
 	// Open file
 	FILE * fp = fopen(fileName, "rb");
+	long int fileSize = boost::filesystem::file_size(fileName);
 
 	// Error? Return
 	if (fp == NULL)
@@ -709,10 +710,15 @@ Grasp::GraspResult * Grasp::readGraspData(const char * fileName){
 	int numberOfGrasps = 0;
 	fread(&numberOfGrasps, sizeof(int), 1, fp);
 	Grasp::GraspResult * newArr = new Grasp::GraspResult[numberOfGrasps];
+	long int estFileSize = sizeof(int) + numberOfGrasps * (3 * sizeof(int) + 7 * sizeof(float));
+	std::cout<<"File size:"<<fileSize<<" and estimated file size "<<estFileSize<<std::endl;
+	bool likelihoodFlag = true;
+	if (fileSize != estFileSize)
+		likelihoodFlag = false;
 
 	// Read each grasp
 	for (int i = 0; i<numberOfGrasps; i++){
-		newArr[i].read(fp);
+		newArr[i].read(fp, likelihoodFlag);
 		newArr[i].print();
 	}
 
@@ -741,7 +747,7 @@ void Grasp::GraspResult::write(FILE * &fp){
 		tmp[i] = camPos[i];
 	fwrite(tmp, sizeof(float), 3, fp);
 }
-void Grasp::GraspResult::read(FILE * &fp){
+void Grasp::GraspResult::read(FILE * &fp, bool likelihoodFlag){
 
 	if (fp == NULL){
 		std::cerr<<"No grasp data file!"<<std::endl;
@@ -750,7 +756,8 @@ void Grasp::GraspResult::read(FILE * &fp){
 
 	fread(&viewId, sizeof(int), 1, fp);
 	fread(&wpCount, sizeof(int), 1, fp);
-	fread(&likelihood, sizeof(float), 1, fp);
+	if (likelihoodFlag)
+		fread(&likelihood, sizeof(float), 1, fp);
 	fread(&graspType, sizeof(int), 1, fp);
 
 	float tmp[3];

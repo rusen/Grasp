@@ -27,7 +27,7 @@ public:
 	virtual ~GraspResult(){}
 
 	// File IO
-	void read(FILE * &fp);
+	void read(FILE * &fp, bool likelihoodFlag);
 	void write(FILE * &fp);
 	void print();
 
