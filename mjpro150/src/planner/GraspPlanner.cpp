@@ -93,7 +93,7 @@ GraspPlanner::GraspPlanner(const char * dropboxBase, bool testFlag,
     	numberOfAngles = 1;
 
     // Fill collision state/grasp params array.
-    for (int i = 0; i < 1000; i++)
+    for (int i = 0; i < numberOfMaximumGrasps; i++)
     {
     	collisionState[i] = -1;
     }
