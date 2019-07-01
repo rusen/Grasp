@@ -65,6 +65,10 @@ bool testFlag = false;
 bool terminateFlag = false;
 int classSelection = 0;
 
+// Executed grasp
+bool singleGraspExecution = false;
+int executedGrasp = 0;
+
 // True, if we need to re-create the simulation
 bool reSimulateFlag = false;
 char existingId[10];
@@ -541,9 +545,9 @@ int main(int argc, const char** argv)
 	unsigned int randSeed = time(NULL);
 
     // check command-line arguments
-    if( argc != 8 )
+    if( argc < 8 )
     {
-        printf(" USAGE:  basicGrasp folderId dataFile ModelFolder dropboxFolder <visualOn/visualOff> classSelection (RandomInt)\n");
+        printf(" USAGE:  basicGrasp folderId dataFile ModelFolder dropboxFolder <visualOn/visualOff> classSelection (RandomInt) (executedGrasp)\n");
         return 0;
     }
 
@@ -559,6 +563,15 @@ int main(int argc, const char** argv)
     srand(randSeed);
     std::cout<<" RANDOM SEED: "<<randSeed << std::endl;
     std::cout<<"First random no:"<<rand()<<std::endl;
+
+    // If a single grasp is requested, perform it.
+    if (argc == 9)
+    {
+		sscanf(argv[8], "%ud", &tmpNo);
+		singleGraspExecution = true;
+		executedGrasp = tmpNo;
+		std::cout<<"Single grasp execution is on. Executed Grasp: "<< executedGrasp << std::endl;
+    }
 
     // Read class selection parameter.
 	sscanf(argv[6], "%ud", &classSelection);
@@ -599,8 +612,8 @@ int main(int argc, const char** argv)
     	int charsRead = fscanf(setsFid, "%d\n", &setId);
     	if (charsRead < 1)
     		break;
-//    	if (setId < 2) // Only work with validation and test data for now
-//    		excludedObjects.push_back(i+1);
+    	if (setId != 2) // Only work with validation and test data for now
+    		excludedObjects.push_back(i+1);
     }
     fclose(setsFid);
 
@@ -624,7 +637,13 @@ int main(int argc, const char** argv)
     std::cout<<"Object count:"<<objectCount<<std::endl;
 
     // Allocate planner
-    planner = new Grasp::GraspPlanner(argv[4], testFlag, reSimulateFlag, existingId, dataFileName);
+    if (singleGraspExecution)
+    	planner = new Grasp::GraspPlanner(argv[4], testFlag, reSimulateFlag, existingId, dataFileName, executedGrasp);
+    else
+    	planner = new Grasp::GraspPlanner(argv[4], testFlag, reSimulateFlag, existingId, dataFileName);
+
+    std::cout<<"Planner created. "<<planner->baseFolder<<" "<<reSimulateFlag<<std::endl;
+    std::cout.flush();
 
     // Depending on requested class, get relevant objects.
     int objectId = 0;
@@ -675,10 +694,14 @@ int main(int argc, const char** argv)
     {
     	char objectIdOutput[1000];
     	strcpy(objectIdOutput, planner->baseFolder);
-    	strcat(objectIdOutput, "/objectId.txt");
+    	strcat(objectIdOutput, "objectId.txt");
+        std::cout<<objectIdOutput<<std::endl;
+        std::cout.flush();
         FILE * fid = fopen(objectIdOutput, "r");
         fscanf(fid, "%d", &objectId);
         fclose(fid);
+        std::cout<<objectIdOutput<<std::endl;
+        std::cout.flush();
     }
     //objectId = 99;
     std::cout<<"Selected object:"<<objectId<<std::endl;

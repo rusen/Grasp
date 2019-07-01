@@ -98,6 +98,8 @@ public:
 
 	// Steps to perform approach.
 	int counter = 0;
+	bool singleGraspExecution = false;
+	int singleExecutedGrasp = 0;
 	int graspCounter = 0;
 	int stableCounter = 0;
 	int stableLimit = 25;
@@ -106,7 +108,7 @@ public:
 	// Simulator allocation
 	Simulate* Simulator = NULL;
 
-	GraspPlanner(const char * dropboxFolder, bool testFlag, bool reSimulateFlag, const char * existingId, char * dataFileName);
+	GraspPlanner(const char * dropboxFolder, bool testFlag, bool reSimulateFlag, const char * existingId, char * dataFileName, int executedGrasp=-1);
 	virtual ~GraspPlanner();
 
 	// Reset simulation to initial configuration

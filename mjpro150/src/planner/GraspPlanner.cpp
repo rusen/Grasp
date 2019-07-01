@@ -39,7 +39,7 @@ void GraspPlanner::SetFrame(const mjModel* m, mjData * d)
 }
 
 GraspPlanner::GraspPlanner(const char * dropboxBase, bool testFlag,
-		bool reSimulateFlag, const char * existingId, char * dataFileName) {
+		bool reSimulateFlag, const char * existingId, char * dataFileName, int executedGrasp) {
 
 	// Save test flag and base type.
 	this->testFlag = testFlag;
@@ -73,6 +73,17 @@ GraspPlanner::GraspPlanner(const char * dropboxBase, bool testFlag,
 	if (!reSimulateFlag){
 		boost::filesystem::create_directories(prefix);
 	}
+
+	// If single grasp execution is on, execute only one grasp.
+	if (executedGrasp>-1)
+	{
+		graspCounter = executedGrasp;
+		singleExecutedGrasp = executedGrasp;
+		singleGraspExecution = true;
+	}
+
+	std::cout<<"Single Grasp Execution: "<<singleExecutedGrasp<<std::endl;
+	std::cout.flush();
 
     // Create rest of the prefixes
 	strcat(prefix, fileId);
@@ -124,6 +135,9 @@ GraspPlanner::GraspPlanner(const char * dropboxBase, bool testFlag,
     		boost::filesystem::copy_file(tmpFile, destFile);
     	}
     }
+
+	std::cout<<"Saved old data "<<reSimulateFlag<<std::endl;
+	std::cout.flush();
 
     // Open log file
 	logStream = new std::ofstream(debugLogFile);
@@ -883,8 +897,9 @@ void GraspPlanner::PerformGrasp(const mjModel* &m, mjData* &d, mjtNum * stableQp
 		break;
 	case pregrasp:
 
-		// If enough grasps have been performed, exit.
-		if (graspCounter >= numberOfGrasps)
+		// If all grasps have been performed, exit.
+		if ((singleGraspExecution && graspCounter > singleExecutedGrasp) ||
+				graspCounter >= numberOfGrasps)
 		{
 			graspState = done;
 			break;
